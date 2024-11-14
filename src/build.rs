@@ -49,15 +49,9 @@ mod regen {
    #[rustfmt::skip]
    impl Default for BindgenConfig {
       fn default() -> Self {
-         let type_overrides: HashMap<_, _> = HashMap::from([
-            ("NTSTATUS", "windows_sys::Win32::Foundation::NTSTATUS"),
-            ("BOOL"    , "windows_sys::Win32::Foundation::BOOL"),
-            ("BOOLEAN" , "windows_sys::Win32::Foundation::BOOLEAN"),
-            ( "UNICODE_STRING", "nt_string::unicode_string::NtUnicodeString"),
-            ("_UNICODE_STRING", "nt_string::unicode_string::NtUnicodeString"),
-         ])
+         let type_overrides: HashMap<String,String> = HashMap::new()
             .into_iter()
-            .map(|(k, v)| (k.to_owned(), v.to_owned()))
+            .map(|(k, v): (&str, &str)| (k.to_owned(), v.to_owned()))
             .collect();
 
          let blocklist_types = type_overrides.clone().into_keys().collect();

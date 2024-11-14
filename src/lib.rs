@@ -1,3 +1,4 @@
+#![no_std]
 // MIT License
 //
 // Copyright (c) 2024 oberrich <oberrich.llvm@proton.me>

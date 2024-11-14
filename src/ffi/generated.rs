@@ -1,16 +1,8 @@
-// Generated at 2024-09-14 10:44:40.498218300 +02:00
+// Generated at 2024-11-15 03:43:07.533555 +00:00
 #[cfg(not(target_arch = "x86_64"))]
 compile_error!("These bindings can only be used on `x86_64` architectures. To generate bindings for your target architecture, consider using the `regenerate` feature.");
 
 use cty;
-pub use windows_sys::Win32::Foundation::NTSTATUS as NTSTATUS;
-pub use windows_sys::Win32::Foundation::BOOLEAN as BOOLEAN;
-pub use windows_sys::Win32::Foundation::BOOL as BOOL;
-pub use nt_string::unicode_string::NtUnicodeString as _UNICODE_STRING;
-pub use nt_string::unicode_string::NtUnicodeString as UNICODE_STRING;
-
-pub const PHNT_VERSION: u32 = self::PHNT_WIN11_24H2;
-pub const PHNT_MODE: u32 = self::PHNT_MODE_USER;
 
 #[repr(C)]
 #[derive(Copy, Clone, Debug, Default, Eq, Hash, Ord, PartialEq, PartialOrd)]
@@ -132,6 +124,8 @@ pub const PHNT_WIN11: u32 = 114;
 pub const PHNT_WIN11_22H2: u32 = 115;
 pub const PHNT_WIN11_23H2: u32 = 116;
 pub const PHNT_WIN11_24H2: u32 = 117;
+pub const PHNT_MODE: u32 = 1;
+pub const PHNT_VERSION: u32 = 117;
 pub const MAXUCHAR: u32 = 255;
 pub const MAXUSHORT: u32 = 65535;
 pub const MAXULONG: u32 = 4294967295;
@@ -757,6 +751,7 @@ pub const DEBUG_SET_INFORMATION: u32 = 4;
 pub const DEBUG_QUERY_INFORMATION: u32 = 8;
 pub const DEBUG_ALL_ACCESS: u32 = 2031631;
 pub const DEBUG_KILL_ON_CLOSE: u32 = 1;
+pub const FILE_SHARE_NONE: u32 = 0;
 pub const FILE_SUPERSEDE: u32 = 0;
 pub const FILE_OPEN: u32 = 1;
 pub const FILE_CREATE: u32 = 2;
@@ -772,8 +767,6 @@ pub const FILE_SYNCHRONOUS_IO_ALERT: u32 = 16;
 pub const FILE_SYNCHRONOUS_IO_NONALERT: u32 = 32;
 pub const FILE_NON_DIRECTORY_FILE: u32 = 64;
 pub const FILE_CREATE_TREE_CONNECTION: u32 = 128;
-pub const TREE_CONNECT_NO_CLIENT_BUFFERING: u32 = 8;
-pub const TREE_CONNECT_WRITE_THROUGH: u32 = 2;
 pub const FILE_COMPLETE_IF_OPLOCKED: u32 = 256;
 pub const FILE_NO_EA_KNOWLEDGE: u32 = 512;
 pub const FILE_OPEN_REMOTE_INSTANCE: u32 = 1024;
@@ -789,6 +782,8 @@ pub const FILE_RESERVE_OPFILTER: u32 = 1048576;
 pub const FILE_OPEN_REPARSE_POINT: u32 = 2097152;
 pub const FILE_OPEN_NO_RECALL: u32 = 4194304;
 pub const FILE_OPEN_FOR_FREE_SPACE_QUERY: u32 = 8388608;
+pub const TREE_CONNECT_WRITE_THROUGH: u32 = 2;
+pub const TREE_CONNECT_NO_CLIENT_BUFFERING: u32 = 8;
 pub const FILE_CONTAINS_EXTENDED_CREATE_INFORMATION: u32 = 268435456;
 pub const FILE_VALID_EXTENDED_OPTION_FLAGS: u32 = 268435456;
 pub const EX_CREATE_FLAG_FILE_SOURCE_OPEN_FOR_COPY: u32 = 1;
@@ -940,11 +935,6 @@ pub const FILE_ACTION_MODIFIED_STREAM: u32 = 8;
 pub const FILE_ACTION_REMOVED_BY_DELETE: u32 = 9;
 pub const FILE_ACTION_ID_NOT_TUNNELLED: u32 = 10;
 pub const FILE_ACTION_TUNNELLED_ID_COLLISION: u32 = 11;
-pub const FILE_NAME_FLAG_HARDLINK: u32 = 0;
-pub const FILE_NAME_FLAG_NTFS: u32 = 1;
-pub const FILE_NAME_FLAG_DOS: u32 = 2;
-pub const FILE_NAME_FLAG_BOTH: u32 = 3;
-pub const FILE_NAME_FLAGS_UNSPECIFIED: u32 = 128;
 pub const IO_COMPLETION_QUERY_STATE: u32 = 1;
 pub const SYMLINK_FLAG_RELATIVE: u32 = 1;
 pub const SYMLINK_DIRECTORY: u32 = 2147483648;
@@ -1155,6 +1145,9 @@ pub const SUPPORTED_FS_FEATURES_OFFLOAD_READ: u32 = 1;
 pub const SUPPORTED_FS_FEATURES_OFFLOAD_WRITE: u32 = 2;
 pub const SUPPORTED_FS_FEATURES_QUERY_OPEN: u32 = 4;
 pub const SUPPORTED_FS_FEATURES_BYPASS_IO: u32 = 8;
+pub const SUPPORTED_FS_FEATURES_VALID_MASK_V3: u32 = 15;
+pub const SUPPORTED_FS_FEATURES_VALID_MASK_V2: u32 = 7;
+pub const SUPPORTED_FS_FEATURES_VALID_MASK_V1: u32 = 3;
 pub const SUPPORTED_FS_FEATURES_VALID_MASK: u32 = 15;
 pub const PORT_CONNECT: u32 = 1;
 pub const PORT_ALL_ACCESS: u32 = 2031617;
@@ -1359,7 +1352,7 @@ pub const POWER_REQUEST_SUPPORTED_TYPES_V1: u32 = 3;
 pub const POWER_REQUEST_SUPPORTED_TYPES_V2: u32 = 9;
 pub const POWER_REQUEST_SUPPORTED_TYPES_V3: u32 = 5;
 pub const POWER_REQUEST_SUPPORTED_TYPES_V4: u32 = 6;
-pub const POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_VERSION: u32 = 1;
+pub const POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_VERSION: u32 = 1;
 pub const REG_INIT_BOOT_SM: u32 = 0;
 pub const REG_INIT_BOOT_SETUP: u32 = 1;
 pub const REG_INIT_BOOT_ACCEPTED_BASE: u32 = 2;
@@ -1542,6 +1535,10 @@ pub const RTL_QUERY_REGISTRY_DELETE: u32 = 64;
 pub const RTL_WALK_USER_MODE_STACK: u32 = 1;
 pub const RTL_WALK_VALID_FLAGS: u32 = 1;
 pub const RTL_STACK_WALKING_MODE_FRAMES_TO_SKIP_SHIFT: u32 = 8;
+pub const ELEVATION_FLAG_TOKEN_CHECKS: u32 = 1;
+pub const ELEVATION_FLAG_VIRTUALIZATION: u32 = 2;
+pub const ELEVATION_FLAG_SHORTCUT_REDIR: u32 = 4;
+pub const ELEVATION_FLAG_NO_SIGNATURE_CHECK: u32 = 8;
 pub const RTL_UNLOAD_EVENT_TRACE_NUMBER: u32 = 64;
 pub const RTL_IMAGE_MITIGATION_OPTION_STATEMASK: u32 = 3;
 pub const RTL_IMAGE_MITIGATION_OPTION_FORCEMASK: u32 = 4;
@@ -1578,11 +1575,6 @@ pub const IMAGE_DVRT_ARM64X_FIXUP_SIZE_4BYTES: u32 = 2;
 pub const IMAGE_DVRT_ARM64X_FIXUP_SIZE_8BYTES: u32 = 3;
 pub const IMAGE_DYNAMIC_RELOCATION_ARM64X: u32 = 6;
 pub const IMAGE_DYNAMIC_RELOCATION_MM_SHARED_USER_DATA_VA: u32 = 2147352576;
-pub const IMAGE_DYNAMIC_RELOCATION_FUNCTION_OVERRIDE: u32 = 7;
-pub const IMAGE_FUNCTION_OVERRIDE_INVALID: u32 = 0;
-pub const IMAGE_FUNCTION_OVERRIDE_X64_REL32: u32 = 1;
-pub const IMAGE_FUNCTION_OVERRIDE_ARM64_BRANCH26: u32 = 2;
-pub const IMAGE_FUNCTION_OVERRIDE_ARM64_THUNK: u32 = 3;
 pub const IMAGE_DLLCHARACTERISTICS_EX_FORWARD_CFI_COMPAT: u32 = 64;
 pub const IMAGE_DLLCHARACTERISTICS_EX_HOTPATCH_COMPATIBLE: u32 = 128;
 pub const SE_MIN_WELL_KNOWN_PRIVILEGE: u32 = 2;
@@ -2929,12 +2921,15 @@ pub type PUSHORT = *mut USHORT;
 pub type UCHAR = cty::c_uchar;
 pub type PUCHAR = *mut UCHAR;
 pub type DWORD = cty::c_ulong;
+pub type BOOL = cty::c_int;
 pub type BYTE = cty::c_uchar;
 pub type WORD = cty::c_ushort;
 pub type PBOOL = *mut BOOL;
 pub type PDWORD = *mut DWORD;
 pub type LPVOID = *mut cty::c_void;
+pub type UINT = cty::c_uint;
 pub type ULONG32 = cty::c_uint;
+pub type UINT_PTR = cty::c_ulonglong;
 pub type LONG_PTR = cty::c_longlong;
 pub type ULONG_PTR = cty::c_ulonglong;
 pub type PULONG_PTR = *mut cty::c_ulonglong;
@@ -2955,6 +2950,7 @@ pub type WCHAR = wchar_t;
 pub type PWCHAR = *mut WCHAR;
 pub type PWCH = *mut WCHAR;
 pub type PCWCH = *const WCHAR;
+pub type LPWSTR = *mut WCHAR;
 pub type PWSTR = *mut WCHAR;
 pub type LPCWSTR = *const WCHAR;
 pub type PCWSTR = *const WCHAR;
@@ -3063,6 +3059,7 @@ pub struct _LUID {
 }
 pub type LUID = _LUID;
 pub type PLUID = *mut _LUID;
+pub type BOOLEAN = BYTE;
 pub type PBOOLEAN = *mut BOOLEAN;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -3965,6 +3962,7 @@ impl Default for _CLAIM_SECURITY_ATTRIBUTES_INFORMATION {
 pub type PCLAIM_SECURITY_ATTRIBUTES_INFORMATION = *mut _CLAIM_SECURITY_ATTRIBUTES_INFORMATION;
 pub type SECURITY_CONTEXT_TRACKING_MODE = BOOLEAN;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SECURITY_QUALITY_OF_SERVICE {
    pub Length: DWORD,
    pub ImpersonationLevel: SECURITY_IMPERSONATION_LEVEL,
@@ -4129,7 +4127,10 @@ pub enum _PROCESS_MITIGATION_POLICY {
    ProcessSideChannelIsolationPolicy = 14,
    ProcessUserShadowStackPolicy = 15,
    ProcessRedirectionTrustPolicy = 16,
-   MaxProcessMitigationPolicy = 17,
+   ProcessUserPointerAuthPolicy = 17,
+   ProcessSEHOPPolicy = 18,
+   ProcessActivationContextTrustPolicy = 19,
+   MaxProcessMitigationPolicy = 20,
 }
 pub use self::_PROCESS_MITIGATION_POLICY as PROCESS_MITIGATION_POLICY;
 #[repr(C)]
@@ -4259,6 +4260,82 @@ impl Default for _PROCESS_MITIGATION_ASLR_POLICY {
    }
 }
 pub type PROCESS_MITIGATION_ASLR_POLICY = _PROCESS_MITIGATION_ASLR_POLICY;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _PROCESS_MITIGATION_SEHOP_POLICY {
+   pub __bindgen_anon_1: _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1 {
+   pub Flags: DWORD,
+   pub __bindgen_anon_1: _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1__bindgen_ty_1 {
+   pub _bitfield_align_1: [u32; 0],
+   pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
+}
+impl _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1__bindgen_ty_1 {
+   #[inline]
+   pub fn EnableSehop(&self) -> DWORD {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_EnableSehop(&mut self, val: DWORD) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(0usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn ReservedFlags(&self) -> DWORD {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(1usize, 31u8) as u32) }
+   }
+   #[inline]
+   pub fn set_ReservedFlags(&mut self, val: DWORD) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(1usize, 31u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn new_bitfield_1(
+      EnableSehop: DWORD,
+      ReservedFlags: DWORD,
+   ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
+      let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
+      __bindgen_bitfield_unit.set(0usize, 1u8, {
+         let EnableSehop: u32 = unsafe { ::core::mem::transmute(EnableSehop) };
+         EnableSehop as u64
+      });
+      __bindgen_bitfield_unit.set(1usize, 31u8, {
+         let ReservedFlags: u32 = unsafe { ::core::mem::transmute(ReservedFlags) };
+         ReservedFlags as u64
+      });
+      __bindgen_bitfield_unit
+   }
+}
+impl Default for _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for _PROCESS_MITIGATION_SEHOP_POLICY {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type PROCESS_MITIGATION_SEHOP_POLICY = _PROCESS_MITIGATION_SEHOP_POLICY;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY {
@@ -4395,20 +4472,44 @@ impl _PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY__bindgen_ty_1__bindgen_ty_1 
       }
    }
    #[inline]
+   pub fn DisallowFsctlSystemCalls(&self) -> DWORD {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_DisallowFsctlSystemCalls(&mut self, val: DWORD) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(2usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn AuditDisallowFsctlSystemCalls(&self) -> DWORD {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(3usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_AuditDisallowFsctlSystemCalls(&mut self, val: DWORD) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(3usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
    pub fn ReservedFlags(&self) -> DWORD {
-      unsafe { ::core::mem::transmute(self._bitfield_1.get(2usize, 30u8) as u32) }
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(4usize, 28u8) as u32) }
    }
    #[inline]
    pub fn set_ReservedFlags(&mut self, val: DWORD) {
       unsafe {
          let val: u32 = ::core::mem::transmute(val);
-         self._bitfield_1.set(2usize, 30u8, val as u64)
+         self._bitfield_1.set(4usize, 28u8, val as u64)
       }
    }
    #[inline]
    pub fn new_bitfield_1(
       DisallowWin32kSystemCalls: DWORD,
       AuditDisallowWin32kSystemCalls: DWORD,
+      DisallowFsctlSystemCalls: DWORD,
+      AuditDisallowFsctlSystemCalls: DWORD,
       ReservedFlags: DWORD,
    ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
       let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
@@ -4422,7 +4523,17 @@ impl _PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY__bindgen_ty_1__bindgen_ty_1 
             unsafe { ::core::mem::transmute(AuditDisallowWin32kSystemCalls) };
          AuditDisallowWin32kSystemCalls as u64
       });
-      __bindgen_bitfield_unit.set(2usize, 30u8, {
+      __bindgen_bitfield_unit.set(2usize, 1u8, {
+         let DisallowFsctlSystemCalls: u32 =
+            unsafe { ::core::mem::transmute(DisallowFsctlSystemCalls) };
+         DisallowFsctlSystemCalls as u64
+      });
+      __bindgen_bitfield_unit.set(3usize, 1u8, {
+         let AuditDisallowFsctlSystemCalls: u32 =
+            unsafe { ::core::mem::transmute(AuditDisallowFsctlSystemCalls) };
+         AuditDisallowFsctlSystemCalls as u64
+      });
+      __bindgen_bitfield_unit.set(4usize, 28u8, {
          let ReservedFlags: u32 = unsafe { ::core::mem::transmute(ReservedFlags) };
          ReservedFlags as u64
       });
@@ -5683,14 +5794,25 @@ impl _PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY__bindgen_ty_1__bindgen_ty
       }
    }
    #[inline]
+   pub fn RestrictCoreSharing(&self) -> DWORD {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(4usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_RestrictCoreSharing(&mut self, val: DWORD) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(4usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
    pub fn ReservedFlags(&self) -> DWORD {
-      unsafe { ::core::mem::transmute(self._bitfield_1.get(4usize, 28u8) as u32) }
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(5usize, 27u8) as u32) }
    }
    #[inline]
    pub fn set_ReservedFlags(&mut self, val: DWORD) {
       unsafe {
          let val: u32 = ::core::mem::transmute(val);
-         self._bitfield_1.set(4usize, 28u8, val as u64)
+         self._bitfield_1.set(5usize, 27u8, val as u64)
       }
    }
    #[inline]
@@ -5699,6 +5821,7 @@ impl _PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY__bindgen_ty_1__bindgen_ty
       IsolateSecurityDomain: DWORD,
       DisablePageCombine: DWORD,
       SpeculativeStoreBypassDisable: DWORD,
+      RestrictCoreSharing: DWORD,
       ReservedFlags: DWORD,
    ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
       let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
@@ -5720,7 +5843,11 @@ impl _PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY__bindgen_ty_1__bindgen_ty
             unsafe { ::core::mem::transmute(SpeculativeStoreBypassDisable) };
          SpeculativeStoreBypassDisable as u64
       });
-      __bindgen_bitfield_unit.set(4usize, 28u8, {
+      __bindgen_bitfield_unit.set(4usize, 1u8, {
+         let RestrictCoreSharing: u32 = unsafe { ::core::mem::transmute(RestrictCoreSharing) };
+         RestrictCoreSharing as u64
+      });
+      __bindgen_bitfield_unit.set(5usize, 27u8, {
          let ReservedFlags: u32 = unsafe { ::core::mem::transmute(ReservedFlags) };
          ReservedFlags as u64
       });
@@ -5976,6 +6103,83 @@ impl Default for _PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY {
 pub type PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY = _PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY;
 #[repr(C)]
 #[derive(Copy, Clone)]
+pub struct _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY {
+   pub __bindgen_anon_1: _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1 {
+   pub Flags: DWORD,
+   pub __bindgen_anon_1: _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1__bindgen_ty_1 {
+   pub _bitfield_align_1: [u32; 0],
+   pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
+}
+impl _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1__bindgen_ty_1 {
+   #[inline]
+   pub fn EnablePointerAuthUserIp(&self) -> DWORD {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_EnablePointerAuthUserIp(&mut self, val: DWORD) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(0usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn ReservedFlags(&self) -> DWORD {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(1usize, 31u8) as u32) }
+   }
+   #[inline]
+   pub fn set_ReservedFlags(&mut self, val: DWORD) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(1usize, 31u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn new_bitfield_1(
+      EnablePointerAuthUserIp: DWORD,
+      ReservedFlags: DWORD,
+   ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
+      let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
+      __bindgen_bitfield_unit.set(0usize, 1u8, {
+         let EnablePointerAuthUserIp: u32 =
+            unsafe { ::core::mem::transmute(EnablePointerAuthUserIp) };
+         EnablePointerAuthUserIp as u64
+      });
+      __bindgen_bitfield_unit.set(1usize, 31u8, {
+         let ReservedFlags: u32 = unsafe { ::core::mem::transmute(ReservedFlags) };
+         ReservedFlags as u64
+      });
+      __bindgen_bitfield_unit
+   }
+}
+impl Default for _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY = _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY;
+#[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY {
    pub __bindgen_anon_1: _PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY__bindgen_ty_1,
 }
@@ -6163,7 +6367,9 @@ pub enum _JOBOBJECTINFOCLASS {
    JobObjectReserved23Information = 45,
    JobObjectReserved24Information = 46,
    JobObjectReserved25Information = 47,
-   MaxJobObjectInfoClass = 48,
+   JobObjectReserved26Information = 48,
+   JobObjectReserved27Information = 49,
+   MaxJobObjectInfoClass = 50,
 }
 pub use self::_JOBOBJECTINFOCLASS as JOBOBJECTINFOCLASS;
 #[repr(i32)]
@@ -6561,7 +6767,8 @@ pub enum POWER_INFORMATION_LEVEL {
    UpdateBlackBoxRecorder = 94,
    SessionAllowExternalDmaDevices = 95,
    SendSuspendResumeNotification = 96,
-   PowerInformationLevelMaximum = 97,
+   BlackBoxRecorderDirectAccessBuffer = 97,
+   PowerInformationLevelMaximum = 98,
 }
 #[repr(i32)]
 #[non_exhaustive]
@@ -7152,7 +7359,7 @@ pub struct _RTL_CRITICAL_SECTION_DEBUG {
    pub ContentionCount: DWORD,
    pub Flags: DWORD,
    pub CreatorBackTraceIndexHigh: WORD,
-   pub SpareWORD: WORD,
+   pub Identifier: WORD,
 }
 impl Default for _RTL_CRITICAL_SECTION_DEBUG {
    fn default() -> Self {
@@ -7589,12 +7796,77 @@ pub struct _TP_IO {
    _unused: [u8; 0],
 }
 pub type PTP_IO = *mut _TP_IO;
+pub type WPARAM = UINT_PTR;
+pub type LPARAM = LONG_PTR;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HRGN__ {
+   pub unused: cty::c_int,
+}
+pub type HRGN = *mut HRGN__;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HWINSTA__ {
+   pub unused: cty::c_int,
+}
+pub type HWINSTA = *mut HWINSTA__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HWND__ {
    pub unused: cty::c_int,
 }
 pub type HWND = *mut HWND__;
+pub type HGDIOBJ = *mut cty::c_void;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HACCEL__ {
+   pub unused: cty::c_int,
+}
+pub type HACCEL = *mut HACCEL__;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HBITMAP__ {
+   pub unused: cty::c_int,
+}
+pub type HBITMAP = *mut HBITMAP__;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HDC__ {
+   pub unused: cty::c_int,
+}
+pub type HDC = *mut HDC__;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HDESK__ {
+   pub unused: cty::c_int,
+}
+pub type HDESK = *mut HDESK__;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HICON__ {
+   pub unused: cty::c_int,
+}
+pub type HICON = *mut HICON__;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HMENU__ {
+   pub unused: cty::c_int,
+}
+pub type HMENU = *mut HMENU__;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HWINEVENTHOOK__ {
+   pub unused: cty::c_int,
+}
+pub type HWINEVENTHOOK = *mut HWINEVENTHOOK__;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HMONITOR__ {
+   pub unused: cty::c_int,
+}
+pub type HMONITOR = *mut HMONITOR__;
+pub type HCURSOR = HICON;
+pub type COLORREF = DWORD;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct tagRECT {
@@ -7604,6 +7876,24 @@ pub struct tagRECT {
    pub bottom: LONG,
 }
 pub type RECT = tagRECT;
+pub type PRECT = *mut tagRECT;
+pub type LPRECT = *mut tagRECT;
+pub type LPCRECT = *const RECT;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagPOINT {
+   pub x: LONG,
+   pub y: LONG,
+}
+pub type POINT = tagPOINT;
+pub type LPPOINT = *mut tagPOINT;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagSIZE {
+   pub cx: LONG,
+   pub cy: LONG,
+}
+pub type SIZE = tagSIZE;
 pub type PTHREAD_START_ROUTINE =
    ::core::option::Option<unsafe extern "C" fn(lpThreadParameter: LPVOID) -> DWORD>;
 pub type LPTHREAD_START_ROUTINE = PTHREAD_START_ROUTINE;
@@ -7826,6 +8116,449 @@ impl Default for tagACTCTX_SECTION_KEYED_DATA {
    }
 }
 pub type PACTCTX_SECTION_KEYED_DATA = *mut tagACTCTX_SECTION_KEYED_DATA;
+pub type TIMERPROC = ::core::option::Option<
+   unsafe extern "C" fn(arg1: HWND, arg2: UINT, arg3: UINT_PTR, arg4: DWORD),
+>;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagMOUSEMOVEPOINT {
+   pub x: cty::c_int,
+   pub y: cty::c_int,
+   pub time: DWORD,
+   pub dwExtraInfo: ULONG_PTR,
+}
+pub type LPMOUSEMOVEPOINT = *mut tagMOUSEMOVEPOINT;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagMSG {
+   pub hwnd: HWND,
+   pub message: UINT,
+   pub wParam: WPARAM,
+   pub lParam: LPARAM,
+   pub time: DWORD,
+   pub pt: POINT,
+}
+impl Default for tagMSG {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type MSG = tagMSG;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagTRACKMOUSEEVENT {
+   pub cbSize: DWORD,
+   pub dwFlags: DWORD,
+   pub hwndTrack: HWND,
+   pub dwHoverTime: DWORD,
+}
+impl Default for tagTRACKMOUSEEVENT {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type LPTRACKMOUSEEVENT = *mut tagTRACKMOUSEEVENT;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagACCEL {
+   pub fVirt: BYTE,
+   pub key: WORD,
+   pub cmd: WORD,
+}
+pub type LPACCEL = *mut tagACCEL;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagPAINTSTRUCT {
+   pub hdc: HDC,
+   pub fErase: BOOL,
+   pub rcPaint: RECT,
+   pub fRestore: BOOL,
+   pub fIncUpdate: BOOL,
+   pub rgbReserved: [BYTE; 32usize],
+}
+impl Default for tagPAINTSTRUCT {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type PAINTSTRUCT = tagPAINTSTRUCT;
+pub type LPPAINTSTRUCT = *mut tagPAINTSTRUCT;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagWINDOWPLACEMENT {
+   pub length: UINT,
+   pub flags: UINT,
+   pub showCmd: UINT,
+   pub ptMinPosition: POINT,
+   pub ptMaxPosition: POINT,
+   pub rcNormalPosition: RECT,
+}
+pub type WINDOWPLACEMENT = tagWINDOWPLACEMENT;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct FLASHWINFO {
+   pub cbSize: UINT,
+   pub hwnd: HWND,
+   pub dwFlags: DWORD,
+   pub uCount: UINT,
+   pub dwTimeout: DWORD,
+}
+impl Default for FLASHWINFO {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type PFLASHWINFO = *mut FLASHWINFO;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagMOUSEINPUT {
+   pub dx: LONG,
+   pub dy: LONG,
+   pub mouseData: DWORD,
+   pub dwFlags: DWORD,
+   pub time: DWORD,
+   pub dwExtraInfo: ULONG_PTR,
+}
+pub type MOUSEINPUT = tagMOUSEINPUT;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagKEYBDINPUT {
+   pub wVk: WORD,
+   pub wScan: WORD,
+   pub dwFlags: DWORD,
+   pub time: DWORD,
+   pub dwExtraInfo: ULONG_PTR,
+}
+pub type KEYBDINPUT = tagKEYBDINPUT;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagHARDWAREINPUT {
+   pub uMsg: DWORD,
+   pub wParamL: WORD,
+   pub wParamH: WORD,
+}
+pub type HARDWAREINPUT = tagHARDWAREINPUT;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct tagINPUT {
+   pub type_: DWORD,
+   pub __bindgen_anon_1: tagINPUT__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union tagINPUT__bindgen_ty_1 {
+   pub mi: MOUSEINPUT,
+   pub ki: KEYBDINPUT,
+   pub hi: HARDWAREINPUT,
+}
+impl Default for tagINPUT__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for tagINPUT {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type LPINPUT = *mut tagINPUT;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagTPMPARAMS {
+   pub cbSize: UINT,
+   pub rcExclude: RECT,
+}
+pub type TPMPARAMS = tagTPMPARAMS;
+pub type LPTPMPARAMS = *mut TPMPARAMS;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _ICONINFO {
+   pub fIcon: BOOL,
+   pub xHotspot: DWORD,
+   pub yHotspot: DWORD,
+   pub hbmMask: HBITMAP,
+   pub hbmColor: HBITMAP,
+}
+impl Default for _ICONINFO {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type ICONINFO = _ICONINFO;
+pub type PICONINFO = *mut ICONINFO;
+pub type MONITORENUMPROC = ::core::option::Option<
+   unsafe extern "C" fn(arg1: HMONITOR, arg2: HDC, arg3: LPRECT, arg4: LPARAM) -> BOOL,
+>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagGUITHREADINFO {
+   pub cbSize: DWORD,
+   pub flags: DWORD,
+   pub hwndActive: HWND,
+   pub hwndFocus: HWND,
+   pub hwndCapture: HWND,
+   pub hwndMenuOwner: HWND,
+   pub hwndMoveSize: HWND,
+   pub hwndCaret: HWND,
+   pub rcCaret: RECT,
+}
+impl Default for tagGUITHREADINFO {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type PGUITHREADINFO = *mut tagGUITHREADINFO;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagCURSORINFO {
+   pub cbSize: DWORD,
+   pub flags: DWORD,
+   pub hCursor: HCURSOR,
+   pub ptScreenPos: POINT,
+}
+impl Default for tagCURSORINFO {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type PCURSORINFO = *mut tagCURSORINFO;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagTITLEBARINFO {
+   pub cbSize: DWORD,
+   pub rcTitleBar: RECT,
+   pub rgstate: [DWORD; 6usize],
+}
+pub type PTITLEBARINFO = *mut tagTITLEBARINFO;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagMENUBARINFO {
+   pub cbSize: DWORD,
+   pub rcBar: RECT,
+   pub hMenu: HMENU,
+   pub hwndMenu: HWND,
+   pub _bitfield_align_1: [u32; 0],
+   pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
+   pub __bindgen_padding_0: u32,
+}
+impl Default for tagMENUBARINFO {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl tagMENUBARINFO {
+   #[inline]
+   pub fn fBarFocused(&self) -> BOOL {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_fBarFocused(&mut self, val: BOOL) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(0usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn fFocused(&self) -> BOOL {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_fFocused(&mut self, val: BOOL) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(1usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn fUnused(&self) -> BOOL {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(2usize, 30u8) as u32) }
+   }
+   #[inline]
+   pub fn set_fUnused(&mut self, val: BOOL) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(2usize, 30u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn new_bitfield_1(
+      fBarFocused: BOOL,
+      fFocused: BOOL,
+      fUnused: BOOL,
+   ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
+      let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
+      __bindgen_bitfield_unit.set(0usize, 1u8, {
+         let fBarFocused: u32 = unsafe { ::core::mem::transmute(fBarFocused) };
+         fBarFocused as u64
+      });
+      __bindgen_bitfield_unit.set(1usize, 1u8, {
+         let fFocused: u32 = unsafe { ::core::mem::transmute(fFocused) };
+         fFocused as u64
+      });
+      __bindgen_bitfield_unit.set(2usize, 30u8, {
+         let fUnused: u32 = unsafe { ::core::mem::transmute(fUnused) };
+         fUnused as u64
+      });
+      __bindgen_bitfield_unit
+   }
+}
+pub type PMENUBARINFO = *mut tagMENUBARINFO;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagCOMBOBOXINFO {
+   pub cbSize: DWORD,
+   pub rcItem: RECT,
+   pub rcButton: RECT,
+   pub stateButton: DWORD,
+   pub hwndCombo: HWND,
+   pub hwndItem: HWND,
+   pub hwndList: HWND,
+}
+impl Default for tagCOMBOBOXINFO {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type PCOMBOBOXINFO = *mut tagCOMBOBOXINFO;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct HRAWINPUT__ {
+   pub unused: cty::c_int,
+}
+pub type HRAWINPUT = *mut HRAWINPUT__;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagRAWINPUTDEVICE {
+   pub usUsagePage: USHORT,
+   pub usUsage: USHORT,
+   pub dwFlags: DWORD,
+   pub hwndTarget: HWND,
+}
+impl Default for tagRAWINPUTDEVICE {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type PRAWINPUTDEVICE = *mut tagRAWINPUTDEVICE;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagRAWINPUTDEVICELIST {
+   pub hDevice: HANDLE,
+   pub dwType: DWORD,
+}
+impl Default for tagRAWINPUTDEVICELIST {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type PRAWINPUTDEVICELIST = *mut tagRAWINPUTDEVICELIST;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct tagCHANGEFILTERSTRUCT {
+   pub cbSize: DWORD,
+   pub ExtStatus: DWORD,
+}
+pub type PCHANGEFILTERSTRUCT = *mut tagCHANGEFILTERSTRUCT;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum tagINPUT_MESSAGE_DEVICE_TYPE {
+   IMDT_UNAVAILABLE = 0,
+   IMDT_KEYBOARD = 1,
+   IMDT_MOUSE = 2,
+   IMDT_TOUCH = 4,
+   IMDT_PEN = 8,
+   IMDT_TOUCHPAD = 16,
+}
+pub use self::tagINPUT_MESSAGE_DEVICE_TYPE as INPUT_MESSAGE_DEVICE_TYPE;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum tagINPUT_MESSAGE_ORIGIN_ID {
+   IMO_UNAVAILABLE = 0,
+   IMO_HARDWARE = 1,
+   IMO_INJECTED = 2,
+   IMO_SYSTEM = 4,
+}
+pub use self::tagINPUT_MESSAGE_ORIGIN_ID as INPUT_MESSAGE_ORIGIN_ID;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct tagINPUT_MESSAGE_SOURCE {
+   pub deviceType: INPUT_MESSAGE_DEVICE_TYPE,
+   pub originId: INPUT_MESSAGE_ORIGIN_ID,
+}
+impl Default for tagINPUT_MESSAGE_SOURCE {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type INPUT_MESSAGE_SOURCE = tagINPUT_MESSAGE_SOURCE;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum ORIENTATION_PREFERENCE {
+   ORIENTATION_PREFERENCE_NONE = 0,
+   ORIENTATION_PREFERENCE_LANDSCAPE = 1,
+   ORIENTATION_PREFERENCE_PORTRAIT = 2,
+   ORIENTATION_PREFERENCE_LANDSCAPE_FLIPPED = 4,
+   ORIENTATION_PREFERENCE_PORTRAIT_FLIPPED = 8,
+}
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -8048,6 +8781,9 @@ impl Default for _ETW_BUFFER_CONTEXT {
 }
 pub type ETW_BUFFER_CONTEXT = _ETW_BUFFER_CONTEXT;
 pub type DOUBLE = f64;
+pub type NTSTATUS = LONG;
+pub type PNTSTATUS = *mut NTSTATUS;
+pub type PDOUBLE = *mut DOUBLE;
 pub type PGUID = *mut GUID;
 pub type PCGUID = *const GUID;
 #[repr(C)]
@@ -8092,7 +8828,6 @@ pub type QUAD_PTR = _QUAD_PTR;
 pub type PQUAD_PTR = *mut _QUAD_PTR;
 pub type LOGICAL = ULONG;
 pub type PLOGICAL = *mut ULONG;
-pub type PNTSTATUS = *mut NTSTATUS;
 pub type CSHORT = cty::c_short;
 pub type CLONG = ULONG;
 pub type PCCHAR = *mut CCHAR;
@@ -8169,6 +8904,23 @@ pub type PUTF8_STRING = PSTRING;
 pub type PCSTRING = *const STRING;
 pub type PCANSI_STRING = *const ANSI_STRING;
 pub type PCOEM_STRING = *const OEM_STRING;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _UNICODE_STRING {
+   pub Length: USHORT,
+   pub MaximumLength: USHORT,
+   pub Buffer: PWCH,
+}
+impl Default for _UNICODE_STRING {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type UNICODE_STRING = _UNICODE_STRING;
 pub type PUNICODE_STRING = *mut _UNICODE_STRING;
 pub type PCUNICODE_STRING = *const UNICODE_STRING;
 #[repr(C)]
@@ -8309,7 +9061,7 @@ pub type PANSI_STRING64 = *mut STRING64;
 pub struct _OBJECT_ATTRIBUTES {
    pub Length: ULONG,
    pub RootDirectory: HANDLE,
-   pub ObjectName: PUNICODE_STRING,
+   pub ObjectName: PCUNICODE_STRING,
    pub Attributes: ULONG,
    pub SecurityDescriptor: PVOID,
    pub SecurityQualityOfService: PVOID,
@@ -8750,6 +9502,7 @@ pub struct _LDRP_LOAD_CONTEXT {
 }
 pub type PLDRP_LOAD_CONTEXT = *mut _LDRP_LOAD_CONTEXT;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _LDR_DATA_TABLE_ENTRY {
    pub InLoadOrderLinks: LIST_ENTRY,
    pub InMemoryOrderLinks: LIST_ENTRY,
@@ -9417,19 +10170,11 @@ pub type PLDR_DLL_NOTIFICATION_FUNCTION = ::core::option::Option<
    ),
 >;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _LDR_FAILURE_DATA {
    pub Status: NTSTATUS,
    pub DllName: [WCHAR; 32usize],
    pub AdditionalInfo: [WCHAR; 32usize],
-}
-impl Default for _LDR_FAILURE_DATA {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type LDR_FAILURE_DATA = _LDR_FAILURE_DATA;
 pub type PLDR_FAILURE_DATA = *mut _LDR_FAILURE_DATA;
@@ -9542,6 +10287,53 @@ impl Default for _PS_SYSTEM_DLL_INIT_BLOCK {
 }
 pub type PS_SYSTEM_DLL_INIT_BLOCK = _PS_SYSTEM_DLL_INIT_BLOCK;
 pub type PPS_SYSTEM_DLL_INIT_BLOCK = *mut _PS_SYSTEM_DLL_INIT_BLOCK;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _RTL_SCPCFG_NTDLL_EXPORTS {
+   pub ScpCfgHeader_Nop: PVOID,
+   pub ScpCfgEnd_Nop: PVOID,
+   pub ScpCfgHeader: PVOID,
+   pub ScpCfgEnd: PVOID,
+   pub ScpCfgHeader_ES: PVOID,
+   pub ScpCfgEnd_ES: PVOID,
+   pub ScpCfgHeader_Fptr: PVOID,
+   pub ScpCfgEnd_Fptr: PVOID,
+   pub LdrpGuardDispatchIcallNoESFptr: PVOID,
+   pub __guard_dispatch_icall_fptr: PVOID,
+   pub LdrpGuardCheckIcallNoESFptr: PVOID,
+   pub __guard_check_icall_fptr: PVOID,
+   pub LdrpHandleInvalidUserCallTarget: PVOID,
+   pub LdrpCriticalLoaderFunctions: _RTL_SCPCFG_NTDLL_EXPORTS__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _RTL_SCPCFG_NTDLL_EXPORTS__bindgen_ty_1 {
+   pub NtOpenFile: PVOID,
+   pub NtCreateSection: PVOID,
+   pub NtQueryAttributesFile: PVOID,
+   pub NtOpenSection: PVOID,
+   pub NtMapViewOfSection: PVOID,
+}
+impl Default for _RTL_SCPCFG_NTDLL_EXPORTS__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for _RTL_SCPCFG_NTDLL_EXPORTS {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type RTL_SCPCFG_NTDLL_EXPORTS = _RTL_SCPCFG_NTDLL_EXPORTS;
+pub type PRTL_SCPCFG_NTDLL_EXPORTS = *mut _RTL_SCPCFG_NTDLL_EXPORTS;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _LDR_RESOURCE_INFO {
@@ -9922,19 +10714,11 @@ pub enum _MUTANT_INFORMATION_CLASS {
 }
 pub use self::_MUTANT_INFORMATION_CLASS as MUTANT_INFORMATION_CLASS;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _MUTANT_BASIC_INFORMATION {
    pub CurrentCount: LONG,
    pub OwnedByCaller: BOOLEAN,
    pub AbandonedState: BOOLEAN,
-}
-impl Default for _MUTANT_BASIC_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type MUTANT_BASIC_INFORMATION = _MUTANT_BASIC_INFORMATION;
 pub type PMUTANT_BASIC_INFORMATION = *mut _MUTANT_BASIC_INFORMATION;
@@ -9977,6 +10761,7 @@ pub enum _TIMER_INFORMATION_CLASS {
 }
 pub use self::_TIMER_INFORMATION_CLASS as TIMER_INFORMATION_CLASS;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _TIMER_BASIC_INFORMATION {
    pub RemainingTime: LARGE_INTEGER,
    pub TimerState: BOOLEAN,
@@ -10123,6 +10908,7 @@ pub enum _WORKERFACTORYINFOCLASS {
 pub use self::_WORKERFACTORYINFOCLASS as WORKERFACTORYINFOCLASS;
 pub type PWORKERFACTORYINFOCLASS = *mut _WORKERFACTORYINFOCLASS;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _WORKER_FACTORY_BASIC_INFORMATION {
    pub Timeout: LARGE_INTEGER,
    pub RetryTimeout: LARGE_INTEGER,
@@ -10630,6 +11416,7 @@ impl Default for _SYSTEM_EXTENDED_THREAD_INFORMATION {
 pub type SYSTEM_EXTENDED_THREAD_INFORMATION = _SYSTEM_EXTENDED_THREAD_INFORMATION;
 pub type PSYSTEM_EXTENDED_THREAD_INFORMATION = *mut _SYSTEM_EXTENDED_THREAD_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SYSTEM_PROCESS_INFORMATION {
    pub NextEntryOffset: ULONG,
    pub NumberOfThreads: ULONG,
@@ -10866,6 +11653,7 @@ impl Default for _SYSTEM_HANDLE_INFORMATION {
 pub type SYSTEM_HANDLE_INFORMATION = _SYSTEM_HANDLE_INFORMATION;
 pub type PSYSTEM_HANDLE_INFORMATION = *mut _SYSTEM_HANDLE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_OBJECTTYPE_INFORMATION {
    pub NextEntryOffset: ULONG,
    pub NumberOfObjects: ULONG,
@@ -10891,6 +11679,7 @@ impl Default for _SYSTEM_OBJECTTYPE_INFORMATION {
 pub type SYSTEM_OBJECTTYPE_INFORMATION = _SYSTEM_OBJECTTYPE_INFORMATION;
 pub type PSYSTEM_OBJECTTYPE_INFORMATION = *mut _SYSTEM_OBJECTTYPE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_OBJECT_INFORMATION {
    pub NextEntryOffset: ULONG,
    pub Object: PVOID,
@@ -10917,6 +11706,7 @@ impl Default for _SYSTEM_OBJECT_INFORMATION {
 pub type SYSTEM_OBJECT_INFORMATION = _SYSTEM_OBJECT_INFORMATION;
 pub type PSYSTEM_OBJECT_INFORMATION = *mut _SYSTEM_OBJECT_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_PAGEFILE_INFORMATION {
    pub NextEntryOffset: ULONG,
    pub TotalSize: ULONG,
@@ -11077,70 +11867,38 @@ pub struct _SYSTEM_DPC_BEHAVIOR_INFORMATION {
 pub type SYSTEM_DPC_BEHAVIOR_INFORMATION = _SYSTEM_DPC_BEHAVIOR_INFORMATION;
 pub type PSYSTEM_DPC_BEHAVIOR_INFORMATION = *mut _SYSTEM_DPC_BEHAVIOR_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_QUERY_TIME_ADJUST_INFORMATION {
    pub TimeAdjustment: ULONG,
    pub TimeIncrement: ULONG,
    pub Enable: BOOLEAN,
 }
-impl Default for _SYSTEM_QUERY_TIME_ADJUST_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type SYSTEM_QUERY_TIME_ADJUST_INFORMATION = _SYSTEM_QUERY_TIME_ADJUST_INFORMATION;
 pub type PSYSTEM_QUERY_TIME_ADJUST_INFORMATION = *mut _SYSTEM_QUERY_TIME_ADJUST_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_QUERY_TIME_ADJUST_INFORMATION_PRECISE {
    pub TimeAdjustment: ULONGLONG,
    pub TimeIncrement: ULONGLONG,
    pub Enable: BOOLEAN,
-}
-impl Default for _SYSTEM_QUERY_TIME_ADJUST_INFORMATION_PRECISE {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_QUERY_TIME_ADJUST_INFORMATION_PRECISE =
    _SYSTEM_QUERY_TIME_ADJUST_INFORMATION_PRECISE;
 pub type PSYSTEM_QUERY_TIME_ADJUST_INFORMATION_PRECISE =
    *mut _SYSTEM_QUERY_TIME_ADJUST_INFORMATION_PRECISE;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_SET_TIME_ADJUST_INFORMATION {
    pub TimeAdjustment: ULONG,
    pub Enable: BOOLEAN,
 }
-impl Default for _SYSTEM_SET_TIME_ADJUST_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type SYSTEM_SET_TIME_ADJUST_INFORMATION = _SYSTEM_SET_TIME_ADJUST_INFORMATION;
 pub type PSYSTEM_SET_TIME_ADJUST_INFORMATION = *mut _SYSTEM_SET_TIME_ADJUST_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE {
    pub TimeAdjustment: ULONGLONG,
    pub Enable: BOOLEAN,
-}
-impl Default for _SYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE = _SYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE;
 pub type PSYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE =
@@ -11182,18 +11940,10 @@ impl Default for _SYSTEM_CRASH_DUMP_STATE_INFORMATION {
 pub type SYSTEM_CRASH_DUMP_STATE_INFORMATION = _SYSTEM_CRASH_DUMP_STATE_INFORMATION;
 pub type PSYSTEM_CRASH_DUMP_STATE_INFORMATION = *mut _SYSTEM_CRASH_DUMP_STATE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_KERNEL_DEBUGGER_INFORMATION {
    pub KernelDebuggerEnabled: BOOLEAN,
    pub KernelDebuggerNotPresent: BOOLEAN,
-}
-impl Default for _SYSTEM_KERNEL_DEBUGGER_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_KERNEL_DEBUGGER_INFORMATION = _SYSTEM_KERNEL_DEBUGGER_INFORMATION;
 pub type PSYSTEM_KERNEL_DEBUGGER_INFORMATION = *mut _SYSTEM_KERNEL_DEBUGGER_INFORMATION;
@@ -11239,6 +11989,7 @@ pub struct _SYSTEM_PROCESSOR_IDLE_INFORMATION {
 pub type SYSTEM_PROCESSOR_IDLE_INFORMATION = _SYSTEM_PROCESSOR_IDLE_INFORMATION;
 pub type PSYSTEM_PROCESSOR_IDLE_INFORMATION = *mut _SYSTEM_PROCESSOR_IDLE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_LEGACY_DRIVER_INFORMATION {
    pub VetoType: ULONG,
    pub VetoList: UNICODE_STRING,
@@ -11277,6 +12028,7 @@ pub struct _SYSTEM_RANGE_START_INFORMATION {
 pub type SYSTEM_RANGE_START_INFORMATION = _SYSTEM_RANGE_START_INFORMATION;
 pub type PSYSTEM_RANGE_START_INFORMATION = *mut _SYSTEM_RANGE_START_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_VERIFIER_INFORMATION_LEGACY {
    pub NextEntryOffset: ULONG,
    pub Level: ULONG,
@@ -11316,6 +12068,7 @@ impl Default for _SYSTEM_VERIFIER_INFORMATION_LEGACY {
 pub type SYSTEM_VERIFIER_INFORMATION_LEGACY = _SYSTEM_VERIFIER_INFORMATION_LEGACY;
 pub type PSYSTEM_VERIFIER_INFORMATION_LEGACY = *mut _SYSTEM_VERIFIER_INFORMATION_LEGACY;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_VERIFIER_INFORMATION {
    pub NextEntryOffset: ULONG,
    pub Level: ULONG,
@@ -11376,6 +12129,7 @@ impl Default for _SYSTEM_SESSION_PROCESS_INFORMATION {
 pub type SYSTEM_SESSION_PROCESS_INFORMATION = _SYSTEM_SESSION_PROCESS_INFORMATION;
 pub type PSYSTEM_SESSION_PROCESS_INFORMATION = *mut _SYSTEM_SESSION_PROCESS_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_GDI_DRIVER_INFORMATION {
    pub DriverName: UNICODE_STRING,
    pub ImageAddress: PVOID,
@@ -11585,6 +12339,7 @@ impl Default for _SYSTEM_BIGPOOL_INFORMATION {
 pub type SYSTEM_BIGPOOL_INFORMATION = _SYSTEM_BIGPOOL_INFORMATION;
 pub type PSYSTEM_BIGPOOL_INFORMATION = *mut _SYSTEM_BIGPOOL_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SYSTEM_POOL_ENTRY {
    pub Allocated: BOOLEAN,
    pub Spare0: BOOLEAN,
@@ -11620,6 +12375,7 @@ impl Default for _SYSTEM_POOL_ENTRY {
 pub type SYSTEM_POOL_ENTRY = _SYSTEM_POOL_ENTRY;
 pub type PSYSTEM_POOL_ENTRY = *mut _SYSTEM_POOL_ENTRY;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SYSTEM_POOL_INFORMATION {
    pub TotalSize: SIZE_T,
    pub FirstEntry: PVOID,
@@ -11775,6 +12531,7 @@ pub type PFNFTH = ::core::option::Option<
    unsafe extern "C" fn(SystemFirmwareTableInfo: PSYSTEM_FIRMWARE_TABLE_INFORMATION) -> NTSTATUS,
 >;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_FIRMWARE_TABLE_HANDLER {
    pub ProviderSignature: ULONG,
    pub Register: BOOLEAN,
@@ -11885,6 +12642,7 @@ impl Default for _SYSTEM_VERIFIER_CANCELLATION_INFORMATION {
 pub type SYSTEM_VERIFIER_CANCELLATION_INFORMATION = _SYSTEM_VERIFIER_CANCELLATION_INFORMATION;
 pub type PSYSTEM_VERIFIER_CANCELLATION_INFORMATION = *mut _SYSTEM_VERIFIER_CANCELLATION_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_REF_TRACE_INFORMATION {
    pub TraceEnable: BOOLEAN,
    pub TracePermanent: BOOLEAN,
@@ -11911,6 +12669,7 @@ pub struct _SYSTEM_SPECIAL_POOL_INFORMATION {
 pub type SYSTEM_SPECIAL_POOL_INFORMATION = _SYSTEM_SPECIAL_POOL_INFORMATION;
 pub type PSYSTEM_SPECIAL_POOL_INFORMATION = *mut _SYSTEM_SPECIAL_POOL_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_PROCESS_ID_INFORMATION {
    pub ProcessId: HANDLE,
    pub ImageName: UNICODE_STRING,
@@ -11927,21 +12686,13 @@ impl Default for _SYSTEM_PROCESS_ID_INFORMATION {
 pub type SYSTEM_PROCESS_ID_INFORMATION = _SYSTEM_PROCESS_ID_INFORMATION;
 pub type PSYSTEM_PROCESS_ID_INFORMATION = *mut _SYSTEM_PROCESS_ID_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_HYPERVISOR_QUERY_INFORMATION {
    pub HypervisorConnected: BOOLEAN,
    pub HypervisorDebuggingEnabled: BOOLEAN,
    pub HypervisorPresent: BOOLEAN,
    pub Spare0: [BOOLEAN; 5usize],
    pub EnabledEnlightenments: ULONGLONG,
-}
-impl Default for _SYSTEM_HYPERVISOR_QUERY_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_HYPERVISOR_QUERY_INFORMATION = _SYSTEM_HYPERVISOR_QUERY_INFORMATION;
 pub type PSYSTEM_HYPERVISOR_QUERY_INFORMATION = *mut _SYSTEM_HYPERVISOR_QUERY_INFORMATION;
@@ -12193,14 +12944,16 @@ pub enum _COVERAGE_REQUEST_CODES {
 }
 pub use self::_COVERAGE_REQUEST_CODES as COVERAGE_REQUEST_CODES;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _COVERAGE_MODULE_REQUEST {
    pub RequestType: COVERAGE_REQUEST_CODES,
    pub SearchInfo: _COVERAGE_MODULE_REQUEST__bindgen_ty_1,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _COVERAGE_MODULE_REQUEST__bindgen_ty_1 {
-   pub MD5Hash: ::core::mem::ManuallyDrop<[UCHAR; 16usize]>,
-   pub ModuleName: ::core::mem::ManuallyDrop<UNICODE_STRING>,
+   pub MD5Hash: [UCHAR; 16usize],
+   pub ModuleName: UNICODE_STRING,
 }
 impl Default for _COVERAGE_MODULE_REQUEST__bindgen_ty_1 {
    fn default() -> Self {
@@ -12223,6 +12976,7 @@ impl Default for _COVERAGE_MODULE_REQUEST {
 pub type COVERAGE_MODULE_REQUEST = _COVERAGE_MODULE_REQUEST;
 pub type PCOVERAGE_MODULE_REQUEST = *mut _COVERAGE_MODULE_REQUEST;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _COVERAGE_MODULE_INFO {
    pub ModuleInfoSize: ULONG,
    pub IsBinaryLoaded: ULONG,
@@ -12242,6 +12996,7 @@ impl Default for _COVERAGE_MODULE_INFO {
 pub type COVERAGE_MODULE_INFO = _COVERAGE_MODULE_INFO;
 pub type PCOVERAGE_MODULE_INFO = *mut _COVERAGE_MODULE_INFO;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _COVERAGE_MODULES {
    pub ListAndReset: ULONG,
    pub NumberOfModules: ULONG,
@@ -12267,6 +13022,7 @@ pub struct _SYSTEM_PREFETCH_PATCH_INFORMATION {
 pub type SYSTEM_PREFETCH_PATCH_INFORMATION = _SYSTEM_PREFETCH_PATCH_INFORMATION;
 pub type PSYSTEM_PREFETCH_PATCH_INFORMATION = *mut _SYSTEM_PREFETCH_PATCH_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_VERIFIER_FAULTS_INFORMATION {
    pub Probability: ULONG,
    pub MaxProbability: ULONG,
@@ -12285,6 +13041,7 @@ impl Default for _SYSTEM_VERIFIER_FAULTS_INFORMATION {
 pub type SYSTEM_VERIFIER_FAULTS_INFORMATION = _SYSTEM_VERIFIER_FAULTS_INFORMATION;
 pub type PSYSTEM_VERIFIER_FAULTS_INFORMATION = *mut _SYSTEM_VERIFIER_FAULTS_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_VERIFIER_INFORMATION_EX {
    pub VerifyMode: ULONG,
    pub OptionChanges: ULONG,
@@ -12305,6 +13062,7 @@ impl Default for _SYSTEM_VERIFIER_INFORMATION_EX {
 pub type SYSTEM_VERIFIER_INFORMATION_EX = _SYSTEM_VERIFIER_INFORMATION_EX;
 pub type PSYSTEM_VERIFIER_INFORMATION_EX = *mut _SYSTEM_VERIFIER_INFORMATION_EX;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_SYSTEM_PARTITION_INFORMATION {
    pub SystemPartition: UNICODE_STRING,
 }
@@ -12320,6 +13078,7 @@ impl Default for _SYSTEM_SYSTEM_PARTITION_INFORMATION {
 pub type SYSTEM_SYSTEM_PARTITION_INFORMATION = _SYSTEM_SYSTEM_PARTITION_INFORMATION;
 pub type PSYSTEM_SYSTEM_PARTITION_INFORMATION = *mut _SYSTEM_SYSTEM_PARTITION_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_SYSTEM_DISK_INFORMATION {
    pub SystemDisk: UNICODE_STRING,
 }
@@ -14417,6 +15176,7 @@ impl _SM_MEM_COMPRESSION_INFO_REQUEST {
 pub type SM_MEM_COMPRESSION_INFO_REQUEST = _SM_MEM_COMPRESSION_INFO_REQUEST;
 pub type PSM_MEM_COMPRESSION_INFO_REQUEST = *mut _SM_MEM_COMPRESSION_INFO_REQUEST;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_REGISTRY_APPEND_STRING_PARAMETERS {
    pub KeyHandle: HANDLE,
    pub ValueNamePointer: PUNICODE_STRING,
@@ -14441,19 +15201,11 @@ impl Default for _SYSTEM_REGISTRY_APPEND_STRING_PARAMETERS {
 pub type SYSTEM_REGISTRY_APPEND_STRING_PARAMETERS = _SYSTEM_REGISTRY_APPEND_STRING_PARAMETERS;
 pub type PSYSTEM_REGISTRY_APPEND_STRING_PARAMETERS = *mut _SYSTEM_REGISTRY_APPEND_STRING_PARAMETERS;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_VHD_BOOT_INFORMATION {
    pub OsDiskIsVhd: BOOLEAN,
    pub OsVhdFilePathOffset: ULONG,
    pub OsVhdParentVolume: [WCHAR; 1usize],
-}
-impl Default for _SYSTEM_VHD_BOOT_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_VHD_BOOT_INFORMATION = _SYSTEM_VHD_BOOT_INFORMATION;
 pub type PSYSTEM_VHD_BOOT_INFORMATION = *mut _SYSTEM_VHD_BOOT_INFORMATION;
@@ -14509,6 +15261,7 @@ pub enum _TPM_BOOT_ENTROPY_RESULT_CODE {
 }
 pub use self::_TPM_BOOT_ENTROPY_RESULT_CODE as TPM_BOOT_ENTROPY_RESULT_CODE;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _TPM_BOOT_ENTROPY_NT_RESULT {
    pub Policy: ULONGLONG,
    pub ResultCode: TPM_BOOT_ENTROPY_RESULT_CODE,
@@ -14529,6 +15282,7 @@ impl Default for _TPM_BOOT_ENTROPY_NT_RESULT {
 pub type TPM_BOOT_ENTROPY_NT_RESULT = _TPM_BOOT_ENTROPY_NT_RESULT;
 pub type PTPM_BOOT_ENTROPY_NT_RESULT = *mut _TPM_BOOT_ENTROPY_NT_RESULT;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_VERIFIER_COUNTERS_INFORMATION {
    pub Legacy: SYSTEM_VERIFIER_INFORMATION,
    pub RaiseIrqls: ULONG,
@@ -14943,6 +15697,7 @@ impl Default for _PROCESSOR_PROFILE_CONTROL_AREA {
 pub type PROCESSOR_PROFILE_CONTROL_AREA = _PROCESSOR_PROFILE_CONTROL_AREA;
 pub type PPROCESSOR_PROFILE_CONTROL_AREA = *mut _PROCESSOR_PROFILE_CONTROL_AREA;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SYSTEM_PROCESSOR_PROFILE_CONTROL_AREA {
    pub ProcessorProfileControlArea: PROCESSOR_PROFILE_CONTROL_AREA,
    pub Allocate: BOOLEAN,
@@ -15127,6 +15882,7 @@ pub type SYSTEM_HYPERVISOR_PROCESSOR_COUNT_INFORMATION =
 pub type PSYSTEM_HYPERVISOR_PROCESSOR_COUNT_INFORMATION =
    *mut _SYSTEM_HYPERVISOR_PROCESSOR_COUNT_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_DEVICE_DATA_INFORMATION {
    pub DeviceId: UNICODE_STRING,
    pub DataName: UNICODE_STRING,
@@ -15222,18 +15978,20 @@ pub struct _SYSTEM_SECUREBOOT_POLICY_INFORMATION {
 pub type SYSTEM_SECUREBOOT_POLICY_INFORMATION = _SYSTEM_SECUREBOOT_POLICY_INFORMATION;
 pub type PSYSTEM_SECUREBOOT_POLICY_INFORMATION = *mut _SYSTEM_SECUREBOOT_POLICY_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SYSTEM_PAGEFILE_INFORMATION_EX {
    pub __bindgen_anon_1: _SYSTEM_PAGEFILE_INFORMATION_EX__bindgen_ty_1,
    pub MinimumSize: ULONG,
    pub MaximumSize: ULONG,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _SYSTEM_PAGEFILE_INFORMATION_EX__bindgen_ty_1 {
-   pub Info: ::core::mem::ManuallyDrop<SYSTEM_PAGEFILE_INFORMATION>,
-   pub __bindgen_anon_1:
-      ::core::mem::ManuallyDrop<_SYSTEM_PAGEFILE_INFORMATION_EX__bindgen_ty_1__bindgen_ty_1>,
+   pub Info: SYSTEM_PAGEFILE_INFORMATION,
+   pub __bindgen_anon_1: _SYSTEM_PAGEFILE_INFORMATION_EX__bindgen_ty_1__bindgen_ty_1,
 }
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_PAGEFILE_INFORMATION_EX__bindgen_ty_1__bindgen_ty_1 {
    pub NextEntryOffset: ULONG,
    pub TotalSize: ULONG,
@@ -15271,18 +16029,10 @@ impl Default for _SYSTEM_PAGEFILE_INFORMATION_EX {
 pub type SYSTEM_PAGEFILE_INFORMATION_EX = _SYSTEM_PAGEFILE_INFORMATION_EX;
 pub type PSYSTEM_PAGEFILE_INFORMATION_EX = *mut _SYSTEM_PAGEFILE_INFORMATION_EX;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_SECUREBOOT_INFORMATION {
    pub SecureBootEnabled: BOOLEAN,
    pub SecureBootCapable: BOOLEAN,
-}
-impl Default for _SYSTEM_SECUREBOOT_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_SECUREBOOT_INFORMATION = _SYSTEM_SECUREBOOT_INFORMATION;
 pub type PSYSTEM_SECUREBOOT_INFORMATION = *mut _SYSTEM_SECUREBOOT_INFORMATION;
@@ -15684,36 +16434,20 @@ impl Default for _SYSTEM_PROCESS_INFORMATION_EXTENSION {
 pub type SYSTEM_PROCESS_INFORMATION_EXTENSION = _SYSTEM_PROCESS_INFORMATION_EXTENSION;
 pub type PSYSTEM_PROCESS_INFORMATION_EXTENSION = *mut _SYSTEM_PROCESS_INFORMATION_EXTENSION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_PORTABLE_WORKSPACE_EFI_LAUNCHER_INFORMATION {
    pub EfiLauncherEnabled: BOOLEAN,
-}
-impl Default for _SYSTEM_PORTABLE_WORKSPACE_EFI_LAUNCHER_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_PORTABLE_WORKSPACE_EFI_LAUNCHER_INFORMATION =
    _SYSTEM_PORTABLE_WORKSPACE_EFI_LAUNCHER_INFORMATION;
 pub type PSYSTEM_PORTABLE_WORKSPACE_EFI_LAUNCHER_INFORMATION =
    *mut _SYSTEM_PORTABLE_WORKSPACE_EFI_LAUNCHER_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_KERNEL_DEBUGGER_INFORMATION_EX {
    pub DebuggerAllowed: BOOLEAN,
    pub DebuggerEnabled: BOOLEAN,
    pub DebuggerPresent: BOOLEAN,
-}
-impl Default for _SYSTEM_KERNEL_DEBUGGER_INFORMATION_EX {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_KERNEL_DEBUGGER_INFORMATION_EX = _SYSTEM_KERNEL_DEBUGGER_INFORMATION_EX;
 pub type PSYSTEM_KERNEL_DEBUGGER_INFORMATION_EX = *mut _SYSTEM_KERNEL_DEBUGGER_INFORMATION_EX;
@@ -15787,6 +16521,7 @@ impl Default for _SYSTEM_EDID_INFORMATION {
 pub type SYSTEM_EDID_INFORMATION = _SYSTEM_EDID_INFORMATION;
 pub type PSYSTEM_EDID_INFORMATION = *mut _SYSTEM_EDID_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_MANUFACTURING_INFORMATION {
    pub Options: ULONG,
    pub ProfileName: UNICODE_STRING,
@@ -15803,17 +16538,9 @@ impl Default for _SYSTEM_MANUFACTURING_INFORMATION {
 pub type SYSTEM_MANUFACTURING_INFORMATION = _SYSTEM_MANUFACTURING_INFORMATION;
 pub type PSYSTEM_MANUFACTURING_INFORMATION = *mut _SYSTEM_MANUFACTURING_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_ENERGY_ESTIMATION_CONFIG_INFORMATION {
    pub Enabled: BOOLEAN,
-}
-impl Default for _SYSTEM_ENERGY_ESTIMATION_CONFIG_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_ENERGY_ESTIMATION_CONFIG_INFORMATION = _SYSTEM_ENERGY_ESTIMATION_CONFIG_INFORMATION;
 pub type PSYSTEM_ENERGY_ESTIMATION_CONFIG_INFORMATION =
@@ -15853,35 +16580,19 @@ pub struct _SYSTEM_TPM_INFORMATION {
 pub type SYSTEM_TPM_INFORMATION = _SYSTEM_TPM_INFORMATION;
 pub type PSYSTEM_TPM_INFORMATION = *mut _SYSTEM_TPM_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_VSM_PROTECTION_INFORMATION {
    pub DmaProtectionsAvailable: BOOLEAN,
    pub DmaProtectionsInUse: BOOLEAN,
    pub HardwareMbecAvailable: BOOLEAN,
    pub ApicVirtualizationAvailable: BOOLEAN,
 }
-impl Default for _SYSTEM_VSM_PROTECTION_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type SYSTEM_VSM_PROTECTION_INFORMATION = _SYSTEM_VSM_PROTECTION_INFORMATION;
 pub type PSYSTEM_VSM_PROTECTION_INFORMATION = *mut _SYSTEM_VSM_PROTECTION_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_KERNEL_DEBUGGER_FLAGS {
    pub KernelDebuggerIgnoreUmExceptions: BOOLEAN,
-}
-impl Default for _SYSTEM_KERNEL_DEBUGGER_FLAGS {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_KERNEL_DEBUGGER_FLAGS = _SYSTEM_KERNEL_DEBUGGER_FLAGS;
 pub type PSYSTEM_KERNEL_DEBUGGER_FLAGS = *mut _SYSTEM_KERNEL_DEBUGGER_FLAGS;
@@ -15896,20 +16607,12 @@ pub struct _SYSTEM_CODEINTEGRITYPOLICY_INFORMATION {
 pub type SYSTEM_CODEINTEGRITYPOLICY_INFORMATION = _SYSTEM_CODEINTEGRITYPOLICY_INFORMATION;
 pub type PSYSTEM_CODEINTEGRITYPOLICY_INFORMATION = *mut _SYSTEM_CODEINTEGRITYPOLICY_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_ISOLATED_USER_MODE_INFORMATION {
    pub _bitfield_align_1: [u8; 0],
    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 2usize]>,
    pub Spare0: [BOOLEAN; 6usize],
    pub Spare1: ULONGLONG,
-}
-impl Default for _SYSTEM_ISOLATED_USER_MODE_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 impl _SYSTEM_ISOLATED_USER_MODE_INFORMATION {
    #[inline]
@@ -16382,6 +17085,7 @@ pub enum _SYSTEM_ACTIVITY_MODERATION_STATE {
 }
 pub use self::_SYSTEM_ACTIVITY_MODERATION_STATE as SYSTEM_ACTIVITY_MODERATION_STATE;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_ACTIVITY_MODERATION_EXE_STATE {
    pub ExePathNt: UNICODE_STRING,
    pub ModerationState: SYSTEM_ACTIVITY_MODERATION_STATE,
@@ -16407,6 +17111,7 @@ pub enum _SYSTEM_ACTIVITY_MODERATION_APP_TYPE {
 }
 pub use self::_SYSTEM_ACTIVITY_MODERATION_APP_TYPE as SYSTEM_ACTIVITY_MODERATION_APP_TYPE;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_ACTIVITY_MODERATION_INFO {
    pub Identifier: UNICODE_STRING,
    pub ModerationState: SYSTEM_ACTIVITY_MODERATION_STATE,
@@ -16822,6 +17527,7 @@ pub type SYSTEM_HYPERVISOR_SHARED_PAGE_INFORMATION = _SYSTEM_HYPERVISOR_SHARED_P
 pub type PSYSTEM_HYPERVISOR_SHARED_PAGE_INFORMATION =
    *mut _SYSTEM_HYPERVISOR_SHARED_PAGE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_FIRMWARE_PARTITION_INFORMATION {
    pub FirmwarePartition: UNICODE_STRING,
 }
@@ -17687,17 +18393,9 @@ impl Default for _SYSTEM_SPECULATION_CONTROL_INFORMATION {
 pub type SYSTEM_SPECULATION_CONTROL_INFORMATION = _SYSTEM_SPECULATION_CONTROL_INFORMATION;
 pub type PSYSTEM_SPECULATION_CONTROL_INFORMATION = *mut _SYSTEM_SPECULATION_CONTROL_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_DMA_GUARD_POLICY_INFORMATION {
    pub DmaGuardPolicyEnabled: BOOLEAN,
-}
-impl Default for _SYSTEM_DMA_GUARD_POLICY_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_DMA_GUARD_POLICY_INFORMATION = _SYSTEM_DMA_GUARD_POLICY_INFORMATION;
 pub type PSYSTEM_DMA_GUARD_POLICY_INFORMATION = *mut _SYSTEM_DMA_GUARD_POLICY_INFORMATION;
@@ -18787,18 +19485,10 @@ pub type SYSTEM_ORIGINAL_IMAGE_FEATURE_INFORMATION_INPUT =
 pub type PSYSTEM_ORIGINAL_IMAGE_FEATURE_INFORMATION_INPUT =
    *mut _SYSTEM_ORIGINAL_IMAGE_FEATURE_INFORMATION_INPUT;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_ORIGINAL_IMAGE_FEATURE_INFORMATION_OUTPUT {
    pub Version: ULONG,
    pub FeatureIsEnabled: BOOLEAN,
-}
-impl Default for _SYSTEM_ORIGINAL_IMAGE_FEATURE_INFORMATION_OUTPUT {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SYSTEM_ORIGINAL_IMAGE_FEATURE_INFORMATION_OUTPUT =
    _SYSTEM_ORIGINAL_IMAGE_FEATURE_INFORMATION_OUTPUT;
@@ -18929,6 +19619,7 @@ pub type SYSTEM_MEMORY_NUMA_PERFORMANCE_INFORMATION_INPUT =
 pub type PSYSTEM_MEMORY_NUMA_PERFORMANCE_INFORMATION_INPUT =
    *mut _SYSTEM_MEMORY_NUMA_PERFORMANCE_INFORMATION_INPUT;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY {
    pub InitiatorNodeNumber: ULONG,
    pub TargetNodeNumber: ULONG,
@@ -18938,24 +19629,16 @@ pub struct _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY {
    pub EntryValue: ULONG_PTR,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY__bindgen_ty_1 {
-   pub Flags: ::core::mem::ManuallyDrop<BOOLEAN>,
-   pub __bindgen_anon_1:
-      ::core::mem::ManuallyDrop<_SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY__bindgen_ty_1__bindgen_ty_1>,
+   pub Flags: BOOLEAN,
+   pub __bindgen_anon_1: _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY__bindgen_ty_1__bindgen_ty_1,
 }
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY__bindgen_ty_1__bindgen_ty_1 {
    pub _bitfield_align_1: [u8; 0],
    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
-}
-impl Default for _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY__bindgen_ty_1__bindgen_ty_1 {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 impl _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY__bindgen_ty_1__bindgen_ty_1 {
    #[inline]
@@ -19035,6 +19718,7 @@ impl Default for _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY {
 pub type SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY = _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY;
 pub type PSYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY = *mut _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SYSTEM_MEMORY_NUMA_PERFORMANCE_INFORMATION_OUTPUT {
    pub Version: ULONG,
    pub Size: ULONG,
@@ -19642,6 +20326,7 @@ impl Default for _SYSDBG_LIVEDUMP_CONTROL {
 pub type SYSDBG_LIVEDUMP_CONTROL = _SYSDBG_LIVEDUMP_CONTROL;
 pub type PSYSDBG_LIVEDUMP_CONTROL = *mut _SYSDBG_LIVEDUMP_CONTROL;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SYSDBG_KD_PULL_REMOTE_FILE {
    pub ImageFileName: UNICODE_STRING,
 }
@@ -19698,6 +20383,7 @@ pub enum _ALTERNATIVE_ARCHITECTURE_TYPE {
 }
 pub use self::_ALTERNATIVE_ARCHITECTURE_TYPE as ALTERNATIVE_ARCHITECTURE_TYPE;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _KUSER_SHARED_DATA {
    pub TickCountLowDeprecated: ULONG,
    pub TickCountMultiplier: ULONG,
@@ -20251,7 +20937,7 @@ pub enum _BCD_MESSAGE_TYPE {
 }
 pub use self::_BCD_MESSAGE_TYPE as BCD_MESSAGE_TYPE;
 pub type BCD_MESSAGE_CALLBACK =
-   ::core::option::Option<unsafe extern "C" fn(type_: BCD_MESSAGE_TYPE, Message: PWSTR)>;
+   ::core::option::Option<unsafe extern "C" fn(type_: BCD_MESSAGE_TYPE, Message: PCWSTR)>;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -21016,17 +21702,9 @@ pub struct _BCD_ELEMENT_INTEGER_LIST {
 pub type BCD_ELEMENT_INTEGER_LIST = _BCD_ELEMENT_INTEGER_LIST;
 pub type PBCD_ELEMENT_INTEGER_LIST = *mut _BCD_ELEMENT_INTEGER_LIST;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _BCD_ELEMENT_BOOLEAN {
    pub Value: BOOLEAN,
-}
-impl Default for _BCD_ELEMENT_BOOLEAN {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type BCD_ELEMENT_BOOLEAN = _BCD_ELEMENT_BOOLEAN;
 pub type PBCD_ELEMENT_BOOLEAN = *mut _BCD_ELEMENT_BOOLEAN;
@@ -23519,6 +24197,7 @@ impl Default for _SECTION_BASIC_INFORMATION {
 pub type SECTION_BASIC_INFORMATION = _SECTION_BASIC_INFORMATION;
 pub type PSECTION_BASIC_INFORMATION = *mut _SECTION_BASIC_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SECTION_IMAGE_INFORMATION {
    pub TransferAddress: PVOID,
    pub ZeroBits: ULONG,
@@ -23732,6 +24411,7 @@ impl Default for _SECTION_IMAGE_INFORMATION {
 pub type SECTION_IMAGE_INFORMATION = _SECTION_IMAGE_INFORMATION;
 pub type PSECTION_IMAGE_INFORMATION = *mut _SECTION_IMAGE_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SECTION_INTERNAL_IMAGE_INFORMATION {
    pub SectionInformation: SECTION_IMAGE_INFORMATION,
    pub __bindgen_anon_1: _SECTION_INTERNAL_IMAGE_INFORMATION__bindgen_ty_1,
@@ -24087,6 +24767,7 @@ pub struct _MEMORY_PARTITION_TRANSFER_INFORMATION {
 pub type MEMORY_PARTITION_TRANSFER_INFORMATION = _MEMORY_PARTITION_TRANSFER_INFORMATION;
 pub type PMEMORY_PARTITION_TRANSFER_INFORMATION = *mut _MEMORY_PARTITION_TRANSFER_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _MEMORY_PARTITION_PAGEFILE_INFORMATION {
    pub PageFileName: UNICODE_STRING,
    pub MinimumSize: LARGE_INTEGER,
@@ -24262,6 +24943,7 @@ impl Default for _OBJECT_BASIC_INFORMATION {
 pub type OBJECT_BASIC_INFORMATION = _OBJECT_BASIC_INFORMATION;
 pub type POBJECT_BASIC_INFORMATION = *mut _OBJECT_BASIC_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _OBJECT_NAME_INFORMATION {
    pub Name: UNICODE_STRING,
 }
@@ -24277,6 +24959,7 @@ impl Default for _OBJECT_NAME_INFORMATION {
 pub type OBJECT_NAME_INFORMATION = _OBJECT_NAME_INFORMATION;
 pub type POBJECT_NAME_INFORMATION = *mut _OBJECT_NAME_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _OBJECT_TYPE_INFORMATION {
    pub TypeName: UNICODE_STRING,
    pub TotalNumberOfObjects: ULONG,
@@ -24321,22 +25004,15 @@ pub struct _OBJECT_TYPES_INFORMATION {
 pub type OBJECT_TYPES_INFORMATION = _OBJECT_TYPES_INFORMATION;
 pub type POBJECT_TYPES_INFORMATION = *mut _OBJECT_TYPES_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _OBJECT_HANDLE_FLAG_INFORMATION {
    pub Inherit: BOOLEAN,
    pub ProtectFromClose: BOOLEAN,
 }
-impl Default for _OBJECT_HANDLE_FLAG_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type OBJECT_HANDLE_FLAG_INFORMATION = _OBJECT_HANDLE_FLAG_INFORMATION;
 pub type POBJECT_HANDLE_FLAG_INFORMATION = *mut _OBJECT_HANDLE_FLAG_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _OBJECT_DIRECTORY_INFORMATION {
    pub Name: UNICODE_STRING,
    pub TypeName: UNICODE_STRING,
@@ -24469,6 +25145,7 @@ pub enum _SYMBOLIC_LINK_INFO_CLASS {
 }
 pub use self::_SYMBOLIC_LINK_INFO_CLASS as SYMBOLIC_LINK_INFO_CLASS;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PEB_LDR_DATA {
    pub Length: ULONG,
    pub Initialized: BOOLEAN,
@@ -24966,6 +25643,7 @@ pub type ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION_LEGACY =
 pub type PACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION_LEGACY =
    *mut _ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION_LEGACY;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _ASSEMBLY_STORAGE_MAP_ENTRY {
    pub Flags: ULONG,
    pub DosPath: UNICODE_STRING,
@@ -25180,10 +25858,208 @@ impl _TELEMETRY_COVERAGE_HEADER__bindgen_ty_1 {
 }
 pub type TELEMETRY_COVERAGE_HEADER = _TELEMETRY_COVERAGE_HEADER;
 pub type PTELEMETRY_COVERAGE_HEADER = *mut _TELEMETRY_COVERAGE_HEADER;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _WER_RECOVERY_INFO {
+   pub Length: ULONG,
+   pub Callback: PVOID,
+   pub Parameter: PVOID,
+   pub Started: HANDLE,
+   pub Finished: HANDLE,
+   pub InProgress: HANDLE,
+   pub LastError: LONG,
+   pub Successful: BOOL,
+   pub PingInterval: ULONG,
+   pub Flags: ULONG,
+}
+impl Default for _WER_RECOVERY_INFO {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type WER_RECOVERY_INFO = _WER_RECOVERY_INFO;
+pub type PWER_RECOVERY_INFO = *mut _WER_RECOVERY_INFO;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _WER_FILE {
+   pub Flags: USHORT,
+   pub Path: [WCHAR; 260usize],
+}
+impl Default for _WER_FILE {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type WER_FILE = _WER_FILE;
+pub type PWER_FILE = *mut _WER_FILE;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _WER_MEMORY {
+   pub Address: PVOID,
+   pub Size: ULONG,
+}
+impl Default for _WER_MEMORY {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type WER_MEMORY = _WER_MEMORY;
+pub type PWER_MEMORY = *mut _WER_MEMORY;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _WER_GATHER {
+   pub Next: PVOID,
+   pub Flags: USHORT,
+   pub v: _WER_GATHER__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _WER_GATHER__bindgen_ty_1 {
+   pub File: WER_FILE,
+   pub Memory: WER_MEMORY,
+}
+impl Default for _WER_GATHER__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for _WER_GATHER {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type WER_GATHER = _WER_GATHER;
+pub type PWER_GATHER = *mut _WER_GATHER;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _WER_METADATA {
+   pub Next: PVOID,
+   pub Key: [WCHAR; 64usize],
+   pub Value: [WCHAR; 128usize],
+}
+impl Default for _WER_METADATA {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type WER_METADATA = _WER_METADATA;
+pub type PWER_METADATA = *mut _WER_METADATA;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _WER_RUNTIME_DLL {
+   pub Next: PVOID,
+   pub Length: ULONG,
+   pub Context: PVOID,
+   pub CallbackDllPath: [WCHAR; 260usize],
+}
+impl Default for _WER_RUNTIME_DLL {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type WER_RUNTIME_DLL = _WER_RUNTIME_DLL;
+pub type PWER_RUNTIME_DLL = *mut _WER_RUNTIME_DLL;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _WER_DUMP_COLLECTION {
+   pub Next: PVOID,
+   pub ProcessId: ULONG,
+   pub ThreadId: ULONG,
+}
+impl Default for _WER_DUMP_COLLECTION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type WER_DUMP_COLLECTION = _WER_DUMP_COLLECTION;
+pub type PWER_DUMP_COLLECTION = *mut _WER_DUMP_COLLECTION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _WER_HEAP_MAIN_HEADER {
+   pub Signature: [WCHAR; 16usize],
+   pub Links: LIST_ENTRY,
+   pub Mutex: HANDLE,
+   pub FreeHeap: PVOID,
+   pub FreeCount: ULONG,
+}
+impl Default for _WER_HEAP_MAIN_HEADER {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type WER_HEAP_MAIN_HEADER = _WER_HEAP_MAIN_HEADER;
+pub type PWER_HEAP_MAIN_HEADER = *mut _WER_HEAP_MAIN_HEADER;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _WER_PEB_HEADER_BLOCK {
+   pub Length: LONG,
+   pub Signature: [WCHAR; 16usize],
+   pub AppDataRelativePath: [WCHAR; 64usize],
+   pub RestartCommandLine: [WCHAR; 1024usize],
+   pub RecoveryInfo: WER_RECOVERY_INFO,
+   pub Gather: PWER_GATHER,
+   pub MetaData: PWER_METADATA,
+   pub RuntimeDll: PWER_RUNTIME_DLL,
+   pub DumpCollection: PWER_DUMP_COLLECTION,
+   pub GatherCount: LONG,
+   pub MetaDataCount: LONG,
+   pub DumpCount: LONG,
+   pub Flags: LONG,
+   pub MainHeader: WER_HEAP_MAIN_HEADER,
+   pub Reserved: PVOID,
+}
+impl Default for _WER_PEB_HEADER_BLOCK {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type WER_PEB_HEADER_BLOCK = _WER_PEB_HEADER_BLOCK;
+pub type PWER_PEB_HEADER_BLOCK = *mut _WER_PEB_HEADER_BLOCK;
 pub type GDI_HANDLE_BUFFER = [ULONG; 60usize];
 pub type GDI_HANDLE_BUFFER32 = [ULONG; 34usize];
 pub type GDI_HANDLE_BUFFER64 = [ULONG; 60usize];
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _PEB {
    pub InheritedAddressSpace: BOOLEAN,
    pub ReadImageFileExecOptions: BOOLEAN,
@@ -25259,7 +26135,7 @@ pub struct _PEB {
    pub OemCodePage: USHORT,
    pub UseCaseMapping: USHORT,
    pub UnusedNlsField: USHORT,
-   pub WerRegistrationData: PVOID,
+   pub WerRegistrationData: PWER_PEB_HEADER_BLOCK,
    pub WerShipAssertPtr: PVOID,
    pub __bindgen_anon_4: _PEB__bindgen_ty_4,
    pub pImageHeaderHash: PVOID,
@@ -25279,23 +26155,16 @@ pub struct _PEB {
    pub ExtendedFeatureDisableMask: ULONGLONG,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _PEB__bindgen_ty_1 {
-   pub BitField: ::core::mem::ManuallyDrop<BOOLEAN>,
-   pub __bindgen_anon_1: ::core::mem::ManuallyDrop<_PEB__bindgen_ty_1__bindgen_ty_1>,
+   pub BitField: BOOLEAN,
+   pub __bindgen_anon_1: _PEB__bindgen_ty_1__bindgen_ty_1,
 }
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PEB__bindgen_ty_1__bindgen_ty_1 {
    pub _bitfield_align_1: [u8; 0],
    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
-}
-impl Default for _PEB__bindgen_ty_1__bindgen_ty_1 {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 impl _PEB__bindgen_ty_1__bindgen_ty_1 {
    #[inline]
@@ -25906,6 +26775,7 @@ impl Default for _TEB_ACTIVE_FRAME_EX {
 pub type TEB_ACTIVE_FRAME_EX = _TEB_ACTIVE_FRAME_EX;
 pub type PTEB_ACTIVE_FRAME_EX = *mut _TEB_ACTIVE_FRAME_EX;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _TEB {
    pub NtTib: NT_TIB,
    pub EnvironmentPointer: PVOID,
@@ -26570,6 +27440,7 @@ pub struct _PAGE_PRIORITY_INFORMATION {
 pub type PAGE_PRIORITY_INFORMATION = _PAGE_PRIORITY_INFORMATION;
 pub type PPAGE_PRIORITY_INFORMATION = *mut _PAGE_PRIORITY_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PROCESS_BASIC_INFORMATION {
    pub ExitStatus: NTSTATUS,
    pub PebBaseAddress: PPEB,
@@ -26590,6 +27461,7 @@ impl Default for _PROCESS_BASIC_INFORMATION {
 pub type PROCESS_BASIC_INFORMATION = _PROCESS_BASIC_INFORMATION;
 pub type PPROCESS_BASIC_INFORMATION = *mut _PROCESS_BASIC_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _PROCESS_EXTENDED_BASIC_INFORMATION {
    pub Size: SIZE_T,
    pub BasicInfo: PROCESS_BASIC_INFORMATION,
@@ -27014,22 +27886,15 @@ impl Default for _PROCESS_WS_WATCH_INFORMATION_EX {
 pub type PROCESS_WS_WATCH_INFORMATION_EX = _PROCESS_WS_WATCH_INFORMATION_EX;
 pub type PPROCESS_WS_WATCH_INFORMATION_EX = *mut _PROCESS_WS_WATCH_INFORMATION_EX;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PROCESS_PRIORITY_CLASS {
    pub Foreground: BOOLEAN,
    pub PriorityClass: UCHAR,
 }
-impl Default for _PROCESS_PRIORITY_CLASS {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type PROCESS_PRIORITY_CLASS = _PROCESS_PRIORITY_CLASS;
 pub type PPROCESS_PRIORITY_CLASS = *mut _PROCESS_PRIORITY_CLASS;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _PROCESS_PRIORITY_CLASS_EX {
    pub __bindgen_anon_1: _PROCESS_PRIORITY_CLASS_EX__bindgen_ty_1,
    pub PriorityClass: UCHAR,
@@ -27110,17 +27975,9 @@ impl Default for _PROCESS_PRIORITY_CLASS_EX {
 pub type PROCESS_PRIORITY_CLASS_EX = _PROCESS_PRIORITY_CLASS_EX;
 pub type PPROCESS_PRIORITY_CLASS_EX = *mut _PROCESS_PRIORITY_CLASS_EX;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PROCESS_FOREGROUND_BACKGROUND {
    pub Foreground: BOOLEAN,
-}
-impl Default for _PROCESS_FOREGROUND_BACKGROUND {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type PROCESS_FOREGROUND_BACKGROUND = _PROCESS_FOREGROUND_BACKGROUND;
 pub type PPROCESS_FOREGROUND_BACKGROUND = *mut _PROCESS_FOREGROUND_BACKGROUND;
@@ -27600,162 +28457,6 @@ pub type PROCESS_HANDLE_SNAPSHOT_INFORMATION = _PROCESS_HANDLE_SNAPSHOT_INFORMAT
 pub type PPROCESS_HANDLE_SNAPSHOT_INFORMATION = *mut _PROCESS_HANDLE_SNAPSHOT_INFORMATION;
 #[repr(C)]
 #[derive(Copy, Clone)]
-pub struct _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY {
-   pub __bindgen_anon_1: _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1 {
-   pub Flags: ULONG,
-   pub __bindgen_anon_1: _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
-pub struct _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1__bindgen_ty_1 {
-   pub _bitfield_align_1: [u32; 0],
-   pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
-}
-impl _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1__bindgen_ty_1 {
-   #[inline]
-   pub fn EnablePointerAuthUserIp(&self) -> ULONG {
-      unsafe { ::core::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
-   }
-   #[inline]
-   pub fn set_EnablePointerAuthUserIp(&mut self, val: ULONG) {
-      unsafe {
-         let val: u32 = ::core::mem::transmute(val);
-         self._bitfield_1.set(0usize, 1u8, val as u64)
-      }
-   }
-   #[inline]
-   pub fn ReservedFlags(&self) -> ULONG {
-      unsafe { ::core::mem::transmute(self._bitfield_1.get(1usize, 31u8) as u32) }
-   }
-   #[inline]
-   pub fn set_ReservedFlags(&mut self, val: ULONG) {
-      unsafe {
-         let val: u32 = ::core::mem::transmute(val);
-         self._bitfield_1.set(1usize, 31u8, val as u64)
-      }
-   }
-   #[inline]
-   pub fn new_bitfield_1(
-      EnablePointerAuthUserIp: ULONG,
-      ReservedFlags: ULONG,
-   ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
-      let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
-      __bindgen_bitfield_unit.set(0usize, 1u8, {
-         let EnablePointerAuthUserIp: u32 =
-            unsafe { ::core::mem::transmute(EnablePointerAuthUserIp) };
-         EnablePointerAuthUserIp as u64
-      });
-      __bindgen_bitfield_unit.set(1usize, 31u8, {
-         let ReservedFlags: u32 = unsafe { ::core::mem::transmute(ReservedFlags) };
-         ReservedFlags as u64
-      });
-      __bindgen_bitfield_unit
-   }
-}
-impl Default for _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY__bindgen_ty_1 {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
-impl Default for _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
-pub type PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY = _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY;
-pub type PPROCESS_MITIGATION_USER_POINTER_AUTH_POLICY =
-   *mut _PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY;
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct _PROCESS_MITIGATION_SEHOP_POLICY {
-   pub __bindgen_anon_1: _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1 {
-   pub Flags: ULONG,
-   pub __bindgen_anon_1: _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
-pub struct _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1__bindgen_ty_1 {
-   pub _bitfield_align_1: [u32; 0],
-   pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
-}
-impl _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1__bindgen_ty_1 {
-   #[inline]
-   pub fn EnableSehop(&self) -> ULONG {
-      unsafe { ::core::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
-   }
-   #[inline]
-   pub fn set_EnableSehop(&mut self, val: ULONG) {
-      unsafe {
-         let val: u32 = ::core::mem::transmute(val);
-         self._bitfield_1.set(0usize, 1u8, val as u64)
-      }
-   }
-   #[inline]
-   pub fn ReservedFlags(&self) -> ULONG {
-      unsafe { ::core::mem::transmute(self._bitfield_1.get(1usize, 31u8) as u32) }
-   }
-   #[inline]
-   pub fn set_ReservedFlags(&mut self, val: ULONG) {
-      unsafe {
-         let val: u32 = ::core::mem::transmute(val);
-         self._bitfield_1.set(1usize, 31u8, val as u64)
-      }
-   }
-   #[inline]
-   pub fn new_bitfield_1(
-      EnableSehop: ULONG,
-      ReservedFlags: ULONG,
-   ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
-      let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
-      __bindgen_bitfield_unit.set(0usize, 1u8, {
-         let EnableSehop: u32 = unsafe { ::core::mem::transmute(EnableSehop) };
-         EnableSehop as u64
-      });
-      __bindgen_bitfield_unit.set(1usize, 31u8, {
-         let ReservedFlags: u32 = unsafe { ::core::mem::transmute(ReservedFlags) };
-         ReservedFlags as u64
-      });
-      __bindgen_bitfield_unit
-   }
-}
-impl Default for _PROCESS_MITIGATION_SEHOP_POLICY__bindgen_ty_1 {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
-impl Default for _PROCESS_MITIGATION_SEHOP_POLICY {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
-pub type PROCESS_MITIGATION_SEHOP_POLICY = _PROCESS_MITIGATION_SEHOP_POLICY;
-pub type PPROCESS_MITIGATION_SEHOP_POLICY = *mut _PROCESS_MITIGATION_SEHOP_POLICY;
-#[repr(C)]
-#[derive(Copy, Clone)]
 pub struct _PROCESS_MITIGATION_ACTIVATION_CONTEXT_TRUST_POLICY2 {
    pub __bindgen_anon_1: _PROCESS_MITIGATION_ACTIVATION_CONTEXT_TRUST_POLICY2__bindgen_ty_1,
 }
@@ -27883,6 +28584,7 @@ impl Default for _PROCESS_MITIGATION_POLICY_INFORMATION {
 pub type PROCESS_MITIGATION_POLICY_INFORMATION = _PROCESS_MITIGATION_POLICY_INFORMATION;
 pub type PPROCESS_MITIGATION_POLICY_INFORMATION = *mut _PROCESS_MITIGATION_POLICY_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PROCESS_DYNAMIC_FUNCTION_TABLE_INFORMATION {
    pub DynamicFunctionTable: *mut _DYNAMIC_FUNCTION_TABLE,
    pub Remove: BOOLEAN,
@@ -27908,6 +28610,7 @@ pub struct _PROCESS_KEEPALIVE_COUNT_INFORMATION {
 pub type PROCESS_KEEPALIVE_COUNT_INFORMATION = _PROCESS_KEEPALIVE_COUNT_INFORMATION;
 pub type PPROCESS_KEEPALIVE_COUNT_INFORMATION = *mut _PROCESS_KEEPALIVE_COUNT_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PROCESS_REVOKE_FILE_HANDLES_INFORMATION {
    pub TargetDevicePath: UNICODE_STRING,
 }
@@ -28202,19 +28905,11 @@ pub struct _PROCESS_JOB_MEMORY_INFO {
 pub type PROCESS_JOB_MEMORY_INFO = _PROCESS_JOB_MEMORY_INFO;
 pub type PPROCESS_JOB_MEMORY_INFO = *mut _PROCESS_JOB_MEMORY_INFO;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PROCESS_CHILD_PROCESS_INFORMATION {
    pub ProhibitChildProcesses: BOOLEAN,
    pub AlwaysAllowSecureChildProcess: BOOLEAN,
    pub AuditProhibitChildProcesses: BOOLEAN,
-}
-impl Default for _PROCESS_CHILD_PROCESS_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type PROCESS_CHILD_PROCESS_INFORMATION = _PROCESS_CHILD_PROCESS_INFORMATION;
 pub type PPROCESS_CHILD_PROCESS_INFORMATION = *mut _PROCESS_CHILD_PROCESS_INFORMATION;
@@ -28886,6 +29581,7 @@ pub struct _PROCESS_TEB_VALUE_INFORMATION {
 pub type PROCESS_TEB_VALUE_INFORMATION = _PROCESS_TEB_VALUE_INFORMATION;
 pub type PPROCESS_TEB_VALUE_INFORMATION = *mut _PROCESS_TEB_VALUE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _THREAD_BASIC_INFORMATION {
    pub ExitStatus: NTSTATUS,
    pub TebBaseAddress: PTEB,
@@ -29357,6 +30053,7 @@ impl Default for _THREAD_UMS_INFORMATION {
 pub type THREAD_UMS_INFORMATION = _THREAD_UMS_INFORMATION;
 pub type PTHREAD_UMS_INFORMATION = *mut _THREAD_UMS_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _THREAD_NAME_INFORMATION {
    pub ThreadName: UNICODE_STRING,
 }
@@ -29593,6 +30290,7 @@ impl Default for _SE_SAFE_OPEN_PROMPT_RESULTS {
 pub type SE_SAFE_OPEN_PROMPT_RESULTS = _SE_SAFE_OPEN_PROMPT_RESULTS;
 pub type PSE_SAFE_OPEN_PROMPT_RESULTS = *mut _SE_SAFE_OPEN_PROMPT_RESULTS;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PROC_THREAD_BNOISOLATION_ATTRIBUTE {
    pub IsolationEnabled: BOOL,
    pub IsolationPrefix: [WCHAR; 136usize],
@@ -29609,6 +30307,7 @@ impl Default for _PROC_THREAD_BNOISOLATION_ATTRIBUTE {
 pub type PROC_THREAD_BNOISOLATION_ATTRIBUTE = _PROC_THREAD_BNOISOLATION_ATTRIBUTE;
 pub type PPROC_THREAD_BNOISOLATION_ATTRIBUTE = *mut _PROC_THREAD_BNOISOLATION_ATTRIBUTE;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _ISOLATION_MANIFEST_PROPERTIES {
    pub InstancePath: UNICODE_STRING,
    pub FriendlyName: UNICODE_STRING,
@@ -30071,6 +30770,7 @@ impl Default for _PS_TRUSTLET_CREATE_ATTRIBUTES {
 pub type PS_TRUSTLET_CREATE_ATTRIBUTES = _PS_TRUSTLET_CREATE_ATTRIBUTES;
 pub type PPS_TRUSTLET_CREATE_ATTRIBUTES = *mut _PS_TRUSTLET_CREATE_ATTRIBUTES;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PS_BNO_ISOLATION_PARAMETERS {
    pub IsolationPrefix: UNICODE_STRING,
    pub HandleCount: ULONG,
@@ -30707,6 +31407,7 @@ pub struct _JOBOBJECT_WAKE_FILTER {
 }
 pub type JOBOBJECT_WAKE_FILTER = _JOBOBJECT_WAKE_FILTER;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _JOBOBJECT_FREEZE_INFORMATION {
    pub __bindgen_anon_1: _JOBOBJECT_FREEZE_INFORMATION__bindgen_ty_1,
    pub Freeze: BOOLEAN,
@@ -30845,6 +31546,7 @@ pub struct _JOBOBJECT_MEMORY_USAGE_INFORMATION_V2 {
 pub type JOBOBJECT_MEMORY_USAGE_INFORMATION_V2 = _JOBOBJECT_MEMORY_USAGE_INFORMATION_V2;
 pub type PJOBOBJECT_MEMORY_USAGE_INFORMATION_V2 = *mut _JOBOBJECT_MEMORY_USAGE_INFORMATION_V2;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SILO_USER_SHARED_DATA {
    pub ServiceSessionId: ULONG,
    pub ActiveConsoleId: ULONG,
@@ -30873,13 +31575,15 @@ impl Default for _SILO_USER_SHARED_DATA {
 }
 pub type SILO_USER_SHARED_DATA = _SILO_USER_SHARED_DATA;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SILOOBJECT_ROOT_DIRECTORY {
    pub __bindgen_anon_1: _SILOOBJECT_ROOT_DIRECTORY__bindgen_ty_1,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _SILOOBJECT_ROOT_DIRECTORY__bindgen_ty_1 {
-   pub ControlFlags: ::core::mem::ManuallyDrop<ULONG>,
-   pub Path: ::core::mem::ManuallyDrop<UNICODE_STRING>,
+   pub ControlFlags: ULONG,
+   pub Path: UNICODE_STRING,
 }
 impl Default for _SILOOBJECT_ROOT_DIRECTORY__bindgen_ty_1 {
    fn default() -> Self {
@@ -30902,6 +31606,7 @@ impl Default for _SILOOBJECT_ROOT_DIRECTORY {
 pub type SILOOBJECT_ROOT_DIRECTORY = _SILOOBJECT_ROOT_DIRECTORY;
 pub type PSILOOBJECT_ROOT_DIRECTORY = *mut _SILOOBJECT_ROOT_DIRECTORY;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SERVERSILO_INIT_INFORMATION {
    pub DeleteEvent: HANDLE,
    pub IsDownlevelContainer: BOOLEAN,
@@ -30983,18 +31688,10 @@ impl Default for _JOBOBJECT_PAGE_PRIORITY_LIMIT {
 pub type JOBOBJECT_PAGE_PRIORITY_LIMIT = _JOBOBJECT_PAGE_PRIORITY_LIMIT;
 pub type PJOBOBJECT_PAGE_PRIORITY_LIMIT = *mut _JOBOBJECT_PAGE_PRIORITY_LIMIT;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SERVERSILO_DIAGNOSTIC_INFORMATION {
    pub ExitStatus: NTSTATUS,
    pub CriticalProcessName: [WCHAR; 15usize],
-}
-impl Default for _SERVERSILO_DIAGNOSTIC_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type SERVERSILO_DIAGNOSTIC_INFORMATION = _SERVERSILO_DIAGNOSTIC_INFORMATION;
 pub type PSERVERSILO_DIAGNOSTIC_INFORMATION = *mut _SERVERSILO_DIAGNOSTIC_INFORMATION;
@@ -31162,32 +31859,16 @@ impl Default for _DBGKM_CREATE_PROCESS {
 pub type DBGKM_CREATE_PROCESS = _DBGKM_CREATE_PROCESS;
 pub type PDBGKM_CREATE_PROCESS = *mut _DBGKM_CREATE_PROCESS;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _DBGKM_EXIT_THREAD {
    pub ExitStatus: NTSTATUS,
-}
-impl Default for _DBGKM_EXIT_THREAD {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type DBGKM_EXIT_THREAD = _DBGKM_EXIT_THREAD;
 pub type PDBGKM_EXIT_THREAD = *mut _DBGKM_EXIT_THREAD;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _DBGKM_EXIT_PROCESS {
    pub ExitStatus: NTSTATUS,
-}
-impl Default for _DBGKM_EXIT_PROCESS {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type DBGKM_EXIT_PROCESS = _DBGKM_EXIT_PROCESS;
 pub type PDBGKM_EXIT_PROCESS = *mut _DBGKM_EXIT_PROCESS;
@@ -31281,20 +31962,22 @@ impl Default for _DBGUI_CREATE_PROCESS {
 pub type DBGUI_CREATE_PROCESS = _DBGUI_CREATE_PROCESS;
 pub type PDBGUI_CREATE_PROCESS = *mut _DBGUI_CREATE_PROCESS;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _DBGUI_WAIT_STATE_CHANGE {
    pub NewState: DBG_STATE,
    pub AppClientId: CLIENT_ID,
    pub StateInfo: _DBGUI_WAIT_STATE_CHANGE__bindgen_ty_1,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _DBGUI_WAIT_STATE_CHANGE__bindgen_ty_1 {
-   pub Exception: ::core::mem::ManuallyDrop<DBGKM_EXCEPTION>,
-   pub CreateThread: ::core::mem::ManuallyDrop<DBGUI_CREATE_THREAD>,
-   pub CreateProcessInfo: ::core::mem::ManuallyDrop<DBGUI_CREATE_PROCESS>,
-   pub ExitThread: ::core::mem::ManuallyDrop<DBGKM_EXIT_THREAD>,
-   pub ExitProcess: ::core::mem::ManuallyDrop<DBGKM_EXIT_PROCESS>,
-   pub LoadDll: ::core::mem::ManuallyDrop<DBGKM_LOAD_DLL>,
-   pub UnloadDll: ::core::mem::ManuallyDrop<DBGKM_UNLOAD_DLL>,
+   pub Exception: DBGKM_EXCEPTION,
+   pub CreateThread: DBGUI_CREATE_THREAD,
+   pub CreateProcessInfo: DBGUI_CREATE_PROCESS,
+   pub ExitThread: DBGKM_EXIT_THREAD,
+   pub ExitProcess: DBGKM_EXIT_PROCESS,
+   pub LoadDll: DBGKM_LOAD_DLL,
+   pub UnloadDll: DBGKM_UNLOAD_DLL,
 }
 impl Default for _DBGUI_WAIT_STATE_CHANGE__bindgen_ty_1 {
    fn default() -> Self {
@@ -31376,14 +32059,16 @@ impl Default for _EXTENDED_CREATE_INFORMATION_32 {
 pub type EXTENDED_CREATE_INFORMATION_32 = _EXTENDED_CREATE_INFORMATION_32;
 pub type PEXTENDED_CREATE_INFORMATION_32 = *mut _EXTENDED_CREATE_INFORMATION_32;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _IO_STATUS_BLOCK {
    pub __bindgen_anon_1: _IO_STATUS_BLOCK__bindgen_ty_1,
    pub Information: ULONG_PTR,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _IO_STATUS_BLOCK__bindgen_ty_1 {
-   pub Status: ::core::mem::ManuallyDrop<NTSTATUS>,
-   pub Pointer: ::core::mem::ManuallyDrop<PVOID>,
+   pub Status: NTSTATUS,
+   pub Pointer: PVOID,
 }
 impl Default for _IO_STATUS_BLOCK__bindgen_ty_1 {
    fn default() -> Self {
@@ -31408,6 +32093,7 @@ pub type PIO_APC_ROUTINE = ::core::option::Option<
    unsafe extern "C" fn(ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Reserved: ULONG),
 >;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _FILE_IO_COMPLETION_INFORMATION {
    pub KeyContext: PVOID,
    pub ApcContext: PVOID,
@@ -31535,6 +32221,7 @@ impl Default for _FILE_BASIC_INFORMATION {
 pub type FILE_BASIC_INFORMATION = _FILE_BASIC_INFORMATION;
 pub type PFILE_BASIC_INFORMATION = *mut _FILE_BASIC_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _FILE_STANDARD_INFORMATION {
    pub AllocationSize: LARGE_INTEGER,
    pub EndOfFile: LARGE_INTEGER,
@@ -31554,6 +32241,7 @@ impl Default for _FILE_STANDARD_INFORMATION {
 pub type FILE_STANDARD_INFORMATION = _FILE_STANDARD_INFORMATION;
 pub type PFILE_STANDARD_INFORMATION = *mut _FILE_STANDARD_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _FILE_STANDARD_INFORMATION_EX {
    pub AllocationSize: LARGE_INTEGER,
    pub EndOfFile: LARGE_INTEGER,
@@ -31704,6 +32392,7 @@ pub struct _FILE_NAME_INFORMATION {
 pub type FILE_NAME_INFORMATION = _FILE_NAME_INFORMATION;
 pub type PFILE_NAME_INFORMATION = *mut _FILE_NAME_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _FILE_ALL_INFORMATION {
    pub BasicInformation: FILE_BASIC_INFORMATION,
    pub StandardInformation: FILE_STANDARD_INFORMATION,
@@ -31794,17 +32483,9 @@ impl Default for _FILE_COMPRESSION_INFORMATION {
 pub type FILE_COMPRESSION_INFORMATION = _FILE_COMPRESSION_INFORMATION;
 pub type PFILE_COMPRESSION_INFORMATION = *mut _FILE_COMPRESSION_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _FILE_DISPOSITION_INFORMATION {
    pub DeleteFileA: BOOLEAN,
-}
-impl Default for _FILE_DISPOSITION_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type FILE_DISPOSITION_INFORMATION = _FILE_DISPOSITION_INFORMATION;
 pub type PFILE_DISPOSITION_INFORMATION = *mut _FILE_DISPOSITION_INFORMATION;
@@ -31860,6 +32541,7 @@ impl Default for _FILE_VALID_DATA_LENGTH_INFORMATION {
 pub type FILE_VALID_DATA_LENGTH_INFORMATION = _FILE_VALID_DATA_LENGTH_INFORMATION;
 pub type PFILE_VALID_DATA_LENGTH_INFORMATION = *mut _FILE_VALID_DATA_LENGTH_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _FILE_LINK_INFORMATION {
    pub ReplaceIfExists: BOOLEAN,
    pub RootDirectory: HANDLE,
@@ -31916,6 +32598,7 @@ impl Default for _FILE_MOVE_CLUSTER_INFORMATION {
 pub type FILE_MOVE_CLUSTER_INFORMATION = _FILE_MOVE_CLUSTER_INFORMATION;
 pub type PFILE_MOVE_CLUSTER_INFORMATION = *mut _FILE_MOVE_CLUSTER_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _FILE_RENAME_INFORMATION {
    pub ReplaceIfExists: BOOLEAN,
    pub RootDirectory: HANDLE,
@@ -32120,24 +32803,17 @@ pub struct _FILE_NETWORK_PHYSICAL_NAME_INFORMATION {
 pub type FILE_NETWORK_PHYSICAL_NAME_INFORMATION = _FILE_NETWORK_PHYSICAL_NAME_INFORMATION;
 pub type PFILE_NETWORK_PHYSICAL_NAME_INFORMATION = *mut _FILE_NETWORK_PHYSICAL_NAME_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _FILE_STANDARD_LINK_INFORMATION {
    pub NumberOfAccessibleLinks: ULONG,
    pub TotalNumberOfLinks: ULONG,
    pub DeletePending: BOOLEAN,
    pub Directory: BOOLEAN,
 }
-impl Default for _FILE_STANDARD_LINK_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type FILE_STANDARD_LINK_INFORMATION = _FILE_STANDARD_LINK_INFORMATION;
 pub type PFILE_STANDARD_LINK_INFORMATION = *mut _FILE_STANDARD_LINK_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _FILE_SFIO_RESERVE_INFORMATION {
    pub RequestsPerPeriod: ULONG,
    pub Period: ULONG,
@@ -32145,15 +32821,6 @@ pub struct _FILE_SFIO_RESERVE_INFORMATION {
    pub Discardable: BOOLEAN,
    pub RequestSize: ULONG,
    pub NumOutstandingRequests: ULONG,
-}
-impl Default for _FILE_SFIO_RESERVE_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type FILE_SFIO_RESERVE_INFORMATION = _FILE_SFIO_RESERVE_INFORMATION;
 pub type PFILE_SFIO_RESERVE_INFORMATION = *mut _FILE_SFIO_RESERVE_INFORMATION;
@@ -32196,6 +32863,7 @@ impl Default for _FILE_IO_PRIORITY_HINT_INFORMATION {
 pub type FILE_IO_PRIORITY_HINT_INFORMATION = _FILE_IO_PRIORITY_HINT_INFORMATION;
 pub type PFILE_IO_PRIORITY_HINT_INFORMATION = *mut _FILE_IO_PRIORITY_HINT_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _FILE_IO_PRIORITY_HINT_INFORMATION_EX {
    pub PriorityHint: IO_PRIORITY_HINT,
    pub BoostOutstanding: BOOLEAN,
@@ -32228,17 +32896,9 @@ pub struct _FILE_PROCESS_IDS_USING_FILE_INFORMATION {
 pub type FILE_PROCESS_IDS_USING_FILE_INFORMATION = _FILE_PROCESS_IDS_USING_FILE_INFORMATION;
 pub type PFILE_PROCESS_IDS_USING_FILE_INFORMATION = *mut _FILE_PROCESS_IDS_USING_FILE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _FILE_IS_REMOTE_DEVICE_INFORMATION {
    pub IsRemote: BOOLEAN,
-}
-impl Default for _FILE_IS_REMOTE_DEVICE_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type FILE_IS_REMOTE_DEVICE_INFORMATION = _FILE_IS_REMOTE_DEVICE_INFORMATION;
 pub type PFILE_IS_REMOTE_DEVICE_INFORMATION = *mut _FILE_IS_REMOTE_DEVICE_INFORMATION;
@@ -33157,6 +33817,7 @@ pub use self::_FSINFOCLASS as FSINFOCLASS;
 pub type PFSINFOCLASS = *mut _FSINFOCLASS;
 pub use self::_FSINFOCLASS as FS_INFORMATION_CLASS;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _FILE_FS_VOLUME_INFORMATION {
    pub VolumeCreationTime: LARGE_INTEGER,
    pub VolumeSerialNumber: ULONG,
@@ -33301,19 +33962,11 @@ pub struct _FILE_FS_ATTRIBUTE_INFORMATION {
 pub type FILE_FS_ATTRIBUTE_INFORMATION = _FILE_FS_ATTRIBUTE_INFORMATION;
 pub type PFILE_FS_ATTRIBUTE_INFORMATION = *mut _FILE_FS_ATTRIBUTE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _FILE_FS_DRIVER_PATH_INFORMATION {
    pub DriverInPath: BOOLEAN,
    pub DriverNameLength: ULONG,
    pub DriverName: [WCHAR; 1usize],
-}
-impl Default for _FILE_FS_DRIVER_PATH_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type FILE_FS_DRIVER_PATH_INFORMATION = _FILE_FS_DRIVER_PATH_INFORMATION;
 pub type PFILE_FS_DRIVER_PATH_INFORMATION = *mut _FILE_FS_DRIVER_PATH_INFORMATION;
@@ -33399,52 +34052,6 @@ pub enum _DIRECTORY_NOTIFY_INFORMATION_CLASS {
 }
 pub use self::_DIRECTORY_NOTIFY_INFORMATION_CLASS as DIRECTORY_NOTIFY_INFORMATION_CLASS;
 pub type PDIRECTORY_NOTIFY_INFORMATION_CLASS = *mut _DIRECTORY_NOTIFY_INFORMATION_CLASS;
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct _FILE_NOTIFY_FULL_INFORMATION {
-   pub NextEntryOffset: ULONG,
-   pub Action: ULONG,
-   pub CreationTime: LARGE_INTEGER,
-   pub LastModificationTime: LARGE_INTEGER,
-   pub LastChangeTime: LARGE_INTEGER,
-   pub LastAccessTime: LARGE_INTEGER,
-   pub AllocatedLength: LARGE_INTEGER,
-   pub FileSize: LARGE_INTEGER,
-   pub FileAttributes: ULONG,
-   pub __bindgen_anon_1: _FILE_NOTIFY_FULL_INFORMATION__bindgen_ty_1,
-   pub FileId: LARGE_INTEGER,
-   pub ParentFileId: LARGE_INTEGER,
-   pub FileNameLength: USHORT,
-   pub FileNameFlags: BYTE,
-   pub Reserved: BYTE,
-   pub FileName: [WCHAR; 1usize],
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union _FILE_NOTIFY_FULL_INFORMATION__bindgen_ty_1 {
-   pub ReparsePointTag: ULONG,
-   pub EaSize: ULONG,
-}
-impl Default for _FILE_NOTIFY_FULL_INFORMATION__bindgen_ty_1 {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
-impl Default for _FILE_NOTIFY_FULL_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
-pub type FILE_NOTIFY_FULL_INFORMATION = _FILE_NOTIFY_FULL_INFORMATION;
-pub type PFILE_NOTIFY_FULL_INFORMATION = *mut _FILE_NOTIFY_FULL_INFORMATION;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -33703,6 +34310,7 @@ pub struct _FILE_PIPE_EVENT_BUFFER {
 pub type FILE_PIPE_EVENT_BUFFER = _FILE_PIPE_EVENT_BUFFER;
 pub type PFILE_PIPE_EVENT_BUFFER = *mut _FILE_PIPE_EVENT_BUFFER;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _FILE_PIPE_WAIT_FOR_BUFFER {
    pub Timeout: LARGE_INTEGER,
    pub NameLength: ULONG,
@@ -33860,18 +34468,10 @@ pub struct _MOUNTMGR_DRIVE_LETTER_TARGET {
 pub type MOUNTMGR_DRIVE_LETTER_TARGET = _MOUNTMGR_DRIVE_LETTER_TARGET;
 pub type PMOUNTMGR_DRIVE_LETTER_TARGET = *mut _MOUNTMGR_DRIVE_LETTER_TARGET;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _MOUNTMGR_DRIVE_LETTER_INFORMATION {
    pub DriveLetterWasAssigned: BOOLEAN,
    pub CurrentDriveLetter: UCHAR,
-}
-impl Default for _MOUNTMGR_DRIVE_LETTER_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type MOUNTMGR_DRIVE_LETTER_INFORMATION = _MOUNTMGR_DRIVE_LETTER_INFORMATION;
 pub type PMOUNTMGR_DRIVE_LETTER_INFORMATION = *mut _MOUNTMGR_DRIVE_LETTER_INFORMATION;
@@ -34111,6 +34711,285 @@ impl Default for _FLT_ATTACH {
 }
 pub type FLT_ATTACH = _FLT_ATTACH;
 pub type PFLT_ATTACH = *mut _FLT_ATTACH;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _MUP_FSCTL_UNC_CACHE_ENTRY {
+   pub TotalLength: ULONG,
+   pub UncNameOffset: ULONG,
+   pub UncNameLength: USHORT,
+   pub ProviderNameOffset: ULONG,
+   pub ProviderNameLength: USHORT,
+   pub SurrogateNameOffset: ULONG,
+   pub SurrogateNameLength: USHORT,
+   pub ProviderPriority: ULONG,
+   pub EntryTtl: ULONG,
+   pub Strings: [WCHAR; 1usize],
+}
+pub type MUP_FSCTL_UNC_CACHE_ENTRY = _MUP_FSCTL_UNC_CACHE_ENTRY;
+pub type PMUP_FSCTL_UNC_CACHE_ENTRY = *mut _MUP_FSCTL_UNC_CACHE_ENTRY;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _MUP_FSCTL_UNC_CACHE_INFORMATION {
+   pub MaxCacheSize: ULONG,
+   pub CurrentCacheSize: ULONG,
+   pub EntryTimeout: ULONG,
+   pub TotalEntries: ULONG,
+   pub CacheEntry: [MUP_FSCTL_UNC_CACHE_ENTRY; 1usize],
+}
+pub type MUP_FSCTL_UNC_CACHE_INFORMATION = _MUP_FSCTL_UNC_CACHE_INFORMATION;
+pub type PMUP_FSCTL_UNC_CACHE_INFORMATION = *mut _MUP_FSCTL_UNC_CACHE_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _MUP_FSCTL_UNC_PROVIDER_ENTRY {
+   pub TotalLength: ULONG,
+   pub ReferenceCount: LONG,
+   pub ProviderPriority: ULONG,
+   pub ProviderState: ULONG,
+   pub ProviderId: ULONG,
+   pub ProviderNameLength: USHORT,
+   pub ProviderName: [WCHAR; 1usize],
+}
+pub type MUP_FSCTL_UNC_PROVIDER_ENTRY = _MUP_FSCTL_UNC_PROVIDER_ENTRY;
+pub type PMUP_FSCTL_UNC_PROVIDER_ENTRY = *mut _MUP_FSCTL_UNC_PROVIDER_ENTRY;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _MUP_FSCTL_UNC_PROVIDER_INFORMATION {
+   pub TotalEntries: ULONG,
+   pub ProviderEntry: [MUP_FSCTL_UNC_PROVIDER_ENTRY; 1usize],
+}
+pub type MUP_FSCTL_UNC_PROVIDER_INFORMATION = _MUP_FSCTL_UNC_PROVIDER_INFORMATION;
+pub type PMUP_FSCTL_UNC_PROVIDER_INFORMATION = *mut _MUP_FSCTL_UNC_PROVIDER_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _MUP_FSCTL_SURROGATE_PROVIDER_ENTRY {
+   pub TotalLength: ULONG,
+   pub ReferenceCount: LONG,
+   pub SurrogateType: ULONG,
+   pub SurrogateState: ULONG,
+   pub SurrogatePriority: ULONG,
+   pub SurrogateNameLength: USHORT,
+   pub SurrogateName: [WCHAR; 1usize],
+}
+pub type MUP_FSCTL_SURROGATE_PROVIDER_ENTRY = _MUP_FSCTL_SURROGATE_PROVIDER_ENTRY;
+pub type PMUP_FSCTL_SURROGATE_PROVIDER_ENTRY = *mut _MUP_FSCTL_SURROGATE_PROVIDER_ENTRY;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _MUP_FSCTL_SURROGATE_PROVIDER_INFORMATION {
+   pub TotalEntries: ULONG,
+   pub SurrogateEntry: [MUP_FSCTL_SURROGATE_PROVIDER_ENTRY; 1usize],
+}
+pub type MUP_FSCTL_SURROGATE_PROVIDER_INFORMATION = _MUP_FSCTL_SURROGATE_PROVIDER_INFORMATION;
+pub type PMUP_FSCTL_SURROGATE_PROVIDER_INFORMATION = *mut _MUP_FSCTL_SURROGATE_PROVIDER_INFORMATION;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY {
+   pub NextOffset: ULONG,
+   pub PrefixNameOffset: ULONG,
+   pub PrefixNameCbLength: USHORT,
+   pub __bindgen_anon_1: _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY__bindgen_ty_1,
+   pub OpenCount: ULONGLONG,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY__bindgen_ty_1 {
+   pub RequiredHardeningCapabilities: ULONG,
+   pub __bindgen_anon_1: _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY__bindgen_ty_1__bindgen_ty_1,
+}
+#[repr(C)]
+#[repr(align(4))]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY__bindgen_ty_1__bindgen_ty_1 {
+   pub _bitfield_align_1: [u8; 0],
+   pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+   pub __bindgen_padding_0: [u8; 3usize],
+}
+impl _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY__bindgen_ty_1__bindgen_ty_1 {
+   #[inline]
+   pub fn RequiresMutualAuth(&self) -> ULONG {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_RequiresMutualAuth(&mut self, val: ULONG) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(0usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn RequiresIntegrity(&self) -> ULONG {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_RequiresIntegrity(&mut self, val: ULONG) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(1usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn RequiresPrivacy(&self) -> ULONG {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_RequiresPrivacy(&mut self, val: ULONG) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(2usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn new_bitfield_1(
+      RequiresMutualAuth: ULONG,
+      RequiresIntegrity: ULONG,
+      RequiresPrivacy: ULONG,
+   ) -> __BindgenBitfieldUnit<[u8; 1usize]> {
+      let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 1usize]> = Default::default();
+      __bindgen_bitfield_unit.set(0usize, 1u8, {
+         let RequiresMutualAuth: u32 = unsafe { ::core::mem::transmute(RequiresMutualAuth) };
+         RequiresMutualAuth as u64
+      });
+      __bindgen_bitfield_unit.set(1usize, 1u8, {
+         let RequiresIntegrity: u32 = unsafe { ::core::mem::transmute(RequiresIntegrity) };
+         RequiresIntegrity as u64
+      });
+      __bindgen_bitfield_unit.set(2usize, 1u8, {
+         let RequiresPrivacy: u32 = unsafe { ::core::mem::transmute(RequiresPrivacy) };
+         RequiresPrivacy as u64
+      });
+      __bindgen_bitfield_unit
+   }
+}
+impl Default for _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY = _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY;
+pub type PMUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY =
+   *mut _MUP_FSCTL_UNC_HARDENING_PREFIX_TABLE_ENTRY;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_IN {
+   pub Size: ULONG,
+   pub UncPathOffset: ULONG,
+   pub UncPathCbLength: USHORT,
+}
+pub type MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_IN =
+   _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_IN;
+pub type PMUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_IN =
+   *mut _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_IN;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT {
+   pub Size: ULONG,
+   pub __bindgen_anon_1: _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT__bindgen_ty_1 {
+   pub RequiredHardeningCapabilities: ULONG,
+   pub __bindgen_anon_1:
+      _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT__bindgen_ty_1__bindgen_ty_1,
+}
+#[repr(C)]
+#[repr(align(4))]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT__bindgen_ty_1__bindgen_ty_1 {
+   pub _bitfield_align_1: [u8; 0],
+   pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+   pub __bindgen_padding_0: [u8; 3usize],
+}
+impl _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT__bindgen_ty_1__bindgen_ty_1 {
+   #[inline]
+   pub fn RequiresMutualAuth(&self) -> ULONG {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_RequiresMutualAuth(&mut self, val: ULONG) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(0usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn RequiresIntegrity(&self) -> ULONG {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_RequiresIntegrity(&mut self, val: ULONG) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(1usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn RequiresPrivacy(&self) -> ULONG {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_RequiresPrivacy(&mut self, val: ULONG) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(2usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
+   pub fn new_bitfield_1(
+      RequiresMutualAuth: ULONG,
+      RequiresIntegrity: ULONG,
+      RequiresPrivacy: ULONG,
+   ) -> __BindgenBitfieldUnit<[u8; 1usize]> {
+      let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 1usize]> = Default::default();
+      __bindgen_bitfield_unit.set(0usize, 1u8, {
+         let RequiresMutualAuth: u32 = unsafe { ::core::mem::transmute(RequiresMutualAuth) };
+         RequiresMutualAuth as u64
+      });
+      __bindgen_bitfield_unit.set(1usize, 1u8, {
+         let RequiresIntegrity: u32 = unsafe { ::core::mem::transmute(RequiresIntegrity) };
+         RequiresIntegrity as u64
+      });
+      __bindgen_bitfield_unit.set(2usize, 1u8, {
+         let RequiresPrivacy: u32 = unsafe { ::core::mem::transmute(RequiresPrivacy) };
+         RequiresPrivacy as u64
+      });
+      __bindgen_bitfield_unit
+   }
+}
+impl Default for _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT =
+   _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT;
+pub type PMUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT =
+   *mut _MUP_FSCTL_QUERY_UNC_HARDENING_CONFIGURATION_OUT;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -34130,6 +35009,7 @@ pub enum _CREATE_FILE_TYPE {
 }
 pub use self::_CREATE_FILE_TYPE as CREATE_FILE_TYPE;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _NAMED_PIPE_CREATE_PARAMETERS {
    pub NamedPipeType: ULONG,
    pub ReadMode: ULONG,
@@ -34152,6 +35032,7 @@ impl Default for _NAMED_PIPE_CREATE_PARAMETERS {
 pub type NAMED_PIPE_CREATE_PARAMETERS = _NAMED_PIPE_CREATE_PARAMETERS;
 pub type PNAMED_PIPE_CREATE_PARAMETERS = *mut _NAMED_PIPE_CREATE_PARAMETERS;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _MAILSLOT_CREATE_PARAMETERS {
    pub MailslotQuota: ULONG,
    pub MaximumMessageSize: ULONG,
@@ -34510,6 +35391,7 @@ pub use self::_PORT_INFORMATION_CLASS as PORT_INFORMATION_CLASS;
 pub type ALPC_HANDLE = HANDLE;
 pub type PALPC_HANDLE = *mut HANDLE;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _ALPC_PORT_ATTRIBUTES {
    pub Flags: ULONG,
    pub SecurityQos: SECURITY_QUALITY_OF_SERVICE,
@@ -34831,13 +35713,15 @@ impl Default for _ALPC_PORT_ASSOCIATE_COMPLETION_PORT {
 pub type ALPC_PORT_ASSOCIATE_COMPLETION_PORT = _ALPC_PORT_ASSOCIATE_COMPLETION_PORT;
 pub type PALPC_PORT_ASSOCIATE_COMPLETION_PORT = *mut _ALPC_PORT_ASSOCIATE_COMPLETION_PORT;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _ALPC_SERVER_INFORMATION {
    pub __bindgen_anon_1: _ALPC_SERVER_INFORMATION__bindgen_ty_1,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _ALPC_SERVER_INFORMATION__bindgen_ty_1 {
-   pub In: ::core::mem::ManuallyDrop<_ALPC_SERVER_INFORMATION__bindgen_ty_1__bindgen_ty_1>,
-   pub Out: ::core::mem::ManuallyDrop<_ALPC_SERVER_INFORMATION__bindgen_ty_1__bindgen_ty_2>,
+   pub In: _ALPC_SERVER_INFORMATION__bindgen_ty_1__bindgen_ty_1,
+   pub Out: _ALPC_SERVER_INFORMATION__bindgen_ty_1__bindgen_ty_2,
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -34854,6 +35738,7 @@ impl Default for _ALPC_SERVER_INFORMATION__bindgen_ty_1__bindgen_ty_1 {
    }
 }
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _ALPC_SERVER_INFORMATION__bindgen_ty_1__bindgen_ty_2 {
    pub ThreadBlocked: BOOLEAN,
    pub ConnectedProcessId: HANDLE,
@@ -36145,35 +37030,29 @@ pub enum _POWER_STATE_DISABLED_TYPE {
 pub use self::_POWER_STATE_DISABLED_TYPE as POWER_STATE_DISABLED_TYPE;
 pub use self::_POWER_STATE_DISABLED_TYPE as PPOWER_STATE_DISABLED_TYPE;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_POWER_STATE_DISABLE_REASON {
    pub AffectedState: [BOOLEAN; 8usize],
    pub PowerReasonCode: ULONG,
    pub PowerReasonLength: ULONG,
 }
-impl Default for _SYSTEM_POWER_STATE_DISABLE_REASON {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type SYSTEM_POWER_STATE_DISABLE_REASON = _SYSTEM_POWER_STATE_DISABLE_REASON;
 pub type PSYSTEM_POWER_STATE_DISABLE_REASON = *mut _SYSTEM_POWER_STATE_DISABLE_REASON;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _COUNTED_REASON_CONTEXT {
    pub Version: ULONG,
    pub Flags: ULONG,
    pub __bindgen_anon_1: _COUNTED_REASON_CONTEXT__bindgen_ty_1,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _COUNTED_REASON_CONTEXT__bindgen_ty_1 {
-   pub __bindgen_anon_1:
-      ::core::mem::ManuallyDrop<_COUNTED_REASON_CONTEXT__bindgen_ty_1__bindgen_ty_1>,
-   pub SimpleString: ::core::mem::ManuallyDrop<UNICODE_STRING>,
+   pub __bindgen_anon_1: _COUNTED_REASON_CONTEXT__bindgen_ty_1__bindgen_ty_1,
+   pub SimpleString: UNICODE_STRING,
 }
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _COUNTED_REASON_CONTEXT__bindgen_ty_1__bindgen_ty_1 {
    pub ResourceFileName: UNICODE_STRING,
    pub ResourceReasonId: USHORT,
@@ -36224,6 +37103,7 @@ pub enum _POWER_REQUEST_TYPE_INTERNAL {
 }
 pub use self::_POWER_REQUEST_TYPE_INTERNAL as POWER_REQUEST_TYPE_INTERNAL;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _POWER_REQUEST_ACTION {
    pub PowerRequestHandle: HANDLE,
    pub RequestType: POWER_REQUEST_TYPE_INTERNAL,
@@ -36905,6 +37785,7 @@ pub type PENTER_STATE_HANDLER = ::core::option::Option<
    ) -> NTSTATUS,
 >;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _POWER_STATE_HANDLER {
    pub Type: POWER_STATE_HANDLER_TYPE,
    pub RtcWake: BOOLEAN,
@@ -36948,6 +37829,7 @@ impl Default for _POWER_STATE_NOTIFY_HANDLER {
 pub type POWER_STATE_NOTIFY_HANDLER = _POWER_STATE_NOTIFY_HANDLER;
 pub type PPOWER_STATE_NOTIFY_HANDLER = *mut _POWER_STATE_NOTIFY_HANDLER;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _POWER_REQUEST_ACTION_INTERNAL {
    pub PowerRequestPointer: PVOID,
    pub RequestType: POWER_REQUEST_TYPE_INTERNAL,
@@ -37080,12 +37962,14 @@ pub enum _POWER_S0_DISCONNECTED_REASON {
 }
 pub use self::_POWER_S0_DISCONNECTED_REASON as POWER_S0_DISCONNECTED_REASON;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _POWER_S0_LOW_POWER_IDLE_INFO {
    pub DisconnectedReason: POWER_S0_DISCONNECTED_REASON,
    pub CsDeviceCompliance: _POWER_S0_LOW_POWER_IDLE_INFO__bindgen_ty_1,
    pub Policy: _POWER_S0_LOW_POWER_IDLE_INFO__bindgen_ty_2,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _POWER_S0_LOW_POWER_IDLE_INFO__bindgen_ty_1 {
    pub _bitfield_align_1: [u8; 0],
    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
@@ -37189,6 +38073,7 @@ impl _POWER_S0_LOW_POWER_IDLE_INFO__bindgen_ty_1 {
    }
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _POWER_S0_LOW_POWER_IDLE_INFO__bindgen_ty_2 {
    pub _bitfield_align_1: [u8; 0],
    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
@@ -37305,17 +38190,9 @@ impl Default for _POWER_USER_ABSENCE_PREDICTION {
 pub type POWER_USER_ABSENCE_PREDICTION = _POWER_USER_ABSENCE_PREDICTION;
 pub type PPOWER_USER_ABSENCE_PREDICTION = *mut _POWER_USER_ABSENCE_PREDICTION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _POWER_USER_ABSENCE_PREDICTION_CAPABILITY {
    pub AbsencePredictionCapability: BOOLEAN,
-}
-impl Default for _POWER_USER_ABSENCE_PREDICTION_CAPABILITY {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type POWER_USER_ABSENCE_PREDICTION_CAPABILITY = _POWER_USER_ABSENCE_PREDICTION_CAPABILITY;
 pub type PPOWER_USER_ABSENCE_PREDICTION_CAPABILITY = *mut _POWER_USER_ABSENCE_PREDICTION_CAPABILITY;
@@ -37337,6 +38214,7 @@ impl Default for _POWER_PROCESSOR_LATENCY_HINT {
 pub type POWER_PROCESSOR_LATENCY_HINT = _POWER_PROCESSOR_LATENCY_HINT;
 pub type PPOWER_PROCESSOR_LATENCY_HINT = *mut _POWER_PROCESSOR_LATENCY_HINT;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _POWER_STANDBY_NETWORK_REQUEST {
    pub PowerInformationInternalHeader: POWER_INFORMATION_INTERNAL_HEADER,
    pub Active: BOOLEAN,
@@ -37353,6 +38231,7 @@ impl Default for _POWER_STANDBY_NETWORK_REQUEST {
 pub type POWER_STANDBY_NETWORK_REQUEST = _POWER_STANDBY_NETWORK_REQUEST;
 pub type PPOWER_STANDBY_NETWORK_REQUEST = *mut _POWER_STANDBY_NETWORK_REQUEST;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _POWER_SET_BACKGROUND_TASK_STATE {
    pub PowerInformationInternalHeader: POWER_INFORMATION_INTERNAL_HEADER,
    pub Engaged: BOOLEAN,
@@ -37389,6 +38268,7 @@ pub type POWER_BOOT_SESSION_STANDBY_ACTIVATION_INFO = _POWER_BOOT_SESSION_STANDB
 pub type PPOWER_BOOT_SESSION_STANDBY_ACTIVATION_INFO =
    *mut _POWER_BOOT_SESSION_STANDBY_ACTIVATION_INFO;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _POWER_SESSION_POWER_STATE {
    pub Header: POWER_INFORMATION_INTERNAL_HEADER,
    pub SessionId: ULONG,
@@ -37408,23 +38288,16 @@ impl Default for _POWER_SESSION_POWER_STATE {
 pub type POWER_SESSION_POWER_STATE = _POWER_SESSION_POWER_STATE;
 pub type PPOWER_SESSION_POWER_STATE = *mut _POWER_SESSION_POWER_STATE;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _POWER_INTERNAL_PROCESSOR_QOS_SUPPORT {
    pub QosSupportedAndConfigured: BOOLEAN,
    pub SchedulerDirectedPerfStatesSupported: BOOLEAN,
    pub QosGroupPolicyDisable: BOOLEAN,
 }
-impl Default for _POWER_INTERNAL_PROCESSOR_QOS_SUPPORT {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type POWER_INTERNAL_PROCESSOR_QOS_SUPPORT = _POWER_INTERNAL_PROCESSOR_QOS_SUPPORT;
 pub type PPOWER_INTERNAL_PROCESSOR_QOS_SUPPORT = *mut _POWER_INTERNAL_PROCESSOR_QOS_SUPPORT;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _POWER_INTERNAL_HOST_ENERGY_SAVER_STATE {
    pub Header: POWER_INFORMATION_INTERNAL_HEADER,
    pub EsEnabledOnHost: BOOLEAN,
@@ -37442,11 +38315,11 @@ pub type POWER_INTERNAL_HOST_ENERGY_SAVER_STATE = _POWER_INTERNAL_HOST_ENERGY_SA
 pub type PPOWER_INTERNAL_HOST_ENERGY_SAVER_STATE = *mut _POWER_INTERNAL_HOST_ENERGY_SAVER_STATE;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct _POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_INPUT {
+pub struct _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_INPUT {
    pub InternalType: POWER_INFORMATION_LEVEL_INTERNAL,
    pub ProcessorNumber: PROCESSOR_NUMBER,
 }
-impl Default for _POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_INPUT {
+impl Default for _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_INPUT {
    fn default() -> Self {
       let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
       unsafe {
@@ -37455,20 +38328,20 @@ impl Default for _POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_INPUT {
       }
    }
 }
-pub type POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_INPUT =
-   _POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_INPUT;
-pub type PPOWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_INPUT =
-   *mut _POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_INPUT;
+pub type POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_INPUT =
+   _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_INPUT;
+pub type PPOWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_INPUT =
+   *mut _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_INPUT;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
-pub struct _POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_OUTPUT {
+pub struct _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT {
    pub Version: ULONG,
    pub NominalFrequency: ULONG,
 }
-pub type POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_OUTPUT =
-   _POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_OUTPUT;
-pub type PPOWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_OUTPUT =
-   *mut _POWER_INTERNAL_PROCESSOR_BRANDED_FREQENCY_OUTPUT;
+pub type POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT =
+   _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT;
+pub type PPOWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT =
+   *mut _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _POWER_INTERNAL_BOOTAPP_DIAGNOSTIC {
@@ -38349,6 +39222,7 @@ impl Default for _REG_NOTIFY_INFORMATION {
 pub type REG_NOTIFY_INFORMATION = _REG_NOTIFY_INFORMATION;
 pub type PREG_NOTIFY_INFORMATION = *mut _REG_NOTIFY_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _KEY_PID_ARRAY {
    pub ProcessId: HANDLE,
    pub KeyName: UNICODE_STRING,
@@ -38365,6 +39239,7 @@ impl Default for _KEY_PID_ARRAY {
 pub type KEY_PID_ARRAY = _KEY_PID_ARRAY;
 pub type PKEY_PID_ARRAY = *mut _KEY_PID_ARRAY;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _KEY_OPEN_SUBKEYS_INFORMATION {
    pub Count: ULONG,
    pub KeyArray: [KEY_PID_ARRAY; 1usize],
@@ -38911,6 +39786,7 @@ pub struct _COMPRESSED_DATA_INFO {
 pub type COMPRESSED_DATA_INFO = _COMPRESSED_DATA_INFO;
 pub type PCOMPRESSED_DATA_INFO = *mut _COMPRESSED_DATA_INFO;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _CURDIR {
    pub DosPath: UNICODE_STRING,
    pub Handle: HANDLE,
@@ -38946,6 +39822,7 @@ impl Default for _RTL_DRIVE_LETTER_CURDIR {
 pub type RTL_DRIVE_LETTER_CURDIR = _RTL_DRIVE_LETTER_CURDIR;
 pub type PRTL_DRIVE_LETTER_CURDIR = *mut _RTL_DRIVE_LETTER_CURDIR;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _RTL_USER_PROCESS_PARAMETERS {
    pub MaximumLength: ULONG,
    pub Length: ULONG,
@@ -38998,6 +39875,7 @@ impl Default for _RTL_USER_PROCESS_PARAMETERS {
 }
 pub type RTL_USER_PROCESS_PARAMETERS = _RTL_USER_PROCESS_PARAMETERS;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _RTL_USER_PROCESS_INFORMATION {
    pub Length: ULONG,
    pub ProcessHandle: HANDLE,
@@ -39137,6 +40015,7 @@ impl Default for _RTLP_CURDIR_REF {
 pub type RTLP_CURDIR_REF = _RTLP_CURDIR_REF;
 pub type PRTLP_CURDIR_REF = *mut _RTLP_CURDIR_REF;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _RTL_RELATIVE_NAME_U {
    pub RelativeName: UNICODE_STRING,
    pub ContainingDirectory: HANDLE,
@@ -39187,6 +40066,7 @@ impl Default for _RTL_BUFFER {
 pub type RTL_BUFFER = _RTL_BUFFER;
 pub type PRTL_BUFFER = *mut _RTL_BUFFER;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _RTL_UNICODE_STRING_BUFFER {
    pub String: UNICODE_STRING,
    pub ByteBuffer: RTL_BUFFER,
@@ -39204,6 +40084,7 @@ impl Default for _RTL_UNICODE_STRING_BUFFER {
 pub type RTL_UNICODE_STRING_BUFFER = _RTL_UNICODE_STRING_BUFFER;
 pub type PRTL_UNICODE_STRING_BUFFER = *mut _RTL_UNICODE_STRING_BUFFER;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _GENERATE_NAME_CONTEXT {
    pub Checksum: USHORT,
    pub CheckSumInserted: BOOLEAN,
@@ -39212,15 +40093,6 @@ pub struct _GENERATE_NAME_CONTEXT {
    pub ExtensionLength: ULONG,
    pub ExtensionBuffer: [WCHAR; 4usize],
    pub LastIndexValue: ULONG,
-}
-impl Default for _GENERATE_NAME_CONTEXT {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type GENERATE_NAME_CONTEXT = _GENERATE_NAME_CONTEXT;
 pub type PGENERATE_NAME_CONTEXT = *mut _GENERATE_NAME_CONTEXT;
@@ -40338,7 +41210,7 @@ pub type PRTL_EXIT_POOL_THREAD =
    ::core::option::Option<unsafe extern "C" fn(arg1: NTSTATUS) -> NTSTATUS>;
 pub type PRTL_QUERY_REGISTRY_ROUTINE = ::core::option::Option<
    unsafe extern "C" fn(
-      arg1: PWSTR,
+      arg1: PCWSTR,
       arg2: ULONG,
       arg3: PVOID,
       arg4: ULONG,
@@ -40415,14 +41287,25 @@ impl _RTL_ELEVATION_FLAGS__bindgen_ty_1 {
       }
    }
    #[inline]
+   pub fn AdminApprovalModeType(&self) -> ULONG {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(3usize, 2u8) as u32) }
+   }
+   #[inline]
+   pub fn set_AdminApprovalModeType(&mut self, val: ULONG) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(3usize, 2u8, val as u64)
+      }
+   }
+   #[inline]
    pub fn ReservedBits(&self) -> ULONG {
-      unsafe { ::core::mem::transmute(self._bitfield_1.get(3usize, 29u8) as u32) }
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(5usize, 27u8) as u32) }
    }
    #[inline]
    pub fn set_ReservedBits(&mut self, val: ULONG) {
       unsafe {
          let val: u32 = ::core::mem::transmute(val);
-         self._bitfield_1.set(3usize, 29u8, val as u64)
+         self._bitfield_1.set(5usize, 27u8, val as u64)
       }
    }
    #[inline]
@@ -40430,6 +41313,7 @@ impl _RTL_ELEVATION_FLAGS__bindgen_ty_1 {
       ElevationEnabled: ULONG,
       VirtualizationEnabled: ULONG,
       InstallerDetectEnabled: ULONG,
+      AdminApprovalModeType: ULONG,
       ReservedBits: ULONG,
    ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
       let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
@@ -40446,7 +41330,11 @@ impl _RTL_ELEVATION_FLAGS__bindgen_ty_1 {
             unsafe { ::core::mem::transmute(InstallerDetectEnabled) };
          InstallerDetectEnabled as u64
       });
-      __bindgen_bitfield_unit.set(3usize, 29u8, {
+      __bindgen_bitfield_unit.set(3usize, 2u8, {
+         let AdminApprovalModeType: u32 = unsafe { ::core::mem::transmute(AdminApprovalModeType) };
+         AdminApprovalModeType as u64
+      });
+      __bindgen_bitfield_unit.set(5usize, 27u8, {
          let ReservedBits: u32 = unsafe { ::core::mem::transmute(ReservedBits) };
          ReservedBits as u64
       });
@@ -41071,6 +41959,7 @@ pub enum _RTL_BSD_ITEM_TYPE {
 }
 pub use self::_RTL_BSD_ITEM_TYPE as RTL_BSD_ITEM_TYPE;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _RTL_BSD_DATA_POWER_TRANSITION {
    pub PowerButtonTimestamp: LARGE_INTEGER,
    pub Flags: _RTL_BSD_DATA_POWER_TRANSITION__bindgen_ty_1,
@@ -41083,18 +41972,10 @@ pub struct _RTL_BSD_DATA_POWER_TRANSITION {
    pub LastUpdateBootId: ULONG,
 }
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _RTL_BSD_DATA_POWER_TRANSITION__bindgen_ty_1 {
    pub _bitfield_align_1: [u8; 0],
    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
-}
-impl Default for _RTL_BSD_DATA_POWER_TRANSITION__bindgen_ty_1 {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 impl _RTL_BSD_DATA_POWER_TRANSITION__bindgen_ty_1 {
    #[inline]
@@ -42266,41 +43147,7 @@ pub type PIMAGE_DVRT_ARM64X_DELTA_FIXUP_RECORD = *mut _IMAGE_DVRT_ARM64X_DELTA_F
 pub type UNALIGNED_PIMAGE_THUNK_DATA32 = *mut IMAGE_THUNK_DATA32;
 pub type UNALIGNED_PIMAGE_THUNK_DATA64 = *mut IMAGE_THUNK_DATA64;
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
-pub struct _IMAGE_FUNCTION_OVERRIDE_HEADER {
-   pub FuncOverrideSize: ULONG,
-}
-pub type IMAGE_FUNCTION_OVERRIDE_HEADER = _IMAGE_FUNCTION_OVERRIDE_HEADER;
-pub type PIMAGE_FUNCTION_OVERRIDE_HEADER = *mut IMAGE_FUNCTION_OVERRIDE_HEADER;
-#[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
-pub struct _IMAGE_BDD_INFO {
-   pub Version: ULONG,
-   pub BDDSize: ULONG,
-}
-pub type IMAGE_BDD_INFO = _IMAGE_BDD_INFO;
-pub type PIMAGE_BDD_INFO = *mut _IMAGE_BDD_INFO;
-#[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
-pub struct _IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION {
-   pub OriginalRva: ULONG,
-   pub BDDOffset: ULONG,
-   pub RvaSize: ULONG,
-   pub BaseRelocSize: ULONG,
-}
-pub type IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION = _IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION;
-pub type PIMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION =
-   *mut _IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION;
-#[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
-pub struct _IMAGE_BDD_DYNAMIC_RELOCATION {
-   pub Left: USHORT,
-   pub Right: USHORT,
-   pub Value: ULONG,
-}
-pub type IMAGE_BDD_DYNAMIC_RELOCATION = _IMAGE_BDD_DYNAMIC_RELOCATION;
-pub type PIMAGE_BDD_DYNAMIC_RELOCATION = *mut _IMAGE_BDD_DYNAMIC_RELOCATION;
-#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _TOKEN_SECURITY_ATTRIBUTE_FQBN_VALUE {
    pub Version: ULONG64,
    pub Name: UNICODE_STRING,
@@ -42335,6 +43182,7 @@ pub type TOKEN_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE = _TOKEN_SECURITY_ATTRIBUTE
 pub type PTOKEN_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE =
    *mut _TOKEN_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _TOKEN_SECURITY_ATTRIBUTE_V1 {
    pub Name: UNICODE_STRING,
    pub ValueType: USHORT,
@@ -42373,6 +43221,7 @@ impl Default for _TOKEN_SECURITY_ATTRIBUTE_V1 {
 pub type TOKEN_SECURITY_ATTRIBUTE_V1 = _TOKEN_SECURITY_ATTRIBUTE_V1;
 pub type PTOKEN_SECURITY_ATTRIBUTE_V1 = *mut _TOKEN_SECURITY_ATTRIBUTE_V1;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _TOKEN_SECURITY_ATTRIBUTE_RELATIVE_V1 {
    pub Name: UNICODE_STRING,
    pub ValueType: USHORT,
@@ -42508,6 +43357,7 @@ impl Default for _SE_FILE_CACHE_CLAIM_INFORMATION {
 pub type SE_FILE_CACHE_CLAIM_INFORMATION = _SE_FILE_CACHE_CLAIM_INFORMATION;
 pub type PSE_FILE_CACHE_CLAIM_INFORMATION = *mut _SE_FILE_CACHE_CLAIM_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SE_SET_FILE_CACHE_INFORMATION {
    pub Size: ULONG,
    pub CatalogDirectoryPath: UNICODE_STRING,
@@ -42707,6 +43557,7 @@ pub struct _RTL_RB_TREE32 {
 pub type RTL_RB_TREE32 = _RTL_RB_TREE32;
 pub type PRTL_RB_TREE32 = *mut _RTL_RB_TREE32;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PEB_LDR_DATA32 {
    pub Length: ULONG,
    pub Initialized: BOOLEAN,
@@ -42717,15 +43568,6 @@ pub struct _PEB_LDR_DATA32 {
    pub EntryInProgress: ULONG,
    pub ShutdownInProgress: BOOLEAN,
    pub ShutdownThreadId: ULONG,
-}
-impl Default for _PEB_LDR_DATA32 {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type PEB_LDR_DATA32 = _PEB_LDR_DATA32;
 pub type PPEB_LDR_DATA32 = *mut _PEB_LDR_DATA32;
@@ -43391,6 +44233,7 @@ pub struct _RTL_USER_PROCESS_PARAMETERS32 {
 pub type RTL_USER_PROCESS_PARAMETERS32 = _RTL_USER_PROCESS_PARAMETERS32;
 pub type PRTL_USER_PROCESS_PARAMETERS32 = *mut _RTL_USER_PROCESS_PARAMETERS32;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _PEB32 {
    pub InheritedAddressSpace: BOOLEAN,
    pub ReadImageFileExecOptions: BOOLEAN,
@@ -43486,23 +44329,16 @@ pub struct _PEB32 {
    pub ExtendedFeatureDisableMask: ULONGLONG,
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _PEB32__bindgen_ty_1 {
-   pub BitField: ::core::mem::ManuallyDrop<BOOLEAN>,
-   pub __bindgen_anon_1: ::core::mem::ManuallyDrop<_PEB32__bindgen_ty_1__bindgen_ty_1>,
+   pub BitField: BOOLEAN,
+   pub __bindgen_anon_1: _PEB32__bindgen_ty_1__bindgen_ty_1,
 }
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PEB32__bindgen_ty_1__bindgen_ty_1 {
    pub _bitfield_align_1: [u8; 0],
    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
-}
-impl Default for _PEB32__bindgen_ty_1__bindgen_ty_1 {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 impl _PEB32__bindgen_ty_1__bindgen_ty_1 {
    #[inline]
@@ -43993,6 +44829,7 @@ impl Default for _GDI_TEB_BATCH32 {
 pub type GDI_TEB_BATCH32 = _GDI_TEB_BATCH32;
 pub type PGDI_TEB_BATCH32 = *mut _GDI_TEB_BATCH32;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _TEB32 {
    pub NtTib: NT_TIB32,
    pub EnvironmentPointer: ULONG,
@@ -44641,6 +45478,7 @@ impl Default for _WOW64INFO {
 pub type WOW64INFO = _WOW64INFO;
 pub type PWOW64INFO = *mut _WOW64INFO;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _PEB32_WITH_WOW64INFO {
    pub Peb32: PEB32,
    pub Wow64Info: WOW64INFO,
@@ -44661,6 +45499,7 @@ pub type PSAM_HANDLE = *mut PVOID;
 pub type SAM_ENUMERATE_HANDLE = ULONG;
 pub type PSAM_ENUMERATE_HANDLE = *mut ULONG;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SAM_RID_ENUMERATION {
    pub RelativeId: ULONG,
    pub Name: UNICODE_STRING,
@@ -44677,6 +45516,7 @@ impl Default for _SAM_RID_ENUMERATION {
 pub type SAM_RID_ENUMERATION = _SAM_RID_ENUMERATION;
 pub type PSAM_RID_ENUMERATION = *mut _SAM_RID_ENUMERATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SAM_SID_ENUMERATION {
    pub Sid: PSID,
    pub Name: UNICODE_STRING,
@@ -44772,6 +45612,7 @@ pub enum _DOMAIN_SERVER_ROLE {
 pub use self::_DOMAIN_SERVER_ROLE as DOMAIN_SERVER_ROLE;
 pub type PDOMAIN_SERVER_ROLE = *mut _DOMAIN_SERVER_ROLE;
 #[repr(C, packed(4))]
+#[derive(Copy, Clone)]
 pub struct _DOMAIN_GENERAL_INFORMATION {
    pub ForceLogoff: LARGE_INTEGER,
    pub OemInformation: UNICODE_STRING,
@@ -44797,6 +45638,7 @@ impl Default for _DOMAIN_GENERAL_INFORMATION {
 pub type DOMAIN_GENERAL_INFORMATION = _DOMAIN_GENERAL_INFORMATION;
 pub type PDOMAIN_GENERAL_INFORMATION = *mut _DOMAIN_GENERAL_INFORMATION;
 #[repr(C, packed(4))]
+#[derive(Copy, Clone)]
 pub struct _DOMAIN_GENERAL_INFORMATION2 {
    pub I1: DOMAIN_GENERAL_INFORMATION,
    pub LockoutDuration: LARGE_INTEGER,
@@ -44815,17 +45657,9 @@ impl Default for _DOMAIN_GENERAL_INFORMATION2 {
 pub type DOMAIN_GENERAL_INFORMATION2 = _DOMAIN_GENERAL_INFORMATION2;
 pub type PDOMAIN_GENERAL_INFORMATION2 = *mut _DOMAIN_GENERAL_INFORMATION2;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _DOMAIN_UAS_INFORMATION {
    pub UasCompatibilityRequired: BOOLEAN,
-}
-impl Default for _DOMAIN_UAS_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type DOMAIN_UAS_INFORMATION = _DOMAIN_UAS_INFORMATION;
 #[repr(C)]
@@ -44873,6 +45707,7 @@ impl Default for _DOMAIN_LOGOFF_INFORMATION {
 pub type DOMAIN_LOGOFF_INFORMATION = _DOMAIN_LOGOFF_INFORMATION;
 pub type PDOMAIN_LOGOFF_INFORMATION = *mut _DOMAIN_LOGOFF_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _DOMAIN_OEM_INFORMATION {
    pub OemInformation: UNICODE_STRING,
 }
@@ -44888,6 +45723,7 @@ impl Default for _DOMAIN_OEM_INFORMATION {
 pub type DOMAIN_OEM_INFORMATION = _DOMAIN_OEM_INFORMATION;
 pub type PDOMAIN_OEM_INFORMATION = *mut _DOMAIN_OEM_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _DOMAIN_NAME_INFORMATION {
    pub DomainName: UNICODE_STRING,
 }
@@ -44919,6 +45755,7 @@ impl Default for _DOMAIN_SERVER_ROLE_INFORMATION {
 pub type DOMAIN_SERVER_ROLE_INFORMATION = _DOMAIN_SERVER_ROLE_INFORMATION;
 pub type PDOMAIN_SERVER_ROLE_INFORMATION = *mut _DOMAIN_SERVER_ROLE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _DOMAIN_REPLICATION_INFORMATION {
    pub ReplicaSourceNodeName: UNICODE_STRING,
 }
@@ -45016,6 +45853,7 @@ pub enum _DOMAIN_DISPLAY_INFORMATION {
 pub use self::_DOMAIN_DISPLAY_INFORMATION as DOMAIN_DISPLAY_INFORMATION;
 pub type PDOMAIN_DISPLAY_INFORMATION = *mut _DOMAIN_DISPLAY_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _DOMAIN_DISPLAY_USER {
    pub Index: ULONG,
    pub Rid: ULONG,
@@ -45036,6 +45874,7 @@ impl Default for _DOMAIN_DISPLAY_USER {
 pub type DOMAIN_DISPLAY_USER = _DOMAIN_DISPLAY_USER;
 pub type PDOMAIN_DISPLAY_USER = *mut _DOMAIN_DISPLAY_USER;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _DOMAIN_DISPLAY_MACHINE {
    pub Index: ULONG,
    pub Rid: ULONG,
@@ -45055,6 +45894,7 @@ impl Default for _DOMAIN_DISPLAY_MACHINE {
 pub type DOMAIN_DISPLAY_MACHINE = _DOMAIN_DISPLAY_MACHINE;
 pub type PDOMAIN_DISPLAY_MACHINE = *mut _DOMAIN_DISPLAY_MACHINE;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _DOMAIN_DISPLAY_GROUP {
    pub Index: ULONG,
    pub Rid: ULONG,
@@ -45116,6 +45956,7 @@ pub enum _DOMAIN_LOCALIZABLE_ACCOUNTS_INFORMATION {
 pub use self::_DOMAIN_LOCALIZABLE_ACCOUNTS_INFORMATION as DOMAIN_LOCALIZABLE_ACCOUNTS_INFORMATION;
 pub type PDOMAIN_LOCALIZABLE_ACCOUNTS_INFORMATION = *mut _DOMAIN_LOCALIZABLE_ACCOUNTS_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _DOMAIN_LOCALIZABLE_ACCOUNTS_ENTRY {
    pub Rid: ULONG,
    pub Use: SID_NAME_USE,
@@ -45186,6 +46027,7 @@ pub enum _GROUP_INFORMATION_CLASS {
 }
 pub use self::_GROUP_INFORMATION_CLASS as GROUP_INFORMATION_CLASS;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _GROUP_GENERAL_INFORMATION {
    pub Name: UNICODE_STRING,
    pub Attributes: ULONG,
@@ -45204,6 +46046,7 @@ impl Default for _GROUP_GENERAL_INFORMATION {
 pub type GROUP_GENERAL_INFORMATION = _GROUP_GENERAL_INFORMATION;
 pub type PGROUP_GENERAL_INFORMATION = *mut _GROUP_GENERAL_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _GROUP_NAME_INFORMATION {
    pub Name: UNICODE_STRING,
 }
@@ -45226,6 +46069,7 @@ pub struct _GROUP_ATTRIBUTE_INFORMATION {
 pub type GROUP_ATTRIBUTE_INFORMATION = _GROUP_ATTRIBUTE_INFORMATION;
 pub type PGROUP_ATTRIBUTE_INFORMATION = *mut _GROUP_ATTRIBUTE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _GROUP_ADM_COMMENT_INFORMATION {
    pub AdminComment: UNICODE_STRING,
 }
@@ -45252,6 +46096,7 @@ pub enum _ALIAS_INFORMATION_CLASS {
 }
 pub use self::_ALIAS_INFORMATION_CLASS as ALIAS_INFORMATION_CLASS;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _ALIAS_GENERAL_INFORMATION {
    pub Name: UNICODE_STRING,
    pub MemberCount: ULONG,
@@ -45269,6 +46114,7 @@ impl Default for _ALIAS_GENERAL_INFORMATION {
 pub type ALIAS_GENERAL_INFORMATION = _ALIAS_GENERAL_INFORMATION;
 pub type PALIAS_GENERAL_INFORMATION = *mut _ALIAS_GENERAL_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _ALIAS_NAME_INFORMATION {
    pub Name: UNICODE_STRING,
 }
@@ -45284,6 +46130,7 @@ impl Default for _ALIAS_NAME_INFORMATION {
 pub type ALIAS_NAME_INFORMATION = _ALIAS_NAME_INFORMATION;
 pub type PALIAS_NAME_INFORMATION = *mut _ALIAS_NAME_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _ALIAS_ADM_COMMENT_INFORMATION {
    pub AdminComment: UNICODE_STRING,
 }
@@ -45389,6 +46236,7 @@ pub enum _USER_INFORMATION_CLASS {
 pub use self::_USER_INFORMATION_CLASS as USER_INFORMATION_CLASS;
 pub type PUSER_INFORMATION_CLASS = *mut _USER_INFORMATION_CLASS;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_GENERAL_INFORMATION {
    pub UserName: UNICODE_STRING,
    pub FullName: UNICODE_STRING,
@@ -45408,6 +46256,7 @@ impl Default for _USER_GENERAL_INFORMATION {
 pub type USER_GENERAL_INFORMATION = _USER_GENERAL_INFORMATION;
 pub type PUSER_GENERAL_INFORMATION = *mut _USER_GENERAL_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_PREFERENCES_INFORMATION {
    pub UserComment: UNICODE_STRING,
    pub Reserved1: UNICODE_STRING,
@@ -45426,6 +46275,7 @@ impl Default for _USER_PREFERENCES_INFORMATION {
 pub type USER_PREFERENCES_INFORMATION = _USER_PREFERENCES_INFORMATION;
 pub type PUSER_PREFERENCES_INFORMATION = *mut _USER_PREFERENCES_INFORMATION;
 #[repr(C, packed(4))]
+#[derive(Copy, Clone)]
 pub struct _USER_LOGON_INFORMATION {
    pub UserName: UNICODE_STRING,
    pub FullName: UNICODE_STRING,
@@ -45474,6 +46324,7 @@ impl Default for _USER_LOGON_HOURS_INFORMATION {
 pub type USER_LOGON_HOURS_INFORMATION = _USER_LOGON_HOURS_INFORMATION;
 pub type PUSER_LOGON_HOURS_INFORMATION = *mut _USER_LOGON_HOURS_INFORMATION;
 #[repr(C, packed(4))]
+#[derive(Copy, Clone)]
 pub struct _USER_ACCOUNT_INFORMATION {
    pub UserName: UNICODE_STRING,
    pub FullName: UNICODE_STRING,
@@ -45506,6 +46357,7 @@ impl Default for _USER_ACCOUNT_INFORMATION {
 pub type USER_ACCOUNT_INFORMATION = _USER_ACCOUNT_INFORMATION;
 pub type PUSER_ACCOUNT_INFORMATION = *mut _USER_ACCOUNT_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_NAME_INFORMATION {
    pub UserName: UNICODE_STRING,
    pub FullName: UNICODE_STRING,
@@ -45522,6 +46374,7 @@ impl Default for _USER_NAME_INFORMATION {
 pub type USER_NAME_INFORMATION = _USER_NAME_INFORMATION;
 pub type PUSER_NAME_INFORMATION = *mut _USER_NAME_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_ACCOUNT_NAME_INFORMATION {
    pub UserName: UNICODE_STRING,
 }
@@ -45537,6 +46390,7 @@ impl Default for _USER_ACCOUNT_NAME_INFORMATION {
 pub type USER_ACCOUNT_NAME_INFORMATION = _USER_ACCOUNT_NAME_INFORMATION;
 pub type PUSER_ACCOUNT_NAME_INFORMATION = *mut _USER_ACCOUNT_NAME_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_FULL_NAME_INFORMATION {
    pub FullName: UNICODE_STRING,
 }
@@ -45559,6 +46413,7 @@ pub struct _USER_PRIMARY_GROUP_INFORMATION {
 pub type USER_PRIMARY_GROUP_INFORMATION = _USER_PRIMARY_GROUP_INFORMATION;
 pub type PUSER_PRIMARY_GROUP_INFORMATION = *mut _USER_PRIMARY_GROUP_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_HOME_INFORMATION {
    pub HomeDirectory: UNICODE_STRING,
    pub HomeDirectoryDrive: UNICODE_STRING,
@@ -45575,6 +46430,7 @@ impl Default for _USER_HOME_INFORMATION {
 pub type USER_HOME_INFORMATION = _USER_HOME_INFORMATION;
 pub type PUSER_HOME_INFORMATION = *mut _USER_HOME_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_SCRIPT_INFORMATION {
    pub ScriptPath: UNICODE_STRING,
 }
@@ -45590,6 +46446,7 @@ impl Default for _USER_SCRIPT_INFORMATION {
 pub type USER_SCRIPT_INFORMATION = _USER_SCRIPT_INFORMATION;
 pub type PUSER_SCRIPT_INFORMATION = *mut _USER_SCRIPT_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_PROFILE_INFORMATION {
    pub ProfilePath: UNICODE_STRING,
 }
@@ -45605,6 +46462,7 @@ impl Default for _USER_PROFILE_INFORMATION {
 pub type USER_PROFILE_INFORMATION = _USER_PROFILE_INFORMATION;
 pub type PUSER_PROFILE_INFORMATION = *mut _USER_PROFILE_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_ADMIN_COMMENT_INFORMATION {
    pub AdminComment: UNICODE_STRING,
 }
@@ -45620,6 +46478,7 @@ impl Default for _USER_ADMIN_COMMENT_INFORMATION {
 pub type USER_ADMIN_COMMENT_INFORMATION = _USER_ADMIN_COMMENT_INFORMATION;
 pub type PUSER_ADMIN_COMMENT_INFORMATION = *mut _USER_ADMIN_COMMENT_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_WORKSTATIONS_INFORMATION {
    pub WorkStations: UNICODE_STRING,
 }
@@ -45635,6 +46494,7 @@ impl Default for _USER_WORKSTATIONS_INFORMATION {
 pub type USER_WORKSTATIONS_INFORMATION = _USER_WORKSTATIONS_INFORMATION;
 pub type PUSER_WORKSTATIONS_INFORMATION = *mut _USER_WORKSTATIONS_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_SET_PASSWORD_INFORMATION {
    pub Password: UNICODE_STRING,
    pub PasswordExpired: BOOLEAN,
@@ -45695,21 +46555,13 @@ pub struct _ENCRYPTED_LM_OWF_PASSWORD {
 pub type ENCRYPTED_LM_OWF_PASSWORD = _ENCRYPTED_LM_OWF_PASSWORD;
 pub type PENCRYPTED_LM_OWF_PASSWORD = *mut _ENCRYPTED_LM_OWF_PASSWORD;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _USER_INTERNAL1_INFORMATION {
    pub EncryptedNtOwfPassword: ENCRYPTED_NT_OWF_PASSWORD,
    pub EncryptedLmOwfPassword: ENCRYPTED_LM_OWF_PASSWORD,
    pub NtPasswordPresent: BOOLEAN,
    pub LmPasswordPresent: BOOLEAN,
    pub PasswordExpired: BOOLEAN,
-}
-impl Default for _USER_INTERNAL1_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type USER_INTERNAL1_INFORMATION = _USER_INTERNAL1_INFORMATION;
 pub type PUSER_INTERNAL1_INFORMATION = *mut _USER_INTERNAL1_INFORMATION;
@@ -45734,6 +46586,7 @@ impl Default for _USER_INTERNAL2_INFORMATION {
 pub type USER_INTERNAL2_INFORMATION = _USER_INTERNAL2_INFORMATION;
 pub type PUSER_INTERNAL2_INFORMATION = *mut _USER_INTERNAL2_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_PARAMETERS_INFORMATION {
    pub Parameters: UNICODE_STRING,
 }
@@ -45749,6 +46602,7 @@ impl Default for _USER_PARAMETERS_INFORMATION {
 pub type USER_PARAMETERS_INFORMATION = _USER_PARAMETERS_INFORMATION;
 pub type PUSER_PARAMETERS_INFORMATION = *mut _USER_PARAMETERS_INFORMATION;
 #[repr(C, packed(4))]
+#[derive(Copy, Clone)]
 pub struct _USER_ALL_INFORMATION {
    pub LastLogon: LARGE_INTEGER,
    pub LastLogoff: LARGE_INTEGER,
@@ -45796,6 +46650,7 @@ impl Default for _USER_ALL_INFORMATION {
 pub type USER_ALL_INFORMATION = _USER_ALL_INFORMATION;
 pub type PUSER_ALL_INFORMATION = *mut _USER_ALL_INFORMATION;
 #[repr(C, packed(4))]
+#[derive(Copy, Clone)]
 pub struct _USER_INTERNAL3_INFORMATION {
    pub I1: USER_ALL_INFORMATION,
    pub LastBadPasswordTime: LARGE_INTEGER,
@@ -45828,6 +46683,7 @@ impl Default for _ENCRYPTED_USER_PASSWORD {
 pub type ENCRYPTED_USER_PASSWORD = _ENCRYPTED_USER_PASSWORD;
 pub type PENCRYPTED_USER_PASSWORD = *mut _ENCRYPTED_USER_PASSWORD;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _USER_INTERNAL4_INFORMATION {
    pub I1: USER_ALL_INFORMATION,
    pub UserPassword: ENCRYPTED_USER_PASSWORD,
@@ -45844,6 +46700,7 @@ impl Default for _USER_INTERNAL4_INFORMATION {
 pub type USER_INTERNAL4_INFORMATION = _USER_INTERNAL4_INFORMATION;
 pub type PUSER_INTERNAL4_INFORMATION = *mut _USER_INTERNAL4_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_INTERNAL5_INFORMATION {
    pub UserPassword: ENCRYPTED_USER_PASSWORD,
    pub PasswordExpired: BOOLEAN,
@@ -45876,6 +46733,7 @@ impl Default for _ENCRYPTED_USER_PASSWORD_NEW {
 pub type ENCRYPTED_USER_PASSWORD_NEW = _ENCRYPTED_USER_PASSWORD_NEW;
 pub type PENCRYPTED_USER_PASSWORD_NEW = *mut _ENCRYPTED_USER_PASSWORD_NEW;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _USER_INTERNAL4_INFORMATION_NEW {
    pub I1: USER_ALL_INFORMATION,
    pub UserPassword: ENCRYPTED_USER_PASSWORD_NEW,
@@ -45892,6 +46750,7 @@ impl Default for _USER_INTERNAL4_INFORMATION_NEW {
 pub type USER_INTERNAL4_INFORMATION_NEW = _USER_INTERNAL4_INFORMATION_NEW;
 pub type PUSER_INTERNAL4_INFORMATION_NEW = *mut _USER_INTERNAL4_INFORMATION_NEW;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_INTERNAL5_INFORMATION_NEW {
    pub UserPassword: ENCRYPTED_USER_PASSWORD_NEW,
    pub PasswordExpired: BOOLEAN,
@@ -45908,6 +46767,7 @@ impl Default for _USER_INTERNAL5_INFORMATION_NEW {
 pub type USER_INTERNAL5_INFORMATION_NEW = _USER_INTERNAL5_INFORMATION_NEW;
 pub type PUSER_INTERNAL5_INFORMATION_NEW = *mut _USER_INTERNAL5_INFORMATION_NEW;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_ALLOWED_TO_DELEGATE_TO_LIST {
    pub Size: ULONG,
    pub NumSPNs: ULONG,
@@ -45925,6 +46785,7 @@ impl Default for _USER_ALLOWED_TO_DELEGATE_TO_LIST {
 pub type USER_ALLOWED_TO_DELEGATE_TO_LIST = _USER_ALLOWED_TO_DELEGATE_TO_LIST;
 pub type PUSER_ALLOWED_TO_DELEGATE_TO_LIST = *mut _USER_ALLOWED_TO_DELEGATE_TO_LIST;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _USER_INTERNAL6_INFORMATION {
    pub I1: USER_ALL_INFORMATION,
    pub LastBadPasswordTime: LARGE_INTEGER,
@@ -45947,6 +46808,7 @@ pub type PUSER_INTERNAL6_INFORMATION = *mut _USER_INTERNAL6_INFORMATION;
 pub type SAM_USER_TILE = SAM_BYTE_ARRAY_32K;
 pub type PSAM_USER_TILE = *mut SAM_BYTE_ARRAY_32K;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_EXTENDED_INFORMATION {
    pub ExtendedWhichFields: ULONG,
    pub UserTile: SAM_USER_TILE,
@@ -45966,18 +46828,10 @@ impl Default for _USER_EXTENDED_INFORMATION {
 pub type USER_EXTENDED_INFORMATION = _USER_EXTENDED_INFORMATION;
 pub type PUSER_EXTENDED_INFORMATION = *mut _USER_EXTENDED_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _USER_LOGON_UI_INFORMATION {
    pub PasswordIsBlank: BOOLEAN,
    pub AccountIsDisabled: BOOLEAN,
-}
-impl Default for _USER_LOGON_UI_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type USER_LOGON_UI_INFORMATION = _USER_LOGON_UI_INFORMATION;
 pub type PUSER_LOGON_UI_INFORMATION = *mut _USER_LOGON_UI_INFORMATION;
@@ -46002,6 +46856,7 @@ impl Default for _ENCRYPTED_PASSWORD_AES {
 pub type ENCRYPTED_PASSWORD_AES = _ENCRYPTED_PASSWORD_AES;
 pub type PENCRYPTED_PASSWORD_AES = *mut _ENCRYPTED_PASSWORD_AES;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_INTERNAL7_INFORMATION {
    pub UserPassword: ENCRYPTED_PASSWORD_AES,
    pub PasswordExpired: BOOLEAN,
@@ -46018,6 +46873,7 @@ impl Default for _USER_INTERNAL7_INFORMATION {
 pub type USER_INTERNAL7_INFORMATION = _USER_INTERNAL7_INFORMATION;
 pub type PUSER_INTERNAL7_INFORMATION = *mut _USER_INTERNAL7_INFORMATION;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _USER_INTERNAL8_INFORMATION {
    pub I1: USER_ALL_INFORMATION,
    pub UserPassword: ENCRYPTED_PASSWORD_AES,
@@ -46034,6 +46890,7 @@ impl Default for _USER_INTERNAL8_INFORMATION {
 pub type USER_INTERNAL8_INFORMATION = _USER_INTERNAL8_INFORMATION;
 pub type PUSER_INTERNAL8_INFORMATION = *mut _USER_INTERNAL8_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _USER_PWD_CHANGE_FAILURE_INFORMATION {
    pub ExtendedFailureReason: ULONG,
    pub FilterModuleName: UNICODE_STRING,
@@ -46225,6 +47082,7 @@ impl Default for _SAM_VALIDATE_STANDARD_OUTPUT_ARG {
 pub type SAM_VALIDATE_STANDARD_OUTPUT_ARG = _SAM_VALIDATE_STANDARD_OUTPUT_ARG;
 pub type PSAM_VALIDATE_STANDARD_OUTPUT_ARG = *mut _SAM_VALIDATE_STANDARD_OUTPUT_ARG;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SAM_VALIDATE_AUTHENTICATION_INPUT_ARG {
    pub InputPersistedFields: SAM_VALIDATE_PERSISTED_FIELDS,
    pub PasswordMatched: BOOLEAN,
@@ -46241,6 +47099,7 @@ impl Default for _SAM_VALIDATE_AUTHENTICATION_INPUT_ARG {
 pub type SAM_VALIDATE_AUTHENTICATION_INPUT_ARG = _SAM_VALIDATE_AUTHENTICATION_INPUT_ARG;
 pub type PSAM_VALIDATE_AUTHENTICATION_INPUT_ARG = *mut _SAM_VALIDATE_AUTHENTICATION_INPUT_ARG;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SAM_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
    pub InputPersistedFields: SAM_VALIDATE_PERSISTED_FIELDS,
    pub ClearPassword: UNICODE_STRING,
@@ -46260,6 +47119,7 @@ impl Default for _SAM_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
 pub type SAM_VALIDATE_PASSWORD_CHANGE_INPUT_ARG = _SAM_VALIDATE_PASSWORD_CHANGE_INPUT_ARG;
 pub type PSAM_VALIDATE_PASSWORD_CHANGE_INPUT_ARG = *mut _SAM_VALIDATE_PASSWORD_CHANGE_INPUT_ARG;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _SAM_VALIDATE_PASSWORD_RESET_INPUT_ARG {
    pub InputPersistedFields: SAM_VALIDATE_PERSISTED_FIELDS,
    pub ClearPassword: UNICODE_STRING,
@@ -46280,12 +47140,11 @@ impl Default for _SAM_VALIDATE_PASSWORD_RESET_INPUT_ARG {
 pub type SAM_VALIDATE_PASSWORD_RESET_INPUT_ARG = _SAM_VALIDATE_PASSWORD_RESET_INPUT_ARG;
 pub type PSAM_VALIDATE_PASSWORD_RESET_INPUT_ARG = *mut _SAM_VALIDATE_PASSWORD_RESET_INPUT_ARG;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _SAM_VALIDATE_INPUT_ARG {
-   pub ValidateAuthenticationInput:
-      ::core::mem::ManuallyDrop<SAM_VALIDATE_AUTHENTICATION_INPUT_ARG>,
-   pub ValidatePasswordChangeInput:
-      ::core::mem::ManuallyDrop<SAM_VALIDATE_PASSWORD_CHANGE_INPUT_ARG>,
-   pub ValidatePasswordResetInput: ::core::mem::ManuallyDrop<SAM_VALIDATE_PASSWORD_RESET_INPUT_ARG>,
+   pub ValidateAuthenticationInput: SAM_VALIDATE_AUTHENTICATION_INPUT_ARG,
+   pub ValidatePasswordChangeInput: SAM_VALIDATE_PASSWORD_CHANGE_INPUT_ARG,
+   pub ValidatePasswordResetInput: SAM_VALIDATE_PASSWORD_RESET_INPUT_ARG,
 }
 impl Default for _SAM_VALIDATE_INPUT_ARG {
    fn default() -> Self {
@@ -46325,6 +47184,7 @@ pub enum _SAM_GENERIC_OPERATION_TYPE {
 pub use self::_SAM_GENERIC_OPERATION_TYPE as SAM_GENERIC_OPERATION_TYPE;
 pub type PSAM_GENERIC_OPERATION_TYPE = *mut _SAM_GENERIC_OPERATION_TYPE;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _SAM_OPERATION_OBJCHG_INPUT {
    pub Register: BOOLEAN,
    pub EventHandle: ULONG64,
@@ -46350,8 +47210,9 @@ pub struct _SAM_OPERATION_OBJCHG_OUTPUT {
 pub type SAM_OPERATION_OBJCHG_OUTPUT = _SAM_OPERATION_OBJCHG_OUTPUT;
 pub type PSAM_OPERATION_OBJCHG_OUTPUT = *mut _SAM_OPERATION_OBJCHG_OUTPUT;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _SAM_GENERIC_OPERATION_INPUT {
-   pub ObjChangeIn: ::core::mem::ManuallyDrop<SAM_OPERATION_OBJCHG_INPUT>,
+   pub ObjChangeIn: SAM_OPERATION_OBJCHG_INPUT,
 }
 impl Default for _SAM_GENERIC_OPERATION_INPUT {
    fn default() -> Self {
@@ -46992,6 +47853,7 @@ pub struct _PERFINFO_GROUPMASK {
 pub type PERFINFO_GROUPMASK = _PERFINFO_GROUPMASK;
 pub type PPERFINFO_GROUPMASK = *mut _PERFINFO_GROUPMASK;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _CPU_CONFIG_RECORD {
    pub ProcessorSpeed: ULONG,
    pub NumberOfProcessors: ULONG,
@@ -47021,6 +47883,7 @@ impl Default for _CPU_CONFIG_RECORD {
 pub type CPU_CONFIG_RECORD = _CPU_CONFIG_RECORD;
 pub type PCPU_CONFIG_RECORD = *mut _CPU_CONFIG_RECORD;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PHYSICAL_DISK_RECORD {
    pub DiskNumber: ULONG,
    pub BytesPerSector: ULONG,
@@ -47151,6 +48014,7 @@ pub struct _WMI_DPI_RECORD {
 pub type WMI_DPI_RECORD = _WMI_DPI_RECORD;
 pub type PWMI_DPI_RECORD = *mut _WMI_DPI_RECORD;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _WMI_POWER_RECORD {
    pub SystemS1: BOOLEAN,
    pub SystemS2: BOOLEAN,
@@ -47160,15 +48024,6 @@ pub struct _WMI_POWER_RECORD {
    pub AoAc: BOOLEAN,
    pub Pad2: CHAR,
    pub Pad3: CHAR,
-}
-impl Default for _WMI_POWER_RECORD {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type WMI_POWER_RECORD = _WMI_POWER_RECORD;
 pub type PWMI_POWER_RECORD = *mut _WMI_POWER_RECORD;
@@ -47230,56 +48085,32 @@ pub struct _WMI_IDE_CHANNEL_RECORD {
 pub type WMI_IDE_CHANNEL_RECORD = _WMI_IDE_CHANNEL_RECORD;
 pub type PWMI_IDE_CHANNEL_RECORD = *mut _WMI_IDE_CHANNEL_RECORD;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _WMI_JOB_INFORMATION {
    pub JobId: GUID,
    pub JobHandle: ULONG,
    pub Flags: ULONG,
    pub Status: NTSTATUS,
 }
-impl Default for _WMI_JOB_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type WMI_JOB_INFORMATION = _WMI_JOB_INFORMATION;
 pub type PWMI_JOB_INFORMATION = *mut _WMI_JOB_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _WMI_JOB_ASSIGN_PROCESS {
    pub JobId: GUID,
    pub JobHandle: ULONG,
    pub UniqueProcessId: ULONG,
    pub Status: NTSTATUS,
 }
-impl Default for _WMI_JOB_ASSIGN_PROCESS {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type WMI_JOB_ASSIGN_PROCESS = _WMI_JOB_ASSIGN_PROCESS;
 pub type PWMI_JOB_ASSIGN_PROCESS = *mut _WMI_JOB_ASSIGN_PROCESS;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _WMI_JOB_REMOVE_PROCESS {
    pub JobId: GUID,
    pub UniqueProcessId: ULONG,
    pub RemovalFlags: ULONG,
    pub ExitStatus: NTSTATUS,
-}
-impl Default for _WMI_JOB_REMOVE_PROCESS {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type WMI_JOB_REMOVE_PROCESS = _WMI_JOB_REMOVE_PROCESS;
 pub type PWMI_JOB_REMOVE_PROCESS = *mut _WMI_JOB_REMOVE_PROCESS;
@@ -47318,6 +48149,7 @@ pub struct _WMI_JOB_SEND_NOTIFICATION_INFORMATION {
 pub type WMI_JOB_SEND_NOTIFICATION_INFORMATION = _WMI_JOB_SEND_NOTIFICATION_INFORMATION;
 pub type PWMI_JOB_SEND_NOTIFICATION_INFORMATION = *mut _WMI_JOB_SEND_NOTIFICATION_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _WMI_PROCESS_INFORMATION {
    pub UniqueProcessKey: ULONG_PTR,
    pub ProcessId: ULONG,
@@ -47328,18 +48160,10 @@ pub struct _WMI_PROCESS_INFORMATION {
    pub Flags: ULONG,
    pub Sid: ULONG,
 }
-impl Default for _WMI_PROCESS_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type WMI_PROCESS_INFORMATION = _WMI_PROCESS_INFORMATION;
 pub type PWMI_PROCESS_INFORMATION = *mut _WMI_PROCESS_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _WMI_PROCESS_INFORMATION64 {
    pub UniqueProcessKey64: ULONG64,
    pub ProcessId: ULONG,
@@ -47349,15 +48173,6 @@ pub struct _WMI_PROCESS_INFORMATION64 {
    pub DirectoryTableBase: ULONG64,
    pub Flags: ULONG,
    pub Sid: ULONG,
-}
-impl Default for _WMI_PROCESS_INFORMATION64 {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type WMI_PROCESS_INFORMATION64 = _WMI_PROCESS_INFORMATION64;
 pub type PWMI_PROCESS_INFORMATION64 = *mut _WMI_PROCESS_INFORMATION64;
@@ -47801,6 +48616,7 @@ pub struct _WMI_TXR {
 pub type WMI_TXR = _WMI_TXR;
 pub type PWMI_TXR = *mut _WMI_TXR;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _ETW_REGNOTIF_REGISTER {
    pub Notification: PVOID,
    pub Kcb: PVOID,
@@ -49496,21 +50312,13 @@ pub struct _ETW_UMS_EVENT_PARK {
 pub type ETW_UMS_EVENT_PARK = _ETW_UMS_EVENT_PARK;
 pub type PETW_UMS_EVENT_PARK = *mut _ETW_UMS_EVENT_PARK;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _ETW_UMS_EVENT_DISASSOCIATE {
    pub ProcessId: ULONG,
    pub ScheduledThreadId: ULONG,
    pub PrimaryThreadId: ULONG,
    pub UmsApcControlFlags: ULONG,
    pub Status: NTSTATUS,
-}
-impl Default for _ETW_UMS_EVENT_DISASSOCIATE {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type ETW_UMS_EVENT_DISASSOCIATE = _ETW_UMS_EVENT_DISASSOCIATE;
 pub type PETW_UMS_EVENT_DISASSOCIATE = *mut _ETW_UMS_EVENT_DISASSOCIATE;
@@ -49739,6 +50547,7 @@ pub struct _ETW_DFSS_RELEASE_THREAD_ON_IDLE {
 pub type ETW_DFSS_RELEASE_THREAD_ON_IDLE = _ETW_DFSS_RELEASE_THREAD_ON_IDLE;
 pub type PETW_DFSS_RELEASE_THREAD_ON_IDLE = *mut _ETW_DFSS_RELEASE_THREAD_ON_IDLE;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _ETW_CPU_CACHE_FLUSH_EVENT {
    pub Address: PVOID,
    pub Bytes: SIZE_T,
@@ -50290,6 +51099,7 @@ impl Default for _PERFINFO_SET_POWER_ACTION {
 pub type PERFINFO_SET_POWER_ACTION = _PERFINFO_SET_POWER_ACTION;
 pub type PPERFINFO_SET_POWER_ACTION = *mut _PERFINFO_SET_POWER_ACTION;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PERFINFO_SET_POWER_ACTION_RET {
    pub Trigger: PVOID,
    pub Status: NTSTATUS,
@@ -50306,35 +51116,19 @@ impl Default for _PERFINFO_SET_POWER_ACTION_RET {
 pub type PERFINFO_SET_POWER_ACTION_RET = _PERFINFO_SET_POWER_ACTION_RET;
 pub type PPERFINFO_SET_POWER_ACTION_RET = *mut _PERFINFO_SET_POWER_ACTION_RET;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_SET_DEVICES_STATE {
    pub SystemState: ULONG,
    pub Waking: BOOLEAN,
    pub Shutdown: BOOLEAN,
    pub IrpMinor: UCHAR,
 }
-impl Default for _PERFINFO_SET_DEVICES_STATE {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type PERFINFO_SET_DEVICES_STATE = _PERFINFO_SET_DEVICES_STATE;
 pub type PPERFINFO_SET_DEVICES_STATE = *mut _PERFINFO_SET_DEVICES_STATE;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_SET_DEVICES_STATE_RET {
    pub Status: NTSTATUS,
-}
-impl Default for _PERFINFO_SET_DEVICES_STATE_RET {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type PERFINFO_SET_DEVICES_STATE_RET = _PERFINFO_SET_DEVICES_STATE_RET;
 pub type PPERFINFO_SET_DEVICES_STATE_RET = *mut _PERFINFO_SET_DEVICES_STATE_RET;
@@ -50363,6 +51157,7 @@ impl Default for _PERFINFO_PO_NOTIFY_DEVICE {
 pub type PERFINFO_PO_NOTIFY_DEVICE = _PERFINFO_PO_NOTIFY_DEVICE;
 pub type PPERFINFO_PO_NOTIFY_DEVICE = *mut _PERFINFO_PO_NOTIFY_DEVICE;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PERFINFO_PO_NOTIFY_DEVICE_COMPLETE {
    pub Irp: PVOID,
    pub Status: NTSTATUS,
@@ -50454,34 +51249,18 @@ pub struct _PERFINFO_BOOT_PHASE_START {
 pub type PERFINFO_BOOT_PHASE_START = _PERFINFO_BOOT_PHASE_START;
 pub type PPERFINFO_BOOT_PHASE_START = *mut _PERFINFO_BOOT_PHASE_START;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_BOOT_PREFETCH_INFORMATION {
    pub Action: LONG,
    pub Status: NTSTATUS,
    pub Pages: LONG,
 }
-impl Default for _PERFINFO_BOOT_PREFETCH_INFORMATION {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
-}
 pub type PERFINFO_BOOT_PREFETCH_INFORMATION = _PERFINFO_BOOT_PREFETCH_INFORMATION;
 pub type PPERFINFO_BOOT_PREFETCH_INFORMATION = *mut _PERFINFO_BOOT_PREFETCH_INFORMATION;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_PO_SESSION_CALLOUT_RET {
    pub Status: NTSTATUS,
-}
-impl Default for _PERFINFO_PO_SESSION_CALLOUT_RET {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type PERFINFO_PO_SESSION_CALLOUT_RET = _PERFINFO_PO_SESSION_CALLOUT_RET;
 pub type PPERFINFO_PO_SESSION_CALLOUT_RET = *mut _PERFINFO_PO_SESSION_CALLOUT_RET;
@@ -50563,21 +51342,13 @@ pub struct _PERFINFO_PPM_IDLE_EXIT_LATENCY {
 pub type PERFINFO_PPM_IDLE_EXIT_LATENCY = _PERFINFO_PPM_IDLE_EXIT_LATENCY;
 pub type PPERFINFO_PPM_IDLE_EXIT_LATENCY = *mut _PERFINFO_PPM_IDLE_EXIT_LATENCY;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_PPM_PERF_STATE_CHANGE {
    pub Type: ULONG,
    pub NewState: ULONG,
    pub OldState: ULONG,
    pub Result: NTSTATUS,
    pub Processors: ULONG64,
-}
-impl Default for _PERFINFO_PPM_PERF_STATE_CHANGE {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type PERFINFO_PPM_PERF_STATE_CHANGE = _PERFINFO_PPM_PERF_STATE_CHANGE;
 pub type PPERFINFO_PPM_PERF_STATE_CHANGE = *mut _PERFINFO_PPM_PERF_STATE_CHANGE;
@@ -51399,6 +52170,7 @@ impl Default for _PERFINFO_MEM_RESET_INFO {
 pub type PERFINFO_MEM_RESET_INFO = _PERFINFO_MEM_RESET_INFO;
 pub type PPERFINFO_MEM_RESET_INFO = *mut _PERFINFO_MEM_RESET_INFO;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_CC_WORKITEM_ENQUEUE {
    pub WorkItemKey: ULONG_PTR,
    pub FileObjectKey: ULONG_PTR,
@@ -51406,15 +52178,6 @@ pub struct _PERFINFO_CC_WORKITEM_ENQUEUE {
    pub WorkItemType: UCHAR,
    pub Requeue: BOOLEAN,
    pub Reserved: UCHAR,
-}
-impl Default for _PERFINFO_CC_WORKITEM_ENQUEUE {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type PERFINFO_CC_WORKITEM_ENQUEUE = _PERFINFO_CC_WORKITEM_ENQUEUE;
 pub type PPERFINFO_CC_WORKITEM_ENQUEUE = *mut _PERFINFO_CC_WORKITEM_ENQUEUE;
@@ -51704,17 +52467,9 @@ impl Default for _PERFINFO_SYSCALL_ENTER_DATA {
 pub type PERFINFO_SYSCALL_ENTER_DATA = _PERFINFO_SYSCALL_ENTER_DATA;
 pub type PPERFINFO_SYSCALL_ENTER_DATA = *mut _PERFINFO_SYSCALL_ENTER_DATA;
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_SYSCALL_EXIT_DATA {
    pub ReturnValue: NTSTATUS,
-}
-impl Default for _PERFINFO_SYSCALL_EXIT_DATA {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type PERFINFO_SYSCALL_EXIT_DATA = _PERFINFO_SYSCALL_EXIT_DATA;
 pub type PPERFINFO_SYSCALL_EXIT_DATA = *mut _PERFINFO_SYSCALL_EXIT_DATA;
@@ -51802,19 +52557,11 @@ pub struct _PERFINFO_FILE_SIMPLE_OPERATION {
 pub type PERFINFO_FILE_SIMPLE_OPERATION = _PERFINFO_FILE_SIMPLE_OPERATION;
 pub type PPERFINFO_FILE_SIMPLE_OPERATION = *mut _PERFINFO_FILE_SIMPLE_OPERATION;
 #[repr(C, packed)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_FILE_OPERATION_END {
    pub Irp: ULONG_PTR,
    pub ExtraInformation: ULONG_PTR,
    pub Status: NTSTATUS,
-}
-impl Default for _PERFINFO_FILE_OPERATION_END {
-   fn default() -> Self {
-      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-      unsafe {
-         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-         s.assume_init()
-      }
-   }
 }
 pub type PERFINFO_FILE_OPERATION_END = _PERFINFO_FILE_OPERATION_END;
 pub type PPERFINFO_FILE_OPERATION_END = *mut _PERFINFO_FILE_OPERATION_END;
@@ -51840,6 +52587,7 @@ impl Default for _PERFINFO_FLT_OPERATION {
 pub type PERFINFO_FLT_OPERATION = _PERFINFO_FLT_OPERATION;
 pub type PPERFINFO_FLT_OPERATION = *mut _PERFINFO_FLT_OPERATION;
 #[repr(C, packed)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PERFINFO_FLT_OPERATION_STATUS {
    pub RoutineAddr: PVOID,
    pub FileObject: PVOID,
@@ -52400,6 +53148,7 @@ impl Default for _PERFINFO_IO_TIMER {
 pub type PERFINFO_IO_TIMER = _PERFINFO_IO_TIMER;
 pub type PPERFINFO_IO_TIMER = *mut _PERFINFO_IO_TIMER;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _WMI_LOGGER_INFORMATION {
    pub Wnode: WNODE_HEADER,
    pub BufferSize: ULONG,
@@ -52531,9 +53280,10 @@ impl Default for _WMI_LOGGER_INFORMATION__bindgen_ty_7 {
    }
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _WMI_LOGGER_INFORMATION__bindgen_ty_8 {
-   pub LogFileName: ::core::mem::ManuallyDrop<UNICODE_STRING>,
-   pub LogFileName64: ::core::mem::ManuallyDrop<UNICODE_STRING64>,
+   pub LogFileName: UNICODE_STRING,
+   pub LogFileName64: UNICODE_STRING64,
 }
 impl Default for _WMI_LOGGER_INFORMATION__bindgen_ty_8 {
    fn default() -> Self {
@@ -52545,9 +53295,10 @@ impl Default for _WMI_LOGGER_INFORMATION__bindgen_ty_8 {
    }
 }
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub union _WMI_LOGGER_INFORMATION__bindgen_ty_9 {
-   pub LoggerName: ::core::mem::ManuallyDrop<UNICODE_STRING>,
-   pub LoggerName64: ::core::mem::ManuallyDrop<UNICODE_STRING64>,
+   pub LoggerName: UNICODE_STRING,
+   pub LoggerName64: UNICODE_STRING64,
 }
 impl Default for _WMI_LOGGER_INFORMATION__bindgen_ty_9 {
    fn default() -> Self {
@@ -52626,6 +53377,7 @@ pub enum _ETW_NOTIFICATION_TYPE {
 }
 pub use self::_ETW_NOTIFICATION_TYPE as ETW_NOTIFICATION_TYPE;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _ETW_NOTIFICATION_HEADER {
    pub NotificationType: ETW_NOTIFICATION_TYPE,
    pub NotificationSize: ULONG,
@@ -52681,6 +53433,7 @@ pub enum _ETW_SESSION_NOTIFICATION_TYPE {
 }
 pub use self::_ETW_SESSION_NOTIFICATION_TYPE as ETW_SESSION_NOTIFICATION_TYPE;
 #[repr(C)]
+#[derive(Copy, Clone)]
 pub struct _ETW_SESSION_NOTIFICATION_PACKET {
    pub NotificationHeader: ETW_NOTIFICATION_HEADER,
    pub Type: ETW_SESSION_NOTIFICATION_TYPE,
@@ -52870,6 +53623,7 @@ impl Default for _CONSOLE_CARET_INFO {
 pub type CONSOLE_CARET_INFO = _CONSOLE_CARET_INFO;
 pub type PCONSOLE_CARET_INFO = *mut _CONSOLE_CARET_INFO;
 #[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct _CONSOLESETFOREGROUND {
    pub ProcessHandle: HANDLE,
    pub Foreground: BOOL,
@@ -52922,6 +53676,159 @@ impl Default for _CONSOLEENDTASK {
 }
 pub type CONSOLEENDTASK = _CONSOLEENDTASK;
 pub type PCONSOLEENDTASK = *mut _CONSOLEENDTASK;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _USERTHREADINFOCLASS {
+   __bindgen_cannot_repr_c_on_empty_enum = 0,
+}
+pub use self::_USERTHREADINFOCLASS as USERTHREADINFOCLASS;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _KERNEL_CALLBACK_TABLE {
+   pub __fnCOPYDATA: ULONG_PTR,
+   pub __fnCOPYGLOBALDATA: ULONG_PTR,
+   pub __fnEMPTY1: ULONG_PTR,
+   pub __fnNCDESTROY: ULONG_PTR,
+   pub __fnDWORDOPTINLPMSG: ULONG_PTR,
+   pub __fnINOUTDRAG: ULONG_PTR,
+   pub __fnGETTEXTLENGTHS1: ULONG_PTR,
+   pub __fnINCNTOUTSTRING: ULONG_PTR,
+   pub __fnINCNTOUTSTRINGNULL: ULONG_PTR,
+   pub __fnINLPCOMPAREITEMSTRUCT: ULONG_PTR,
+   pub __fnINLPCREATESTRUCT: ULONG_PTR,
+   pub __fnINLPDELETEITEMSTRUCT: ULONG_PTR,
+   pub __fnINLPDRAWITEMSTRUCT: ULONG_PTR,
+   pub __fnPOPTINLPUINT1: ULONG_PTR,
+   pub __fnPOPTINLPUINT2: ULONG_PTR,
+   pub __fnINLPMDICREATESTRUCT: ULONG_PTR,
+   pub __fnINOUTLPMEASUREITEMSTRUCT: ULONG_PTR,
+   pub __fnINLPWINDOWPOS: ULONG_PTR,
+   pub __fnINOUTLPPOINT51: ULONG_PTR,
+   pub __fnINOUTLPSCROLLINFO: ULONG_PTR,
+   pub __fnINOUTLPRECT: ULONG_PTR,
+   pub __fnINOUTNCCALCSIZE: ULONG_PTR,
+   pub __fnINOUTLPPOINT52: ULONG_PTR,
+   pub __fnINPAINTCLIPBRD: ULONG_PTR,
+   pub __fnINSIZECLIPBRD: ULONG_PTR,
+   pub __fnINDESTROYCLIPBRD: ULONG_PTR,
+   pub __fnINSTRINGNULL1: ULONG_PTR,
+   pub __fnINSTRINGNULL2: ULONG_PTR,
+   pub __fnINDEVICECHANGE: ULONG_PTR,
+   pub __fnPOWERBROADCAST: ULONG_PTR,
+   pub __fnINLPUAHDRAWMENU1: ULONG_PTR,
+   pub __fnOPTOUTLPDWORDOPTOUTLPDWORD1: ULONG_PTR,
+   pub __fnOPTOUTLPDWORDOPTOUTLPDWORD2: ULONG_PTR,
+   pub __fnOUTDWORDINDWORD: ULONG_PTR,
+   pub __fnOUTLPRECT: ULONG_PTR,
+   pub __fnOUTSTRING: ULONG_PTR,
+   pub __fnPOPTINLPUINT3: ULONG_PTR,
+   pub __fnPOUTLPINT: ULONG_PTR,
+   pub __fnSENTDDEMSG: ULONG_PTR,
+   pub __fnINOUTSTYLECHANGE1: ULONG_PTR,
+   pub __fnHkINDWORD: ULONG_PTR,
+   pub __fnHkINLPCBTACTIVATESTRUCT: ULONG_PTR,
+   pub __fnHkINLPCBTCREATESTRUCT: ULONG_PTR,
+   pub __fnHkINLPDEBUGHOOKSTRUCT: ULONG_PTR,
+   pub __fnHkINLPMOUSEHOOKSTRUCTEX1: ULONG_PTR,
+   pub __fnHkINLPKBDLLHOOKSTRUCT: ULONG_PTR,
+   pub __fnHkINLPMSLLHOOKSTRUCT: ULONG_PTR,
+   pub __fnHkINLPMSG: ULONG_PTR,
+   pub __fnHkINLPRECT: ULONG_PTR,
+   pub __fnHkOPTINLPEVENTMSG: ULONG_PTR,
+   pub __xxxClientCallDelegateThread: ULONG_PTR,
+   pub __ClientCallDummyCallback1: ULONG_PTR,
+   pub __ClientCallDummyCallback2: ULONG_PTR,
+   pub __fnSHELLWINDOWMANAGEMENTCALLOUT: ULONG_PTR,
+   pub __fnSHELLWINDOWMANAGEMENTNOTIFY: ULONG_PTR,
+   pub __ClientCallDummyCallback3: ULONG_PTR,
+   pub __xxxClientCallDitThread: ULONG_PTR,
+   pub __xxxClientEnableMMCSS: ULONG_PTR,
+   pub __xxxClientUpdateDpi: ULONG_PTR,
+   pub __xxxClientExpandStringW: ULONG_PTR,
+   pub __ClientCopyDDEIn1: ULONG_PTR,
+   pub __ClientCopyDDEIn2: ULONG_PTR,
+   pub __ClientCopyDDEOut1: ULONG_PTR,
+   pub __ClientCopyDDEOut2: ULONG_PTR,
+   pub __ClientCopyImage: ULONG_PTR,
+   pub __ClientEventCallback: ULONG_PTR,
+   pub __ClientFindMnemChar: ULONG_PTR,
+   pub __ClientFreeDDEHandle: ULONG_PTR,
+   pub __ClientFreeLibrary: ULONG_PTR,
+   pub __ClientGetCharsetInfo: ULONG_PTR,
+   pub __ClientGetDDEFlags: ULONG_PTR,
+   pub __ClientGetDDEHookData: ULONG_PTR,
+   pub __ClientGetListboxString: ULONG_PTR,
+   pub __ClientGetMessageMPH: ULONG_PTR,
+   pub __ClientLoadImage: ULONG_PTR,
+   pub __ClientLoadLibrary: ULONG_PTR,
+   pub __ClientLoadMenu: ULONG_PTR,
+   pub __ClientLoadLocalT1Fonts: ULONG_PTR,
+   pub __ClientPSMTextOut: ULONG_PTR,
+   pub __ClientLpkDrawTextEx: ULONG_PTR,
+   pub __ClientExtTextOutW: ULONG_PTR,
+   pub __ClientGetTextExtentPointW: ULONG_PTR,
+   pub __ClientCharToWchar: ULONG_PTR,
+   pub __ClientAddFontResourceW: ULONG_PTR,
+   pub __ClientThreadSetup: ULONG_PTR,
+   pub __ClientDeliverUserApc: ULONG_PTR,
+   pub __ClientNoMemoryPopup: ULONG_PTR,
+   pub __ClientMonitorEnumProc: ULONG_PTR,
+   pub __ClientCallWinEventProc: ULONG_PTR,
+   pub __ClientWaitMessageExMPH: ULONG_PTR,
+   pub __ClientCallDummyCallback4: ULONG_PTR,
+   pub __ClientCallDummyCallback5: ULONG_PTR,
+   pub __ClientImmLoadLayout: ULONG_PTR,
+   pub __ClientImmProcessKey: ULONG_PTR,
+   pub __fnIMECONTROL: ULONG_PTR,
+   pub __fnINWPARAMDBCSCHAR: ULONG_PTR,
+   pub __fnGETTEXTLENGTHS2: ULONG_PTR,
+   pub __ClientCallDummyCallback6: ULONG_PTR,
+   pub __ClientLoadStringW: ULONG_PTR,
+   pub __ClientLoadOLE: ULONG_PTR,
+   pub __ClientRegisterDragDrop: ULONG_PTR,
+   pub __ClientRevokeDragDrop: ULONG_PTR,
+   pub __fnINOUTMENUGETOBJECT: ULONG_PTR,
+   pub __ClientPrinterThunk: ULONG_PTR,
+   pub __fnOUTLPCOMBOBOXINFO: ULONG_PTR,
+   pub __fnOUTLPSCROLLBARINFO: ULONG_PTR,
+   pub __fnINLPUAHDRAWMENU2: ULONG_PTR,
+   pub __fnINLPUAHDRAWMENUITEM: ULONG_PTR,
+   pub __fnINLPUAHDRAWMENU3: ULONG_PTR,
+   pub __fnINOUTLPUAHMEASUREMENUITEM: ULONG_PTR,
+   pub __fnINLPUAHDRAWMENU4: ULONG_PTR,
+   pub __fnOUTLPTITLEBARINFOEX: ULONG_PTR,
+   pub __fnTOUCH: ULONG_PTR,
+   pub __fnGESTURE: ULONG_PTR,
+   pub __fnPOPTINLPUINT4: ULONG_PTR,
+   pub __fnPOPTINLPUINT5: ULONG_PTR,
+   pub __xxxClientCallDefaultInputHandler: ULONG_PTR,
+   pub __fnEMPTY2: ULONG_PTR,
+   pub __ClientRimDevCallback: ULONG_PTR,
+   pub __xxxClientCallMinTouchHitTestingCallback: ULONG_PTR,
+   pub __ClientCallLocalMouseHooks: ULONG_PTR,
+   pub __xxxClientBroadcastThemeChange: ULONG_PTR,
+   pub __xxxClientCallDevCallbackSimple: ULONG_PTR,
+   pub __xxxClientAllocWindowClassExtraBytes: ULONG_PTR,
+   pub __xxxClientFreeWindowClassExtraBytes: ULONG_PTR,
+   pub __fnGETWINDOWDATA: ULONG_PTR,
+   pub __fnINOUTSTYLECHANGE2: ULONG_PTR,
+   pub __fnHkINLPMOUSEHOOKSTRUCTEX2: ULONG_PTR,
+   pub __xxxClientCallDefWindowProc: ULONG_PTR,
+   pub __fnSHELLSYNCDISPLAYCHANGED: ULONG_PTR,
+   pub __fnHkINLPCHARHOOKSTRUCT: ULONG_PTR,
+   pub __fnINTERCEPTEDWINDOWACTION: ULONG_PTR,
+   pub __xxxTooltipCallback: ULONG_PTR,
+   pub __xxxClientInitPSBInfo: ULONG_PTR,
+   pub __xxxClientDoScrollMenu: ULONG_PTR,
+   pub __xxxClientEndScroll: ULONG_PTR,
+   pub __xxxClientDrawSize: ULONG_PTR,
+   pub __xxxClientDrawScrollBar: ULONG_PTR,
+   pub __xxxClientHitTestScrollBar: ULONG_PTR,
+   pub __xxxClientTrackInit: ULONG_PTR,
+}
+pub type KERNEL_CALLBACK_TABLE = _KERNEL_CALLBACK_TABLE;
+pub type PKERNEL_CALLBACK_TABLE = *mut _KERNEL_CALLBACK_TABLE;
 extern "C" {
    pub static GUID_NULL: GUID;
    pub static mut NlsAnsiCodePage: USHORT;
@@ -52933,21 +53840,21 @@ extern "C" {
    pub fn NtSetDebugFilterState(ComponentId: ULONG, Level: ULONG, State: BOOLEAN) -> NTSTATUS;
    pub fn NtYieldExecution() -> NTSTATUS;
    pub fn LdrLoadDll(
-      DllPath: PWSTR,
+      DllPath: PCWSTR,
       DllCharacteristics: PULONG,
       DllName: PUNICODE_STRING,
       DllHandle: *mut PVOID,
    ) -> NTSTATUS;
    pub fn LdrUnloadDll(DllHandle: PVOID) -> NTSTATUS;
    pub fn LdrGetDllHandle(
-      DllPath: PWSTR,
+      DllPath: PCWSTR,
       DllCharacteristics: PULONG,
       DllName: PUNICODE_STRING,
       DllHandle: *mut PVOID,
    ) -> NTSTATUS;
    pub fn LdrGetDllHandleEx(
       Flags: ULONG,
-      DllPath: PWSTR,
+      DllPath: PCWSTR,
       DllCharacteristics: PULONG,
       DllName: PUNICODE_STRING,
       DllHandle: *mut PVOID,
@@ -53054,9 +53961,10 @@ extern "C" {
    pub fn LdrStandardizeSystemPath(SystemPath: PUNICODE_STRING) -> PUNICODE_STRING;
    pub fn LdrGetFailureData() -> PLDR_FAILURE_DATA;
    pub static mut LdrSystemDllInitBlock: PS_SYSTEM_DLL_INIT_BLOCK;
+   pub static mut RtlpScpCfgNtdllExports: RTL_SCPCFG_NTDLL_EXPORTS;
    pub fn LdrAddLoadAsDataTable(
       Module: PVOID,
-      FilePath: PWSTR,
+      FilePath: PCWSTR,
       Size: SIZE_T,
       Handle: HANDLE,
       ActCtx: PACTIVATION_CONTEXT,
@@ -53115,6 +54023,13 @@ extern "C" {
       CultureName: PVOID,
       CultureNameLength: PULONG,
       Flags: ULONG,
+   ) -> NTSTATUS;
+   pub fn LdrpResGetResourceDirectory(
+      DllHandle: PVOID,
+      Size: SIZE_T,
+      Flags: ULONG,
+      ResourceDirectory: *mut PIMAGE_RESOURCE_DIRECTORY,
+      OutHeaders: *mut PIMAGE_NT_HEADERS,
    ) -> NTSTATUS;
    #[doc = " The LdrResSearchResource function searches for a resource in a DLL.\n\n @param DllHandle A handle to the DLL.\n @param ResourceInfo A pointer to the resource information.\n @param Level The level of the resource.\n @param Flags Flags for the resource search.\n @param ResourceBuffer An optional pointer to receive the resource buffer.\n @param ResourceLength An optional pointer to receive the resource length.\n @param CultureName An optional buffer to receive the culture name.\n @param CultureNameLength An optional pointer to receive the length of the culture name.\n @return NTSTATUS Successful or errant status."]
    pub fn LdrResSearchResource(
@@ -53230,8 +54145,10 @@ extern "C" {
    pub fn LdrSetImplicitPathOptions(ImplicitPathOptions: ULONG) -> NTSTATUS;
    #[doc = " The LdrControlFlowGuardEnforced function checks if Control Flow Guard is enforced.\n\n @return BOOLEAN TRUE if Control Flow Guard is enforced, FALSE otherwise."]
    pub fn LdrControlFlowGuardEnforced() -> BOOLEAN;
+   #[doc = " The LdrControlFlowGuardEnforcedWithExportSuppression function checks if Control Flow Guard is\n enforced with export suppression.\n\n @return BOOLEAN TRUE if Control Flow Guard is enforced, FALSE otherwise."]
+   pub fn LdrControlFlowGuardEnforcedWithExportSuppression() -> BOOLEAN;
    pub fn LdrIsModuleSxsRedirected(DllHandle: PVOID) -> BOOLEAN;
-   pub fn LdrUpdatePackageSearchPath(SearchPathA: PWSTR) -> NTSTATUS;
+   pub fn LdrUpdatePackageSearchPath(SearchPathA: PCWSTR) -> NTSTATUS;
    pub fn LdrCreateEnclave(
       ProcessHandle: HANDLE,
       BaseAddress: *mut PVOID,
@@ -53258,9 +54175,12 @@ extern "C" {
    ) -> NTSTATUS;
    pub fn LdrLoadEnclaveModule(
       BaseAddress: PVOID,
-      DllPath: PWSTR,
+      DllPath: PCWSTR,
       DllName: PUNICODE_STRING,
    ) -> NTSTATUS;
+   #[doc = " This function forcefully terminates the calling program if it is invoked inside a loader callout. Otherwise, it has no effect.\n\n @remarks This routine does not catch all potential deadlock cases; it is possible for a thread inside a loader callout\n to acquire a lock while some thread outside a loader callout holds the same lock and makes a call into the loader.\n In other words, there can be a lock order inversion between the loader lock and a client lock."]
+   pub fn LdrFastFailInLoaderCallout();
+   pub fn LdrFlushAlternateResourceModules() -> BOOLEAN;
    pub fn NtDelayExecution(Alertable: BOOLEAN, DelayInterval: PLARGE_INTEGER) -> NTSTATUS;
    pub fn NtQuerySystemEnvironmentValue(
       VariableName: PUNICODE_STRING,
@@ -53331,6 +54251,7 @@ extern "C" {
       ObjectAttributes: POBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtSetEvent(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+   pub fn NtSetEventEx(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
    pub fn NtSetEventBoostPriority(EventHandle: HANDLE) -> NTSTATUS;
    pub fn NtClearEvent(EventHandle: HANDLE) -> NTSTATUS;
    pub fn NtResetEvent(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
@@ -53345,12 +54266,12 @@ extern "C" {
    pub fn NtCreateEventPair(
       EventPairHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtOpenEventPair(
       EventPairHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtSetLowEventPair(EventPairHandle: HANDLE) -> NTSTATUS;
    pub fn NtSetHighEventPair(EventPairHandle: HANDLE) -> NTSTATUS;
@@ -53361,13 +54282,13 @@ extern "C" {
    pub fn NtCreateMutant(
       MutantHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       InitialOwner: BOOLEAN,
    ) -> NTSTATUS;
    pub fn NtOpenMutant(
       MutantHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtReleaseMutant(MutantHandle: HANDLE, PreviousCount: PLONG) -> NTSTATUS;
    pub fn NtQueryMutant(
@@ -53380,14 +54301,14 @@ extern "C" {
    pub fn NtCreateSemaphore(
       SemaphoreHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       InitialCount: LONG,
       MaximumCount: LONG,
    ) -> NTSTATUS;
    pub fn NtOpenSemaphore(
       SemaphoreHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtReleaseSemaphore(
       SemaphoreHandle: HANDLE,
@@ -53404,13 +54325,13 @@ extern "C" {
    pub fn NtCreateTimer(
       TimerHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       TimerType: TIMER_TYPE,
    ) -> NTSTATUS;
    pub fn NtOpenTimer(
       TimerHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtSetTimer(
       TimerHandle: HANDLE,
@@ -53444,7 +54365,7 @@ extern "C" {
    pub fn NtCreateTimer2(
       TimerHandle: PHANDLE,
       Reserved1: PVOID,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       Attributes: ULONG,
       DesiredAccess: ACCESS_MASK,
    ) -> NTSTATUS;
@@ -53485,13 +54406,13 @@ extern "C" {
    pub fn NtCreateKeyedEvent(
       KeyedEventHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       Flags: ULONG,
    ) -> NTSTATUS;
    pub fn NtOpenKeyedEvent(
       KeyedEventHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtReleaseKeyedEvent(
       KeyedEventHandle: HANDLE,
@@ -53563,7 +54484,7 @@ extern "C" {
    pub fn NtCreateWorkerFactory(
       WorkerFactoryHandleReturn: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       CompletionPortHandle: HANDLE,
       WorkerProcessHandle: HANDLE,
       StartRoutine: PVOID,
@@ -53983,7 +54904,7 @@ extern "C" {
    pub fn NtCreateSection(
       SectionHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       MaximumSize: PLARGE_INTEGER,
       SectionPageProtection: ULONG,
       AllocationAttributes: ULONG,
@@ -53992,7 +54913,7 @@ extern "C" {
    pub fn NtCreateSectionEx(
       SectionHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       MaximumSize: PLARGE_INTEGER,
       SectionPageProtection: ULONG,
       AllocationAttributes: ULONG,
@@ -54003,7 +54924,7 @@ extern "C" {
    pub fn NtOpenSection(
       SectionHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtMapViewOfSection(
       SectionHandle: HANDLE,
@@ -54050,13 +54971,13 @@ extern "C" {
       ParentPartitionHandle: HANDLE,
       PartitionHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       PreferredNode: ULONG,
    ) -> NTSTATUS;
    pub fn NtOpenPartition(
       PartitionHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtManagePartition(
       TargetHandle: HANDLE,
@@ -54282,7 +55203,7 @@ extern "C" {
    pub fn NtCreateProcess(
       ProcessHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       ParentProcess: HANDLE,
       InheritObjectTable: BOOLEAN,
       SectionHandle: HANDLE,
@@ -54292,7 +55213,7 @@ extern "C" {
    pub fn NtCreateProcessEx(
       ProcessHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       ParentProcess: HANDLE,
       Flags: ULONG,
       SectionHandle: HANDLE,
@@ -54303,7 +55224,7 @@ extern "C" {
    pub fn NtOpenProcess(
       ProcessHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       ClientId: PCLIENT_ID,
    ) -> NTSTATUS;
    pub fn NtTerminateProcess(ProcessHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
@@ -54344,7 +55265,7 @@ extern "C" {
    pub fn NtCreateProcessStateChange(
       ProcessStateChangeHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       ProcessHandle: HANDLE,
       Reserved: ULONG64,
    ) -> NTSTATUS;
@@ -54361,7 +55282,7 @@ extern "C" {
    pub fn NtCreateThreadStateChange(
       ThreadStateChangeHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       ThreadHandle: HANDLE,
       Reserved: ULONG64,
    ) -> NTSTATUS;
@@ -54376,7 +55297,7 @@ extern "C" {
    pub fn NtCreateThread(
       ThreadHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       ProcessHandle: HANDLE,
       ClientId: PCLIENT_ID,
       ThreadContext: PCONTEXT,
@@ -54386,7 +55307,7 @@ extern "C" {
    pub fn NtOpenThread(
       ThreadHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       ClientId: PCLIENT_ID,
    ) -> NTSTATUS;
    pub fn NtTerminateThread(ThreadHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
@@ -54416,6 +55337,11 @@ extern "C" {
    pub fn NtAlertThread(ThreadHandle: HANDLE) -> NTSTATUS;
    pub fn NtAlertResumeThread(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
    pub fn NtTestAlert() -> NTSTATUS;
+   #[doc = " Sends an alert to the specified thread.\n\n @param ThreadId The thread ID of the thread to be alerted.\n @return NTSTATUS Successful or errant status."]
+   pub fn NtAlertThreadByThreadId(ThreadId: HANDLE) -> NTSTATUS;
+   pub fn NtAlertThreadByThreadIdEx(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
+   #[doc = " Waits for an alert to be delivered to the specified thread.\n\n @param Address The address to wait for an alert on.\n @param Timeout The timeout value for waiting, or NULL for no timeout.\n @return NTSTATUS Successful or errant status."]
+   pub fn NtWaitForAlertByThreadId(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn NtImpersonateThread(
       ServerThreadHandle: HANDLE,
       ClientThreadHandle: HANDLE,
@@ -54459,18 +55385,14 @@ extern "C" {
       ApcArgument2: PVOID,
       ApcArgument3: PVOID,
    ) -> NTSTATUS;
-   #[doc = " Sends an alert to the specified thread.\n\n @param ThreadId The thread ID of the thread to be alerted.\n @return NTSTATUS Successful or errant status."]
-   pub fn NtAlertThreadByThreadId(ThreadId: HANDLE) -> NTSTATUS;
-   #[doc = " Waits for an alert to be delivered to the specified thread.\n\n @param Address The address to wait for an alert on.\n @param Timeout The timeout value for waiting, or NULL for no timeout.\n @return NTSTATUS Successful or errant status."]
-   pub fn NtWaitForAlertByThreadId(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    #[doc = " Creates a new process and primary thread.\n\n @param ProcessHandle A pointer to a handle that receives the process object handle.\n @param ThreadHandle A pointer to a handle that receives the thread object handle.\n @param ProcessDesiredAccess The access rights desired for the process object.\n @param ThreadDesiredAccess The access rights desired for the thread object.\n @param ProcessObjectAttributes Optional. A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new process.\n @param ThreadObjectAttributes Optional. A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new thread.\n @param ProcessFlags Flags that control the creation of the process. These flags are defined as PROCESS_CREATE_FLAGS_*.\n @param ThreadFlags Flags that control the creation of the thread. These flags are defined as THREAD_CREATE_FLAGS_*.\n @param ProcessParameters Optional. A pointer to a RTL_USER_PROCESS_PARAMETERS structure that specifies the parameters for the new process.\n @param CreateInfo A pointer to a PS_CREATE_INFO structure that specifies additional information for the process creation.\n @param AttributeList Optional. A pointer to a list of attributes for the process and thread.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateUserProcess(
       ProcessHandle: PHANDLE,
       ThreadHandle: PHANDLE,
       ProcessDesiredAccess: ACCESS_MASK,
       ThreadDesiredAccess: ACCESS_MASK,
-      ProcessObjectAttributes: POBJECT_ATTRIBUTES,
-      ThreadObjectAttributes: POBJECT_ATTRIBUTES,
+      ProcessObjectAttributes: PCOBJECT_ATTRIBUTES,
+      ThreadObjectAttributes: PCOBJECT_ATTRIBUTES,
       ProcessFlags: ULONG,
       ThreadFlags: ULONG,
       ProcessParameters: PRTL_USER_PROCESS_PARAMETERS,
@@ -54481,7 +55403,7 @@ extern "C" {
    pub fn NtCreateThreadEx(
       ThreadHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       ProcessHandle: HANDLE,
       StartRoutine: PUSER_THREAD_START_ROUTINE,
       Argument: PVOID,
@@ -54494,12 +55416,12 @@ extern "C" {
    pub fn NtCreateJobObject(
       JobHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtOpenJobObject(
       JobHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
    pub fn NtAssignProcessToJobObject(JobHandle: HANDLE, ProcessHandle: HANDLE) -> NTSTATUS;
    pub fn NtTerminateJobObject(JobHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
@@ -54522,7 +55444,7 @@ extern "C" {
    #[doc = " Allocates a memory reserve object.\n\n @param MemoryReserveHandle Pointer to a variable that receives the memory reserve object handle.\n @param ObjectAttributes Pointer to an object attributes structure.\n @param Type The type of memory reserve.\n @return NTSTATUS Successful or errant status."]
    pub fn NtAllocateReserveObject(
       MemoryReserveHandle: PHANDLE,
-      ObjectAttributes: POBJECT_ATTRIBUTES,
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
       Type: MEMORY_RESERVE_TYPE,
    ) -> NTSTATUS;
    #[doc = " Captures a snapshot of the specified process.\n\n @param SnapshotHandle Pointer to a variable that receives the snapshot handle.\n @param ProcessHandle Handle to the process.\n @param CaptureFlags Flags indicating what to capture.\n @param ThreadContextFlags Optional flags for capturing thread context.\n @return NTSTATUS Successful or errant status."]
@@ -55335,7 +56257,7 @@ extern "C" {
    pub fn NtGetDevicePowerState(Device: HANDLE, State: PDEVICE_POWER_STATE) -> NTSTATUS;
    #[doc = " Checks if the system resume is automatic.\n\n @return BOOLEAN TRUE if the system resume is automatic, FALSE otherwise."]
    pub fn NtIsSystemResumeAutomatic() -> BOOLEAN;
-   #[doc = " Creates a new registry key routine or opens an existing one.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] TitleIndex Reserved.\n @param[in, optional] Class A pointer to a UNICODE_STRING structure that specifies the class of the key.\n @param[in] CreateOptions The options to use when creating the key.\n @param[out, optional] Disposition A pointer to a variable that receives the disposition value.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Creates a new registry key routine or opens an existing one.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] TitleIndex Reserved.\n @param[in, optional] Class A pointer to a UNICODE_STRING structure that specifies the class of the key.\n @param[in] CreateOptions The options to use when creating the key.\n @param[out, optional] Disposition A pointer to a variable that receives the disposition value.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateKey(
       KeyHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
@@ -55345,7 +56267,7 @@ extern "C" {
       CreateOptions: ULONG,
       Disposition: PULONG,
    ) -> NTSTATUS;
-   #[doc = " Creates a new registry key or opens an existing one, and it associates the key with a transaction.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] TitleIndex Reserved.\n @param[in, optional] Class A pointer to a UNICODE_STRING structure that specifies the class of the key.\n @param[in] CreateOptions The options to use when creating the key.\n @param[in] TransactionHandle A handle to the transaction.\n @param[out, optional] Disposition A pointer to a variable that receives the disposition value.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Creates a new registry key or opens an existing one, and it associates the key with a transaction.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] TitleIndex Reserved.\n @param[in, optional] Class A pointer to a UNICODE_STRING structure that specifies the class of the key.\n @param[in] CreateOptions The options to use when creating the key.\n @param[in] TransactionHandle A handle to the transaction.\n @param[out, optional] Disposition A pointer to a variable that receives the disposition value.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateKeyTransacted(
       KeyHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
@@ -55356,27 +56278,27 @@ extern "C" {
       TransactionHandle: HANDLE,
       Disposition: PULONG,
    ) -> NTSTATUS;
-   #[doc = " Opens an existing registry key.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @return NTSTATUS The status of the operation.\n @remarks NtOpenKey ignores the security information in the ObjectAttributes structure."]
+   #[doc = " Opens an existing registry key.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @return NTSTATUS Successful or errant status.\n @remarks NtOpenKey ignores the security information in the ObjectAttributes structure."]
    pub fn NtOpenKey(
       KeyHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
       ObjectAttributes: POBJECT_ATTRIBUTES,
    ) -> NTSTATUS;
-   #[doc = " Opens an existing registry key and associates the key with a transaction.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] TransactionHandle A handle to the transaction.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Opens an existing registry key and associates the key with a transaction.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] TransactionHandle A handle to the transaction.\n @return NTSTATUS Successful or errant status."]
    pub fn NtOpenKeyTransacted(
       KeyHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
       ObjectAttributes: POBJECT_ATTRIBUTES,
       TransactionHandle: HANDLE,
    ) -> NTSTATUS;
-   #[doc = " Opens an existing registry key with extended options.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] OpenOptions The options to use when opening the key.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Opens an existing registry key with extended options.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] OpenOptions The options to use when opening the key.\n @return NTSTATUS Successful or errant status."]
    pub fn NtOpenKeyEx(
       KeyHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
       ObjectAttributes: POBJECT_ATTRIBUTES,
       OpenOptions: ULONG,
    ) -> NTSTATUS;
-   #[doc = " Opens an existing registry key in a transaction with extended options.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] OpenOptions The options to use when opening the key.\n @param[in] TransactionHandle A handle to the transaction.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Opens an existing registry key in a transaction with extended options.\n\n @param[out] KeyHandle A pointer to a handle that receives the key handle.\n @param[in] DesiredAccess The access mask that specifies the desired access rights.\n @param[in] ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param[in] OpenOptions The options to use when opening the key.\n @param[in] TransactionHandle A handle to the transaction.\n @return NTSTATUS Successful or errant status."]
    pub fn NtOpenKeyTransactedEx(
       KeyHandle: PHANDLE,
       DesiredAccess: ACCESS_MASK,
@@ -55384,13 +56306,13 @@ extern "C" {
       OpenOptions: ULONG,
       TransactionHandle: HANDLE,
    ) -> NTSTATUS;
-   #[doc = " Deletes a registry key.\n\n @param[in] KeyHandle A handle to the key to be deleted.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Deletes a registry key.\n\n @param[in] KeyHandle A handle to the key to be deleted.\n @return NTSTATUS Successful or errant status."]
    pub fn NtDeleteKey(KeyHandle: HANDLE) -> NTSTATUS;
-   #[doc = " Renames a registry key.\n\n @param[in] KeyHandle A handle to the key to be renamed.\n @param[in] NewName A pointer to a UNICODE_STRING structure that specifies the new name of the key.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Renames a registry key.\n\n @param[in] KeyHandle A handle to the key to be renamed.\n @param[in] NewName A pointer to a UNICODE_STRING structure that specifies the new name of the key.\n @return NTSTATUS Successful or errant status."]
    pub fn NtRenameKey(KeyHandle: HANDLE, NewName: PUNICODE_STRING) -> NTSTATUS;
-   #[doc = " Deletes a value from a registry key.\n\n @param[in] KeyHandle A handle to the key that contains the value to be deleted.\n @param[in] ValueName A pointer to a UNICODE_STRING structure that specifies the name of the value to be deleted.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Deletes a value from a registry key.\n\n @param[in] KeyHandle A handle to the key that contains the value to be deleted.\n @param[in] ValueName A pointer to a UNICODE_STRING structure that specifies the name of the value to be deleted.\n @return NTSTATUS Successful or errant status."]
    pub fn NtDeleteValueKey(KeyHandle: HANDLE, ValueName: PUNICODE_STRING) -> NTSTATUS;
-   #[doc = " Queries information about a registry key.\n\n @param[in] KeyHandle A handle to the key to be queried.\n @param[in] KeyInformationClass The type of information to be queried.\n @param[out] KeyInformation A pointer to a buffer that receives the key information.\n @param[in] Length The size of the buffer.\n @param[out] ResultLength A pointer to a variable that receives the size of the data returned.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Queries information about a registry key.\n\n @param[in] KeyHandle A handle to the key to be queried.\n @param[in] KeyInformationClass The type of information to be queried.\n @param[out] KeyInformation A pointer to a buffer that receives the key information.\n @param[in] Length The size of the buffer.\n @param[out] ResultLength A pointer to a variable that receives the size of the data returned.\n @return NTSTATUS Successful or errant status."]
    pub fn NtQueryKey(
       KeyHandle: HANDLE,
       KeyInformationClass: KEY_INFORMATION_CLASS,
@@ -55398,14 +56320,14 @@ extern "C" {
       Length: ULONG,
       ResultLength: PULONG,
    ) -> NTSTATUS;
-   #[doc = " Sets information for a registry key.\n\n @param[in] KeyHandle A handle to the key to be modified.\n @param[in] KeySetInformationClass The type of information to be set.\n @param[in] KeySetInformation A pointer to a buffer that contains the key information.\n @param[in] KeySetInformationLength The size of the buffer.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Sets information for a registry key.\n\n @param[in] KeyHandle A handle to the key to be modified.\n @param[in] KeySetInformationClass The type of information to be set.\n @param[in] KeySetInformation A pointer to a buffer that contains the key information.\n @param[in] KeySetInformationLength The size of the buffer.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetInformationKey(
       KeyHandle: HANDLE,
       KeySetInformationClass: KEY_SET_INFORMATION_CLASS,
       KeySetInformation: PVOID,
       KeySetInformationLength: ULONG,
    ) -> NTSTATUS;
-   #[doc = " Queries the value of a registry key.\n\n @param[in] KeyHandle A handle to the key to be queried.\n @param[in] ValueName A pointer to a UNICODE_STRING structure that specifies the name of the value to be queried.\n @param[in] KeyValueInformationClass The type of information to be queried.\n @param[out] KeyValueInformation A pointer to a buffer that receives the value information.\n @param[in] Length The size of the buffer.\n @param[out] ResultLength A pointer to a variable that receives the size of the data returned.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Queries the value of a registry key.\n\n @param[in] KeyHandle A handle to the key to be queried.\n @param[in] ValueName A pointer to a UNICODE_STRING structure that specifies the name of the value to be queried.\n @param[in] KeyValueInformationClass The type of information to be queried.\n @param[out] KeyValueInformation A pointer to a buffer that receives the value information.\n @param[in] Length The size of the buffer.\n @param[out] ResultLength A pointer to a variable that receives the size of the data returned.\n @return NTSTATUS Successful or errant status."]
    pub fn NtQueryValueKey(
       KeyHandle: HANDLE,
       ValueName: PUNICODE_STRING,
@@ -55414,7 +56336,7 @@ extern "C" {
       Length: ULONG,
       ResultLength: PULONG,
    ) -> NTSTATUS;
-   #[doc = " Sets the value of a registry key.\n\n @param[in] KeyHandle A handle to the key to be modified.\n @param[in] ValueName A pointer to a UNICODE_STRING structure that specifies the name of the value to be set.\n @param[in, optional] TitleIndex Reserved.\n @param[in] Type The type of the value.\n @param[in] Data A pointer to a buffer that contains the value data.\n @param[in] DataSize The size of the buffer.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Sets the value of a registry key.\n\n @param[in] KeyHandle A handle to the key to be modified.\n @param[in] ValueName A pointer to a UNICODE_STRING structure that specifies the name of the value to be set.\n @param[in, optional] TitleIndex Reserved.\n @param[in] Type The type of the value.\n @param[in] Data A pointer to a buffer that contains the value data.\n @param[in] DataSize The size of the buffer.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetValueKey(
       KeyHandle: HANDLE,
       ValueName: PUNICODE_STRING,
@@ -55423,7 +56345,7 @@ extern "C" {
       Data: PVOID,
       DataSize: ULONG,
    ) -> NTSTATUS;
-   #[doc = " Queries multiple values of a registry key.\n\n @param[in] KeyHandle A handle to the key to be queried.\n @param[in, out] ValueEntries A pointer to an array of KEY_VALUE_ENTRY structures that specify the values to be queried.\n @param[in] EntryCount The number of entries in the array.\n @param[out] ValueBuffer A pointer to a buffer that receives the value data.\n @param[in, out] BufferLength A pointer to a variable that specifies the size of the buffer and receives the size of the data returned.\n @param[out, optional] RequiredBufferLength A pointer to a variable that receives the size of the buffer required to hold the data.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Queries multiple values of a registry key.\n\n @param[in] KeyHandle A handle to the key to be queried.\n @param[in, out] ValueEntries A pointer to an array of KEY_VALUE_ENTRY structures that specify the values to be queried.\n @param[in] EntryCount The number of entries in the array.\n @param[out] ValueBuffer A pointer to a buffer that receives the value data.\n @param[in, out] BufferLength A pointer to a variable that specifies the size of the buffer and receives the size of the data returned.\n @param[out, optional] RequiredBufferLength A pointer to a variable that receives the size of the buffer required to hold the data.\n @return NTSTATUS Successful or errant status."]
    pub fn NtQueryMultipleValueKey(
       KeyHandle: HANDLE,
       ValueEntries: PKEY_VALUE_ENTRY,
@@ -55432,7 +56354,7 @@ extern "C" {
       BufferLength: PULONG,
       RequiredBufferLength: PULONG,
    ) -> NTSTATUS;
-   #[doc = " Enumerates the subkeys of a registry key.\n\n @param[in] KeyHandle A handle to the key to be enumerated.\n @param[in] Index The index of the subkey to be enumerated.\n @param[in] KeyInformationClass The type of information to be queried.\n @param[out] KeyInformation A pointer to a buffer that receives the key information.\n @param[in] Length The size of the buffer.\n @param[out] ResultLength A pointer to a variable that receives the size of the data returned.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Enumerates the subkeys of a registry key.\n\n @param[in] KeyHandle A handle to the key to be enumerated.\n @param[in] Index The index of the subkey to be enumerated.\n @param[in] KeyInformationClass The type of information to be queried.\n @param[out] KeyInformation A pointer to a buffer that receives the key information.\n @param[in] Length The size of the buffer.\n @param[out] ResultLength A pointer to a variable that receives the size of the data returned.\n @return NTSTATUS Successful or errant status."]
    pub fn NtEnumerateKey(
       KeyHandle: HANDLE,
       Index: ULONG,
@@ -55441,7 +56363,7 @@ extern "C" {
       Length: ULONG,
       ResultLength: PULONG,
    ) -> NTSTATUS;
-   #[doc = " Enumerates the values of a registry key.\n\n @param[in] KeyHandle A handle to the key to be enumerated.\n @param[in] Index The index of the value to be enumerated.\n @param[in] KeyValueInformationClass The type of information to be queried.\n @param[out] KeyValueInformation A pointer to a buffer that receives the value information.\n @param[in] Length The size of the buffer.\n @param[out] ResultLength A pointer to a variable that receives the size of the data returned.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Enumerates the values of a registry key.\n\n @param[in] KeyHandle A handle to the key to be enumerated.\n @param[in] Index The index of the value to be enumerated.\n @param[in] KeyValueInformationClass The type of information to be queried.\n @param[out] KeyValueInformation A pointer to a buffer that receives the value information.\n @param[in] Length The size of the buffer.\n @param[out] ResultLength A pointer to a variable that receives the size of the data returned.\n @return NTSTATUS Successful or errant status."]
    pub fn NtEnumerateValueKey(
       KeyHandle: HANDLE,
       Index: ULONG,
@@ -55450,21 +56372,21 @@ extern "C" {
       Length: ULONG,
       ResultLength: PULONG,
    ) -> NTSTATUS;
-   #[doc = " Flushes the changes to a registry key.\n\n @param[in] KeyHandle A handle to the key to be flushed.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Flushes the changes to a registry key.\n\n @param[in] KeyHandle A handle to the key to be flushed.\n @return NTSTATUS Successful or errant status."]
    pub fn NtFlushKey(KeyHandle: HANDLE) -> NTSTATUS;
-   #[doc = " Compacts the specified registry keys.\n\n @param[in] Count The number of keys to be compacted.\n @param[in] KeyArray An array of handles to the keys to be compacted.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Compacts the specified registry keys.\n\n @param[in] Count The number of keys to be compacted.\n @param[in] KeyArray An array of handles to the keys to be compacted.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCompactKeys(Count: ULONG, KeyArray: *mut HANDLE) -> NTSTATUS;
-   #[doc = " Compresses a registry key.\n\n @param[in] KeyHandle A handle to the key to be compressed.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Compresses a registry key.\n\n @param[in] KeyHandle A handle to the key to be compressed.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCompressKey(KeyHandle: HANDLE) -> NTSTATUS;
-   #[doc = " Loads a registry key from a file.\n\n @param[in] TargetKey A pointer to an OBJECT_ATTRIBUTES structure that specifies the target key.\n @param[in] SourceFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the source file.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Loads a registry key from a file.\n\n @param[in] TargetKey A pointer to an OBJECT_ATTRIBUTES structure that specifies the target key.\n @param[in] SourceFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the source file.\n @return NTSTATUS Successful or errant status."]
    pub fn NtLoadKey(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES) -> NTSTATUS;
-   #[doc = " Loads a registry key from a file with additional options.\n\n @param[in] TargetKey A pointer to an OBJECT_ATTRIBUTES structure that specifies the target key.\n @param[in] SourceFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the source file.\n @param[in] Flags The options to use when loading the key.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Loads a registry key from a file with additional options.\n\n @param[in] TargetKey A pointer to an OBJECT_ATTRIBUTES structure that specifies the target key.\n @param[in] SourceFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the source file.\n @param[in] Flags The options to use when loading the key.\n @return NTSTATUS Successful or errant status."]
    pub fn NtLoadKey2(
       TargetKey: POBJECT_ATTRIBUTES,
       SourceFile: POBJECT_ATTRIBUTES,
       Flags: ULONG,
    ) -> NTSTATUS;
-   #[doc = " Loads a registry key from a file with extended options.\n\n @param[in] TargetKey A pointer to an OBJECT_ATTRIBUTES structure that specifies the target key.\n @param[in] SourceFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the source file.\n @param[in] Flags The options to use when loading the key.\n @param[in, optional] TrustClassKey A handle to the trust class key.\n @param[in, optional] Event A handle to an event.\n @param[in, optional] DesiredAccess The access mask that specifies the desired access rights.\n @param[out, optional] RootHandle A pointer to a handle that receives the root handle.\n @param[in, reserved] Reserved Reserved.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Loads a registry key from a file with extended options.\n\n @param[in] TargetKey A pointer to an OBJECT_ATTRIBUTES structure that specifies the target key.\n @param[in] SourceFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the source file.\n @param[in] Flags The options to use when loading the key.\n @param[in, optional] TrustClassKey A handle to the trust class key.\n @param[in, optional] Event A handle to an event.\n @param[in, optional] DesiredAccess The access mask that specifies the desired access rights.\n @param[out, optional] RootHandle A pointer to a handle that receives the root handle.\n @param[in, reserved] Reserved Reserved.\n @return NTSTATUS Successful or errant status."]
    pub fn NtLoadKeyEx(
       TargetKey: POBJECT_ATTRIBUTES,
       SourceFile: POBJECT_ATTRIBUTES,
@@ -55475,7 +56397,7 @@ extern "C" {
       RootHandle: PHANDLE,
       Reserved: PVOID,
    ) -> NTSTATUS;
-   #[doc = " Loads a registry key from a file with extended parameters.\n\n @param[in] TargetKey A pointer to an OBJECT_ATTRIBUTES structure that specifies the target key.\n @param[in] SourceFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the source file.\n @param[in] Flags The options to use when loading the key.\n @param[in] ExtendedParameters A pointer to an array of extended parameters.\n @param[in] ExtendedParameterCount The number of extended parameters.\n @param[in, optional] DesiredAccess The access mask that specifies the desired access rights.\n @param[out, optional] RootHandle A pointer to a handle that receives the root handle.\n @param[in, reserved] Reserved Reserved.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Loads a registry key from a file with extended parameters.\n\n @param[in] TargetKey A pointer to an OBJECT_ATTRIBUTES structure that specifies the target key.\n @param[in] SourceFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the source file.\n @param[in] Flags The options to use when loading the key.\n @param[in] ExtendedParameters A pointer to an array of extended parameters.\n @param[in] ExtendedParameterCount The number of extended parameters.\n @param[in, optional] DesiredAccess The access mask that specifies the desired access rights.\n @param[out, optional] RootHandle A pointer to a handle that receives the root handle.\n @param[in, reserved] Reserved Reserved.\n @return NTSTATUS Successful or errant status."]
    pub fn NtLoadKey3(
       TargetKey: POBJECT_ATTRIBUTES,
       SourceFile: POBJECT_ATTRIBUTES,
@@ -55486,7 +56408,7 @@ extern "C" {
       RootHandle: PHANDLE,
       Reserved: PVOID,
    ) -> NTSTATUS;
-   #[doc = " Replaces a registry key.\n\n @param[in] NewFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the new file.\n @param[in] TargetHandle A handle to the target key.\n @param[in] OldFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the old file.\n @return NTSTATUS The status of the operation."]
+   #[doc = " Replaces a registry key.\n\n @param[in] NewFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the new file.\n @param[in] TargetHandle A handle to the target key.\n @param[in] OldFile A pointer to an OBJECT_ATTRIBUTES structure that specifies the old file.\n @return NTSTATUS Successful or errant status."]
    pub fn NtReplaceKey(
       NewFile: POBJECT_ATTRIBUTES,
       TargetHandle: HANDLE,
@@ -55803,6 +56725,7 @@ extern "C" {
    pub fn RtlTryAcquireSRWLockExclusive(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
    pub fn RtlTryAcquireSRWLockShared(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
    pub fn RtlAcquireReleaseSRWLockExclusive(SRWLock: PRTL_SRWLOCK);
+   pub fn RtlConvertSRWLockExclusiveToShared(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
    pub fn RtlInitializeConditionVariable(ConditionVariable: PRTL_CONDITION_VARIABLE);
    pub fn RtlSleepConditionVariableCS(
       ConditionVariable: PRTL_CONDITION_VARIABLE,
@@ -55828,7 +56751,9 @@ extern "C" {
       Timeout: PLARGE_INTEGER,
    ) -> NTSTATUS;
    pub fn RtlWakeAddressAll(Address: PVOID);
+   pub fn RtlWakeAddressAllNoFence(Address: PVOID);
    pub fn RtlWakeAddressSingle(Address: PVOID);
+   pub fn RtlWakeAddressSingleNoFence(Address: PVOID);
    pub fn RtlInitEmptyAnsiString(AnsiString: PANSI_STRING, Buffer: PCHAR, MaximumLength: USHORT);
    pub fn RtlInitString(DestinationString: PSTRING, SourceString: PCSTR);
    pub fn RtlInitStringEx(DestinationString: PSTRING, SourceString: PCSZ) -> NTSTATUS;
@@ -55933,9 +56858,10 @@ extern "C" {
    pub fn RtlEraseUnicodeString(String: PUNICODE_STRING);
    pub fn RtlAnsiStringToUnicodeString(
       DestinationString: PUNICODE_STRING,
-      SourceString: PANSI_STRING,
+      SourceString: PCANSI_STRING,
       AllocateDestinationString: BOOLEAN,
    ) -> NTSTATUS;
+   pub fn RtlxAnsiStringToUnicodeSize(AnsiString: PCANSI_STRING) -> ULONG;
    pub fn RtlUnicodeStringToAnsiString(
       DestinationString: PANSI_STRING,
       SourceString: PUNICODE_STRING,
@@ -56406,6 +57332,8 @@ extern "C" {
       DebugPort: HANDLE,
       ProcessInformation: PRTL_USER_PROCESS_INFORMATION,
    ) -> NTSTATUS;
+   pub fn RtlPrepareForProcessCloning() -> NTSTATUS;
+   pub fn RtlCompleteProcessCloning(Completed: LOGICAL) -> NTSTATUS;
    pub fn RtlUpdateClonedCriticalSection(CriticalSection: PRTL_CRITICAL_SECTION);
    pub fn RtlUpdateClonedSRWLock(SRWLock: PRTL_SRWLOCK, Shared: LOGICAL);
    pub fn RtlCreateProcessReflection(
@@ -56567,8 +57495,8 @@ extern "C" {
    pub fn RtlQueryActivationContextApplicationSettings(
       Flags: ULONG,
       ActivationContext: PACTIVATION_CONTEXT,
-      SettingsNameSpace: PWSTR,
-      SettingName: PWSTR,
+      SettingsNameSpace: PCWSTR,
+      SettingName: PCWSTR,
       Buffer: PWSTR,
       BufferLength: SIZE_T,
       RequiredLength: PSIZE_T,
@@ -56814,7 +57742,7 @@ extern "C" {
    pub fn RtlGetSearchPath(SearchPathA: *mut PWSTR) -> NTSTATUS;
    pub fn RtlSetSearchPathMode(Flags: ULONG) -> NTSTATUS;
    pub fn RtlGetExePath(DosPathName: PCWSTR, SearchPathA: *mut PWSTR) -> NTSTATUS;
-   pub fn RtlReleasePath(Path: PWSTR);
+   pub fn RtlReleasePath(Path: PCWSTR);
    pub fn RtlReplaceSystemDirectoryInPath(
       Destination: PUNICODE_STRING,
       Machine: USHORT,
@@ -56882,8 +57810,8 @@ extern "C" {
    pub fn RtlCreateTagHeap(
       HeapHandle: PVOID,
       Flags: ULONG,
-      TagPrefix: PWSTR,
-      TagNames: PWSTR,
+      TagPrefix: PCWSTR,
+      TagNames: PCWSTR,
    ) -> ULONG;
    pub fn RtlQueryTagHeap(
       HeapHandle: PVOID,
@@ -57000,7 +57928,7 @@ extern "C" {
       MessageEntry: *mut PMESSAGE_RESOURCE_ENTRY,
    ) -> NTSTATUS;
    pub fn RtlFormatMessage(
-      MessageFormat: PWSTR,
+      MessageFormat: PCWSTR,
       MaximumWidth: ULONG,
       IgnoreInserts: BOOLEAN,
       ArgumentsAreAnsi: BOOLEAN,
@@ -57011,7 +57939,7 @@ extern "C" {
       ReturnLength: PULONG,
    ) -> NTSTATUS;
    pub fn RtlFormatMessageEx(
-      MessageFormat: PWSTR,
+      MessageFormat: PCWSTR,
       MaximumWidth: ULONG,
       IgnoreInserts: BOOLEAN,
       ArgumentsAreAnsi: BOOLEAN,
@@ -57025,7 +57953,7 @@ extern "C" {
    pub fn RtlGetFileMUIPath(
       Flags: ULONG,
       FilePath: PCWSTR,
-      Language: PWSTR,
+      Language: PCWSTR,
       LanguageLength: PULONG,
       FileMUIPath: PWSTR,
       FileMUIPathLength: PULONG,
@@ -57293,12 +58221,12 @@ extern "C" {
    pub fn RtlEmptyAtomTable(AtomTableHandle: PVOID, IncludePinnedAtoms: BOOLEAN) -> NTSTATUS;
    pub fn RtlAddAtomToAtomTable(
       AtomTableHandle: PVOID,
-      AtomName: PWSTR,
+      AtomName: PCWSTR,
       Atom: PRTL_ATOM,
    ) -> NTSTATUS;
    pub fn RtlLookupAtomInAtomTable(
       AtomTableHandle: PVOID,
-      AtomName: PWSTR,
+      AtomName: PCWSTR,
       Atom: PRTL_ATOM,
    ) -> NTSTATUS;
    pub fn RtlDeleteAtomFromAtomTable(AtomTableHandle: PVOID, Atom: RTL_ATOM) -> NTSTATUS;
@@ -57311,7 +58239,7 @@ extern "C" {
       AtomName: PWSTR,
       AtomNameLength: PULONG,
    ) -> NTSTATUS;
-   pub fn RtlGetIntegerAtom(AtomName: PWSTR, IntegerAtom: PUSHORT) -> BOOLEAN;
+   pub fn RtlGetIntegerAtom(AtomName: PCWSTR, IntegerAtom: PUSHORT) -> BOOLEAN;
    pub fn RtlValidSid(Sid: PSID) -> BOOLEAN;
    pub fn RtlEqualSid(Sid1: PSID, Sid2: PSID) -> BOOLEAN;
    pub fn RtlEqualPrefixSid(Sid1: PSID, Sid2: PSID) -> BOOLEAN;
@@ -57874,8 +58802,8 @@ extern "C" {
    pub fn RtlDeleteTimerQueueEx(TimerQueueHandle: HANDLE, Event: HANDLE) -> NTSTATUS;
    pub fn RtlFormatCurrentUserKeyPath(CurrentUserKeyPath: PUNICODE_STRING) -> NTSTATUS;
    pub fn RtlOpenCurrentUser(DesiredAccess: ACCESS_MASK, CurrentUserKey: PHANDLE) -> NTSTATUS;
-   pub fn RtlCreateRegistryKey(RelativeTo: ULONG, Path: PWSTR) -> NTSTATUS;
-   pub fn RtlCheckRegistryKey(RelativeTo: ULONG, Path: PWSTR) -> NTSTATUS;
+   pub fn RtlCreateRegistryKey(RelativeTo: ULONG, Path: PCWSTR) -> NTSTATUS;
+   pub fn RtlCheckRegistryKey(RelativeTo: ULONG, Path: PCWSTR) -> NTSTATUS;
    pub fn RtlQueryRegistryValues(
       RelativeTo: ULONG,
       Path: PCWSTR,
@@ -57984,14 +58912,14 @@ extern "C" {
    pub fn RtlQueryPerformanceCounter(PerformanceCounter: PLARGE_INTEGER) -> LOGICAL;
    pub fn RtlQueryPerformanceFrequency(PerformanceFrequency: PLARGE_INTEGER) -> LOGICAL;
    pub fn RtlQueryImageMitigationPolicy(
-      ImagePath: PWSTR,
+      ImagePath: PCWSTR,
       Policy: IMAGE_MITIGATION_POLICY,
       Flags: ULONG,
       Buffer: PVOID,
       BufferSize: ULONG,
    ) -> NTSTATUS;
    pub fn RtlSetImageMitigationPolicy(
-      ImagePath: PWSTR,
+      ImagePath: PCWSTR,
       Policy: IMAGE_MITIGATION_POLICY,
       Flags: ULONG,
       Buffer: PVOID,
@@ -59530,8 +60458,8 @@ extern "C" {
       tokenTaken: PBOOLEAN,
       replaceExisting: BOOLEAN,
    ) -> NTSTATUS;
-   pub fn ZwAddAtom(AtomName: PWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
-   pub fn ZwAddAtomEx(AtomName: PWSTR, Length: ULONG, Atom: PRTL_ATOM, Flags: ULONG) -> NTSTATUS;
+   pub fn ZwAddAtom(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
+   pub fn ZwAddAtomEx(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM, Flags: ULONG) -> NTSTATUS;
    pub fn ZwAddBootEntry(BootEntry: PBOOT_ENTRY, Id: PULONG) -> NTSTATUS;
    pub fn ZwAddDriverEntry(DriverEntry: PEFI_DRIVER_ENTRY, Id: PULONG) -> NTSTATUS;
    pub fn ZwAdjustGroupsToken(
@@ -60407,7 +61335,7 @@ extern "C" {
       RestrictedDeviceGroups: PTOKEN_GROUPS,
       NewTokenHandle: PHANDLE,
    ) -> NTSTATUS;
-   pub fn ZwFindAtom(AtomName: PWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
+   pub fn ZwFindAtom(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
    pub fn ZwFlushBuffersFile(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
    pub fn ZwFlushBuffersFileEx(
       FileHandle: HANDLE,
@@ -61942,10 +62870,343 @@ extern "C" {
    ) -> NTSTATUS;
    pub fn ZwYieldExecution() -> NTSTATUS;
    pub fn NtUserQueryWindow(WindowHandle: HWND, WindowInfo: WINDOWINFOCLASS) -> ULONG_PTR;
-   #[doc = " Performs special kernel operations for console host applications.\n\n This includes reparenting the console window, allowing the console to pass foreground rights\n on to launched console subsystem applications and terminating attached processes.\n\n @param Command One of the CONSOLECONTROL values indicating which console control function should be executed.\n @param ConsoleInformation A pointer to one of the  structures specifying additional data for the requested console control function.\n @param ConsoleInformationLength The size of the structure pointed to by the ConsoleInformation parameter.\n @return Successful or errant status."]
+   pub fn NtUserTestForInteractiveUser(AuthenticationId: PLUID) -> NTSTATUS;
+   pub fn NtUserCheckAccessForIntegrityLevel(
+      ProcessIdFirst: ULONG,
+      ProcessIdSecond: ULONG,
+      GrantedAccess: PBOOLEAN,
+   ) -> NTSTATUS;
+   pub fn NtUserCheckProcessForClipboardAccess(ProcessId: ULONG, GrantedAccess: PULONG)
+      -> NTSTATUS;
+   pub fn NtUserInternalGetWindowText(
+      WindowHandle: HWND,
+      pString: LPWSTR,
+      cchMaxCount: ULONG,
+   ) -> ULONG;
+   pub fn NtUserInternalGetWindowIcon(WindowHandle: HWND, IconType: ULONG) -> HICON;
+   pub fn NtUserGetClassName(
+      WindowHandle: HWND,
+      Real: LONGLONG,
+      ClassName: PUNICODE_STRING,
+   ) -> ULONG;
+   #[doc = " Performs special kernel operations for console host applications. (win32u.dll)\n\n This includes reparenting the console window, allowing the console to pass foreground rights\n on to launched console subsystem applications and terminating attached processes.\n\n @param Command One of the CONSOLECONTROL values indicating which console control function should be executed.\n @param ConsoleInformation A pointer to one of the  structures specifying additional data for the requested console control function.\n @param ConsoleInformationLength The size of the structure pointed to by the ConsoleInformation parameter.\n @return Successful or errant status."]
    pub fn NtUserConsoleControl(
       Command: CONSOLECONTROL,
       ConsoleInformation: PVOID,
       ConsoleInformationLength: ULONG,
    ) -> NTSTATUS;
+   #[doc = " Performs special kernel operations for console host applications. (user32.dll)\n\n This includes reparenting the console window, allowing the console to pass foreground rights\n on to launched console subsystem applications and terminating attached processes.\n\n @param Command One of the CONSOLECONTROL values indicating which console control function should be executed.\n @param ConsoleInformation A pointer to one of the  structures specifying additional data for the requested console control function.\n @param ConsoleInformationLength The size of the structure pointed to by the ConsoleInformation parameter.\n @return Successful or errant status."]
+   pub fn ConsoleControl(
+      Command: CONSOLECONTROL,
+      ConsoleInformation: PVOID,
+      ConsoleInformationLength: ULONG,
+   ) -> NTSTATUS;
+   #[doc = " Opens the specified window station.\n\n @param ObjectAttributes The name of the window station to be opened. Window station names are case-insensitive. This window station must belong to the current session.\n @param DesiredAccess The access to the window station.\n @return Successful or errant status."]
+   pub fn NtUserOpenWindowStation(
+      ObjectAttributes: OBJECT_ATTRIBUTES,
+      DesiredAccess: ACCESS_MASK,
+   ) -> HWINSTA;
+   pub fn NtUserCreateWindowStation(
+      ObjectAttributes: OBJECT_ATTRIBUTES,
+      DesiredAccess: ACCESS_MASK,
+      KeyboardLayoutHandle: HANDLE,
+      KeyboardLayoutOffset: PVOID,
+      NlsTableOffset: PVOID,
+      KeyboardDescriptor: PVOID,
+      LanguageIdString: UNICODE_STRING,
+      KeyboardLocale: ULONG,
+   ) -> HWINSTA;
+   pub fn NtUserBuildHwndList(
+      DesktopHandle: HANDLE,
+      StartWindowHandle: HWND,
+      IncludeChildren: LOGICAL,
+      ExcludeImmersive: LOGICAL,
+      ThreadId: ULONG,
+      HwndListInformationLength: ULONG,
+      HwndListInformation: PVOID,
+      ReturnLength: PULONG,
+   ) -> NTSTATUS;
+   pub fn NtUserBuildNameList(
+      WindowStationHandle: HWINSTA,
+      NameListInformationLength: ULONG,
+      NameListInformation: PVOID,
+      ReturnLength: PULONG,
+   ) -> NTSTATUS;
+   pub fn NtUserBuildPropList(
+      WindowStationHandle: HWINSTA,
+      PropListInformationLength: ULONG,
+      PropListInformation: PVOID,
+      ReturnLength: PULONG,
+   ) -> NTSTATUS;
+   pub fn NtUserGetProcessWindowStation() -> HWND;
+   pub fn NtUserCloseWindowStation(WindowStationHandle: HWINSTA) -> LOGICAL;
+   pub fn NtUserSetProcessWindowStation(WindowStationHandle: HWINSTA) -> LOGICAL;
+   pub fn SetWindowStationUser(
+      WindowStationHandle: HWINSTA,
+      UserLogonId: PLUID,
+      UserSid: PSID,
+      UserSidLength: ULONG,
+   ) -> LOGICAL;
+   pub fn NtUserSetWindowStationUser(
+      WindowStationHandle: HWINSTA,
+      UserLogonId: PLUID,
+      UserSid: PSID,
+      UserSidLength: ULONG,
+   ) -> LOGICAL;
+   pub fn NtUserOpenDesktop(
+      ObjectAttributes: PCOBJECT_ATTRIBUTES,
+      Flags: ULONG,
+      DesiredAccess: ACCESS_MASK,
+   ) -> HANDLE;
+   pub fn NtUserSetThreadDesktop(DesktopHandle: HDESK) -> LOGICAL;
+   pub fn NtUserSwitchDesktop(DesktopHandle: HDESK, Flags: ULONG, FadeTime: ULONG) -> LOGICAL;
+   pub fn NtUserGetIconInfo(
+      IconOrCursorHandle: HICON,
+      Iconinfo: PICONINFO,
+      Name: PUNICODE_STRING,
+      ResourceId: PUNICODE_STRING,
+      ColorBits: PULONG,
+      IsCursorHandle: LOGICAL,
+   ) -> LOGICAL;
+   pub fn NtUserGetIconSize(
+      IconOrCursorHandle: HGDIOBJ,
+      IsCursorHandle: LOGICAL,
+      XX: PULONG,
+      YY: PULONG,
+   ) -> LOGICAL;
+   pub fn NtUserGetForegroundWindow() -> HWND;
+   pub fn NtUserSetActiveWindow(WindowHandle: HWND) -> HWND;
+   pub fn NtUserSetFocus(WindowHandle: HWND) -> HWND;
+   pub fn NtUserGetThreadState(UserThreadState: ULONG) -> ULONG_PTR;
+   pub fn NtUserSetWindowPlacement(WindowHandle: HWND, lpwndpl: *const WINDOWPLACEMENT) -> BOOL;
+   pub fn NtUserAttachThreadInput(IdAttach: ULONG, IdAttachTo: ULONG, Attach: BOOL) -> BOOL;
+   pub fn NtUserBeginPaint(WindowHandle: HWND, lpPaint: LPPAINTSTRUCT) -> HDC;
+   pub fn NtUserBlockInput(BlockInput: BOOL) -> BOOL;
+   pub fn tUserCalculatePopupWindowPosition(
+      anchorPoint: *const POINT,
+      windowSize: *const SIZE,
+      flags: ULONG,
+      excludeRect: *mut RECT,
+      popupWindowPosition: *mut RECT,
+   ) -> BOOL;
+   pub fn NtUserChangeWindowMessageFilterEx(
+      WindowHandle: HWND,
+      message: ULONG,
+      action: ULONG,
+      pChangeFilterStruct: PCHANGEFILTERSTRUCT,
+   ) -> BOOL;
+   pub fn NtUserChildWindowFromPointEx(WindowHandle: HWND, pt: POINT, flags: ULONG) -> HWND;
+   pub fn NtUserClipCursor(lpRect: *const RECT) -> BOOL;
+   pub fn NtUserCloseDesktop(hDesktop: HDESK) -> BOOL;
+   pub fn NtUserCopyAcceleratorTable(
+      hAccelSrc: HACCEL,
+      lpAccelDst: LPACCEL,
+      cAccelEntries: LONG,
+   ) -> LONG;
+   pub fn NtUserCreateAcceleratorTable(paccel: LPACCEL, cAccel: LONG) -> HACCEL;
+   pub fn NtUserDeleteMenu(hMenu: HMENU, uPosition: ULONG, uFlags: ULONG) -> BOOL;
+   pub fn NtUserDestroyMenu(hMenu: HMENU) -> BOOL;
+   pub fn NtUserDestroyWindow(WindowHandle: HWND) -> BOOL;
+   pub fn NtUserDragDetect(WindowHandle: HWND, pt: POINT) -> BOOL;
+   pub fn NtUserDragObject(
+      WindowHandleParent: HWND,
+      WindowHandleFrom: HWND,
+      fmt: ULONG,
+      data: ULONG_PTR,
+      hcur: HCURSOR,
+   ) -> ULONG;
+   pub fn NtUserDrawAnimatedRects(
+      WindowHandle: HWND,
+      idAni: cty::c_int,
+      lprcFrom: *const RECT,
+      lprcTo: *const RECT,
+   ) -> BOOL;
+   pub fn NtUserEndMenu() -> BOOL;
+   pub fn NtUserEndPaint(WindowHandle: HWND, lpPaint: *const PAINTSTRUCT) -> BOOL;
+   pub fn NtUserEnumDisplayMonitors(
+      hdc: HDC,
+      lprcClip: LPCRECT,
+      lpfnEnum: MONITORENUMPROC,
+      dwData: LPARAM,
+   ) -> BOOL;
+   pub fn NtUserExcludeUpdateRgn(hDC: HDC, WindowHandle: HWND) -> HRGN;
+   pub fn NtUserFlashWindowEx(pfwi: PFLASHWINFO) -> BOOL;
+   pub fn NtUserGetAncestor(WindowHandle: HWND, gaFlags: ULONG) -> HWND;
+   pub fn NtUserGetCaretBlinkTime() -> ULONG;
+   pub fn NtUserGetCaretPos(lpPoint: LPPOINT) -> BOOL;
+   pub fn NtUserGetClipCursor(lpRect: LPRECT) -> BOOL;
+   pub fn NtUserGetComboBoxInfo(WindowHandleCombo: HWND, pcbi: PCOMBOBOXINFO) -> BOOL;
+   pub fn NtUserGetCurrentInputMessageSource(InputMessageSource: *mut INPUT_MESSAGE_SOURCE)
+      -> BOOL;
+   pub fn NtUserGetCursor() -> HCURSOR;
+   pub fn NtUserGetCursorInfo(pci: PCURSORINFO) -> BOOL;
+   pub fn NtUserGetDCEx(WindowHandle: HWND, hrgnClip: HRGN, flags: ULONG) -> HDC;
+   pub fn NtUserGetDisplayAutoRotationPreferences(
+      pOrientation: *mut ORIENTATION_PREFERENCE,
+   ) -> BOOL;
+   pub fn NtUserGetDoubleClickTime() -> ULONG;
+   pub fn NtUserGetGUIThreadInfo(idThread: ULONG, pgui: PGUITHREADINFO) -> BOOL;
+   pub fn NtUserGetGuiResources(ProcessHandle: HANDLE, uiFlags: ULONG) -> ULONG;
+   pub fn NtUserGetLayeredWindowAttributes(
+      WindowHandle: HWND,
+      pcrKey: *mut COLORREF,
+      pbAlpha: *mut BYTE,
+      pdwFlags: ULONG,
+   ) -> BOOL;
+   pub fn NtUserGetListBoxInfo(WindowHandle: HWND) -> ULONG;
+   pub fn NtUserGetMenuBarInfo(
+      WindowHandle: HWND,
+      idObject: LONG,
+      idItem: LONG,
+      pmbi: PMENUBARINFO,
+   ) -> BOOL;
+   pub fn NtUserGetMenuItemRect(
+      WindowHandle: HWND,
+      hMenu: HMENU,
+      uItem: ULONG,
+      lprcItem: LPRECT,
+   ) -> BOOL;
+   pub fn NtUserGetMouseMovePointsEx(
+      cbSize: ULONG,
+      lppt: LPMOUSEMOVEPOINT,
+      lpptBuf: LPMOUSEMOVEPOINT,
+      nBufPoints: LONG,
+      resolution: ULONG,
+   ) -> LONG;
+   pub fn NtUserGetRawInputData(
+      hRawInput: HRAWINPUT,
+      uiCommand: ULONG,
+      pData: LPVOID,
+      pcbSize: PULONG,
+      cbSizeHeader: ULONG,
+   ) -> ULONG;
+   pub fn NtUserGetRawInputDeviceList(
+      pRawInputDeviceList: PRAWINPUTDEVICELIST,
+      puiNumDevices: PULONG,
+      cbSize: ULONG,
+   ) -> ULONG;
+   pub fn NtUserGetRegisteredRawInputDevices(
+      pRawInputDevices: PRAWINPUTDEVICE,
+      puiNumDevices: PULONG,
+      cbSize: ULONG,
+   ) -> ULONG;
+   pub fn NtUserGetSystemMenu(WindowHandle: HWND, bRevert: BOOL) -> HMENU;
+   pub fn NtUserGetThreadDesktop(ThreadId: ULONG) -> HDESK;
+   pub fn NtUserGetTitleBarInfo(WindowHandle: HWND, pti: PTITLEBARINFO) -> BOOL;
+   pub fn NtUserGetObjectInformation(
+      hObj: HANDLE,
+      Index: LONG,
+      vInfo: PVOID,
+      Length: ULONG,
+      LengthNeeded: PULONG,
+   ) -> BOOL;
+   pub fn NtUserGetWindowDC(WindowHandle: HWND) -> HDC;
+   pub fn NtUserGetWindowPlacement(WindowHandle: HWND, lpwndpl: *mut WINDOWPLACEMENT) -> BOOL;
+   pub fn NtUserHiliteMenuItem(
+      WindowHandle: HWND,
+      Menu: HMENU,
+      IDHiliteItem: ULONG,
+      Hilite: ULONG,
+   ) -> BOOL;
+   pub fn NtUserInvalidateRect(WindowHandle: HWND, Rect: *const RECT, Erase: BOOL) -> BOOL;
+   pub fn NtUserInvalidateRgn(WindowHandle: HWND, hRgn: HRGN, Erase: BOOL) -> BOOL;
+   pub fn NtUserIsTouchWindow(WindowHandle: HWND, Flags: PULONG) -> BOOL;
+   pub fn NtUserKillTimer(WindowHandle: HWND, IDEvent: ULONG_PTR) -> BOOL;
+   pub fn NtUserLockWorkStation() -> BOOL;
+   pub fn NtUserLogicalToPhysicalPoint(WindowHandle: HWND, lpPoint: LPPOINT) -> BOOL;
+   pub fn NtUserMenuItemFromPoint(WindowHandle: HWND, hMenu: HMENU, ptScreen: POINT) -> LONG;
+   pub fn NtUserMoveWindow(
+      WindowHandle: HWND,
+      X: LONG,
+      Y: LONG,
+      nWidth: LONG,
+      nHeight: LONG,
+      bRepaint: BOOL,
+   ) -> BOOL;
+   pub fn NtUserOpenInputDesktop(Flags: ULONG, Inherit: BOOL, DesiredAccess: ACCESS_MASK) -> HDESK;
+   pub fn NtUserPhysicalToLogicalPoint(WindowHandle: HWND, lpPoint: LPPOINT) -> BOOL;
+   pub fn NtUserPrintWindow(WindowHandle: HWND, hdcBlt: HDC, nFlags: ULONG) -> BOOL;
+   pub fn NtUserQueryInformationThread(
+      ThreadHandle: HANDLE,
+      ThreadInformationClass: USERTHREADINFOCLASS,
+      ThreadInformation: PVOID,
+      ThreadInformationLength: ULONG,
+      ReturnLength: PULONG,
+   ) -> NTSTATUS;
+   pub fn NtUserSetInformationThread(
+      ThreadHandle: HANDLE,
+      ThreadInformationClass: USERTHREADINFOCLASS,
+      ThreadInformation: PVOID,
+      ThreadInformationLength: ULONG,
+   ) -> NTSTATUS;
+   pub fn QuerySendMessage(pMsg: *mut MSG) -> BOOL;
+   pub fn NtUserRedrawWindow(
+      WindowHandle: HWND,
+      lprcUpdate: PRECT,
+      hrgnUpdate: HRGN,
+      flags: ULONG,
+   ) -> BOOL;
+   pub fn NtUserRealChildWindowFromPoint(
+      WindowHandleParent: HWND,
+      ptParentClientCoords: POINT,
+   ) -> HWND;
+   pub fn NtUserRegisterHotKey(WindowHandle: HWND, id: LONG, fsModifiers: ULONG, vk: ULONG)
+      -> BOOL;
+   pub fn NtUserRemoveMenu(hMenu: HMENU, uPosition: ULONG, uFlags: ULONG) -> BOOL;
+   pub fn NtUserSendInput(cInputs: ULONG, pInputs: LPINPUT, cbSize: LONG) -> ULONG;
+   pub fn NtUserSetCapture(WindowHandle: HWND) -> HWND;
+   pub fn NtUserSetTimer(
+      WindowHandle: HWND,
+      nIDEvent: ULONG_PTR,
+      uElapse: ULONG,
+      lpTimerFunc: TIMERPROC,
+      uToleranceDelay: ULONG,
+   ) -> ULONG_PTR;
+   pub fn NtUserSetClassWord(WindowHandle: HWND, nIndex: LONG, wNewWord: WORD) -> WORD;
+   pub fn NtUserSetCursorPos(X: LONG, Y: LONG) -> BOOL;
+   pub fn NtUserSetLayeredWindowAttributes(
+      WindowHandle: HWND,
+      crKey: COLORREF,
+      bAlpha: BYTE,
+      dwFlags: DWORD,
+   ) -> BOOL;
+   pub fn NtUserSetProcessRestrictionExemption(EnableExemption: BOOL) -> BOOL;
+   pub fn NtUserSetWindowPos(
+      WindowHandle: HWND,
+      WindowHandleInsertAfter: HWND,
+      X: LONG,
+      Y: LONG,
+      cx: LONG,
+      cy: LONG,
+      uFlags: ULONG,
+   ) -> BOOL;
+   pub fn NtUserSetWindowWord(WindowHandle: HWND, nIndex: LONG, wNewWord: WORD) -> WORD;
+   pub fn NtUserShellForegroundBoostProcess(ProcessHandle: HANDLE, WindowHandle: HWND) -> HWND;
+   pub fn NtUserSetAdditionalForegroundBoostProcesses(WindowHandle: HWND) -> ULONG;
+   pub fn NtUserSetAdditionalPowerThrottlingProcess(WindowHandle: HWND) -> ULONG;
+   pub fn NtUserShowCursor(bShow: BOOL) -> LONG;
+   pub fn NtUserShowWindow(WindowHandle: HWND, nCmdShow: LONG) -> BOOL;
+   pub fn NtUserShowWindowAsync(WindowHandle: HWND, nCmdShow: LONG) -> BOOL;
+   pub fn NtUserShutdownBlockReasonQuery(
+      WindowHandle: HWND,
+      pwszBuff: LPWSTR,
+      pcchBuff: PULONG,
+   ) -> BOOL;
+   pub fn NtUserShutdownReasonDestroy(WindowHandle: HWND) -> BOOL;
+   pub fn NtUserTrackMouseEvent(lpEventTrack: LPTRACKMOUSEEVENT) -> BOOL;
+   pub fn NtUserTrackPopupMenuEx(
+      hMenu: HMENU,
+      uFlags: ULONG,
+      x: LONG,
+      y: LONG,
+      WindowHandle: HWND,
+      lptpm: LPTPMPARAMS,
+   ) -> BOOL;
+   pub fn NtUserUnhookWinEvent(hWinEventHook: HWINEVENTHOOK) -> BOOL;
+   pub fn NtUserUnregisterHotKey(WindowHandle: HWND, id: LONG) -> BOOL;
+   pub fn NtUserUserHandleGrantAccess(UserHandle: HANDLE, Job: HANDLE, Grant: BOOL) -> BOOL;
+   pub fn NtUserValidateRect(WindowHandle: HWND, Rect: *const RECT) -> BOOL;
+   pub fn NtUserWindowFromDC(hDC: HDC) -> HWND;
+   pub fn NtUserWindowFromPhysicalPoint(Point: POINT) -> HWND;
+   pub fn NtUserWindowFromPoint(Point: POINT) -> HWND;
 }
