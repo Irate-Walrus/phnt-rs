@@ -1,4 +1,3 @@
-#![no_std]
 // MIT License
 //
 // Copyright (c) 2024 oberrich <oberrich.llvm@proton.me>
@@ -21,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
+#![no_std]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 #![doc = include_str!("../README.md")]
 #![allow(
@@ -36,12 +36,21 @@ pub mod ffi {
    // use vendored bindings (only available for `x86_64` arch)
    #[cfg_attr(docsrs, doc(cfg(not(feature = "regenerate"))))]
    #[cfg(all(not(feature = "regenerate"), target_arch = "x86_64"))]
-   include!("ffi/generated.rs");
+   include!("ffi/x86_64_bindgen.rs");
+   
+   #[cfg_attr(docsrs, doc(cfg(not(feature = "regenerate"))))]
+   #[cfg(all(not(feature = "regenerate"), target_arch = "x86"))]
+   include!("ffi/x86_bindgen.rs");
 
    // use re-generated bindings
    #[cfg_attr(docsrs, doc(cfg(feature = "regenerate")))]
-   #[cfg(feature = "regenerate")]
-   include!(concat!(env!("OUT_DIR"), "\\generated.rs"));
+   #[cfg(all(feature = "regenerate", target_arch = "x86_64"))]
+   include!(concat!(env!("OUT_DIR"), "\\x86_64_bindgen.rs"));
+   
+   // use re-generated bindings
+   #[cfg_attr(docsrs, doc(cfg(feature = "regenerate")))]
+   #[cfg(all(feature = "regenerate", target_arch = "x86"))]
+   include!(concat!(env!("OUT_DIR"), "\\x86_bindgen.rs"));
 }
 
 /// Extensions to the bindings (useful functions, macros, etc.)
@@ -76,12 +85,15 @@ pub mod ext {
    #[inline]
    pub unsafe fn NtCurrentTeb() -> *mut TEB {
       const TEB_OFFSET: u32 = mem::offset_of!(NT_TIB, Self_) as u32;
-      if cfg!(target_arch = "x86_64") {
+      
+      #[cfg(target_arch = "x86_64")]
+      {
          __readgsqword(TEB_OFFSET) as *mut TEB
-      } else if cfg!(target_arch = "x86") {
+      }
+
+      #[cfg(target_arch = "x86")]
+      {
          __readfsdword(TEB_OFFSET) as *mut TEB
-      } else {
-         unimplemented!("target architecture not implemented yet")
       }
    }
 

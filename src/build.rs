@@ -40,6 +40,7 @@ mod regen {
    use std::collections::HashMap;
    use std::env;
    use std::path::PathBuf;
+   use std::fs;
 
    pub struct BindgenConfig {
       pub blocklist_types: Vec<String>,
@@ -89,8 +90,8 @@ mod regen {
 
          let mut raw_lines = vec![
             format!("// Generated at {}", chrono::offset::Local::now()),
-            format!("#[cfg(not(target_arch = \"{}\"))]", std::env::consts::ARCH),
-            format!("compile_error!(\"These bindings can only be used on `{}` architectures. To generate bindings for your target architecture, consider using the `regenerate` feature.\");", std::env::consts::ARCH),
+            format!("#[cfg(not(target_arch = \"{}\"))]",std::env::var("CARGO_CFG_TARGET_ARCH").unwrap()),
+            format!("compile_error!(\"These bindings can only be used on `{}` architectures. To generate bindings for your target architecture, consider using the `regenerate` feature.\");", std::env::var("CARGO_CFG_TARGET_ARCH").unwrap()),
             "".into(),
             "use cty;".into(),
          ];
@@ -154,7 +155,32 @@ mod regen {
             .emit_builtins()
             .enable_function_attribute_detection()
             .generate()
+
+
       }
+   }
+
+   fn replace_extern_with_type(bindings: &str) -> String {
+      let mut src = bindings.to_owned();
+      let ext_re = Regex::new(r#"extern\s+"([^"]*)"\s*\{([^}]*)\}"#).expect("Unable to compiled extern block regex");
+      let ext_fn_re = Regex::new(r#"pub fn\s+([a-zA-Z_][a-zA-Z_0-9]*)\s*\((.*?)\)\s*->\s*(.*?);"#).expect("Unable to compiled function regex");
+      let mut fn_types = Vec::new();
+
+      for block_match in ext_re.captures_iter(&src) {
+         let extern_type = &block_match[1];
+         let inner_src = &block_match[2];
+
+         for caps in ext_fn_re.captures_iter(&inner_src) {
+            println!("cargo:debug=Match extern `\"{}\" {}`", extern_type, &caps[0]);
+            let fn_name = &caps[1];
+            let args = &caps[2];
+            let return_type = &caps[3];
+            fn_types.push(format!("pub type {}Type = unsafe extern \"{}\" fn({}) -> {};", fn_name, extern_type, args, return_type));
+         }
+
+      }
+      src += &fn_types.join("\n");
+      src
    }
 
    pub fn main() {
@@ -168,14 +194,22 @@ mod regen {
          env!("CARGO_MANIFEST_DIR"),
          "\\deps\\phnt-nightly"
       ));
-
-      let out_path = PathBuf::from(env::var("OUT_DIR").unwrap()).join("generated.rs");
+      
+      let out_path = PathBuf::from(env::var("OUT_DIR").unwrap()).join(format!("{}_bindgen.rs", std::env::var("CARGO_CFG_TARGET_ARCH").unwrap()));
 
       BindgenConfig::default()
          .generate_bindings()
          .expect("Unable to generate bindings!")
          .write_to_file(out_path.clone())
          .expect("Unable to write bindings");
+
+      let src = fs::read_to_string(&out_path)
+         .expect("Unable to read generated bindings");
+      
+      let modified_src = replace_extern_with_type(&src);
+
+      fs::write(&out_path, modified_src)
+         .expect("Unable to write modified bindings");
 
       println!("cargo:info=Wrote phnt bindings to `{}`", out_path.display());
    }
