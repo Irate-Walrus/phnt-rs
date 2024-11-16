@@ -17,6 +17,8 @@ jobs:
         with: { submodules: recursive }
       - name: Install Rust
         uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: rustfmt
       - name: Build
         run: cargo build -v -F regenerate
       - name: Upload generated.rs as artifact
