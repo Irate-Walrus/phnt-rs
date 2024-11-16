@@ -18,11 +18,11 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@nightly
       - name: Build
-        run: cargo build -vvv -F regenerate
+        run: cargo build -v -F regenerate
       - name: Upload generated.rs as artifact
         uses: actions/upload-artifact@v4
         with:
           name: target
           path: target/debug
       - name: Run tests
-        run: cargo test --verbose -F regenerate
+        run: cargo test -v -F regenerate
