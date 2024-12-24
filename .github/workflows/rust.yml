@@ -1,6 +1,7 @@
 name: "cargo"
 
 on:
+  workflow_dispatch:
   push:
     branches: ["master"]
   pull_request:
@@ -10,21 +11,31 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  bindgen:
     runs-on: windows-latest
+
+    strategy:
+      matrix:
+        target: [x86_64-pc-windows-msvc, i686-pc-windows-msvc]
+
     steps:
       - uses: actions/checkout@v4
         with: { submodules: recursive }
+
       - name: Install Rust
         uses: dtolnay/rust-toolchain@nightly
         with:
+          targets: ${{ matrix.target }}
           components: rustfmt
+
       - name: Build
-        run: cargo build -v -F regenerate
+        run: cargo build -v -F regenerate --target ${{ matrix.target }}
+
       - name: Upload generated.rs as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: target
-          path: target/debug
+          name: ${{ matrix.target }}
+          path: target/${{ matrix.target }}/debug
+
       - name: Run tests
-        run: cargo test -v -F regenerate
+        run: cargo test -v -F regenerate --target ${{ matrix.target }}
