@@ -104,7 +104,6 @@ mod regen {
             .blocklist_type(blocklist_regexpr.as_str())
             .type_alias("NTSTATUS")
             .opaque_type("std::.*")
-            .ctypes_prefix("cty")
             .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
             .default_enum_style(bindgen::EnumVariation::Rust { non_exhaustive: true })
             .default_alias_style(::bindgen::AliasVariation::TypeAlias)
