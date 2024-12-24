@@ -39,8 +39,8 @@ mod regen {
    use regex::Regex;
    use std::collections::HashMap;
    use std::env;
-   use std::path::PathBuf;
    use std::fs;
+   use std::path::PathBuf;
 
    pub struct BindgenConfig {
       pub blocklist_types: Vec<String>,
@@ -70,50 +70,26 @@ mod regen {
 
    impl BindgenConfig {
       pub fn new(blocklist_types: Vec<String>, raw_lines: Vec<String>) -> Self {
-         Self {
-            blocklist_types,
-            raw_lines,
-         }
+         Self { blocklist_types, raw_lines }
       }
 
       pub fn generate_bindings(&self) -> Result<bindgen::Bindings, bindgen::BindgenError> {
-         let allowlist_regexpr = Regex::new(
-            &format!(
-               r"({}\\deps\\phnt-nightly\\.*\.h)|winnt\.h|ntstatus\.h",
-               regex::escape(env!("CARGO_MANIFEST_DIR"))
-            ),
-         )
-         .unwrap();
+         let allowlist_regexpr = Regex::new(&format!(r"({}\\deps\\phnt-nightly\\.*\.h)|winnt\.h|ntstatus\.h", regex::escape(env!("CARGO_MANIFEST_DIR")))).unwrap();
 
-         let blocklist_regexpr =
-            Regex::new(&format!(r"({})", self.blocklist_types.join("|"))).unwrap();
+         let blocklist_regexpr = Regex::new(&format!(r"({})", self.blocklist_types.join("|"))).unwrap();
 
-         let mut raw_lines = vec![
-            format!("// Generated at {}", chrono::offset::Local::now()),
-            format!("#[cfg(not(target_arch = \"{}\"))]",std::env::var("CARGO_CFG_TARGET_ARCH").unwrap()),
-            format!("compile_error!(\"These bindings can only be used on `{}` architectures. To generate bindings for your target architecture, consider using the `regenerate` feature.\");", std::env::var("CARGO_CFG_TARGET_ARCH").unwrap()),
-            "".into(),
-            "use cty;".into(),
-         ];
+         let mut raw_lines = vec![format!("// Generated at {}", chrono::offset::Local::now())];
          raw_lines.append(&mut self.raw_lines.clone());
          raw_lines.push(String::default());
 
-         let mut clang_args: Vec<String> = vec![
-            "-Iwindows.h".to_owned(),
-            "-Iwinnt.h".to_owned(),
-            concat!("-I", env!("CARGO_MANIFEST_DIR"), "\\deps\\phnt-nightly/").to_owned(),
-         ];
+         let mut clang_args: Vec<String> = vec!["-Iwindows.h".to_owned(), "-Iwinnt.h".to_owned(), concat!("-I", env!("CARGO_MANIFEST_DIR"), "\\deps\\phnt-nightly/").to_owned()];
 
          for name in ["PHNT_VERSION", "PHNT_MODE"] {
             println!("cargo:rerun-if-env-changed={}", name);
             if let Ok(str) = env::var(name) {
                clang_args.push(format!("-D{}={}", name, str));
 
-               let value = if let Ok(_) = str.parse::<u32>() {
-                  str
-               } else {
-                  format!("self::{}", str)
-               };
+               let value = if let Ok(_) = str.parse::<u32>() { str } else { format!("self::{}", str) };
 
                raw_lines.push(format!("pub const {}: u32 = {};", name, value));
             }
@@ -128,11 +104,9 @@ mod regen {
             .blocklist_type(blocklist_regexpr.as_str())
             .type_alias("NTSTATUS")
             .opaque_type("std::.*")
-            .ctypes_prefix("cty")
+            .ctypes_prefix("self")
             .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
-            .default_enum_style(bindgen::EnumVariation::Rust {
-               non_exhaustive: true,
-            })
+            .default_enum_style(bindgen::EnumVariation::Rust { non_exhaustive: true })
             .default_alias_style(::bindgen::AliasVariation::TypeAlias)
             .default_macro_constant_type(bindgen::MacroTypeVariation::Unsigned)
             .default_non_copy_union_style(bindgen::NonCopyUnionStyle::ManuallyDrop)
@@ -155,61 +129,67 @@ mod regen {
             .emit_builtins()
             .enable_function_attribute_detection()
             .generate()
-
-
       }
    }
 
    fn replace_extern_with_type(bindings: &str) -> String {
-      let mut src = bindings.to_owned();
       let ext_re = Regex::new(r#"extern\s+"([^"]*)"\s*\{([^}]*)\}"#).expect("Unable to compiled extern block regex");
       let ext_fn_re = Regex::new(r#"pub fn\s+([a-zA-Z_][a-zA-Z_0-9]*)\s*\((.*?)\)\s*->\s*(.*?);"#).expect("Unable to compiled function regex");
       let mut fn_types = Vec::new();
 
-      for block_match in ext_re.captures_iter(&src) {
+      let mut replacements = Vec::new();
+      let mut src = bindings.to_owned();
+
+      for block_match in ext_re.captures_iter(bindings) {
          let extern_type = &block_match[1];
          let inner_src = &block_match[2];
+         let block_text = &block_match[0];
 
+         // Insert #[cfg(feature = "native_fn")] above function blocks
+         let annotated_block = format!("#[cfg(feature=\"native_fn\")]\n{}", block_text);
+         replacements.push((block_text.to_string(), annotated_block));
+
+         // Extract function signatures and generate function types
          for caps in ext_fn_re.captures_iter(&inner_src) {
             println!("cargo:debug=Match extern `\"{}\" {}`", extern_type, &caps[0]);
             let fn_name = &caps[1];
             let args = &caps[2];
             let return_type = &caps[3];
-            fn_types.push(format!("pub type {}Type = unsafe extern \"{}\" fn({}) -> {};", fn_name, extern_type, args, return_type));
+            fn_types.push(format!("pub type {}Fn = unsafe extern \"{}\" fn({}) -> {};", fn_name, extern_type, args, return_type));
          }
-
       }
-      src += &fn_types.join("\n");
+
+      // Apply replacements to the source
+      for (original, replacement) in replacements {
+         src = src.replacen(&original, &replacement, 1);
+      }
+
+      // Wrap function types in a block annotated with #[cfg(feature = "fn_types")]
+      if !fn_types.is_empty() {
+         src += "\n#[cfg(feature=\"fn_types\")]\nmod fn_types {\n";
+         for fn_type in fn_types {
+            src += &format!("    {}\n", fn_type);
+         }
+         src += "}\n";
+      }
+
       src
    }
 
    pub fn main() {
-      std::process::Command::new("git")
-         .args(["submodule", "update", "--init", "--remote", "--recursive"])
-         .output()
-         .expect("phnt/build.rs: failed to update the `phnt-nightly` submodule!");
+      std::process::Command::new("git").args(["submodule", "update", "--init", "--remote", "--recursive"]).output().expect("phnt/build.rs: failed to update the `phnt-nightly` submodule!");
 
-      println!(concat!(
-         "cargo:rerun-if-changed=",
-         env!("CARGO_MANIFEST_DIR"),
-         "\\deps\\phnt-nightly"
-      ));
-      
+      println!(concat!("cargo:rerun-if-changed=", env!("CARGO_MANIFEST_DIR"), "\\deps\\phnt-nightly"));
+
       let out_path = PathBuf::from(env::var("OUT_DIR").unwrap()).join(format!("{}_bindgen.rs", std::env::var("CARGO_CFG_TARGET_ARCH").unwrap()));
 
-      BindgenConfig::default()
-         .generate_bindings()
-         .expect("Unable to generate bindings!")
-         .write_to_file(out_path.clone())
-         .expect("Unable to write bindings");
+      BindgenConfig::default().generate_bindings().expect("Unable to generate bindings!").write_to_file(out_path.clone()).expect("Unable to write bindings");
 
-      let src = fs::read_to_string(&out_path)
-         .expect("Unable to read generated bindings");
-      
+      let src = fs::read_to_string(&out_path).expect("Unable to read generated bindings");
+
       let modified_src = replace_extern_with_type(&src);
 
-      fs::write(&out_path, modified_src)
-         .expect("Unable to write modified bindings");
+      fs::write(&out_path, modified_src).expect("Unable to write modified bindings");
 
       println!("cargo:info=Wrote phnt bindings to `{}`", out_path.display());
    }
