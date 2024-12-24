@@ -146,7 +146,7 @@ mod regen {
          let block_text = &block_match[0];
 
          // Insert #[cfg(feature = "native_fn")] above function blocks
-         let annotated_block = format!("#[cfg(feature=\"native_fn\")]\n{}", block_text);
+         let annotated_block = format!("#[cfg(feature=\"externs\")]\n{}", block_text);
          replacements.push((block_text.to_string(), annotated_block));
 
          // Extract function signatures and generate function types

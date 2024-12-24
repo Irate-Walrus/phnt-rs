@@ -11,7 +11,7 @@ description = "Rust bindings to the System Informer's (formerly known as Process
 
 [features]
 regenerate = ["dep:regex", "dep:bindgen", "dep:chrono"]
-native_fn = []
+externs = []
 fn_types = []
 
 [package.metadata.docs.rs]
