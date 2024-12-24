@@ -133,21 +133,23 @@ mod regen {
    }
 
    fn replace_extern_with_type(bindings: &str) -> String {
-      let mut src = bindings.to_owned();
       let ext_re = Regex::new(r#"extern\s+"([^"]*)"\s*\{([^}]*)\}"#).expect("Unable to compiled extern block regex");
       let ext_fn_re = Regex::new(r#"pub fn\s+([a-zA-Z_][a-zA-Z_0-9]*)\s*\((.*?)\)\s*->\s*(.*?);"#).expect("Unable to compiled function regex");
       let mut fn_types = Vec::new();
 
-      for block_match in ext_re.captures_iter(&src) {
+      let mut replacements = Vec::new();
+      let mut src = bindings.to_owned();
+
+      for block_match in ext_re.captures_iter(bindings) {
          let extern_type = &block_match[1];
          let inner_src = &block_match[2];
          let block_text = &block_match[0];
 
          // Insert #[cfg(feature = "native_fn")] above function blocks
          let annotated_block = format!("#[cfg(feature=\"native_fn\")]\n{}", block_text);
-         src = src.replacen(block_text, &annotated_block, 1);
+         replacements.push((block_text.to_string(), annotated_block));
 
-         // Extract function signatures
+         // Extract function signatures and generate function types
          for caps in ext_fn_re.captures_iter(&inner_src) {
             println!("cargo:debug=Match extern `\"{}\" {}`", extern_type, &caps[0]);
             let fn_name = &caps[1];
@@ -155,6 +157,11 @@ mod regen {
             let return_type = &caps[3];
             fn_types.push(format!("pub type {}Fn = unsafe extern \"{}\" fn({}) -> {};", fn_name, extern_type, args, return_type));
          }
+      }
+
+      // Apply replacements to the source
+      for (original, replacement) in replacements {
+         src = src.replacen(&original, &replacement, 1);
       }
 
       // Wrap function types in a block annotated with #[cfg(feature = "fn_types")]
