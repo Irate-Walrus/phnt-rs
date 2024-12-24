@@ -1,4 +1,5 @@
-// Generated at 2024-11-15 20:57:20.248290600 -08:00
+// Generated at 2024-12-24 01:17:56.219229700 +00:00
+
 
 #[repr(C)]
 #[derive(Copy, Clone, Debug, Default, Eq, Hash, Ord, PartialEq, PartialOrd)]
@@ -202,28 +203,34 @@ pub const WORKER_FACTORY_QUERY_INFORMATION: u32 = 8;
 pub const WORKER_FACTORY_READY_WORKER: u32 = 16;
 pub const WORKER_FACTORY_SHUTDOWN: u32 = 32;
 pub const WORKER_FACTORY_ALL_ACCESS: u32 = 983103;
+pub const KF_V86_VIS: u32 = 1;
 pub const KF_RDTSC: u32 = 2;
 pub const KF_CR4: u32 = 4;
+pub const KF_CMOV: u32 = 8;
 pub const KF_GLOBAL_PAGE: u32 = 16;
 pub const KF_LARGE_PAGE: u32 = 32;
+pub const KF_MTRR: u32 = 64;
 pub const KF_CMPXCHG8B: u32 = 128;
+pub const KF_MMX: u32 = 256;
+pub const KF_WORKING_PTE: u32 = 512;
+pub const KF_PAT: u32 = 1024;
+pub const KF_FXSR: u32 = 2048;
 pub const KF_FAST_SYSCALL: u32 = 4096;
-pub const KF_BRANCH: u32 = 131072;
-pub const KF_XSTATE: u32 = 8388608;
-pub const KF_RDTSCP: u64 = 17179869184;
-pub const KF_CET_SS: u64 = 70368744177664;
-pub const KF_XFD: u64 = 36028797018963968;
-pub const KF_XSAVEOPT_BIT: u32 = 15;
-pub const KF_XSTATE_BIT: u32 = 23;
-pub const KF_RDWRFSGSBASE_BIT: u32 = 28;
-pub const KF_XSAVES_BIT: u32 = 38;
-pub const KF_FPU_LEAKAGE_BIT: u32 = 41;
-pub const KF_CAT_BIT: u32 = 44;
-pub const KF_XFD_BIT: u32 = 55;
+pub const KF_XMMI: u32 = 8192;
+pub const KF_3DNOW: u32 = 16384;
+pub const KF_AMDK6MTRR: u32 = 32768;
+pub const KF_XMMI64: u32 = 65536;
+pub const KF_DTS: u32 = 131072;
+pub const KF_NOEXECUTE: u32 = 536870912;
+pub const KF_GLOBAL_32BIT_EXECUTE: u32 = 1073741824;
+pub const KF_GLOBAL_32BIT_NOEXECUTE: u32 = 2147483648;
 pub const MM_WORKING_SET_MAX_HARD_ENABLE: u32 = 1;
 pub const MM_WORKING_SET_MAX_HARD_DISABLE: u32 = 2;
 pub const MM_WORKING_SET_MIN_HARD_ENABLE: u32 = 4;
 pub const MM_WORKING_SET_MIN_HARD_DISABLE: u32 = 8;
+pub const ETW_MAX_PROFILING_SOURCES: u32 = 4;
+pub const ETW_MAX_PMC_EVENTS: u32 = 4;
+pub const ETW_MAX_PMC_COUNTERS: u32 = 4;
 pub const MAXIMUM_NODE_COUNT: u32 = 16;
 pub const CODEINTEGRITY_OPTION_ENABLED: u32 = 1;
 pub const CODEINTEGRITY_OPTION_TESTSIGN: u32 = 2;
@@ -260,6 +267,11 @@ pub const SYSTEM_STORE_HIGH_MEM_PRIORITY_INFORMATION_VERSION: u32 = 1;
 pub const SYSTEM_STORE_TRIM_INFORMATION_VERSION: u32 = 1;
 pub const SYSTEM_STORE_COMPRESSION_INFORMATION_VERSION: u32 = 3;
 pub const MEMORY_COMBINE_FLAGS_COMMON_PAGES_ONLY: u32 = 4;
+pub const KF_BRANCH: u32 = 131072;
+pub const KF_XSTATE: u32 = 8388608;
+pub const KF_RDTSCP: u64 = 17179869184;
+pub const KF_CET_SS: u64 = 70368744177664;
+pub const KF_XFD: u64 = 36028797018963968;
 pub const CODEINTEGRITYPOLICY_OPTION_ENABLED: u32 = 1;
 pub const CODEINTEGRITYPOLICY_OPTION_AUDIT: u32 = 2;
 pub const CODEINTEGRITYPOLICY_OPTION_REQUIRE_WHQL: u32 = 4;
@@ -518,6 +530,7 @@ pub const RTL_ACTIVATION_CONTEXT_STACK_FRAME_FLAG_NOT_REALLY_ACTIVATED: u32 = 16
 pub const ACTIVATION_CONTEXT_STACK_FLAG_QUERIES_DISABLED: u32 = 1;
 pub const KACF_OLDGETSHORTPATHNAME: u32 = 1;
 pub const KACF_VERSIONLIE_NOT_USED: u32 = 2;
+pub const KACF_GETTEMPPATH_NOT_USED: u32 = 4;
 pub const KACF_GETDISKFREESPACE: u32 = 8;
 pub const KACF_FTMFROMCURRENTAPT: u32 = 32;
 pub const KACF_DISALLOWORBINDINGCHANGES: u32 = 64;
@@ -544,6 +557,8 @@ pub const GDI_HANDLE_BUFFER_SIZE64: u32 = 60;
 pub const GDI_HANDLE_BUFFER_SIZE: u32 = 34;
 pub const TLS_EXPANSION_SLOTS: u32 = 1024;
 pub const GDI_BATCH_BUFFER_SIZE: u32 = 310;
+pub const TEB_ACTIVE_FRAME_CONTEXT_FLAG_EXTENDED: u32 = 1;
+pub const TEB_ACTIVE_FRAME_FLAG_EXTENDED: u32 = 1;
 pub const STATIC_UNICODE_BUFFER_LENGTH: u32 = 261;
 pub const WIN32_CLIENT_INFO_LENGTH: u32 = 62;
 pub const PROCESS_EXCEPTION_PORT_ALL_STATE_BITS: u32 = 3;
@@ -581,6 +596,9 @@ pub const PROCESS_READWRITEVM_LOGGING_ENABLE_READVM: u32 = 1;
 pub const PROCESS_READWRITEVM_LOGGING_ENABLE_WRITEVM: u32 = 2;
 pub const PROCESS_READWRITEVM_LOGGING_ENABLE_READVM_V: u32 = 1;
 pub const PROCESS_READWRITEVM_LOGGING_ENABLE_WRITEVM_V: u32 = 2;
+pub const THREAD_PERFORMANCE_DATA_VERSION: u32 = 1;
+pub const THREAD_PROFILING_FLAG_HARDWARE_COUNTERS: u32 = 2;
+pub const PROCESS_CREATE_FLAGS_NONE: u32 = 0;
 pub const PROCESS_CREATE_FLAGS_BREAKAWAY: u32 = 1;
 pub const PROCESS_CREATE_FLAGS_NO_DEBUG_INHERIT: u32 = 2;
 pub const PROCESS_CREATE_FLAGS_INHERIT_HANDLES: u32 = 4;
@@ -1371,7 +1389,12 @@ pub const RTL_USER_PROC_DISABLE_HEAP_DECOMMIT: u32 = 256;
 pub const RTL_USER_PROC_DLL_REDIRECTION_LOCAL: u32 = 4096;
 pub const RTL_USER_PROC_APP_MANIFEST_PRESENT: u32 = 8192;
 pub const RTL_USER_PROC_IMAGE_KEY_MISSING: u32 = 16384;
+pub const RTL_USER_PROC_DEV_OVERRIDE_ENABLED: u32 = 32768;
 pub const RTL_USER_PROC_OPTIN_PROCESS: u32 = 131072;
+pub const RTL_USER_PROC_SESSION_OWNER: u32 = 262144;
+pub const RTL_USER_PROC_HANDLE_USER_CALLBACK_EXCEPTIONS: u32 = 524288;
+pub const RTL_USER_PROC_PROTECTED_PROCESS: u32 = 4194304;
+pub const RTL_USER_PROC_SECURE_PROCESS: u32 = 2147483648;
 pub const RTL_USER_PROCESS_EXTENDED_PARAMETERS_VERSION: u32 = 1;
 pub const RTL_CLONE_PROCESS_FLAGS_CREATE_SUSPENDED: u32 = 1;
 pub const RTL_CLONE_PROCESS_FLAGS_INHERIT_HANDLES: u32 = 2;
@@ -1393,6 +1416,25 @@ pub const RTL_QUERY_INFORMATION_ACTIVATION_CONTEXT_FLAG_ACTIVATION_CONTEXT_IS_MO
 pub const RTL_QUERY_INFORMATION_ACTIVATION_CONTEXT_FLAG_ACTIVATION_CONTEXT_IS_ADDRESS: u32 = 4;
 pub const RTL_QUERY_INFORMATION_ACTIVATION_CONTEXT_FLAG_NO_ADDREF: u32 = 2147483648;
 pub const RTL_IMAGE_NT_HEADER_EX_FLAG_NO_RANGE_CHECK: u32 = 1;
+pub const GlobalDataIdUnknown: u32 = 0;
+pub const GlobalDataIdRngSeedVersion: u32 = 1;
+pub const GlobalDataIdInterruptTime: u32 = 2;
+pub const GlobalDataIdTimeZoneBias: u32 = 3;
+pub const GlobalDataIdImageNumberLow: u32 = 4;
+pub const GlobalDataIdImageNumberHigh: u32 = 5;
+pub const GlobalDataIdTimeZoneId: u32 = 6;
+pub const GlobalDataIdNtMajorVersion: u32 = 7;
+pub const GlobalDataIdNtMinorVersion: u32 = 8;
+pub const GlobalDataIdSystemExpirationDate: u32 = 9;
+pub const GlobalDataIdKdDebuggerEnabled: u32 = 10;
+pub const GlobalDataIdCyclesPerYield: u32 = 11;
+pub const GlobalDataIdSafeBootMode: u32 = 12;
+pub const GlobalDataIdLastSystemRITEventTickCount: u32 = 13;
+pub const GlobalDataIdConsoleSharedDataFlags: u32 = 14;
+pub const GlobalDataIdNtSystemRootDrive: u32 = 15;
+pub const GlobalDataIdQpcBypassEnabled: u32 = 16;
+pub const GlobalDataIdQpcData: u32 = 17;
+pub const GlobalDataIdQpcBias: u32 = 18;
 pub const RTL_CREATE_ENVIRONMENT_TRANSLATE: u32 = 1;
 pub const RTL_CREATE_ENVIRONMENT_TRANSLATE_FROM_OEM: u32 = 2;
 pub const RTL_CREATE_ENVIRONMENT_EMPTY: u32 = 4;
@@ -1513,7 +1555,7 @@ pub const PSM_ACTIVATION_TOKEN_PACKAGED_APPLICATION: u32 = 1;
 pub const PSM_ACTIVATION_TOKEN_SHARED_ENTITY: u32 = 2;
 pub const PSM_ACTIVATION_TOKEN_FULL_TRUST: u32 = 4;
 pub const PSM_ACTIVATION_TOKEN_NATIVE_SERVICE: u32 = 8;
-pub const PSM_ACTIVATION_TOKEN_DEVELOPMENT_APP: u32 = 16;
+pub const PSM_ACTIVATION_TOKEN_MULTIPLE_INSTANCES_ALLOWED: u32 = 16;
 pub const PSM_ACTIVATION_TOKEN_BREAKAWAY_INHIBITED: u32 = 32;
 pub const PSM_ACTIVATION_TOKEN_RUNTIME_BROKER: u32 = 64;
 pub const PSM_ACTIVATION_TOKEN_UNIVERSAL_CONSOLE: u32 = 512;
@@ -2862,8 +2904,16 @@ pub const EVENT_TRACE_USE_SEQUENCE: u32 = 4;
 pub const ETW_KERNEL_EVENT_VERSION: u32 = 60;
 pub const ETW_SET_MARK_WITH_FLUSH: u32 = 1;
 pub const ETW_MAX_DATA_BLOCK_BUFFER_SIZE: u32 = 65536;
-pub type va_list = *mut c_char;
-pub type wchar_t = c_ushort;
+pub const NOTIFICATION_TRACE_FLAG: u32 = 65536;
+pub const NOTIFICATION_CALLBACK_DIRECT: u32 = 4;
+pub const NOTIFICATION_CHECK_ACCESS: u32 = 8;
+pub const NOTIFICATION_LIGHTWEIGHT_FLAG: u32 = 32;
+pub const MOFCI_RESERVED0: u32 = 1;
+pub const MOFCI_RESERVED1: u32 = 2;
+pub const MOFCI_RESERVED2: u32 = 4;
+pub const CPI_NEWPROCESSWINDOW: u32 = 1;
+pub type va_list = *mut ::core::ffi::c_char;
+pub type wchar_t = ::core::ffi::c_ushort;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -2874,38 +2924,38 @@ pub enum _EXCEPTION_DISPOSITION {
    ExceptionCollidedUnwind = 3,
 }
 pub use self::_EXCEPTION_DISPOSITION as EXCEPTION_DISPOSITION;
-pub type ULONG = c_ulong;
+pub type ULONG = ::core::ffi::c_ulong;
 pub type PULONG = *mut ULONG;
-pub type USHORT = c_ushort;
+pub type USHORT = ::core::ffi::c_ushort;
 pub type PUSHORT = *mut USHORT;
-pub type UCHAR = c_uchar;
+pub type UCHAR = ::core::ffi::c_uchar;
 pub type PUCHAR = *mut UCHAR;
-pub type DWORD = c_ulong;
-pub type BOOL = c_int;
-pub type BYTE = c_uchar;
-pub type WORD = c_ushort;
+pub type DWORD = ::core::ffi::c_ulong;
+pub type BOOL = ::core::ffi::c_int;
+pub type BYTE = ::core::ffi::c_uchar;
+pub type WORD = ::core::ffi::c_ushort;
 pub type PBOOL = *mut BOOL;
 pub type PDWORD = *mut DWORD;
-pub type LPVOID = *mut c_void;
-pub type UINT = c_uint;
-pub type ULONG32 = c_uint;
-pub type UINT_PTR = c_uint;
-pub type LONG_PTR = c_long;
-pub type ULONG_PTR = c_ulong;
-pub type PULONG_PTR = *mut c_ulong;
+pub type LPVOID = *mut ::core::ffi::c_void;
+pub type UINT = ::core::ffi::c_uint;
+pub type ULONG32 = ::core::ffi::c_uint;
+pub type UINT_PTR = ::core::ffi::c_uint;
+pub type LONG_PTR = ::core::ffi::c_long;
+pub type ULONG_PTR = ::core::ffi::c_ulong;
+pub type PULONG_PTR = *mut ::core::ffi::c_ulong;
 pub type SIZE_T = ULONG_PTR;
 pub type PSIZE_T = *mut ULONG_PTR;
-pub type LONG64 = c_longlong;
-pub type PLONG64 = *mut c_longlong;
-pub type ULONG64 = c_ulonglong;
-pub type PULONG64 = *mut c_ulonglong;
-pub type DWORD64 = c_ulonglong;
-pub type PDWORD64 = *mut c_ulonglong;
+pub type LONG64 = ::core::ffi::c_longlong;
+pub type PLONG64 = *mut ::core::ffi::c_longlong;
+pub type ULONG64 = ::core::ffi::c_ulonglong;
+pub type PULONG64 = *mut ::core::ffi::c_ulonglong;
+pub type DWORD64 = ::core::ffi::c_ulonglong;
+pub type PDWORD64 = *mut ::core::ffi::c_ulonglong;
 pub type KAFFINITY = ULONG_PTR;
-pub type PVOID = *mut c_void;
-pub type CHAR = c_char;
-pub type SHORT = c_short;
-pub type LONG = c_long;
+pub type PVOID = *mut ::core::ffi::c_void;
+pub type CHAR = ::core::ffi::c_char;
+pub type SHORT = ::core::ffi::c_short;
+pub type LONG = ::core::ffi::c_long;
 pub type WCHAR = wchar_t;
 pub type PWCHAR = *mut WCHAR;
 pub type PWCH = *mut WCHAR;
@@ -2916,7 +2966,6 @@ pub type LPCWSTR = *const WCHAR;
 pub type PCWSTR = *const WCHAR;
 pub type PZZWSTR = *mut WCHAR;
 pub type PCZZWSTR = *const WCHAR;
-pub type PCWCHAR = *const WCHAR;
 pub type PCHAR = *mut CHAR;
 pub type PCH = *mut CHAR;
 pub type PCCH = *const CHAR;
@@ -2942,14 +2991,14 @@ pub struct _GROUP_AFFINITY {
 }
 pub type GROUP_AFFINITY = _GROUP_AFFINITY;
 pub type PGROUP_AFFINITY = *mut _GROUP_AFFINITY;
-pub type HANDLE = *mut c_void;
+pub type HANDLE = *mut ::core::ffi::c_void;
 pub type PHANDLE = *mut HANDLE;
-pub type CCHAR = c_char;
+pub type CCHAR = ::core::ffi::c_char;
 pub type LCID = DWORD;
 pub type PLCID = PDWORD;
 pub type LANGID = WORD;
-pub type LONGLONG = c_longlong;
-pub type ULONGLONG = c_ulonglong;
+pub type LONGLONG = ::core::ffi::c_longlong;
+pub type ULONGLONG = ::core::ffi::c_ulonglong;
 pub type PULONGLONG = *mut ULONGLONG;
 #[repr(C)]
 #[derive(Copy, Clone)]
@@ -3064,16 +3113,16 @@ pub type PLIST_ENTRY32 = *mut LIST_ENTRY32;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _GUID {
-   pub Data1: c_ulong,
-   pub Data2: c_ushort,
-   pub Data3: c_ushort,
-   pub Data4: [c_uchar; 8usize],
+   pub Data1: ::core::ffi::c_ulong,
+   pub Data2: ::core::ffi::c_ushort,
+   pub Data3: ::core::ffi::c_ushort,
+   pub Data4: [::core::ffi::c_uchar; 8usize],
 }
 pub type GUID = _GUID;
 pub type LPGUID = *mut GUID;
 pub type LPCGUID = *const GUID;
 pub type PEXCEPTION_ROUTINE = ::core::option::Option<unsafe extern "stdcall" fn(arg1: *mut _EXCEPTION_RECORD, arg2: PVOID, arg3: *mut _CONTEXT, arg4: PVOID) -> EXCEPTION_DISPOSITION>;
-pub type __C_ASSERT__ = [c_char; 1usize];
+pub type __C_ASSERT__ = [::core::ffi::c_char; 1usize];
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _XSAVE_AREA_HEADER {
@@ -6805,6 +6854,7 @@ pub struct _IMAGE_RESOURCE_DATA_ENTRY {
 }
 pub type PIMAGE_RESOURCE_DATA_ENTRY = *mut _IMAGE_RESOURCE_DATA_ENTRY;
 pub type SLIST_ENTRY = _SINGLE_LIST_ENTRY;
+pub type PSLIST_ENTRY = *mut _SINGLE_LIST_ENTRY;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union _SLIST_HEADER {
@@ -6836,6 +6886,7 @@ impl Default for _SLIST_HEADER {
       }
    }
 }
+pub type SLIST_HEADER = _SLIST_HEADER;
 pub type PSLIST_HEADER = *mut _SLIST_HEADER;
 #[repr(C)]
 #[derive(Copy, Clone)]
@@ -6895,6 +6946,31 @@ impl Default for _OSVERSIONINFOEXW {
    }
 }
 pub type PRTL_OSVERSIONINFOEXW = *mut _OSVERSIONINFOEXW;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _RTL_SYSTEM_GLOBAL_DATA_ID {
+   GlobalDataIdUnknown = 0,
+   GlobalDataIdRngSeedVersion = 1,
+   GlobalDataIdInterruptTime = 2,
+   GlobalDataIdTimeZoneBias = 3,
+   GlobalDataIdImageNumberLow = 4,
+   GlobalDataIdImageNumberHigh = 5,
+   GlobalDataIdTimeZoneId = 6,
+   GlobalDataIdNtMajorVersion = 7,
+   GlobalDataIdNtMinorVersion = 8,
+   GlobalDataIdSystemExpirationDate = 9,
+   GlobalDataIdKdDebuggerEnabled = 10,
+   GlobalDataIdCyclesPerYield = 11,
+   GlobalDataIdSafeBootMode = 12,
+   GlobalDataIdLastSystemRITEventTickCount = 13,
+   GlobalDataIdConsoleSharedDataFlags = 14,
+   GlobalDataIdNtSystemRootDrive = 15,
+   GlobalDataIdQpcBypassEnabled = 16,
+   GlobalDataIdQpcData = 17,
+   GlobalDataIdQpcBias = 18,
+}
+pub use self::_RTL_SYSTEM_GLOBAL_DATA_ID as RTL_SYSTEM_GLOBAL_DATA_ID;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _RTL_CRITICAL_SECTION_DEBUG {
@@ -7325,68 +7401,68 @@ pub type LPARAM = LONG_PTR;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HRGN__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HRGN = *mut HRGN__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HWINSTA__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HWINSTA = *mut HWINSTA__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HWND__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HWND = *mut HWND__;
-pub type HGDIOBJ = *mut c_void;
+pub type HGDIOBJ = *mut ::core::ffi::c_void;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HACCEL__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HACCEL = *mut HACCEL__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HBITMAP__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HBITMAP = *mut HBITMAP__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HDC__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HDC = *mut HDC__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HDESK__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HDESK = *mut HDESK__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HICON__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HICON = *mut HICON__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HMENU__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HMENU = *mut HMENU__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HWINEVENTHOOK__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HWINEVENTHOOK = *mut HWINEVENTHOOK__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HMONITOR__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HMONITOR = *mut HMONITOR__;
 pub type HCURSOR = HICON;
@@ -7589,6 +7665,7 @@ impl Default for _DEBUG_EVENT {
    }
 }
 pub type LPDEBUG_EVENT = *mut _DEBUG_EVENT;
+#[doc = " The PROC_THREAD_ATTRIBUTE_LIST structure contains the list of attributes for process and thread creation."]
 pub type PPROC_THREAD_ATTRIBUTE_LIST = *mut _PROC_THREAD_ATTRIBUTE_LIST;
 pub type DLL_DIRECTORY_COOKIE = PVOID;
 pub type PDLL_DIRECTORY_COOKIE = *mut PVOID;
@@ -7641,8 +7718,8 @@ pub type TIMERPROC = ::core::option::Option<unsafe extern "stdcall" fn(arg1: HWN
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct tagMOUSEMOVEPOINT {
-   pub x: c_int,
-   pub y: c_int,
+   pub x: ::core::ffi::c_int,
+   pub y: ::core::ffi::c_int,
    pub time: DWORD,
    pub dwExtraInfo: ULONG_PTR,
 }
@@ -7979,7 +8056,7 @@ pub type PCOMBOBOXINFO = *mut tagCOMBOBOXINFO;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HRAWINPUT__ {
-   pub unused: c_int,
+   pub unused: ::core::ffi::c_int,
 }
 pub type HRAWINPUT = *mut HRAWINPUT__;
 #[repr(C)]
@@ -8140,6 +8217,7 @@ impl Default for _WNODE_HEADER {
    }
 }
 pub type WNODE_HEADER = _WNODE_HEADER;
+pub type PWNODE_HEADER = *mut _WNODE_HEADER;
 pub type TRACEHANDLE = ULONG64;
 pub type PROCESSTRACE_HANDLE = ULONG64;
 pub type CONTROLTRACE_ID = ULONG64;
@@ -8294,9 +8372,18 @@ impl Default for _ETW_BUFFER_CONTEXT {
    }
 }
 pub type ETW_BUFFER_CONTEXT = _ETW_BUFFER_CONTEXT;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _PROFILE_SOURCE_INFO {
+   pub NextEntryOffset: ULONG,
+   pub Source: ULONG,
+   pub MinInterval: ULONG,
+   pub MaxInterval: ULONG,
+   pub Reserved: ULONG64,
+   pub Description: [WCHAR; 1usize],
+}
+pub type PPROFILE_SOURCE_INFO = *mut _PROFILE_SOURCE_INFO;
 pub type DOUBLE = f64;
-pub type NTSTATUS = LONG;
-pub type PNTSTATUS = *mut NTSTATUS;
 pub type PDOUBLE = *mut DOUBLE;
 pub type PGUID = *mut GUID;
 pub type PCGUID = *const GUID;
@@ -8308,7 +8395,7 @@ pub struct _QUAD {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union _QUAD__bindgen_ty_1 {
-   pub UseThisFieldToCopy: c_longlong,
+   pub UseThisFieldToCopy: ::core::ffi::c_longlong,
    pub DoNotUseThisField: f64,
 }
 impl Default for _QUAD__bindgen_ty_1 {
@@ -8342,7 +8429,9 @@ pub type QUAD_PTR = _QUAD_PTR;
 pub type PQUAD_PTR = *mut _QUAD_PTR;
 pub type LOGICAL = ULONG;
 pub type PLOGICAL = *mut ULONG;
-pub type CSHORT = c_short;
+pub type NTSTATUS = LONG;
+pub type PNTSTATUS = *mut NTSTATUS;
+pub type CSHORT = ::core::ffi::c_short;
 pub type CLONG = ULONG;
 pub type PCCHAR = *mut CCHAR;
 pub type PCSHORT = *mut CSHORT;
@@ -8364,6 +8453,13 @@ pub struct _LARGE_INTEGER_128 {
 }
 pub type LARGE_INTEGER_128 = _LARGE_INTEGER_128;
 pub type PLARGE_INTEGER_128 = *mut _LARGE_INTEGER_128;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _ULARGE_INTEGER_128 {
+   pub QuadPart: [ULONGLONG; 2usize],
+}
+pub type ULARGE_INTEGER_128 = _ULARGE_INTEGER_128;
+pub type PULARGE_INTEGER_128 = *mut _ULARGE_INTEGER_128;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -10038,6 +10134,30 @@ impl Default for _LDR_SOFTWARE_ENCLAVE {
 }
 pub type LDR_SOFTWARE_ENCLAVE = _LDR_SOFTWARE_ENCLAVE;
 pub type PLDR_SOFTWARE_ENCLAVE = *mut _LDR_SOFTWARE_ENCLAVE;
+#[doc = " Thread Environment Block (TEB) structure.\n\n This structure contains information about the currently executing thread."]
+pub type PTEB = *mut _TEB;
+pub type PCOUNTED_REASON_CONTEXT = *mut _COUNTED_REASON_CONTEXT;
+pub type PFILE_IO_COMPLETION_INFORMATION = *mut _FILE_IO_COMPLETION_INFORMATION;
+pub type PPORT_MESSAGE = *mut _PORT_MESSAGE;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _FILE_OBJECT {
+   _unused: [u8; 0],
+}
+pub type PFILE_OBJECT = *mut _FILE_OBJECT;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _DEVICE_OBJECT {
+   _unused: [u8; 0],
+}
+pub type PDEVICE_OBJECT = *mut _DEVICE_OBJECT;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _IRP {
+   _unused: [u8; 0],
+}
+pub type PIRP = *mut _IRP;
+pub type PRTL_BITMAP = *mut _RTL_BITMAP;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -10246,7 +10366,6 @@ pub enum _TIMER_SET_INFORMATION_CLASS {
    MaxTimerInfoClass = 1,
 }
 pub use self::_TIMER_SET_INFORMATION_CLASS as TIMER_SET_INFORMATION_CLASS;
-pub type PCOUNTED_REASON_CONTEXT = *mut _COUNTED_REASON_CONTEXT;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _TIMER_SET_COALESCABLE_TIMER_INFO {
@@ -10404,8 +10523,6 @@ impl Default for _WORKER_FACTORY_BASIC_INFORMATION {
 }
 pub type WORKER_FACTORY_BASIC_INFORMATION = _WORKER_FACTORY_BASIC_INFORMATION;
 pub type PWORKER_FACTORY_BASIC_INFORMATION = *mut _WORKER_FACTORY_BASIC_INFORMATION;
-pub type PFILE_IO_COMPLETION_INFORMATION = *mut _FILE_IO_COMPLETION_INFORMATION;
-pub type PPORT_MESSAGE = *mut _PORT_MESSAGE;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _WORKER_FACTORY_DEFERRED_WORK {
@@ -10468,7 +10585,7 @@ pub enum _SYSTEM_INFORMATION_CLASS {
    SystemContextSwitchInformation = 36,
    SystemRegistryQuotaInformation = 37,
    SystemExtendServiceTableInformation = 38,
-   SystemPrioritySeperation = 39,
+   SystemPrioritySeparation = 39,
    SystemVerifierAddDriverInformation = 40,
    SystemVerifierRemoveDriverInformation = 41,
    SystemProcessorIdleInformation = 42,
@@ -10671,7 +10788,7 @@ pub enum _SYSTEM_INFORMATION_CLASS {
    SystemMemoryNumaInformation = 239,
    SystemMemoryNumaPerformanceInformation = 240,
    SystemCodeIntegritySignedPoliciesFullInformation = 241,
-   SystemSecureSecretsInformation = 242,
+   SystemSecureCoreInformation = 242,
    SystemTrustedAppsRuntimeInformation = 243,
    SystemBadPageInformationEx = 244,
    SystemResourceDeadlockTimeout = 245,
@@ -10789,6 +10906,10 @@ pub struct _SYSTEM_PERFORMANCE_INFORMATION {
    pub CcDirtyPageThreshold: ULONGLONG,
    pub ResidentAvailablePages: LONGLONG,
    pub SharedCommittedPages: ULONGLONG,
+   pub MdlPagesAllocated: ULONGLONG,
+   pub PfnDatabaseCommittedPages: ULONGLONG,
+   pub SystemPageTableCommittedPages: ULONGLONG,
+   pub ContiguousPagesAllocated: ULONGLONG,
 }
 impl Default for _SYSTEM_PERFORMANCE_INFORMATION {
    fn default() -> Self {
@@ -10830,7 +10951,7 @@ pub struct _SYSTEM_THREAD_INFORMATION {
    pub UserTime: LARGE_INTEGER,
    pub CreateTime: LARGE_INTEGER,
    pub WaitTime: ULONG,
-   pub StartAddress: ULONG_PTR,
+   pub StartAddress: PVOID,
    pub ClientId: CLIENT_ID,
    pub Priority: KPRIORITY,
    pub BasePriority: KPRIORITY,
@@ -10849,15 +10970,14 @@ impl Default for _SYSTEM_THREAD_INFORMATION {
 }
 pub type SYSTEM_THREAD_INFORMATION = _SYSTEM_THREAD_INFORMATION;
 pub type PSYSTEM_THREAD_INFORMATION = *mut _SYSTEM_THREAD_INFORMATION;
-pub type PTEB = *mut _TEB;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _SYSTEM_EXTENDED_THREAD_INFORMATION {
    pub ThreadInfo: SYSTEM_THREAD_INFORMATION,
-   pub StackBase: PVOID,
-   pub StackLimit: PVOID,
-   pub Win32StartAddress: ULONG_PTR,
-   pub TebBase: PTEB,
+   pub StackBase: ULONG_PTR,
+   pub StackLimit: ULONG_PTR,
+   pub Win32StartAddress: PVOID,
+   pub TebBase: PVOID,
    pub Reserved2: ULONG_PTR,
    pub Reserved3: ULONG_PTR,
    pub Reserved4: ULONG_PTR,
@@ -11080,7 +11200,7 @@ pub struct _SYSTEM_HANDLE_TABLE_ENTRY_INFO {
    pub HandleAttributes: UCHAR,
    pub HandleValue: USHORT,
    pub Object: PVOID,
-   pub GrantedAccess: ULONG,
+   pub GrantedAccess: ACCESS_MASK,
 }
 impl Default for _SYSTEM_HANDLE_TABLE_ENTRY_INFO {
    fn default() -> Self {
@@ -11119,7 +11239,7 @@ pub struct _SYSTEM_OBJECTTYPE_INFORMATION {
    pub TypeIndex: ULONG,
    pub InvalidAttributes: ULONG,
    pub GenericMapping: GENERIC_MAPPING,
-   pub ValidAccessMask: ULONG,
+   pub ValidAccessMask: ACCESS_MASK,
    pub PoolType: ULONG,
    pub SecurityRequired: BOOLEAN,
    pub WaitableObject: BOOLEAN,
@@ -11358,6 +11478,482 @@ pub struct _SYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE {
 }
 pub type SYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE = _SYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE;
 pub type PSYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE = *mut _SYSTEM_SET_TIME_ADJUST_INFORMATION_PRECISE;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _EVENT_TRACE_INFORMATION_CLASS {
+   EventTraceKernelVersionInformation = 0,
+   EventTraceGroupMaskInformation = 1,
+   EventTracePerformanceInformation = 2,
+   EventTraceTimeProfileInformation = 3,
+   EventTraceSessionSecurityInformation = 4,
+   EventTraceSpinlockInformation = 5,
+   EventTraceStackTracingInformation = 6,
+   EventTraceExecutiveResourceInformation = 7,
+   EventTraceHeapTracingInformation = 8,
+   EventTraceHeapSummaryTracingInformation = 9,
+   EventTracePoolTagFilterInformation = 10,
+   EventTracePebsTracingInformation = 11,
+   EventTraceProfileConfigInformation = 12,
+   EventTraceProfileSourceListInformation = 13,
+   EventTraceProfileEventListInformation = 14,
+   EventTraceProfileCounterListInformation = 15,
+   EventTraceStackCachingInformation = 16,
+   EventTraceObjectTypeFilterInformation = 17,
+   EventTraceSoftRestartInformation = 18,
+   EventTraceLastBranchConfigurationInformation = 19,
+   EventTraceLastBranchEventListInformation = 20,
+   EventTraceProfileSourceAddInformation = 21,
+   EventTraceProfileSourceRemoveInformation = 22,
+   EventTraceProcessorTraceConfigurationInformation = 23,
+   EventTraceProcessorTraceEventListInformation = 24,
+   EventTraceCoverageSamplerInformation = 25,
+   EventTraceUnifiedStackCachingInformation = 26,
+   EventTraceContextRegisterTraceInformation = 27,
+   MaxEventTraceInfoClass = 28,
+}
+pub use self::_EVENT_TRACE_INFORMATION_CLASS as EVENT_TRACE_INFORMATION_CLASS;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_VERSION_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub EventTraceKernelVersion: ULONG,
+}
+impl Default for _EVENT_TRACE_VERSION_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_VERSION_INFORMATION = _EVENT_TRACE_VERSION_INFORMATION;
+pub type PEVENT_TRACE_VERSION_INFORMATION = *mut _EVENT_TRACE_VERSION_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_GROUPMASK_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub TraceHandle: TRACEHANDLE,
+   pub EventTraceGroupMasks: [ULONG; 8usize],
+}
+impl Default for _EVENT_TRACE_GROUPMASK_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_GROUPMASK_INFORMATION = _EVENT_TRACE_GROUPMASK_INFORMATION;
+pub type PEVENT_TRACE_GROUPMASK_INFORMATION = *mut _EVENT_TRACE_GROUPMASK_INFORMATION;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _EVENT_TRACE_PERFORMANCE_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub LogfileBytesWritten: LARGE_INTEGER,
+}
+impl Default for _EVENT_TRACE_PERFORMANCE_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_PERFORMANCE_INFORMATION = _EVENT_TRACE_PERFORMANCE_INFORMATION;
+pub type PEVENT_TRACE_PERFORMANCE_INFORMATION = *mut _EVENT_TRACE_PERFORMANCE_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_TIME_PROFILE_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub ProfileInterval: ULONG,
+}
+impl Default for _EVENT_TRACE_TIME_PROFILE_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_TIME_PROFILE_INFORMATION = _EVENT_TRACE_TIME_PROFILE_INFORMATION;
+pub type PEVENT_TRACE_TIME_PROFILE_INFORMATION = *mut _EVENT_TRACE_TIME_PROFILE_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_SESSION_SECURITY_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub SecurityInformation: ULONG,
+   pub TraceHandle: TRACEHANDLE,
+   pub SecurityDescriptor: [UCHAR; 1usize],
+}
+impl Default for _EVENT_TRACE_SESSION_SECURITY_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_SESSION_SECURITY_INFORMATION = _EVENT_TRACE_SESSION_SECURITY_INFORMATION;
+pub type PEVENT_TRACE_SESSION_SECURITY_INFORMATION = *mut _EVENT_TRACE_SESSION_SECURITY_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_SPINLOCK_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub SpinLockSpinThreshold: ULONG,
+   pub SpinLockAcquireSampleRate: ULONG,
+   pub SpinLockContentionSampleRate: ULONG,
+   pub SpinLockHoldThreshold: ULONG,
+}
+impl Default for _EVENT_TRACE_SPINLOCK_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_SPINLOCK_INFORMATION = _EVENT_TRACE_SPINLOCK_INFORMATION;
+pub type PEVENT_TRACE_SPINLOCK_INFORMATION = *mut _EVENT_TRACE_SPINLOCK_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_SYSTEM_EVENT_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub TraceHandle: TRACEHANDLE,
+   pub HookId: [ULONG; 1usize],
+}
+impl Default for _EVENT_TRACE_SYSTEM_EVENT_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_SYSTEM_EVENT_INFORMATION = _EVENT_TRACE_SYSTEM_EVENT_INFORMATION;
+pub type PEVENT_TRACE_SYSTEM_EVENT_INFORMATION = *mut _EVENT_TRACE_SYSTEM_EVENT_INFORMATION;
+pub type EVENT_TRACE_STACK_TRACING_INFORMATION = EVENT_TRACE_SYSTEM_EVENT_INFORMATION;
+pub type PEVENT_TRACE_STACK_TRACING_INFORMATION = *mut EVENT_TRACE_SYSTEM_EVENT_INFORMATION;
+pub type EVENT_TRACE_PEBS_TRACING_INFORMATION = EVENT_TRACE_SYSTEM_EVENT_INFORMATION;
+pub type PEVENT_TRACE_PEBS_TRACING_INFORMATION = *mut EVENT_TRACE_SYSTEM_EVENT_INFORMATION;
+pub type EVENT_TRACE_PROFILE_EVENT_INFORMATION = EVENT_TRACE_SYSTEM_EVENT_INFORMATION;
+pub type PEVENT_TRACE_PROFILE_EVENT_INFORMATION = *mut EVENT_TRACE_SYSTEM_EVENT_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_EXECUTIVE_RESOURCE_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub ReleaseSamplingRate: ULONG,
+   pub ContentionSamplingRate: ULONG,
+   pub NumberOfExcessiveTimeouts: ULONG,
+}
+impl Default for _EVENT_TRACE_EXECUTIVE_RESOURCE_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_EXECUTIVE_RESOURCE_INFORMATION = _EVENT_TRACE_EXECUTIVE_RESOURCE_INFORMATION;
+pub type PEVENT_TRACE_EXECUTIVE_RESOURCE_INFORMATION = *mut _EVENT_TRACE_EXECUTIVE_RESOURCE_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_HEAP_TRACING_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub ProcessId: [ULONG; 1usize],
+}
+impl Default for _EVENT_TRACE_HEAP_TRACING_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_HEAP_TRACING_INFORMATION = _EVENT_TRACE_HEAP_TRACING_INFORMATION;
+pub type PEVENT_TRACE_HEAP_TRACING_INFORMATION = *mut _EVENT_TRACE_HEAP_TRACING_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_TAG_FILTER_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub TraceHandle: TRACEHANDLE,
+   pub Filter: [ULONG; 1usize],
+}
+impl Default for _EVENT_TRACE_TAG_FILTER_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_TAG_FILTER_INFORMATION = _EVENT_TRACE_TAG_FILTER_INFORMATION;
+pub type PEVENT_TRACE_TAG_FILTER_INFORMATION = *mut _EVENT_TRACE_TAG_FILTER_INFORMATION;
+pub type EVENT_TRACE_POOLTAG_FILTER_INFORMATION = EVENT_TRACE_TAG_FILTER_INFORMATION;
+pub type PEVENT_TRACE_POOLTAG_FILTER_INFORMATION = *mut EVENT_TRACE_TAG_FILTER_INFORMATION;
+pub type EVENT_TRACE_OBJECT_TYPE_FILTER_INFORMATION = EVENT_TRACE_TAG_FILTER_INFORMATION;
+pub type PEVENT_TRACE_OBJECT_TYPE_FILTER_INFORMATION = *mut EVENT_TRACE_TAG_FILTER_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_COUNTER_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub TraceHandle: TRACEHANDLE,
+   pub ProfileSource: [ULONG; 1usize],
+}
+impl Default for _EVENT_TRACE_PROFILE_COUNTER_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_PROFILE_COUNTER_INFORMATION = _EVENT_TRACE_PROFILE_COUNTER_INFORMATION;
+pub type PEVENT_TRACE_PROFILE_COUNTER_INFORMATION = *mut _EVENT_TRACE_PROFILE_COUNTER_INFORMATION;
+pub type EVENT_TRACE_PROFILE_CONFIG_INFORMATION = EVENT_TRACE_PROFILE_COUNTER_INFORMATION;
+pub type PEVENT_TRACE_PROFILE_CONFIG_INFORMATION = *mut EVENT_TRACE_PROFILE_COUNTER_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_LIST_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub Spare: ULONG,
+   pub Profile: [PPROFILE_SOURCE_INFO; 1usize],
+}
+impl Default for _EVENT_TRACE_PROFILE_LIST_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_PROFILE_LIST_INFORMATION = _EVENT_TRACE_PROFILE_LIST_INFORMATION;
+pub type PEVENT_TRACE_PROFILE_LIST_INFORMATION = *mut _EVENT_TRACE_PROFILE_LIST_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_STACK_CACHING_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub TraceHandle: TRACEHANDLE,
+   pub Enabled: BOOLEAN,
+   pub Reserved: [UCHAR; 3usize],
+   pub CacheSize: ULONG,
+   pub BucketCount: ULONG,
+}
+impl Default for _EVENT_TRACE_STACK_CACHING_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_STACK_CACHING_INFORMATION = _EVENT_TRACE_STACK_CACHING_INFORMATION;
+pub type PEVENT_TRACE_STACK_CACHING_INFORMATION = *mut _EVENT_TRACE_STACK_CACHING_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_SOFT_RESTART_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub TraceHandle: TRACEHANDLE,
+   pub PersistTraceBuffers: BOOLEAN,
+   pub FileName: [WCHAR; 1usize],
+}
+impl Default for _EVENT_TRACE_SOFT_RESTART_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_SOFT_RESTART_INFORMATION = _EVENT_TRACE_SOFT_RESTART_INFORMATION;
+pub type PEVENT_TRACE_SOFT_RESTART_INFORMATION = *mut _EVENT_TRACE_SOFT_RESTART_INFORMATION;
+impl _EVENT_TRACE_PROFILE_ADD_INFORMATION_VERSIONS {
+   pub const EventTraceProfileAddInformationV2: _EVENT_TRACE_PROFILE_ADD_INFORMATION_VERSIONS = _EVENT_TRACE_PROFILE_ADD_INFORMATION_VERSIONS::EventTraceProfileAddInformationMinVersion;
+}
+impl _EVENT_TRACE_PROFILE_ADD_INFORMATION_VERSIONS {
+   pub const EventTraceProfileAddInformationMaxVersion: _EVENT_TRACE_PROFILE_ADD_INFORMATION_VERSIONS = _EVENT_TRACE_PROFILE_ADD_INFORMATION_VERSIONS::EventTraceProfileAddInformationV3;
+}
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _EVENT_TRACE_PROFILE_ADD_INFORMATION_VERSIONS {
+   EventTraceProfileAddInformationMinVersion = 2,
+   EventTraceProfileAddInformationV3 = 3,
+}
+pub use self::_EVENT_TRACE_PROFILE_ADD_INFORMATION_VERSIONS as EVENT_TRACE_PROFILE_ADD_INFORMATION_VERSIONS;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _EVENT_TRACE_PROFILE_ADD_INFORMATION_V2 {
+   pub Intel: _EVENT_TRACE_PROFILE_ADD_INFORMATION_V2__bindgen_ty_1,
+   pub Amd: _EVENT_TRACE_PROFILE_ADD_INFORMATION_V2__bindgen_ty_2,
+   pub Arm: _EVENT_TRACE_PROFILE_ADD_INFORMATION_V2__bindgen_ty_3,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_ADD_INFORMATION_V2__bindgen_ty_1 {
+   pub PerfEvtEventSelect: UCHAR,
+   pub PerfEvtUnitSelect: UCHAR,
+   pub PerfEvtCMask: UCHAR,
+   pub PerfEvtCInv: UCHAR,
+   pub PerfEvtAnyThread: UCHAR,
+   pub PerfEvtEdgeDetect: UCHAR,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_ADD_INFORMATION_V2__bindgen_ty_2 {
+   pub PerfEvtEventSelect: UCHAR,
+   pub PerfEvtUnitSelect: UCHAR,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_ADD_INFORMATION_V2__bindgen_ty_3 {
+   pub PerfEvtType: ULONG,
+   pub AllowsHalt: UCHAR,
+}
+impl Default for _EVENT_TRACE_PROFILE_ADD_INFORMATION_V2 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_PROFILE_ADD_INFORMATION_V2 = _EVENT_TRACE_PROFILE_ADD_INFORMATION_V2;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _EVENT_TRACE_PROFILE_ADD_INFORMATION_V3 {
+   pub Intel: _EVENT_TRACE_PROFILE_ADD_INFORMATION_V3__bindgen_ty_1,
+   pub Amd: _EVENT_TRACE_PROFILE_ADD_INFORMATION_V3__bindgen_ty_2,
+   pub Arm: _EVENT_TRACE_PROFILE_ADD_INFORMATION_V3__bindgen_ty_3,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_ADD_INFORMATION_V3__bindgen_ty_1 {
+   pub PerfEvtEventSelect: UCHAR,
+   pub PerfEvtUnitSelect: UCHAR,
+   pub PerfEvtCMask: UCHAR,
+   pub PerfEvtCInv: UCHAR,
+   pub PerfEvtAnyThread: UCHAR,
+   pub PerfEvtEdgeDetect: UCHAR,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_ADD_INFORMATION_V3__bindgen_ty_2 {
+   pub PerfEvtEventSelect: USHORT,
+   pub PerfEvtUnitSelect: UCHAR,
+   pub PerfEvtCMask: UCHAR,
+   pub PerfEvtCInv: UCHAR,
+   pub PerfEvtEdgeDetect: UCHAR,
+   pub PerfEvtHostGuest: UCHAR,
+   pub PerfPmuType: UCHAR,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_ADD_INFORMATION_V3__bindgen_ty_3 {
+   pub PerfEvtType: ULONG,
+   pub AllowsHalt: UCHAR,
+}
+impl Default for _EVENT_TRACE_PROFILE_ADD_INFORMATION_V3 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_PROFILE_ADD_INFORMATION_V3 = _EVENT_TRACE_PROFILE_ADD_INFORMATION_V3;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_ADD_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub Version: UCHAR,
+   pub __bindgen_anon_1: _EVENT_TRACE_PROFILE_ADD_INFORMATION__bindgen_ty_1,
+   pub CpuInfoHierarchy: [ULONG; 3usize],
+   pub InitialInterval: ULONG,
+   pub Persist: BOOLEAN,
+   pub ProfileSourceDescription: [WCHAR; 1usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _EVENT_TRACE_PROFILE_ADD_INFORMATION__bindgen_ty_1 {
+   pub V2: EVENT_TRACE_PROFILE_ADD_INFORMATION_V2,
+   pub V3: EVENT_TRACE_PROFILE_ADD_INFORMATION_V3,
+}
+impl Default for _EVENT_TRACE_PROFILE_ADD_INFORMATION__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for _EVENT_TRACE_PROFILE_ADD_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_PROFILE_ADD_INFORMATION = _EVENT_TRACE_PROFILE_ADD_INFORMATION;
+pub type PEVENT_TRACE_PROFILE_ADD_INFORMATION = *mut _EVENT_TRACE_PROFILE_ADD_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_PROFILE_REMOVE_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub ProfileSource: KPROFILE_SOURCE,
+   pub CpuInfoHierarchy: [ULONG; 3usize],
+}
+impl Default for _EVENT_TRACE_PROFILE_REMOVE_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_PROFILE_REMOVE_INFORMATION = _EVENT_TRACE_PROFILE_REMOVE_INFORMATION;
+pub type PEVENT_TRACE_PROFILE_REMOVE_INFORMATION = *mut _EVENT_TRACE_PROFILE_REMOVE_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _EVENT_TRACE_COVERAGE_SAMPLER_INFORMATION {
+   pub EventTraceInformationClass: EVENT_TRACE_INFORMATION_CLASS,
+   pub CoverageSamplerInformationClass: UCHAR,
+   pub MajorVersion: UCHAR,
+   pub MinorVersion: UCHAR,
+   pub Reserved: UCHAR,
+   pub SamplerHandle: HANDLE,
+}
+impl Default for _EVENT_TRACE_COVERAGE_SAMPLER_INFORMATION {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type EVENT_TRACE_COVERAGE_SAMPLER_INFORMATION = _EVENT_TRACE_COVERAGE_SAMPLER_INFORMATION;
+pub type PEVENT_TRACE_COVERAGE_SAMPLER_INFORMATION = *mut _EVENT_TRACE_COVERAGE_SAMPLER_INFORMATION;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_EXCEPTION_INFORMATION {
@@ -11668,9 +12264,9 @@ pub type PSYSTEM_PROCESSOR_POWER_INFORMATION = *mut _SYSTEM_PROCESSOR_POWER_INFO
 #[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX {
    pub Object: PVOID,
-   pub UniqueProcessId: ULONG_PTR,
-   pub HandleValue: ULONG_PTR,
-   pub GrantedAccess: ULONG,
+   pub UniqueProcessId: HANDLE,
+   pub HandleValue: HANDLE,
+   pub GrantedAccess: ACCESS_MASK,
    pub CreatorBackTraceIndex: USHORT,
    pub ObjectTypeIndex: USHORT,
    pub HandleAttributes: ULONG,
@@ -11998,14 +12594,14 @@ pub type PSYSTEM_FIRMWARE_TABLE_HANDLER = *mut _SYSTEM_FIRMWARE_TABLE_HANDLER;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_MEMORY_LIST_INFORMATION {
-   pub ZeroPageCount: ULONG_PTR,
-   pub FreePageCount: ULONG_PTR,
-   pub ModifiedPageCount: ULONG_PTR,
-   pub ModifiedNoWritePageCount: ULONG_PTR,
-   pub BadPageCount: ULONG_PTR,
-   pub PageCountByPriority: [ULONG_PTR; 8usize],
-   pub RepurposedPagesByPriority: [ULONG_PTR; 8usize],
-   pub ModifiedPageCountPageFile: ULONG_PTR,
+   pub ZeroPageCount: SIZE_T,
+   pub FreePageCount: SIZE_T,
+   pub ModifiedPageCount: SIZE_T,
+   pub ModifiedNoWritePageCount: SIZE_T,
+   pub BadPageCount: SIZE_T,
+   pub PageCountByPriority: [SIZE_T; 8usize],
+   pub RepurposedPagesByPriority: [SIZE_T; 8usize],
+   pub ModifiedPageCountPageFile: SIZE_T,
 }
 pub type SYSTEM_MEMORY_LIST_INFORMATION = _SYSTEM_MEMORY_LIST_INFORMATION;
 pub type PSYSTEM_MEMORY_LIST_INFORMATION = *mut _SYSTEM_MEMORY_LIST_INFORMATION;
@@ -13248,25 +13844,6 @@ pub struct _SMKM_REGION_EXTENT {
 }
 pub type SMKM_REGION_EXTENT = _SMKM_REGION_EXTENT;
 pub type PSMKM_REGION_EXTENT = *mut _SMKM_REGION_EXTENT;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _FILE_OBJECT {
-   _unused: [u8; 0],
-}
-pub type PFILE_OBJECT = *mut _FILE_OBJECT;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _DEVICE_OBJECT {
-   _unused: [u8; 0],
-}
-pub type PDEVICE_OBJECT = *mut _DEVICE_OBJECT;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _IRP {
-   _unused: [u8; 0],
-}
-pub type PIRP = *mut _IRP;
-pub type PRTL_BITMAP = *mut _RTL_BITMAP;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _SMKM_FILE_INFO {
@@ -14601,19 +15178,40 @@ pub type PSYSTEM_LOW_PRIORITY_IO_INFORMATION = *mut _SYSTEM_LOW_PRIORITY_IO_INFO
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
-pub enum _TPM_BOOT_ENTROPY_RESULT_CODE {
-   TpmBootEntropyStructureUninitialized = 0,
-   TpmBootEntropyDisabledByPolicy = 1,
-   TpmBootEntropyNoTpmFound = 2,
-   TpmBootEntropyTpmError = 3,
-   TpmBootEntropySuccess = 4,
+pub enum _BOOT_ENTROPY_SOURCE_RESULT_CODE {
+   BootEntropySourceStructureUninitialized = 0,
+   BootEntropySourceDisabledByPolicy = 1,
+   BootEntropySourceNotPresent = 2,
+   BootEntropySourceError = 3,
+   BootEntropySourceSuccess = 4,
 }
-pub use self::_TPM_BOOT_ENTROPY_RESULT_CODE as TPM_BOOT_ENTROPY_RESULT_CODE;
+pub use self::_BOOT_ENTROPY_SOURCE_RESULT_CODE as BOOT_ENTROPY_SOURCE_RESULT_CODE;
+impl _BOOT_ENTROPY_SOURCE_ID {
+   pub const BootMaxEntropySources: _BOOT_ENTROPY_SOURCE_ID = _BOOT_ENTROPY_SOURCE_ID::BootEntropySourceTcbRdrand;
+}
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _BOOT_ENTROPY_SOURCE_ID {
+   BootEntropySourceNone = 0,
+   BootEntropySourceSeedfile = 1,
+   BootEntropySourceExternal = 2,
+   BootEntropySourceTpm = 3,
+   BootEntropySourceRdrand = 4,
+   BootEntropySourceTime = 5,
+   BootEntropySourceAcpiOem0 = 6,
+   BootEntropySourceUefi = 7,
+   BootEntropySourceCng = 8,
+   BootEntropySourceTcbTpm = 9,
+   BootEntropySourceTcbRdrand = 10,
+}
+pub use self::_BOOT_ENTROPY_SOURCE_ID as BOOT_ENTROPY_SOURCE_ID;
+pub type PBOOT_ENTROPY_SOURCE_ID = *mut _BOOT_ENTROPY_SOURCE_ID;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _TPM_BOOT_ENTROPY_NT_RESULT {
    pub Policy: ULONGLONG,
-   pub ResultCode: TPM_BOOT_ENTROPY_RESULT_CODE,
+   pub ResultCode: BOOT_ENTROPY_SOURCE_RESULT_CODE,
    pub ResultStatus: NTSTATUS,
    pub Time: ULONGLONG,
    pub EntropyLength: ULONG,
@@ -14630,6 +15228,46 @@ impl Default for _TPM_BOOT_ENTROPY_NT_RESULT {
 }
 pub type TPM_BOOT_ENTROPY_NT_RESULT = _TPM_BOOT_ENTROPY_NT_RESULT;
 pub type PTPM_BOOT_ENTROPY_NT_RESULT = *mut _TPM_BOOT_ENTROPY_NT_RESULT;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _BOOT_ENTROPY_SOURCE_NT_RESULT {
+   pub SourceId: BOOT_ENTROPY_SOURCE_ID,
+   pub Policy: ULONG64,
+   pub ResultCode: BOOT_ENTROPY_SOURCE_RESULT_CODE,
+   pub ResultStatus: NTSTATUS,
+   pub Time: ULONGLONG,
+   pub EntropyLength: ULONG,
+   pub EntropyData: [UCHAR; 64usize],
+}
+impl Default for _BOOT_ENTROPY_SOURCE_NT_RESULT {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type BOOT_ENTROPY_SOURCE_NT_RESULT = _BOOT_ENTROPY_SOURCE_NT_RESULT;
+pub type PBOOT_ENTROPY_SOURCE_NT_RESULT = *mut _BOOT_ENTROPY_SOURCE_NT_RESULT;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _BOOT_ENTROPY_NT_RESULT {
+   pub maxEntropySources: ULONG,
+   pub EntropySourceResult: [BOOT_ENTROPY_SOURCE_NT_RESULT; 10usize],
+   pub SeedBytesForCng: [UCHAR; 48usize],
+}
+impl Default for _BOOT_ENTROPY_NT_RESULT {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type BOOT_ENTROPY_NT_RESULT = _BOOT_ENTROPY_NT_RESULT;
+pub type PBOOT_ENTROPY_NT_RESULT = *mut _BOOT_ENTROPY_NT_RESULT;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _SYSTEM_VERIFIER_COUNTERS_INFORMATION {
@@ -14869,7 +15507,7 @@ pub type PSYSTEM_BOOT_GRAPHICS_INFORMATION = *mut _SYSTEM_BOOT_GRAPHICS_INFORMAT
 #[derive(Debug, Copy, Clone)]
 pub struct _MEMORY_SCRUB_INFORMATION {
    pub Handle: HANDLE,
-   pub PagesScrubbed: ULONG_PTR,
+   pub PagesScrubbed: SIZE_T,
 }
 impl Default for _MEMORY_SCRUB_INFORMATION {
    fn default() -> Self {
@@ -15052,7 +15690,7 @@ pub type PSYSTEM_PROCESSOR_PROFILE_CONTROL_AREA = *mut _SYSTEM_PROCESSOR_PROFILE
 #[derive(Debug, Copy, Clone)]
 pub struct _MEMORY_COMBINE_INFORMATION {
    pub Handle: HANDLE,
-   pub PagesCombined: ULONG_PTR,
+   pub PagesCombined: SIZE_T,
 }
 impl Default for _MEMORY_COMBINE_INFORMATION {
    fn default() -> Self {
@@ -15069,7 +15707,7 @@ pub type PMEMORY_COMBINE_INFORMATION = *mut _MEMORY_COMBINE_INFORMATION;
 #[derive(Debug, Copy, Clone)]
 pub struct _MEMORY_COMBINE_INFORMATION_EX {
    pub Handle: HANDLE,
-   pub PagesCombined: ULONG_PTR,
+   pub PagesCombined: SIZE_T,
    pub Flags: ULONG,
 }
 impl Default for _MEMORY_COMBINE_INFORMATION_EX {
@@ -15087,7 +15725,7 @@ pub type PMEMORY_COMBINE_INFORMATION_EX = *mut _MEMORY_COMBINE_INFORMATION_EX;
 #[derive(Debug, Copy, Clone)]
 pub struct _MEMORY_COMBINE_INFORMATION_EX2 {
    pub Handle: HANDLE,
-   pub PagesCombined: ULONG_PTR,
+   pub PagesCombined: SIZE_T,
    pub Flags: ULONG,
    pub ProcessHandle: HANDLE,
 }
@@ -15299,6 +15937,26 @@ impl Default for _SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION_EX {
 }
 pub type SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION_EX = _SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION_EX;
 pub type PSYSTEM_PROCESSOR_PERFORMANCE_INFORMATION_EX = *mut _SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION_EX;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _CRITICAL_PROCESS_EXCEPTION_DATA {
+   pub ReportId: GUID,
+   pub ModuleName: UNICODE_STRING,
+   pub ModuleTimestamp: ULONG,
+   pub ModuleSize: ULONG,
+   pub Offset: ULONG_PTR,
+}
+impl Default for _CRITICAL_PROCESS_EXCEPTION_DATA {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type CRITICAL_PROCESS_EXCEPTION_DATA = _CRITICAL_PROCESS_EXCEPTION_DATA;
+pub type PCRITICAL_PROCESS_EXCEPTION_DATA = *mut _CRITICAL_PROCESS_EXCEPTION_DATA;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_SECUREBOOT_POLICY_INFORMATION {
@@ -16205,6 +16863,40 @@ pub struct _SYSTEM_SECUREBOOT_POLICY_FULL_INFORMATION {
 }
 pub type SYSTEM_SECUREBOOT_POLICY_FULL_INFORMATION = _SYSTEM_SECUREBOOT_POLICY_FULL_INFORMATION;
 pub type PSYSTEM_SECUREBOOT_POLICY_FULL_INFORMATION = *mut _SYSTEM_SECUREBOOT_POLICY_FULL_INFORMATION;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _KAFFINITY_EX {
+   pub Count: USHORT,
+   pub Size: USHORT,
+   pub Reserved: ULONG,
+   pub __bindgen_anon_1: _KAFFINITY_EX__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _KAFFINITY_EX__bindgen_ty_1 {
+   pub Bitmap: [ULONG_PTR; 1usize],
+   pub StaticBitmap: [ULONG_PTR; 32usize],
+}
+impl Default for _KAFFINITY_EX__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for _KAFFINITY_EX {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type KAFFINITY_EX = _KAFFINITY_EX;
+pub type PKAFFINITY_EX = *mut _KAFFINITY_EX;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_ROOT_SILO_INFORMATION {
@@ -18765,7 +19457,7 @@ pub struct _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY {
    pub TargetNodeNumber: ULONG,
    pub DataType: SYSTEM_MEMORY_NUMA_PERFORMANCE_QUERY_DATA_TYPES,
    pub __bindgen_anon_1: _SYSTEM_MEMORY_NUMA_PERFORMANCE_ENTRY__bindgen_ty_1,
-   pub MinTransferSizeInBytes: ULONG_PTR,
+   pub MinTransferSizeInBytes: SIZE_T,
    pub EntryValue: ULONG_PTR,
 }
 #[repr(C)]
@@ -19412,6 +20104,31 @@ impl Default for _SYSDBG_LIVEDUMP_SELECTIVE_CONTROL {
 }
 pub type SYSDBG_LIVEDUMP_SELECTIVE_CONTROL = _SYSDBG_LIVEDUMP_SELECTIVE_CONTROL;
 pub type PSYSDBG_LIVEDUMP_SELECTIVE_CONTROL = *mut _SYSDBG_LIVEDUMP_SELECTIVE_CONTROL;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _SYSDBG_LIVEDUMP_CONTROL_V1 {
+   pub Version: ULONG,
+   pub BugCheckCode: ULONG,
+   pub BugCheckParam1: ULONG_PTR,
+   pub BugCheckParam2: ULONG_PTR,
+   pub BugCheckParam3: ULONG_PTR,
+   pub BugCheckParam4: ULONG_PTR,
+   pub DumpFileHandle: HANDLE,
+   pub CancelEventHandle: HANDLE,
+   pub Flags: SYSDBG_LIVEDUMP_CONTROL_FLAGS,
+   pub AddPagesControl: SYSDBG_LIVEDUMP_CONTROL_ADDPAGES,
+}
+impl Default for _SYSDBG_LIVEDUMP_CONTROL_V1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type SYSDBG_LIVEDUMP_CONTROL_V1 = _SYSDBG_LIVEDUMP_CONTROL_V1;
+pub type PSYSDBG_LIVEDUMP_CONTROL_V1 = *mut _SYSDBG_LIVEDUMP_CONTROL_V1;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _SYSDBG_LIVEDUMP_CONTROL {
@@ -20816,64 +21533,66 @@ pub enum _BCD_FLAGS {
 pub use self::_BCD_FLAGS as BCD_FLAGS;
 #[repr(i32)]
 #[non_exhaustive]
+#[doc = " BCD configuration elements for the Boot Manager types."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _BcdBootMgrElementTypes {
-   #[doc = " <summary>\n The order in which BCD objects should be displayed.\n Objects are displayed using the string specified by the BcdLibraryString_Description element.\n </summary>\n <remarks>0x24000001</remarks>"]
+   #[doc = " The order in which BCD objects should be displayed. [0x24000001]\n Objects are displayed using the string specified by the BcdLibraryString_Description element."]
    BcdBootMgrObjectList_DisplayOrder = 603979777,
-   #[doc = " <summary>\n List of boot environment applications the boot manager should execute.\n The applications are executed in the order they appear in this list.\n If the firmware boot manager does not support loading multiple applications, this list cannot contain more than one entry.\n </summary>\n <remarks>0x24000002</remarks>"]
+   #[doc = " List of boot environment applications the boot manager should execute. [0x24000002]\n The applications are executed in the order they appear in this list.\n If the firmware boot manager does not support loading multiple applications, this list cannot contain more than one entry."]
    BcdBootMgrObjectList_BootSequence = 603979778,
-   #[doc = " <summary>\n The default boot environment application to load if the user does not select one.\n </summary>\n <remarks>0x23000003</remarks>"]
+   #[doc = " The default boot environment application to load if the user does not select one. [0x23000003]"]
    BcdBootMgrObject_DefaultObject = 587202563,
-   #[doc = " <summary>\n The maximum number of seconds a boot selection menu is to be displayed to the user.\n The menu is displayed until the user selects an option or the time-out expires.\n If this value is not specified, the boot manager waits for the user to make a selection.\n </summary>\n <remarks>0x25000004</remarks>"]
+   #[doc = " The maximum number of seconds a boot selection menu is to be displayed to the user. [0x25000004]\n The menu is displayed until the user selects an option or the time-out expires.\n If this value is not specified, the boot manager waits for the user to make a selection."]
    BcdBootMgrInteger_Timeout = 620756996,
-   #[doc = " <summary>\n Indicates that a resume operation should be attempted during a system restart.\n </summary>\n <remarks>0x26000005</remarks>"]
+   #[doc = " Indicates that a resume operation should be attempted during a system restart. [0x26000005]"]
    BcdBootMgrBoolean_AttemptResume = 637534213,
-   #[doc = " <summary>\n The resume application object.\n </summary>\n <remarks>0x23000006</remarks>"]
+   #[doc = " The resume application object. [0x23000006]"]
    BcdBootMgrObject_ResumeObject = 587202566,
-   #[doc = " <summary>\n\n </summary>\n <remarks>0x24000007</remarks>"]
+   #[doc = " The startup sequence. [0x24000007]"]
    BcdBootMgrObjectList_StartupSequence = 603979783,
-   #[doc = " <summary>\n The boot manager tools display order list.\n </summary>\n <remarks>0x24000010</remarks>"]
+   #[doc = " The boot manager tools display order list. [0x24000010]"]
    BcdBootMgrObjectList_ToolsDisplayOrder = 603979792,
-   #[doc = " <summary>\n Forces the display of the legacy boot menu, regardless of the number of OS entries in the BCD store and their BcdOSLoaderInteger_BootMenuPolicy.\n </summary>\n <remarks>0x26000020</remarks>"]
+   #[doc = " Forces the display of the legacy boot menu, regardless of the number of OS entries in the BCD store and their BcdOSLoaderInteger_BootMenuPolicy. [0x26000020]"]
    BcdBootMgrBoolean_DisplayBootMenu = 637534240,
-   #[doc = " <summary>\n Indicates whether the display of errors should be suppressed.\n If this setting is enabled, the boot manager exits to the multi-OS menu on OS launch error.\n </summary>\n <remarks>0x26000021</remarks>"]
+   #[doc = " Indicates whether the display of errors should be suppressed. If this setting is enabled, the boot manager exits to the multi-OS menu on OS launch error. [0x26000021]"]
    BcdBootMgrBoolean_NoErrorDisplay = 637534241,
-   #[doc = " <summary>\n The device on which the boot application resides.\n </summary>\n <remarks>0x21000022</remarks>"]
+   #[doc = " The device on which the boot application resides. [0x21000022]"]
    BcdBootMgrDevice_BcdDevice = 553648162,
-   #[doc = " <summary>\n The boot application.\n </summary>\n <remarks>0x22000023</remarks>"]
+   #[doc = " The boot application. [0x22000023] (BCDE_BOOTMGR_TYPE_BCD_FILEPATH)"]
    BcdBootMgrString_BcdFilePath = 570425379,
-   #[doc = " <summary>\n\n </summary>\n <remarks>0x26000024</remarks>"]
+   #[doc = " Indicates whether HORM (Hibernate Once/Resume Many) is enabled. [0x26000024]"]
    BcdBootMgrBoolean_HormEnabled = 637534244,
-   #[doc = " <summary>\n\n </summary>\n <remarks>0x26000025</remarks>"]
+   #[doc = " Indicates whether the system is in hibernation root mode. [0x26000025]"]
    BcdBootMgrBoolean_HiberRoot = 637534245,
-   #[doc = " <summary>\n\n </summary>\n <remarks>0x22000026</remarks>"]
+   #[doc = " The password override string. [0x22000026]"]
    BcdBootMgrString_PasswordOverride = 570425382,
-   #[doc = " <summary>\n\n </summary>\n <remarks>0x22000027</remarks>"]
+   #[doc = " The PIN/passphrase override string. [0x22000027]"]
    BcdBootMgrString_PinpassPhraseOverride = 570425383,
-   #[doc = " <summary>\n Controls whether custom actions are processed before a boot sequence.\n Note This value is supported starting in Windows 8 and Windows Server 2012.\n </summary>\n <remarks>0x26000028</remarks>"]
+   #[doc = " Controls whether custom actions are processed before a boot sequence. Note This value is supported starting in Windows 8 and Windows Server 2012. [0x26000028]"]
    BcdBootMgrBoolean_ProcessCustomActionsFirst = 637534248,
-   #[doc = " <summary>\n Custom Bootstrap Actions.\n </summary>\n <remarks>0x27000030</remarks>"]
+   #[doc = " Custom Bootstrap Actions. [0x27000030] (BCDE_BOOTMGR_TYPE_CUSTOM_ACTIONS_LIST)"]
    BcdBootMgrIntegerList_CustomActionsList = 654311472,
-   #[doc = " <summary>\n Controls whether a boot sequence persists across multiple boots.\n Note This value is supported starting in Windows 8 and Windows Server 2012.\n </summary>\n <remarks>0x26000031</remarks>"]
+   #[doc = " Controls whether a boot sequence persists across multiple boots. Note This value is supported starting in Windows 8 and Windows Server 2012. [0x26000031]"]
    BcdBootMgrBoolean_PersistBootSequence = 637534257,
-   #[doc = " <summary>\n\n </summary>\n <remarks>0x26000032</remarks>"]
+   #[doc = " Indicates whether to skip the startup sequence. [0x26000032]"]
    BcdBootMgrBoolean_SkipStartupSequence = 637534258,
 }
+#[doc = " BCD configuration elements for the Boot Manager types."]
 pub use self::_BcdBootMgrElementTypes as BcdBootMgrElementTypes;
 #[repr(i32)]
 #[non_exhaustive]
+#[doc = " Specifies the policy for using the first megabyte of memory."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _BcdLibrary_FirstMegabytePolicy {
-   #[doc = " <summary>\n Use none of the first megabyte of memory.\n </summary>"]
    FirstMegabytePolicyUseNone = 0,
-   #[doc = " <summary>\n Use all of the first megabyte of memory.\n </summary>"]
    FirstMegabytePolicyUseAll = 1,
-   #[doc = " <summary>\n Reserved for future use.\n </summary>"]
    FirstMegabytePolicyUsePrivate = 2,
 }
+#[doc = " Specifies the policy for using the first megabyte of memory."]
 pub use self::_BcdLibrary_FirstMegabytePolicy as BcdLibrary_FirstMegabytePolicy;
 #[repr(i32)]
 #[non_exhaustive]
+#[doc = " Specifies the type of debugger."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _BcdLibrary_DebuggerType {
    DebuggerSerial = 0,
@@ -20882,55 +21601,80 @@ pub enum _BcdLibrary_DebuggerType {
    DebuggerNet = 3,
    DebuggerLocal = 4,
 }
+#[doc = " Specifies the type of debugger."]
 pub use self::_BcdLibrary_DebuggerType as BcdLibrary_DebuggerType;
 #[repr(i32)]
 #[non_exhaustive]
+#[doc = " Specifies the start policy for the debugger."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _BcdLibrary_DebuggerStartPolicy {
-   #[doc = " <summary>\n The debugger will start active.\n </summary>"]
    DebuggerStartActive = 0,
-   #[doc = " <summary>\n The debugger will start in the auto-enabled state.\n If a debugger is attached it will be used; otherwise the debugger port will be available for other applications.\n </summary>"]
+   #[doc = " The debugger will start in the auto-enabled state.\n If a debugger is attached it will be used; otherwise the debugger port will be available for other applications."]
    DebuggerStartAutoEnable = 1,
-   #[doc = " <summary>\n The debugger will not start.\n </summary>"]
+   #[doc = " The debugger will start in the auto-enabled state.\n If a debugger is attached it will be used; otherwise the debugger port will be available for other applications."]
    DebuggerStartDisable = 2,
 }
+#[doc = " Specifies the start policy for the debugger."]
 pub use self::_BcdLibrary_DebuggerStartPolicy as BcdLibrary_DebuggerStartPolicy;
 #[repr(i32)]
 #[non_exhaustive]
+#[doc = " Specifies the access policy for PCI configuration space."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _BcdLibrary_ConfigAccessPolicy {
-   #[doc = " <summary>\n Access to PCI configuration space through the memory-mapped region is allowed.\n </summary>"]
+   #[doc = " Access to PCI configuration space through the memory-mapped region is allowed."]
    ConfigAccessPolicyDefault = 0,
-   #[doc = " <summary>\n Access to PCI configuration space through the memory-mapped region is not allowed.\n This setting is used for platforms that implement memory-mapped configuration space incorrectly.\n The CFC/CF8 access mechanism can be used to access configuration space on these platforms.\n </summary>"]
+   #[doc = " Access to PCI configuration space through the memory-mapped region is not allowed.\n This setting is used for platforms that implement memory-mapped configuration space incorrectly.\n The CFC/CF8 access mechanism can be used to access configuration space on these platforms."]
    ConfigAccessPolicyDisallowMmConfig = 1,
 }
+#[doc = " Specifies the access policy for PCI configuration space."]
 pub use self::_BcdLibrary_ConfigAccessPolicy as BcdLibrary_ConfigAccessPolicy;
 #[repr(i32)]
 #[non_exhaustive]
+#[doc = " Enumeration for UX Display Message Types in the Boot Configuration Data (BCD) library.\n This enumeration defines the different UX display message types that can be specified in the BCD library."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _BcdLibrary_UxDisplayMessageType {
+   #[doc = "< Default display message type."]
    DisplayMessageTypeDefault = 0,
+   #[doc = "< Display message type for resume."]
    DisplayMessageTypeResume = 1,
+   #[doc = "< Display message type for Hyper-V."]
    DisplayMessageTypeHyperV = 2,
+   #[doc = "< Display message type for recovery."]
    DisplayMessageTypeRecovery = 3,
+   #[doc = "< Display message type for startup repair."]
    DisplayMessageTypeStartupRepair = 4,
+   #[doc = "< Display message type for system image recovery."]
    DisplayMessageTypeSystemImageRecovery = 5,
+   #[doc = "< Display message type for command prompt."]
    DisplayMessageTypeCommandPrompt = 6,
+   #[doc = "< Display message type for system restore."]
    DisplayMessageTypeSystemRestore = 7,
+   #[doc = "< Display message type for push button reset."]
    DisplayMessageTypePushButtonReset = 8,
 }
+#[doc = " Enumeration for UX Display Message Types in the Boot Configuration Data (BCD) library.\n This enumeration defines the different UX display message types that can be specified in the BCD library."]
 pub use self::_BcdLibrary_UxDisplayMessageType as BcdLibrary_UxDisplayMessageType;
 #[repr(i32)]
 #[non_exhaustive]
+#[doc = " Enumeration for Safe Boot options in the Boot Configuration Data (BCD) library.\n This enumeration defines the different safe boot modes that can be specified in the BCD library."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum BcdLibrary_SafeBoot {
-   #[doc = " <summary>\n Load the drivers and services specified by name or group under the following registry key:\n HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Minimal.\n </summary>"]
+   #[doc = " Load the drivers and services specified by name or group under the following registry key:\n HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Minimal."]
    SafemodeMinimal = 0,
-   #[doc = " <summary>\n Load the drivers and services specified by name or group under the following registry key:\n HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Network\n </summary>"]
+   #[doc = " Load the drivers and services specified by name or group under the following registry key:\n HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Network."]
    SafemodeNetwork = 1,
-   #[doc = " <summary>\n Boot the system into a repair mode that restores the Active Directory service from backup medium.\n </summary>"]
+   #[doc = " Boot the system into a repair mode that restores the Active Directory service from backup medium."]
    SafemodeDsRepair = 2,
 }
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _BcdLibrary_BootUxPolicy {
+   BootUxPolicyDisabled = 0,
+   BootUxPolicyBasic = 1,
+   BootUxPolicyStandard = 2,
+}
+pub use self::_BcdLibrary_BootUxPolicy as BcdLibrary_BootUxPolicy;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -20955,7 +21699,7 @@ pub enum _BcdLibraryElementTypes {
    BcdLibraryIntegerList_BadMemoryList = 385875978,
    #[doc = " <summary>\n If TRUE, indicates that a boot application can use memory listed in the BcdLibraryIntegerList_BadMemoryList.\n </summary>\n <remarks>0x1600000B</remarks>"]
    BcdLibraryBoolean_AllowBadMemoryAccess = 369098763,
-   #[doc = " <summary>\n Indicates how the first megabyte of memory is to be used. The Integer property is one of the values from the BcdLibrary_FirstMegabytePolicy enumeration.\n </summary>\n <remarks>0x1500000C</remarks>"]
+   #[doc = " <summary>\n Indicates how the first megabyte of memory is to be used. The Integer property is one of the values from the BcdLibrary_FirstMegabytePolicy enumeration. (BCDE_POLICY_LIBRARY_TYPE_FIRST_MEGABYTE_POLICY)\n </summary>\n <remarks>0x1500000C</remarks>"]
    BcdLibraryInteger_FirstMegabytePolicy = 352321548,
    #[doc = " <summary>\n Relocates physical memory on certain AMD processors.\n This value is not used in Windows 8 or Windows Server 2012.\n </summary>\n <remarks>0x1500000D</remarks>"]
    BcdLibraryInteger_RelocatePhysicalMemory = 352321549,
@@ -21103,6 +21847,8 @@ pub enum _BcdLibraryElementTypes {
    BcdLibraryBoolean_NumLockOn = 369098887,
    #[doc = " <summary>\n\n </summary>\n <remarks>0x12000088</remarks>"]
    BcdLibraryString_AdditionalCiPolicy = 301990024,
+   #[doc = " <summary>\n Enabling the 5-Level Paging feature. 0 = Disabled, 1 = Optout, 2 = Optin\n </summary>\n <remarks>0x15000088</remarks>"]
+   BcdLibraryInteger_LinearAddress57 = 352321672,
 }
 pub use self::_BcdLibraryElementTypes as BcdLibraryElementTypes;
 #[repr(i32)]
@@ -21125,55 +21871,59 @@ pub enum _BcdTemplateElementTypes {
 pub use self::_BcdTemplateElementTypes as BcdTemplateElementTypes;
 #[repr(i32)]
 #[non_exhaustive]
-#[doc = " <summary>\n Specifies the no-execute page protection policies.\n </summary>"]
+#[doc = " @brief Specifies the no-execute page protection policies."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _BcdOSLoader_NxPolicy {
-   #[doc = " <summary>\n The no-execute page protection is off by default.\n </summary>"]
+   #[doc = " @brief The no-execute page protection is off by default."]
    NxPolicyOptIn = 0,
-   #[doc = " <summary>\n The no-execute page protection is on by default.\n </summary>"]
+   #[doc = " @brief The no-execute page protection is on by default."]
    NxPolicyOptOut = 1,
-   #[doc = " <summary>\n The no-execute page protection is always off.\n </summary>"]
+   #[doc = " @brief The no-execute page protection is always off."]
    NxPolicyAlwaysOff = 2,
-   #[doc = " <summary>\n The no-execute page protection is always on.\n </summary>"]
+   #[doc = " @brief The no-execute page protection is always on."]
    NxPolicyAlwaysOn = 3,
 }
-#[doc = " <summary>\n Specifies the no-execute page protection policies.\n </summary>"]
+#[doc = " @brief Specifies the no-execute page protection policies."]
 pub use self::_BcdOSLoader_NxPolicy as BcdOSLoader_NxPolicy;
 #[repr(i32)]
 #[non_exhaustive]
-#[doc = " <summary>\n Specifies the Physical Address Extension (PAE) policies.\n </summary>"]
+#[doc = " @brief Specifies the Physical Address Extension (PAE) policies."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _BcdOSLoader_PAEPolicy {
-   #[doc = " <summary>\n Enable PAE if hot-pluggable memory is defined above 4GB.\n </summary>"]
+   #[doc = " @brief Enable PAE if hot-pluggable memory is defined above 4GB."]
    PaePolicyDefault = 0,
-   #[doc = " <summary>\n PAE is enabled.\n </summary>"]
+   #[doc = " @brief PAE is enabled."]
    PaePolicyForceEnable = 1,
-   #[doc = " <summary>\n PAE is disabled.\n </summary>"]
+   #[doc = " @brief PAE is disabled."]
    PaePolicyForceDisable = 2,
 }
-#[doc = " <summary>\n Specifies the Physical Address Extension (PAE) policies.\n </summary>"]
+#[doc = " @brief Specifies the Physical Address Extension (PAE) policies."]
 pub use self::_BcdOSLoader_PAEPolicy as BcdOSLoader_PAEPolicy;
 #[repr(i32)]
 #[non_exhaustive]
+#[doc = " @brief Specifies the boot status policies."]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _BcdOSLoader_BootStatusPolicy {
-   #[doc = " <summary>\n Display all boot failures.\n </summary>"]
+   #[doc = " @brief Display all boot failures."]
    BootStatusPolicyDisplayAllFailures = 0,
-   #[doc = " <summary>\n Ignore all boot failures.\n </summary>"]
+   #[doc = " @brief Ignore all boot failures."]
    BootStatusPolicyIgnoreAllFailures = 1,
-   #[doc = " <summary>\n Ignore all shutdown failures.\n </summary>"]
+   #[doc = " @brief Ignore all shutdown failures."]
    BootStatusPolicyIgnoreShutdownFailures = 2,
-   #[doc = " <summary>\n Ignore all boot failures.\n </summary>"]
+   #[doc = " @brief Ignore all boot failures."]
    BootStatusPolicyIgnoreBootFailures = 3,
-   #[doc = " <summary>\n Ignore checkpoint failures.\n </summary>"]
+   #[doc = " @brief Ignore checkpoint failures."]
    BootStatusPolicyIgnoreCheckpointFailures = 4,
-   #[doc = " <summary>\n Display shutdown failures.\n </summary>"]
+   #[doc = " @brief Display shutdown failures."]
    BootStatusPolicyDisplayShutdownFailures = 5,
-   #[doc = " <summary>\n Display boot failures.\n </summary>"]
+   #[doc = " @brief Display boot failures."]
    BootStatusPolicyDisplayBootFailures = 6,
-   #[doc = " <summary>\n Display checkpoint failures.\n </summary>"]
+   #[doc = " @brief Display checkpoint failures."]
    BootStatusPolicyDisplayCheckpointFailures = 7,
+   #[doc = " @brief Always display startup failures."]
+   BootStatusPolicyAlwaysDisplayStartupFailures = 8,
 }
+#[doc = " @brief Specifies the boot status policies."]
 pub use self::_BcdOSLoader_BootStatusPolicy as BcdOSLoaderBootStatusPolicy;
 #[repr(i32)]
 #[non_exhaustive]
@@ -21215,7 +21965,7 @@ pub enum _BcdOSLoaderElementTypes {
    BcdOSLoaderInteger_RemoveMemory = 620757041,
    #[doc = " <summary>\n The amount of memory that should be utilized by the process address space, in bytes.\n This value should be between 2GB and 3GB.\n Increasing this value from the default 2GB decreases the amount of virtual address space available to the system and device drivers.\n </summary>\n <remarks>0x25000032</remarks>"]
    BcdOSLoaderInteger_IncreaseUserVa = 620757042,
-   #[doc = " <summary>\n\n </summary>\n <remarks>0x25000033</remarks>"]
+   #[doc = " <summary>\n BCDE_OSLOADER_TYPE_PERFORMANCE_DATA_MEMORY\n </summary>\n <remarks>0x25000033</remarks>"]
    BcdOSLoaderInteger_PerformaceDataMemory = 620757043,
    #[doc = " <summary>\n Indicates whether the system should use the standard VGA display driver instead of a high-performance display driver.\n </summary>\n <remarks>0x26000040</remarks>"]
    BcdOSLoaderBoolean_UseVgaDriver = 637534272,
@@ -21253,9 +22003,9 @@ pub enum _BcdOSLoaderElementTypes {
    BcdOSLoaderInteger_GroupSize = 620757094,
    #[doc = " <summary>\n Indicates whether the system should use I/O and IRQ resources created by the system firmware instead of using dynamically configured resources.\n </summary>\n <remarks>0x26000070</remarks>"]
    BcdOSLoaderInteger_UseFirmwarePciSettings = 637534320,
-   #[doc = " <summary>\n The PCI Message Signaled Interrupt (MSI) policy. Zero (0) indicates default, and one (1) indicates that MSI interrupts are disabled.\n </summary>\n <remarks>0x25000071</remarks>"]
+   #[doc = " <summary>\n The PCI Message Signaled Interrupt (MSI) policy. Zero (0) indicates default, and one (1) indicates that MSI interrupts are forcefully disabled.\n </summary>\n <remarks>0x25000071</remarks>"]
    BcdOSLoaderInteger_MsiPolicy = 620757105,
-   #[doc = " <summary>\n Undocumented. Zero (0) indicates default, and one (1) indicates that PCI Express is forcefully disabled.\n </summary>\n <remarks>0x25000072</remarks>"]
+   #[doc = " <summary>\n Zero (0) indicates default, and one (1) indicates that PCI Express is forcefully disabled.\n </summary>\n <remarks>0x25000072</remarks>"]
    BcdOSLoaderInteger_PciExpressPolicy = 620757106,
    #[doc = " <summary>\n The Integer property is one of the values from the BcdLibrary_SafeBoot enumeration.\n </summary>\n <remarks>0x25000080</remarks>"]
    BcdOSLoaderInteger_SafeBoot = 620757120,
@@ -21343,7 +22093,7 @@ pub enum _BcdOSLoaderElementTypes {
    BcdOSLoaderBoolean_HypervisorUseVApic = 637534486,
    #[doc = " <summary>\n\n </summary>\n <remarks>0x22000117</remarks>"]
    BcdOSLoaderString_HypervisorLoadOptions = 570425623,
-   #[doc = " <summary>\n\n </summary>\n <remarks>0x25000118</remarks>"]
+   #[doc = " <summary>\n BCDE_POLICY_OSLOADER_TYPE_HYPERVISOR_MSR_FILTER_POLICY\n </summary>\n <remarks>0x25000118</remarks>"]
    BcdOSLoaderInteger_HypervisorMsrFilterPolicy = 620757272,
    #[doc = " <summary>\n\n </summary>\n <remarks>0x25000119</remarks>"]
    BcdOSLoaderInteger_HypervisorMmioNxPolicy = 620757273,
@@ -21351,7 +22101,7 @@ pub enum _BcdOSLoaderElementTypes {
    BcdOSLoaderInteger_HypervisorSchedulerType = 620757274,
    #[doc = " <summary>\n\n </summary>\n <remarks>0x2200011B</remarks>"]
    BcdOSLoaderString_HypervisorRootProcNumaNodes = 570425627,
-   #[doc = " <summary>\n\n </summary>\n <remarks>0x2500011C</remarks>"]
+   #[doc = " <summary>\n BCDE_POLICY_OSLOADER_TYPE_HYPERVISOR_PERFMON\n </summary>\n <remarks>0x2500011C</remarks>"]
    BcdOSLoaderInteger_HypervisorPerfmon = 620757276,
    #[doc = " <summary>\n\n </summary>\n <remarks>0x2500011D</remarks>"]
    BcdOSLoaderInteger_HypervisorRootProcPerCore = 620757277,
@@ -21415,7 +22165,7 @@ pub enum _BcdOSLoaderElementTypes {
    BcdOSLoaderBoolean_EventLoggingEnabled = 637534529,
    #[doc = " <summary>\n\n </summary>\n <remarks>0x25000142</remarks>"]
    BcdOSLoaderInteger_VsmLaunchType = 620757314,
-   #[doc = " <summary>\n Undocumented. Zero (0) indicates default, one (1) indicates that disabled and two (2) indicates strict mode.\n </summary>\n <remarks>0x25000144</remarks>"]
+   #[doc = " <summary>\n Zero (0) indicates Disabled, one (1) indicates that Enabled and two (2) indicates strict mode.\n </summary>\n <remarks>0x25000144</remarks>"]
    BcdOSLoaderInteger_HypervisorEnforcedCodeIntegrity = 620757316,
    #[doc = " <summary>\n\n </summary>\n <remarks>0x26000145</remarks>"]
    BcdOSLoaderBoolean_DtraceEnabled = 637534533,
@@ -23666,19 +24416,19 @@ pub struct _MEMORY_PARTITION_CONFIGURATION_INFORMATION {
    pub NumaNode: ULONG,
    pub Channel: ULONG,
    pub NumberOfNumaNodes: ULONG,
-   pub ResidentAvailablePages: ULONG_PTR,
-   pub CommittedPages: ULONG_PTR,
-   pub CommitLimit: ULONG_PTR,
-   pub PeakCommitment: ULONG_PTR,
-   pub TotalNumberOfPages: ULONG_PTR,
-   pub AvailablePages: ULONG_PTR,
-   pub ZeroPages: ULONG_PTR,
-   pub FreePages: ULONG_PTR,
-   pub StandbyPages: ULONG_PTR,
-   pub StandbyPageCountByPriority: [ULONG_PTR; 8usize],
-   pub RepurposedPagesByPriority: [ULONG_PTR; 8usize],
-   pub MaximumCommitLimit: ULONG_PTR,
-   pub Reserved: ULONG_PTR,
+   pub ResidentAvailablePages: SIZE_T,
+   pub CommittedPages: SIZE_T,
+   pub CommitLimit: SIZE_T,
+   pub PeakCommitment: SIZE_T,
+   pub TotalNumberOfPages: SIZE_T,
+   pub AvailablePages: SIZE_T,
+   pub ZeroPages: SIZE_T,
+   pub FreePages: SIZE_T,
+   pub StandbyPages: SIZE_T,
+   pub StandbyPageCountByPriority: [SIZE_T; 8usize],
+   pub RepurposedPagesByPriority: [SIZE_T; 8usize],
+   pub MaximumCommitLimit: SIZE_T,
+   pub Reserved: SIZE_T,
    pub PartitionId: ULONG,
 }
 pub type MEMORY_PARTITION_CONFIGURATION_INFORMATION = _MEMORY_PARTITION_CONFIGURATION_INFORMATION;
@@ -23686,7 +24436,7 @@ pub type PMEMORY_PARTITION_CONFIGURATION_INFORMATION = *mut _MEMORY_PARTITION_CO
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _MEMORY_PARTITION_TRANSFER_INFORMATION {
-   pub NumberOfPages: ULONG_PTR,
+   pub NumberOfPages: SIZE_T,
    pub NumaNode: ULONG,
    pub Flags: ULONG,
 }
@@ -23716,7 +24466,7 @@ pub type PMEMORY_PARTITION_PAGEFILE_INFORMATION = *mut _MEMORY_PARTITION_PAGEFIL
 pub struct _MEMORY_PARTITION_PAGE_COMBINE_INFORMATION {
    pub StopHandle: HANDLE,
    pub Flags: ULONG,
-   pub TotalNumberOfPages: ULONG_PTR,
+   pub TotalNumberOfPages: SIZE_T,
 }
 impl Default for _MEMORY_PARTITION_PAGE_COMBINE_INFORMATION {
    fn default() -> Self {
@@ -23742,7 +24492,7 @@ pub type PMEMORY_PARTITION_PAGE_RANGE = *mut _MEMORY_PARTITION_PAGE_RANGE;
 pub struct _MEMORY_PARTITION_INITIAL_ADD_INFORMATION {
    pub Flags: ULONG,
    pub NumberOfRanges: ULONG,
-   pub NumberOfPagesAdded: ULONG_PTR,
+   pub NumberOfPagesAdded: SIZE_T,
    pub PartitionRanges: [MEMORY_PARTITION_PAGE_RANGE; 1usize],
 }
 pub type MEMORY_PARTITION_INITIAL_ADD_INFORMATION = _MEMORY_PARTITION_INITIAL_ADD_INFORMATION;
@@ -23752,7 +24502,7 @@ pub type PMEMORY_PARTITION_INITIAL_ADD_INFORMATION = *mut _MEMORY_PARTITION_INIT
 pub struct _MEMORY_PARTITION_MEMORY_EVENTS_INFORMATION {
    pub Flags: _MEMORY_PARTITION_MEMORY_EVENTS_INFORMATION__bindgen_ty_1,
    pub HandleAttributes: ULONG,
-   pub DesiredAccess: ULONG,
+   pub DesiredAccess: ACCESS_MASK,
    pub LowCommitCondition: HANDLE,
    pub HighCommitCondition: HANDLE,
    pub MaximumCommitCondition: HANDLE,
@@ -23840,6 +24590,7 @@ pub enum _OBJECT_INFORMATION_CLASS {
    MaxObjectInfoClass = 7,
 }
 pub use self::_OBJECT_INFORMATION_CLASS as OBJECT_INFORMATION_CLASS;
+#[doc = " The OBJECT_BASIC_INFORMATION structure contains basic information about an object."]
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _OBJECT_BASIC_INFORMATION {
@@ -23864,8 +24615,11 @@ impl Default for _OBJECT_BASIC_INFORMATION {
       }
    }
 }
+#[doc = " The OBJECT_BASIC_INFORMATION structure contains basic information about an object."]
 pub type OBJECT_BASIC_INFORMATION = _OBJECT_BASIC_INFORMATION;
+#[doc = " The OBJECT_BASIC_INFORMATION structure contains basic information about an object."]
 pub type POBJECT_BASIC_INFORMATION = *mut _OBJECT_BASIC_INFORMATION;
+#[doc = " The OBJECT_NAME_INFORMATION structure contains the name, if there is one, of a given object."]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _OBJECT_NAME_INFORMATION {
@@ -23880,8 +24634,11 @@ impl Default for _OBJECT_NAME_INFORMATION {
       }
    }
 }
+#[doc = " The OBJECT_NAME_INFORMATION structure contains the name, if there is one, of a given object."]
 pub type OBJECT_NAME_INFORMATION = _OBJECT_NAME_INFORMATION;
+#[doc = " The OBJECT_NAME_INFORMATION structure contains the name, if there is one, of a given object."]
 pub type POBJECT_NAME_INFORMATION = *mut _OBJECT_NAME_INFORMATION;
+#[doc = " The OBJECT_NAME_INFORMATION structure contains various statistics and properties about an object type."]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _OBJECT_TYPE_INFORMATION {
@@ -23918,7 +24675,9 @@ impl Default for _OBJECT_TYPE_INFORMATION {
       }
    }
 }
+#[doc = " The OBJECT_NAME_INFORMATION structure contains various statistics and properties about an object type."]
 pub type OBJECT_TYPE_INFORMATION = _OBJECT_TYPE_INFORMATION;
+#[doc = " The OBJECT_NAME_INFORMATION structure contains various statistics and properties about an object type."]
 pub type POBJECT_TYPE_INFORMATION = *mut _OBJECT_TYPE_INFORMATION;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
@@ -24123,14 +24882,6 @@ impl Default for _INITIAL_TEB {
 }
 pub type INITIAL_TEB = _INITIAL_TEB;
 pub type PINITIAL_TEB = *mut _INITIAL_TEB;
-pub type PRTL_USER_PROCESS_PARAMETERS = *mut _RTL_USER_PROCESS_PARAMETERS;
-pub type PSILO_USER_SHARED_DATA = *mut _SILO_USER_SHARED_DATA;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _LEAP_SECOND_DATA {
-   _unused: [u8; 0],
-}
-pub type PLEAP_SECOND_DATA = *mut _LEAP_SECOND_DATA;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _ACTIVATION_CONTEXT_DATA {
@@ -24625,6 +25376,14 @@ impl Default for _ACTIVATION_CONTEXT_STACK {
 }
 pub type ACTIVATION_CONTEXT_STACK = _ACTIVATION_CONTEXT_STACK;
 pub type PACTIVATION_CONTEXT_STACK = *mut _ACTIVATION_CONTEXT_STACK;
+pub type PRTL_USER_PROCESS_PARAMETERS = *mut _RTL_USER_PROCESS_PARAMETERS;
+pub type PSILO_USER_SHARED_DATA = *mut _SILO_USER_SHARED_DATA;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _LEAP_SECOND_DATA {
+   _unused: [u8; 0],
+}
+pub type PLEAP_SECOND_DATA = *mut _LEAP_SECOND_DATA;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _API_SET_NAMESPACE {
@@ -24963,7 +25722,7 @@ pub struct _PEB {
    pub UnicodeCaseTableData: PVOID,
    pub NumberOfProcessors: ULONG,
    pub NtGlobalFlag: ULONG,
-   pub CriticalSectionTimeout: ULARGE_INTEGER,
+   pub CriticalSectionTimeout: LARGE_INTEGER,
    pub HeapSegmentReserve: SIZE_T,
    pub HeapSegmentCommit: SIZE_T,
    pub HeapDeCommitTotalFreeThreshold: SIZE_T,
@@ -25548,7 +26307,7 @@ pub type PGDI_TEB_BATCH = *mut _GDI_TEB_BATCH;
 #[derive(Debug, Copy, Clone)]
 pub struct _TEB_ACTIVE_FRAME_CONTEXT {
    pub Flags: ULONG,
-   pub FrameName: PSTR,
+   pub FrameName: PCSTR,
 }
 impl Default for _TEB_ACTIVE_FRAME_CONTEXT {
    fn default() -> Self {
@@ -25565,7 +26324,7 @@ pub type PTEB_ACTIVE_FRAME_CONTEXT = *mut _TEB_ACTIVE_FRAME_CONTEXT;
 #[derive(Debug, Copy, Clone)]
 pub struct _TEB_ACTIVE_FRAME_CONTEXT_EX {
    pub BasicContext: TEB_ACTIVE_FRAME_CONTEXT,
-   pub SourceLocation: PSTR,
+   pub SourceLocation: PCSTR,
 }
 impl Default for _TEB_ACTIVE_FRAME_CONTEXT_EX {
    fn default() -> Self {
@@ -25613,6 +26372,7 @@ impl Default for _TEB_ACTIVE_FRAME_EX {
 }
 pub type TEB_ACTIVE_FRAME_EX = _TEB_ACTIVE_FRAME_EX;
 pub type PTEB_ACTIVE_FRAME_EX = *mut _TEB_ACTIVE_FRAME_EX;
+#[doc = " Thread Environment Block (TEB) structure.\n\n This structure contains information about the currently executing thread."]
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _TEB {
@@ -26059,6 +26819,7 @@ impl Default for _TEB {
       }
    }
 }
+#[doc = " Thread Environment Block (TEB) structure.\n\n This structure contains information about the currently executing thread."]
 pub type TEB = _TEB;
 #[repr(i32)]
 #[non_exhaustive]
@@ -26282,22 +27043,56 @@ pub type PPROCESS_BASIC_INFORMATION = *mut _PROCESS_BASIC_INFORMATION;
 #[derive(Copy, Clone)]
 pub struct _PROCESS_EXTENDED_BASIC_INFORMATION {
    pub Size: SIZE_T,
-   pub BasicInfo: PROCESS_BASIC_INFORMATION,
    pub __bindgen_anon_1: _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_1,
+   pub __bindgen_anon_2: _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_2,
 }
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_1 {
-   pub Flags: ULONG,
+   pub BasicInfo: PROCESS_BASIC_INFORMATION,
    pub __bindgen_anon_1: _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_1__bindgen_ty_1,
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
+#[derive(Debug, Copy, Clone)]
 pub struct _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_1__bindgen_ty_1 {
+   pub ExitStatus: NTSTATUS,
+   pub PebBaseAddress: PPEB,
+   pub AffinityMask: KAFFINITY,
+   pub BasePriority: KPRIORITY,
+   pub UniqueProcessId: HANDLE,
+   pub InheritedFromUniqueProcessId: HANDLE,
+}
+impl Default for _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_1__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+impl Default for _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_1 {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_2 {
+   pub Flags: ULONG,
+   pub __bindgen_anon_1: _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_2__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_2__bindgen_ty_1 {
    pub _bitfield_align_1: [u32; 0],
    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
 }
-impl _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_1__bindgen_ty_1 {
+impl _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_2__bindgen_ty_1 {
    #[inline]
    pub fn IsProtectedProcess(&self) -> ULONG {
       unsafe { ::core::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
@@ -26469,7 +27264,7 @@ impl _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_1__bindgen_ty_1 {
       __bindgen_bitfield_unit
    }
 }
-impl Default for _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_1 {
+impl Default for _PROCESS_EXTENDED_BASIC_INFORMATION__bindgen_ty_2 {
    fn default() -> Self {
       let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
       unsafe {
@@ -27216,9 +28011,9 @@ pub type PPROCESS_WINDOW_INFORMATION = *mut _PROCESS_WINDOW_INFORMATION;
 #[derive(Debug, Copy, Clone)]
 pub struct _PROCESS_HANDLE_TABLE_ENTRY_INFO {
    pub HandleValue: HANDLE,
-   pub HandleCount: ULONG_PTR,
-   pub PointerCount: ULONG_PTR,
-   pub GrantedAccess: ULONG,
+   pub HandleCount: SIZE_T,
+   pub PointerCount: SIZE_T,
+   pub GrantedAccess: ACCESS_MASK,
    pub ObjectTypeIndex: ULONG,
    pub HandleAttributes: ULONG,
    pub Reserved: ULONG,
@@ -27237,7 +28032,7 @@ pub type PPROCESS_HANDLE_TABLE_ENTRY_INFO = *mut _PROCESS_HANDLE_TABLE_ENTRY_INF
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _PROCESS_HANDLE_SNAPSHOT_INFORMATION {
-   pub NumberOfHandles: ULONG_PTR,
+   pub NumberOfHandles: SIZE_T,
    pub Reserved: ULONG_PTR,
    pub Handles: [PROCESS_HANDLE_TABLE_ENTRY_INFO; 1usize],
 }
@@ -28191,18 +28986,29 @@ impl _PROCESS_LOGGING_INFORMATION__bindgen_ty_1 {
       }
    }
    #[inline]
+   pub fn EnableImpersonationLogging(&self) -> ULONG {
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(6usize, 1u8) as u32) }
+   }
+   #[inline]
+   pub fn set_EnableImpersonationLogging(&mut self, val: ULONG) {
+      unsafe {
+         let val: u32 = ::core::mem::transmute(val);
+         self._bitfield_1.set(6usize, 1u8, val as u64)
+      }
+   }
+   #[inline]
    pub fn Reserved(&self) -> ULONG {
-      unsafe { ::core::mem::transmute(self._bitfield_1.get(6usize, 26u8) as u32) }
+      unsafe { ::core::mem::transmute(self._bitfield_1.get(7usize, 25u8) as u32) }
    }
    #[inline]
    pub fn set_Reserved(&mut self, val: ULONG) {
       unsafe {
          let val: u32 = ::core::mem::transmute(val);
-         self._bitfield_1.set(6usize, 26u8, val as u64)
+         self._bitfield_1.set(7usize, 25u8, val as u64)
       }
    }
    #[inline]
-   pub fn new_bitfield_1(EnableReadVmLogging: ULONG, EnableWriteVmLogging: ULONG, EnableProcessSuspendResumeLogging: ULONG, EnableThreadSuspendResumeLogging: ULONG, EnableLocalExecProtectVmLogging: ULONG, EnableRemoteExecProtectVmLogging: ULONG, Reserved: ULONG) -> __BindgenBitfieldUnit<[u8; 4usize]> {
+   pub fn new_bitfield_1(EnableReadVmLogging: ULONG, EnableWriteVmLogging: ULONG, EnableProcessSuspendResumeLogging: ULONG, EnableThreadSuspendResumeLogging: ULONG, EnableLocalExecProtectVmLogging: ULONG, EnableRemoteExecProtectVmLogging: ULONG, EnableImpersonationLogging: ULONG, Reserved: ULONG) -> __BindgenBitfieldUnit<[u8; 4usize]> {
       let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
       __bindgen_bitfield_unit.set(0usize, 1u8, {
          let EnableReadVmLogging: u32 = unsafe { ::core::mem::transmute(EnableReadVmLogging) };
@@ -28228,7 +29034,11 @@ impl _PROCESS_LOGGING_INFORMATION__bindgen_ty_1 {
          let EnableRemoteExecProtectVmLogging: u32 = unsafe { ::core::mem::transmute(EnableRemoteExecProtectVmLogging) };
          EnableRemoteExecProtectVmLogging as u64
       });
-      __bindgen_bitfield_unit.set(6usize, 26u8, {
+      __bindgen_bitfield_unit.set(6usize, 1u8, {
+         let EnableImpersonationLogging: u32 = unsafe { ::core::mem::transmute(EnableImpersonationLogging) };
+         EnableImpersonationLogging as u64
+      });
+      __bindgen_bitfield_unit.set(7usize, 25u8, {
          let Reserved: u32 = unsafe { ::core::mem::transmute(Reserved) };
          Reserved as u64
       });
@@ -28354,14 +29164,24 @@ impl Default for _THREAD_LAST_SYSCALL_INFORMATION {
 }
 pub type THREAD_LAST_SYSCALL_INFORMATION = _THREAD_LAST_SYSCALL_INFORMATION;
 pub type PTHREAD_LAST_SYSCALL_INFORMATION = *mut _THREAD_LAST_SYSCALL_INFORMATION;
+#[doc = " The THREAD_CYCLE_TIME_INFORMATION structure contains information about the cycle time of a thread."]
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _THREAD_CYCLE_TIME_INFORMATION {
    pub AccumulatedCycles: ULONGLONG,
    pub CurrentCycleCount: ULONGLONG,
 }
+#[doc = " The THREAD_CYCLE_TIME_INFORMATION structure contains information about the cycle time of a thread."]
 pub type THREAD_CYCLE_TIME_INFORMATION = _THREAD_CYCLE_TIME_INFORMATION;
+#[doc = " The THREAD_CYCLE_TIME_INFORMATION structure contains information about the cycle time of a thread."]
 pub type PTHREAD_CYCLE_TIME_INFORMATION = *mut _THREAD_CYCLE_TIME_INFORMATION;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _THREAD_LOCK_OWNERSHIP {
+   pub SrwLock: [ULONG; 1usize],
+}
+pub type THREAD_LOCK_OWNERSHIP = _THREAD_LOCK_OWNERSHIP;
+pub type PTHREAD_LOCK_OWNERSHIP = *mut _THREAD_LOCK_OWNERSHIP;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -28407,6 +29227,7 @@ impl Default for _THREAD_TEB_INFORMATION {
 }
 pub type THREAD_TEB_INFORMATION = _THREAD_TEB_INFORMATION;
 pub type PTHREAD_TEB_INFORMATION = *mut _THREAD_TEB_INFORMATION;
+#[doc = " The COUNTER_READING structure is used to store individual counter data from a hardware counter.\n\n \\sa https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-hardware_counter_data"]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _COUNTER_READING {
@@ -28424,8 +29245,11 @@ impl Default for _COUNTER_READING {
       }
    }
 }
+#[doc = " The COUNTER_READING structure is used to store individual counter data from a hardware counter.\n\n \\sa https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-hardware_counter_data"]
 pub type COUNTER_READING = _COUNTER_READING;
+#[doc = " The COUNTER_READING structure is used to store individual counter data from a hardware counter.\n\n \\sa https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-hardware_counter_data"]
 pub type PCOUNTER_READING = *mut _COUNTER_READING;
+#[doc = " The THREAD_PERFORMANCE_DATA structure aggregates various performance metrics for a thread.\n\n \\remarks https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-performance_data"]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _THREAD_PERFORMANCE_DATA {
@@ -28449,8 +29273,11 @@ impl Default for _THREAD_PERFORMANCE_DATA {
       }
    }
 }
+#[doc = " The THREAD_PERFORMANCE_DATA structure aggregates various performance metrics for a thread.\n\n \\remarks https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-performance_data"]
 pub type THREAD_PERFORMANCE_DATA = _THREAD_PERFORMANCE_DATA;
+#[doc = " The THREAD_PERFORMANCE_DATA structure aggregates various performance metrics for a thread.\n\n \\remarks https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-performance_data"]
 pub type PTHREAD_PERFORMANCE_DATA = *mut _THREAD_PERFORMANCE_DATA;
+#[doc = " The THREAD_PROFILING_INFORMATION structure contains profiling information and references to performance data.\n\n \\sa https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readthreadprofilingdata"]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _THREAD_PROFILING_INFORMATION {
@@ -28468,7 +29295,9 @@ impl Default for _THREAD_PROFILING_INFORMATION {
       }
    }
 }
+#[doc = " The THREAD_PROFILING_INFORMATION structure contains profiling information and references to performance data.\n\n \\sa https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readthreadprofilingdata"]
 pub type THREAD_PROFILING_INFORMATION = _THREAD_PROFILING_INFORMATION;
+#[doc = " The THREAD_PROFILING_INFORMATION structure contains profiling information and references to performance data.\n\n \\sa https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readthreadprofilingdata"]
 pub type PTHREAD_PROFILING_INFORMATION = *mut _THREAD_PROFILING_INFORMATION;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -28768,6 +29597,7 @@ impl Default for _THREAD_UMS_INFORMATION {
 }
 pub type THREAD_UMS_INFORMATION = _THREAD_UMS_INFORMATION;
 pub type PTHREAD_UMS_INFORMATION = *mut _THREAD_UMS_INFORMATION;
+#[doc = " The THREAD_NAME_INFORMATION structure assigns a description to a thread.\n\n \\remarks The handle must have THREAD_SET_LIMITED_INFORMATION access.\n \\remarks https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreaddescription"]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _THREAD_NAME_INFORMATION {
@@ -28782,7 +29612,9 @@ impl Default for _THREAD_NAME_INFORMATION {
       }
    }
 }
+#[doc = " The THREAD_NAME_INFORMATION structure assigns a description to a thread.\n\n \\remarks The handle must have THREAD_SET_LIMITED_INFORMATION access.\n \\remarks https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreaddescription"]
 pub type THREAD_NAME_INFORMATION = _THREAD_NAME_INFORMATION;
+#[doc = " The THREAD_NAME_INFORMATION structure assigns a description to a thread.\n\n \\remarks The handle must have THREAD_SET_LIMITED_INFORMATION access.\n \\remarks https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreaddescription"]
 pub type PTHREAD_NAME_INFORMATION = *mut _THREAD_NAME_INFORMATION;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
@@ -28914,7 +29746,7 @@ pub enum _THREAD_STATE_CHANGE_TYPE {
 }
 pub use self::_THREAD_STATE_CHANGE_TYPE as THREAD_STATE_CHANGE_TYPE;
 pub type PTHREAD_STATE_CHANGE_TYPE = *mut _THREAD_STATE_CHANGE_TYPE;
-#[doc = " A pointer to a function that serves as an APC routine.\n\n @param ApcArgument1 Optional. A pointer to the first argument to be passed to the APC routine.\n @param ApcArgument2 Optional. A pointer to the second argument to be passed to the APC routine.\n @param ApcArgument3 Optional. A pointer to the third argument to be passed to the APC routine.\n @return VOID This function does not return a value."]
+#[doc = " A pointer to a function that serves as an APC routine.\n\n @param ApcArgument1 Optional. A pointer to the first argument to be passed to the APC routine.\n @param ApcArgument2 Optional. A pointer to the second argument to be passed to the APC routine.\n @param ApcArgument3 Optional. A pointer to the third argument to be passed to the APC routine."]
 pub type PPS_APC_ROUTINE = ::core::option::Option<unsafe extern "stdcall" fn(ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID)>;
 #[doc = " The APC_CALLBACK_DATA_CONTEXT structure is used to pass information to the APC callback routine."]
 #[repr(C)]
@@ -28947,6 +29779,7 @@ pub struct _PROC_THREAD_ATTRIBUTE {
 }
 pub type PROC_THREAD_ATTRIBUTE = _PROC_THREAD_ATTRIBUTE;
 pub type PPROC_THREAD_ATTRIBUTE = *mut _PROC_THREAD_ATTRIBUTE;
+#[doc = " The PROC_THREAD_ATTRIBUTE_LIST structure contains the list of attributes for process and thread creation."]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _PROC_THREAD_ATTRIBUTE_LIST {
@@ -28966,6 +29799,7 @@ impl Default for _PROC_THREAD_ATTRIBUTE_LIST {
       }
    }
 }
+#[doc = " The PROC_THREAD_ATTRIBUTE_LIST structure contains the list of attributes for process and thread creation."]
 pub type PROC_THREAD_ATTRIBUTE_LIST = _PROC_THREAD_ATTRIBUTE_LIST;
 #[repr(i32)]
 #[non_exhaustive]
@@ -30435,26 +31269,6 @@ impl Default for _NTPSS_MEMORY_BULK_INFORMATION {
 pub type NTPSS_MEMORY_BULK_INFORMATION = _NTPSS_MEMORY_BULK_INFORMATION;
 #[doc = " The NTPSS_MEMORY_BULK_INFORMATION structure is used to query basic memory information in bulk for a process."]
 pub type PNTPSS_MEMORY_BULK_INFORMATION = *mut _NTPSS_MEMORY_BULK_INFORMATION;
-#[repr(i32)]
-#[non_exhaustive]
-#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
-pub enum _PNP_VETO_TYPE {
-   PNP_VetoTypeUnknown = 0,
-   PNP_VetoLegacyDevice = 1,
-   PNP_VetoPendingClose = 2,
-   PNP_VetoWindowsApp = 3,
-   PNP_VetoWindowsService = 4,
-   PNP_VetoOutstandingOpen = 5,
-   PNP_VetoDevice = 6,
-   PNP_VetoDriver = 7,
-   PNP_VetoIllegalDeviceRequest = 8,
-   PNP_VetoInsufficientPower = 9,
-   PNP_VetoNonDisableable = 10,
-   PNP_VetoLegacyDriver = 11,
-   PNP_VetoInsufficientRights = 12,
-   PNP_VetoAlreadyRemoved = 13,
-}
-pub use self::_PNP_VETO_TYPE as PNP_VETO_TYPE;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _DBGKM_EXCEPTION {
@@ -30686,7 +31500,7 @@ pub type PEXTENDED_CREATE_INFORMATION = *mut _EXTENDED_CREATE_INFORMATION;
 #[derive(Debug, Copy, Clone)]
 pub struct _EXTENDED_CREATE_INFORMATION_32 {
    pub ExtendedCreateFlags: LONGLONG,
-   pub EaBuffer: *mut c_void,
+   pub EaBuffer: *mut ::core::ffi::c_void,
    pub EaLength: ULONG,
 }
 impl Default for _EXTENDED_CREATE_INFORMATION_32 {
@@ -30840,6 +31654,7 @@ pub enum _FILE_INFORMATION_CLASS {
 }
 pub use self::_FILE_INFORMATION_CLASS as FILE_INFORMATION_CLASS;
 pub type PFILE_INFORMATION_CLASS = *mut _FILE_INFORMATION_CLASS;
+#[doc = " The FILE_BASIC_INFORMATION structure contains timestamps and basic attributes of a file.\n \\li If you specify a value of zero for any of the XxxTime members, the file system keeps a file's current value for that time.\n \\li If you specify a value of -1 for any of the XxxTime members, time stamp updates are disabled for I/O operations preformed on the file handle.\n \\li If you specify a value of -2 for any of the XxxTime members, time stamp updates are enabled for I/O operations preformed on the file handle.\n \\remarks To set the members of this structure, the caller must have FILE_WRITE_ATTRIBUTES access to the file."]
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _FILE_BASIC_INFORMATION {
@@ -30858,8 +31673,11 @@ impl Default for _FILE_BASIC_INFORMATION {
       }
    }
 }
+#[doc = " The FILE_BASIC_INFORMATION structure contains timestamps and basic attributes of a file.\n \\li If you specify a value of zero for any of the XxxTime members, the file system keeps a file's current value for that time.\n \\li If you specify a value of -1 for any of the XxxTime members, time stamp updates are disabled for I/O operations preformed on the file handle.\n \\li If you specify a value of -2 for any of the XxxTime members, time stamp updates are enabled for I/O operations preformed on the file handle.\n \\remarks To set the members of this structure, the caller must have FILE_WRITE_ATTRIBUTES access to the file."]
 pub type FILE_BASIC_INFORMATION = _FILE_BASIC_INFORMATION;
+#[doc = " The FILE_BASIC_INFORMATION structure contains timestamps and basic attributes of a file.\n \\li If you specify a value of zero for any of the XxxTime members, the file system keeps a file's current value for that time.\n \\li If you specify a value of -1 for any of the XxxTime members, time stamp updates are disabled for I/O operations preformed on the file handle.\n \\li If you specify a value of -2 for any of the XxxTime members, time stamp updates are enabled for I/O operations preformed on the file handle.\n \\remarks To set the members of this structure, the caller must have FILE_WRITE_ATTRIBUTES access to the file."]
 pub type PFILE_BASIC_INFORMATION = *mut _FILE_BASIC_INFORMATION;
+#[doc = " The FILE_STANDARD_INFORMATION structure contains standard information of a file.\n \\remarks EndOfFile specifies the byte offset to the end of the file.\n Because this value is zero-based, it actually refers to the first free byte in the file; that is, it is the offset to the byte immediately following the last valid byte in the file."]
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _FILE_STANDARD_INFORMATION {
@@ -30878,7 +31696,9 @@ impl Default for _FILE_STANDARD_INFORMATION {
       }
    }
 }
+#[doc = " The FILE_STANDARD_INFORMATION structure contains standard information of a file.\n \\remarks EndOfFile specifies the byte offset to the end of the file.\n Because this value is zero-based, it actually refers to the first free byte in the file; that is, it is the offset to the byte immediately following the last valid byte in the file."]
 pub type FILE_STANDARD_INFORMATION = _FILE_STANDARD_INFORMATION;
+#[doc = " The FILE_STANDARD_INFORMATION structure contains standard information of a file.\n \\remarks EndOfFile specifies the byte offset to the end of the file.\n Because this value is zero-based, it actually refers to the first free byte in the file; that is, it is the offset to the byte immediately following the last valid byte in the file."]
 pub type PFILE_STANDARD_INFORMATION = *mut _FILE_STANDARD_INFORMATION;
 #[repr(C)]
 #[derive(Copy, Clone)]
@@ -30910,7 +31730,7 @@ pub struct _FILE_INTERNAL_INFORMATION {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union _FILE_INTERNAL_INFORMATION__bindgen_ty_1 {
-   pub IndexNumber: LARGE_INTEGER,
+   pub IndexNumber: ULARGE_INTEGER,
    pub __bindgen_anon_1: _FILE_INTERNAL_INFORMATION__bindgen_ty_1__bindgen_ty_1,
 }
 #[repr(C)]
@@ -30921,29 +31741,29 @@ pub struct _FILE_INTERNAL_INFORMATION__bindgen_ty_1__bindgen_ty_1 {
 }
 impl _FILE_INTERNAL_INFORMATION__bindgen_ty_1__bindgen_ty_1 {
    #[inline]
-   pub fn MftRecordIndex(&self) -> LONGLONG {
+   pub fn MftRecordIndex(&self) -> ULONGLONG {
       unsafe { ::core::mem::transmute(self._bitfield_1.get(0usize, 48u8) as u64) }
    }
    #[inline]
-   pub fn set_MftRecordIndex(&mut self, val: LONGLONG) {
+   pub fn set_MftRecordIndex(&mut self, val: ULONGLONG) {
       unsafe {
          let val: u64 = ::core::mem::transmute(val);
          self._bitfield_1.set(0usize, 48u8, val as u64)
       }
    }
    #[inline]
-   pub fn SequenceNumber(&self) -> LONGLONG {
+   pub fn SequenceNumber(&self) -> ULONGLONG {
       unsafe { ::core::mem::transmute(self._bitfield_1.get(48usize, 16u8) as u64) }
    }
    #[inline]
-   pub fn set_SequenceNumber(&mut self, val: LONGLONG) {
+   pub fn set_SequenceNumber(&mut self, val: ULONGLONG) {
       unsafe {
          let val: u64 = ::core::mem::transmute(val);
          self._bitfield_1.set(48usize, 16u8, val as u64)
       }
    }
    #[inline]
-   pub fn new_bitfield_1(MftRecordIndex: LONGLONG, SequenceNumber: LONGLONG) -> __BindgenBitfieldUnit<[u8; 8usize]> {
+   pub fn new_bitfield_1(MftRecordIndex: ULONGLONG, SequenceNumber: ULONGLONG) -> __BindgenBitfieldUnit<[u8; 8usize]> {
       let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 8usize]> = Default::default();
       __bindgen_bitfield_unit.set(0usize, 48u8, {
          let MftRecordIndex: u64 = unsafe { ::core::mem::transmute(MftRecordIndex) };
@@ -31122,7 +31942,7 @@ pub type PFILE_COMPRESSION_INFORMATION = *mut _FILE_COMPRESSION_INFORMATION;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _FILE_DISPOSITION_INFORMATION {
-   pub DeleteFileA: BOOLEAN,
+   pub DeleteFileW: BOOLEAN,
 }
 pub type FILE_DISPOSITION_INFORMATION = _FILE_DISPOSITION_INFORMATION;
 pub type PFILE_DISPOSITION_INFORMATION = *mut _FILE_DISPOSITION_INFORMATION;
@@ -31531,12 +32351,15 @@ pub struct _FILE_PROCESS_IDS_USING_FILE_INFORMATION {
 }
 pub type FILE_PROCESS_IDS_USING_FILE_INFORMATION = _FILE_PROCESS_IDS_USING_FILE_INFORMATION;
 pub type PFILE_PROCESS_IDS_USING_FILE_INFORMATION = *mut _FILE_PROCESS_IDS_USING_FILE_INFORMATION;
+#[doc = " The FILE_IS_REMOTE_DEVICE_INFORMATION structure indicates whether the file system that contains the file is a remote file system."]
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _FILE_IS_REMOTE_DEVICE_INFORMATION {
    pub IsRemote: BOOLEAN,
 }
+#[doc = " The FILE_IS_REMOTE_DEVICE_INFORMATION structure indicates whether the file system that contains the file is a remote file system."]
 pub type FILE_IS_REMOTE_DEVICE_INFORMATION = _FILE_IS_REMOTE_DEVICE_INFORMATION;
+#[doc = " The FILE_IS_REMOTE_DEVICE_INFORMATION structure indicates whether the file system that contains the file is a remote file system."]
 pub type PFILE_IS_REMOTE_DEVICE_INFORMATION = *mut _FILE_IS_REMOTE_DEVICE_INFORMATION;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
@@ -31975,9 +32798,6 @@ impl Default for _FILE_STORAGE_RESERVE_ID_INFORMATION {
 }
 pub type FILE_STORAGE_RESERVE_ID_INFORMATION = _FILE_STORAGE_RESERVE_ID_INFORMATION;
 pub type PFILE_STORAGE_RESERVE_ID_INFORMATION = *mut _FILE_STORAGE_RESERVE_ID_INFORMATION;
-impl _FILE_KNOWN_FOLDER_TYPE {
-   pub const KnownFolderMax: _FILE_KNOWN_FOLDER_TYPE = _FILE_KNOWN_FOLDER_TYPE::KnownFolderOther;
-}
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -31990,6 +32810,7 @@ pub enum _FILE_KNOWN_FOLDER_TYPE {
    KnownFolderPictures = 5,
    KnownFolderVideos = 6,
    KnownFolderOther = 7,
+   KnownFolderMax = 8,
 }
 pub use self::_FILE_KNOWN_FOLDER_TYPE as FILE_KNOWN_FOLDER_TYPE;
 #[repr(C)]
@@ -32235,7 +33056,7 @@ pub type PFILE_ID_GLOBAL_TX_DIR_INFORMATION = *mut _FILE_ID_GLOBAL_TX_DIR_INFORM
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _FILE_OBJECTID_INFORMATION {
-   pub FileReference: LONGLONG,
+   pub FileReference: ULONGLONG,
    pub ObjectId: [UCHAR; 16usize],
    pub __bindgen_anon_1: _FILE_OBJECTID_INFORMATION__bindgen_ty_1,
 }
@@ -34107,8 +34928,8 @@ pub struct _ALPC_HANDLE_ATTR32 {
    pub Reserved1: ULONG,
    pub Handle: ULONG,
    pub ObjectType: ULONG,
-   pub DesiredAccess: ULONG,
-   pub GrantedAccess: ULONG,
+   pub DesiredAccess: ACCESS_MASK,
+   pub GrantedAccess: ACCESS_MASK,
 }
 pub type ALPC_HANDLE_ATTR32 = _ALPC_HANDLE_ATTR32;
 pub type PALPC_HANDLE_ATTR32 = *mut _ALPC_HANDLE_ATTR32;
@@ -35251,6 +36072,26 @@ pub type PSUPERFETCH_INFORMATION = *mut _SUPERFETCH_INFORMATION;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _PNP_VETO_TYPE {
+   PNP_VetoTypeUnknown = 0,
+   PNP_VetoLegacyDevice = 1,
+   PNP_VetoPendingClose = 2,
+   PNP_VetoWindowsApp = 3,
+   PNP_VetoWindowsService = 4,
+   PNP_VetoOutstandingOpen = 5,
+   PNP_VetoDevice = 6,
+   PNP_VetoDriver = 7,
+   PNP_VetoIllegalDeviceRequest = 8,
+   PNP_VetoInsufficientPower = 9,
+   PNP_VetoNonDisableable = 10,
+   PNP_VetoLegacyDriver = 11,
+   PNP_VetoInsufficientRights = 12,
+   PNP_VetoAlreadyRemoved = 13,
+}
+pub use self::_PNP_VETO_TYPE as PNP_VETO_TYPE;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _PLUGPLAY_EVENT_CATEGORY {
    HardwareProfileChangeEvent = 0,
    TargetDeviceChangeEvent = 1,
@@ -35529,7 +36370,7 @@ pub enum _POWER_STATE_DISABLED_TYPE {
    PoDisabledStateMaximum = 7,
 }
 pub use self::_POWER_STATE_DISABLED_TYPE as POWER_STATE_DISABLED_TYPE;
-pub use self::_POWER_STATE_DISABLED_TYPE as PPOWER_STATE_DISABLED_TYPE;
+pub type PPOWER_STATE_DISABLED_TYPE = *mut _POWER_STATE_DISABLED_TYPE;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _SYSTEM_POWER_STATE_DISABLE_REASON {
@@ -35928,7 +36769,7 @@ pub type PDIAGNOSTIC_BUFFER = *mut _DIAGNOSTIC_BUFFER;
 #[derive(Copy, Clone)]
 pub struct _WAKE_TIMER_INFO {
    pub OffsetToNext: SIZE_T,
-   pub DueTime: ULARGE_INTEGER,
+   pub DueTime: LARGE_INTEGER,
    pub Period: ULONG,
    pub ReasonContext: DIAGNOSTIC_BUFFER,
 }
@@ -36799,6 +37640,27 @@ pub struct _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT {
 }
 pub type POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT = _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT;
 pub type PPOWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT = *mut _POWER_INTERNAL_PROCESSOR_BRANDED_FREQUENCY_OUTPUT;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _PROCESSOR_IDLE_VETO {
+   pub Version: ULONG,
+   pub ProcessorNumber: PROCESSOR_NUMBER,
+   pub StateIndex: ULONG,
+   pub VetoReason: ULONG,
+   pub Increment: UCHAR,
+}
+pub type PROCESSOR_IDLE_VETO = _PROCESSOR_IDLE_VETO;
+pub type PPROCESSOR_IDLE_VETO = *mut _PROCESSOR_IDLE_VETO;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _PLATFORM_IDLE_VETO {
+   pub Version: ULONG,
+   pub StateIndex: ULONG,
+   pub VetoReason: ULONG,
+   pub Increment: UCHAR,
+}
+pub type PLATFORM_IDLE_VETO = _PLATFORM_IDLE_VETO;
+pub type PPLATFORM_IDLE_VETO = *mut _PLATFORM_IDLE_VETO;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _POWER_INTERNAL_BOOTAPP_DIAGNOSTIC {
@@ -40937,7 +41799,7 @@ pub struct _SYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE {
 pub type SYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE = _SYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE;
 pub type PSYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE = *mut _SYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE;
 pub type PRTL_RUN_ONCE_INIT_FN = ::core::option::Option<unsafe extern "stdcall" fn(arg1: PRTL_RUN_ONCE, arg2: PVOID, arg3: *mut PVOID) -> LOGICAL>;
-pub type PWNF_USER_CALLBACK = ::core::option::Option<unsafe extern "stdcall" fn(arg1: WNF_STATE_NAME, arg2: WNF_CHANGE_STAMP, arg3: PWNF_TYPE_ID, arg4: PVOID, arg5: *const c_void, arg6: ULONG) -> NTSTATUS>;
+pub type PWNF_USER_CALLBACK = ::core::option::Option<unsafe extern "stdcall" fn(arg1: WNF_STATE_NAME, arg2: WNF_CHANGE_STAMP, arg3: PWNF_TYPE_ID, arg4: PVOID, arg5: *const ::core::ffi::c_void, arg6: ULONG) -> NTSTATUS>;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _IMAGE_DEBUG_POGO_ENTRY {
@@ -45349,6 +46211,26 @@ pub enum _VDMSERVICECLASS {
 }
 pub use self::_VDMSERVICECLASS as VDMSERVICECLASS;
 pub type PVDMSERVICECLASS = *mut _VDMSERVICECLASS;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _SECURE_SETTING_VALUE_TYPE {
+   SecureSettingValueTypeBoolean = 0,
+   SecureSettingValueTypeUlong = 1,
+   SecureSettingValueTypeBinary = 2,
+   SecureSettingValueTypeString = 3,
+   SecureSettingValueTypeUnknown = 4,
+}
+pub use self::_SECURE_SETTING_VALUE_TYPE as SECURE_SETTING_VALUE_TYPE;
+pub type PSECURE_SETTING_VALUE_TYPE = *mut _SECURE_SETTING_VALUE_TYPE;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _PROCESS_ACTIVITY_TYPE {
+   ProcessActivityTypeAudio = 0,
+   ProcessActivityTypeMax = 1,
+}
+pub use self::_PROCESS_ACTIVITY_TYPE as PROCESS_ACTIVITY_TYPE;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _WMI_TRACE_PACKET {
@@ -46264,7 +47146,7 @@ pub struct _WMI_THREAD_INFORMATION {
 }
 pub type WMI_THREAD_INFORMATION = _WMI_THREAD_INFORMATION;
 pub type PWMI_THREAD_INFORMATION = *mut _WMI_THREAD_INFORMATION;
-pub type SCHAR = c_schar;
+pub type SCHAR = ::core::ffi::c_schar;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _WMI_EXTENDED_THREAD_INFORMATION {
@@ -49755,7 +50637,7 @@ pub type PPERFINFO_SESSIONCREATE_INFORMATION = *mut _PERFINFO_SESSIONCREATE_INFO
 pub struct _PERFINFO_PAGE_RANGE_IDENTITY {
    pub __bindgen_anon_1: _PERFINFO_PAGE_RANGE_IDENTITY__bindgen_ty_1,
    pub __bindgen_anon_2: _PERFINFO_PAGE_RANGE_IDENTITY__bindgen_ty_2,
-   pub PageCount: ULONG_PTR,
+   pub PageCount: SIZE_T,
 }
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
@@ -49857,7 +50739,7 @@ pub struct _PERFINFO_KERNELMEMORY_RANGE_USAGE {
    pub _bitfield_align_1: [u32; 0],
    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
    pub VirtualAddress: PVOID,
-   pub PageCount: ULONG_PTR,
+   pub PageCount: SIZE_T,
 }
 impl Default for _PERFINFO_KERNELMEMORY_RANGE_USAGE {
    fn default() -> Self {
@@ -50516,7 +51398,7 @@ pub type PPERFINFO_SYSCALL_EXIT_DATA = *mut _PERFINFO_SYSCALL_EXIT_DATA;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_MARK_INFORMATION {
-   pub Name: [c_char; 1usize],
+   pub Name: [::core::ffi::c_char; 1usize],
 }
 pub type PERFINFO_MARK_INFORMATION = _PERFINFO_MARK_INFORMATION;
 pub type PPERFINFO_MARK_INFORMATION = *mut _PERFINFO_MARK_INFORMATION;
@@ -50651,24 +51533,24 @@ pub type PPERFINFO_FLT_OPERATION_STATUS = *mut _PERFINFO_FLT_OPERATION_STATUS;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_MEMORY_INFORMATION {
-   pub ZeroPageCount: ULONG_PTR,
-   pub FreePageCount: ULONG_PTR,
-   pub ModifiedPageCount: ULONG_PTR,
-   pub ModifiedNoWritePageCount: ULONG_PTR,
-   pub BadPageCount: ULONG_PTR,
-   pub PageCountByPriority: [ULONG_PTR; 8usize],
-   pub RepurposedPagesByPriority: [ULONG_PTR; 8usize],
-   pub ModifiedPageCountPageFile: ULONG_PTR,
+   pub ZeroPageCount: SIZE_T,
+   pub FreePageCount: SIZE_T,
+   pub ModifiedPageCount: SIZE_T,
+   pub ModifiedNoWritePageCount: SIZE_T,
+   pub BadPageCount: SIZE_T,
+   pub PageCountByPriority: [SIZE_T; 8usize],
+   pub RepurposedPagesByPriority: [SIZE_T; 8usize],
+   pub ModifiedPageCountPageFile: SIZE_T,
 }
 pub type PERFINFO_MEMORY_INFORMATION = _PERFINFO_MEMORY_INFORMATION;
 pub type PPERFINFO_MEMORY_INFORMATION = *mut _PERFINFO_MEMORY_INFORMATION;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_SYSTEM_MEMORY_INFORMATION {
-   pub PagedPoolCommitPageCount: ULONG_PTR,
-   pub NonPagedPoolPageCount: ULONG_PTR,
-   pub MdlPageCount: ULONG_PTR,
-   pub CommitPageCount: ULONG_PTR,
+   pub PagedPoolCommitPageCount: SIZE_T,
+   pub NonPagedPoolPageCount: SIZE_T,
+   pub MdlPageCount: SIZE_T,
+   pub CommitPageCount: SIZE_T,
 }
 pub type PERFINFO_SYSTEM_MEMORY_INFORMATION = _PERFINFO_SYSTEM_MEMORY_INFORMATION;
 pub type PPERFINFO_SYSTEM_MEMORY_INFORMATION = *mut _PERFINFO_SYSTEM_MEMORY_INFORMATION;
@@ -50676,14 +51558,14 @@ pub type PPERFINFO_SYSTEM_MEMORY_INFORMATION = *mut _PERFINFO_SYSTEM_MEMORY_INFO
 #[derive(Copy, Clone)]
 pub struct _PERFINFO_WORKINGSET_ENTRY {
    pub __bindgen_anon_1: _PERFINFO_WORKINGSET_ENTRY__bindgen_ty_1,
-   pub WorkingSetPageCount: ULONG_PTR,
-   pub CommitPageCount: ULONG_PTR,
+   pub WorkingSetPageCount: SIZE_T,
+   pub CommitPageCount: SIZE_T,
    pub __bindgen_anon_2: _PERFINFO_WORKINGSET_ENTRY__bindgen_ty_2,
-   pub PrivateWorkingSetPageCount: ULONG_PTR,
-   pub StoreSizeInPages: ULONG_PTR,
-   pub StoredPageCount: ULONG_PTR,
-   pub CommitDebtInPages: ULONG_PTR,
-   pub SharedCommitInPages: ULONG_PTR,
+   pub PrivateWorkingSetPageCount: SIZE_T,
+   pub StoreSizeInPages: SIZE_T,
+   pub StoredPageCount: SIZE_T,
+   pub CommitDebtInPages: SIZE_T,
+   pub SharedCommitInPages: SIZE_T,
 }
 #[repr(C, packed)]
 #[derive(Copy, Clone)]
@@ -50703,8 +51585,8 @@ impl Default for _PERFINFO_WORKINGSET_ENTRY__bindgen_ty_1 {
 #[repr(C, packed)]
 #[derive(Copy, Clone)]
 pub union _PERFINFO_WORKINGSET_ENTRY__bindgen_ty_2 {
-   pub PagedPoolPageCount: ULONG_PTR,
-   pub VirtualSizeInPages: ULONG_PTR,
+   pub PagedPoolPageCount: SIZE_T,
+   pub VirtualSizeInPages: SIZE_T,
 }
 impl Default for _PERFINFO_WORKINGSET_ENTRY__bindgen_ty_2 {
    fn default() -> Self {
@@ -51588,6 +52470,56 @@ impl Default for _TELEMETRY_COVERAGE_POINT {
 }
 pub type TELEMETRY_COVERAGE_POINT = _TELEMETRY_COVERAGE_POINT;
 pub type PTELEMETRY_COVERAGE_POINT = *mut _TELEMETRY_COVERAGE_POINT;
+pub type PNOTIFICATIONCALLBACK = ::core::option::Option<unsafe extern "stdcall" fn(arg1: PWNODE_HEADER, arg2: ULONG_PTR)>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _MOFRESOURCEINFOA {
+   pub ImagePath: PSTR,
+   pub ResourceName: PSTR,
+   pub ResourceSize: ULONG,
+   pub ResourceBuffer: PUCHAR,
+}
+impl Default for _MOFRESOURCEINFOA {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type MOFRESOURCEINFOA = _MOFRESOURCEINFOA;
+pub type PMOFRESOURCEINFOA = *mut _MOFRESOURCEINFOA;
+pub type MOFRESOURCEINFO = _MOFRESOURCEINFOW;
+pub type PMOFRESOURCEINFO = *mut _MOFRESOURCEINFOW;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _MOFRESOURCEINFOW {
+   pub ImagePath: LPWSTR,
+   pub ResourceName: LPWSTR,
+   pub ResourceSize: ULONG,
+   pub ResourceBuffer: PUCHAR,
+}
+impl Default for _MOFRESOURCEINFOW {
+   fn default() -> Self {
+      let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+      unsafe {
+         ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+         s.assume_init()
+      }
+   }
+}
+pub type MOFRESOURCEINFOW = _MOFRESOURCEINFOW;
+pub type PMOFRESOURCEINFOW = *mut _MOFRESOURCEINFOW;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct _WMIGUIDINFORMATION {
+   pub Size: ULONG,
+   pub IsExpensive: BOOLEAN,
+   pub IsEventOnly: BOOLEAN,
+}
+pub type WMIGUIDINFORMATION = _WMIGUIDINFORMATION;
+pub type PWMIGUIDINFORMATION = *mut _WMIGUIDINFORMATION;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -51856,6 +52788,7 @@ pub type PKERNEL_CALLBACK_TABLE = *mut _KERNEL_CALLBACK_TABLE;
 pub struct _DYNAMIC_FUNCTION_TABLE {
    pub _address: u8,
 }
+#[cfg(feature="native_fn")]
 extern "C" {
    pub static GUID_NULL: GUID;
    pub static mut NlsAnsiCodePage: USHORT;
@@ -51863,6 +52796,7 @@ extern "C" {
    pub static mut NlsMbOemCodePageTag: BOOLEAN;
    pub static mut LdrSystemDllInitBlock: PS_SYSTEM_DLL_INIT_BLOCK;
    pub static mut RtlpScpCfgNtdllExports: RTL_SCPCFG_NTDLL_EXPORTS;
+   pub static mut LdrpChildNtdll: BOOLEAN;
    pub fn NtGetTickCount64() -> ULONGLONG;
    pub fn NtGetTickCount() -> ULONG;
    pub static GUID_BAD_MEMORY_GROUP: GUID;
@@ -51887,9 +52821,21 @@ extern "C" {
    pub static GUID_WINDOWS_SETUP_PCAT: GUID;
    pub static GUID_WINDOWS_SETUP_RAMDISK_OPTIONS: GUID;
    pub static GUID_WINDOWS_SETUP_BOOT_ENTRY: GUID;
+   pub static GUID_VHD_BOOT_OPTIONS: GUID;
+   pub static PARTITION_BASIC_DATA_GUID: GUID;
+   pub static PARTITION_CLUSTER_GUID: GUID;
+   pub static PARTITION_ENTRY_UNUSED_GUID: GUID;
+   pub static PARTITION_LDM_DATA_GUID: GUID;
+   pub static PARTITION_LDM_METADATA_GUID: GUID;
+   pub static PARTITION_MSFT_RECOVERY_GUID: GUID;
+   pub static PARTITION_MSFT_RESERVED_GUID: GUID;
+   pub static PARTITION_MSFT_SNAPSHOT_GUID: GUID;
+   pub static PARTITION_SPACES_GUID: GUID;
+   pub static PARTITION_SYSTEM_GUID: GUID;
    pub static mut __ImageBase: IMAGE_DOS_HEADER;
-   pub fn DbgPrint(Format: PCSTR, ...) -> ULONG;
-   pub fn DbgPrintEx(ComponentId: ULONG, Level: ULONG, Format: PCSTR, ...) -> ULONG;
+   pub fn DbgPrint(Format: PCCH, ...) -> ULONG;
+   pub fn DbgPrintEx(ComponentId: ULONG, Level: ULONG, Format: PCCH, ...) -> ULONG;
+   pub fn DbgPrintReturnControlC(Format: PCCH, ...) -> ULONG;
    #[doc = " Creates a registry transaction.\n\n @param RegistryTransactionHandle Pointer to a variable to receive the handle.\n @param DesiredAccess Desired access mask.\n @param ObjAttributes Optional pointer to object attributes.\n @param CreateOptions Reserved for future use.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateRegistryTransaction(RegistryTransactionHandle: *mut HANDLE, DesiredAccess: ACCESS_MASK, ObjAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG) -> NTSTATUS;
    #[doc = " Opens a registry transaction.\n\n @param RegistryTransactionHandle Pointer to a variable to receive the handle.\n @param DesiredAccess Desired access mask.\n @param ObjAttributes Pointer to object attributes.\n @return NTSTATUS Successful or errant status."]
@@ -51931,6 +52877,7 @@ extern "C" {
    pub fn RtlIsZeroLuid(L1: PLUID) -> BOOLEAN;
    pub fn RtlCheckBit(BitMapHeader: PRTL_BITMAP, BitPosition: ULONG) -> BOOLEAN;
    pub fn RtlInitializeSidEx(Sid: PSID, IdentifierAuthority: PSID_IDENTIFIER_AUTHORITY, SubAuthorityCount: UCHAR, ...) -> NTSTATUS;
+   pub fn RtlRestoreContext(ContextRecord: PCONTEXT, ExceptionRecord: *mut _EXCEPTION_RECORD);
    pub fn UStr32ToUStr(Destination: PUNICODE_STRING, Source: PUNICODE_STRING32);
    pub fn UStrToUStr32(Destination: PUNICODE_STRING32, Source: PUNICODE_STRING);
    pub fn PerfIsGroupOnInGroupMask(Group: ULONG, GroupMask: PPERFINFO_GROUPMASK) -> BOOLEAN;
@@ -51939,6 +52886,14 @@ extern "C" {
    pub static AuditLoggerGuid: GUID;
    pub static SecurityProviderGuid: GUID;
    pub static PrivateLoggerSecurityGuid: GUID;
+   pub static GlobalLoggerGuid: GUID;
+   pub static GenericMessageGuid: GUID;
+   pub static TraceErrorGuid: GUID;
+   pub static HardFaultGuid: GUID;
+   pub static WmiEventLoggerGuid: GUID;
+   pub static DbgPrintGuid: GUID;
+   pub static DriverVerifierGuid: GUID;
+   pub static ApplicationVerifierGuid: GUID;
    pub static JobGuid: GUID;
    pub static EventTraceSpare1: GUID;
    pub static WnfGuid: GUID;
@@ -51955,6 +52910,7 @@ extern "C" {
    pub static ALPCGuid: GUID;
    pub static RTLostEventsGuid: GUID;
    pub static NtdllTraceGuid: GUID;
+   pub static UserLoaderGuid: GUID;
    pub static LoadMUIDllGuid: GUID;
    pub static ObjectGuid: GUID;
    pub static ModBoundGuid: GUID;
@@ -51973,6 +52929,8 @@ extern "C" {
    pub static SessionNotificationGuid: GUID;
    pub static CcGuid: GUID;
    pub static NullGuid: GUID;
+   pub static UserDiagnosticGuid: GUID;
+   pub static WerSvcTriggerGuid: GUID;
    pub static FileIoGuid: GUID;
    pub static ImageLoadGuid: GUID;
    pub static PageFaultGuid: GUID;
@@ -51980,8 +52938,11 @@ extern "C" {
    pub static TcpIpGuid: GUID;
    pub static ThreadGuid: GUID;
    pub static UdpIpGuid: GUID;
+   pub static GUID_REGISTRATION_CHANGE_NOTIFICATION: GUID;
+   pub static GUID_MOF_RESOURCE_ADDED_NOTIFICATION: GUID;
+   pub static GUID_MOF_RESOURCE_REMOVED_NOTIFICATION: GUID;
 }
-#[cfg(feature = "native_fn")]
+#[cfg(feature="native_fn")]
 extern "stdcall" {
    pub fn NtCallbackReturn(OutputBuffer: PVOID, OutputLength: ULONG, Status: NTSTATUS) -> NTSTATUS;
    pub fn NtFlushProcessWriteBuffers() -> NTSTATUS;
@@ -52062,7 +53023,7 @@ extern "stdcall" {
    #[doc = " The LdrControlFlowGuardEnforcedWithExportSuppression function checks if Control Flow Guard is\n enforced with export suppression.\n\n @return BOOLEAN TRUE if Control Flow Guard is enforced, FALSE otherwise."]
    pub fn LdrControlFlowGuardEnforcedWithExportSuppression() -> BOOLEAN;
    pub fn LdrIsModuleSxsRedirected(DllHandle: PVOID) -> BOOLEAN;
-   pub fn LdrUpdatePackageSearchPath(SearchPathA: PCWSTR) -> NTSTATUS;
+   pub fn LdrUpdatePackageSearchPath(SearchPathW: PCWSTR) -> NTSTATUS;
    pub fn LdrCreateEnclave(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, Reserved: ULONG, Size: SIZE_T, InitialCommitment: SIZE_T, EnclaveType: ULONG, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
    pub fn LdrInitializeEnclave(ProcessHandle: HANDLE, BaseAddress: PVOID, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
    pub fn LdrDeleteEnclave(BaseAddress: PVOID) -> NTSTATUS;
@@ -52071,11 +53032,19 @@ extern "stdcall" {
    #[doc = " This function forcefully terminates the calling program if it is invoked inside a loader callout. Otherwise, it has no effect.\n\n @remarks This routine does not catch all potential deadlock cases; it is possible for a thread inside a loader callout\n to acquire a lock while some thread outside a loader callout holds the same lock and makes a call into the loader.\n In other words, there can be a lock order inversion between the loader lock and a client lock."]
    pub fn LdrFastFailInLoaderCallout();
    pub fn LdrFlushAlternateResourceModules() -> BOOLEAN;
+   pub fn LdrDllRedirectionCallback(Flags: ULONG, DllName: PCWSTR, DllPath: PCWSTR, DllCharacteristics: PULONG, CallbackData: PVOID, EffectiveDllPath: *mut PCWSTR) -> NTSTATUS;
+   pub fn LdrSetDllManifestProber(Routine: PVOID);
+   pub fn LdrpResGetMappingSize(BaseAddress: PVOID, Size: PSIZE_T, Flags: ULONG, GetFileSizeFromLoadAsDataTable: BOOLEAN);
+   #[doc = " The NtDelayExecution routine suspends the current thread until the specified condition is met.\n\n @param Alertable The function returns when either the time-out period has elapsed or when the APC function is called.\n @param DelayInterval The time interval for which execution is to be suspended, in milliseconds.\n - A value of zero causes the thread to relinquish the remainder of its time slice to any other thread that is ready to run.\n - If there are no other threads ready to run, the function returns immediately, and the thread continues execution.\n - A value of INFINITE indicates that the suspension should not time out.\n @return NTSTATUS Successful or errant status. The return value is STATUS_USER_APC when Alertable is TRUE, and the function returned due to one or more I/O completion callback functions.\n @remarks Note that a ready thread is not guaranteed to run immediately. Consequently, the thread will not run until some arbitrary time after the sleep interval elapses,\n based upon the system \"tick\" frequency and the load factor from other processes.\n @see https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-sleepex"]
    pub fn NtDelayExecution(Alertable: BOOLEAN, DelayInterval: PLARGE_INTEGER) -> NTSTATUS;
+   #[doc = " Retrieves the value of the specified firmware environment variable.\n The user account that the app is running under must have the SE_SYSTEM_ENVIRONMENT_NAME privilege.\n\n @param VariableName The name of the firmware environment variable. The pointer must not be NULL.\n @param VariableValue A pointer to a buffer that receives the value of the specified firmware environment variable.\n @param ValueLength The size of the \\c VariableValue buffer, in bytes.\n @param ReturnLength If the function succeeds, the return length is the number of bytes stored in the \\c VariableValue buffer.\n @return NTSTATUS Successful or errant status."]
    pub fn NtQuerySystemEnvironmentValue(VariableName: PUNICODE_STRING, VariableValue: PWSTR, ValueLength: USHORT, ReturnLength: PUSHORT) -> NTSTATUS;
+   #[doc = " Retrieves the value of the specified firmware environment variable and its attributes.\n The user account that the app is running under must have the SE_SYSTEM_ENVIRONMENT_NAME privilege.\n\n @param VariableName The name of the firmware environment variable. The pointer must not be NULL.\n @param VendorGuid The GUID that represents the namespace of the firmware environment variable.\n @param Buffer A pointer to a buffer that receives the value of the specified firmware environment variable.\n @param BufferLength The size of the \\c Buffer, in bytes.\n @param Attributes Bitmask identifying UEFI variable attributes associated with the variable.\n @return NTSTATUS Successful or errant status."]
+   pub fn NtQuerySystemEnvironmentValueEx(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Buffer: PVOID, BufferLength: PULONG, Attributes: PULONG) -> NTSTATUS;
+   #[doc = " Sets the value of the specified firmware environment variable.\n The user account that the app is running under must have the SE_SYSTEM_ENVIRONMENT_NAME privilege.\n\n @param VariableName The name of the firmware environment variable. The pointer must not be NULL.\n @param VariableValue A pointer to the new value for the firmware environment variable.\n If this parameter is zero, the firmware environment variable is deleted.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetSystemEnvironmentValue(VariableName: PUNICODE_STRING, VariableValue: PUNICODE_STRING) -> NTSTATUS;
-   pub fn NtQuerySystemEnvironmentValueEx(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Value: PVOID, ValueLength: PULONG, Attributes: PULONG) -> NTSTATUS;
-   pub fn NtSetSystemEnvironmentValueEx(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Value: PVOID, ValueLength: ULONG, Attributes: ULONG) -> NTSTATUS;
+   #[doc = " Sets the value of the specified firmware environment variable and the attributes that indicate how this variable is stored and maintained.\n The user account that the app is running under must have the SE_SYSTEM_ENVIRONMENT_NAME privilege.\n\n @param VariableName The name of the firmware environment variable. The pointer must not be NULL.\n @param VendorGuid The GUID that represents the namespace of the firmware environment variable.\n @param Buffer A pointer to the new value for the firmware environment variable.\n @param BufferLength The size of the pValue buffer, in bytes.\n Unless the VARIABLE_ATTRIBUTE_APPEND_WRITE, VARIABLE_ATTRIBUTE_AUTHENTICATED_WRITE_ACCESS,\n or VARIABLE_ATTRIBUTE_TIME_BASED_AUTHENTICATED_WRITE_ACCESS variable attribute is set via dwAttributes,\n setting this value to zero will result in the deletion of this variable.\n @param Attributes Bitmask to set UEFI variable attributes associated with the variable.\n @return NTSTATUS Successful or errant status."]
+   pub fn NtSetSystemEnvironmentValueEx(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Buffer: PVOID, BufferLength: ULONG, Attributes: ULONG) -> NTSTATUS;
    pub fn NtEnumerateSystemEnvironmentValuesEx(InformationClass: ULONG, Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
    pub fn NtAddBootEntry(BootEntry: PBOOT_ENTRY, Id: PULONG) -> NTSTATUS;
    pub fn NtDeleteBootEntry(Id: ULONG) -> NTSTATUS;
@@ -52093,14 +53062,23 @@ extern "stdcall" {
    pub fn NtQueryDriverEntryOrder(Ids: PULONG, Count: PULONG) -> NTSTATUS;
    pub fn NtSetDriverEntryOrder(Ids: PULONG, Count: ULONG) -> NTSTATUS;
    pub fn NtFilterBootOption(FilterOperation: FILTER_BOOT_OPTION_OPERATION, ObjectType: ULONG, ElementType: ULONG, Data: PVOID, DataSize: ULONG) -> NTSTATUS;
+   #[doc = " The NtCreateEvent routine creates an event object, sets the initial state of the event to the specified value,\n and opens a handle to the object with the specified desired access.\n\n @param EventHandle A pointer to a variable that receives the event object handle.\n @param DesiredAccess The access mask that specifies the requested access to the event object.\n @param ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @param EventType The type of the event, which can be SynchronizationEvent or a NotificationEvent.\n @param InitialState The initial state of the event object.\n @return NTSTATUS Successful or errant status.\n @see https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwcreateevent"]
    pub fn NtCreateEvent(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EventType: EVENT_TYPE, InitialState: BOOLEAN) -> NTSTATUS;
+   #[doc = " The NtOpenEvent routine opens a handle to an existing event object.\n\n @param EventHandle A pointer to a variable that receives the event object handle.\n @param DesiredAccess The access mask that specifies the requested access to the event object.\n @param ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the object attributes.\n @return NTSTATUS Successful or errant status."]
    pub fn NtOpenEvent(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   #[doc = " The NtSetEvent routine sets an event object to the signaled state.\n\n @param EventHandle A handle to the event object.\n @param PreviousState A pointer to a variable that receives the previous state of the event object.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetEvent(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+   #[doc = " The NtSetEventEx routine sets an event object to the signaled state and optionally acquires a lock.\n\n @param ThreadId A handle to the thread.\n @param Lock A pointer to an RTL_SRWLOCK structure that specifies the lock to acquire.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetEventEx(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
+   #[doc = " The NtSetEventBoostPriority routine sets an event object to the signaled state and boosts the priority of threads waiting on the event.\n\n @param EventHandle A handle to the event object.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetEventBoostPriority(EventHandle: HANDLE) -> NTSTATUS;
+   #[doc = " The NtClearEvent routine sets an event object to the not-signaled state.\n\n @param EventHandle A handle to the event object.\n @return NTSTATUS Successful or errant status."]
    pub fn NtClearEvent(EventHandle: HANDLE) -> NTSTATUS;
+   #[doc = " The NtResetEvent routine sets an event object to the not-signaled state and optionally returns the previous state.\n\n @param EventHandle A handle to the event object.\n @param PreviousState A pointer to a variable that receives the previous state of the event object.\n @return NTSTATUS Successful or errant status.\n @see https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-resetevent"]
    pub fn NtResetEvent(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+   #[doc = " The NtPulseEvent routine sets an event object to the signaled state and then resets it to the not-signaled state after releasing the appropriate number of waiting threads.\n\n @param EventHandle A handle to the event object.\n @param PreviousState A pointer to a variable that receives the previous state of the event object.\n @return NTSTATUS Successful or errant status.\n @see https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-pulseevent"]
    pub fn NtPulseEvent(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+   #[doc = " The NtQueryEvent routine retrieves information about an event object.\n\n @param EventHandle A handle to the event object.\n @param EventInformationClass The type of information to be retrieved.\n @param EventInformation A pointer to a buffer that receives the requested information.\n @param EventInformationLength The size of the buffer pointed to by EventInformation.\n @param ReturnLength A pointer to a variable that receives the size of the data returned in the buffer.\n @return NTSTATUS Successful or errant status."]
    pub fn NtQueryEvent(EventHandle: HANDLE, EventInformationClass: EVENT_INFORMATION_CLASS, EventInformation: PVOID, EventInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn NtCreateEventPair(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn NtOpenEventPair(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
@@ -52142,10 +53120,10 @@ extern "stdcall" {
    pub fn NtUmsThreadYield(SchedulerParam: PVOID) -> NTSTATUS;
    pub fn NtCreateWnfStateName(StateName: PWNF_STATE_NAME, NameLifetime: WNF_STATE_NAME_LIFETIME, DataScope: WNF_DATA_SCOPE, PersistData: BOOLEAN, TypeId: PCWNF_TYPE_ID, MaximumStateSize: ULONG, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
    pub fn NtDeleteWnfStateName(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-   pub fn NtUpdateWnfStateData(StateName: PCWNF_STATE_NAME, Buffer: *const c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
-   pub fn NtDeleteWnfStateData(StateName: PCWNF_STATE_NAME, ExplicitScope: *const c_void) -> NTSTATUS;
-   pub fn NtQueryWnfStateData(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-   pub fn NtQueryWnfStateNameInformation(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
+   pub fn NtUpdateWnfStateData(StateName: PCWNF_STATE_NAME, Buffer: *const ::core::ffi::c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const ::core::ffi::c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
+   pub fn NtDeleteWnfStateData(StateName: PCWNF_STATE_NAME, ExplicitScope: *const ::core::ffi::c_void) -> NTSTATUS;
+   pub fn NtQueryWnfStateData(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const ::core::ffi::c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+   pub fn NtQueryWnfStateNameInformation(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const ::core::ffi::c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
    pub fn NtSubscribeWnfStateChange(StateName: PCWNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, EventMask: ULONG, SubscriptionId: PULONG64) -> NTSTATUS;
    pub fn NtUnsubscribeWnfStateChange(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
    pub fn NtGetCompleteWnfStateSubscription(OldDescriptorStateName: PWNF_STATE_NAME, OldSubscriptionId: *mut ULONG64, OldDescriptorEventMask: ULONG, OldDescriptorStatus: ULONG, NewDeliveryDescriptor: PWNF_DELIVERY_DESCRIPTOR, DescriptorSize: ULONG) -> NTSTATUS;
@@ -52157,13 +53135,17 @@ extern "stdcall" {
    pub fn NtReleaseWorkerFactoryWorker(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
    pub fn NtWorkerFactoryWorkerReady(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
    pub fn NtWaitForWorkViaWorkerFactory(WorkerFactoryHandle: HANDLE, MiniPackets: PFILE_IO_COMPLETION_INFORMATION, Count: ULONG, PacketsReturned: PULONG, DeferredWork: PWORKER_FACTORY_DEFERRED_WORK) -> NTSTATUS;
+   #[doc = " The NtQuerySystemTime routine obtains the current system time.\n\n @param SystemTime A pointer to a LARGE_INTEGER structure that receives the system time. This is a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 (UTC).\n @return NTSTATUS Successful or errant status.\n @see https://learn.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntquerysystemtime"]
    pub fn NtQuerySystemTime(SystemTime: PLARGE_INTEGER) -> NTSTATUS;
+   #[doc = " The NtSetSystemTime routine sets the current system time and date. The system time is expressed in Coordinated Universal Time (UTC).\n\n @param SystemTime A pointer to a LARGE_INTEGER structure that that contains the new system date and time.\n @param PreviousTime A pointer to a LARGE_INTEGER structure that that contains the previous system time.\n @return NTSTATUS Successful or errant status.\n @remarks The calling process must have the SE_SYSTEMTIME_NAME privilege.\n @see https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-setsystemtime"]
    pub fn NtSetSystemTime(SystemTime: PLARGE_INTEGER, PreviousTime: PLARGE_INTEGER) -> NTSTATUS;
+   #[doc = " The NtQueryTimerResolution routine retrieves the range and current value of the system interrupt timer.\n\n @param MaximumTime The maximum timer resolution, in 100-nanosecond units.\n @param MinimumTime The minimum timer resolution, in 100-nanosecond units.\n @param CurrentTime The current timer resolution, in 100-nanosecond units.\n @return NTSTATUS Successful or errant status."]
    pub fn NtQueryTimerResolution(MaximumTime: PULONG, MinimumTime: PULONG, CurrentTime: PULONG) -> NTSTATUS;
+   #[doc = " The NtSetTimerResolution routine sets the system interrupt timer resolution to the specified value.\n\n @param DesiredTime The desired timer resolution, in 100-nanosecond units.\n @param SetResolution If TRUE, the timer resolution is set to the value specified by DesiredTime. If FALSE, the timer resolution is reset to the default value.\n @param ActualTime The actual timer resolution, in 100-nanosecond units.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetTimerResolution(DesiredTime: ULONG, SetResolution: BOOLEAN, ActualTime: PULONG) -> NTSTATUS;
    pub fn NtQueryPerformanceCounter(PerformanceCounter: PLARGE_INTEGER, PerformanceFrequency: PLARGE_INTEGER) -> NTSTATUS;
-   pub fn NtQueryAuxiliaryCounterFrequency(AuxiliaryCounterFrequency: PLARGE_INTEGER) -> NTSTATUS;
-   pub fn NtConvertBetweenAuxiliaryCounterAndPerformanceCounter(ConvertAuxiliaryToPerformanceCounter: BOOLEAN, PerformanceOrAuxiliaryCounterValue: PLARGE_INTEGER, ConvertedValue: PLARGE_INTEGER, ConversionError: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn NtQueryAuxiliaryCounterFrequency(AuxiliaryCounterFrequency: PULONG64) -> NTSTATUS;
+   pub fn NtConvertBetweenAuxiliaryCounterAndPerformanceCounter(ConvertAuxiliaryToPerformanceCounter: BOOLEAN, PerformanceOrAuxiliaryCounterValue: PULONG64, ConvertedValue: PULONG64, ConversionError: PULONG64) -> NTSTATUS;
    pub fn NtAllocateLocallyUniqueId(Luid: PLUID) -> NTSTATUS;
    pub fn NtSetUuidSeed(Seed: PCHAR) -> NTSTATUS;
    pub fn NtAllocateUuids(Time: PULARGE_INTEGER, Range: PULONG, Sequence: PULONG, Seed: PCHAR) -> NTSTATUS;
@@ -52183,9 +53165,9 @@ extern "stdcall" {
    pub fn NtGetNlsSectionPtr(SectionType: ULONG, SectionData: ULONG, ContextData: PVOID, SectionPointer: *mut PVOID, SectionSize: PULONG) -> NTSTATUS;
    pub fn NtMapCMFModule(What: ULONG, Index: ULONG, CacheIndexOut: PULONG, CacheFlagsOut: PULONG, ViewSizeOut: PULONG, BaseAddress: *mut PVOID) -> NTSTATUS;
    pub fn NtGetMUIRegistryInfo(Flags: ULONG, DataSize: PULONG, Data: PVOID) -> NTSTATUS;
-   pub fn NtAddAtom(AtomName: PWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
-   pub fn NtAddAtomEx(AtomName: PWSTR, Length: ULONG, Atom: PRTL_ATOM, Flags: ULONG) -> NTSTATUS;
-   pub fn NtFindAtom(AtomName: PWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
+   pub fn NtAddAtom(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
+   pub fn NtAddAtomEx(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM, Flags: ULONG) -> NTSTATUS;
+   pub fn NtFindAtom(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
    pub fn NtDeleteAtom(Atom: RTL_ATOM) -> NTSTATUS;
    pub fn NtQueryInformationAtom(Atom: RTL_ATOM, AtomInformationClass: ATOM_INFORMATION_CLASS, AtomInformation: PVOID, AtomInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn NtQueryLicenseValue(ValueName: PUNICODE_STRING, Type: PULONG, Data: PVOID, DataSize: ULONG, ResultDataSize: PULONG) -> NTSTATUS;
@@ -52200,27 +53182,27 @@ extern "stdcall" {
    #[doc = " Retrieves the file name for the BCD.\n\n @param BcdSystemStorePath The pointer to receive the system store path.\n @return NTSTATUS Successful or errant status."]
    pub fn BcdGetSystemStorePath(BcdSystemStorePath: *mut PWSTR) -> NTSTATUS;
    #[doc = " Sets the device for the system BCD store.\n\n @param SystemPartition The system partition to set.\n @return NTSTATUS Successful or errant status."]
-   pub fn BcdSetSystemStoreDevice(SystemPartition: UNICODE_STRING) -> NTSTATUS;
+   pub fn BcdSetSystemStoreDevice(SystemPartition: PCUNICODE_STRING) -> NTSTATUS;
    #[doc = " Opens the BCD system store.\n\n @param BcdStoreHandle The handle to receive the system store.\n @return NTSTATUS Successful or errant status."]
    pub fn BcdOpenSystemStore(BcdStoreHandle: PHANDLE) -> NTSTATUS;
    #[doc = " Opens a BCD store from a file.\n\n @param BcdFilePath The file path of the BCD store.\n @param BcdStoreHandle The handle to receive the BCD store.\n @return NTSTATUS Successful or errant status."]
-   pub fn BcdOpenStoreFromFile(BcdFilePath: UNICODE_STRING, BcdStoreHandle: PHANDLE) -> NTSTATUS;
+   pub fn BcdOpenStoreFromFile(BcdFilePath: PCUNICODE_STRING, BcdStoreHandle: PHANDLE) -> NTSTATUS;
    #[doc = " Creates a BCD store.\n\n @param BcdFilePath The file path to create the BCD store.\n @param BcdStoreHandle The handle to receive the BCD store.\n @return NTSTATUS Successful or errant status."]
-   pub fn BcdCreateStore(BcdFilePath: UNICODE_STRING, BcdStoreHandle: PHANDLE) -> NTSTATUS;
+   pub fn BcdCreateStore(BcdFilePath: PCUNICODE_STRING, BcdStoreHandle: PHANDLE) -> NTSTATUS;
    #[doc = " Exports the BCD store to a file.\n\n @param BcdFilePath The file path to export the BCD store.\n @return NTSTATUS Successful or errant status."]
-   pub fn BcdExportStore(BcdFilePath: UNICODE_STRING) -> NTSTATUS;
+   pub fn BcdExportStore(BcdFilePath: PCUNICODE_STRING) -> NTSTATUS;
    #[doc = " Exports the BCD store to a file with additional flags.\n\n @param BcdStoreHandle The handle to the BCD store.\n @param Flags The flags for exporting the store.\n @param BcdFilePath The file path to export the BCD store.\n @return NTSTATUS Successful or errant status."]
-   pub fn BcdExportStoreEx(BcdStoreHandle: HANDLE, Flags: ULONG, BcdFilePath: UNICODE_STRING) -> NTSTATUS;
+   pub fn BcdExportStoreEx(BcdStoreHandle: HANDLE, Flags: ULONG, BcdFilePath: PCUNICODE_STRING) -> NTSTATUS;
    #[doc = " Imports a BCD store from a file.\n\n @param BcdFilePath The file path to import the BCD store.\n @return NTSTATUS Successful or errant status."]
-   pub fn BcdImportStore(BcdFilePath: UNICODE_STRING) -> NTSTATUS;
+   pub fn BcdImportStore(BcdFilePath: PCUNICODE_STRING) -> NTSTATUS;
    #[doc = " Imports a BCD store from a file with additional flags.\n\n @param BcdFilePath The file path to import the BCD store.\n @param BcdImportFlags The flags for importing the store.\n @return NTSTATUS Successful or errant status."]
-   pub fn BcdImportStoreWithFlags(BcdFilePath: UNICODE_STRING, BcdImportFlags: BCD_IMPORT_FLAGS) -> NTSTATUS;
+   pub fn BcdImportStoreWithFlags(BcdFilePath: PCUNICODE_STRING, BcdImportFlags: BCD_IMPORT_FLAGS) -> NTSTATUS;
    #[doc = " Deletes object references in the BCD store.\n\n @param BcdStoreHandle The handle to the BCD store.\n @param Identifier The identifier of the object to delete references for.\n @return NTSTATUS Successful or errant status."]
    pub fn BcdDeleteObjectReferences(BcdStoreHandle: HANDLE, Identifier: PGUID) -> NTSTATUS;
    #[doc = " Deletes the system store for BCD.\n\n @return NTSTATUS Successful or errant status."]
    pub fn BcdDeleteSystemStore() -> NTSTATUS;
    #[doc = " Opens a BCD store with additional flags.\n\n @param BcdFilePath The file path of the BCD store.\n @param BcdOpenFlags The flags for opening the store.\n @param BcdStoreHandle The handle to receive the BCD store.\n @return NTSTATUS Successful or errant status."]
-   pub fn BcdOpenStore(BcdFilePath: UNICODE_STRING, BcdOpenFlags: BCD_OPEN_FLAGS, BcdStoreHandle: PHANDLE) -> NTSTATUS;
+   pub fn BcdOpenStore(BcdFilePath: PCUNICODE_STRING, BcdOpenFlags: BCD_OPEN_FLAGS, BcdStoreHandle: PHANDLE) -> NTSTATUS;
    #[doc = " Closes a BCD store.\n\n @param BcdStoreHandle The handle to the BCD store.\n @return NTSTATUS Successful or errant status."]
    pub fn BcdCloseStore(BcdStoreHandle: HANDLE) -> NTSTATUS;
    #[doc = " Flushes a BCD store.\n\n @param BcdStoreHandle The handle to the BCD store.\n @return NTSTATUS Successful or errant status."]
@@ -52250,13 +53232,16 @@ extern "stdcall" {
    pub fn NtAllocateVirtualMemory(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, RegionSize: PSIZE_T, AllocationType: ULONG, Protect: ULONG) -> NTSTATUS;
    pub fn NtAllocateVirtualMemoryEx(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
    pub fn NtFreeVirtualMemory(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, FreeType: ULONG) -> NTSTATUS;
-   pub fn NtReadVirtualMemory(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
-   pub fn NtReadVirtualMemoryEx(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T, Flags: ULONG) -> NTSTATUS;
-   pub fn NtWriteVirtualMemory(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
+   pub fn NtReadVirtualMemory(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, NumberOfBytesToRead: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
+   pub fn NtWow64ReadVirtualMemory64(ProcessHandle: HANDLE, BaseAddress: ULONGLONG, Buffer: PVOID, NumberOfBytesToRead: ULONGLONG, NumberOfBytesRead: PULONGLONG) -> NTSTATUS;
+   pub fn NtReadVirtualMemoryEx(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, NumberOfBytesToRead: SIZE_T, NumberOfBytesRead: PSIZE_T, Flags: ULONG) -> NTSTATUS;
+   pub fn NtWriteVirtualMemory(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, NumberOfBytesToWrite: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
+   pub fn NtWow64WriteVirtualMemory64(ProcessHandle: HANDLE, BaseAddress: ULONGLONG, Buffer: PVOID, NumberOfBytesToWrite: ULONGLONG, NumberOfBytesWritten: PULONGLONG) -> NTSTATUS;
    pub fn NtProtectVirtualMemory(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, NewProtect: ULONG, OldProtect: PULONG) -> NTSTATUS;
    pub fn NtQueryVirtualMemory(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+   pub fn NtWow64QueryVirtualMemory64(ProcessHandle: HANDLE, BaseAddress: ULONGLONG, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: ULONGLONG, ReturnLength: PULONGLONG) -> NTSTATUS;
    pub fn NtFlushVirtualMemory(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, IoStatus: PIO_STATUS_BLOCK) -> NTSTATUS;
-   pub fn NtSetInformationVirtualMemory(ProcessHandle: HANDLE, VmInformationClass: VIRTUAL_MEMORY_INFORMATION_CLASS, NumberOfEntries: ULONG_PTR, VirtualAddresses: PMEMORY_RANGE_ENTRY, VmInformation: PVOID, VmInformationLength: ULONG) -> NTSTATUS;
+   pub fn NtSetInformationVirtualMemory(ProcessHandle: HANDLE, VmInformationClass: VIRTUAL_MEMORY_INFORMATION_CLASS, NumberOfEntries: SIZE_T, VirtualAddresses: PMEMORY_RANGE_ENTRY, VmInformation: PVOID, VmInformationLength: ULONG) -> NTSTATUS;
    pub fn NtLockVirtualMemory(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
    pub fn NtUnlockVirtualMemory(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
    pub fn NtCreateSection(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE) -> NTSTATUS;
@@ -52272,9 +53257,9 @@ extern "stdcall" {
    pub fn NtCreatePartition(ParentPartitionHandle: HANDLE, PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, PreferredNode: ULONG) -> NTSTATUS;
    pub fn NtOpenPartition(PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn NtManagePartition(TargetHandle: HANDLE, SourceHandle: HANDLE, PartitionInformationClass: PARTITION_INFORMATION_CLASS, PartitionInformation: PVOID, PartitionInformationLength: ULONG) -> NTSTATUS;
-   pub fn NtMapUserPhysicalPages(VirtualAddress: PVOID, NumberOfPages: ULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-   pub fn NtMapUserPhysicalPagesScatter(VirtualAddresses: *mut PVOID, NumberOfPages: ULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-   pub fn NtAllocateUserPhysicalPages(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+   pub fn NtMapUserPhysicalPages(VirtualAddress: PVOID, NumberOfPages: SIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+   pub fn NtMapUserPhysicalPagesScatter(VirtualAddresses: *mut PVOID, NumberOfPages: SIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+   pub fn NtAllocateUserPhysicalPages(ProcessHandle: HANDLE, NumberOfPages: PSIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
    pub fn NtAllocateUserPhysicalPagesEx(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
    pub fn NtFreeUserPhysicalPages(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
    pub fn NtGetWriteWatch(ProcessHandle: HANDLE, Flags: ULONG, BaseAddress: PVOID, RegionSize: SIZE_T, UserAddressArray: *mut PVOID, EntriesInUserAddressArray: PULONG_PTR, Granularity: PULONG) -> NTSTATUS;
@@ -52312,29 +53297,44 @@ extern "stdcall" {
    pub fn NtQuerySymbolicLinkObject(LinkHandle: HANDLE, LinkTarget: PUNICODE_STRING, ReturnedLength: PULONG) -> NTSTATUS;
    pub fn NtSetInformationSymbolicLink(LinkHandle: HANDLE, SymbolicLinkInformationClass: SYMBOLIC_LINK_INFO_CLASS, SymbolicLinkInformation: PVOID, SymbolicLinkInformationLength: ULONG) -> NTSTATUS;
    pub fn NtQueryPortInformationProcess() -> NTSTATUS;
+   #[doc = " Creates a new process.\n\n @param ProcessHandle A pointer to a handle that receives the process object handle.\n @param DesiredAccess The access rights desired for the process object.\n @param ObjectAttributes Optional. A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new process.\n @param ParentProcess A handle to the parent process.\n @param InheritObjectTable If TRUE, the new process inherits the object table of the parent process.\n @param SectionHandle Optional. A handle to a section object to be used for the new process.\n @param DebugPort Optional. A handle to a debug port to be used for the new process.\n @param TokenHandle Optional. A handle to an access token to be used for the new process.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateProcess(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, InheritObjectTable: BOOLEAN, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE) -> NTSTATUS;
+   #[doc = " Creates a new process with extended options.\n\n @param ProcessHandle A pointer to a handle that receives the process object handle.\n @param DesiredAccess The access rights desired for the process object.\n @param ObjectAttributes Optional. A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new process.\n @param ParentProcess A handle to the parent process.\n @param Flags Flags that control the creation of the process. These flags are defined as PROCESS_CREATE_FLAGS_*.\n @param SectionHandle Optional. A handle to a section object to be used for the new process.\n @param DebugPort Optional. A handle to a debug port to be used for the new process.\n @param TokenHandle Optional. A handle to an access token to be used for the new process.\n @param Reserved Reserved for future use. Must be zero.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateProcessEx(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, Flags: ULONG, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE, Reserved: ULONG) -> NTSTATUS;
+   #[doc = " Opens an existing process object.\n\n @param ProcessHandle A pointer to a handle that receives the process object handle.\n @param DesiredAccess The access rights desired for the process object.\n @param ObjectAttributes A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new process.\n @param ClientId Optional. A pointer to a CLIENT_ID structure that specifies the client ID of the process to be opened.\n @return NTSTATUS Successful or errant status."]
    pub fn NtOpenProcess(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
+   #[doc = " Terminates the specified process.\n\n @param ProcessHandle Optional. A handle to the process to be terminated. If this parameter is NULL, the calling process is terminated.\n @param ExitStatus The exit status to be used by the process and the process's termination status.\n @return NTSTATUS Successful or errant status."]
    pub fn NtTerminateProcess(ProcessHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+   #[doc = " Suspends the specified process.\n\n @param ProcessHandle A handle to the process to be suspended.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSuspendProcess(ProcessHandle: HANDLE) -> NTSTATUS;
+   #[doc = " Resumes the specified process.\n\n @param ProcessHandle A handle to the process to be resumed.\n @return NTSTATUS Successful or errant status."]
    pub fn NtResumeProcess(ProcessHandle: HANDLE) -> NTSTATUS;
    #[doc = " Retrieves information about the specified process.\n\n @param ProcessHandle A handle to the process.\n @param ProcessInformationClass The type of process information to be retrieved.\n @param ProcessInformation A pointer to a buffer that receives the process information.\n @param ProcessInformationLength The size of the buffer pointed to by the ProcessInformation parameter.\n @param ReturnLength An optional pointer to a variable that receives the size of the data returned.\n @return NTSTATUS Successful or errant status."]
    pub fn NtQueryInformationProcess(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-   #[doc = " Retrieves a handle to the next process in the system.\n\n @param ProcessHandle An optional handle to the current process.\n @param DesiredAccess The access rights desired for the new process handle.\n @param HandleAttributes The attributes for the new process handle.\n @param Flags Flags that modify the behavior of the function.\n @param NewProcessHandle A pointer to a variable that receives the handle to the next process.\n @return NTSTATUS Successful or errant status."]
+   pub fn NtWow64QueryInformationProcess64(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+   #[doc = " Retrieves a handle to the next process in the system.\n\n @param ProcessHandle An optional handle to a process. If this parameter is NULL, the function retrieves the first process in the system.\n @param DesiredAccess The access rights desired for the new process handle.\n @param HandleAttributes The attributes for the new process handle.\n @param Flags Flags that modify the behavior of the function. This can be a combination of the following flags:\n - PROCESS_GET_NEXT_FLAGS_PREVIOUS_PROCESS (0x00000001): Retrieve the previous process in the system.\n @param NewProcessHandle A pointer to a variable that receives the handle to the next process.\n @return NTSTATUS Successful or errant status."]
    pub fn NtGetNextProcess(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewProcessHandle: PHANDLE) -> NTSTATUS;
+   #[doc = " Retrieves a handle to the next thread in the system.\n\n @param ProcessHandle A handle to the process for enumerateration of threads.\n @param ThreadHandle An optional handle to a thread. If this parameter is NULL, the function retrieves the first thread in the process.\n @param DesiredAccess The access rights desired for the new process handle.\n @param HandleAttributes The attributes for the new process handle.\n @param Flags Flags that modify the behavior of the function. This can be a combination of the following flags:\n - THREAD_GET_NEXT_FLAGS_PREVIOUS_THREAD (0x00000001): Retrieve the previous thread in the process.\n @param NewProcessHandle A pointer to a variable that receives the handle to the next process.\n @return NTSTATUS Successful or errant status."]
    pub fn NtGetNextThread(ProcessHandle: HANDLE, ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewThreadHandle: PHANDLE) -> NTSTATUS;
    #[doc = " Sets information for the specified process.\n\n @param ProcessHandle A handle to the process.\n @param ProcessInformationClass The type of process information to be set.\n @param ProcessInformation A pointer to a buffer that contains the process information.\n @param ProcessInformationLength The size of the buffer pointed to by the ProcessInformation parameter.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetInformationProcess(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG) -> NTSTATUS;
+   #[doc = " Creates a state change handle for changing the suspension state of a process.\n\n @param ProcessStateChangeHandle A pointer to a variable that receives the handle.\n @param DesiredAccess The access rights desired for the handle.\n @param ObjectAttributes Optional attributes for the handle.\n @param ProcessHandle A handle to the process.\n @param Reserved Reserved for future use.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateProcessStateChange(ProcessStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
    #[doc = " Changes the suspension state of a process.\n\n @param ProcessStateChangeHandle A handle to the process state change object.\n @param ProcessHandle A handle to the process.\n @param StateChangeType The type of state change.\n @param ExtendedInformation Optional extended information.\n @param ExtendedInformationLength The length of the extended information.\n @param Reserved Reserved for future use.\n @return NTSTATUS Successful or errant status."]
    pub fn NtChangeProcessState(ProcessStateChangeHandle: HANDLE, ProcessHandle: HANDLE, StateChangeType: PROCESS_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
-   #[doc = " Creates a state change handle for changing the suspension state of a process.\n\n @param ProcessStateChangeHandle A pointer to a variable that receives the handle.\n @param DesiredAccess The access rights desired for the handle.\n @param ObjectAttributes Optional attributes for the handle.\n @param ProcessHandle A handle to the process.\n @param Reserved Reserved for future use.\n @return NTSTATUS Successful or errant status."]
+   #[doc = " Creates a state change handle for changing the suspension state of a thread.\n\n @param ThreadStateChangeHandle A pointer to a variable that receives the handle.\n @param DesiredAccess The access rights desired for the handle.\n @param ObjectAttributes Optional attributes for the handle.\n @param ThreadHandle A handle to the thread.\n @param Reserved Reserved for future use.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateThreadStateChange(ThreadStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
+   #[doc = " Changes the suspension state of a thread.\n\n @param ThreadStateChangeHandle A handle to the thread state change object.\n @param ThreadHandle A handle to the thread.\n @param StateChangeType The type of state change.\n @param ExtendedInformation Optional extended information.\n @param ExtendedInformationLength The length of the extended information.\n @param Reserved Reserved for future use.\n @return NTSTATUS Successful or errant status."]
    pub fn NtChangeThreadState(ThreadStateChangeHandle: HANDLE, ThreadHandle: HANDLE, StateChangeType: THREAD_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
+   #[doc = " Creates a new thread in the specified process.\n\n @param ThreadHandle A pointer to a handle that receives the thread object handle.\n @param DesiredAccess The access rights desired for the thread object.\n @param ObjectAttributes Optional. A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new thread.\n @param ProcessHandle A handle to the process in which the thread is to be created.\n @param ClientId A pointer to a CLIENT_ID structure that receives the client ID of the new thread.\n @param ThreadContext A pointer to a CONTEXT structure that specifies the initial context of the new thread.\n @param InitialTeb A pointer to an INITIAL_TEB structure that specifies the initial stack limits of the new thread.\n @param CreateSuspended If TRUE, the thread is created in a suspended state.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateThread(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, ClientId: PCLIENT_ID, ThreadContext: PCONTEXT, InitialTeb: PINITIAL_TEB, CreateSuspended: BOOLEAN) -> NTSTATUS;
+   #[doc = " Opens an existing thread object.\n\n @param ThreadHandle A pointer to a handle that receives the thread object handle.\n @param DesiredAccess The access rights desired for the thread object.\n @param ObjectAttributes Optional. A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new thread.\n @param ClientId Optional. A pointer to a CLIENT_ID structure that specifies the client ID of the thread to be opened.\n @return NTSTATUS Successful or errant status."]
    pub fn NtOpenThread(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
+   #[doc = " Terminates the specified thread.\n\n @param ThreadHandle Optional. A handle to the thread to be terminated. If this parameter is NULL, the calling thread is terminated.\n @param ExitStatus The exit status to be used by the thread and the thread's termination status.\n @return NTSTATUS Successful or errant status."]
    pub fn NtTerminateThread(ThreadHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+   #[doc = " Suspends the specified thread.\n\n @param ThreadHandle A handle to the thread to be suspended.\n @param PreviousSuspendCount Optional. A pointer to a variable that receives the thread's previous suspend count.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSuspendThread(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
+   #[doc = " Resumes the specified thread.\n\n @param ThreadHandle A handle to the thread to be resumed.\n @param PreviousSuspendCount Optional. A pointer to a variable that receives the thread's previous suspend count.\n @return NTSTATUS Successful or errant status."]
    pub fn NtResumeThread(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
    #[doc = " Retrieves the number of the current processor.\n\n @return ULONG The number of the current processor."]
    pub fn NtGetCurrentProcessorNumber() -> ULONG;
@@ -52344,20 +53344,29 @@ extern "stdcall" {
    pub fn NtGetContextThread(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
    #[doc = " Sets the context of the specified thread.\n\n @param ThreadHandle A handle to the thread.\n @param ThreadContext A pointer to a CONTEXT structure that specifies the thread context.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetContextThread(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
+   #[doc = " Retrieves information about the specified thread.\n\n @param ThreadHandle A handle to the thread.\n @param ThreadInformationClass The type of thread information to be retrieved.\n @param ThreadInformation A pointer to a buffer that receives the thread information.\n @param ThreadInformationLength The size of the buffer pointed to by the ThreadInformation parameter.\n @param ReturnLength An optional pointer to a variable that receives the size of the data returned.\n @return NTSTATUS Successful or errant status."]
    pub fn NtQueryInformationThread(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+   #[doc = " Sets information for the specified thread.\n\n @param ThreadHandle A handle to the thread.\n @param ThreadInformationClass The type of thread information to be set.\n @param ThreadInformation A pointer to a buffer that contains the thread information.\n @param ThreadInformationLength The size of the buffer pointed to by the ThreadInformation parameter.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetInformationThread(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG) -> NTSTATUS;
+   #[doc = " Sends an alert to the specified thread.\n\n @param ThreadHandle A handle to the thread to be alerted.\n @return NTSTATUS Successful or errant status."]
    pub fn NtAlertThread(ThreadHandle: HANDLE) -> NTSTATUS;
+   #[doc = " Resumes a thread that was previously suspended and sends an alert to it.\n\n @param ThreadHandle A handle to the thread to be resumed and alerted.\n @param PreviousSuspendCount An optional pointer to a variable that receives the thread's previous suspend count.\n @return NTSTATUS Successful or errant status."]
    pub fn NtAlertResumeThread(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
+   #[doc = " Tests whether the current thread has an alert pending.\n\n @return NTSTATUS Successful or errant status."]
    pub fn NtTestAlert() -> NTSTATUS;
    #[doc = " Sends an alert to the specified thread.\n\n @param ThreadId The thread ID of the thread to be alerted.\n @return NTSTATUS Successful or errant status."]
    pub fn NtAlertThreadByThreadId(ThreadId: HANDLE) -> NTSTATUS;
    pub fn NtAlertThreadByThreadIdEx(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
+   pub fn NtAlertMultipleThreadByThreadId(MultipleThreadId: PHANDLE, Count: ULONG, Boost: PVOID, BoostCount: ULONG) -> NTSTATUS;
    #[doc = " Waits for an alert to be delivered to the specified thread.\n\n @param Address The address to wait for an alert on.\n @param Timeout The timeout value for waiting, or NULL for no timeout.\n @return NTSTATUS Successful or errant status."]
    pub fn NtWaitForAlertByThreadId(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+   #[doc = " Impersonates a client thread.\n\n @param ServerThreadHandle A handle to the server thread.\n @param ClientThreadHandle A handle to the client thread.\n @param SecurityQos A pointer to a SECURITY_QUALITY_OF_SERVICE structure that specifies the impersonation level and context tracking mode.\n @return NTSTATUS Successful or errant status."]
    pub fn NtImpersonateThread(ServerThreadHandle: HANDLE, ClientThreadHandle: HANDLE, SecurityQos: PSECURITY_QUALITY_OF_SERVICE) -> NTSTATUS;
+   #[doc = " Registers a thread termination port.\n\n @param PortHandle A handle to the port to be registered.\n @return NTSTATUS Successful or errant status."]
    pub fn NtRegisterThreadTerminatePort(PortHandle: HANDLE) -> NTSTATUS;
+   #[doc = " Sets LDT (Local Descriptor Table) entries.\n\n @param Selector0 The first selector.\n @param Entry0Low The low part of the first entry.\n @param Entry0Hi The high part of the first entry.\n @param Selector1 The second selector.\n @param Entry1Low The low part of the second entry.\n @param Entry1Hi The high part of the second entry.\n @return NTSTATUS Successful or errant status."]
    pub fn NtSetLdtEntries(Selector0: ULONG, Entry0Low: ULONG, Entry0Hi: ULONG, Selector1: ULONG, Entry1Low: ULONG, Entry1Hi: ULONG) -> NTSTATUS;
-   #[doc = " Dispatches the Asynchronous Procedure Call (APC) from the NtQueueApc* functions to the specified routine.\n\n @param ApcRoutine A pointer to the APC routine to be executed.\n @param Parameter Optional. A pointer to a parameter to be passed to the APC routine.\n @param ActxContext Optional. A handle to an activation context.\n @return VOID This function does not return a value."]
+   #[doc = " Dispatches the Asynchronous Procedure Call (APC) from the NtQueueApc* functions to the specified routine.\n\n @param ApcRoutine A pointer to the APC routine to be executed.\n @param Parameter Optional. A pointer to a parameter to be passed to the APC routine.\n @param ActxContext Optional. A handle to an activation context."]
    pub fn RtlDispatchAPC(ApcRoutine: PAPCFUNC, Parameter: PVOID, ActxContext: HANDLE);
    #[doc = " Queues an APC (Asynchronous Procedure Call) to a thread.\n\n @param ThreadHandle Handle to the thread to which the APC is to be queued.\n @param ApcRoutine A pointer to the RtlDispatchAPC function or custom APC routine to be executed.\n @param ApcArgument1 Optional first argument to be passed to the APC routine.\n @param ApcArgument2 Optional second argument to be passed to the APC routine.\n @param ApcArgument3 Optional third argument to be passed to the APC routine.\n @return NTSTATUS Successful or errant status.\n @remarks The APC will be executed in the context of the specified thread when the thread enters an alertable wait state or when any\n process calls the NtTestAlert, NtAlertThread, NtAlertResumeThread or NtAlertThreadByThreadId functions."]
    pub fn NtQueueApcThread(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
@@ -52369,13 +53378,21 @@ extern "stdcall" {
    pub fn NtCreateUserProcess(ProcessHandle: PHANDLE, ThreadHandle: PHANDLE, ProcessDesiredAccess: ACCESS_MASK, ThreadDesiredAccess: ACCESS_MASK, ProcessObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessFlags: ULONG, ThreadFlags: ULONG, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, CreateInfo: PPS_CREATE_INFO, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
    #[doc = " Creates a new thread in the specified process.\n\n @param ThreadHandle A pointer to a handle that receives the thread object handle.\n @param DesiredAccess The access rights desired for the thread object.\n @param ObjectAttributes Optional. A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new thread.\n @param ProcessHandle A handle to the process in which the thread is to be created.\n @param StartRoutine A pointer to the application-defined function to be executed by the thread.\n @param Argument Optional. A pointer to a variable to be passed to the thread.\n @param CreateFlags Flags that control the creation of the thread. These flags are defined as THREAD_CREATE_FLAGS_*.\n @param ZeroBits The number of zero bits in the starting address of the thread's stack.\n @param StackSize The initial size of the thread's stack, in bytes.\n @param MaximumStackSize The maximum size of the thread's stack, in bytes.\n @param AttributeList Optional. A pointer to a list of attributes for the thread.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateThreadEx(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, StartRoutine: PUSER_THREAD_START_ROUTINE, Argument: PVOID, CreateFlags: ULONG, ZeroBits: SIZE_T, StackSize: SIZE_T, MaximumStackSize: SIZE_T, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
+   #[doc = " Creates or opens a job object.\n\n @param JobHandle A handle to the job object.\n @param DesiredAccess The access rights desired for the thread object.\n @param ObjectAttributes Optional. A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new thread.\n @return NTSTATUS Successful or errant status."]
    pub fn NtCreateJobObject(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+   #[doc = " Opens an existing job object.\n\n @param JobHandle A handle to the job object.\n @param DesiredAccess The access rights desired for the thread object.\n @param ObjectAttributes Optional. A pointer to an OBJECT_ATTRIBUTES structure that specifies the attributes of the new thread.\n @return NTSTATUS Successful or errant status."]
    pub fn NtOpenJobObject(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+   #[doc = " Assigns a process to an existing job object.\n\n @param JobHandle A handle to the job object to which the process will be associated. The handle must have the JOB_OBJECT_ASSIGN_PROCESS access right.\n @param ProcessHandle A handle to the process to associate with the job object. The handle must have the PROCESS_SET_QUOTA and PROCESS_TERMINATE access rights.\n @return NTSTATUS Successful or errant status."]
    pub fn NtAssignProcessToJobObject(JobHandle: HANDLE, ProcessHandle: HANDLE) -> NTSTATUS;
+   #[doc = " Terminates all processes associated with the job object. If the job is nested, all processes currently associated with the job and all child jobs in the hierarchy are terminated.\n\n @param JobHandle A handle to the job whose processes will be terminated. The handle must have the JOB_OBJECT_TERMINATE access right.\n @param ExitStatus The exit status to be used by all processes and threads in the job object.\n @return NTSTATUS Successful or errant status."]
    pub fn NtTerminateJobObject(JobHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+   #[doc = " Checks if a process is associated with a job object.\n\n @param ProcessHandle A handle to the process to be checked.\n @param JobHandle An optional handle to the job object. If this parameter is NULL, the function checks if the process is associated with any job object.\n @return NTSTATUS Successful or errant status.\n @remarks This function can be used to determine if a process is running within a job object, which can be useful for managing process resources and constraints."]
    pub fn NtIsProcessInJob(ProcessHandle: HANDLE, JobHandle: HANDLE) -> NTSTATUS;
+   #[doc = " Retrieves information about a job object.\n\n @param JobHandle An optional handle to the job object. If this parameter is NULL, the function retrieves information about the job object associated with the calling process.\n @param JobObjectInformationClass The type of job object information to be retrieved.\n @param JobObjectInformation A pointer to a buffer that receives the job object information.\n @param JobObjectInformationLength The size of the buffer pointed to by the JobObjectInformation parameter.\n @param ReturnLength An optional pointer to a variable that receives the size of the data returned.\n @return NTSTATUS Successful or errant status.\n @remarks This function can be used to query various types of information about a job object, such as accounting information, limit information, and process ID list."]
    pub fn NtQueryInformationJobObject(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+   #[doc = " Sets information for a job object.\n\n @param JobHandle A handle to the job object.\n @param JobObjectInformationClass The type of job object information to be set.\n @param JobObjectInformation A pointer to a buffer that contains the job object information.\n @param JobObjectInformationLength The size of the buffer pointed to by the JobObjectInformation parameter.\n @return NTSTATUS Successful or errant status.\n @remarks This function can be used to set various types of information for a job object, such as limit information, UI restrictions, and security limit information."]
    pub fn NtSetInformationJobObject(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG) -> NTSTATUS;
+   #[doc = " Creates a set of job objects.\n\n @param NumJob The number of job objects in the set.\n @param UserJobSet A pointer to an array of JOB_SET_ARRAY structures that specify the job objects in the set.\n @param Flags Reserved for future use. Must be zero.\n @return NTSTATUS Successful or errant status.\n @remarks This function can be used to create a set of job objects, which can be useful for managing groups of related processes."]
    pub fn NtCreateJobSet(NumJob: ULONG, UserJobSet: PJOB_SET_ARRAY, Flags: ULONG) -> NTSTATUS;
    pub fn NtRevertContainerImpersonation() -> NTSTATUS;
    #[doc = " Allocates a memory reserve object.\n\n @param MemoryReserveHandle Pointer to a variable that receives the memory reserve object handle.\n @param ObjectAttributes Pointer to an object attributes structure.\n @param Type The type of memory reserve.\n @return NTSTATUS Successful or errant status."]
@@ -52419,8 +53436,8 @@ extern "stdcall" {
    pub fn DbgUiConvertStateChangeStructureEx(StateChange: PDBGUI_WAIT_STATE_CHANGE, DebugEvent: LPDEBUG_EVENT) -> NTSTATUS;
    pub fn EtwEventRegister(ProviderId: LPCGUID, EnableCallback: PENABLECALLBACK, CallbackContext: PVOID, RegHandle: PREGHANDLE) -> NTSTATUS;
    pub fn NtCreateFile(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, AllocationSize: PLARGE_INTEGER, FileAttributes: ULONG, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, EaBuffer: PVOID, EaLength: ULONG) -> NTSTATUS;
-   pub fn NtCreateNamedPipeFile(FileHandle: PHANDLE, DesiredAccess: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, NamedPipeType: ULONG, ReadMode: ULONG, CompletionMode: ULONG, MaximumInstances: ULONG, InboundQuota: ULONG, OutboundQuota: ULONG, DefaultTimeout: PLARGE_INTEGER) -> NTSTATUS;
-   pub fn NtCreateMailslotFile(FileHandle: PHANDLE, DesiredAccess: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, CreateOptions: ULONG, MailslotQuota: ULONG, MaximumMessageSize: ULONG, ReadTimeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn NtCreateNamedPipeFile(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, NamedPipeType: ULONG, ReadMode: ULONG, CompletionMode: ULONG, MaximumInstances: ULONG, InboundQuota: ULONG, OutboundQuota: ULONG, DefaultTimeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn NtCreateMailslotFile(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, CreateOptions: ULONG, MailslotQuota: ULONG, MaximumMessageSize: ULONG, ReadTimeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn NtOpenFile(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, OpenOptions: ULONG) -> NTSTATUS;
    pub fn NtDeleteFile(ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn NtFlushBuffersFile(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
@@ -52451,7 +53468,9 @@ extern "stdcall" {
    pub fn NtQueryFullAttributesFile(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_NETWORK_OPEN_INFORMATION) -> NTSTATUS;
    pub fn NtNotifyChangeDirectoryFile(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN) -> NTSTATUS;
    pub fn NtNotifyChangeDirectoryFileEx(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN, DirectoryNotifyInformationClass: DIRECTORY_NOTIFY_INFORMATION_CLASS) -> NTSTATUS;
+   #[doc = " \\brief The NtLoadDriver function loads a driver specified by the DriverServiceName parameter.\n \\param DriverServiceName A pointer to a UNICODE_STRING structure that specifies the name of the driver service to load.\n \\return NTSTATUS The status code returned by the function. Possible values include, but are not limited to:\n - STATUS_SUCCESS: The driver was successfully loaded.\n - STATUS_INVALID_PARAMETER: The DriverServiceName parameter is invalid.\n - STATUS_INSUFFICIENT_RESOURCES: There are insufficient resources to load the driver.\n - STATUS_OBJECT_NAME_NOT_FOUND: The specified driver service name was not found.\n - STATUS_OBJECT_PATH_NOT_FOUND: The path to the driver service was not found.\n - STATUS_OBJECT_NAME_COLLISION: A driver with the same name already exists."]
    pub fn NtLoadDriver(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
+   #[doc = " \\brief The NtUnloadDriver function unloads a driver specified by the DriverServiceName parameter.\n \\param DriverServiceName A pointer to a UNICODE_STRING structure that specifies the name of the driver service to unload.\n \\return NTSTATUS The status code returned by the function. Possible values include, but are not limited to:\n - STATUS_SUCCESS: The driver was successfully unloaded.\n - STATUS_INVALID_PARAMETER: The DriverServiceName parameter is invalid.\n - STATUS_OBJECT_NAME_NOT_FOUND: The specified driver service name was not found.\n - STATUS_OBJECT_PATH_NOT_FOUND: The path to the driver service was not found.\n - STATUS_OBJECT_NAME_COLLISION: A driver with the same name already exists."]
    pub fn NtUnloadDriver(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
    pub fn NtCreateIoCompletion(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Count: ULONG) -> NTSTATUS;
    pub fn NtOpenIoCompletion(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
@@ -52503,7 +53522,7 @@ extern "stdcall" {
    pub fn NtAlpcConnectPort(PortHandle: PHANDLE, PortName: PUNICODE_STRING, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, RequiredServerSid: PSID, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn NtAlpcConnectPortEx(PortHandle: PHANDLE, ConnectionPortObjectAttributes: POBJECT_ATTRIBUTES, ClientPortObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, ServerSecurityRequirements: PSECURITY_DESCRIPTOR, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn NtAlpcAcceptConnectPort(PortHandle: PHANDLE, ConnectionPortHandle: HANDLE, Flags: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, ConnectionMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, AcceptConnection: BOOLEAN) -> NTSTATUS;
-   pub fn NtAlpcSendWaitReceivePort(PortHandle: HANDLE, Flags: ULONG, SendMessageA: PPORT_MESSAGE, SendMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, ReceiveMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, ReceiveMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn NtAlpcSendWaitReceivePort(PortHandle: HANDLE, Flags: ULONG, SendMessageW: PPORT_MESSAGE, SendMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, ReceiveMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, ReceiveMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn NtAlpcCancelMessage(PortHandle: HANDLE, Flags: ULONG, MessageContext: PALPC_CONTEXT_ATTR) -> NTSTATUS;
    pub fn NtAlpcImpersonateClientOfPort(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: PVOID) -> NTSTATUS;
    pub fn NtAlpcImpersonateClientContainerOfPort(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: ULONG) -> NTSTATUS;
@@ -52654,7 +53673,11 @@ extern "stdcall" {
    pub fn RtlIsGenericTableEmpty(Table: PRTL_GENERIC_TABLE) -> BOOLEAN;
    pub fn RtlRbInsertNodeEx(Tree: PRTL_RB_TREE, Parent: PRTL_BALANCED_NODE, Right: BOOLEAN, Node: PRTL_BALANCED_NODE) -> BOOLEAN;
    pub fn RtlRbRemoveNode(Tree: PRTL_RB_TREE, Node: PRTL_BALANCED_NODE) -> BOOLEAN;
+   pub fn RtlCompareExchangePointerMapping(Node1: PRTL_BALANCED_NODE, Node2: PRTL_BALANCED_NODE, Node3: *mut PRTL_BALANCED_NODE, Node4: *mut PRTL_BALANCED_NODE) -> NTSTATUS;
+   pub fn RtlQueryPointerMapping(Tree: PRTL_RB_TREE, Children: PRTL_BALANCED_NODE) -> NTSTATUS;
+   pub fn RtlRemovePointerMapping(Tree: PRTL_RB_TREE, Children: PRTL_BALANCED_NODE) -> NTSTATUS;
    pub fn RtlCreateHashTable(HashTable: *mut PRTL_DYNAMIC_HASH_TABLE, Shift: ULONG, Flags: ULONG) -> BOOLEAN;
+   pub fn RtlCreateHashTableEx(HashTable: *mut PRTL_DYNAMIC_HASH_TABLE, InitialSize: ULONG, Shift: ULONG, Flags: ULONG) -> BOOLEAN;
    pub fn RtlDeleteHashTable(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> LOGICAL;
    pub fn RtlInsertEntryHashTable(HashTable: PRTL_DYNAMIC_HASH_TABLE, Entry: PRTL_DYNAMIC_HASH_TABLE_ENTRY, Signature: ULONG_PTR, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> BOOLEAN;
    pub fn RtlRemoveEntryHashTable(HashTable: PRTL_DYNAMIC_HASH_TABLE, Entry: PRTL_DYNAMIC_HASH_TABLE_ENTRY, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> BOOLEAN;
@@ -52684,6 +53707,8 @@ extern "stdcall" {
    pub fn RtlSetCriticalSectionSpinCount(CriticalSection: PRTL_CRITICAL_SECTION, SpinCount: ULONG) -> ULONG;
    pub fn RtlQueryCriticalSectionOwner(EventHandle: HANDLE) -> HANDLE;
    pub fn RtlCheckForOrphanedCriticalSections(ThreadHandle: HANDLE);
+   #[doc = " Enables the creation of early critical section events.\n\n This function allows the system to create critical section events early in the process\n initialization. It is typically used to ensure that critical sections are properly\n initialized and can be used safely during the early stages of process startup.\n @remarks This function sets the FLG_CRITSEC_EVENT_CREATION flag in the PEB flags field.\n @return A pointer to the Process Environment Block (PEB)."]
+   pub fn RtlEnableEarlyCriticalSectionEventCreation() -> PPEB;
    pub fn RtlInitializeResource(Resource: PRTL_RESOURCE);
    pub fn RtlDeleteResource(Resource: PRTL_RESOURCE);
    pub fn RtlAcquireResourceShared(Resource: PRTL_RESOURCE, Wait: BOOLEAN) -> BOOLEAN;
@@ -52691,6 +53716,7 @@ extern "stdcall" {
    pub fn RtlReleaseResource(Resource: PRTL_RESOURCE);
    pub fn RtlConvertSharedToExclusive(Resource: PRTL_RESOURCE);
    pub fn RtlConvertExclusiveToShared(Resource: PRTL_RESOURCE);
+   pub fn RtlDumpResource(Resource: PRTL_RESOURCE) -> ULONG;
    pub fn RtlInitializeSRWLock(SRWLock: PRTL_SRWLOCK);
    pub fn RtlAcquireSRWLockExclusive(SRWLock: PRTL_SRWLOCK);
    pub fn RtlAcquireSRWLockShared(SRWLock: PRTL_SRWLOCK);
@@ -52700,6 +53726,11 @@ extern "stdcall" {
    pub fn RtlTryAcquireSRWLockShared(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
    pub fn RtlAcquireReleaseSRWLockExclusive(SRWLock: PRTL_SRWLOCK);
    pub fn RtlConvertSRWLockExclusiveToShared(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
+   pub fn RtlRcuAllocate(Size: SIZE_T) -> PVOID;
+   pub fn RtlRcuFree(Rcu: PULONG) -> LOGICAL;
+   pub fn RtlRcuReadLock(SRWLock: PRTL_SRWLOCK, Rcu: PULONG);
+   pub fn RtlRcuReadUnlock(SRWLock: PRTL_SRWLOCK, Rcu: *mut PULONG);
+   pub fn RtlRcuSynchronize(SRWLock: PRTL_SRWLOCK) -> LONG;
    pub fn RtlInitializeConditionVariable(ConditionVariable: PRTL_CONDITION_VARIABLE);
    pub fn RtlSleepConditionVariableCS(ConditionVariable: PRTL_CONDITION_VARIABLE, CriticalSection: PRTL_CRITICAL_SECTION, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn RtlSleepConditionVariableSRW(ConditionVariable: PRTL_CONDITION_VARIABLE, SRWLock: PRTL_SRWLOCK, Timeout: PLARGE_INTEGER, Flags: ULONG) -> NTSTATUS;
@@ -52709,7 +53740,7 @@ extern "stdcall" {
    pub fn RtlDeleteBarrier(Barrier: PRTL_BARRIER) -> NTSTATUS;
    pub fn RtlBarrier(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
    pub fn RtlBarrierForDelete(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
-   pub fn RtlWaitOnAddress(Address: *mut c_void, CompareAddress: PVOID, AddressSize: SIZE_T, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn RtlWaitOnAddress(Address: *mut ::core::ffi::c_void, CompareAddress: PVOID, AddressSize: SIZE_T, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn RtlWakeAddressAll(Address: PVOID);
    pub fn RtlWakeAddressAllNoFence(Address: PVOID);
    pub fn RtlWakeAddressSingle(Address: PVOID);
@@ -52839,10 +53870,11 @@ extern "stdcall" {
    pub fn RtlTryAcquirePebLock() -> LOGICAL;
    pub fn RtlCreateProcessParameters(pProcessParameters: *mut PRTL_USER_PROCESS_PARAMETERS, ImagePathName: PUNICODE_STRING, DllPath: PUNICODE_STRING, CurrentDirectory: PUNICODE_STRING, CommandLine: PUNICODE_STRING, Environment: PVOID, WindowTitle: PUNICODE_STRING, DesktopInfo: PUNICODE_STRING, ShellInfo: PUNICODE_STRING, RuntimeData: PUNICODE_STRING) -> NTSTATUS;
    pub fn RtlCreateProcessParametersEx(pProcessParameters: *mut PRTL_USER_PROCESS_PARAMETERS, ImagePathName: PUNICODE_STRING, DllPath: PUNICODE_STRING, CurrentDirectory: PUNICODE_STRING, CommandLine: PUNICODE_STRING, Environment: PVOID, WindowTitle: PUNICODE_STRING, DesktopInfo: PUNICODE_STRING, ShellInfo: PUNICODE_STRING, RuntimeData: PUNICODE_STRING, Flags: ULONG) -> NTSTATUS;
+   pub fn RtlCreateProcessParametersWithTemplate(pProcessParameters: *mut PRTL_USER_PROCESS_PARAMETERS, ImagePathName: PUNICODE_STRING, DllPath: PUNICODE_STRING, CurrentDirectory: PUNICODE_STRING, CommandLine: PUNICODE_STRING, Environment: PVOID, WindowTitle: PUNICODE_STRING, DesktopInfo: PUNICODE_STRING, ShellInfo: PUNICODE_STRING, RuntimeData: PUNICODE_STRING, RedirectionDllName: PUNICODE_STRING, Flags: ULONG) -> NTSTATUS;
    pub fn RtlDestroyProcessParameters(ProcessParameters: PRTL_USER_PROCESS_PARAMETERS) -> NTSTATUS;
    pub fn RtlNormalizeProcessParams(ProcessParameters: PRTL_USER_PROCESS_PARAMETERS) -> PRTL_USER_PROCESS_PARAMETERS;
    pub fn RtlDeNormalizeProcessParams(ProcessParameters: PRTL_USER_PROCESS_PARAMETERS) -> PRTL_USER_PROCESS_PARAMETERS;
-   pub fn RtlCreateUserProcess(NtImagePathName: PUNICODE_STRING, AttributesDeprecated: ULONG, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, ProcessSecurityDescriptor: PSECURITY_DESCRIPTOR, ThreadSecurityDescriptor: PSECURITY_DESCRIPTOR, ParentProcess: HANDLE, InheritHandles: BOOLEAN, DebugPort: HANDLE, TokenHandle: HANDLE, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
+   pub fn RtlCreateUserProcess(NtImagePathName: PUNICODE_STRING, ExtendedParameters: ULONG, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, ProcessSecurityDescriptor: PSECURITY_DESCRIPTOR, ThreadSecurityDescriptor: PSECURITY_DESCRIPTOR, ParentProcess: HANDLE, InheritHandles: BOOLEAN, DebugPort: HANDLE, TokenHandle: HANDLE, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
    pub fn RtlCreateUserProcessEx(NtImagePathName: PUNICODE_STRING, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, InheritHandles: BOOLEAN, ProcessExtendedParameters: PRTL_USER_PROCESS_EXTENDED_PARAMETERS, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
    pub fn RtlExitUserProcess(ExitStatus: NTSTATUS) -> !;
    pub fn RtlCloneUserProcess(ProcessFlags: ULONG, ProcessSecurityDescriptor: PSECURITY_DESCRIPTOR, ThreadSecurityDescriptor: PSECURITY_DESCRIPTOR, DebugPort: HANDLE, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
@@ -52873,14 +53905,25 @@ extern "stdcall" {
    pub fn RtlLocateLegacyContext(ContextEx: PCONTEXT_EX, Length: PULONG) -> PCONTEXT;
    pub fn RtlSetExtendedFeaturesMask(ContextEx: PCONTEXT_EX, FeatureMask: ULONG64);
    pub fn RtlRemoteCall(ProcessHandle: HANDLE, ThreadHandle: HANDLE, CallSite: PVOID, ArgumentCount: ULONG, Arguments: PULONG_PTR, PassContext: BOOLEAN, AlreadySuspended: BOOLEAN) -> NTSTATUS;
+   #[doc = " Registers a vectored exception handler.\n\n @param First If this parameter is TRUE, the handler is the first handler in the list.\n @param Handler A pointer to the vectored exception handler to be called.\n @return A handle to the vectored exception handler.\n @see https://docs.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-addvectoredexceptionhandler"]
    pub fn RtlAddVectoredExceptionHandler(First: ULONG, Handler: PVECTORED_EXCEPTION_HANDLER) -> PVOID;
+   #[doc = " Removes a vectored exception handler.\n\n @param Handle A handle to the vectored exception handler to remove.\n @return The function returns 0 if the handler is removed, or -1 if the handler is not found.\n @see https://docs.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-removevectoredexceptionhandler"]
    pub fn RtlRemoveVectoredExceptionHandler(Handle: PVOID) -> ULONG;
+   #[doc = " Registers a vectored continue handler.\n\n @param First If this parameter is TRUE, the handler is the first handler in the list.\n @param Handler A pointer to the vectored exception handler to be called.\n @return A handle to the vectored continue handler.\n @see https://docs.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-addvectoredcontinuehandler"]
    pub fn RtlAddVectoredContinueHandler(First: ULONG, Handler: PVECTORED_EXCEPTION_HANDLER) -> PVOID;
+   #[doc = " Removes a vectored continue handler.\n\n @param Handle A handle to the vectored continue handler to remove.\n @return The function returns 0 if the handler is removed, or -1 if the handler is not found.\n @see https://docs.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-removevectoredcontinuehandler"]
    pub fn RtlRemoveVectoredContinueHandler(Handle: PVOID) -> ULONG;
    pub fn RtlSetUnhandledExceptionFilter(UnhandledExceptionFilter: PRTLP_UNHANDLED_EXCEPTION_FILTER);
    pub fn RtlUnhandledExceptionFilter(ExceptionPointers: PEXCEPTION_POINTERS) -> LONG;
    pub fn RtlUnhandledExceptionFilter2(ExceptionPointers: PEXCEPTION_POINTERS, Flags: ULONG) -> LONG;
    pub fn RtlKnownExceptionFilter(ExceptionPointers: PEXCEPTION_POINTERS) -> LONG;
+   pub fn RtlInitializeSListHead(ListHead: PSLIST_HEADER);
+   pub fn RtlFirstEntrySList(ListHead: *const SLIST_HEADER) -> PSLIST_ENTRY;
+   pub fn RtlInterlockedPopEntrySList(ListHead: PSLIST_HEADER) -> PSLIST_ENTRY;
+   pub fn RtlInterlockedPushEntrySList(ListHead: PSLIST_HEADER, ListEntry: PSLIST_ENTRY) -> PSLIST_ENTRY;
+   pub fn RtlInterlockedPushListSListEx(ListHead: PSLIST_HEADER, List: PSLIST_ENTRY, ListEnd: PSLIST_ENTRY, Count: DWORD) -> PSLIST_ENTRY;
+   pub fn RtlInterlockedFlushSList(ListHead: PSLIST_HEADER) -> PSLIST_ENTRY;
+   pub fn RtlQueryDepthSList(ListHead: PSLIST_HEADER) -> WORD;
    pub fn RtlGetActiveActivationContext(ActivationContext: PACTIVATION_CONTEXT) -> NTSTATUS;
    pub fn RtlAddRefActivationContext(ActivationContext: PACTIVATION_CONTEXT);
    pub fn RtlReleaseActivationContext(ActivationContext: PACTIVATION_CONTEXT);
@@ -52905,10 +53948,15 @@ extern "stdcall" {
    pub fn RtlFindExportedRoutineByName(BaseOfImage: PVOID, RoutineName: PCSTR) -> PVOID;
    pub fn RtlGuardCheckLongJumpTarget(PcValue: PVOID, IsFastFail: BOOL, IsLongJumpTarget: PBOOL) -> NTSTATUS;
    pub fn RtlValidateUserCallTarget(Address: PVOID, Flags: PULONG);
+   pub fn RtlCompareMemory(Source1: *const ::core::ffi::c_void, Source2: *const ::core::ffi::c_void, Length: SIZE_T) -> SIZE_T;
    pub fn RtlCompareMemoryUlong(Source: PVOID, Length: SIZE_T, Pattern: ULONG) -> SIZE_T;
    pub fn RtlFillMemoryUlong(Destination: PVOID, Length: SIZE_T, Pattern: ULONG);
    pub fn RtlFillMemoryUlonglong(Destination: PVOID, Length: SIZE_T, Pattern: ULONGLONG);
    pub fn RtlIsZeroMemory(Buffer: PVOID, Length: SIZE_T) -> BOOLEAN;
+   pub fn RtlCrc32(Buffer: *const ::core::ffi::c_void, Size: usize, InitialCrc: DWORD) -> DWORD;
+   pub fn RtlCrc64(Buffer: *const ::core::ffi::c_void, Size: usize, InitialCrc: ULONGLONG) -> ULONGLONG;
+   pub fn RtlGetSystemGlobalData(DataId: RTL_SYSTEM_GLOBAL_DATA_ID, Buffer: PVOID, Size: DWORD) -> DWORD;
+   pub fn RtlSetSystemGlobalData(DataId: RTL_SYSTEM_GLOBAL_DATA_ID, Buffer: PVOID, Size: DWORD) -> DWORD;
    pub fn RtlCreateEnvironment(CloneCurrentEnvironment: BOOLEAN, Environment: *mut PVOID) -> NTSTATUS;
    pub fn RtlCreateEnvironmentEx(SourceEnvironment: PVOID, Environment: *mut PVOID, Flags: ULONG) -> NTSTATUS;
    pub fn RtlDestroyEnvironment(Environment: PVOID) -> NTSTATUS;
@@ -52919,7 +53967,7 @@ extern "stdcall" {
    pub fn RtlQueryEnvironmentVariable_U(Environment: PVOID, Name: PUNICODE_STRING, Value: PUNICODE_STRING) -> NTSTATUS;
    pub fn RtlExpandEnvironmentStrings(Environment: PVOID, Source: PCWSTR, SourceLength: SIZE_T, Destination: PWSTR, DestinationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
    pub fn RtlExpandEnvironmentStrings_U(Environment: PVOID, Source: PUNICODE_STRING, Destination: PUNICODE_STRING, ReturnedLength: PULONG) -> NTSTATUS;
-   pub fn RtlSetEnvironmentStrings(NewEnvironment: PCWCHAR, NewEnvironmentSize: SIZE_T) -> NTSTATUS;
+   pub fn RtlSetEnvironmentStrings(NewEnvironment: PCWSTR, NewEnvironmentSize: SIZE_T) -> NTSTATUS;
    pub fn RtlDetermineDosPathNameType_U(DosFileName: PCWSTR) -> RTL_PATH_TYPE;
    pub fn RtlIsDosDeviceName_U(DosFileName: PCWSTR) -> ULONG;
    pub fn RtlGetFullPathName_U(FileName: PCWSTR, BufferLength: ULONG, Buffer: PWSTR, FilePart: *mut PWSTR) -> ULONG;
@@ -52944,9 +53992,9 @@ extern "stdcall" {
    pub fn RtlGetLengthWithoutTrailingPathSeperators(Flags: ULONG, PathString: PUNICODE_STRING, Length: PULONG) -> NTSTATUS;
    pub fn RtlGenerate8dot3Name(Name: PUNICODE_STRING, AllowExtendedCharacters: BOOLEAN, Context: PGENERATE_NAME_CONTEXT, Name8dot3: PUNICODE_STRING) -> NTSTATUS;
    pub fn RtlComputePrivatizedDllName_U(DllName: PUNICODE_STRING, RealName: PUNICODE_STRING, LocalName: PUNICODE_STRING) -> NTSTATUS;
-   pub fn RtlGetSearchPath(SearchPathA: *mut PWSTR) -> NTSTATUS;
+   pub fn RtlGetSearchPath(SearchPathW: *mut PWSTR) -> NTSTATUS;
    pub fn RtlSetSearchPathMode(Flags: ULONG) -> NTSTATUS;
-   pub fn RtlGetExePath(DosPathName: PCWSTR, SearchPathA: *mut PWSTR) -> NTSTATUS;
+   pub fn RtlGetExePath(DosPathName: PCWSTR, SearchPathW: *mut PWSTR) -> NTSTATUS;
    pub fn RtlReleasePath(Path: PCWSTR);
    pub fn RtlReplaceSystemDirectoryInPath(Destination: PUNICODE_STRING, Machine: USHORT, TargetMachine: USHORT, IncludePathSeperator: BOOLEAN) -> ULONG;
    pub fn RtlWow64GetCurrentMachine() -> USHORT;
@@ -53001,7 +54049,7 @@ extern "stdcall" {
    pub fn RtlResetMemoryBlockLookaside(MemoryBlockLookaside: PVOID) -> NTSTATUS;
    pub fn RtlLockMemoryBlockLookaside(MemoryBlockLookaside: PVOID) -> NTSTATUS;
    pub fn RtlUnlockMemoryBlockLookaside(MemoryBlockLookaside: PVOID) -> NTSTATUS;
-   pub fn RtlGetCurrentTransaction() -> HANDLE;
+   pub fn RtlGetCurrentTransaction(ExistingFileName: PCWSTR, NewFileName: PCWSTR) -> HANDLE;
    pub fn RtlSetCurrentTransaction(TransactionHandle: HANDLE) -> LOGICAL;
    pub fn RtlConvertLongToLuid(Long: LONG) -> LUID;
    pub fn RtlConvertUlongToLuid(Ulong: ULONG) -> LUID;
@@ -53009,6 +54057,10 @@ extern "stdcall" {
    pub fn RtlConvertLuidToUlonglong(Luid: LUID) -> ULONGLONG;
    pub fn RtlCopyLuid(DestinationLuid: PLUID, SourceLuid: PLUID);
    pub fn RtlCopyLuidAndAttributesArray(Count: ULONG, Src: PLUID_AND_ATTRIBUTES, Dest: PLUID_AND_ATTRIBUTES);
+   pub fn RtlConvertUlongToLargeInteger(UnsignedInteger: ULONG) -> LARGE_INTEGER;
+   pub fn RtlConvertLongToLargeInteger(SignedInteger: LONG) -> LARGE_INTEGER;
+   pub fn RtlEnlargedIntegerMultiply(Multiplicand: LONG, Multiplier: LONG) -> LARGE_INTEGER;
+   pub fn RtlEnlargedUnsignedMultiply(Multiplicand: ULONG, Multiplier: ULONG) -> LARGE_INTEGER;
    pub fn RtlCreateQueryDebugBuffer(MaximumCommit: ULONG, UseEventPair: BOOLEAN) -> PRTL_DEBUG_INFORMATION;
    pub fn RtlDestroyQueryDebugBuffer(Buffer: PRTL_DEBUG_INFORMATION) -> NTSTATUS;
    pub fn RtlCommitDebugInfo(Buffer: PRTL_DEBUG_INFORMATION, Size: SIZE_T) -> PVOID;
@@ -53016,6 +54068,7 @@ extern "stdcall" {
    pub fn RtlQueryProcessDebugInformation(UniqueProcessId: HANDLE, Flags: ULONG, Buffer: PRTL_DEBUG_INFORMATION) -> NTSTATUS;
    pub fn RtlSetProcessDebugInformation(UniqueProcessId: HANDLE, Flags: ULONG, Buffer: PRTL_DEBUG_INFORMATION) -> NTSTATUS;
    pub fn RtlIsAnyDebuggerPresent() -> BOOLEAN;
+   pub fn RtlDebugPrintTimes() -> NTSTATUS;
    pub fn RtlFindMessage(DllHandle: PVOID, MessageTableId: ULONG, MessageLanguageId: ULONG, MessageId: ULONG, MessageEntry: *mut PMESSAGE_RESOURCE_ENTRY) -> NTSTATUS;
    pub fn RtlFormatMessage(MessageFormat: PCWSTR, MaximumWidth: ULONG, IgnoreInserts: BOOLEAN, ArgumentsAreAnsi: BOOLEAN, ArgumentsAreAnArray: BOOLEAN, Arguments: *mut va_list, Buffer: PWSTR, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn RtlFormatMessageEx(MessageFormat: PCWSTR, MaximumWidth: ULONG, IgnoreInserts: BOOLEAN, ArgumentsAreAnsi: BOOLEAN, ArgumentsAreAnArray: BOOLEAN, Arguments: *mut va_list, Buffer: PWSTR, Length: ULONG, ReturnLength: PULONG, ParseContext: PPARSE_MESSAGE_CONTEXT) -> NTSTATUS;
@@ -53062,10 +54115,11 @@ extern "stdcall" {
    pub fn RtlSecondsSince1980ToTime(ElapsedSeconds: ULONG, Time: PLARGE_INTEGER);
    pub fn RtlTimeToSecondsSince1970(Time: PLARGE_INTEGER, ElapsedSeconds: PULONG) -> BOOLEAN;
    pub fn RtlSecondsSince1970ToTime(ElapsedSeconds: ULONG, Time: PLARGE_INTEGER);
-   pub fn RtlGetSystemTimePrecise() -> LARGE_INTEGER;
+   pub fn RtlGetSystemTimePrecise() -> ULONGLONG;
    pub fn RtlGetSystemTimeAndBias(TimeZoneBias: KSYSTEM_TIME, TimeZoneBiasEffectiveStart: PLARGE_INTEGER, TimeZoneBiasEffectiveEnd: PLARGE_INTEGER) -> KSYSTEM_TIME;
-   pub fn RtlGetInterruptTimePrecise(PerformanceCounter: PLARGE_INTEGER) -> LARGE_INTEGER;
+   pub fn RtlGetInterruptTimePrecise(PerformanceCounter: PLARGE_INTEGER) -> ULONGLONG;
    pub fn RtlQueryUnbiasedInterruptTime(InterruptTime: PLARGE_INTEGER) -> BOOLEAN;
+   pub fn RtlBeginReadTickLock(TimeUpdateLock: PULONGLONG) -> ULONGLONG;
    pub fn RtlQueryTimeZoneInformation(TimeZoneInformation: PRTL_TIME_ZONE_INFORMATION) -> NTSTATUS;
    pub fn RtlSetTimeZoneInformation(TimeZoneInformation: PRTL_TIME_ZONE_INFORMATION) -> NTSTATUS;
    pub fn RtlInitializeBitMap(BitMapHeader: PRTL_BITMAP, BitMapBuffer: PULONG, SizeOfBitMap: ULONG);
@@ -53147,9 +54201,13 @@ extern "stdcall" {
    pub fn RtlSidHashLookup(SidAttrHash: PSID_AND_ATTRIBUTES_HASH, Sid: PSID) -> PSID_AND_ATTRIBUTES;
    pub fn RtlIsElevatedRid(SidAttr: PSID_AND_ATTRIBUTES) -> BOOLEAN;
    pub fn RtlDeriveCapabilitySidsFromName(UnicodeString: PUNICODE_STRING, CapabilityGroupSid: PSID, CapabilitySid: PSID) -> NTSTATUS;
+   #[doc = " The RtlCreateSecurityDescriptor routine initializes a new absolute-format security descriptor.\n On return, the security descriptor is initialized with no system ACL, no discretionary ACL, no owner, no primary group, and all control flags set to zero.\n\n \\param SecurityDescriptor Pointer to the buffer for the \\ref SECURITY_DESCRIPTOR to be initialized.\n \\param Revision Specifies the revision level to assign to the security descriptor. Set this parameter to SECURITY_DESCRIPTOR_REVISION.\n @return NTSTATUS Successful or errant status.\n @see https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcreatesecuritydescriptor"]
    pub fn RtlCreateSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, Revision: ULONG) -> NTSTATUS;
+   #[doc = " The RtlValidSecurityDescriptor routine checks a given security descriptor's validity.\n\n \\param SecurityDescriptor Pointer to the \\ref SECURITY_DESCRIPTOR to be checked.\n @return Returns TRUE if the security descriptor is valid, or FALSE otherwise.\n @remarks The routine checks the validity of an absolute-format security descriptor. To check the validity of a self-relative security descriptor, use the \\ref RtlValidRelativeSecurityDescriptor routine instead.\n @see https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlvalidsecuritydescriptor"]
    pub fn RtlValidSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR) -> BOOLEAN;
+   #[doc = " The RtlLengthSecurityDescriptor routine returns the size of a given security descriptor.\n\n \\param SecurityDescriptor A pointer to a \\ref SECURITY_DESCRIPTOR structure whose length the function retrieves.\n @return Returns the length, in bytes, of the SECURITY_DESCRIPTOR structure.\n @see https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-rtllengthsecuritydescriptor"]
    pub fn RtlLengthSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR) -> ULONG;
+   #[doc = " The RtlValidRelativeSecurityDescriptor routine checks the validity of a self-relative security descriptor.\n\n \\param SecurityDescriptorInput A pointer to the buffer that contains the security descriptor in self-relative format.\n The buffer must begin with a SECURITY_DESCRIPTOR structure, which is followed by the rest of the security descriptor data.\n \\param SecurityDescriptorLength The size of the SecurityDescriptorInput structure.\n \\param RequiredInformation A SECURITY_INFORMATION value that specifies the information that is required to be contained in the security descriptor.\n @return RtlValidRelativeSecurityDescriptor returns TRUE if the security descriptor is valid and includes the information that the RequiredInformation parameter specifies. Otherwise, this routine returns FALSE.\n @see https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlvalidrelativesecuritydescriptor"]
    pub fn RtlValidRelativeSecurityDescriptor(SecurityDescriptorInput: PSECURITY_DESCRIPTOR, SecurityDescriptorLength: ULONG, RequiredInformation: SECURITY_INFORMATION) -> BOOLEAN;
    pub fn RtlGetControlSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, Control: PSECURITY_DESCRIPTOR_CONTROL, Revision: PULONG) -> NTSTATUS;
    pub fn RtlSetControlSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, ControlBitsOfInterest: SECURITY_DESCRIPTOR_CONTROL, ControlBitsToSet: SECURITY_DESCRIPTOR_CONTROL) -> NTSTATUS;
@@ -53160,8 +54218,11 @@ extern "stdcall" {
    pub fn RtlGetDaclSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, DaclPresent: PBOOLEAN, Dacl: *mut PACL, DaclDefaulted: PBOOLEAN) -> NTSTATUS;
    pub fn RtlSetSaclSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, SaclPresent: BOOLEAN, Sacl: PACL, SaclDefaulted: BOOLEAN) -> NTSTATUS;
    pub fn RtlGetSaclSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, SaclPresent: PBOOLEAN, Sacl: *mut PACL, SaclDefaulted: PBOOLEAN) -> NTSTATUS;
+   #[doc = " The RtlSetOwnerSecurityDescriptor routine sets the owner information of an absolute-format security descriptor. It replaces any owner information that is already present in the security descriptor.\n\n \\param SecurityDescriptor Pointer to the SECURITY_DESCRIPTOR structure whose owner is to be set. RtlSetOwnerSecurityDescriptor replaces any existing owner with the new owner.\n \\param Owner Pointer to a security identifier (SID) structure for the security descriptor's new primary owner.\n \\li \\c This pointer, not the SID structure itself, is copied into the security descriptor.\n \\li \\c If this parameter is NULL, RtlSetOwnerSecurityDescriptor clears the security descriptor's owner information. This marks the security descriptor as having no owner.\n \\param OwnerDefaulted Set to TRUE if the owner information is derived from a default mechanism.\n \\li \\c If this value is TRUE, it is default information. RtlSetOwnerSecurityDescriptor sets the SE_OWNER_DEFAULTED flag in the security descriptor's SECURITY_DESCRIPTOR_CONTROL field.\n \\li \\c If this parameter is FALSE, the SE_OWNER_DEFAULTED flag is cleared.\n @return NTSTATUS Successful or errant status.\n @see https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlsetownersecuritydescriptor"]
    pub fn RtlSetOwnerSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, Owner: PSID, OwnerDefaulted: BOOLEAN) -> NTSTATUS;
+   #[doc = " The RtlGetOwnerSecurityDescriptor routine returns the owner information for a given security descriptor.\n\n \\param SecurityDescriptor Pointer to the SECURITY_DESCRIPTOR structure.\n \\param Owner Pointer to an address to receive a pointer to the owner security identifier (SID). If the security descriptor does not currently contain an owner SID, Owner receives NULL.\n \\param OwnerDefaulted Pointer to a Boolean variable that receives TRUE if the owner information is derived from a default mechanism, FALSE otherwise. Valid only if Owner receives a non-NULL value.\n @return NTSTATUS Successful or errant status.\n @see https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlgetownersecuritydescriptor"]
    pub fn RtlGetOwnerSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, Owner: *mut PSID, OwnerDefaulted: PBOOLEAN) -> NTSTATUS;
+   #[doc = " The RtlSetGroupSecurityDescriptor routine sets the primary group information of an absolute-format security descriptor. It replaces any primary group information that is already present in the security descriptor.\n\n \\param SecurityDescriptor Pointer to the SECURITY_DESCRIPTOR structure whose primary group is to be set. RtlSetGroupSecurityDescriptor replaces any existing primary group with the new primary group.\n \\param Group Pointer to a security identifier (SID) structure for the security descriptor's new primary owner.\n \\li \\c This pointer, not the SID structure itself, is copied into the security descriptor.\n \\li \\c If Group is NULL, RtlSetGroupSecurityDescriptor clears the security descriptor's primary group information. This marks the security descriptor as having no primary group.\n \\param GroupDefaulted Set this Boolean variable to TRUE if the primary group information is derived from a default mechanism.\n \\li \\c If this parameter is TRUE, RtlSetGroupSecurityDescriptor sets the SE_GROUP_DEFAULTED flag in the security descriptor's SECURITY_DESCRIPTOR_CONTROL field.\n \\li \\c If this parameter is FALSE, RtlSetGroupSecurityDescriptor clears the SE_GROUP_DEFAULTED flag.\n @return NTSTATUS Successful or errant status.\n @see https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlsetgroupsecuritydescriptor"]
    pub fn RtlSetGroupSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, Group: PSID, GroupDefaulted: BOOLEAN) -> NTSTATUS;
    pub fn RtlGetGroupSecurityDescriptor(SecurityDescriptor: PSECURITY_DESCRIPTOR, Group: *mut PSID, GroupDefaulted: PBOOLEAN) -> NTSTATUS;
    pub fn RtlMakeSelfRelativeSD(AbsoluteSecurityDescriptor: PSECURITY_DESCRIPTOR, SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, BufferLength: PULONG) -> NTSTATUS;
@@ -53169,7 +54230,9 @@ extern "stdcall" {
    pub fn RtlSelfRelativeToAbsoluteSD(SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, AbsoluteSecurityDescriptor: PSECURITY_DESCRIPTOR, AbsoluteSecurityDescriptorSize: PULONG, Dacl: PACL, DaclSize: PULONG, Sacl: PACL, SaclSize: PULONG, Owner: PSID, OwnerSize: PULONG, PrimaryGroup: PSID, PrimaryGroupSize: PULONG) -> NTSTATUS;
    pub fn RtlSelfRelativeToAbsoluteSD2(SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, BufferSize: PULONG) -> NTSTATUS;
    pub fn RtlNormalizeSecurityDescriptor(SecurityDescriptor: *mut PSECURITY_DESCRIPTOR, SecurityDescriptorLength: DWORD, NewSecurityDescriptor: *mut PSECURITY_DESCRIPTOR, NewSecurityDescriptorLength: PDWORD, CheckOnly: BOOLEAN) -> BOOLEAN;
+   #[doc = " Checks if all desired accesses are granted.\n\n This function determines whether all the accesses specified in the DesiredAccess\n mask are granted by the GrantedAccess mask.\n\n \\param GrantedAccess The access mask that specifies the granted accesses.\n \\param DesiredAccess The access mask that specifies the desired accesses.\n @return Returns TRUE if all desired accesses are granted, otherwise FALSE."]
    pub fn RtlAreAllAccessesGranted(GrantedAccess: ACCESS_MASK, DesiredAccess: ACCESS_MASK) -> BOOLEAN;
+   #[doc = " Checks if any of the desired accesses are granted.\n\n This function determines if any of the access rights specified in the DesiredAccess\n mask are present in the GrantedAccess mask.\n\n \\param GrantedAccess The access mask that specifies the granted access rights.\n \\param DesiredAccess The access mask that specifies the desired access rights.\n @return Returns TRUE if any of the desired access rights are granted, otherwise FALSE."]
    pub fn RtlAreAnyAccessesGranted(GrantedAccess: ACCESS_MASK, DesiredAccess: ACCESS_MASK) -> BOOLEAN;
    pub fn RtlMapGenericMask(AccessMask: PACCESS_MASK, GenericMapping: PGENERIC_MAPPING);
    pub fn RtlCreateAcl(Acl: PACL, AclLength: ULONG, AclRevision: ULONG) -> NTSTATUS;
@@ -53259,7 +54322,8 @@ extern "stdcall" {
    pub fn RtlDisableThreadProfiling(PerformanceDataHandle: PVOID) -> NTSTATUS;
    pub fn RtlQueryThreadProfiling(ThreadHandle: HANDLE, Enabled: PBOOLEAN) -> NTSTATUS;
    pub fn RtlReadThreadProfilingData(PerformanceDataHandle: HANDLE, Flags: ULONG, PerformanceData: PPERFORMANCE_DATA) -> NTSTATUS;
-   pub fn RtlGetNativeSystemInformation(SystemInformationClass: ULONG, NativeSystemInformation: PVOID, InformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+   pub fn RtlGetNativeSystemInformation(SystemInformationClass: SYSTEM_INFORMATION_CLASS, NativeSystemInformation: PVOID, InformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+   pub fn NtWow64GetNativeSystemInformation(SystemInformationClass: SYSTEM_INFORMATION_CLASS, NativeSystemInformation: PVOID, InformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn RtlQueueApcWow64Thread(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
    pub fn RtlWow64EnableFsRedirection(Wow64FsEnableRedirection: BOOLEAN) -> NTSTATUS;
    pub fn RtlWow64EnableFsRedirectionEx(Wow64FsEnableRedirection: PVOID, OldFsRedirectionLevel: *mut PVOID) -> NTSTATUS;
@@ -53288,7 +54352,12 @@ extern "stdcall" {
    pub fn RtlLockModuleSection(Address: PVOID) -> NTSTATUS;
    pub fn RtlUnlockModuleSection(Address: PVOID) -> NTSTATUS;
    pub fn RtlGetUnloadEventTrace() -> PRTL_UNLOAD_EVENT_TRACE;
-   pub fn RtlGetUnloadEventTraceEx(ElementSize: *mut PULONG, ElementCount: *mut PULONG, EventTrace: *mut PVOID);
+   pub fn RtlGetUnloadEventTraceEx(ElementSize: *mut PULONG, ElementCount: *mut PULONG, EventTrace: *mut PVOID) -> PRTL_UNLOAD_EVENT_TRACE;
+   pub fn RtlCaptureStackBackTrace(FramesToSkip: DWORD, FramesToCapture: DWORD, BackTrace: *mut PVOID, BackTraceHash: PDWORD) -> WORD;
+   pub fn RtlCaptureContext(ContextRecord: PCONTEXT);
+   pub fn RtlCaptureContext2(ContextRecord: PCONTEXT);
+   pub fn RtlUnwind(TargetFrame: PVOID, TargetIp: PVOID, ExceptionRecord: PEXCEPTION_RECORD, ReturnValue: PVOID);
+   pub fn RtlPcToFileHeader(PcValue: PVOID, BaseOfImage: *mut PVOID) -> PVOID;
    pub fn RtlQueryPerformanceCounter(PerformanceCounter: PLARGE_INTEGER) -> LOGICAL;
    pub fn RtlQueryPerformanceFrequency(PerformanceFrequency: PLARGE_INTEGER) -> LOGICAL;
    pub fn RtlQueryImageMitigationPolicy(ImagePath: PCWSTR, Policy: IMAGE_MITIGATION_POLICY, Flags: ULONG, Buffer: PVOID, BufferSize: ULONG) -> NTSTATUS;
@@ -53312,10 +54381,15 @@ extern "stdcall" {
    pub fn RtlIsValidProcessTrustLabelSid(Sid: PSID) -> BOOLEAN;
    pub fn RtlGetAppContainerSidType(AppContainerSid: PSID, AppContainerSidType: PAPPCONTAINER_SID_TYPE) -> NTSTATUS;
    pub fn RtlFlsAlloc(Callback: PFLS_CALLBACK_FUNCTION, FlsIndex: PULONG) -> NTSTATUS;
+   pub fn RtlFlsAllocEx(Callback: PFLS_CALLBACK_FUNCTION, arg1: PULONG, FlsIndex: PULONG) -> NTSTATUS;
    pub fn RtlFlsFree(FlsIndex: ULONG) -> NTSTATUS;
    pub fn RtlFlsGetValue(FlsIndex: ULONG, FlsData: *mut PVOID) -> NTSTATUS;
    pub fn RtlFlsGetValue2(FlsIndex: ULONG) -> PVOID;
    pub fn RtlFlsSetValue(FlsIndex: ULONG, FlsData: PVOID) -> NTSTATUS;
+   pub fn RtlProcessFlsData(ProcessHandle: HANDLE, FlsData: PPVOID) -> NTSTATUS;
+   pub fn RtlTlsAlloc(TlsIndex: PULONG) -> NTSTATUS;
+   pub fn RtlTlsFree(TlsIndex: ULONG) -> NTSTATUS;
+   pub fn RtlTlsSetValue(TlsIndex: ULONG, TlsData: PVOID) -> NTSTATUS;
    pub fn RtlIsStateSeparationEnabled() -> BOOLEAN;
    pub fn RtlGetPersistedStateLocation(SourceID: PCWSTR, CustomValue: PCWSTR, DefaultPath: PCWSTR, StateLocationType: STATE_LOCATION_TYPE, TargetPath: PWCHAR, BufferLengthIn: ULONG, BufferLengthOut: PULONG) -> NTSTATUS;
    pub fn RtlIsCloudFilesPlaceholder(FileAttributes: ULONG, ReparseTag: ULONG) -> BOOLEAN;
@@ -53364,13 +54438,14 @@ extern "stdcall" {
    pub fn RtlSubscribeForFeatureUsageNotification(SubscriptionDetails: PRTL_FEATURE_USAGE_SUBSCRIPTION_DETAILS, SubscriptionCount: SIZE_T) -> NTSTATUS;
    pub fn RtlUnsubscribeFromFeatureUsageNotifications(SubscriptionDetails: PRTL_FEATURE_USAGE_SUBSCRIPTION_DETAILS, SubscriptionCount: SIZE_T) -> NTSTATUS;
    pub fn RtlOverwriteFeatureConfigurationBuffer(PreviousChangeStamp: PRTL_FEATURE_CHANGE_STAMP, ConfigurationType: RTL_FEATURE_CONFIGURATION_TYPE, ConfigurationBuffer: PVOID, ConfigurationBufferSize: ULONG) -> NTSTATUS;
+   pub fn RtlNotifyFeatureToggleUsage(FeatureUsageReport: PRTL_FEATURE_USAGE_REPORT, FeatureId: RTL_FEATURE_ID, Flags: ULONG) -> NTSTATUS;
    pub fn RtlRunOnceInitialize(RunOnce: PRTL_RUN_ONCE);
    pub fn RtlRunOnceExecuteOnce(RunOnce: PRTL_RUN_ONCE, InitFn: PRTL_RUN_ONCE_INIT_FN, Parameter: PVOID, Context: *mut PVOID) -> NTSTATUS;
    pub fn RtlRunOnceBeginInitialize(RunOnce: PRTL_RUN_ONCE, Flags: ULONG, Context: *mut PVOID) -> NTSTATUS;
    pub fn RtlRunOnceComplete(RunOnce: PRTL_RUN_ONCE, Flags: ULONG, Context: PVOID) -> NTSTATUS;
    pub fn RtlEqualWnfChangeStamps(ChangeStamp1: WNF_CHANGE_STAMP, ChangeStamp2: WNF_CHANGE_STAMP) -> BOOLEAN;
    pub fn RtlQueryWnfStateData(ChangeStamp: PWNF_CHANGE_STAMP, StateName: WNF_STATE_NAME, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PWNF_TYPE_ID) -> NTSTATUS;
-   pub fn RtlPublishWnfStateData(StateName: WNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, Buffer: *const c_void, Length: ULONG, ExplicitScope: *const c_void) -> NTSTATUS;
+   pub fn RtlPublishWnfStateData(StateName: WNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, Buffer: *const ::core::ffi::c_void, Length: ULONG, ExplicitScope: *const ::core::ffi::c_void) -> NTSTATUS;
    pub fn RtlSubscribeWnfStateChangeNotification(SubscriptionHandle: *mut PVOID, StateName: WNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PCWNF_TYPE_ID, SerializationGroup: ULONG, Flags: ULONG) -> NTSTATUS;
    pub fn RtlUnsubscribeWnfStateChangeNotification(Callback: PWNF_USER_CALLBACK) -> NTSTATUS;
    pub fn RtlWnfDllUnloadCallback(DllBase: PVOID) -> NTSTATUS;
@@ -53379,6 +54454,7 @@ extern "stdcall" {
    pub fn RtlRemovePropertyStore(Key: ULONG_PTR, Context: PULONG_PTR) -> NTSTATUS;
    pub fn RtlCompareExchangePropertyStore(Key: ULONG_PTR, Comperand: PULONG_PTR, Exchange: PULONG_PTR, Context: PULONG_PTR) -> NTSTATUS;
    pub fn RtlWow64ChangeThreadState(ThreadStateChangeHandle: HANDLE, ThreadHandle: HANDLE, StateChangeType: THREAD_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
+   pub fn RtlGetCurrentThreadPrimaryGroup() -> USHORT;
    pub fn NtCreateToken(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
    pub fn NtCreateLowBoxToken(TokenHandle: PHANDLE, ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, PackageSid: PSID, CapabilityCount: ULONG, Capabilities: PSID_AND_ATTRIBUTES, HandleCount: ULONG, Handles: *mut HANDLE) -> NTSTATUS;
    pub fn NtCreateTokenEx(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, UserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroups: PTOKEN_GROUPS, MandatoryPolicy: PTOKEN_MANDATORY_POLICY, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
@@ -53496,6 +54572,8 @@ extern "stdcall" {
    pub fn TpAllocAlpcCompletionEx(AlpcReturn: *mut PTP_ALPC, AlpcPort: HANDLE, Callback: PTP_ALPC_CALLBACK_EX, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
    pub fn TpReleaseAlpcCompletion(Alpc: PTP_ALPC);
    pub fn TpWaitForAlpcCompletion(Alpc: PTP_ALPC);
+   pub fn TpAlpcRegisterCompletionList(Alpc: PTP_ALPC);
+   pub fn TpAlpcUnregisterCompletionList(Alpc: PTP_ALPC);
    pub fn TpCaptureCaller(Type: TP_TRACE_TYPE);
    pub fn TpCheckTerminateWorker(Thread: HANDLE);
    pub fn RtlDispatchException(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT) -> BOOLEAN;
@@ -53566,6 +54644,17 @@ extern "stdcall" {
    pub fn SamValidatePassword(ServerName: PUNICODE_STRING, ValidationType: PASSWORD_POLICY_VALIDATION_TYPE, InputArg: PSAM_VALIDATE_INPUT_ARG, OutputArg: *mut PSAM_VALIDATE_OUTPUT_ARG) -> NTSTATUS;
    pub fn SamPerformGenericOperation(ServerName: PWSTR, OperationType: SAM_GENERIC_OPERATION_TYPE, OperationIn: PSAM_GENERIC_OPERATION_INPUT, OperationOut: *mut PSAM_GENERIC_OPERATION_OUTPUT) -> NTSTATUS;
    pub fn NtVdmControl(Service: VDMSERVICECLASS, ServiceData: PVOID) -> NTSTATUS;
+   pub fn ApiSetQueryApiSetPresence(Namespace: PCUNICODE_STRING, Present: PBOOLEAN) -> BOOL;
+   pub fn ApiSetQueryApiSetPresenceEx(Namespace: PCUNICODE_STRING, IsInSchema: PBOOLEAN, Present: PBOOLEAN) -> BOOL;
+   pub fn NtQuerySecurityPolicy(Policy: PCUNICODE_STRING, KeyName: PCUNICODE_STRING, ValueName: PCUNICODE_STRING, ValueType: SECURE_SETTING_VALUE_TYPE, Value: PVOID, ValueSize: PULONG) -> NTSTATUS;
+   pub fn NtCreateCrossVmEvent(CrossVmEvent: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CrossVmEventFlags: ULONG, VMID: LPCGUID, ServiceID: LPCGUID) -> NTSTATUS;
+   pub fn NtCreateCrossVmMutant(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CrossVmEventFlags: ULONG, VMID: LPCGUID, ServiceID: LPCGUID) -> NTSTATUS;
+   pub fn NtAcquireCrossVmMutant(CrossVmMutant: HANDLE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn NtDirectGraphicsCall(InputBufferLength: ULONG, InputBuffer: PVOID, OutputBufferLength: ULONG, OutputBuffer: PVOID, ReturnLength: PULONG) -> NTSTATUS;
+   pub fn NtOpenCpuPartition(CpuPartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn NtCreateCpuPartition(CpuPartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn NtSetInformationCpuPartition(CpuPartitionHandle: HANDLE, CpuPartitionInformationClass: ULONG, CpuPartitionInformation: PVOID, CpuPartitionInformationLength: ULONG, arg1: PVOID, arg2: ULONG, arg3: ULONG) -> NTSTATUS;
+   pub fn NtAcquireProcessActivityReference(ActivityReferenceHandle: PHANDLE, ParentProcessHandle: HANDLE, Reserved: PROCESS_ACTIVITY_TYPE) -> NTSTATUS;
    pub fn EtwSetMark(TraceHandle: TRACEHANDLE, MarkInfo: PETW_SET_MARK_INFORMATION, Size: ULONG) -> ULONG;
    pub fn EtwEventWriteFull(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, EventProperty: USHORT, ActivityId: LPCGUID, RelatedActivityId: LPCGUID, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
    pub fn EtwEventUnregister(RegHandle: REGHANDLE) -> ULONG;
@@ -53591,6 +54680,35 @@ extern "stdcall" {
    pub fn NtTraceControl(FunctionCode: ETWTRACECONTROLCODE, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn NtTraceEvent(TraceHandle: HANDLE, Flags: ULONG, FieldSize: ULONG, Fields: PVOID) -> NTSTATUS;
    pub fn EtwCheckCoverage(CoveragePoint: PTELEMETRY_COVERAGE_POINT) -> BOOLEAN;
+   pub fn WmiOpenBlock(Guid: LPCGUID, DesiredAccess: ACCESS_MASK, DataBlockHandle: PHANDLE) -> ULONG;
+   pub fn WmiCloseBlock(DataBlockHandle: HANDLE) -> ULONG;
+   pub fn WmiQueryAllDataA(DataBlockHandle: HANDLE, BufferLength: PULONG, Buffer: PVOID) -> ULONG;
+   pub fn WmiQueryAllDataW(DataBlockHandle: HANDLE, BufferLength: PULONG, Buffer: PVOID) -> ULONG;
+   pub fn WmiQueryAllDataMultipleA(HandleList: PHANDLE, HandleCount: ULONG, InOutBufferSize: PULONG, OutBuffer: PVOID) -> ULONG;
+   pub fn WmiQueryAllDataMultipleW(HandleList: PHANDLE, HandleCount: ULONG, InOutBufferSize: PULONG, OutBuffer: PVOID) -> ULONG;
+   pub fn WmiQuerySingleInstanceA(DataBlockHandle: HANDLE, InstanceName: PCSTR, BufferSize: PULONG, Buffer: PVOID) -> ULONG;
+   pub fn WmiQuerySingleInstanceW(DataBlockHandle: HANDLE, InstanceName: PCWSTR, BufferSize: PULONG, Buffer: PVOID) -> ULONG;
+   pub fn WmiQuerySingleInstanceMultipleW(HandleList: PHANDLE, InstanceNames: *mut PCWSTR, HandleCount: ULONG, InOutBufferSize: PULONG, OutBuffer: PVOID) -> ULONG;
+   pub fn WmiQuerySingleInstanceMultipleA(HandleList: PHANDLE, InstanceNames: *mut PCSTR, HandleCount: ULONG, InOutBufferSize: PULONG, OutBuffer: PVOID) -> ULONG;
+   pub fn WmiSetSingleInstanceA(DataBlockHandle: HANDLE, InstanceName: PCSTR, Reserved: ULONG, ValueBufferSize: ULONG, ValueBuffer: PVOID) -> ULONG;
+   pub fn WmiSetSingleInstanceW(DataBlockHandle: HANDLE, InstanceName: PCWSTR, Reserved: ULONG, ValueBufferSize: ULONG, ValueBuffer: PVOID) -> ULONG;
+   pub fn WmiSetSingleItemA(DataBlockHandle: HANDLE, InstanceName: PCSTR, DataItemId: ULONG, Reserved: ULONG, ValueBufferSize: ULONG, ValueBuffer: PVOID) -> ULONG;
+   pub fn WmiSetSingleItemW(DataBlockHandle: HANDLE, InstanceName: PCWSTR, DataItemId: ULONG, Reserved: ULONG, ValueBufferSize: ULONG, ValueBuffer: PVOID) -> ULONG;
+   pub fn WmiExecuteMethodA(MethodDataBlockHandle: HANDLE, MethodInstanceName: PCSTR, MethodId: ULONG, InputBufferSize: ULONG, InputBuffer: PVOID, OutputBufferSize: PULONG, OutputBuffer: PVOID) -> ULONG;
+   pub fn WmiExecuteMethodW(MethodDataBlockHandle: HANDLE, MethodInstanceName: PCWSTR, MethodId: ULONG, InputBufferSize: ULONG, InputBuffer: PVOID, OutputBufferSize: PULONG, OutputBuffer: PVOID) -> ULONG;
+   pub fn WmiNotificationRegistrationA(Guid: PCGUID, Enable: BOOLEAN, DeliveryInfo: PVOID, DeliveryContext: ULONG_PTR, Flags: ULONG) -> ULONG;
+   pub fn WmiNotificationRegistrationW(Guid: PCGUID, Enable: BOOLEAN, DeliveryInfo: PVOID, DeliveryContext: ULONG_PTR, Flags: ULONG) -> ULONG;
+   pub fn WmiEnumerateGuids(GuidList: PGUID, GuidCount: PULONG) -> ULONG;
+   pub fn WmiMofEnumerateResourcesW(MofResourceHandle: HANDLE, MofResourceCount: PULONG, MofResourceInfo: *mut PMOFRESOURCEINFOW) -> ULONG;
+   pub fn WmiMofEnumerateResourcesA(MofResourceHandle: HANDLE, MofResourceCount: PULONG, MofResourceInfo: *mut PMOFRESOURCEINFOA) -> ULONG;
+   pub fn WmiFileHandleToInstanceNameA(DataBlockHandle: HANDLE, FileHandle: HANDLE, NumberCharacters: PULONG, InstanceNames: *mut CHAR) -> ULONG;
+   pub fn WmiFileHandleToInstanceNameW(DataBlockHandle: HANDLE, FileHandle: HANDLE, NumberCharacters: PULONG, InstanceNames: *mut WCHAR) -> ULONG;
+   pub fn WmiDevInstToInstanceNameA(InstanceName: PSTR, InstanceNameLength: ULONG, DevInst: PCSTR, InstanceIndex: ULONG) -> ULONG;
+   pub fn WmiDevInstToInstanceNameW(InstanceName: PWSTR, InstanceNameLength: ULONG, DevInst: PCWSTR, InstanceIndex: ULONG) -> ULONG;
+   pub fn WmiQueryGuidInformation(GuidHandle: HANDLE, GuidInfo: PWMIGUIDINFORMATION) -> ULONG;
+   pub fn WmiReceiveNotificationsW(HandleCount: ULONG, HandleList: PHANDLE, Callback: ::core::option::Option<unsafe extern "stdcall" fn(arg1: PWNODE_HEADER, arg2: ULONG_PTR)>, DeliveryContext: ULONG_PTR) -> ULONG;
+   pub fn WmiReceiveNotificationsA(HandleCount: ULONG, HandleList: PHANDLE, Callback: ::core::option::Option<unsafe extern "stdcall" fn(arg1: PWNODE_HEADER, arg2: ULONG_PTR)>, DeliveryContext: ULONG_PTR) -> ULONG;
+   pub fn WmiFreeBuffer(Buffer: PVOID);
    pub fn ZwAcceptConnectPort(PortHandle: PHANDLE, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, AcceptConnection: BOOLEAN, ServerView: PPORT_VIEW, ClientView: PREMOTE_PORT_VIEW) -> NTSTATUS;
    pub fn ZwAccessCheck(SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
    pub fn ZwAccessCheckAndAuditAlarm(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
@@ -53600,6 +54718,8 @@ extern "stdcall" {
    pub fn ZwAccessCheckByTypeResultListAndAuditAlarm(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
    pub fn ZwAccessCheckByTypeResultListAndAuditAlarmByHandle(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ClientToken: HANDLE, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
    pub fn ZwAcquireCMFViewOwnership(TimeStamp: PULONGLONG, tokenTaken: PBOOLEAN, replaceExisting: BOOLEAN) -> NTSTATUS;
+   pub fn ZwAcquireCrossVmMutant(CrossVmMutant: HANDLE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn ZwAcquireProcessActivityReference(ActivityReferenceHandle: PHANDLE, ParentProcessHandle: HANDLE, Reserved: PROCESS_ACTIVITY_TYPE) -> NTSTATUS;
    pub fn ZwAddAtom(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
    pub fn ZwAddAtomEx(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM, Flags: ULONG) -> NTSTATUS;
    pub fn ZwAddBootEntry(BootEntry: PBOOT_ENTRY, Id: PULONG) -> NTSTATUS;
@@ -53607,12 +54727,14 @@ extern "stdcall" {
    pub fn ZwAdjustGroupsToken(TokenHandle: HANDLE, ResetToDefault: BOOLEAN, NewState: PTOKEN_GROUPS, BufferLength: ULONG, PreviousState: PTOKEN_GROUPS, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwAdjustPrivilegesToken(TokenHandle: HANDLE, DisableAllPrivileges: BOOLEAN, NewState: PTOKEN_PRIVILEGES, BufferLength: ULONG, PreviousState: PTOKEN_PRIVILEGES, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwAdjustTokenClaimsAndDeviceGroups(TokenHandle: HANDLE, UserResetToDefault: BOOLEAN, DeviceResetToDefault: BOOLEAN, DeviceGroupsResetToDefault: BOOLEAN, NewUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceGroupsState: PTOKEN_GROUPS, UserBufferLength: ULONG, PreviousUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceBufferLength: ULONG, PreviousDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroupsBufferLength: ULONG, PreviousDeviceGroups: PTOKEN_GROUPS, UserReturnLength: PULONG, DeviceReturnLength: PULONG, DeviceGroupsReturnBufferLength: PULONG) -> NTSTATUS;
+   pub fn ZwAlertMultipleThreadByThreadId(MultipleThreadId: PHANDLE, Count: ULONG, Boost: PVOID, BoostCount: ULONG) -> NTSTATUS;
    pub fn ZwAlertResumeThread(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
    pub fn ZwAlertThread(ThreadHandle: HANDLE) -> NTSTATUS;
    pub fn ZwAlertThreadByThreadId(ThreadId: HANDLE) -> NTSTATUS;
+   pub fn ZwAlertThreadByThreadIdEx(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
    pub fn ZwAllocateLocallyUniqueId(Luid: PLUID) -> NTSTATUS;
-   pub fn ZwAllocateReserveObject(MemoryReserveHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, Type: MEMORY_RESERVE_TYPE) -> NTSTATUS;
-   pub fn ZwAllocateUserPhysicalPages(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+   pub fn ZwAllocateReserveObject(MemoryReserveHandle: PHANDLE, ObjectAttributes: PCOBJECT_ATTRIBUTES, Type: MEMORY_RESERVE_TYPE) -> NTSTATUS;
+   pub fn ZwAllocateUserPhysicalPages(ProcessHandle: HANDLE, NumberOfPages: PSIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
    pub fn ZwAllocateUserPhysicalPagesEx(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
    pub fn ZwAllocateUuids(Time: PULARGE_INTEGER, Range: PULONG, Sequence: PULONG, Seed: PCHAR) -> NTSTATUS;
    pub fn ZwAllocateVirtualMemory(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, RegionSize: PSIZE_T, AllocationType: ULONG, Protect: ULONG) -> NTSTATUS;
@@ -53638,7 +54760,7 @@ extern "stdcall" {
    pub fn ZwAlpcQueryInformation(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwAlpcQueryInformationMessage(PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, MessageInformationClass: ALPC_MESSAGE_INFORMATION_CLASS, MessageInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwAlpcRevokeSecurityContext(PortHandle: HANDLE, Flags: ULONG, ContextHandle: ALPC_HANDLE) -> NTSTATUS;
-   pub fn ZwAlpcSendWaitReceivePort(PortHandle: HANDLE, Flags: ULONG, SendMessageA: PPORT_MESSAGE, SendMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, ReceiveMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, ReceiveMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn ZwAlpcSendWaitReceivePort(PortHandle: HANDLE, Flags: ULONG, SendMessageW: PPORT_MESSAGE, SendMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, ReceiveMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, ReceiveMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn ZwAlpcSetInformation(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG) -> NTSTATUS;
    pub fn ZwAreMappedFilesTheSame(File1MappedAsAnImage: PVOID, File2MappedAsFile: PVOID) -> NTSTATUS;
    pub fn ZwAssignProcessToJobObject(JobHandle: HANDLE, ProcessHandle: HANDLE) -> NTSTATUS;
@@ -53668,56 +54790,59 @@ extern "stdcall" {
    pub fn ZwConnectPort(PortHandle: PHANDLE, PortName: PUNICODE_STRING, SecurityQos: PSECURITY_QUALITY_OF_SERVICE, ClientView: PPORT_VIEW, ServerView: PREMOTE_PORT_VIEW, MaxMessageLength: PULONG, ConnectionInformation: PVOID, ConnectionInformationLength: PULONG) -> NTSTATUS;
    pub fn ZwContinue(ContextRecord: PCONTEXT, TestAlert: BOOLEAN) -> NTSTATUS;
    pub fn ZwContinueEx(ContextRecord: PCONTEXT, ContinueArgument: PVOID) -> NTSTATUS;
-   pub fn ZwConvertBetweenAuxiliaryCounterAndPerformanceCounter(ConvertAuxiliaryToPerformanceCounter: BOOLEAN, PerformanceOrAuxiliaryCounterValue: PLARGE_INTEGER, ConvertedValue: PLARGE_INTEGER, ConversionError: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn ZwConvertBetweenAuxiliaryCounterAndPerformanceCounter(ConvertAuxiliaryToPerformanceCounter: BOOLEAN, PerformanceOrAuxiliaryCounterValue: PULONG64, ConvertedValue: PULONG64, ConversionError: PULONG64) -> NTSTATUS;
    pub fn ZwCopyFileChunk(SourceHandle: HANDLE, DestinationHandle: HANDLE, EventHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Length: ULONG, SourceOffset: PLARGE_INTEGER, DestOffset: PLARGE_INTEGER, SourceKey: PULONG, DestKey: PULONG, Flags: ULONG) -> NTSTATUS;
+   pub fn ZwCreateCpuPartition(CpuPartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwCreateCrossVmEvent(CrossVmEvent: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CrossVmEventFlags: ULONG, VMID: LPCGUID, ServiceID: LPCGUID) -> NTSTATUS;
+   pub fn ZwCreateCrossVmMutant(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CrossVmEventFlags: ULONG, VMID: LPCGUID, ServiceID: LPCGUID) -> NTSTATUS;
    pub fn ZwCreateDebugObject(DebugObjectHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
    pub fn ZwCreateDirectoryObject(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwCreateDirectoryObjectEx(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ShadowDirectoryHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
    pub fn ZwCreateEnclave(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, Size: SIZE_T, InitialCommitment: SIZE_T, EnclaveType: ULONG, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
    pub fn ZwCreateEnlistment(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, TransactionHandle: HANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, NotificationMask: NOTIFICATION_MASK, EnlistmentKey: PVOID) -> NTSTATUS;
    pub fn ZwCreateEvent(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EventType: EVENT_TYPE, InitialState: BOOLEAN) -> NTSTATUS;
-   pub fn ZwCreateEventPair(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwCreateEventPair(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwCreateFile(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, AllocationSize: PLARGE_INTEGER, FileAttributes: ULONG, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, EaBuffer: PVOID, EaLength: ULONG) -> NTSTATUS;
    pub fn ZwCreateIoCompletion(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Count: ULONG) -> NTSTATUS;
    pub fn ZwCreateIoRing(IoRingHandle: PHANDLE, CreateParametersLength: ULONG, CreateParameters: PVOID, OutputParametersLength: ULONG, OutputParameters: PVOID) -> NTSTATUS;
    pub fn ZwCreateIRTimer(TimerHandle: PHANDLE, Reserved: PVOID, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
-   pub fn ZwCreateJobObject(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwCreateJobObject(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwCreateJobSet(NumJob: ULONG, UserJobSet: PJOB_SET_ARRAY, Flags: ULONG) -> NTSTATUS;
    pub fn ZwCreateKey(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, Disposition: PULONG) -> NTSTATUS;
-   pub fn ZwCreateKeyedEvent(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
+   pub fn ZwCreateKeyedEvent(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
    pub fn ZwCreateKeyTransacted(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, TransactionHandle: HANDLE, Disposition: PULONG) -> NTSTATUS;
    pub fn ZwCreateLowBoxToken(TokenHandle: PHANDLE, ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, PackageSid: PSID, CapabilityCount: ULONG, Capabilities: PSID_AND_ATTRIBUTES, HandleCount: ULONG, Handles: *mut HANDLE) -> NTSTATUS;
-   pub fn ZwCreateMailslotFile(FileHandle: PHANDLE, DesiredAccess: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, CreateOptions: ULONG, MailslotQuota: ULONG, MaximumMessageSize: ULONG, ReadTimeout: PLARGE_INTEGER) -> NTSTATUS;
-   pub fn ZwCreateMutant(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, InitialOwner: BOOLEAN) -> NTSTATUS;
-   pub fn ZwCreateNamedPipeFile(FileHandle: PHANDLE, DesiredAccess: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, NamedPipeType: ULONG, ReadMode: ULONG, CompletionMode: ULONG, MaximumInstances: ULONG, InboundQuota: ULONG, OutboundQuota: ULONG, DefaultTimeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn ZwCreateMailslotFile(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, CreateOptions: ULONG, MailslotQuota: ULONG, MaximumMessageSize: ULONG, ReadTimeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn ZwCreateMutant(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, InitialOwner: BOOLEAN) -> NTSTATUS;
+   pub fn ZwCreateNamedPipeFile(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, NamedPipeType: ULONG, ReadMode: ULONG, CompletionMode: ULONG, MaximumInstances: ULONG, InboundQuota: ULONG, OutboundQuota: ULONG, DefaultTimeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn ZwCreatePagingFile(PageFileName: PUNICODE_STRING, MinimumSize: PLARGE_INTEGER, MaximumSize: PLARGE_INTEGER, Priority: ULONG) -> NTSTATUS;
-   pub fn ZwCreatePartition(ParentPartitionHandle: HANDLE, PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, PreferredNode: ULONG) -> NTSTATUS;
+   pub fn ZwCreatePartition(ParentPartitionHandle: HANDLE, PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, PreferredNode: ULONG) -> NTSTATUS;
    pub fn ZwCreatePort(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
    pub fn ZwCreatePrivateNamespace(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
-   pub fn ZwCreateProcess(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ParentProcess: HANDLE, InheritObjectTable: BOOLEAN, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE) -> NTSTATUS;
-   pub fn ZwCreateProcessEx(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ParentProcess: HANDLE, Flags: ULONG, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE, Reserved: ULONG) -> NTSTATUS;
-   pub fn ZwCreateProcessStateChange(ProcessStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ProcessHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
+   pub fn ZwCreateProcess(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, InheritObjectTable: BOOLEAN, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE) -> NTSTATUS;
+   pub fn ZwCreateProcessEx(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, Flags: ULONG, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE, Reserved: ULONG) -> NTSTATUS;
+   pub fn ZwCreateProcessStateChange(ProcessStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
    pub fn ZwCreateProfile(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, Affinity: KAFFINITY) -> NTSTATUS;
    pub fn ZwCreateProfileEx(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, GroupCount: USHORT, GroupAffinity: PGROUP_AFFINITY) -> NTSTATUS;
    pub fn ZwCreateResourceManager(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, RmGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, Description: PUNICODE_STRING) -> NTSTATUS;
-   pub fn ZwCreateSection(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE) -> NTSTATUS;
-   pub fn ZwCreateSectionEx(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
-   pub fn ZwCreateSemaphore(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, InitialCount: LONG, MaximumCount: LONG) -> NTSTATUS;
+   pub fn ZwCreateSection(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE) -> NTSTATUS;
+   pub fn ZwCreateSectionEx(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
+   pub fn ZwCreateSemaphore(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, InitialCount: LONG, MaximumCount: LONG) -> NTSTATUS;
    pub fn ZwCreateSymbolicLinkObject(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LinkTarget: PUNICODE_STRING) -> NTSTATUS;
-   pub fn ZwCreateThread(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ProcessHandle: HANDLE, ClientId: PCLIENT_ID, ThreadContext: PCONTEXT, InitialTeb: PINITIAL_TEB, CreateSuspended: BOOLEAN) -> NTSTATUS;
-   pub fn ZwCreateThreadEx(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ProcessHandle: HANDLE, StartRoutine: PUSER_THREAD_START_ROUTINE, Argument: PVOID, CreateFlags: ULONG, ZeroBits: SIZE_T, StackSize: SIZE_T, MaximumStackSize: SIZE_T, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
-   pub fn ZwCreateThreadStateChange(ThreadStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ThreadHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
-   pub fn ZwCreateTimer(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TimerType: TIMER_TYPE) -> NTSTATUS;
-   pub fn ZwCreateTimer2(TimerHandle: PHANDLE, Reserved1: PVOID, ObjectAttributes: POBJECT_ATTRIBUTES, Attributes: ULONG, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
+   pub fn ZwCreateThread(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, ClientId: PCLIENT_ID, ThreadContext: PCONTEXT, InitialTeb: PINITIAL_TEB, CreateSuspended: BOOLEAN) -> NTSTATUS;
+   pub fn ZwCreateThreadEx(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, StartRoutine: PUSER_THREAD_START_ROUTINE, Argument: PVOID, CreateFlags: ULONG, ZeroBits: SIZE_T, StackSize: SIZE_T, MaximumStackSize: SIZE_T, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
+   pub fn ZwCreateThreadStateChange(ThreadStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
+   pub fn ZwCreateTimer(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, TimerType: TIMER_TYPE) -> NTSTATUS;
+   pub fn ZwCreateTimer2(TimerHandle: PHANDLE, Reserved1: PVOID, ObjectAttributes: PCOBJECT_ATTRIBUTES, Attributes: ULONG, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
    pub fn ZwCreateToken(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
    pub fn ZwCreateTokenEx(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, UserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroups: PTOKEN_GROUPS, MandatoryPolicy: PTOKEN_MANDATORY_POLICY, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
    pub fn ZwCreateTransaction(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE, CreateOptions: ULONG, IsolationLevel: ULONG, IsolationFlags: ULONG, Timeout: PLARGE_INTEGER, Description: PUNICODE_STRING) -> NTSTATUS;
    pub fn ZwCreateTransactionManager(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, CreateOptions: ULONG, CommitStrength: ULONG) -> NTSTATUS;
-   pub fn ZwCreateUserProcess(ProcessHandle: PHANDLE, ThreadHandle: PHANDLE, ProcessDesiredAccess: ACCESS_MASK, ThreadDesiredAccess: ACCESS_MASK, ProcessObjectAttributes: POBJECT_ATTRIBUTES, ThreadObjectAttributes: POBJECT_ATTRIBUTES, ProcessFlags: ULONG, ThreadFlags: ULONG, ProcessParameters: PVOID, CreateInfo: PPS_CREATE_INFO, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
+   pub fn ZwCreateUserProcess(ProcessHandle: PHANDLE, ThreadHandle: PHANDLE, ProcessDesiredAccess: ACCESS_MASK, ThreadDesiredAccess: ACCESS_MASK, ProcessObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessFlags: ULONG, ThreadFlags: ULONG, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, CreateInfo: PPS_CREATE_INFO, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
    pub fn ZwCreateWaitablePort(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
    pub fn ZwCreateWaitCompletionPacket(WaitCompletionPacketHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwCreateWnfStateName(StateName: PWNF_STATE_NAME, NameLifetime: WNF_STATE_NAME_LIFETIME, DataScope: WNF_DATA_SCOPE, PersistData: BOOLEAN, TypeId: PCWNF_TYPE_ID, MaximumStateSize: ULONG, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
-   pub fn ZwCreateWorkerFactory(WorkerFactoryHandleReturn: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CompletionPortHandle: HANDLE, WorkerProcessHandle: HANDLE, StartRoutine: PVOID, StartParameter: PVOID, MaxThreadCount: ULONG, StackReserve: SIZE_T, StackCommit: SIZE_T) -> NTSTATUS;
+   pub fn ZwCreateWorkerFactory(WorkerFactoryHandleReturn: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, CompletionPortHandle: HANDLE, WorkerProcessHandle: HANDLE, StartRoutine: PVOID, StartParameter: PVOID, MaxThreadCount: ULONG, StackReserve: SIZE_T, StackCommit: SIZE_T) -> NTSTATUS;
    pub fn ZwDebugActiveProcess(ProcessHandle: HANDLE, DebugObjectHandle: HANDLE) -> NTSTATUS;
    pub fn ZwDebugContinue(DebugObjectHandle: HANDLE, ClientId: PCLIENT_ID, ContinueStatus: NTSTATUS) -> NTSTATUS;
    pub fn ZwDelayExecution(Alertable: BOOLEAN, DelayInterval: PLARGE_INTEGER) -> NTSTATUS;
@@ -53729,9 +54854,10 @@ extern "stdcall" {
    pub fn ZwDeleteObjectAuditAlarm(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
    pub fn ZwDeletePrivateNamespace(NamespaceHandle: HANDLE) -> NTSTATUS;
    pub fn ZwDeleteValueKey(KeyHandle: HANDLE, ValueName: PUNICODE_STRING) -> NTSTATUS;
-   pub fn ZwDeleteWnfStateData(StateName: PCWNF_STATE_NAME, ExplicitScope: *const c_void) -> NTSTATUS;
+   pub fn ZwDeleteWnfStateData(StateName: PCWNF_STATE_NAME, ExplicitScope: *const ::core::ffi::c_void) -> NTSTATUS;
    pub fn ZwDeleteWnfStateName(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
    pub fn ZwDeviceIoControlFile(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, IoControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
+   pub fn ZwDirectGraphicsCall(InputBufferLength: ULONG, InputBuffer: PVOID, OutputBufferLength: ULONG, OutputBuffer: PVOID, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwDisableLastKnownGood() -> NTSTATUS;
    pub fn ZwDisplayString(String: PUNICODE_STRING) -> NTSTATUS;
    pub fn ZwDrawText(Text: PUNICODE_STRING) -> NTSTATUS;
@@ -53800,8 +54926,8 @@ extern "stdcall" {
    pub fn ZwMakeTemporaryObject(Handle: HANDLE) -> NTSTATUS;
    pub fn ZwManagePartition(TargetHandle: HANDLE, SourceHandle: HANDLE, PartitionInformationClass: PARTITION_INFORMATION_CLASS, PartitionInformation: PVOID, PartitionInformationLength: ULONG) -> NTSTATUS;
    pub fn ZwMapCMFModule(What: ULONG, Index: ULONG, CacheIndexOut: PULONG, CacheFlagsOut: PULONG, ViewSizeOut: PULONG, BaseAddress: *mut PVOID) -> NTSTATUS;
-   pub fn ZwMapUserPhysicalPages(VirtualAddress: PVOID, NumberOfPages: ULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-   pub fn ZwMapUserPhysicalPagesScatter(VirtualAddresses: *mut PVOID, NumberOfPages: ULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+   pub fn ZwMapUserPhysicalPages(VirtualAddress: PVOID, NumberOfPages: SIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+   pub fn ZwMapUserPhysicalPagesScatter(VirtualAddresses: *mut PVOID, NumberOfPages: SIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
    pub fn ZwMapViewOfSection(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, CommitSize: SIZE_T, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, InheritDisposition: SECTION_INHERIT, AllocationType: ULONG, Win32Protect: ULONG) -> NTSTATUS;
    pub fn ZwMapViewOfSectionEx(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
    pub fn ZwModifyBootEntry(BootEntry: PBOOT_ENTRY) -> NTSTATUS;
@@ -53811,34 +54937,35 @@ extern "stdcall" {
    pub fn ZwNotifyChangeKey(KeyHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
    pub fn ZwNotifyChangeMultipleKeys(MasterKeyHandle: HANDLE, Count: ULONG, SubordinateObjects: *mut OBJECT_ATTRIBUTES, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
    pub fn ZwNotifyChangeSession(SessionHandle: HANDLE, ChangeSequenceNumber: ULONG, ChangeTimeStamp: PLARGE_INTEGER, Event: IO_SESSION_EVENT, NewState: IO_SESSION_STATE, PreviousState: IO_SESSION_STATE, Payload: PVOID, PayloadSize: ULONG) -> NTSTATUS;
+   pub fn ZwOpenCpuPartition(CpuPartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenDirectoryObject(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenEnlistment(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, EnlistmentGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenEvent(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-   pub fn ZwOpenEventPair(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwOpenEventPair(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenFile(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, OpenOptions: ULONG) -> NTSTATUS;
    pub fn ZwOpenIoCompletion(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-   pub fn ZwOpenJobObject(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwOpenJobObject(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenKey(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-   pub fn ZwOpenKeyedEvent(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwOpenKeyedEvent(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenKeyEx(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG) -> NTSTATUS;
    pub fn ZwOpenKeyTransacted(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TransactionHandle: HANDLE) -> NTSTATUS;
    pub fn ZwOpenKeyTransactedEx(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG, TransactionHandle: HANDLE) -> NTSTATUS;
-   pub fn ZwOpenMutant(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwOpenMutant(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenObjectAuditAlarm(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GrantedAccess: ACCESS_MASK, Privileges: PPRIVILEGE_SET, ObjectCreation: BOOLEAN, AccessGranted: BOOLEAN, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-   pub fn ZwOpenPartition(PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwOpenPartition(PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenPrivateNamespace(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
-   pub fn ZwOpenProcess(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
+   pub fn ZwOpenProcess(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
    pub fn ZwOpenProcessToken(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, TokenHandle: PHANDLE) -> NTSTATUS;
    pub fn ZwOpenProcessTokenEx(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
    pub fn ZwOpenResourceManager(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, ResourceManagerGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-   pub fn ZwOpenSection(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-   pub fn ZwOpenSemaphore(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwOpenSection(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwOpenSemaphore(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenSession(SessionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenSymbolicLinkObject(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-   pub fn ZwOpenThread(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
+   pub fn ZwOpenThread(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
    pub fn ZwOpenThreadToken(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, TokenHandle: PHANDLE) -> NTSTATUS;
    pub fn ZwOpenThreadTokenEx(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
-   pub fn ZwOpenTimer(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+   pub fn ZwOpenTimer(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
    pub fn ZwOpenTransaction(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE) -> NTSTATUS;
    pub fn ZwOpenTransactionManager(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, TmIdentity: LPGUID, OpenOptions: ULONG) -> NTSTATUS;
    pub fn ZwPlugPlayControl(PnPControlClass: PLUGPLAY_CONTROL_CLASS, PnPControlData: PVOID, PnPControlDataLength: ULONG) -> NTSTATUS;
@@ -53856,7 +54983,7 @@ extern "stdcall" {
    pub fn ZwPssCaptureVaSpaceBulk(ProcessHandle: HANDLE, BaseAddress: PVOID, BulkInformation: PNTPSS_MEMORY_BULK_INFORMATION, BulkInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
    pub fn ZwPulseEvent(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
    pub fn ZwQueryAttributesFile(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_BASIC_INFORMATION) -> NTSTATUS;
-   pub fn ZwQueryAuxiliaryCounterFrequency(AuxiliaryCounterFrequency: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn ZwQueryAuxiliaryCounterFrequency(AuxiliaryCounterFrequency: PULONG64) -> NTSTATUS;
    pub fn ZwQueryBootEntryOrder(Ids: PULONG, Count: PULONG) -> NTSTATUS;
    pub fn ZwQueryBootOptions(BootOptions: PBOOT_OPTIONS, BootOptionsLength: PULONG) -> NTSTATUS;
    pub fn ZwQueryDebugFilterState(ComponentId: ULONG, Level: ULONG) -> NTSTATUS;
@@ -53899,10 +55026,11 @@ extern "stdcall" {
    pub fn ZwQuerySection(SectionHandle: HANDLE, SectionInformationClass: SECTION_INFORMATION_CLASS, SectionInformation: PVOID, SectionInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
    pub fn ZwQuerySecurityAttributesToken(TokenHandle: HANDLE, Attributes: PUNICODE_STRING, NumberOfAttributes: ULONG, Buffer: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwQuerySecurityObject(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR, Length: ULONG, LengthNeeded: PULONG) -> NTSTATUS;
+   pub fn ZwQuerySecurityPolicy(Policy: PCUNICODE_STRING, KeyName: PCUNICODE_STRING, ValueName: PCUNICODE_STRING, ValueType: SECURE_SETTING_VALUE_TYPE, Value: PVOID, ValueSize: PULONG) -> NTSTATUS;
    pub fn ZwQuerySemaphore(SemaphoreHandle: HANDLE, SemaphoreInformationClass: SEMAPHORE_INFORMATION_CLASS, SemaphoreInformation: PVOID, SemaphoreInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwQuerySymbolicLinkObject(LinkHandle: HANDLE, LinkTarget: PUNICODE_STRING, ReturnedLength: PULONG) -> NTSTATUS;
    pub fn ZwQuerySystemEnvironmentValue(VariableName: PUNICODE_STRING, VariableValue: PWSTR, ValueLength: USHORT, ReturnLength: PUSHORT) -> NTSTATUS;
-   pub fn ZwQuerySystemEnvironmentValueEx(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Value: PVOID, ValueLength: PULONG, Attributes: PULONG) -> NTSTATUS;
+   pub fn ZwQuerySystemEnvironmentValueEx(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Buffer: PVOID, BufferLength: PULONG, Attributes: PULONG) -> NTSTATUS;
    pub fn ZwQuerySystemInformation(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwQuerySystemInformationEx(SystemInformationClass: SYSTEM_INFORMATION_CLASS, InputBuffer: PVOID, InputBufferLength: ULONG, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwQuerySystemTime(SystemTime: PLARGE_INTEGER) -> NTSTATUS;
@@ -53911,8 +55039,8 @@ extern "stdcall" {
    pub fn ZwQueryValueKey(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
    pub fn ZwQueryVirtualMemory(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
    pub fn ZwQueryVolumeInformationFile(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
-   pub fn ZwQueryWnfStateData(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-   pub fn ZwQueryWnfStateNameInformation(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
+   pub fn ZwQueryWnfStateData(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const ::core::ffi::c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+   pub fn ZwQueryWnfStateNameInformation(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const ::core::ffi::c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
    pub fn ZwQueueApcThread(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
    pub fn ZwQueueApcThreadEx(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
    pub fn ZwQueueApcThreadEx2(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcFlags: ULONG, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
@@ -53976,8 +55104,10 @@ extern "stdcall" {
    pub fn ZwSetEaFile(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
    pub fn ZwSetEvent(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
    pub fn ZwSetEventBoostPriority(EventHandle: HANDLE) -> NTSTATUS;
+   pub fn ZwSetEventEx(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
    pub fn ZwSetHighEventPair(EventPairHandle: HANDLE) -> NTSTATUS;
    pub fn ZwSetHighWaitLowEventPair(EventPairHandle: HANDLE) -> NTSTATUS;
+   pub fn ZwSetInformationCpuPartition(CpuPartitionHandle: HANDLE, CpuPartitionInformationClass: ULONG, CpuPartitionInformation: PVOID, CpuPartitionInformationLength: ULONG, arg1: PVOID, arg2: ULONG, arg3: ULONG) -> NTSTATUS;
    pub fn ZwSetInformationDebugObject(DebugObjectHandle: HANDLE, DebugObjectInformationClass: DEBUGOBJECTINFOCLASS, DebugInformation: PVOID, DebugInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
    pub fn ZwSetInformationEnlistment(EnlistmentHandle: HANDLE, EnlistmentInformationClass: ENLISTMENT_INFORMATION_CLASS, EnlistmentInformation: PVOID, EnlistmentInformationLength: ULONG) -> NTSTATUS;
    pub fn ZwSetInformationFile(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
@@ -53992,7 +55122,7 @@ extern "stdcall" {
    pub fn ZwSetInformationToken(TokenHandle: HANDLE, TokenInformationClass: ULONG, TokenInformation: PVOID, TokenInformationLength: ULONG) -> NTSTATUS;
    pub fn ZwSetInformationTransaction(TransactionHandle: HANDLE, TransactionInformationClass: TRANSACTION_INFORMATION_CLASS, TransactionInformation: PVOID, TransactionInformationLength: ULONG) -> NTSTATUS;
    pub fn ZwSetInformationTransactionManager(TmHandle: HANDLE, TransactionManagerInformationClass: TRANSACTIONMANAGER_INFORMATION_CLASS, TransactionManagerInformation: PVOID, TransactionManagerInformationLength: ULONG) -> NTSTATUS;
-   pub fn ZwSetInformationVirtualMemory(ProcessHandle: HANDLE, VmInformationClass: VIRTUAL_MEMORY_INFORMATION_CLASS, NumberOfEntries: ULONG_PTR, VirtualAddresses: PMEMORY_RANGE_ENTRY, VmInformation: PVOID, VmInformationLength: ULONG) -> NTSTATUS;
+   pub fn ZwSetInformationVirtualMemory(ProcessHandle: HANDLE, VmInformationClass: VIRTUAL_MEMORY_INFORMATION_CLASS, NumberOfEntries: SIZE_T, VirtualAddresses: PMEMORY_RANGE_ENTRY, VmInformation: PVOID, VmInformationLength: ULONG) -> NTSTATUS;
    pub fn ZwSetInformationWorkerFactory(WorkerFactoryHandle: HANDLE, WorkerFactoryInformationClass: WORKERFACTORYINFOCLASS, WorkerFactoryInformation: PVOID, WorkerFactoryInformationLength: ULONG) -> NTSTATUS;
    pub fn ZwSetIntervalProfile(Interval: ULONG, Source: KPROFILE_SOURCE) -> NTSTATUS;
    pub fn ZwSetIoCompletion(IoCompletionHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR) -> NTSTATUS;
@@ -54004,7 +55134,7 @@ extern "stdcall" {
    pub fn ZwSetQuotaInformationFile(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
    pub fn ZwSetSecurityObject(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
    pub fn ZwSetSystemEnvironmentValue(VariableName: PUNICODE_STRING, VariableValue: PUNICODE_STRING) -> NTSTATUS;
-   pub fn ZwSetSystemEnvironmentValueEx(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Value: PVOID, ValueLength: ULONG, Attributes: ULONG) -> NTSTATUS;
+   pub fn ZwSetSystemEnvironmentValueEx(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Buffer: PVOID, BufferLength: ULONG, Attributes: ULONG) -> NTSTATUS;
    pub fn ZwSetSystemInformation(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG) -> NTSTATUS;
    pub fn ZwSetSystemPowerState(SystemAction: POWER_ACTION, LightestSystemState: SYSTEM_POWER_STATE, Flags: ULONG) -> NTSTATUS;
    pub fn ZwSetSystemTime(SystemTime: PLARGE_INTEGER, PreviousTime: PLARGE_INTEGER) -> NTSTATUS;
@@ -54048,7 +55178,7 @@ extern "stdcall" {
    pub fn ZwUnmapViewOfSection(ProcessHandle: HANDLE, BaseAddress: PVOID) -> NTSTATUS;
    pub fn ZwUnmapViewOfSectionEx(ProcessHandle: HANDLE, BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
    pub fn ZwUnsubscribeWnfStateChange(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-   pub fn ZwUpdateWnfStateData(StateName: PCWNF_STATE_NAME, Buffer: *const c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
+   pub fn ZwUpdateWnfStateData(StateName: PCWNF_STATE_NAME, Buffer: *const ::core::ffi::c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const ::core::ffi::c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
    pub fn ZwVdmControl(Service: VDMSERVICECLASS, ServiceData: PVOID) -> NTSTATUS;
    pub fn ZwWaitForAlertByThreadId(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn ZwWaitForDebugEvent(DebugObjectHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER, WaitStateChange: PDBGUI_WAIT_STATE_CHANGE) -> NTSTATUS;
@@ -54060,6 +55190,10 @@ extern "stdcall" {
    pub fn ZwWaitHighEventPair(EventPairHandle: HANDLE) -> NTSTATUS;
    pub fn ZwWaitLowEventPair(EventPairHandle: HANDLE) -> NTSTATUS;
    pub fn ZwWorkerFactoryWorkerReady(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
+   pub fn ZwWow64QueryInformationProcess64(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+   pub fn ZwWow64QueryVirtualMemory64(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: ULONGLONG, ReturnLength: PULONGLONG) -> NTSTATUS;
+   pub fn ZwWow64ReadVirtualMemory64(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: ULONGLONG, NumberOfBytesRead: PULONGLONG, Flags: ULONG) -> NTSTATUS;
+   pub fn ZwWow64WriteVirtualMemory64(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: ULONGLONG, NumberOfBytesWritten: PULONGLONG) -> NTSTATUS;
    pub fn ZwWriteFile(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
    pub fn ZwWriteFileGather(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, SegmentArray: PFILE_SEGMENT_ELEMENT, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
    pub fn ZwWriteRequestData(PortHandle: HANDLE, Message: PPORT_MESSAGE, DataEntryIndex: ULONG, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
@@ -54112,7 +55246,7 @@ extern "stdcall" {
    pub fn NtUserDestroyWindow(WindowHandle: HWND) -> BOOL;
    pub fn NtUserDragDetect(WindowHandle: HWND, pt: POINT) -> BOOL;
    pub fn NtUserDragObject(WindowHandleParent: HWND, WindowHandleFrom: HWND, fmt: ULONG, data: ULONG_PTR, hcur: HCURSOR) -> ULONG;
-   pub fn NtUserDrawAnimatedRects(WindowHandle: HWND, idAni: c_int, lprcFrom: *const RECT, lprcTo: *const RECT) -> BOOL;
+   pub fn NtUserDrawAnimatedRects(WindowHandle: HWND, idAni: ::core::ffi::c_int, lprcFrom: *const RECT, lprcTo: *const RECT) -> BOOL;
    pub fn NtUserEndMenu() -> BOOL;
    pub fn NtUserEndPaint(WindowHandle: HWND, lpPaint: *const PAINTSTRUCT) -> BOOL;
    pub fn NtUserEnumDisplayMonitors(hdc: HDC, lprcClip: LPCRECT, lpfnEnum: MONITORENUMPROC, dwData: LPARAM) -> BOOL;
@@ -54191,1999 +55325,2103 @@ extern "stdcall" {
    pub fn NtUserWindowFromPhysicalPoint(Point: POINT) -> HWND;
    pub fn NtUserWindowFromPoint(Point: POINT) -> HWND;
 }
-pub type NtGetTickCount64Type = unsafe extern "C" fn() -> ULONGLONG;
-pub type NtGetTickCountType = unsafe extern "C" fn() -> ULONG;
-pub type DbgPrintType = unsafe extern "C" fn(Format: PCSTR, ...) -> ULONG;
-pub type DbgPrintExType = unsafe extern "C" fn(ComponentId: ULONG, Level: ULONG, Format: PCSTR, ...) -> ULONG;
-pub type NtCreateRegistryTransactionType = unsafe extern "C" fn(RegistryTransactionHandle: *mut HANDLE, DesiredAccess: ACCESS_MASK, ObjAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG) -> NTSTATUS;
-pub type NtOpenRegistryTransactionType = unsafe extern "C" fn(RegistryTransactionHandle: *mut HANDLE, DesiredAccess: ACCESS_MASK, ObjAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtCommitRegistryTransactionType = unsafe extern "C" fn(RegistryTransactionHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
-pub type NtRollbackRegistryTransactionType = unsafe extern "C" fn(RegistryTransactionHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
-pub type IsListEmptyType = unsafe extern "C" fn(ListHead: PLIST_ENTRY) -> BOOLEAN;
-pub type RemoveEntryListType = unsafe extern "C" fn(Entry: PLIST_ENTRY) -> BOOLEAN;
-pub type RemoveHeadListType = unsafe extern "C" fn(ListHead: PLIST_ENTRY) -> PLIST_ENTRY;
-pub type RemoveTailListType = unsafe extern "C" fn(ListHead: PLIST_ENTRY) -> PLIST_ENTRY;
-pub type PopEntryListType = unsafe extern "C" fn(ListHead: PSINGLE_LIST_ENTRY) -> PSINGLE_LIST_ENTRY;
-pub type RtlTotalBucketsHashTableType = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
-pub type RtlNonEmptyBucketsHashTableType = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
-pub type RtlEmptyBucketsHashTableType = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
-pub type RtlTotalEntriesHashTableType = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
-pub type RtlActiveEnumeratorsHashTableType = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
-pub type RtlIsNullOrEmptyUnicodeStringType = unsafe extern "C" fn(String: PUNICODE_STRING) -> BOOLEAN;
-pub type RtlInitUnicodeStringExType = unsafe extern "C" fn(DestinationString: PUNICODE_STRING, SourceString: PCWSTR) -> NTSTATUS;
-pub type RtlSetProcessIsCriticalType = unsafe extern "C" fn(NewValue: BOOLEAN, OldValue: PBOOLEAN, CheckFlag: BOOLEAN) -> NTSTATUS;
-pub type RtlSetThreadIsCriticalType = unsafe extern "C" fn(NewValue: BOOLEAN, OldValue: PBOOLEAN, CheckFlag: BOOLEAN) -> NTSTATUS;
-pub type RtlIsEqualLuidType = unsafe extern "C" fn(L1: PLUID, L2: PLUID) -> BOOLEAN;
-pub type RtlIsZeroLuidType = unsafe extern "C" fn(L1: PLUID) -> BOOLEAN;
-pub type RtlCheckBitType = unsafe extern "C" fn(BitMapHeader: PRTL_BITMAP, BitPosition: ULONG) -> BOOLEAN;
-pub type RtlInitializeSidExType = unsafe extern "C" fn(Sid: PSID, IdentifierAuthority: PSID_IDENTIFIER_AUTHORITY, SubAuthorityCount: UCHAR, ...) -> NTSTATUS;
-pub type PerfIsGroupOnInGroupMaskType = unsafe extern "C" fn(Group: ULONG, GroupMask: PPERFINFO_GROUPMASK) -> BOOLEAN;
-pub type NtCallbackReturnType = unsafe extern "stdcall" fn(OutputBuffer: PVOID, OutputLength: ULONG, Status: NTSTATUS) -> NTSTATUS;
-pub type NtFlushProcessWriteBuffersType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtQueryDebugFilterStateType = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG) -> NTSTATUS;
-pub type NtSetDebugFilterStateType = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG, State: BOOLEAN) -> NTSTATUS;
-pub type NtYieldExecutionType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type LdrLoadDllType = unsafe extern "stdcall" fn(DllPath: PCWSTR, DllCharacteristics: PULONG, DllName: PUNICODE_STRING, DllHandle: *mut PVOID) -> NTSTATUS;
-pub type LdrUnloadDllType = unsafe extern "stdcall" fn(DllHandle: PVOID) -> NTSTATUS;
-pub type LdrGetDllHandleType = unsafe extern "stdcall" fn(DllPath: PCWSTR, DllCharacteristics: PULONG, DllName: PUNICODE_STRING, DllHandle: *mut PVOID) -> NTSTATUS;
-pub type LdrGetDllHandleExType = unsafe extern "stdcall" fn(Flags: ULONG, DllPath: PCWSTR, DllCharacteristics: PULONG, DllName: PUNICODE_STRING, DllHandle: *mut PVOID) -> NTSTATUS;
-pub type LdrGetDllHandleByMappingType = unsafe extern "stdcall" fn(BaseAddress: PVOID, DllHandle: *mut PVOID) -> NTSTATUS;
-pub type LdrGetDllHandleByNameType = unsafe extern "stdcall" fn(BaseDllName: PUNICODE_STRING, FullDllName: PUNICODE_STRING, DllHandle: *mut PVOID) -> NTSTATUS;
-pub type LdrGetDllFullNameType = unsafe extern "stdcall" fn(DllHandle: PVOID, FullDllName: PUNICODE_STRING) -> NTSTATUS;
-pub type LdrGetDllPathType = unsafe extern "stdcall" fn(DllName: PCWSTR, Flags: ULONG, DllPath: *mut PWSTR, SearchPaths: *mut PWSTR) -> NTSTATUS;
-pub type LdrGetDllDirectoryType = unsafe extern "stdcall" fn(DllDirectory: PUNICODE_STRING) -> NTSTATUS;
-pub type LdrSetDllDirectoryType = unsafe extern "stdcall" fn(DllDirectory: PUNICODE_STRING) -> NTSTATUS;
-pub type LdrAddRefDllType = unsafe extern "stdcall" fn(Flags: ULONG, DllHandle: PVOID) -> NTSTATUS;
-pub type LdrGetProcedureAddressType = unsafe extern "stdcall" fn(DllHandle: PVOID, ProcedureName: PANSI_STRING, ProcedureNumber: ULONG, ProcedureAddress: *mut PVOID) -> NTSTATUS;
-pub type LdrGetProcedureAddressExType = unsafe extern "stdcall" fn(DllHandle: PVOID, ProcedureName: PANSI_STRING, ProcedureNumber: ULONG, ProcedureAddress: *mut PVOID, Flags: ULONG) -> NTSTATUS;
-pub type LdrGetKnownDllSectionHandleType = unsafe extern "stdcall" fn(DllName: PCWSTR, KnownDlls32: BOOLEAN, Section: PHANDLE) -> NTSTATUS;
-pub type LdrGetProcedureAddressForCallerType = unsafe extern "stdcall" fn(DllHandle: PVOID, ProcedureName: PANSI_STRING, ProcedureNumber: ULONG, ProcedureAddress: *mut PVOID, Flags: ULONG, Callback: *mut PVOID) -> NTSTATUS;
-pub type LdrLockLoaderLockType = unsafe extern "stdcall" fn(Flags: ULONG, Disposition: *mut ULONG, Cookie: *mut PVOID) -> NTSTATUS;
-pub type LdrUnlockLoaderLockType = unsafe extern "stdcall" fn(Flags: ULONG, Cookie: PVOID) -> NTSTATUS;
-pub type LdrRelocateImageType = unsafe extern "stdcall" fn(NewBase: PVOID, LoaderName: PSTR, Success: NTSTATUS, Conflict: NTSTATUS, Invalid: NTSTATUS) -> NTSTATUS;
-pub type LdrRelocateImageWithBiasType = unsafe extern "stdcall" fn(NewBase: PVOID, Bias: LONGLONG, LoaderName: PSTR, Success: NTSTATUS, Conflict: NTSTATUS, Invalid: NTSTATUS) -> NTSTATUS;
-pub type LdrProcessRelocationBlockType = unsafe extern "stdcall" fn(VA: ULONG_PTR, SizeOfBlock: ULONG, NextOffset: PUSHORT, Diff: LONG_PTR) -> PIMAGE_BASE_RELOCATION;
-pub type LdrProcessRelocationBlockExType = unsafe extern "stdcall" fn(Machine: ULONG, VA: ULONG_PTR, SizeOfBlock: ULONG, NextOffset: PUSHORT, Diff: LONG_PTR) -> PIMAGE_BASE_RELOCATION;
-pub type LdrVerifyMappedImageMatchesChecksumType = unsafe extern "stdcall" fn(BaseAddress: PVOID, NumberOfBytes: SIZE_T, FileLength: ULONG) -> BOOLEAN;
-pub type LdrVerifyImageMatchesChecksumType = unsafe extern "stdcall" fn(ImageFileHandle: HANDLE, ImportCallbackRoutine: PLDR_IMPORT_MODULE_CALLBACK, ImportCallbackParameter: PVOID, ImageCharacteristics: PUSHORT) -> NTSTATUS;
-pub type LdrVerifyImageMatchesChecksumExType = unsafe extern "stdcall" fn(ImageFileHandle: HANDLE, VerifyInfo: PLDR_VERIFY_IMAGE_INFO) -> NTSTATUS;
-pub type LdrQueryModuleServiceTagsType = unsafe extern "stdcall" fn(DllHandle: PVOID, ServiceTagBuffer: PULONG, BufferSize: PULONG) -> NTSTATUS;
-pub type LdrRegisterDllNotificationType = unsafe extern "stdcall" fn(Flags: ULONG, NotificationFunction: PLDR_DLL_NOTIFICATION_FUNCTION, Context: PVOID, Cookie: *mut PVOID) -> NTSTATUS;
-pub type LdrUnregisterDllNotificationType = unsafe extern "stdcall" fn(Cookie: PVOID) -> NTSTATUS;
-pub type LdrStandardizeSystemPathType = unsafe extern "stdcall" fn(SystemPath: PUNICODE_STRING) -> PUNICODE_STRING;
-pub type LdrGetFailureDataType = unsafe extern "stdcall" fn() -> PLDR_FAILURE_DATA;
-pub type LdrAddLoadAsDataTableType = unsafe extern "stdcall" fn(Module: PVOID, FilePath: PCWSTR, Size: SIZE_T, Handle: HANDLE, ActCtx: PACTIVATION_CONTEXT) -> NTSTATUS;
-pub type LdrRemoveLoadAsDataTableType = unsafe extern "stdcall" fn(InitModule: PVOID, BaseModule: *mut PVOID, Size: PSIZE_T, Flags: ULONG) -> NTSTATUS;
-pub type LdrGetFileNameFromLoadAsDataTableType = unsafe extern "stdcall" fn(Module: PVOID, pFileNamePrt: *mut PVOID) -> NTSTATUS;
-pub type LdrDisableThreadCalloutsForDllType = unsafe extern "stdcall" fn(DllImageBase: PVOID) -> NTSTATUS;
-pub type LdrAccessResourceType = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceDataEntry: PIMAGE_RESOURCE_DATA_ENTRY, ResourceBuffer: *mut PVOID, ResourceLength: *mut ULONG) -> NTSTATUS;
-pub type LdrFindResource_UType = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, ResourceDataEntry: *mut PIMAGE_RESOURCE_DATA_ENTRY) -> NTSTATUS;
-pub type LdrFindResourceEx_UType = unsafe extern "stdcall" fn(Flags: ULONG, DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, ResourceDataEntry: *mut PIMAGE_RESOURCE_DATA_ENTRY) -> NTSTATUS;
-pub type LdrFindResourceDirectory_UType = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, ResourceDirectory: *mut PIMAGE_RESOURCE_DIRECTORY) -> NTSTATUS;
-pub type LdrResFindResourceType = unsafe extern "stdcall" fn(DllHandle: PVOID, Type: ULONG_PTR, Name: ULONG_PTR, Language: ULONG_PTR, ResourceBuffer: *mut PVOID, ResourceLength: PULONG, CultureName: PVOID, CultureNameLength: PULONG, Flags: ULONG) -> NTSTATUS;
-pub type LdrResFindResourceDirectoryType = unsafe extern "stdcall" fn(DllHandle: PVOID, Type: ULONG_PTR, Name: ULONG_PTR, ResourceDirectory: *mut PIMAGE_RESOURCE_DIRECTORY, CultureName: PVOID, CultureNameLength: PULONG, Flags: ULONG) -> NTSTATUS;
-pub type LdrpResGetResourceDirectoryType = unsafe extern "stdcall" fn(DllHandle: PVOID, Size: SIZE_T, Flags: ULONG, ResourceDirectory: *mut PIMAGE_RESOURCE_DIRECTORY, OutHeaders: *mut PIMAGE_NT_HEADERS) -> NTSTATUS;
-pub type LdrResSearchResourceType = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, Flags: ULONG, ResourceBuffer: *mut PVOID, ResourceLength: PSIZE_T, CultureName: PVOID, CultureNameLength: PULONG) -> NTSTATUS;
-pub type LdrResGetRCConfigType = unsafe extern "stdcall" fn(DllHandle: PVOID, Length: SIZE_T, Config: PVOID, Flags: ULONG, AlternateResource: BOOLEAN) -> NTSTATUS;
-pub type LdrResReleaseType = unsafe extern "stdcall" fn(DllHandle: PVOID, CultureNameOrId: ULONG_PTR, Flags: ULONG) -> NTSTATUS;
-pub type LdrEnumResourcesType = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, ResourceCount: *mut ULONG, Resources: PLDR_ENUM_RESOURCE_ENTRY) -> NTSTATUS;
-pub type LdrFindEntryForAddressType = unsafe extern "stdcall" fn(DllHandle: PVOID, Entry: *mut PLDR_DATA_TABLE_ENTRY) -> NTSTATUS;
-pub type LdrLoadAlternateResourceModuleType = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceDllBase: *mut PVOID, ResourceOffset: *mut ULONG_PTR, Flags: ULONG) -> NTSTATUS;
-pub type LdrLoadAlternateResourceModuleExType = unsafe extern "stdcall" fn(DllHandle: PVOID, LanguageId: LANGID, ResourceDllBase: *mut PVOID, ResourceOffset: *mut ULONG_PTR, Flags: ULONG) -> NTSTATUS;
-pub type LdrUnloadAlternateResourceModuleType = unsafe extern "stdcall" fn(DllHandle: PVOID) -> BOOLEAN;
-pub type LdrUnloadAlternateResourceModuleExType = unsafe extern "stdcall" fn(DllHandle: PVOID, Flags: ULONG) -> BOOLEAN;
-pub type LdrQueryProcessModuleInformationType = unsafe extern "stdcall" fn(ModuleInformation: PRTL_PROCESS_MODULES, Size: ULONG, ReturnedSize: PULONG) -> NTSTATUS;
-pub type LdrEnumerateLoadedModulesType = unsafe extern "stdcall" fn(ReservedFlag: BOOLEAN, EnumProc: PLDR_ENUM_CALLBACK, Context: PVOID) -> NTSTATUS;
-pub type LdrOpenImageFileOptionsKeyType = unsafe extern "stdcall" fn(SubKey: PUNICODE_STRING, Wow64: BOOLEAN, NewKeyHandle: PHANDLE) -> NTSTATUS;
-pub type LdrQueryImageFileKeyOptionType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PCWSTR, Type: ULONG, Buffer: PVOID, BufferSize: ULONG, ReturnedLength: PULONG) -> NTSTATUS;
-pub type LdrQueryImageFileExecutionOptionsType = unsafe extern "stdcall" fn(SubKey: PUNICODE_STRING, ValueName: PCWSTR, ValueSize: ULONG, Buffer: PVOID, BufferSize: ULONG, ReturnedLength: PULONG) -> NTSTATUS;
-pub type LdrQueryImageFileExecutionOptionsExType = unsafe extern "stdcall" fn(SubKey: PUNICODE_STRING, ValueName: PCWSTR, Type: ULONG, Buffer: PVOID, BufferSize: ULONG, ReturnedLength: PULONG, Wow64: BOOLEAN) -> NTSTATUS;
-pub type LdrQueryOptionalDelayLoadedAPIType = unsafe extern "stdcall" fn(ParentModuleBase: PVOID, DllName: PCSTR, ProcedureName: PCSTR, Flags: ULONG) -> NTSTATUS;
-pub type LdrResolveDelayLoadedAPIType = unsafe extern "stdcall" fn(ParentModuleBase: PVOID, DelayloadDescriptor: PCIMAGE_DELAYLOAD_DESCRIPTOR, FailureDllHook: PDELAYLOAD_FAILURE_DLL_CALLBACK, FailureSystemHook: PDELAYLOAD_FAILURE_SYSTEM_ROUTINE, ThunkAddress: PIMAGE_THUNK_DATA, Flags: ULONG) -> PVOID;
-pub type LdrResolveDelayLoadsFromDllType = unsafe extern "stdcall" fn(ParentModuleBase: PVOID, TargetDllName: PCSTR, Flags: ULONG) -> NTSTATUS;
-pub type LdrSetDefaultDllDirectoriesType = unsafe extern "stdcall" fn(DirectoryFlags: ULONG) -> NTSTATUS;
-pub type LdrAddDllDirectoryType = unsafe extern "stdcall" fn(NewDirectory: PUNICODE_STRING, Cookie: PDLL_DIRECTORY_COOKIE) -> NTSTATUS;
-pub type LdrRemoveDllDirectoryType = unsafe extern "stdcall" fn(Cookie: DLL_DIRECTORY_COOKIE) -> NTSTATUS;
-pub type LdrShutdownProcessType = unsafe extern "stdcall" fn() -> !;
-pub type LdrShutdownThreadType = unsafe extern "stdcall" fn() -> !;
-pub type LdrSetImplicitPathOptionsType = unsafe extern "stdcall" fn(ImplicitPathOptions: ULONG) -> NTSTATUS;
-pub type LdrControlFlowGuardEnforcedType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type LdrControlFlowGuardEnforcedWithExportSuppressionType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type LdrIsModuleSxsRedirectedType = unsafe extern "stdcall" fn(DllHandle: PVOID) -> BOOLEAN;
-pub type LdrUpdatePackageSearchPathType = unsafe extern "stdcall" fn(SearchPathA: PCWSTR) -> NTSTATUS;
-pub type LdrCreateEnclaveType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, Reserved: ULONG, Size: SIZE_T, InitialCommitment: SIZE_T, EnclaveType: ULONG, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
-pub type LdrInitializeEnclaveType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
-pub type LdrDeleteEnclaveType = unsafe extern "stdcall" fn(BaseAddress: PVOID) -> NTSTATUS;
-pub type LdrCallEnclaveType = unsafe extern "stdcall" fn(Routine: PENCLAVE_ROUTINE, Flags: ULONG, RoutineParamReturn: *mut PVOID) -> NTSTATUS;
-pub type LdrLoadEnclaveModuleType = unsafe extern "stdcall" fn(BaseAddress: PVOID, DllPath: PCWSTR, DllName: PUNICODE_STRING) -> NTSTATUS;
-pub type LdrFlushAlternateResourceModulesType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type NtDelayExecutionType = unsafe extern "stdcall" fn(Alertable: BOOLEAN, DelayInterval: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtQuerySystemEnvironmentValueType = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VariableValue: PWSTR, ValueLength: USHORT, ReturnLength: PUSHORT) -> NTSTATUS;
-pub type NtSetSystemEnvironmentValueType = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VariableValue: PUNICODE_STRING) -> NTSTATUS;
-pub type NtQuerySystemEnvironmentValueExType = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Value: PVOID, ValueLength: PULONG, Attributes: PULONG) -> NTSTATUS;
-pub type NtSetSystemEnvironmentValueExType = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Value: PVOID, ValueLength: ULONG, Attributes: ULONG) -> NTSTATUS;
-pub type NtEnumerateSystemEnvironmentValuesExType = unsafe extern "stdcall" fn(InformationClass: ULONG, Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
-pub type NtAddBootEntryType = unsafe extern "stdcall" fn(BootEntry: PBOOT_ENTRY, Id: PULONG) -> NTSTATUS;
-pub type NtDeleteBootEntryType = unsafe extern "stdcall" fn(Id: ULONG) -> NTSTATUS;
-pub type NtModifyBootEntryType = unsafe extern "stdcall" fn(BootEntry: PBOOT_ENTRY) -> NTSTATUS;
-pub type NtEnumerateBootEntriesType = unsafe extern "stdcall" fn(Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
-pub type NtQueryBootEntryOrderType = unsafe extern "stdcall" fn(Ids: PULONG, Count: PULONG) -> NTSTATUS;
-pub type NtSetBootEntryOrderType = unsafe extern "stdcall" fn(Ids: PULONG, Count: ULONG) -> NTSTATUS;
-pub type NtQueryBootOptionsType = unsafe extern "stdcall" fn(BootOptions: PBOOT_OPTIONS, BootOptionsLength: PULONG) -> NTSTATUS;
-pub type NtSetBootOptionsType = unsafe extern "stdcall" fn(BootOptions: PBOOT_OPTIONS, FieldsToChange: ULONG) -> NTSTATUS;
-pub type NtTranslateFilePathType = unsafe extern "stdcall" fn(InputFilePath: PFILE_PATH, OutputType: ULONG, OutputFilePath: PFILE_PATH, OutputFilePathLength: PULONG) -> NTSTATUS;
-pub type NtAddDriverEntryType = unsafe extern "stdcall" fn(DriverEntry: PEFI_DRIVER_ENTRY, Id: PULONG) -> NTSTATUS;
-pub type NtDeleteDriverEntryType = unsafe extern "stdcall" fn(Id: ULONG) -> NTSTATUS;
-pub type NtModifyDriverEntryType = unsafe extern "stdcall" fn(DriverEntry: PEFI_DRIVER_ENTRY) -> NTSTATUS;
-pub type NtEnumerateDriverEntriesType = unsafe extern "stdcall" fn(Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
-pub type NtQueryDriverEntryOrderType = unsafe extern "stdcall" fn(Ids: PULONG, Count: PULONG) -> NTSTATUS;
-pub type NtSetDriverEntryOrderType = unsafe extern "stdcall" fn(Ids: PULONG, Count: ULONG) -> NTSTATUS;
-pub type NtFilterBootOptionType = unsafe extern "stdcall" fn(FilterOperation: FILTER_BOOT_OPTION_OPERATION, ObjectType: ULONG, ElementType: ULONG, Data: PVOID, DataSize: ULONG) -> NTSTATUS;
-pub type NtCreateEventType = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EventType: EVENT_TYPE, InitialState: BOOLEAN) -> NTSTATUS;
-pub type NtOpenEventType = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtSetEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
-pub type NtSetEventExType = unsafe extern "stdcall" fn(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
-pub type NtSetEventBoostPriorityType = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> NTSTATUS;
-pub type NtClearEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> NTSTATUS;
-pub type NtResetEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
-pub type NtPulseEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
-pub type NtQueryEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE, EventInformationClass: EVENT_INFORMATION_CLASS, EventInformation: PVOID, EventInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtCreateEventPairType = unsafe extern "stdcall" fn(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtOpenEventPairType = unsafe extern "stdcall" fn(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtSetLowEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type NtSetHighEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type NtWaitLowEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type NtWaitHighEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type NtSetLowWaitHighEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type NtSetHighWaitLowEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type NtCreateMutantType = unsafe extern "stdcall" fn(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, InitialOwner: BOOLEAN) -> NTSTATUS;
-pub type NtOpenMutantType = unsafe extern "stdcall" fn(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtReleaseMutantType = unsafe extern "stdcall" fn(MutantHandle: HANDLE, PreviousCount: PLONG) -> NTSTATUS;
-pub type NtQueryMutantType = unsafe extern "stdcall" fn(MutantHandle: HANDLE, MutantInformationClass: MUTANT_INFORMATION_CLASS, MutantInformation: PVOID, MutantInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtCreateSemaphoreType = unsafe extern "stdcall" fn(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, InitialCount: LONG, MaximumCount: LONG) -> NTSTATUS;
-pub type NtOpenSemaphoreType = unsafe extern "stdcall" fn(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtReleaseSemaphoreType = unsafe extern "stdcall" fn(SemaphoreHandle: HANDLE, ReleaseCount: LONG, PreviousCount: PLONG) -> NTSTATUS;
-pub type NtQuerySemaphoreType = unsafe extern "stdcall" fn(SemaphoreHandle: HANDLE, SemaphoreInformationClass: SEMAPHORE_INFORMATION_CLASS, SemaphoreInformation: PVOID, SemaphoreInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtCreateTimerType = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, TimerType: TIMER_TYPE) -> NTSTATUS;
-pub type NtOpenTimerType = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtSetTimerType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER, TimerApcRoutine: PTIMER_APC_ROUTINE, TimerContext: PVOID, ResumeTimer: BOOLEAN, Period: LONG, PreviousState: PBOOLEAN) -> NTSTATUS;
-pub type NtSetTimerExType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, TimerSetInformationClass: TIMER_SET_INFORMATION_CLASS, TimerSetInformation: PVOID, TimerSetInformationLength: ULONG) -> NTSTATUS;
-pub type NtCancelTimerType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, CurrentState: PBOOLEAN) -> NTSTATUS;
-pub type NtQueryTimerType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, TimerInformationClass: TIMER_INFORMATION_CLASS, TimerInformation: PVOID, TimerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtCreateIRTimerType = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, Reserved: PVOID, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
-pub type NtSetIRTimerType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtCreateTimer2Type = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, Reserved1: PVOID, ObjectAttributes: PCOBJECT_ATTRIBUTES, Attributes: ULONG, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
-pub type NtSetTimer2Type = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER, Period: PLARGE_INTEGER, Parameters: PT2_SET_PARAMETERS) -> NTSTATUS;
-pub type NtCancelTimer2Type = unsafe extern "stdcall" fn(TimerHandle: HANDLE, Parameters: PT2_CANCEL_PARAMETERS) -> NTSTATUS;
-pub type NtCreateProfileType = unsafe extern "stdcall" fn(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, Affinity: KAFFINITY) -> NTSTATUS;
-pub type NtCreateProfileExType = unsafe extern "stdcall" fn(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, GroupCount: USHORT, GroupAffinity: PGROUP_AFFINITY) -> NTSTATUS;
-pub type NtStartProfileType = unsafe extern "stdcall" fn(ProfileHandle: HANDLE) -> NTSTATUS;
-pub type NtStopProfileType = unsafe extern "stdcall" fn(ProfileHandle: HANDLE) -> NTSTATUS;
-pub type NtQueryIntervalProfileType = unsafe extern "stdcall" fn(ProfileSource: KPROFILE_SOURCE, Interval: PULONG) -> NTSTATUS;
-pub type NtSetIntervalProfileType = unsafe extern "stdcall" fn(Interval: ULONG, Source: KPROFILE_SOURCE) -> NTSTATUS;
-pub type NtCreateKeyedEventType = unsafe extern "stdcall" fn(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
-pub type NtOpenKeyedEventType = unsafe extern "stdcall" fn(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtReleaseKeyedEventType = unsafe extern "stdcall" fn(KeyedEventHandle: HANDLE, KeyValue: PVOID, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtWaitForKeyedEventType = unsafe extern "stdcall" fn(KeyedEventHandle: HANDLE, KeyValue: PVOID, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtUmsThreadYieldType = unsafe extern "stdcall" fn(SchedulerParam: PVOID) -> NTSTATUS;
-pub type NtCreateWnfStateNameType = unsafe extern "stdcall" fn(StateName: PWNF_STATE_NAME, NameLifetime: WNF_STATE_NAME_LIFETIME, DataScope: WNF_DATA_SCOPE, PersistData: BOOLEAN, TypeId: PCWNF_TYPE_ID, MaximumStateSize: ULONG, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type NtDeleteWnfStateNameType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-pub type NtUpdateWnfStateDataType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, Buffer: *const c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
-pub type NtDeleteWnfStateDataType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, ExplicitScope: *const c_void) -> NTSTATUS;
-pub type NtQueryWnfStateDataType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-pub type NtQueryWnfStateNameInformationType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
-pub type NtSubscribeWnfStateChangeType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, EventMask: ULONG, SubscriptionId: PULONG64) -> NTSTATUS;
-pub type NtUnsubscribeWnfStateChangeType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-pub type NtGetCompleteWnfStateSubscriptionType = unsafe extern "stdcall" fn(OldDescriptorStateName: PWNF_STATE_NAME, OldSubscriptionId: *mut ULONG64, OldDescriptorEventMask: ULONG, OldDescriptorStatus: ULONG, NewDeliveryDescriptor: PWNF_DELIVERY_DESCRIPTOR, DescriptorSize: ULONG) -> NTSTATUS;
-pub type NtSetWnfProcessNotificationEventType = unsafe extern "stdcall" fn(NotificationEvent: HANDLE) -> NTSTATUS;
-pub type NtCreateWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandleReturn: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, CompletionPortHandle: HANDLE, WorkerProcessHandle: HANDLE, StartRoutine: PVOID, StartParameter: PVOID, MaxThreadCount: ULONG, StackReserve: SIZE_T, StackCommit: SIZE_T) -> NTSTATUS;
-pub type NtQueryInformationWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, WorkerFactoryInformationClass: WORKERFACTORYINFOCLASS, WorkerFactoryInformation: PVOID, WorkerFactoryInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, WorkerFactoryInformationClass: WORKERFACTORYINFOCLASS, WorkerFactoryInformation: PVOID, WorkerFactoryInformationLength: ULONG) -> NTSTATUS;
-pub type NtShutdownWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, PendingWorkerCount: *mut LONG) -> NTSTATUS;
-pub type NtReleaseWorkerFactoryWorkerType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
-pub type NtWorkerFactoryWorkerReadyType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
-pub type NtWaitForWorkViaWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, MiniPackets: PFILE_IO_COMPLETION_INFORMATION, Count: ULONG, PacketsReturned: PULONG, DeferredWork: PWORKER_FACTORY_DEFERRED_WORK) -> NTSTATUS;
-pub type NtQuerySystemTimeType = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtSetSystemTimeType = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER, PreviousTime: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtQueryTimerResolutionType = unsafe extern "stdcall" fn(MaximumTime: PULONG, MinimumTime: PULONG, CurrentTime: PULONG) -> NTSTATUS;
-pub type NtSetTimerResolutionType = unsafe extern "stdcall" fn(DesiredTime: ULONG, SetResolution: BOOLEAN, ActualTime: PULONG) -> NTSTATUS;
-pub type NtQueryPerformanceCounterType = unsafe extern "stdcall" fn(PerformanceCounter: PLARGE_INTEGER, PerformanceFrequency: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtQueryAuxiliaryCounterFrequencyType = unsafe extern "stdcall" fn(AuxiliaryCounterFrequency: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtConvertBetweenAuxiliaryCounterAndPerformanceCounterType = unsafe extern "stdcall" fn(ConvertAuxiliaryToPerformanceCounter: BOOLEAN, PerformanceOrAuxiliaryCounterValue: PLARGE_INTEGER, ConvertedValue: PLARGE_INTEGER, ConversionError: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtAllocateLocallyUniqueIdType = unsafe extern "stdcall" fn(Luid: PLUID) -> NTSTATUS;
-pub type NtSetUuidSeedType = unsafe extern "stdcall" fn(Seed: PCHAR) -> NTSTATUS;
-pub type NtAllocateUuidsType = unsafe extern "stdcall" fn(Time: PULARGE_INTEGER, Range: PULONG, Sequence: PULONG, Seed: PCHAR) -> NTSTATUS;
-pub type NtQuerySystemInformationType = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtQuerySystemInformationExType = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, InputBuffer: PVOID, InputBufferLength: ULONG, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetSystemInformationType = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG) -> NTSTATUS;
-pub type NtSystemDebugControlType = unsafe extern "stdcall" fn(Command: SYSDBG_COMMAND, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtRaiseHardErrorType = unsafe extern "stdcall" fn(ErrorStatus: NTSTATUS, NumberOfParameters: ULONG, UnicodeStringParameterMask: ULONG, Parameters: PULONG_PTR, ValidResponseOptions: ULONG, Response: PULONG) -> NTSTATUS;
-pub type NtQueryDefaultLocaleType = unsafe extern "stdcall" fn(UserProfile: BOOLEAN, DefaultLocaleId: PLCID) -> NTSTATUS;
-pub type NtSetDefaultLocaleType = unsafe extern "stdcall" fn(UserProfile: BOOLEAN, DefaultLocaleId: LCID) -> NTSTATUS;
-pub type NtQueryInstallUILanguageType = unsafe extern "stdcall" fn(InstallUILanguageId: *mut LANGID) -> NTSTATUS;
-pub type NtFlushInstallUILanguageType = unsafe extern "stdcall" fn(InstallUILanguage: LANGID, SetComittedFlag: ULONG) -> NTSTATUS;
-pub type NtQueryDefaultUILanguageType = unsafe extern "stdcall" fn(DefaultUILanguageId: *mut LANGID) -> NTSTATUS;
-pub type NtSetDefaultUILanguageType = unsafe extern "stdcall" fn(DefaultUILanguageId: LANGID) -> NTSTATUS;
-pub type NtIsUILanguageComittedType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtInitializeNlsFilesType = unsafe extern "stdcall" fn(BaseAddress: *mut PVOID, DefaultLocaleId: PLCID, DefaultCasingTableSize: PLARGE_INTEGER, CurrentNLSVersion: PULONG) -> NTSTATUS;
-pub type NtGetNlsSectionPtrType = unsafe extern "stdcall" fn(SectionType: ULONG, SectionData: ULONG, ContextData: PVOID, SectionPointer: *mut PVOID, SectionSize: PULONG) -> NTSTATUS;
-pub type NtMapCMFModuleType = unsafe extern "stdcall" fn(What: ULONG, Index: ULONG, CacheIndexOut: PULONG, CacheFlagsOut: PULONG, ViewSizeOut: PULONG, BaseAddress: *mut PVOID) -> NTSTATUS;
-pub type NtGetMUIRegistryInfoType = unsafe extern "stdcall" fn(Flags: ULONG, DataSize: PULONG, Data: PVOID) -> NTSTATUS;
-pub type NtAddAtomType = unsafe extern "stdcall" fn(AtomName: PWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
-pub type NtAddAtomExType = unsafe extern "stdcall" fn(AtomName: PWSTR, Length: ULONG, Atom: PRTL_ATOM, Flags: ULONG) -> NTSTATUS;
-pub type NtFindAtomType = unsafe extern "stdcall" fn(AtomName: PWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
-pub type NtDeleteAtomType = unsafe extern "stdcall" fn(Atom: RTL_ATOM) -> NTSTATUS;
-pub type NtQueryInformationAtomType = unsafe extern "stdcall" fn(Atom: RTL_ATOM, AtomInformationClass: ATOM_INFORMATION_CLASS, AtomInformation: PVOID, AtomInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtQueryLicenseValueType = unsafe extern "stdcall" fn(ValueName: PUNICODE_STRING, Type: PULONG, Data: PVOID, DataSize: ULONG, ResultDataSize: PULONG) -> NTSTATUS;
-pub type NtSetDefaultHardErrorPortType = unsafe extern "stdcall" fn(DefaultHardErrorPort: HANDLE) -> NTSTATUS;
-pub type NtShutdownSystemType = unsafe extern "stdcall" fn(Action: SHUTDOWN_ACTION) -> NTSTATUS;
-pub type NtDisplayStringType = unsafe extern "stdcall" fn(String: PUNICODE_STRING) -> NTSTATUS;
-pub type NtDrawTextType = unsafe extern "stdcall" fn(Text: PUNICODE_STRING) -> NTSTATUS;
-pub type BcdSetLoggingType = unsafe extern "stdcall" fn(BcdLoggingLevel: BCD_MESSAGE_TYPE, BcdMessageCallbackRoutine: BCD_MESSAGE_CALLBACK) -> NTSTATUS;
-pub type BcdGetSystemStorePathType = unsafe extern "stdcall" fn(BcdSystemStorePath: *mut PWSTR) -> NTSTATUS;
-pub type BcdSetSystemStoreDeviceType = unsafe extern "stdcall" fn(SystemPartition: UNICODE_STRING) -> NTSTATUS;
-pub type BcdOpenSystemStoreType = unsafe extern "stdcall" fn(BcdStoreHandle: PHANDLE) -> NTSTATUS;
-pub type BcdOpenStoreFromFileType = unsafe extern "stdcall" fn(BcdFilePath: UNICODE_STRING, BcdStoreHandle: PHANDLE) -> NTSTATUS;
-pub type BcdCreateStoreType = unsafe extern "stdcall" fn(BcdFilePath: UNICODE_STRING, BcdStoreHandle: PHANDLE) -> NTSTATUS;
-pub type BcdExportStoreType = unsafe extern "stdcall" fn(BcdFilePath: UNICODE_STRING) -> NTSTATUS;
-pub type BcdExportStoreExType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Flags: ULONG, BcdFilePath: UNICODE_STRING) -> NTSTATUS;
-pub type BcdImportStoreType = unsafe extern "stdcall" fn(BcdFilePath: UNICODE_STRING) -> NTSTATUS;
-pub type BcdImportStoreWithFlagsType = unsafe extern "stdcall" fn(BcdFilePath: UNICODE_STRING, BcdImportFlags: BCD_IMPORT_FLAGS) -> NTSTATUS;
-pub type BcdDeleteObjectReferencesType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Identifier: PGUID) -> NTSTATUS;
-pub type BcdDeleteSystemStoreType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type BcdOpenStoreType = unsafe extern "stdcall" fn(BcdFilePath: UNICODE_STRING, BcdOpenFlags: BCD_OPEN_FLAGS, BcdStoreHandle: PHANDLE) -> NTSTATUS;
-pub type BcdCloseStoreType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE) -> NTSTATUS;
-pub type BcdFlushStoreType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE) -> NTSTATUS;
-pub type BcdForciblyUnloadStoreType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE) -> NTSTATUS;
-pub type BcdMarkAsSystemStoreType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE) -> NTSTATUS;
-pub type BcdEnumerateObjectsType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, BcdEnumDescriptor: PBCD_OBJECT_DESCRIPTION, Buffer: PVOID, BufferSize: PULONG, ObjectCount: PULONG) -> NTSTATUS;
-pub type BcdOpenObjectType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Identifier: *const GUID, BcdObjectHandle: PHANDLE) -> NTSTATUS;
-pub type BcdCreateObjectType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Identifier: PGUID, Description: PBCD_OBJECT_DESCRIPTION, BcdObjectHandle: PHANDLE) -> NTSTATUS;
-pub type BcdDeleteObjectType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE) -> NTSTATUS;
-pub type BcdCloseObjectType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE) -> NTSTATUS;
-pub type BcdCopyObjectType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, BcdObjectHandle: HANDLE, BcdCopyFlags: BCD_COPY_FLAGS, TargetStoreHandle: HANDLE, TargetObjectHandle: PHANDLE) -> NTSTATUS;
-pub type BcdCopyObjectExType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, BcdObjectHandle: HANDLE, BcdCopyFlags: BCD_COPY_FLAGS, TargetStoreHandle: HANDLE, TargetObjectId: PGUID, TargetObjectHandle: PHANDLE) -> NTSTATUS;
-pub type BcdCopyObjectsType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Characteristics: BCD_OBJECT_DESCRIPTION, BcdCopyFlags: BCD_COPY_FLAGS, TargetStoreHandle: HANDLE) -> NTSTATUS;
-pub type BcdMigrateObjectElementValuesType = unsafe extern "stdcall" fn(TemplateObjectHandle: HANDLE, SourceObjectHandle: HANDLE, TargetObjectHandle: HANDLE) -> NTSTATUS;
-pub type BcdQueryObjectType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdVersion: ULONG, Description: BCD_OBJECT_DESCRIPTION, Identifier: PGUID) -> NTSTATUS;
-pub type BcdEnumerateElementTypesType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, Buffer: PVOID, BufferSize: PULONG, ElementCount: PULONG) -> NTSTATUS;
-pub type BcdEnumerateElementsType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, Buffer: PVOID, BufferSize: PULONG, ElementCount: PULONG) -> NTSTATUS;
-pub type BcdEnumerateElementsWithFlagsType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdFlags: BCD_FLAGS, Buffer: PVOID, BufferSize: PULONG, ElementCount: PULONG) -> NTSTATUS;
-pub type BcdEnumerateAndUnpackElementsType = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, BcdObjectHandle: HANDLE, BcdFlags: BCD_FLAGS, Buffer: PVOID, BufferSize: PULONG, ElementCount: PULONG) -> NTSTATUS;
-pub type BcdGetElementDataType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-pub type BcdGetElementDataWithFlagsType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG, BcdFlags: BCD_FLAGS, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-pub type BcdSetElementDataType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG, Buffer: PVOID, BufferSize: ULONG) -> NTSTATUS;
-pub type BcdSetElementDataWithFlagsType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG, BcdFlags: BCD_FLAGS, Buffer: PVOID, BufferSize: ULONG) -> NTSTATUS;
-pub type BcdDeleteElementType = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG) -> NTSTATUS;
-pub type NtAllocateVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, RegionSize: PSIZE_T, AllocationType: ULONG, Protect: ULONG) -> NTSTATUS;
-pub type NtAllocateVirtualMemoryExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
-pub type NtFreeVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, FreeType: ULONG) -> NTSTATUS;
-pub type NtReadVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
-pub type NtReadVirtualMemoryExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T, Flags: ULONG) -> NTSTATUS;
-pub type NtWriteVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
-pub type NtProtectVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, NewProtect: ULONG, OldProtect: PULONG) -> NTSTATUS;
-pub type NtQueryVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type NtFlushVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, IoStatus: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type NtSetInformationVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, VmInformationClass: VIRTUAL_MEMORY_INFORMATION_CLASS, NumberOfEntries: ULONG_PTR, VirtualAddresses: PMEMORY_RANGE_ENTRY, VmInformation: PVOID, VmInformationLength: ULONG) -> NTSTATUS;
-pub type NtLockVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
-pub type NtUnlockVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
-pub type NtCreateSectionType = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE) -> NTSTATUS;
-pub type NtCreateSectionExType = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
-pub type NtOpenSectionType = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtMapViewOfSectionType = unsafe extern "stdcall" fn(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, CommitSize: SIZE_T, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, InheritDisposition: SECTION_INHERIT, AllocationType: ULONG, Win32Protect: ULONG) -> NTSTATUS;
-pub type NtMapViewOfSectionExType = unsafe extern "stdcall" fn(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
-pub type NtUnmapViewOfSectionType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID) -> NTSTATUS;
-pub type NtUnmapViewOfSectionExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
-pub type NtExtendSectionType = unsafe extern "stdcall" fn(SectionHandle: HANDLE, NewSectionSize: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtQuerySectionType = unsafe extern "stdcall" fn(SectionHandle: HANDLE, SectionInformationClass: SECTION_INFORMATION_CLASS, SectionInformation: PVOID, SectionInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type NtAreMappedFilesTheSameType = unsafe extern "stdcall" fn(File1MappedAsAnImage: PVOID, File2MappedAsFile: PVOID) -> NTSTATUS;
-pub type NtCreatePartitionType = unsafe extern "stdcall" fn(ParentPartitionHandle: HANDLE, PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, PreferredNode: ULONG) -> NTSTATUS;
-pub type NtOpenPartitionType = unsafe extern "stdcall" fn(PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtManagePartitionType = unsafe extern "stdcall" fn(TargetHandle: HANDLE, SourceHandle: HANDLE, PartitionInformationClass: PARTITION_INFORMATION_CLASS, PartitionInformation: PVOID, PartitionInformationLength: ULONG) -> NTSTATUS;
-pub type NtMapUserPhysicalPagesType = unsafe extern "stdcall" fn(VirtualAddress: PVOID, NumberOfPages: ULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-pub type NtMapUserPhysicalPagesScatterType = unsafe extern "stdcall" fn(VirtualAddresses: *mut PVOID, NumberOfPages: ULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-pub type NtAllocateUserPhysicalPagesType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-pub type NtAllocateUserPhysicalPagesExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
-pub type NtFreeUserPhysicalPagesType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-pub type NtGetWriteWatchType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Flags: ULONG, BaseAddress: PVOID, RegionSize: SIZE_T, UserAddressArray: *mut PVOID, EntriesInUserAddressArray: PULONG_PTR, Granularity: PULONG) -> NTSTATUS;
-pub type NtResetWriteWatchType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, RegionSize: SIZE_T) -> NTSTATUS;
-pub type NtCreatePagingFileType = unsafe extern "stdcall" fn(PageFileName: PUNICODE_STRING, MinimumSize: PLARGE_INTEGER, MaximumSize: PLARGE_INTEGER, Priority: ULONG) -> NTSTATUS;
-pub type NtFlushInstructionCacheType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Length: SIZE_T) -> NTSTATUS;
-pub type NtFlushWriteBufferType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtCreateEnclaveType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, Size: SIZE_T, InitialCommitment: SIZE_T, EnclaveType: ULONG, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
-pub type NtLoadEnclaveDataType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, Protect: ULONG, PageInformation: PVOID, PageInformationLength: ULONG, NumberOfBytesWritten: PSIZE_T, EnclaveError: PULONG) -> NTSTATUS;
-pub type NtInitializeEnclaveType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
-pub type NtTerminateEnclaveType = unsafe extern "stdcall" fn(BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
-pub type NtCallEnclaveType = unsafe extern "stdcall" fn(Routine: PENCLAVE_ROUTINE, Reserved: PVOID, Flags: ULONG, RoutineParamReturn: *mut PVOID) -> NTSTATUS;
-pub type NtQueryObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, ObjectInformationClass: OBJECT_INFORMATION_CLASS, ObjectInformation: PVOID, ObjectInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, ObjectInformationClass: OBJECT_INFORMATION_CLASS, ObjectInformation: PVOID, ObjectInformationLength: ULONG) -> NTSTATUS;
-pub type NtDuplicateObjectType = unsafe extern "stdcall" fn(SourceProcessHandle: HANDLE, SourceHandle: HANDLE, TargetProcessHandle: HANDLE, TargetHandle: PHANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Options: ULONG) -> NTSTATUS;
-pub type NtMakeTemporaryObjectType = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
-pub type NtMakePermanentObjectType = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
-pub type NtSignalAndWaitForSingleObjectType = unsafe extern "stdcall" fn(SignalHandle: HANDLE, WaitHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtWaitForSingleObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtWaitForMultipleObjectsType = unsafe extern "stdcall" fn(Count: ULONG, Handles: *mut HANDLE, WaitType: WAIT_TYPE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtWaitForMultipleObjects32Type = unsafe extern "stdcall" fn(Count: ULONG, Handles: *mut LONG, WaitType: WAIT_TYPE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtSetSecurityObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type NtQuerySecurityObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR, Length: ULONG, LengthNeeded: PULONG) -> NTSTATUS;
-pub type NtCloseType = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
-pub type NtCompareObjectsType = unsafe extern "stdcall" fn(FirstObjectHandle: HANDLE, SecondObjectHandle: HANDLE) -> NTSTATUS;
-pub type NtCreateDirectoryObjectType = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtCreateDirectoryObjectExType = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ShadowDirectoryHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
-pub type NtOpenDirectoryObjectType = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtQueryDirectoryObjectType = unsafe extern "stdcall" fn(DirectoryHandle: HANDLE, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, RestartScan: BOOLEAN, Context: PULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtCreatePrivateNamespaceType = unsafe extern "stdcall" fn(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
-pub type NtOpenPrivateNamespaceType = unsafe extern "stdcall" fn(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
-pub type NtDeletePrivateNamespaceType = unsafe extern "stdcall" fn(NamespaceHandle: HANDLE) -> NTSTATUS;
-pub type NtCreateSymbolicLinkObjectType = unsafe extern "stdcall" fn(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LinkTarget: PUNICODE_STRING) -> NTSTATUS;
-pub type NtOpenSymbolicLinkObjectType = unsafe extern "stdcall" fn(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtQuerySymbolicLinkObjectType = unsafe extern "stdcall" fn(LinkHandle: HANDLE, LinkTarget: PUNICODE_STRING, ReturnedLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationSymbolicLinkType = unsafe extern "stdcall" fn(LinkHandle: HANDLE, SymbolicLinkInformationClass: SYMBOLIC_LINK_INFO_CLASS, SymbolicLinkInformation: PVOID, SymbolicLinkInformationLength: ULONG) -> NTSTATUS;
-pub type NtQueryPortInformationProcessType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtCreateProcessType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, InheritObjectTable: BOOLEAN, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE) -> NTSTATUS;
-pub type NtCreateProcessExType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, Flags: ULONG, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE, Reserved: ULONG) -> NTSTATUS;
-pub type NtOpenProcessType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
-pub type NtTerminateProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
-pub type NtSuspendProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> NTSTATUS;
-pub type NtResumeProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> NTSTATUS;
-pub type NtQueryInformationProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtGetNextProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewProcessHandle: PHANDLE) -> NTSTATUS;
-pub type NtGetNextThreadType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewThreadHandle: PHANDLE) -> NTSTATUS;
-pub type NtSetInformationProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG) -> NTSTATUS;
-pub type NtCreateProcessStateChangeType = unsafe extern "stdcall" fn(ProcessStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
-pub type NtChangeProcessStateType = unsafe extern "stdcall" fn(ProcessStateChangeHandle: HANDLE, ProcessHandle: HANDLE, StateChangeType: PROCESS_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
-pub type NtCreateThreadStateChangeType = unsafe extern "stdcall" fn(ThreadStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
-pub type NtChangeThreadStateType = unsafe extern "stdcall" fn(ThreadStateChangeHandle: HANDLE, ThreadHandle: HANDLE, StateChangeType: THREAD_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
-pub type NtCreateThreadType = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, ClientId: PCLIENT_ID, ThreadContext: PCONTEXT, InitialTeb: PINITIAL_TEB, CreateSuspended: BOOLEAN) -> NTSTATUS;
-pub type NtOpenThreadType = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
-pub type NtTerminateThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
-pub type NtSuspendThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
-pub type NtResumeThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
-pub type NtGetCurrentProcessorNumberType = unsafe extern "stdcall" fn() -> ULONG;
-pub type NtGetCurrentProcessorNumberExType = unsafe extern "stdcall" fn(ProcessorNumber: PPROCESSOR_NUMBER) -> ULONG;
-pub type NtGetContextThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
-pub type NtSetContextThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
-pub type NtQueryInformationThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG) -> NTSTATUS;
-pub type NtAlertThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> NTSTATUS;
-pub type NtAlertResumeThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
-pub type NtTestAlertType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtAlertThreadByThreadIdType = unsafe extern "stdcall" fn(ThreadId: HANDLE) -> NTSTATUS;
-pub type NtAlertThreadByThreadIdExType = unsafe extern "stdcall" fn(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
-pub type NtWaitForAlertByThreadIdType = unsafe extern "stdcall" fn(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtImpersonateThreadType = unsafe extern "stdcall" fn(ServerThreadHandle: HANDLE, ClientThreadHandle: HANDLE, SecurityQos: PSECURITY_QUALITY_OF_SERVICE) -> NTSTATUS;
-pub type NtRegisterThreadTerminatePortType = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
-pub type NtSetLdtEntriesType = unsafe extern "stdcall" fn(Selector0: ULONG, Entry0Low: ULONG, Entry0Hi: ULONG, Selector1: ULONG, Entry1Low: ULONG, Entry1Hi: ULONG) -> NTSTATUS;
-pub type NtQueueApcThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
-pub type NtQueueApcThreadExType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
-pub type NtQueueApcThreadEx2Type = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcFlags: ULONG, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
-pub type NtCreateUserProcessType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, ThreadHandle: PHANDLE, ProcessDesiredAccess: ACCESS_MASK, ThreadDesiredAccess: ACCESS_MASK, ProcessObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessFlags: ULONG, ThreadFlags: ULONG, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, CreateInfo: PPS_CREATE_INFO, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
-pub type NtCreateThreadExType = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, StartRoutine: PUSER_THREAD_START_ROUTINE, Argument: PVOID, CreateFlags: ULONG, ZeroBits: SIZE_T, StackSize: SIZE_T, MaximumStackSize: SIZE_T, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
-pub type NtCreateJobObjectType = unsafe extern "stdcall" fn(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtOpenJobObjectType = unsafe extern "stdcall" fn(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtAssignProcessToJobObjectType = unsafe extern "stdcall" fn(JobHandle: HANDLE, ProcessHandle: HANDLE) -> NTSTATUS;
-pub type NtTerminateJobObjectType = unsafe extern "stdcall" fn(JobHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
-pub type NtIsProcessInJobType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, JobHandle: HANDLE) -> NTSTATUS;
-pub type NtQueryInformationJobObjectType = unsafe extern "stdcall" fn(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationJobObjectType = unsafe extern "stdcall" fn(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG) -> NTSTATUS;
-pub type NtCreateJobSetType = unsafe extern "stdcall" fn(NumJob: ULONG, UserJobSet: PJOB_SET_ARRAY, Flags: ULONG) -> NTSTATUS;
-pub type NtRevertContainerImpersonationType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtAllocateReserveObjectType = unsafe extern "stdcall" fn(MemoryReserveHandle: PHANDLE, ObjectAttributes: PCOBJECT_ATTRIBUTES, Type: MEMORY_RESERVE_TYPE) -> NTSTATUS;
-pub type PssNtCaptureSnapshotType = unsafe extern "stdcall" fn(SnapshotHandle: PHANDLE, ProcessHandle: HANDLE, CaptureFlags: PSSNT_CAPTURE_FLAGS, ThreadContextFlags: ULONG) -> NTSTATUS;
-pub type PssNtDuplicateSnapshotType = unsafe extern "stdcall" fn(SourceProcessHandle: HANDLE, SnapshotHandle: HANDLE, TargetProcessHandle: HANDLE, TargetSnapshotHandle: PHANDLE, Flags: PSSNT_DUPLICATE_FLAGS) -> NTSTATUS;
-pub type PssNtFreeSnapshotType = unsafe extern "stdcall" fn(SnapshotHandle: HANDLE) -> NTSTATUS;
-pub type PssNtFreeRemoteSnapshotType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, SnapshotHandle: HANDLE) -> NTSTATUS;
-pub type PssNtQuerySnapshotType = unsafe extern "stdcall" fn(SnapshotHandle: HANDLE, InformationClass: PSSNT_QUERY_INFORMATION_CLASS, Buffer: PVOID, BufferLength: ULONG) -> NTSTATUS;
-pub type NtPssCaptureVaSpaceBulkType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, BulkInformation: PNTPSS_MEMORY_BULK_INFORMATION, BulkInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type vDbgPrintExType = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG, Format: PCCH, arglist: va_list) -> ULONG;
-pub type vDbgPrintExWithPrefixType = unsafe extern "stdcall" fn(Prefix: PCCH, ComponentId: ULONG, Level: ULONG, Format: PCCH, arglist: va_list) -> ULONG;
-pub type DbgQueryDebugFilterStateType = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG) -> NTSTATUS;
-pub type DbgSetDebugFilterStateType = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG, State: BOOLEAN) -> NTSTATUS;
-pub type DbgPromptType = unsafe extern "stdcall" fn(Prompt: PCCH, Response: PCH, Length: ULONG) -> ULONG;
-pub type NtCreateDebugObjectType = unsafe extern "stdcall" fn(DebugObjectHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
-pub type NtDebugActiveProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DebugObjectHandle: HANDLE) -> NTSTATUS;
-pub type NtDebugContinueType = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, ClientId: PCLIENT_ID, ContinueStatus: NTSTATUS) -> NTSTATUS;
-pub type NtRemoveProcessDebugType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DebugObjectHandle: HANDLE) -> NTSTATUS;
-pub type NtSetInformationDebugObjectType = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, DebugObjectInformationClass: DEBUGOBJECTINFOCLASS, DebugInformation: PVOID, DebugInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtWaitForDebugEventType = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER, WaitStateChange: PDBGUI_WAIT_STATE_CHANGE) -> NTSTATUS;
-pub type DbgUiConnectToDbgType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type DbgUiGetThreadDebugObjectType = unsafe extern "stdcall" fn() -> HANDLE;
-pub type DbgUiWaitStateChangeType = unsafe extern "stdcall" fn(StateChange: PDBGUI_WAIT_STATE_CHANGE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type DbgUiContinueType = unsafe extern "stdcall" fn(AppClientId: PCLIENT_ID, ContinueStatus: NTSTATUS) -> NTSTATUS;
-pub type DbgUiStopDebuggingType = unsafe extern "stdcall" fn(Process: HANDLE) -> NTSTATUS;
-pub type DbgUiDebugActiveProcessType = unsafe extern "stdcall" fn(Process: HANDLE) -> NTSTATUS;
-pub type DbgUiIssueRemoteBreakinType = unsafe extern "stdcall" fn(Process: HANDLE) -> NTSTATUS;
-pub type DbgUiConvertStateChangeStructureType = unsafe extern "stdcall" fn(StateChange: PDBGUI_WAIT_STATE_CHANGE, DebugEvent: LPDEBUG_EVENT) -> NTSTATUS;
-pub type DbgUiConvertStateChangeStructureExType = unsafe extern "stdcall" fn(StateChange: PDBGUI_WAIT_STATE_CHANGE, DebugEvent: LPDEBUG_EVENT) -> NTSTATUS;
-pub type EtwEventRegisterType = unsafe extern "stdcall" fn(ProviderId: LPCGUID, EnableCallback: PENABLECALLBACK, CallbackContext: PVOID, RegHandle: PREGHANDLE) -> NTSTATUS;
-pub type NtCreateFileType = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, AllocationSize: PLARGE_INTEGER, FileAttributes: ULONG, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, EaBuffer: PVOID, EaLength: ULONG) -> NTSTATUS;
-pub type NtCreateNamedPipeFileType = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, NamedPipeType: ULONG, ReadMode: ULONG, CompletionMode: ULONG, MaximumInstances: ULONG, InboundQuota: ULONG, OutboundQuota: ULONG, DefaultTimeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtCreateMailslotFileType = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, CreateOptions: ULONG, MailslotQuota: ULONG, MaximumMessageSize: ULONG, ReadTimeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtOpenFileType = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, OpenOptions: ULONG) -> NTSTATUS;
-pub type NtDeleteFileType = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtFlushBuffersFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type NtFlushBuffersFileExType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Flags: ULONG, Parameters: PVOID, ParametersSize: ULONG, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type NtQueryInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
-pub type NtQueryInformationByNameType = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
-pub type NtSetInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
-pub type NtQueryDirectoryFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS, ReturnSingleEntry: BOOLEAN, FileName: PUNICODE_STRING, RestartScan: BOOLEAN) -> NTSTATUS;
-pub type NtQueryDirectoryFileExType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS, QueryFlags: ULONG, FileName: PUNICODE_STRING) -> NTSTATUS;
-pub type NtQueryEaFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, EaList: PVOID, EaListLength: ULONG, EaIndex: PULONG, RestartScan: BOOLEAN) -> NTSTATUS;
-pub type NtSetEaFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
-pub type NtQueryQuotaInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, SidList: PVOID, SidListLength: ULONG, StartSid: PSID, RestartScan: BOOLEAN) -> NTSTATUS;
-pub type NtSetQuotaInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
-pub type NtQueryVolumeInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
-pub type NtSetVolumeInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
-pub type NtCancelIoFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type NtCancelIoFileExType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoRequestToCancel: PIO_STATUS_BLOCK, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type NtCancelSynchronousIoFileType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, IoRequestToCancel: PIO_STATUS_BLOCK, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type NtDeviceIoControlFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, IoControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
-pub type NtFsControlFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FsControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
-pub type NtReadFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
-pub type NtWriteFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
-pub type NtReadFileScatterType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, SegmentArray: PFILE_SEGMENT_ELEMENT, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
-pub type NtWriteFileGatherType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, SegmentArray: PFILE_SEGMENT_ELEMENT, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
-pub type NtLockFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, ByteOffset: PLARGE_INTEGER, Length: PLARGE_INTEGER, Key: ULONG, FailImmediately: BOOLEAN, ExclusiveLock: BOOLEAN) -> NTSTATUS;
-pub type NtUnlockFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, ByteOffset: PLARGE_INTEGER, Length: PLARGE_INTEGER, Key: ULONG) -> NTSTATUS;
-pub type NtQueryAttributesFileType = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_BASIC_INFORMATION) -> NTSTATUS;
-pub type NtQueryFullAttributesFileType = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_NETWORK_OPEN_INFORMATION) -> NTSTATUS;
-pub type NtNotifyChangeDirectoryFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN) -> NTSTATUS;
-pub type NtNotifyChangeDirectoryFileExType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN, DirectoryNotifyInformationClass: DIRECTORY_NOTIFY_INFORMATION_CLASS) -> NTSTATUS;
-pub type NtLoadDriverType = unsafe extern "stdcall" fn(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
-pub type NtUnloadDriverType = unsafe extern "stdcall" fn(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
-pub type NtCreateIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Count: ULONG) -> NTSTATUS;
-pub type NtOpenIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtQueryIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionInformationClass: IO_COMPLETION_INFORMATION_CLASS, IoCompletionInformation: PVOID, IoCompletionInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR) -> NTSTATUS;
-pub type NtSetIoCompletionExType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionPacketHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR) -> NTSTATUS;
-pub type NtRemoveIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, KeyContext: *mut PVOID, ApcContext: *mut PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtRemoveIoCompletionExType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionInformation: PFILE_IO_COMPLETION_INFORMATION, Count: ULONG, NumEntriesRemoved: PULONG, Timeout: PLARGE_INTEGER, Alertable: BOOLEAN) -> NTSTATUS;
-pub type NtCreateWaitCompletionPacketType = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtAssociateWaitCompletionPacketType = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: HANDLE, IoCompletionHandle: HANDLE, TargetObjectHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR, AlreadySignaled: PBOOLEAN) -> NTSTATUS;
-pub type NtCancelWaitCompletionPacketType = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: HANDLE, RemoveSignaledPacket: BOOLEAN) -> NTSTATUS;
-pub type NtOpenSessionType = unsafe extern "stdcall" fn(SessionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtNotifyChangeSessionType = unsafe extern "stdcall" fn(SessionHandle: HANDLE, ChangeSequenceNumber: ULONG, ChangeTimeStamp: PLARGE_INTEGER, Event: IO_SESSION_EVENT, NewState: IO_SESSION_STATE, PreviousState: IO_SESSION_STATE, Payload: PVOID, PayloadSize: ULONG) -> NTSTATUS;
-pub type NtCreateIoRingType = unsafe extern "stdcall" fn(IoRingHandle: PHANDLE, CreateParametersLength: ULONG, CreateParameters: PVOID, OutputParametersLength: ULONG, OutputParameters: PVOID) -> NTSTATUS;
-pub type NtSubmitIoRingType = unsafe extern "stdcall" fn(IoRingHandle: HANDLE, Flags: ULONG, WaitOperations: ULONG, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtQueryIoRingCapabilitiesType = unsafe extern "stdcall" fn(IoRingCapabilitiesLength: SIZE_T, IoRingCapabilities: PVOID) -> NTSTATUS;
-pub type NtSetInformationIoRingType = unsafe extern "stdcall" fn(IoRingHandle: HANDLE, IoRingInformationClass: ULONG, IoRingInformationLength: ULONG, IoRingInformation: PVOID) -> NTSTATUS;
-pub type NtCreatePortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
-pub type NtCreateWaitablePortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
-pub type NtConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, SecurityQos: PSECURITY_QUALITY_OF_SERVICE, ClientView: PPORT_VIEW, ServerView: PREMOTE_PORT_VIEW, MaxMessageLength: PULONG, ConnectionInformation: PVOID, ConnectionInformationLength: PULONG) -> NTSTATUS;
-pub type NtSecureConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, SecurityQos: PSECURITY_QUALITY_OF_SERVICE, ClientView: PPORT_VIEW, RequiredServerSid: PSID, ServerView: PREMOTE_PORT_VIEW, MaxMessageLength: PULONG, ConnectionInformation: PVOID, ConnectionInformationLength: PULONG) -> NTSTATUS;
-pub type NtListenPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, ConnectionRequest: PPORT_MESSAGE) -> NTSTATUS;
-pub type NtAcceptConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, AcceptConnection: BOOLEAN, ServerView: PPORT_VIEW, ClientView: PREMOTE_PORT_VIEW) -> NTSTATUS;
-pub type NtCompleteConnectPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
-pub type NtRequestPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, RequestMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type NtRequestWaitReplyPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, RequestMessage: PPORT_MESSAGE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type NtReplyPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type NtReplyWaitReplyPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type NtReplyWaitReceivePortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortContext: *mut PVOID, ReplyMessage: PPORT_MESSAGE, ReceiveMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type NtReplyWaitReceivePortExType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortContext: *mut PVOID, ReplyMessage: PPORT_MESSAGE, ReceiveMessage: PPORT_MESSAGE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtImpersonateClientOfPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE) -> NTSTATUS;
-pub type NtReadRequestDataType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, DataEntryIndex: ULONG, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
-pub type NtWriteRequestDataType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, DataEntryIndex: ULONG, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
-pub type NtQueryInformationPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtAlpcCreatePortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES) -> NTSTATUS;
-pub type NtAlpcDisconnectPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
-pub type NtAlpcQueryInformationType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtAlpcSetInformationType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG) -> NTSTATUS;
-pub type NtAlpcCreatePortSectionType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SectionHandle: HANDLE, SectionSize: SIZE_T, AlpcSectionHandle: PALPC_HANDLE, ActualSectionSize: PSIZE_T) -> NTSTATUS;
-pub type NtAlpcDeletePortSectionType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SectionHandle: ALPC_HANDLE) -> NTSTATUS;
-pub type NtAlpcCreateResourceReserveType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, MessageSize: SIZE_T, ResourceId: PALPC_HANDLE) -> NTSTATUS;
-pub type NtAlpcDeleteResourceReserveType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ResourceId: ALPC_HANDLE) -> NTSTATUS;
-pub type NtAlpcCreateSectionViewType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ViewAttributes: PALPC_DATA_VIEW_ATTR) -> NTSTATUS;
-pub type NtAlpcDeleteSectionViewType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ViewBase: PVOID) -> NTSTATUS;
-pub type NtAlpcCreateSecurityContextType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SecurityAttribute: PALPC_SECURITY_ATTR) -> NTSTATUS;
-pub type NtAlpcDeleteSecurityContextType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ContextHandle: ALPC_HANDLE) -> NTSTATUS;
-pub type NtAlpcRevokeSecurityContextType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ContextHandle: ALPC_HANDLE) -> NTSTATUS;
-pub type NtAlpcQueryInformationMessageType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, MessageInformationClass: ALPC_MESSAGE_INFORMATION_CLASS, MessageInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtAlpcConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, RequiredServerSid: PSID, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtAlpcConnectPortExType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ConnectionPortObjectAttributes: POBJECT_ATTRIBUTES, ClientPortObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, ServerSecurityRequirements: PSECURITY_DESCRIPTOR, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtAlpcAcceptConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ConnectionPortHandle: HANDLE, Flags: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, ConnectionMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, AcceptConnection: BOOLEAN) -> NTSTATUS;
-pub type NtAlpcSendWaitReceivePortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SendMessageA: PPORT_MESSAGE, SendMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, ReceiveMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, ReceiveMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtAlpcCancelMessageType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, MessageContext: PALPC_CONTEXT_ATTR) -> NTSTATUS;
-pub type NtAlpcImpersonateClientOfPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: PVOID) -> NTSTATUS;
-pub type NtAlpcImpersonateClientContainerOfPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: ULONG) -> NTSTATUS;
-pub type NtAlpcOpenSenderProcessType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, Flags: ULONG, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtAlpcOpenSenderThreadType = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, Flags: ULONG, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type AlpcMaxAllowedMessageLengthType = unsafe extern "stdcall" fn() -> ULONG;
-pub type AlpcGetHeaderSizeType = unsafe extern "stdcall" fn(Flags: ULONG) -> ULONG;
-pub type AlpcInitializeMessageAttributeType = unsafe extern "stdcall" fn(AttributeFlags: ULONG, Buffer: PALPC_MESSAGE_ATTRIBUTES, BufferSize: SIZE_T, RequiredBufferSize: PSIZE_T) -> NTSTATUS;
-pub type AlpcGetMessageAttributeType = unsafe extern "stdcall" fn(Buffer: PALPC_MESSAGE_ATTRIBUTES, AttributeFlag: ULONG) -> PVOID;
-pub type AlpcRegisterCompletionListType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Buffer: PALPC_COMPLETION_LIST_HEADER, Size: ULONG, ConcurrencyCount: ULONG, AttributeFlags: ULONG) -> NTSTATUS;
-pub type AlpcUnregisterCompletionListType = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
-pub type AlpcRundownCompletionListType = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
-pub type AlpcAdjustCompletionListConcurrencyCountType = unsafe extern "stdcall" fn(PortHandle: HANDLE, ConcurrencyCount: ULONG) -> NTSTATUS;
-pub type AlpcRegisterCompletionListWorkerThreadType = unsafe extern "stdcall" fn(CompletionList: PVOID) -> BOOLEAN;
-pub type AlpcUnregisterCompletionListWorkerThreadType = unsafe extern "stdcall" fn(CompletionList: PVOID) -> BOOLEAN;
-pub type AlpcGetOutstandingCompletionListMessageCountType = unsafe extern "stdcall" fn(CompletionList: PVOID) -> ULONG;
-pub type AlpcGetMessageFromCompletionListType = unsafe extern "stdcall" fn(CompletionList: PVOID, MessageAttributes: *mut PALPC_MESSAGE_ATTRIBUTES) -> PPORT_MESSAGE;
-pub type AlpcGetCompletionListMessageAttributesType = unsafe extern "stdcall" fn(CompletionList: PVOID, Message: PPORT_MESSAGE) -> PALPC_MESSAGE_ATTRIBUTES;
-pub type NtPlugPlayControlType = unsafe extern "stdcall" fn(PnPControlClass: PLUGPLAY_CONTROL_CLASS, PnPControlData: PVOID, PnPControlDataLength: ULONG) -> NTSTATUS;
-pub type NtSerializeBootType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtEnableLastKnownGoodType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtDisableLastKnownGoodType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtReplacePartitionUnitType = unsafe extern "stdcall" fn(TargetInstancePath: PUNICODE_STRING, SpareInstancePath: PUNICODE_STRING, Flags: ULONG) -> NTSTATUS;
-pub type NtPowerInformationType = unsafe extern "stdcall" fn(InformationLevel: POWER_INFORMATION_LEVEL, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
-pub type NtSetThreadExecutionStateType = unsafe extern "stdcall" fn(NewFlags: EXECUTION_STATE, PreviousFlags: *mut EXECUTION_STATE) -> NTSTATUS;
-pub type NtInitiatePowerActionType = unsafe extern "stdcall" fn(SystemAction: POWER_ACTION, LightestSystemState: SYSTEM_POWER_STATE, Flags: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
-pub type NtSetSystemPowerStateType = unsafe extern "stdcall" fn(SystemAction: POWER_ACTION, LightestSystemState: SYSTEM_POWER_STATE, Flags: ULONG) -> NTSTATUS;
-pub type NtGetDevicePowerStateType = unsafe extern "stdcall" fn(Device: HANDLE, State: PDEVICE_POWER_STATE) -> NTSTATUS;
-pub type NtIsSystemResumeAutomaticType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type NtCreateKeyType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, Disposition: PULONG) -> NTSTATUS;
-pub type NtCreateKeyTransactedType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, TransactionHandle: HANDLE, Disposition: PULONG) -> NTSTATUS;
-pub type NtOpenKeyType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtOpenKeyTransactedType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TransactionHandle: HANDLE) -> NTSTATUS;
-pub type NtOpenKeyExType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG) -> NTSTATUS;
-pub type NtOpenKeyTransactedExType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG, TransactionHandle: HANDLE) -> NTSTATUS;
-pub type NtDeleteKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
-pub type NtRenameKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, NewName: PUNICODE_STRING) -> NTSTATUS;
-pub type NtDeleteValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING) -> NTSTATUS;
-pub type NtQueryKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, KeyInformationClass: KEY_INFORMATION_CLASS, KeyInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, KeySetInformationClass: KEY_SET_INFORMATION_CLASS, KeySetInformation: PVOID, KeySetInformationLength: ULONG) -> NTSTATUS;
-pub type NtQueryValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
-pub type NtSetValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, TitleIndex: ULONG, Type: ULONG, Data: PVOID, DataSize: ULONG) -> NTSTATUS;
-pub type NtQueryMultipleValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueEntries: PKEY_VALUE_ENTRY, EntryCount: ULONG, ValueBuffer: PVOID, BufferLength: PULONG, RequiredBufferLength: PULONG) -> NTSTATUS;
-pub type NtEnumerateKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Index: ULONG, KeyInformationClass: KEY_INFORMATION_CLASS, KeyInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
-pub type NtEnumerateValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Index: ULONG, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
-pub type NtFlushKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
-pub type NtCompactKeysType = unsafe extern "stdcall" fn(Count: ULONG, KeyArray: *mut HANDLE) -> NTSTATUS;
-pub type NtCompressKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
-pub type NtLoadKeyType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtLoadKey2Type = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
-pub type NtLoadKeyExType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG, TrustClassKey: HANDLE, Event: HANDLE, DesiredAccess: ACCESS_MASK, RootHandle: PHANDLE, Reserved: PVOID) -> NTSTATUS;
-pub type NtLoadKey3Type = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG, ExtendedParameters: PCM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG, DesiredAccess: ACCESS_MASK, RootHandle: PHANDLE, Reserved: PVOID) -> NTSTATUS;
-pub type NtReplaceKeyType = unsafe extern "stdcall" fn(NewFile: POBJECT_ATTRIBUTES, TargetHandle: HANDLE, OldFile: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtSaveKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE) -> NTSTATUS;
-pub type NtSaveKeyExType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE, Format: ULONG) -> NTSTATUS;
-pub type NtSaveMergedKeysType = unsafe extern "stdcall" fn(HighPrecedenceKeyHandle: HANDLE, LowPrecedenceKeyHandle: HANDLE, FileHandle: HANDLE) -> NTSTATUS;
-pub type NtRestoreKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
-pub type NtUnloadKeyType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtUnloadKey2Type = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
-pub type NtUnloadKeyExType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, Event: HANDLE) -> NTSTATUS;
-pub type NtNotifyChangeKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
-pub type NtNotifyChangeMultipleKeysType = unsafe extern "stdcall" fn(MasterKeyHandle: HANDLE, Count: ULONG, SubordinateObjects: *mut OBJECT_ATTRIBUTES, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
-pub type NtQueryOpenSubKeysType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, HandleCount: PULONG) -> NTSTATUS;
-pub type NtQueryOpenSubKeysExType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, BufferLength: ULONG, Buffer: PVOID, RequiredSize: PULONG) -> NTSTATUS;
-pub type NtInitializeRegistryType = unsafe extern "stdcall" fn(BootCondition: USHORT) -> NTSTATUS;
-pub type NtLockRegistryKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
-pub type NtLockProductActivationKeysType = unsafe extern "stdcall" fn(pPrivateVer: *mut ULONG, pSafeMode: *mut ULONG) -> NTSTATUS;
-pub type NtFreezeRegistryType = unsafe extern "stdcall" fn(TimeOutInSeconds: ULONG) -> NTSTATUS;
-pub type NtThawRegistryType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlInsertElementGenericTableAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID, BufferSize: CLONG, NewElement: PBOOLEAN) -> PVOID;
-pub type RtlInsertElementGenericTableFullAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID, BufferSize: CLONG, NewElement: PBOOLEAN, NodeOrParent: PVOID, SearchResult: TABLE_SEARCH_RESULT) -> PVOID;
-pub type RtlDeleteElementGenericTableAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID) -> BOOLEAN;
-pub type RtlLookupElementGenericTableAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID) -> PVOID;
-pub type RtlLookupElementGenericTableFullAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID, NodeOrParent: *mut PVOID, SearchResult: *mut TABLE_SEARCH_RESULT) -> PVOID;
-pub type RtlEnumerateGenericTableAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Restart: BOOLEAN) -> PVOID;
-pub type RtlEnumerateGenericTableWithoutSplayingAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, RestartKey: *mut PVOID) -> PVOID;
-pub type RtlLookupFirstMatchingElementGenericTableAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID, RestartKey: *mut PVOID) -> PVOID;
-pub type RtlEnumerateGenericTableLikeADirectoryType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, MatchFunction: PRTL_AVL_MATCH_FUNCTION, MatchData: PVOID, NextFlag: ULONG, RestartKey: *mut PVOID, DeleteCount: PULONG, Buffer: PVOID) -> PVOID;
-pub type RtlGetElementGenericTableAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, I: ULONG) -> PVOID;
-pub type RtlNumberGenericTableElementsAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE) -> ULONG;
-pub type RtlIsGenericTableEmptyAvlType = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE) -> BOOLEAN;
-pub type RtlSplayType = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
-pub type RtlDeleteType = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
-pub type RtlSubtreeSuccessorType = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
-pub type RtlSubtreePredecessorType = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
-pub type RtlRealSuccessorType = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
-pub type RtlRealPredecessorType = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
-pub type RtlInsertElementGenericTableType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID, BufferSize: CLONG, NewElement: PBOOLEAN) -> PVOID;
-pub type RtlInsertElementGenericTableFullType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID, BufferSize: CLONG, NewElement: PBOOLEAN, NodeOrParent: PVOID, SearchResult: TABLE_SEARCH_RESULT) -> PVOID;
-pub type RtlDeleteElementGenericTableType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID) -> BOOLEAN;
-pub type RtlLookupElementGenericTableType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID) -> PVOID;
-pub type RtlLookupElementGenericTableFullType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID, NodeOrParent: *mut PVOID, SearchResult: *mut TABLE_SEARCH_RESULT) -> PVOID;
-pub type RtlEnumerateGenericTableType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Restart: BOOLEAN) -> PVOID;
-pub type RtlEnumerateGenericTableWithoutSplayingType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, RestartKey: *mut PVOID) -> PVOID;
-pub type RtlGetElementGenericTableType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, I: ULONG) -> PVOID;
-pub type RtlNumberGenericTableElementsType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE) -> ULONG;
-pub type RtlIsGenericTableEmptyType = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE) -> BOOLEAN;
-pub type RtlRbInsertNodeExType = unsafe extern "stdcall" fn(Tree: PRTL_RB_TREE, Parent: PRTL_BALANCED_NODE, Right: BOOLEAN, Node: PRTL_BALANCED_NODE) -> BOOLEAN;
-pub type RtlRbRemoveNodeType = unsafe extern "stdcall" fn(Tree: PRTL_RB_TREE, Node: PRTL_BALANCED_NODE) -> BOOLEAN;
-pub type RtlCreateHashTableType = unsafe extern "stdcall" fn(HashTable: *mut PRTL_DYNAMIC_HASH_TABLE, Shift: ULONG, Flags: ULONG) -> BOOLEAN;
-pub type RtlDeleteHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> LOGICAL;
-pub type RtlInsertEntryHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Entry: PRTL_DYNAMIC_HASH_TABLE_ENTRY, Signature: ULONG_PTR, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> BOOLEAN;
-pub type RtlRemoveEntryHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Entry: PRTL_DYNAMIC_HASH_TABLE_ENTRY, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> BOOLEAN;
-pub type RtlLookupEntryHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Signature: ULONG_PTR, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
-pub type RtlGetNextEntryHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
-pub type RtlInitEnumerationHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> BOOLEAN;
-pub type RtlEnumerateEntryHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
-pub type RtlInitWeakEnumerationHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> BOOLEAN;
-pub type RtlWeaklyEnumerateEntryHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
-pub type RtlExpandHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> BOOLEAN;
-pub type RtlContractHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> BOOLEAN;
-pub type RtlInitStrongEnumerationHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> BOOLEAN;
-pub type RtlStronglyEnumerateEntryHashTableType = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
-pub type RtlInitializeCriticalSectionType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> NTSTATUS;
-pub type RtlInitializeCriticalSectionAndSpinCountType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION, SpinCount: ULONG) -> NTSTATUS;
-pub type RtlInitializeCriticalSectionExType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION, SpinCount: ULONG, Flags: ULONG) -> NTSTATUS;
-pub type RtlDeleteCriticalSectionType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> NTSTATUS;
-pub type RtlEnterCriticalSectionType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> NTSTATUS;
-pub type RtlLeaveCriticalSectionType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> NTSTATUS;
-pub type RtlTryEnterCriticalSectionType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> LOGICAL;
-pub type RtlIsCriticalSectionLockedType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> LOGICAL;
-pub type RtlIsCriticalSectionLockedByThreadType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> LOGICAL;
-pub type RtlGetCriticalSectionRecursionCountType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> ULONG;
-pub type RtlSetCriticalSectionSpinCountType = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION, SpinCount: ULONG) -> ULONG;
-pub type RtlQueryCriticalSectionOwnerType = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> HANDLE;
-pub type RtlAcquireResourceSharedType = unsafe extern "stdcall" fn(Resource: PRTL_RESOURCE, Wait: BOOLEAN) -> BOOLEAN;
-pub type RtlAcquireResourceExclusiveType = unsafe extern "stdcall" fn(Resource: PRTL_RESOURCE, Wait: BOOLEAN) -> BOOLEAN;
-pub type RtlTryAcquireSRWLockExclusiveType = unsafe extern "stdcall" fn(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
-pub type RtlTryAcquireSRWLockSharedType = unsafe extern "stdcall" fn(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
-pub type RtlConvertSRWLockExclusiveToSharedType = unsafe extern "stdcall" fn(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
-pub type RtlSleepConditionVariableCSType = unsafe extern "stdcall" fn(ConditionVariable: PRTL_CONDITION_VARIABLE, CriticalSection: PRTL_CRITICAL_SECTION, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type RtlSleepConditionVariableSRWType = unsafe extern "stdcall" fn(ConditionVariable: PRTL_CONDITION_VARIABLE, SRWLock: PRTL_SRWLOCK, Timeout: PLARGE_INTEGER, Flags: ULONG) -> NTSTATUS;
-pub type RtlInitBarrierType = unsafe extern "stdcall" fn(Barrier: PRTL_BARRIER, TotalThreads: ULONG, SpinCount: ULONG) -> NTSTATUS;
-pub type RtlDeleteBarrierType = unsafe extern "stdcall" fn(Barrier: PRTL_BARRIER) -> NTSTATUS;
-pub type RtlBarrierType = unsafe extern "stdcall" fn(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
-pub type RtlBarrierForDeleteType = unsafe extern "stdcall" fn(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
-pub type RtlWaitOnAddressType = unsafe extern "stdcall" fn(Address: *mut c_void, CompareAddress: PVOID, AddressSize: SIZE_T, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type RtlInitStringExType = unsafe extern "stdcall" fn(DestinationString: PSTRING, SourceString: PCSZ) -> NTSTATUS;
-pub type RtlInitAnsiStringExType = unsafe extern "stdcall" fn(DestinationString: PANSI_STRING, SourceString: PCSZ) -> NTSTATUS;
-pub type RtlInitUTF8StringExType = unsafe extern "stdcall" fn(DestinationString: PUTF8_STRING, SourceString: PCSZ) -> NTSTATUS;
-pub type RtlUpperCharType = unsafe extern "stdcall" fn(Character: CHAR) -> CHAR;
-pub type RtlCompareStringType = unsafe extern "stdcall" fn(String1: PSTRING, String2: PSTRING, CaseInSensitive: BOOLEAN) -> LONG;
-pub type RtlEqualStringType = unsafe extern "stdcall" fn(String1: PSTRING, String2: PSTRING, CaseInSensitive: BOOLEAN) -> BOOLEAN;
-pub type RtlPrefixStringType = unsafe extern "stdcall" fn(String1: PSTRING, String2: PSTRING, CaseInSensitive: BOOLEAN) -> BOOLEAN;
-pub type RtlAppendStringToStringType = unsafe extern "stdcall" fn(Destination: PSTRING, Source: PSTRING) -> NTSTATUS;
-pub type RtlAppendAsciizToStringType = unsafe extern "stdcall" fn(Destination: PSTRING, Source: PCSTR) -> NTSTATUS;
-pub type RtlCreateUnicodeStringType = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PCWSTR) -> BOOLEAN;
-pub type RtlCreateUnicodeStringFromAsciizType = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PCSTR) -> BOOLEAN;
-pub type RtlDuplicateUnicodeStringType = unsafe extern "stdcall" fn(Flags: ULONG, StringIn: PUNICODE_STRING, StringOut: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlUpcaseUnicodeCharType = unsafe extern "stdcall" fn(SourceCharacter: WCHAR) -> WCHAR;
-pub type RtlDowncaseUnicodeCharType = unsafe extern "stdcall" fn(SourceCharacter: WCHAR) -> WCHAR;
-pub type RtlCompareUnicodeStringType = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING, CaseInSensitive: BOOLEAN) -> LONG;
-pub type RtlCompareUnicodeStringsType = unsafe extern "stdcall" fn(String1: PCWCH, String1Length: SIZE_T, String2: PCWCH, String2Length: SIZE_T, CaseInSensitive: BOOLEAN) -> LONG;
-pub type RtlEqualUnicodeStringType = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING, CaseInSensitive: BOOLEAN) -> BOOLEAN;
-pub type RtlHashUnicodeStringType = unsafe extern "stdcall" fn(String: PUNICODE_STRING, CaseInSensitive: BOOLEAN, HashAlgorithm: ULONG, HashValue: PULONG) -> NTSTATUS;
-pub type RtlValidateUnicodeStringType = unsafe extern "stdcall" fn(Flags: ULONG, String: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlPrefixUnicodeStringType = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING, CaseInSensitive: BOOLEAN) -> BOOLEAN;
-pub type RtlFindUnicodeSubstringType = unsafe extern "stdcall" fn(FullString: PUNICODE_STRING, SearchString: PUNICODE_STRING, CaseInSensitive: BOOLEAN) -> PWCHAR;
-pub type RtlFindCharInUnicodeStringType = unsafe extern "stdcall" fn(Flags: ULONG, StringToSearch: PUNICODE_STRING, CharSet: PUNICODE_STRING, NonInclusivePrefixLength: PUSHORT) -> NTSTATUS;
-pub type RtlAppendUnicodeStringToStringType = unsafe extern "stdcall" fn(Destination: PUNICODE_STRING, Source: PCUNICODE_STRING) -> NTSTATUS;
-pub type RtlAppendUnicodeToStringType = unsafe extern "stdcall" fn(Destination: PUNICODE_STRING, Source: PCWSTR) -> NTSTATUS;
-pub type RtlUpcaseUnicodeStringType = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlDowncaseUnicodeStringType = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlAnsiStringToUnicodeStringType = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PCANSI_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlxAnsiStringToUnicodeSizeType = unsafe extern "stdcall" fn(AnsiString: PCANSI_STRING) -> ULONG;
-pub type RtlUnicodeStringToAnsiStringType = unsafe extern "stdcall" fn(DestinationString: PANSI_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlUnicodeStringToAnsiSizeType = unsafe extern "stdcall" fn(SourceString: PUNICODE_STRING) -> ULONG;
-pub type RtlUnicodeStringToUTF8StringType = unsafe extern "stdcall" fn(DestinationString: PUTF8_STRING, SourceString: PCUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlUTF8StringToUnicodeStringType = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PUTF8_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlAnsiCharToUnicodeCharType = unsafe extern "stdcall" fn(SourceCharacter: *mut PUCHAR) -> WCHAR;
-pub type RtlUpcaseUnicodeStringToAnsiStringType = unsafe extern "stdcall" fn(DestinationString: PANSI_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlOemStringToUnicodeStringType = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: POEM_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlUnicodeStringToOemStringType = unsafe extern "stdcall" fn(DestinationString: POEM_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlUpcaseUnicodeStringToOemStringType = unsafe extern "stdcall" fn(DestinationString: POEM_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlOemStringToCountedUnicodeStringType = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PCOEM_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlUnicodeStringToCountedOemStringType = unsafe extern "stdcall" fn(DestinationString: POEM_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlUpcaseUnicodeStringToCountedOemStringType = unsafe extern "stdcall" fn(DestinationString: POEM_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlMultiByteToUnicodeNType = unsafe extern "stdcall" fn(UnicodeString: PWCH, MaxBytesInUnicodeString: ULONG, BytesInUnicodeString: PULONG, MultiByteString: PCSTR, BytesInMultiByteString: ULONG) -> NTSTATUS;
-pub type RtlMultiByteToUnicodeSizeType = unsafe extern "stdcall" fn(BytesInUnicodeString: PULONG, MultiByteString: PCSTR, BytesInMultiByteString: ULONG) -> NTSTATUS;
-pub type RtlUnicodeToMultiByteNType = unsafe extern "stdcall" fn(MultiByteString: PCHAR, MaxBytesInMultiByteString: ULONG, BytesInMultiByteString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
-pub type RtlUnicodeToMultiByteSizeType = unsafe extern "stdcall" fn(BytesInMultiByteString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
-pub type RtlUpcaseUnicodeToMultiByteNType = unsafe extern "stdcall" fn(MultiByteString: PCHAR, MaxBytesInMultiByteString: ULONG, BytesInMultiByteString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
-pub type RtlOemToUnicodeNType = unsafe extern "stdcall" fn(UnicodeString: PWSTR, MaxBytesInUnicodeString: ULONG, BytesInUnicodeString: PULONG, OemString: PCCH, BytesInOemString: ULONG) -> NTSTATUS;
-pub type RtlUnicodeToOemNType = unsafe extern "stdcall" fn(OemString: PCHAR, MaxBytesInOemString: ULONG, BytesInOemString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
-pub type RtlUpcaseUnicodeToOemNType = unsafe extern "stdcall" fn(OemString: PCHAR, MaxBytesInOemString: ULONG, BytesInOemString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
-pub type RtlConsoleMultiByteToUnicodeNType = unsafe extern "stdcall" fn(UnicodeString: PWCH, MaxBytesInUnicodeString: ULONG, BytesInUnicodeString: PULONG, MultiByteString: PCCH, BytesInMultiByteString: ULONG, pdwSpecialChar: PULONG) -> NTSTATUS;
-pub type RtlUTF8ToUnicodeNType = unsafe extern "stdcall" fn(UnicodeStringDestination: PWSTR, UnicodeStringMaxByteCount: ULONG, UnicodeStringActualByteCount: PULONG, UTF8StringSource: PCCH, UTF8StringByteCount: ULONG) -> NTSTATUS;
-pub type RtlUnicodeToUTF8NType = unsafe extern "stdcall" fn(UTF8StringDestination: PCHAR, UTF8StringMaxByteCount: ULONG, UTF8StringActualByteCount: PULONG, UnicodeStringSource: PCWCH, UnicodeStringByteCount: ULONG) -> NTSTATUS;
-pub type RtlCustomCPToUnicodeNType = unsafe extern "stdcall" fn(CustomCP: PCPTABLEINFO, UnicodeString: PWCH, MaxBytesInUnicodeString: ULONG, BytesInUnicodeString: PULONG, CustomCPString: PCH, BytesInCustomCPString: ULONG) -> NTSTATUS;
-pub type RtlUnicodeToCustomCPNType = unsafe extern "stdcall" fn(CustomCP: PCPTABLEINFO, CustomCPString: PCH, MaxBytesInCustomCPString: ULONG, BytesInCustomCPString: PULONG, UnicodeString: PWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
-pub type RtlUpcaseUnicodeToCustomCPNType = unsafe extern "stdcall" fn(CustomCP: PCPTABLEINFO, CustomCPString: PCH, MaxBytesInCustomCPString: ULONG, BytesInCustomCPString: PULONG, UnicodeString: PWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
-pub type RtlIsTextUnicodeType = unsafe extern "stdcall" fn(Buffer: PVOID, Size: ULONG, Result: PULONG) -> BOOLEAN;
-pub type RtlNormalizeStringType = unsafe extern "stdcall" fn(NormForm: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, DestinationString: PWSTR, DestinationStringLength: PLONG) -> NTSTATUS;
-pub type RtlIsNormalizedStringType = unsafe extern "stdcall" fn(NormForm: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, Normalized: PBOOLEAN) -> NTSTATUS;
-pub type RtlIsNameInExpressionType = unsafe extern "stdcall" fn(Expression: PUNICODE_STRING, Name: PUNICODE_STRING, IgnoreCase: BOOLEAN, UpcaseTable: PWCH) -> BOOLEAN;
-pub type RtlIsNameInUnUpcasedExpressionType = unsafe extern "stdcall" fn(Expression: PUNICODE_STRING, Name: PUNICODE_STRING, IgnoreCase: BOOLEAN, UpcaseTable: PWCH) -> BOOLEAN;
-pub type RtlDoesNameContainWildCardsType = unsafe extern "stdcall" fn(Expression: PUNICODE_STRING) -> BOOLEAN;
-pub type RtlEqualDomainNameType = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING) -> BOOLEAN;
-pub type RtlEqualComputerNameType = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING) -> BOOLEAN;
-pub type RtlDnsHostNameToComputerNameType = unsafe extern "stdcall" fn(ComputerNameString: PUNICODE_STRING, DnsHostNameString: PUNICODE_STRING, AllocateComputerNameString: BOOLEAN) -> NTSTATUS;
-pub type RtlStringFromGUIDType = unsafe extern "stdcall" fn(Guid: PGUID, GuidString: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlStringFromGUIDExType = unsafe extern "stdcall" fn(Guid: PGUID, GuidString: PUNICODE_STRING, AllocateGuidString: BOOLEAN) -> NTSTATUS;
-pub type RtlGUIDFromStringType = unsafe extern "stdcall" fn(GuidString: PUNICODE_STRING, Guid: PGUID) -> NTSTATUS;
-pub type RtlCompareAltitudesType = unsafe extern "stdcall" fn(Altitude1: PUNICODE_STRING, Altitude2: PUNICODE_STRING) -> LONG;
-pub type RtlIdnToAsciiType = unsafe extern "stdcall" fn(Flags: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, DestinationString: PWSTR, DestinationStringLength: PLONG) -> NTSTATUS;
-pub type RtlIdnToUnicodeType = unsafe extern "stdcall" fn(Flags: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, DestinationString: PWSTR, DestinationStringLength: PLONG) -> NTSTATUS;
-pub type RtlIdnToNameprepUnicodeType = unsafe extern "stdcall" fn(Flags: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, DestinationString: PWSTR, DestinationStringLength: PLONG) -> NTSTATUS;
-pub type PfxInsertPrefixType = unsafe extern "stdcall" fn(PrefixTable: PPREFIX_TABLE, Prefix: PSTRING, PrefixTableEntry: PPREFIX_TABLE_ENTRY) -> BOOLEAN;
-pub type PfxFindPrefixType = unsafe extern "stdcall" fn(PrefixTable: PPREFIX_TABLE, FullName: PSTRING) -> PPREFIX_TABLE_ENTRY;
-pub type RtlInsertUnicodePrefixType = unsafe extern "stdcall" fn(PrefixTable: PUNICODE_PREFIX_TABLE, Prefix: PUNICODE_STRING, PrefixTableEntry: PUNICODE_PREFIX_TABLE_ENTRY) -> BOOLEAN;
-pub type RtlFindUnicodePrefixType = unsafe extern "stdcall" fn(PrefixTable: PUNICODE_PREFIX_TABLE, FullName: PUNICODE_STRING, CaseInsensitiveIndex: ULONG) -> PUNICODE_PREFIX_TABLE_ENTRY;
-pub type RtlNextUnicodePrefixType = unsafe extern "stdcall" fn(PrefixTable: PUNICODE_PREFIX_TABLE, Restart: BOOLEAN) -> PUNICODE_PREFIX_TABLE_ENTRY;
-pub type RtlGetCompressionWorkSpaceSizeType = unsafe extern "stdcall" fn(CompressionFormatAndEngine: USHORT, CompressBufferWorkSpaceSize: PULONG, CompressFragmentWorkSpaceSize: PULONG) -> NTSTATUS;
-pub type RtlCompressBufferType = unsafe extern "stdcall" fn(CompressionFormatAndEngine: USHORT, UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, UncompressedChunkSize: ULONG, FinalCompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
-pub type RtlDecompressBufferType = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, FinalUncompressedSize: PULONG) -> NTSTATUS;
-pub type RtlDecompressBufferExType = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, FinalUncompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
-pub type RtlDecompressBufferEx2Type = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, UncompressedChunkSize: ULONG, FinalUncompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
-pub type RtlDecompressFragmentType = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedFragment: PUCHAR, UncompressedFragmentSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, FragmentOffset: ULONG, FinalUncompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
-pub type RtlDecompressFragmentExType = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedFragment: PUCHAR, UncompressedFragmentSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, FragmentOffset: ULONG, UncompressedChunkSize: ULONG, FinalUncompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
-pub type RtlDescribeChunkType = unsafe extern "stdcall" fn(CompressionFormat: USHORT, CompressedBuffer: *mut PUCHAR, EndOfCompressedBufferPlus1: PUCHAR, ChunkBuffer: *mut PUCHAR, ChunkSize: PULONG) -> NTSTATUS;
-pub type RtlReserveChunkType = unsafe extern "stdcall" fn(CompressionFormat: USHORT, CompressedBuffer: *mut PUCHAR, EndOfCompressedBufferPlus1: PUCHAR, ChunkBuffer: *mut PUCHAR, ChunkSize: ULONG) -> NTSTATUS;
-pub type RtlDecompressChunksType = unsafe extern "stdcall" fn(UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, CompressedTail: PUCHAR, CompressedTailSize: ULONG, CompressedDataInfo: PCOMPRESSED_DATA_INFO) -> NTSTATUS;
-pub type RtlCompressChunksType = unsafe extern "stdcall" fn(UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, CompressedDataInfo: PCOMPRESSED_DATA_INFO, CompressedDataInfoLength: ULONG, WorkSpace: PVOID) -> NTSTATUS;
-pub type RtlConvertLCIDToStringType = unsafe extern "stdcall" fn(LcidValue: LCID, Base: ULONG, Padding: ULONG, pResultBuf: PWSTR, Size: ULONG) -> NTSTATUS;
-pub type RtlIsValidLocaleNameType = unsafe extern "stdcall" fn(LocaleName: PCWSTR, Flags: ULONG) -> BOOLEAN;
-pub type RtlGetParentLocaleNameType = unsafe extern "stdcall" fn(LocaleName: PCWSTR, ParentLocaleName: PUNICODE_STRING, Flags: ULONG, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlLcidToLocaleNameType = unsafe extern "stdcall" fn(lcid: LCID, LocaleName: PUNICODE_STRING, Flags: ULONG, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlLocaleNameToLcidType = unsafe extern "stdcall" fn(LocaleName: PCWSTR, lcid: PLCID, Flags: ULONG) -> NTSTATUS;
-pub type RtlLCIDToCultureNameType = unsafe extern "stdcall" fn(Lcid: LCID, String: PUNICODE_STRING) -> BOOLEAN;
-pub type RtlCultureNameToLCIDType = unsafe extern "stdcall" fn(String: PUNICODE_STRING, Lcid: PLCID) -> BOOLEAN;
-pub type RtlGetThreadPreferredUILanguagesType = unsafe extern "stdcall" fn(Flags: ULONG, NumberOfLanguages: PULONG, Languages: PZZWSTR, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlGetProcessPreferredUILanguagesType = unsafe extern "stdcall" fn(Flags: ULONG, NumberOfLanguages: PULONG, Languages: PZZWSTR, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlGetSystemPreferredUILanguagesType = unsafe extern "stdcall" fn(Flags: ULONG, LocaleName: PCWSTR, NumberOfLanguages: PULONG, Languages: PZZWSTR, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlpGetSystemDefaultUILanguageType = unsafe extern "stdcall" fn(DefaultUILanguageId: LANGID, Lcid: PLCID) -> NTSTATUS;
-pub type RtlGetUserPreferredUILanguagesType = unsafe extern "stdcall" fn(Flags: ULONG, LocaleName: PCWSTR, NumberOfLanguages: PULONG, Languages: PZZWSTR, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlGetUILanguageInfoType = unsafe extern "stdcall" fn(Flags: ULONG, Languages: PCZZWSTR, FallbackLanguages: PZZWSTR, NumberOfFallbackLanguages: PULONG, Attributes: PULONG) -> NTSTATUS;
-pub type RtlGetLocaleFileMappingAddressType = unsafe extern "stdcall" fn(BaseAddress: *mut PVOID, DefaultLocaleId: PLCID, DefaultCasingTableSize: PLARGE_INTEGER, CurrentNLSVersion: PULONG) -> NTSTATUS;
-pub type RtlGetCurrentPebType = unsafe extern "stdcall" fn() -> PPEB;
-pub type RtlAcquirePebLockType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlReleasePebLockType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlTryAcquirePebLockType = unsafe extern "stdcall" fn() -> LOGICAL;
-pub type RtlCreateProcessParametersType = unsafe extern "stdcall" fn(pProcessParameters: *mut PRTL_USER_PROCESS_PARAMETERS, ImagePathName: PUNICODE_STRING, DllPath: PUNICODE_STRING, CurrentDirectory: PUNICODE_STRING, CommandLine: PUNICODE_STRING, Environment: PVOID, WindowTitle: PUNICODE_STRING, DesktopInfo: PUNICODE_STRING, ShellInfo: PUNICODE_STRING, RuntimeData: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlCreateProcessParametersExType = unsafe extern "stdcall" fn(pProcessParameters: *mut PRTL_USER_PROCESS_PARAMETERS, ImagePathName: PUNICODE_STRING, DllPath: PUNICODE_STRING, CurrentDirectory: PUNICODE_STRING, CommandLine: PUNICODE_STRING, Environment: PVOID, WindowTitle: PUNICODE_STRING, DesktopInfo: PUNICODE_STRING, ShellInfo: PUNICODE_STRING, RuntimeData: PUNICODE_STRING, Flags: ULONG) -> NTSTATUS;
-pub type RtlDestroyProcessParametersType = unsafe extern "stdcall" fn(ProcessParameters: PRTL_USER_PROCESS_PARAMETERS) -> NTSTATUS;
-pub type RtlNormalizeProcessParamsType = unsafe extern "stdcall" fn(ProcessParameters: PRTL_USER_PROCESS_PARAMETERS) -> PRTL_USER_PROCESS_PARAMETERS;
-pub type RtlDeNormalizeProcessParamsType = unsafe extern "stdcall" fn(ProcessParameters: PRTL_USER_PROCESS_PARAMETERS) -> PRTL_USER_PROCESS_PARAMETERS;
-pub type RtlCreateUserProcessType = unsafe extern "stdcall" fn(NtImagePathName: PUNICODE_STRING, AttributesDeprecated: ULONG, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, ProcessSecurityDescriptor: PSECURITY_DESCRIPTOR, ThreadSecurityDescriptor: PSECURITY_DESCRIPTOR, ParentProcess: HANDLE, InheritHandles: BOOLEAN, DebugPort: HANDLE, TokenHandle: HANDLE, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
-pub type RtlCreateUserProcessExType = unsafe extern "stdcall" fn(NtImagePathName: PUNICODE_STRING, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, InheritHandles: BOOLEAN, ProcessExtendedParameters: PRTL_USER_PROCESS_EXTENDED_PARAMETERS, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
-pub type RtlExitUserProcessType = unsafe extern "stdcall" fn(ExitStatus: NTSTATUS) -> !;
-pub type RtlCloneUserProcessType = unsafe extern "stdcall" fn(ProcessFlags: ULONG, ProcessSecurityDescriptor: PSECURITY_DESCRIPTOR, ThreadSecurityDescriptor: PSECURITY_DESCRIPTOR, DebugPort: HANDLE, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
-pub type RtlPrepareForProcessCloningType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlCompleteProcessCloningType = unsafe extern "stdcall" fn(Completed: LOGICAL) -> NTSTATUS;
-pub type RtlCreateProcessReflectionType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Flags: ULONG, StartRoutine: PVOID, StartContext: PVOID, EventHandle: HANDLE, ReflectionInformation: PRTLP_PROCESS_REFLECTION_REFLECTION_INFORMATION) -> NTSTATUS;
-pub type RtlSetThreadSubProcessTagType = unsafe extern "stdcall" fn(SubProcessTag: PVOID) -> PVOID;
-pub type RtlValidProcessProtectionType = unsafe extern "stdcall" fn(ProcessProtection: PS_PROTECTION) -> BOOLEAN;
-pub type RtlTestProtectedAccessType = unsafe extern "stdcall" fn(Source: PS_PROTECTION, Target: PS_PROTECTION) -> BOOLEAN;
-pub type RtlIsCurrentProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> BOOLEAN;
-pub type RtlIsCurrentThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> BOOLEAN;
-pub type RtlCreateUserThreadType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ThreadSecurityDescriptor: PSECURITY_DESCRIPTOR, CreateSuspended: BOOLEAN, ZeroBits: ULONG, MaximumStackSize: SIZE_T, CommittedStackSize: SIZE_T, StartAddress: PUSER_THREAD_START_ROUTINE, Parameter: PVOID, ThreadHandle: PHANDLE, ClientId: PCLIENT_ID) -> NTSTATUS;
-pub type RtlExitUserThreadType = unsafe extern "stdcall" fn(ExitStatus: NTSTATUS) -> !;
-pub type RtlIsCurrentThreadAttachExemptType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type RtlCreateUserStackType = unsafe extern "stdcall" fn(CommittedStackSize: SIZE_T, MaximumStackSize: SIZE_T, ZeroBits: ULONG_PTR, PageSize: SIZE_T, ReserveAlignment: ULONG_PTR, InitialTeb: PINITIAL_TEB) -> NTSTATUS;
-pub type RtlFreeUserStackType = unsafe extern "stdcall" fn(AllocationBase: PVOID) -> NTSTATUS;
-pub type RtlInitializeContextType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Context: PCONTEXT, Parameter: PVOID, InitialPc: PVOID, InitialSp: PVOID) -> NTSTATUS;
-pub type RtlInitializeExtendedContextType = unsafe extern "stdcall" fn(Context: PCONTEXT, ContextFlags: ULONG, ContextEx: *mut PCONTEXT_EX) -> NTSTATUS;
-pub type RtlInitializeExtendedContext2Type = unsafe extern "stdcall" fn(Context: PCONTEXT, ContextFlags: ULONG, ContextEx: *mut PCONTEXT_EX, EnabledExtendedFeatures: ULONG64) -> NTSTATUS;
-pub type RtlCopyContextType = unsafe extern "stdcall" fn(Context: PCONTEXT, ContextFlags: ULONG, Source: PCONTEXT) -> NTSTATUS;
-pub type RtlCopyExtendedContextType = unsafe extern "stdcall" fn(Destination: PCONTEXT_EX, ContextFlags: ULONG, Source: PCONTEXT_EX) -> NTSTATUS;
-pub type RtlGetExtendedContextLengthType = unsafe extern "stdcall" fn(ContextFlags: ULONG, ContextLength: PULONG) -> NTSTATUS;
-pub type RtlGetExtendedContextLength2Type = unsafe extern "stdcall" fn(ContextFlags: ULONG, ContextLength: PULONG, EnabledExtendedFeatures: ULONG64) -> NTSTATUS;
-pub type RtlGetExtendedFeaturesMaskType = unsafe extern "stdcall" fn(ContextEx: PCONTEXT_EX) -> ULONG64;
-pub type RtlLocateExtendedFeatureType = unsafe extern "stdcall" fn(ContextEx: PCONTEXT_EX, FeatureId: ULONG, Length: PULONG) -> PVOID;
-pub type RtlLocateLegacyContextType = unsafe extern "stdcall" fn(ContextEx: PCONTEXT_EX, Length: PULONG) -> PCONTEXT;
-pub type RtlRemoteCallType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ThreadHandle: HANDLE, CallSite: PVOID, ArgumentCount: ULONG, Arguments: PULONG_PTR, PassContext: BOOLEAN, AlreadySuspended: BOOLEAN) -> NTSTATUS;
-pub type RtlAddVectoredExceptionHandlerType = unsafe extern "stdcall" fn(First: ULONG, Handler: PVECTORED_EXCEPTION_HANDLER) -> PVOID;
-pub type RtlRemoveVectoredExceptionHandlerType = unsafe extern "stdcall" fn(Handle: PVOID) -> ULONG;
-pub type RtlAddVectoredContinueHandlerType = unsafe extern "stdcall" fn(First: ULONG, Handler: PVECTORED_EXCEPTION_HANDLER) -> PVOID;
-pub type RtlRemoveVectoredContinueHandlerType = unsafe extern "stdcall" fn(Handle: PVOID) -> ULONG;
-pub type RtlUnhandledExceptionFilterType = unsafe extern "stdcall" fn(ExceptionPointers: PEXCEPTION_POINTERS) -> LONG;
-pub type RtlUnhandledExceptionFilter2Type = unsafe extern "stdcall" fn(ExceptionPointers: PEXCEPTION_POINTERS, Flags: ULONG) -> LONG;
-pub type RtlKnownExceptionFilterType = unsafe extern "stdcall" fn(ExceptionPointers: PEXCEPTION_POINTERS) -> LONG;
-pub type RtlGetActiveActivationContextType = unsafe extern "stdcall" fn(ActivationContext: PACTIVATION_CONTEXT) -> NTSTATUS;
-pub type RtlZombifyActivationContextType = unsafe extern "stdcall" fn(ActivationContext: PACTIVATION_CONTEXT) -> NTSTATUS;
-pub type RtlIsActivationContextActiveType = unsafe extern "stdcall" fn(ActivationContext: PACTIVATION_CONTEXT) -> BOOLEAN;
-pub type RtlActivateActivationContextType = unsafe extern "stdcall" fn(Flags: ULONG, ActivationContext: PACTIVATION_CONTEXT, Cookie: PULONG_PTR) -> NTSTATUS;
-pub type RtlActivateActivationContextExType = unsafe extern "stdcall" fn(Flags: ULONG, Teb: PTEB, ActivationContext: PACTIVATION_CONTEXT, Cookie: PULONG_PTR) -> NTSTATUS;
-pub type RtlCreateActivationContextType = unsafe extern "stdcall" fn(Flags: ULONG, ActivationContextData: PACTIVATION_CONTEXT_DATA, ExtraBytes: ULONG, NotificationRoutine: PACTIVATION_CONTEXT_NOTIFY_ROUTINE, NotificationContext: PVOID, ActivationContext: *mut PACTIVATION_CONTEXT) -> NTSTATUS;
-pub type RtlFindActivationContextSectionStringType = unsafe extern "stdcall" fn(Flags: ULONG, ExtensionGuid: PGUID, SectionId: ULONG, StringToFind: PUNICODE_STRING, ReturnedData: PACTCTX_SECTION_KEYED_DATA) -> NTSTATUS;
-pub type RtlFindActivationContextSectionGuidType = unsafe extern "stdcall" fn(Flags: ULONG, ExtensionGuid: PGUID, SectionId: ULONG, GuidToFind: PGUID, ReturnedData: PACTCTX_SECTION_KEYED_DATA) -> NTSTATUS;
-pub type RtlQueryActivationContextApplicationSettingsType = unsafe extern "stdcall" fn(Flags: ULONG, ActivationContext: PACTIVATION_CONTEXT, SettingsNameSpace: PCWSTR, SettingName: PCWSTR, Buffer: PWSTR, BufferLength: SIZE_T, RequiredLength: PSIZE_T) -> NTSTATUS;
-pub type RtlQueryInformationActivationContextType = unsafe extern "stdcall" fn(Flags: ULONG, ActivationContext: PACTIVATION_CONTEXT, SubInstanceIndex: PACTIVATION_CONTEXT_QUERY_INDEX, ActivationContextInformationClass: ACTIVATION_CONTEXT_INFO_CLASS, ActivationContextInformation: PVOID, ActivationContextInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type RtlQueryInformationActiveActivationContextType = unsafe extern "stdcall" fn(ActivationContextInformationClass: ACTIVATION_CONTEXT_INFO_CLASS, ActivationContextInformation: PVOID, ActivationContextInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type RtlImageNtHeaderType = unsafe extern "stdcall" fn(BaseOfImage: PVOID) -> PIMAGE_NT_HEADERS;
-pub type RtlImageNtHeaderExType = unsafe extern "stdcall" fn(Flags: ULONG, BaseOfImage: PVOID, Size: ULONG64, OutHeaders: *mut PIMAGE_NT_HEADERS) -> NTSTATUS;
-pub type RtlAddressInSectionTableType = unsafe extern "stdcall" fn(NtHeaders: PIMAGE_NT_HEADERS, BaseOfImage: PVOID, VirtualAddress: ULONG) -> PVOID;
-pub type RtlSectionTableFromVirtualAddressType = unsafe extern "stdcall" fn(NtHeaders: PIMAGE_NT_HEADERS, BaseOfImage: PVOID, VirtualAddress: ULONG) -> PIMAGE_SECTION_HEADER;
-pub type RtlImageDirectoryEntryToDataType = unsafe extern "stdcall" fn(BaseOfImage: PVOID, MappedAsImage: BOOLEAN, DirectoryEntry: USHORT, Size: PULONG) -> PVOID;
-pub type RtlImageRvaToSectionType = unsafe extern "stdcall" fn(NtHeaders: PIMAGE_NT_HEADERS, BaseOfImage: PVOID, Rva: ULONG) -> PIMAGE_SECTION_HEADER;
-pub type RtlImageRvaToVaType = unsafe extern "stdcall" fn(NtHeaders: PIMAGE_NT_HEADERS, BaseOfImage: PVOID, Rva: ULONG, LastRvaSection: *mut PIMAGE_SECTION_HEADER) -> PVOID;
-pub type RtlFindExportedRoutineByNameType = unsafe extern "stdcall" fn(BaseOfImage: PVOID, RoutineName: PCSTR) -> PVOID;
-pub type RtlGuardCheckLongJumpTargetType = unsafe extern "stdcall" fn(PcValue: PVOID, IsFastFail: BOOL, IsLongJumpTarget: PBOOL) -> NTSTATUS;
-pub type RtlCompareMemoryUlongType = unsafe extern "stdcall" fn(Source: PVOID, Length: SIZE_T, Pattern: ULONG) -> SIZE_T;
-pub type RtlIsZeroMemoryType = unsafe extern "stdcall" fn(Buffer: PVOID, Length: SIZE_T) -> BOOLEAN;
-pub type RtlCreateEnvironmentType = unsafe extern "stdcall" fn(CloneCurrentEnvironment: BOOLEAN, Environment: *mut PVOID) -> NTSTATUS;
-pub type RtlCreateEnvironmentExType = unsafe extern "stdcall" fn(SourceEnvironment: PVOID, Environment: *mut PVOID, Flags: ULONG) -> NTSTATUS;
-pub type RtlDestroyEnvironmentType = unsafe extern "stdcall" fn(Environment: PVOID) -> NTSTATUS;
-pub type RtlSetCurrentEnvironmentType = unsafe extern "stdcall" fn(Environment: PVOID, PreviousEnvironment: *mut PVOID) -> NTSTATUS;
-pub type RtlSetEnvironmentVarType = unsafe extern "stdcall" fn(Environment: *mut PVOID, Name: PCWSTR, NameLength: SIZE_T, Value: PCWSTR, ValueLength: SIZE_T) -> NTSTATUS;
-pub type RtlSetEnvironmentVariableType = unsafe extern "stdcall" fn(Environment: *mut PVOID, Name: PUNICODE_STRING, Value: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlQueryEnvironmentVariableType = unsafe extern "stdcall" fn(Environment: PVOID, Name: PCWSTR, NameLength: SIZE_T, Value: PWSTR, ValueLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type RtlQueryEnvironmentVariable_UType = unsafe extern "stdcall" fn(Environment: PVOID, Name: PUNICODE_STRING, Value: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlExpandEnvironmentStringsType = unsafe extern "stdcall" fn(Environment: PVOID, Source: PCWSTR, SourceLength: SIZE_T, Destination: PWSTR, DestinationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type RtlExpandEnvironmentStrings_UType = unsafe extern "stdcall" fn(Environment: PVOID, Source: PUNICODE_STRING, Destination: PUNICODE_STRING, ReturnedLength: PULONG) -> NTSTATUS;
-pub type RtlSetEnvironmentStringsType = unsafe extern "stdcall" fn(NewEnvironment: PCWCHAR, NewEnvironmentSize: SIZE_T) -> NTSTATUS;
-pub type RtlDetermineDosPathNameType_UType = unsafe extern "stdcall" fn(DosFileName: PCWSTR) -> RTL_PATH_TYPE;
-pub type RtlIsDosDeviceName_UType = unsafe extern "stdcall" fn(DosFileName: PCWSTR) -> ULONG;
-pub type RtlGetFullPathName_UType = unsafe extern "stdcall" fn(FileName: PCWSTR, BufferLength: ULONG, Buffer: PWSTR, FilePart: *mut PWSTR) -> ULONG;
-pub type RtlGetFullPathName_UExType = unsafe extern "stdcall" fn(FileName: PCWSTR, BufferLength: ULONG, Buffer: PWSTR, FilePart: *mut PWSTR, BytesRequired: *mut ULONG) -> NTSTATUS;
-pub type RtlGetFullPathName_UstrExType = unsafe extern "stdcall" fn(FileName: PUNICODE_STRING, StaticString: PUNICODE_STRING, DynamicString: PUNICODE_STRING, StringUsed: *mut PUNICODE_STRING, FilePartPrefixCch: *mut SIZE_T, NameInvalid: PBOOLEAN, InputPathType: *mut RTL_PATH_TYPE, BytesRequired: *mut SIZE_T) -> NTSTATUS;
-pub type RtlGetCurrentDirectory_UType = unsafe extern "stdcall" fn(BufferLength: ULONG, Buffer: PWSTR) -> ULONG;
-pub type RtlSetCurrentDirectory_UType = unsafe extern "stdcall" fn(PathName: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlGetLongestNtPathLengthType = unsafe extern "stdcall" fn() -> ULONG;
-pub type RtlNtPathNameToDosPathNameType = unsafe extern "stdcall" fn(Flags: ULONG, Path: PRTL_UNICODE_STRING_BUFFER, Disposition: PULONG, FilePart: *mut PWSTR) -> NTSTATUS;
-pub type RtlDosPathNameToNtPathName_UType = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> BOOLEAN;
-pub type RtlDosPathNameToNtPathName_U_WithStatusType = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> NTSTATUS;
-pub type RtlDosLongPathNameToNtPathName_U_WithStatusType = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> NTSTATUS;
-pub type RtlDosPathNameToRelativeNtPathName_UType = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> BOOLEAN;
-pub type RtlDosPathNameToRelativeNtPathName_U_WithStatusType = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> NTSTATUS;
-pub type RtlDosLongPathNameToRelativeNtPathName_U_WithStatusType = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> NTSTATUS;
-pub type RtlDosSearchPath_UType = unsafe extern "stdcall" fn(Path: PCWSTR, FileName: PCWSTR, Extension: PCWSTR, BufferLength: ULONG, Buffer: PWSTR, FilePart: *mut PWSTR) -> ULONG;
-pub type RtlDosSearchPath_UstrType = unsafe extern "stdcall" fn(Flags: ULONG, Path: PUNICODE_STRING, FileName: PUNICODE_STRING, DefaultExtension: PUNICODE_STRING, StaticString: PUNICODE_STRING, DynamicString: PUNICODE_STRING, FullFileNameOut: *mut PCUNICODE_STRING, FilePartPrefixCch: *mut SIZE_T, BytesRequired: *mut SIZE_T) -> NTSTATUS;
-pub type RtlDoesFileExists_UType = unsafe extern "stdcall" fn(FileName: PCWSTR) -> BOOLEAN;
-pub type RtlDosApplyFileIsolationRedirection_UstrType = unsafe extern "stdcall" fn(Flags: ULONG, OriginalName: PUNICODE_STRING, Extension: PUNICODE_STRING, StaticString: PUNICODE_STRING, DynamicString: PUNICODE_STRING, NewName: *mut PUNICODE_STRING, NewFlags: PULONG, FileNameSize: PSIZE_T, RequiredLength: PSIZE_T) -> NTSTATUS;
-pub type RtlGetLengthWithoutLastFullDosOrNtPathElementType = unsafe extern "stdcall" fn(Flags: ULONG, PathString: PUNICODE_STRING, Length: PULONG) -> NTSTATUS;
-pub type RtlGetLengthWithoutTrailingPathSeperatorsType = unsafe extern "stdcall" fn(Flags: ULONG, PathString: PUNICODE_STRING, Length: PULONG) -> NTSTATUS;
-pub type RtlGenerate8dot3NameType = unsafe extern "stdcall" fn(Name: PUNICODE_STRING, AllowExtendedCharacters: BOOLEAN, Context: PGENERATE_NAME_CONTEXT, Name8dot3: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlComputePrivatizedDllName_UType = unsafe extern "stdcall" fn(DllName: PUNICODE_STRING, RealName: PUNICODE_STRING, LocalName: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlGetSearchPathType = unsafe extern "stdcall" fn(SearchPathA: *mut PWSTR) -> NTSTATUS;
-pub type RtlSetSearchPathModeType = unsafe extern "stdcall" fn(Flags: ULONG) -> NTSTATUS;
-pub type RtlGetExePathType = unsafe extern "stdcall" fn(DosPathName: PCWSTR, SearchPathA: *mut PWSTR) -> NTSTATUS;
-pub type RtlReplaceSystemDirectoryInPathType = unsafe extern "stdcall" fn(Destination: PUNICODE_STRING, Machine: USHORT, TargetMachine: USHORT, IncludePathSeperator: BOOLEAN) -> ULONG;
-pub type RtlWow64GetCurrentMachineType = unsafe extern "stdcall" fn() -> USHORT;
-pub type RtlWow64IsWowGuestMachineSupportedType = unsafe extern "stdcall" fn(NativeMachine: USHORT, IsWowGuestMachineSupported: PBOOLEAN) -> NTSTATUS;
-pub type RtlWow64GetProcessMachinesType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessMachine: PUSHORT, NativeMachine: PUSHORT) -> NTSTATUS;
-pub type RtlGetImageFileMachinesType = unsafe extern "stdcall" fn(FileName: PCWSTR, FileMachines: PUSHORT) -> NTSTATUS;
-pub type RtlGetNtSystemRootType = unsafe extern "stdcall" fn() -> PWSTR;
-pub type RtlAreLongPathsEnabledType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type RtlIsThreadWithinLoaderCalloutType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type RtlDllShutdownInProgressType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type RtlCreateHeapType = unsafe extern "stdcall" fn(Flags: ULONG, HeapBase: PVOID, ReserveSize: SIZE_T, CommitSize: SIZE_T, Lock: PVOID, Parameters: PVOID) -> PVOID;
-pub type RtlDestroyHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID) -> PVOID;
-pub type RtlAllocateHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Size: SIZE_T) -> PVOID;
-pub type RtlFreeHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID) -> LOGICAL;
-pub type RtlSizeHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID) -> SIZE_T;
-pub type RtlZeroHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG) -> NTSTATUS;
-pub type RtlLockHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID) -> BOOLEAN;
-pub type RtlUnlockHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID) -> BOOLEAN;
-pub type RtlReAllocateHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID, Size: SIZE_T) -> PVOID;
-pub type RtlGetUserInfoHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID, UserValue: *mut PVOID, UserFlags: PULONG) -> BOOLEAN;
-pub type RtlSetUserValueHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID, UserValue: PVOID) -> BOOLEAN;
-pub type RtlSetUserFlagsHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID, UserFlagsReset: ULONG, UserFlagsSet: ULONG) -> BOOLEAN;
-pub type RtlCreateTagHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, TagPrefix: PCWSTR, TagNames: PCWSTR) -> ULONG;
-pub type RtlQueryTagHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, TagIndex: USHORT, ResetCounters: BOOLEAN, TagInfo: PRTL_HEAP_TAG_INFO) -> PWSTR;
-pub type RtlExtendHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Base: PVOID, Size: SIZE_T) -> NTSTATUS;
-pub type RtlCompactHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG) -> SIZE_T;
-pub type RtlValidateHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID) -> BOOLEAN;
-pub type RtlValidateProcessHeapsType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type RtlGetProcessHeapsType = unsafe extern "stdcall" fn(NumberOfHeaps: ULONG, ProcessHeaps: *mut PVOID) -> ULONG;
-pub type RtlEnumProcessHeapsType = unsafe extern "stdcall" fn(EnumRoutine: PRTL_ENUM_HEAPS_ROUTINE, Parameter: PVOID) -> NTSTATUS;
-pub type RtlUsageHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Usage: PRTL_HEAP_USAGE) -> NTSTATUS;
-pub type RtlWalkHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Entry: PRTL_HEAP_WALK_ENTRY) -> NTSTATUS;
-pub type RtlQueryHeapInformationType = unsafe extern "stdcall" fn(HeapHandle: PVOID, HeapInformationClass: HEAP_INFORMATION_CLASS, HeapInformation: PVOID, HeapInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type RtlSetHeapInformationType = unsafe extern "stdcall" fn(HeapHandle: PVOID, HeapInformationClass: HEAP_INFORMATION_CLASS, HeapInformation: PVOID, HeapInformationLength: SIZE_T) -> NTSTATUS;
-pub type RtlMultipleAllocateHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Size: SIZE_T, Count: ULONG, Array: *mut PVOID) -> ULONG;
-pub type RtlMultipleFreeHeapType = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Count: ULONG, Array: *mut PVOID) -> ULONG;
-pub type RtlCreateMemoryZoneType = unsafe extern "stdcall" fn(MemoryZone: *mut PVOID, InitialSize: SIZE_T, Flags: ULONG) -> NTSTATUS;
-pub type RtlDestroyMemoryZoneType = unsafe extern "stdcall" fn(MemoryZone: PVOID) -> NTSTATUS;
-pub type RtlAllocateMemoryZoneType = unsafe extern "stdcall" fn(MemoryZone: PVOID, BlockSize: SIZE_T, Block: *mut PVOID) -> NTSTATUS;
-pub type RtlResetMemoryZoneType = unsafe extern "stdcall" fn(MemoryZone: PVOID) -> NTSTATUS;
-pub type RtlLockMemoryZoneType = unsafe extern "stdcall" fn(MemoryZone: PVOID) -> NTSTATUS;
-pub type RtlUnlockMemoryZoneType = unsafe extern "stdcall" fn(MemoryZone: PVOID) -> NTSTATUS;
-pub type RtlCreateMemoryBlockLookasideType = unsafe extern "stdcall" fn(MemoryBlockLookaside: *mut PVOID, Flags: ULONG, InitialSize: ULONG, MinimumBlockSize: ULONG, MaximumBlockSize: ULONG) -> NTSTATUS;
-pub type RtlDestroyMemoryBlockLookasideType = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID) -> NTSTATUS;
-pub type RtlAllocateMemoryBlockLookasideType = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID, BlockSize: ULONG, Block: *mut PVOID) -> NTSTATUS;
-pub type RtlFreeMemoryBlockLookasideType = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID, Block: PVOID) -> NTSTATUS;
-pub type RtlExtendMemoryBlockLookasideType = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID, Increment: ULONG) -> NTSTATUS;
-pub type RtlResetMemoryBlockLookasideType = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID) -> NTSTATUS;
-pub type RtlLockMemoryBlockLookasideType = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID) -> NTSTATUS;
-pub type RtlUnlockMemoryBlockLookasideType = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID) -> NTSTATUS;
-pub type RtlGetCurrentTransactionType = unsafe extern "stdcall" fn() -> HANDLE;
-pub type RtlSetCurrentTransactionType = unsafe extern "stdcall" fn(TransactionHandle: HANDLE) -> LOGICAL;
-pub type RtlConvertLongToLuidType = unsafe extern "stdcall" fn(Long: LONG) -> LUID;
-pub type RtlConvertUlongToLuidType = unsafe extern "stdcall" fn(Ulong: ULONG) -> LUID;
-pub type RtlConvertLuidToLonglongType = unsafe extern "stdcall" fn(Luid: LUID) -> LONGLONG;
-pub type RtlConvertLuidToUlonglongType = unsafe extern "stdcall" fn(Luid: LUID) -> ULONGLONG;
-pub type RtlCreateQueryDebugBufferType = unsafe extern "stdcall" fn(MaximumCommit: ULONG, UseEventPair: BOOLEAN) -> PRTL_DEBUG_INFORMATION;
-pub type RtlDestroyQueryDebugBufferType = unsafe extern "stdcall" fn(Buffer: PRTL_DEBUG_INFORMATION) -> NTSTATUS;
-pub type RtlCommitDebugInfoType = unsafe extern "stdcall" fn(Buffer: PRTL_DEBUG_INFORMATION, Size: SIZE_T) -> PVOID;
-pub type RtlQueryProcessDebugInformationType = unsafe extern "stdcall" fn(UniqueProcessId: HANDLE, Flags: ULONG, Buffer: PRTL_DEBUG_INFORMATION) -> NTSTATUS;
-pub type RtlSetProcessDebugInformationType = unsafe extern "stdcall" fn(UniqueProcessId: HANDLE, Flags: ULONG, Buffer: PRTL_DEBUG_INFORMATION) -> NTSTATUS;
-pub type RtlIsAnyDebuggerPresentType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type RtlFindMessageType = unsafe extern "stdcall" fn(DllHandle: PVOID, MessageTableId: ULONG, MessageLanguageId: ULONG, MessageId: ULONG, MessageEntry: *mut PMESSAGE_RESOURCE_ENTRY) -> NTSTATUS;
-pub type RtlFormatMessageType = unsafe extern "stdcall" fn(MessageFormat: PCWSTR, MaximumWidth: ULONG, IgnoreInserts: BOOLEAN, ArgumentsAreAnsi: BOOLEAN, ArgumentsAreAnArray: BOOLEAN, Arguments: *mut va_list, Buffer: PWSTR, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlFormatMessageExType = unsafe extern "stdcall" fn(MessageFormat: PCWSTR, MaximumWidth: ULONG, IgnoreInserts: BOOLEAN, ArgumentsAreAnsi: BOOLEAN, ArgumentsAreAnArray: BOOLEAN, Arguments: *mut va_list, Buffer: PWSTR, Length: ULONG, ReturnLength: PULONG, ParseContext: PPARSE_MESSAGE_CONTEXT) -> NTSTATUS;
-pub type RtlGetFileMUIPathType = unsafe extern "stdcall" fn(Flags: ULONG, FilePath: PCWSTR, Language: PCWSTR, LanguageLength: PULONG, FileMUIPath: PWSTR, FileMUIPathLength: PULONG, Enumerator: PULONGLONG) -> NTSTATUS;
-pub type RtlLoadStringType = unsafe extern "stdcall" fn(DllHandle: PVOID, StringId: ULONG, StringLanguage: PCWSTR, Flags: ULONG, ReturnString: *mut PCWSTR, ReturnStringLen: PUSHORT, ReturnLanguageName: PWSTR, ReturnLanguageLen: PULONG) -> NTSTATUS;
-pub type RtlNtStatusToDosErrorType = unsafe extern "stdcall" fn(Status: NTSTATUS) -> ULONG;
-pub type RtlNtStatusToDosErrorNoTebType = unsafe extern "stdcall" fn(Status: NTSTATUS) -> ULONG;
-pub type RtlGetLastNtStatusType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlGetLastWin32ErrorType = unsafe extern "stdcall" fn() -> LONG;
-pub type RtlGetThreadErrorModeType = unsafe extern "stdcall" fn() -> ULONG;
-pub type RtlSetThreadErrorModeType = unsafe extern "stdcall" fn(NewMode: ULONG, OldMode: PULONG) -> NTSTATUS;
-pub type RtlReportExceptionType = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT, Flags: ULONG) -> NTSTATUS;
-pub type RtlReportExceptionExType = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT, Flags: ULONG, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type RtlWerpReportExceptionType = unsafe extern "stdcall" fn(ProcessId: ULONG, CrashReportSharedMem: HANDLE, Flags: ULONG, CrashVerticalProcessHandle: PHANDLE) -> NTSTATUS;
-pub type RtlReportSilentProcessExitType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
-pub type RtlUniformType = unsafe extern "stdcall" fn(Seed: PULONG) -> ULONG;
-pub type RtlRandomType = unsafe extern "stdcall" fn(Seed: PULONG) -> ULONG;
-pub type RtlRandomExType = unsafe extern "stdcall" fn(Seed: PULONG) -> ULONG;
-pub type RtlComputeImportTableHashType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Hash: PCHAR, ImportTableHashRevision: ULONG) -> NTSTATUS;
-pub type RtlIntegerToCharType = unsafe extern "stdcall" fn(Value: ULONG, Base: ULONG, OutputLength: LONG, String: PSTR) -> NTSTATUS;
-pub type RtlCharToIntegerType = unsafe extern "stdcall" fn(String: PCSTR, Base: ULONG, Value: PULONG) -> NTSTATUS;
-pub type RtlLargeIntegerToCharType = unsafe extern "stdcall" fn(Value: PLARGE_INTEGER, Base: ULONG, OutputLength: LONG, String: PSTR) -> NTSTATUS;
-pub type RtlIntegerToUnicodeStringType = unsafe extern "stdcall" fn(Value: ULONG, Base: ULONG, String: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlInt64ToUnicodeStringType = unsafe extern "stdcall" fn(Value: ULONGLONG, Base: ULONG, String: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlUnicodeStringToIntegerType = unsafe extern "stdcall" fn(String: PUNICODE_STRING, Base: ULONG, Value: PULONG) -> NTSTATUS;
-pub type RtlIpv4AddressToStringWType = unsafe extern "stdcall" fn(Address: PCIN_ADDR, AddressString: PWSTR) -> PWSTR;
-pub type RtlIpv4AddressToStringExWType = unsafe extern "stdcall" fn(Address: PCIN_ADDR, Port: USHORT, AddressString: PWSTR, AddressStringLength: PULONG) -> NTSTATUS;
-pub type RtlIpv6AddressToStringWType = unsafe extern "stdcall" fn(Address: PCIN6_ADDR, AddressString: PWSTR) -> PWSTR;
-pub type RtlIpv6AddressToStringExWType = unsafe extern "stdcall" fn(Address: PCIN6_ADDR, ScopeId: ULONG, Port: USHORT, AddressString: PWSTR, AddressStringLength: PULONG) -> NTSTATUS;
-pub type RtlIpv4StringToAddressWType = unsafe extern "stdcall" fn(AddressString: PCWSTR, Strict: BOOLEAN, Terminator: *mut LPCWSTR, Address: PIN_ADDR) -> NTSTATUS;
-pub type RtlIpv4StringToAddressExWType = unsafe extern "stdcall" fn(AddressString: PCWSTR, Strict: BOOLEAN, Address: PIN_ADDR, Port: PUSHORT) -> NTSTATUS;
-pub type RtlIpv6StringToAddressWType = unsafe extern "stdcall" fn(AddressString: PCWSTR, Terminator: *mut PCWSTR, Address: PIN6_ADDR) -> NTSTATUS;
-pub type RtlIpv6StringToAddressExWType = unsafe extern "stdcall" fn(AddressString: PCWSTR, Address: PIN6_ADDR, ScopeId: PULONG, Port: PUSHORT) -> NTSTATUS;
-pub type RtlCutoverTimeToSystemTimeType = unsafe extern "stdcall" fn(CutoverTime: PTIME_FIELDS, SystemTime: PLARGE_INTEGER, CurrentSystemTime: PLARGE_INTEGER, ThisYear: BOOLEAN) -> BOOLEAN;
-pub type RtlSystemTimeToLocalTimeType = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER, LocalTime: PLARGE_INTEGER) -> NTSTATUS;
-pub type RtlLocalTimeToSystemTimeType = unsafe extern "stdcall" fn(LocalTime: PLARGE_INTEGER, SystemTime: PLARGE_INTEGER) -> NTSTATUS;
-pub type RtlTimeFieldsToTimeType = unsafe extern "stdcall" fn(TimeFields: PTIME_FIELDS, Time: PLARGE_INTEGER) -> BOOLEAN;
-pub type RtlTimeToSecondsSince1980Type = unsafe extern "stdcall" fn(Time: PLARGE_INTEGER, ElapsedSeconds: PULONG) -> BOOLEAN;
-pub type RtlTimeToSecondsSince1970Type = unsafe extern "stdcall" fn(Time: PLARGE_INTEGER, ElapsedSeconds: PULONG) -> BOOLEAN;
-pub type RtlGetSystemTimePreciseType = unsafe extern "stdcall" fn() -> LARGE_INTEGER;
-pub type RtlGetSystemTimeAndBiasType = unsafe extern "stdcall" fn(TimeZoneBias: KSYSTEM_TIME, TimeZoneBiasEffectiveStart: PLARGE_INTEGER, TimeZoneBiasEffectiveEnd: PLARGE_INTEGER) -> KSYSTEM_TIME;
-pub type RtlGetInterruptTimePreciseType = unsafe extern "stdcall" fn(PerformanceCounter: PLARGE_INTEGER) -> LARGE_INTEGER;
-pub type RtlQueryUnbiasedInterruptTimeType = unsafe extern "stdcall" fn(InterruptTime: PLARGE_INTEGER) -> BOOLEAN;
-pub type RtlQueryTimeZoneInformationType = unsafe extern "stdcall" fn(TimeZoneInformation: PRTL_TIME_ZONE_INFORMATION) -> NTSTATUS;
-pub type RtlSetTimeZoneInformationType = unsafe extern "stdcall" fn(TimeZoneInformation: PRTL_TIME_ZONE_INFORMATION) -> NTSTATUS;
-pub type RtlTestBitType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, BitNumber: ULONG) -> BOOLEAN;
-pub type RtlFindClearBitsType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, NumberToFind: ULONG, HintIndex: ULONG) -> ULONG;
-pub type RtlFindSetBitsType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, NumberToFind: ULONG, HintIndex: ULONG) -> ULONG;
-pub type RtlFindClearBitsAndSetType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, NumberToFind: ULONG, HintIndex: ULONG) -> ULONG;
-pub type RtlFindSetBitsAndClearType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, NumberToFind: ULONG, HintIndex: ULONG) -> ULONG;
-pub type RtlFindMostSignificantBitType = unsafe extern "stdcall" fn(Set: ULONGLONG) -> CCHAR;
-pub type RtlFindLeastSignificantBitType = unsafe extern "stdcall" fn(Set: ULONGLONG) -> CCHAR;
-pub type RtlFindClearRunsType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, RunArray: PRTL_BITMAP_RUN, SizeOfRunArray: ULONG, LocateLongestRuns: BOOLEAN) -> ULONG;
-pub type RtlFindLongestRunClearType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: PULONG) -> ULONG;
-pub type RtlFindFirstRunClearType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: PULONG) -> ULONG;
-pub type RtlNumberOfClearBitsType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP) -> ULONG;
-pub type RtlNumberOfSetBitsType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP) -> ULONG;
-pub type RtlAreBitsClearType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: ULONG, Length: ULONG) -> BOOLEAN;
-pub type RtlAreBitsSetType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: ULONG, Length: ULONG) -> BOOLEAN;
-pub type RtlFindNextForwardRunClearType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, FromIndex: ULONG, StartingRunIndex: PULONG) -> ULONG;
-pub type RtlFindLastBackwardRunClearType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, FromIndex: ULONG, StartingRunIndex: PULONG) -> ULONG;
-pub type RtlNumberOfSetBitsUlongPtrType = unsafe extern "stdcall" fn(Target: ULONG_PTR) -> ULONG;
-pub type RtlNumberOfClearBitsInRangeType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: ULONG, Length: ULONG) -> ULONG;
-pub type RtlNumberOfSetBitsInRangeType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: ULONG, Length: ULONG) -> ULONG;
-pub type RtlTestBitExType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP_EX, BitNumber: ULONG64) -> BOOLEAN;
-pub type RtlFindSetBitsExType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP_EX, NumberToFind: ULONG64, HintIndex: ULONG64) -> ULONG64;
-pub type RtlFindSetBitsAndClearExType = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP_EX, NumberToFind: ULONG64, HintIndex: ULONG64) -> ULONG64;
-pub type RtlDestroyHandleTableType = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE) -> NTSTATUS;
-pub type RtlAllocateHandleType = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE, HandleIndex: PULONG) -> PRTL_HANDLE_TABLE_ENTRY;
-pub type RtlFreeHandleType = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE, Handle: PRTL_HANDLE_TABLE_ENTRY) -> BOOLEAN;
-pub type RtlIsValidHandleType = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE, Handle: PRTL_HANDLE_TABLE_ENTRY) -> BOOLEAN;
-pub type RtlIsValidIndexHandleType = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE, HandleIndex: ULONG, Handle: *mut PRTL_HANDLE_TABLE_ENTRY) -> BOOLEAN;
-pub type RtlCreateAtomTableType = unsafe extern "stdcall" fn(NumberOfBuckets: ULONG, AtomTableHandle: *mut PVOID) -> NTSTATUS;
-pub type RtlDestroyAtomTableType = unsafe extern "stdcall" fn(AtomTableHandle: PVOID) -> NTSTATUS;
-pub type RtlEmptyAtomTableType = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, IncludePinnedAtoms: BOOLEAN) -> NTSTATUS;
-pub type RtlAddAtomToAtomTableType = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, AtomName: PCWSTR, Atom: PRTL_ATOM) -> NTSTATUS;
-pub type RtlLookupAtomInAtomTableType = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, AtomName: PCWSTR, Atom: PRTL_ATOM) -> NTSTATUS;
-pub type RtlDeleteAtomFromAtomTableType = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, Atom: RTL_ATOM) -> NTSTATUS;
-pub type RtlPinAtomInAtomTableType = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, Atom: RTL_ATOM) -> NTSTATUS;
-pub type RtlQueryAtomInAtomTableType = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, Atom: RTL_ATOM, AtomUsage: PULONG, AtomFlags: PULONG, AtomName: PWSTR, AtomNameLength: PULONG) -> NTSTATUS;
-pub type RtlGetIntegerAtomType = unsafe extern "stdcall" fn(AtomName: PCWSTR, IntegerAtom: PUSHORT) -> BOOLEAN;
-pub type RtlValidSidType = unsafe extern "stdcall" fn(Sid: PSID) -> BOOLEAN;
-pub type RtlEqualSidType = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID) -> BOOLEAN;
-pub type RtlEqualPrefixSidType = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID) -> BOOLEAN;
-pub type RtlLengthRequiredSidType = unsafe extern "stdcall" fn(SubAuthorityCount: ULONG) -> ULONG;
-pub type RtlFreeSidType = unsafe extern "stdcall" fn(Sid: PSID) -> PVOID;
-pub type RtlAllocateAndInitializeSidType = unsafe extern "stdcall" fn(IdentifierAuthority: PSID_IDENTIFIER_AUTHORITY, SubAuthorityCount: UCHAR, SubAuthority0: ULONG, SubAuthority1: ULONG, SubAuthority2: ULONG, SubAuthority3: ULONG, SubAuthority4: ULONG, SubAuthority5: ULONG, SubAuthority6: ULONG, SubAuthority7: ULONG, Sid: *mut PSID) -> NTSTATUS;
-pub type RtlAllocateAndInitializeSidExType = unsafe extern "stdcall" fn(IdentifierAuthority: PSID_IDENTIFIER_AUTHORITY, SubAuthorityCount: UCHAR, SubAuthorities: PULONG, Sid: *mut PSID) -> NTSTATUS;
-pub type RtlInitializeSidType = unsafe extern "stdcall" fn(Sid: PSID, IdentifierAuthority: PSID_IDENTIFIER_AUTHORITY, SubAuthorityCount: UCHAR) -> NTSTATUS;
-pub type RtlIdentifierAuthoritySidType = unsafe extern "stdcall" fn(Sid: PSID) -> PSID_IDENTIFIER_AUTHORITY;
-pub type RtlSubAuthoritySidType = unsafe extern "stdcall" fn(Sid: PSID, SubAuthority: ULONG) -> PULONG;
-pub type RtlSubAuthorityCountSidType = unsafe extern "stdcall" fn(Sid: PSID) -> PUCHAR;
-pub type RtlLengthSidType = unsafe extern "stdcall" fn(Sid: PSID) -> ULONG;
-pub type RtlCopySidType = unsafe extern "stdcall" fn(DestinationSidLength: ULONG, DestinationSid: PSID, SourceSid: PSID) -> NTSTATUS;
-pub type RtlCopySidAndAttributesArrayType = unsafe extern "stdcall" fn(Count: ULONG, Src: PSID_AND_ATTRIBUTES, SidAreaSize: ULONG, Dest: PSID_AND_ATTRIBUTES, SidArea: PSID, RemainingSidArea: *mut PSID, RemainingSidAreaSize: PULONG) -> NTSTATUS;
-pub type RtlCreateServiceSidType = unsafe extern "stdcall" fn(ServiceName: PUNICODE_STRING, ServiceSid: PSID, ServiceSidLength: PULONG) -> NTSTATUS;
-pub type RtlSidDominatesType = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID, Dominates: PBOOLEAN) -> NTSTATUS;
-pub type RtlSidDominatesForTrustType = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID, DominatesTrust: PBOOLEAN) -> NTSTATUS;
-pub type RtlSidEqualLevelType = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID, EqualLevel: PBOOLEAN) -> NTSTATUS;
-pub type RtlSidIsHigherLevelType = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID, HigherLevel: PBOOLEAN) -> NTSTATUS;
-pub type RtlCreateVirtualAccountSidType = unsafe extern "stdcall" fn(Name: PUNICODE_STRING, BaseSubAuthority: ULONG, Sid: PSID, SidLength: PULONG) -> NTSTATUS;
-pub type RtlReplaceSidInSdType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, OldSid: PSID, NewSid: PSID, NumChanges: *mut ULONG) -> NTSTATUS;
-pub type RtlLengthSidAsUnicodeStringType = unsafe extern "stdcall" fn(Sid: PSID, StringLength: PULONG) -> NTSTATUS;
-pub type RtlConvertSidToUnicodeStringType = unsafe extern "stdcall" fn(UnicodeString: PUNICODE_STRING, Sid: PSID, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
-pub type RtlSidHashInitializeType = unsafe extern "stdcall" fn(SidAttr: PSID_AND_ATTRIBUTES, SidCount: ULONG, SidAttrHash: PSID_AND_ATTRIBUTES_HASH) -> NTSTATUS;
-pub type RtlSidHashLookupType = unsafe extern "stdcall" fn(SidAttrHash: PSID_AND_ATTRIBUTES_HASH, Sid: PSID) -> PSID_AND_ATTRIBUTES;
-pub type RtlIsElevatedRidType = unsafe extern "stdcall" fn(SidAttr: PSID_AND_ATTRIBUTES) -> BOOLEAN;
-pub type RtlDeriveCapabilitySidsFromNameType = unsafe extern "stdcall" fn(UnicodeString: PUNICODE_STRING, CapabilityGroupSid: PSID, CapabilitySid: PSID) -> NTSTATUS;
-pub type RtlCreateSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Revision: ULONG) -> NTSTATUS;
-pub type RtlValidSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR) -> BOOLEAN;
-pub type RtlLengthSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR) -> ULONG;
-pub type RtlValidRelativeSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptorInput: PSECURITY_DESCRIPTOR, SecurityDescriptorLength: ULONG, RequiredInformation: SECURITY_INFORMATION) -> BOOLEAN;
-pub type RtlGetControlSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Control: PSECURITY_DESCRIPTOR_CONTROL, Revision: PULONG) -> NTSTATUS;
-pub type RtlSetControlSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, ControlBitsOfInterest: SECURITY_DESCRIPTOR_CONTROL, ControlBitsToSet: SECURITY_DESCRIPTOR_CONTROL) -> NTSTATUS;
-pub type RtlSetAttributesSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Control: SECURITY_DESCRIPTOR_CONTROL, Revision: PULONG) -> NTSTATUS;
-pub type RtlGetSecurityDescriptorRMControlType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, RMControl: PUCHAR) -> BOOLEAN;
-pub type RtlSetDaclSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, DaclPresent: BOOLEAN, Dacl: PACL, DaclDefaulted: BOOLEAN) -> NTSTATUS;
-pub type RtlGetDaclSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, DaclPresent: PBOOLEAN, Dacl: *mut PACL, DaclDefaulted: PBOOLEAN) -> NTSTATUS;
-pub type RtlSetSaclSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, SaclPresent: BOOLEAN, Sacl: PACL, SaclDefaulted: BOOLEAN) -> NTSTATUS;
-pub type RtlGetSaclSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, SaclPresent: PBOOLEAN, Sacl: *mut PACL, SaclDefaulted: PBOOLEAN) -> NTSTATUS;
-pub type RtlSetOwnerSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Owner: PSID, OwnerDefaulted: BOOLEAN) -> NTSTATUS;
-pub type RtlGetOwnerSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Owner: *mut PSID, OwnerDefaulted: PBOOLEAN) -> NTSTATUS;
-pub type RtlSetGroupSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Group: PSID, GroupDefaulted: BOOLEAN) -> NTSTATUS;
-pub type RtlGetGroupSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Group: *mut PSID, GroupDefaulted: PBOOLEAN) -> NTSTATUS;
-pub type RtlMakeSelfRelativeSDType = unsafe extern "stdcall" fn(AbsoluteSecurityDescriptor: PSECURITY_DESCRIPTOR, SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, BufferLength: PULONG) -> NTSTATUS;
-pub type RtlAbsoluteToSelfRelativeSDType = unsafe extern "stdcall" fn(AbsoluteSecurityDescriptor: PSECURITY_DESCRIPTOR, SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, BufferLength: PULONG) -> NTSTATUS;
-pub type RtlSelfRelativeToAbsoluteSDType = unsafe extern "stdcall" fn(SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, AbsoluteSecurityDescriptor: PSECURITY_DESCRIPTOR, AbsoluteSecurityDescriptorSize: PULONG, Dacl: PACL, DaclSize: PULONG, Sacl: PACL, SaclSize: PULONG, Owner: PSID, OwnerSize: PULONG, PrimaryGroup: PSID, PrimaryGroupSize: PULONG) -> NTSTATUS;
-pub type RtlSelfRelativeToAbsoluteSD2Type = unsafe extern "stdcall" fn(SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, BufferSize: PULONG) -> NTSTATUS;
-pub type RtlNormalizeSecurityDescriptorType = unsafe extern "stdcall" fn(SecurityDescriptor: *mut PSECURITY_DESCRIPTOR, SecurityDescriptorLength: DWORD, NewSecurityDescriptor: *mut PSECURITY_DESCRIPTOR, NewSecurityDescriptorLength: PDWORD, CheckOnly: BOOLEAN) -> BOOLEAN;
-pub type RtlAreAllAccessesGrantedType = unsafe extern "stdcall" fn(GrantedAccess: ACCESS_MASK, DesiredAccess: ACCESS_MASK) -> BOOLEAN;
-pub type RtlAreAnyAccessesGrantedType = unsafe extern "stdcall" fn(GrantedAccess: ACCESS_MASK, DesiredAccess: ACCESS_MASK) -> BOOLEAN;
-pub type RtlCreateAclType = unsafe extern "stdcall" fn(Acl: PACL, AclLength: ULONG, AclRevision: ULONG) -> NTSTATUS;
-pub type RtlValidAclType = unsafe extern "stdcall" fn(Acl: PACL) -> BOOLEAN;
-pub type RtlQueryInformationAclType = unsafe extern "stdcall" fn(Acl: PACL, AclInformation: PVOID, AclInformationLength: ULONG, AclInformationClass: ACL_INFORMATION_CLASS) -> NTSTATUS;
-pub type RtlSetInformationAclType = unsafe extern "stdcall" fn(Acl: PACL, AclInformation: PVOID, AclInformationLength: ULONG, AclInformationClass: ACL_INFORMATION_CLASS) -> NTSTATUS;
-pub type RtlAddAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, StartingAceIndex: ULONG, AceList: PVOID, AceListLength: ULONG) -> NTSTATUS;
-pub type RtlDeleteAceType = unsafe extern "stdcall" fn(Acl: PACL, AceIndex: ULONG) -> NTSTATUS;
-pub type RtlGetAceType = unsafe extern "stdcall" fn(Acl: PACL, AceIndex: ULONG, Ace: *mut PVOID) -> NTSTATUS;
-pub type RtlGetAcesBufferSizeType = unsafe extern "stdcall" fn(Acl: PACL, AcesBufferSize: PULONG) -> NTSTATUS;
-pub type RtlFirstFreeAceType = unsafe extern "stdcall" fn(Acl: PACL, FirstFree: *mut PVOID) -> BOOLEAN;
-pub type RtlFindAceByTypeType = unsafe extern "stdcall" fn(Acl: PACL, AceType: UCHAR, Index: PULONG) -> PVOID;
-pub type RtlOwnerAcesPresentType = unsafe extern "stdcall" fn(pAcl: PACL) -> BOOLEAN;
-pub type RtlAddAccessAllowedAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AccessMask: ACCESS_MASK, Sid: PSID) -> NTSTATUS;
-pub type RtlAddAccessAllowedAceExType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, Sid: PSID) -> NTSTATUS;
-pub type RtlAddAccessDeniedAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AccessMask: ACCESS_MASK, Sid: PSID) -> NTSTATUS;
-pub type RtlAddAccessDeniedAceExType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, Sid: PSID) -> NTSTATUS;
-pub type RtlAddAuditAccessAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AccessMask: ACCESS_MASK, Sid: PSID, AuditSuccess: BOOLEAN, AuditFailure: BOOLEAN) -> NTSTATUS;
-pub type RtlAddAuditAccessAceExType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, Sid: PSID, AuditSuccess: BOOLEAN, AuditFailure: BOOLEAN) -> NTSTATUS;
-pub type RtlAddAccessAllowedObjectAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, ObjectTypeGuid: PGUID, InheritedObjectTypeGuid: PGUID, Sid: PSID) -> NTSTATUS;
-pub type RtlAddAccessDeniedObjectAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, ObjectTypeGuid: PGUID, InheritedObjectTypeGuid: PGUID, Sid: PSID) -> NTSTATUS;
-pub type RtlAddAuditAccessObjectAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, ObjectTypeGuid: PGUID, InheritedObjectTypeGuid: PGUID, Sid: PSID, AuditSuccess: BOOLEAN, AuditFailure: BOOLEAN) -> NTSTATUS;
-pub type RtlAddCompoundAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceType: UCHAR, AccessMask: ACCESS_MASK, ServerSid: PSID, ClientSid: PSID) -> NTSTATUS;
-pub type RtlAddMandatoryAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, Sid: PSID, AceType: UCHAR, AccessMask: ACCESS_MASK) -> NTSTATUS;
-pub type RtlAddResourceAttributeAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ULONG, Sid: PSID, AttributeInfo: PCLAIM_SECURITY_ATTRIBUTES_INFORMATION, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlAddScopedPolicyIDAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ULONG, Sid: PSID) -> NTSTATUS;
-pub type RtlAddProcessTrustLabelAceType = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, ProcessTrustLabelSid: PSID, AceType: UCHAR, AccessMask: ACCESS_MASK) -> NTSTATUS;
-pub type RtlDefaultNpAclType = unsafe extern "stdcall" fn(Acl: *mut PACL) -> NTSTATUS;
-pub type RtlNewSecurityObjectType = unsafe extern "stdcall" fn(ParentDescriptor: PSECURITY_DESCRIPTOR, CreatorDescriptor: PSECURITY_DESCRIPTOR, NewDescriptor: *mut PSECURITY_DESCRIPTOR, IsDirectoryObject: BOOLEAN, Token: HANDLE, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
-pub type RtlNewSecurityObjectExType = unsafe extern "stdcall" fn(ParentDescriptor: PSECURITY_DESCRIPTOR, CreatorDescriptor: PSECURITY_DESCRIPTOR, NewDescriptor: *mut PSECURITY_DESCRIPTOR, ObjectType: *mut GUID, IsDirectoryObject: BOOLEAN, AutoInheritFlags: ULONG, Token: HANDLE, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
-pub type RtlNewSecurityObjectWithMultipleInheritanceType = unsafe extern "stdcall" fn(ParentDescriptor: PSECURITY_DESCRIPTOR, CreatorDescriptor: PSECURITY_DESCRIPTOR, NewDescriptor: *mut PSECURITY_DESCRIPTOR, ObjectType: *mut *mut GUID, GuidCount: ULONG, IsDirectoryObject: BOOLEAN, AutoInheritFlags: ULONG, Token: HANDLE, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
-pub type RtlDeleteSecurityObjectType = unsafe extern "stdcall" fn(ObjectDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type RtlQuerySecurityObjectType = unsafe extern "stdcall" fn(ObjectDescriptor: PSECURITY_DESCRIPTOR, SecurityInformation: SECURITY_INFORMATION, ResultantDescriptor: PSECURITY_DESCRIPTOR, DescriptorLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlSetSecurityObjectType = unsafe extern "stdcall" fn(SecurityInformation: SECURITY_INFORMATION, ModificationDescriptor: PSECURITY_DESCRIPTOR, ObjectsSecurityDescriptor: *mut PSECURITY_DESCRIPTOR, GenericMapping: PGENERIC_MAPPING, TokenHandle: HANDLE) -> NTSTATUS;
-pub type RtlSetSecurityObjectExType = unsafe extern "stdcall" fn(SecurityInformation: SECURITY_INFORMATION, ModificationDescriptor: PSECURITY_DESCRIPTOR, ObjectsSecurityDescriptor: *mut PSECURITY_DESCRIPTOR, AutoInheritFlags: ULONG, GenericMapping: PGENERIC_MAPPING, TokenHandle: HANDLE) -> NTSTATUS;
-pub type RtlConvertToAutoInheritSecurityObjectType = unsafe extern "stdcall" fn(ParentDescriptor: PSECURITY_DESCRIPTOR, CurrentSecurityDescriptor: PSECURITY_DESCRIPTOR, NewSecurityDescriptor: *mut PSECURITY_DESCRIPTOR, ObjectType: *mut GUID, IsDirectoryObject: BOOLEAN, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
-pub type RtlNewInstanceSecurityObjectType = unsafe extern "stdcall" fn(ParentDescriptorChanged: BOOLEAN, CreatorDescriptorChanged: BOOLEAN, OldClientTokenModifiedId: PLUID, NewClientTokenModifiedId: PLUID, ParentDescriptor: PSECURITY_DESCRIPTOR, CreatorDescriptor: PSECURITY_DESCRIPTOR, NewDescriptor: *mut PSECURITY_DESCRIPTOR, IsDirectoryObject: BOOLEAN, TokenHandle: HANDLE, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
-pub type RtlCopySecurityDescriptorType = unsafe extern "stdcall" fn(InputSecurityDescriptor: PSECURITY_DESCRIPTOR, OutputSecurityDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type RtlCreateUserSecurityObjectType = unsafe extern "stdcall" fn(AceData: PRTL_ACE_DATA, AceCount: ULONG, OwnerSid: PSID, GroupSid: PSID, IsDirectoryObject: BOOLEAN, GenericMapping: PGENERIC_MAPPING, NewSecurityDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type RtlCreateAndSetSDType = unsafe extern "stdcall" fn(AceData: PRTL_ACE_DATA, AceCount: ULONG, OwnerSid: PSID, GroupSid: PSID, NewSecurityDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type RtlImpersonateSelfType = unsafe extern "stdcall" fn(ImpersonationLevel: SECURITY_IMPERSONATION_LEVEL) -> NTSTATUS;
-pub type RtlImpersonateSelfExType = unsafe extern "stdcall" fn(ImpersonationLevel: SECURITY_IMPERSONATION_LEVEL, AdditionalAccess: ACCESS_MASK, ThreadToken: PHANDLE) -> NTSTATUS;
-pub type RtlAdjustPrivilegeType = unsafe extern "stdcall" fn(Privilege: ULONG, Enable: BOOLEAN, Client: BOOLEAN, WasEnabled: PBOOLEAN) -> NTSTATUS;
-pub type RtlAcquirePrivilegeType = unsafe extern "stdcall" fn(Privilege: PULONG, NumPriv: ULONG, Flags: ULONG, ReturnedState: *mut PVOID) -> NTSTATUS;
-pub type RtlRemovePrivilegesType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, PrivilegesToKeep: PULONG, PrivilegeCount: ULONG) -> NTSTATUS;
-pub type RtlIsUntrustedObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, Object: PVOID, IsUntrustedObject: PBOOLEAN) -> NTSTATUS;
-pub type RtlQueryValidationRunlevelType = unsafe extern "stdcall" fn(ComponentName: PUNICODE_STRING) -> ULONG;
-pub type RtlCreateBoundaryDescriptorType = unsafe extern "stdcall" fn(Name: PUNICODE_STRING, Flags: ULONG) -> POBJECT_BOUNDARY_DESCRIPTOR;
-pub type RtlAddSIDToBoundaryDescriptorType = unsafe extern "stdcall" fn(BoundaryDescriptor: *mut POBJECT_BOUNDARY_DESCRIPTOR, RequiredSid: PSID) -> NTSTATUS;
-pub type RtlAddIntegrityLabelToBoundaryDescriptorType = unsafe extern "stdcall" fn(BoundaryDescriptor: *mut POBJECT_BOUNDARY_DESCRIPTOR, IntegrityLabel: PSID) -> NTSTATUS;
-pub type RtlGetVersionType = unsafe extern "stdcall" fn(VersionInformation: PRTL_OSVERSIONINFOEXW) -> NTSTATUS;
-pub type RtlVerifyVersionInfoType = unsafe extern "stdcall" fn(VersionInformation: PRTL_OSVERSIONINFOEXW, TypeMask: ULONG, ConditionMask: ULONGLONG) -> NTSTATUS;
-pub type RtlGetNtGlobalFlagsType = unsafe extern "stdcall" fn() -> ULONG;
-pub type RtlGetNtProductTypeType = unsafe extern "stdcall" fn(NtProductType: PNT_PRODUCT_TYPE) -> BOOLEAN;
-pub type RtlGetSuiteMaskType = unsafe extern "stdcall" fn() -> ULONG;
-pub type RtlRegisterWaitType = unsafe extern "stdcall" fn(WaitHandle: PHANDLE, Handle: HANDLE, Function: WAITORTIMERCALLBACKFUNC, Context: PVOID, Milliseconds: ULONG, Flags: ULONG) -> NTSTATUS;
-pub type RtlDeregisterWaitType = unsafe extern "stdcall" fn(WaitHandle: HANDLE) -> NTSTATUS;
-pub type RtlDeregisterWaitExType = unsafe extern "stdcall" fn(WaitHandle: HANDLE, CompletionEvent: HANDLE) -> NTSTATUS;
-pub type RtlQueueWorkItemType = unsafe extern "stdcall" fn(Function: WORKERCALLBACKFUNC, Context: PVOID, Flags: ULONG) -> NTSTATUS;
-pub type RtlSetIoCompletionCallbackType = unsafe extern "stdcall" fn(FileHandle: HANDLE, CompletionProc: APC_CALLBACK_FUNCTION, Flags: ULONG) -> NTSTATUS;
-pub type RtlSetThreadPoolStartFuncType = unsafe extern "stdcall" fn(StartPoolThread: PRTL_START_POOL_THREAD, ExitPoolThread: PRTL_EXIT_POOL_THREAD) -> NTSTATUS;
-pub type RtlDelayExecutionType = unsafe extern "stdcall" fn(Alertable: BOOLEAN, DelayInterval: PLARGE_INTEGER) -> NTSTATUS;
-pub type RtlCreateTimerQueueType = unsafe extern "stdcall" fn(TimerQueueHandle: PHANDLE) -> NTSTATUS;
-pub type RtlCreateTimerType = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, Handle: PHANDLE, Function: WAITORTIMERCALLBACKFUNC, Context: PVOID, DueTime: ULONG, Period: ULONG, Flags: ULONG) -> NTSTATUS;
-pub type RtlSetTimerType = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, Handle: PHANDLE, Function: WAITORTIMERCALLBACKFUNC, Context: PVOID, DueTime: ULONG, Period: ULONG, Flags: ULONG) -> NTSTATUS;
-pub type RtlUpdateTimerType = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, TimerHandle: HANDLE, DueTime: ULONG, Period: ULONG) -> NTSTATUS;
-pub type RtlDeleteTimerType = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, TimerToCancel: HANDLE, Event: HANDLE) -> NTSTATUS;
-pub type RtlDeleteTimerQueueType = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE) -> NTSTATUS;
-pub type RtlDeleteTimerQueueExType = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, Event: HANDLE) -> NTSTATUS;
-pub type RtlFormatCurrentUserKeyPathType = unsafe extern "stdcall" fn(CurrentUserKeyPath: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlOpenCurrentUserType = unsafe extern "stdcall" fn(DesiredAccess: ACCESS_MASK, CurrentUserKey: PHANDLE) -> NTSTATUS;
-pub type RtlCreateRegistryKeyType = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR) -> NTSTATUS;
-pub type RtlCheckRegistryKeyType = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR) -> NTSTATUS;
-pub type RtlQueryRegistryValuesType = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR, QueryTable: PRTL_QUERY_REGISTRY_TABLE, Context: PVOID, Environment: PVOID) -> NTSTATUS;
-pub type RtlQueryRegistryValuesExType = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR, QueryTable: PRTL_QUERY_REGISTRY_TABLE, Context: PVOID, Environment: PVOID) -> NTSTATUS;
-pub type RtlQueryRegistryValueWithFallbackType = unsafe extern "stdcall" fn(PrimaryHandle: HANDLE, FallbackHandle: HANDLE, ValueName: PUNICODE_STRING, ValueLength: ULONG, ValueType: PULONG, ValueData: PVOID, ResultLength: PULONG) -> NTSTATUS;
-pub type RtlWriteRegistryValueType = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR, ValueName: PCWSTR, ValueType: ULONG, ValueData: PVOID, ValueLength: ULONG) -> NTSTATUS;
-pub type RtlDeleteRegistryValueType = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR, ValueName: PCWSTR) -> NTSTATUS;
-pub type RtlEnableThreadProfilingType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, Flags: ULONG, HardwareCounters: ULONG64, PerformanceDataHandle: *mut PVOID) -> NTSTATUS;
-pub type RtlDisableThreadProfilingType = unsafe extern "stdcall" fn(PerformanceDataHandle: PVOID) -> NTSTATUS;
-pub type RtlQueryThreadProfilingType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, Enabled: PBOOLEAN) -> NTSTATUS;
-pub type RtlReadThreadProfilingDataType = unsafe extern "stdcall" fn(PerformanceDataHandle: HANDLE, Flags: ULONG, PerformanceData: PPERFORMANCE_DATA) -> NTSTATUS;
-pub type RtlGetNativeSystemInformationType = unsafe extern "stdcall" fn(SystemInformationClass: ULONG, NativeSystemInformation: PVOID, InformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlQueueApcWow64ThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
-pub type RtlWow64EnableFsRedirectionType = unsafe extern "stdcall" fn(Wow64FsEnableRedirection: BOOLEAN) -> NTSTATUS;
-pub type RtlWow64EnableFsRedirectionExType = unsafe extern "stdcall" fn(Wow64FsEnableRedirection: PVOID, OldFsRedirectionLevel: *mut PVOID) -> NTSTATUS;
-pub type RtlComputeCrc32Type = unsafe extern "stdcall" fn(PartialCrc: ULONG32, Buffer: PVOID, Length: ULONG) -> ULONG32;
-pub type RtlEncodePointerType = unsafe extern "stdcall" fn(Ptr: PVOID) -> PVOID;
-pub type RtlDecodePointerType = unsafe extern "stdcall" fn(Ptr: PVOID) -> PVOID;
-pub type RtlEncodeSystemPointerType = unsafe extern "stdcall" fn(Ptr: PVOID) -> PVOID;
-pub type RtlDecodeSystemPointerType = unsafe extern "stdcall" fn(Ptr: PVOID) -> PVOID;
-pub type RtlEncodeRemotePointerType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Pointer: PVOID, EncodedPointer: *mut PVOID) -> NTSTATUS;
-pub type RtlDecodeRemotePointerType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Pointer: PVOID, DecodedPointer: *mut PVOID) -> NTSTATUS;
-pub type RtlIsProcessorFeaturePresentType = unsafe extern "stdcall" fn(ProcessorFeature: ULONG) -> BOOLEAN;
-pub type RtlGetCurrentProcessorNumberType = unsafe extern "stdcall" fn() -> ULONG;
-pub type RtlGetFrameType = unsafe extern "stdcall" fn() -> PTEB_ACTIVE_FRAME;
-pub type RtlWalkFrameChainType = unsafe extern "stdcall" fn(Callers: *mut PVOID, Count: ULONG, Flags: ULONG) -> ULONG;
-pub type RtlGetEnabledExtendedFeaturesType = unsafe extern "stdcall" fn(FeatureMask: ULONG64) -> ULONG64;
-pub type RtlGetEnabledExtendedAndSupervisorFeaturesType = unsafe extern "stdcall" fn(FeatureMask: ULONG64) -> ULONG64;
-pub type RtlLocateSupervisorFeatureType = unsafe extern "stdcall" fn(XStateHeader: PXSAVE_AREA_HEADER, FeatureId: ULONG, Length: PULONG) -> PVOID;
-pub type RtlQueryElevationFlagsType = unsafe extern "stdcall" fn(Flags: PRTL_ELEVATION_FLAGS) -> NTSTATUS;
-pub type RtlRegisterThreadWithCsrssType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlLockCurrentThreadType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlUnlockCurrentThreadType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlLockModuleSectionType = unsafe extern "stdcall" fn(Address: PVOID) -> NTSTATUS;
-pub type RtlUnlockModuleSectionType = unsafe extern "stdcall" fn(Address: PVOID) -> NTSTATUS;
-pub type RtlGetUnloadEventTraceType = unsafe extern "stdcall" fn() -> PRTL_UNLOAD_EVENT_TRACE;
-pub type RtlQueryPerformanceCounterType = unsafe extern "stdcall" fn(PerformanceCounter: PLARGE_INTEGER) -> LOGICAL;
-pub type RtlQueryPerformanceFrequencyType = unsafe extern "stdcall" fn(PerformanceFrequency: PLARGE_INTEGER) -> LOGICAL;
-pub type RtlQueryImageMitigationPolicyType = unsafe extern "stdcall" fn(ImagePath: PCWSTR, Policy: IMAGE_MITIGATION_POLICY, Flags: ULONG, Buffer: PVOID, BufferSize: ULONG) -> NTSTATUS;
-pub type RtlSetImageMitigationPolicyType = unsafe extern "stdcall" fn(ImagePath: PCWSTR, Policy: IMAGE_MITIGATION_POLICY, Flags: ULONG, Buffer: PVOID, BufferSize: ULONG) -> NTSTATUS;
-pub type RtlGetCurrentServiceSessionIdType = unsafe extern "stdcall" fn() -> ULONG;
-pub type RtlGetActiveConsoleIdType = unsafe extern "stdcall" fn() -> ULONG;
-pub type RtlGetConsoleSessionForegroundProcessIdType = unsafe extern "stdcall" fn() -> LONGLONG;
-pub type RtlGetTokenNamedObjectPathType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, Sid: PSID, ObjectPath: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlGetAppContainerNamedObjectPathType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, AppContainerSid: PSID, RelativePath: BOOLEAN, ObjectPath: PUNICODE_STRING) -> NTSTATUS;
-pub type RtlGetAppContainerParentType = unsafe extern "stdcall" fn(AppContainerSid: PSID, AppContainerSidParent: *mut PSID) -> NTSTATUS;
-pub type RtlCheckSandboxedTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, IsSandboxed: PBOOLEAN) -> NTSTATUS;
-pub type RtlCheckTokenCapabilityType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, CapabilitySidToCheck: PSID, HasCapability: PBOOLEAN) -> NTSTATUS;
-pub type RtlCapabilityCheckType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, CapabilityName: PUNICODE_STRING, HasCapability: PBOOLEAN) -> NTSTATUS;
-pub type RtlCheckTokenMembershipType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, SidToCheck: PSID, IsMember: PBOOLEAN) -> NTSTATUS;
-pub type RtlCheckTokenMembershipExType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, SidToCheck: PSID, Flags: ULONG, IsMember: PBOOLEAN) -> NTSTATUS;
-pub type RtlQueryTokenHostIdAsUlong64Type = unsafe extern "stdcall" fn(TokenHandle: HANDLE, HostId: PULONG64) -> NTSTATUS;
-pub type RtlIsParentOfChildAppContainerType = unsafe extern "stdcall" fn(ParentAppContainerSid: PSID, ChildAppContainerSid: PSID) -> BOOLEAN;
-pub type RtlIsApiSetImplementedType = unsafe extern "stdcall" fn(ApiSetName: PCSTR) -> NTSTATUS;
-pub type RtlIsCapabilitySidType = unsafe extern "stdcall" fn(Sid: PSID) -> BOOLEAN;
-pub type RtlIsPackageSidType = unsafe extern "stdcall" fn(Sid: PSID) -> BOOLEAN;
-pub type RtlIsValidProcessTrustLabelSidType = unsafe extern "stdcall" fn(Sid: PSID) -> BOOLEAN;
-pub type RtlGetAppContainerSidTypeType = unsafe extern "stdcall" fn(AppContainerSid: PSID, AppContainerSidType: PAPPCONTAINER_SID_TYPE) -> NTSTATUS;
-pub type RtlFlsAllocType = unsafe extern "stdcall" fn(Callback: PFLS_CALLBACK_FUNCTION, FlsIndex: PULONG) -> NTSTATUS;
-pub type RtlFlsFreeType = unsafe extern "stdcall" fn(FlsIndex: ULONG) -> NTSTATUS;
-pub type RtlFlsGetValueType = unsafe extern "stdcall" fn(FlsIndex: ULONG, FlsData: *mut PVOID) -> NTSTATUS;
-pub type RtlFlsGetValue2Type = unsafe extern "stdcall" fn(FlsIndex: ULONG) -> PVOID;
-pub type RtlFlsSetValueType = unsafe extern "stdcall" fn(FlsIndex: ULONG, FlsData: PVOID) -> NTSTATUS;
-pub type RtlIsStateSeparationEnabledType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type RtlGetPersistedStateLocationType = unsafe extern "stdcall" fn(SourceID: PCWSTR, CustomValue: PCWSTR, DefaultPath: PCWSTR, StateLocationType: STATE_LOCATION_TYPE, TargetPath: PWCHAR, BufferLengthIn: ULONG, BufferLengthOut: PULONG) -> NTSTATUS;
-pub type RtlIsCloudFilesPlaceholderType = unsafe extern "stdcall" fn(FileAttributes: ULONG, ReparseTag: ULONG) -> BOOLEAN;
-pub type RtlIsPartialPlaceholderType = unsafe extern "stdcall" fn(FileAttributes: ULONG, ReparseTag: ULONG) -> BOOLEAN;
-pub type RtlIsPartialPlaceholderFileHandleType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IsPartialPlaceholder: PBOOLEAN) -> NTSTATUS;
-pub type RtlIsPartialPlaceholderFileInfoType = unsafe extern "stdcall" fn(InfoBuffer: PVOID, InfoClass: FILE_INFORMATION_CLASS, IsPartialPlaceholder: PBOOLEAN) -> NTSTATUS;
-pub type RtlQueryThreadPlaceholderCompatibilityModeType = unsafe extern "stdcall" fn() -> CHAR;
-pub type RtlSetThreadPlaceholderCompatibilityModeType = unsafe extern "stdcall" fn(Mode: CHAR) -> CHAR;
-pub type RtlQueryProcessPlaceholderCompatibilityModeType = unsafe extern "stdcall" fn() -> CHAR;
-pub type RtlSetProcessPlaceholderCompatibilityModeType = unsafe extern "stdcall" fn(Mode: CHAR) -> CHAR;
-pub type RtlIsNonEmptyDirectoryReparsePointAllowedType = unsafe extern "stdcall" fn(ReparseTag: ULONG) -> BOOLEAN;
-pub type RtlAppxIsFileOwnedByTrustedInstallerType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IsFileOwnedByTrustedInstaller: PBOOLEAN) -> NTSTATUS;
-pub type RtlQueryPackageClaimsType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, PackageFullName: PWSTR, PackageSize: PSIZE_T, AppId: PWSTR, AppIdSize: PSIZE_T, DynamicId: PGUID, PkgClaim: PPS_PKG_CLAIM, AttributesPresent: PULONG64) -> NTSTATUS;
-pub type RtlQueryPackageIdentityType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, PackageFullName: PWSTR, PackageSize: PSIZE_T, AppId: PWSTR, AppIdSize: PSIZE_T, Packaged: PBOOLEAN) -> NTSTATUS;
-pub type RtlQueryPackageIdentityExType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, PackageFullName: PWSTR, PackageSize: PSIZE_T, AppId: PWSTR, AppIdSize: PSIZE_T, DynamicId: PGUID, Flags: PULONG64) -> NTSTATUS;
-pub type RtlQueryProtectedPolicyType = unsafe extern "stdcall" fn(PolicyGuid: PGUID, PolicyValue: PULONG_PTR) -> NTSTATUS;
-pub type RtlSetProtectedPolicyType = unsafe extern "stdcall" fn(PolicyGuid: PGUID, PolicyValue: ULONG_PTR, OldPolicyValue: PULONG_PTR) -> NTSTATUS;
-pub type RtlIsEnclaveFeaturePresentType = unsafe extern "stdcall" fn(FeatureMask: ULONG) -> BOOLEAN;
-pub type RtlIsMultiSessionSkuType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type RtlIsMultiUsersInSessionSkuType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type RtlGetSessionPropertiesType = unsafe extern "stdcall" fn(SessionId: ULONG, SharedUserSessionId: PULONG) -> NTSTATUS;
-pub type RtlCreateBootStatusDataFileType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlLockBootStatusDataType = unsafe extern "stdcall" fn(FileHandle: PHANDLE) -> NTSTATUS;
-pub type RtlUnlockBootStatusDataType = unsafe extern "stdcall" fn(FileHandle: HANDLE) -> NTSTATUS;
-pub type RtlGetSetBootStatusDataType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Read: BOOLEAN, DataClass: RTL_BSD_ITEM_TYPE, Buffer: PVOID, BufferSize: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlCheckBootStatusIntegrityType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Verified: PBOOLEAN) -> NTSTATUS;
-pub type RtlRestoreBootStatusDefaultsType = unsafe extern "stdcall" fn(FileHandle: HANDLE) -> NTSTATUS;
-pub type RtlRestoreSystemBootStatusDefaultsType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type RtlGetSystemBootStatusType = unsafe extern "stdcall" fn(BootStatusInformationClass: RTL_BSD_ITEM_TYPE, DataBuffer: PVOID, DataLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlSetSystemBootStatusType = unsafe extern "stdcall" fn(BootStatusInformationClass: RTL_BSD_ITEM_TYPE, DataBuffer: PVOID, DataLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type RtlCheckPortableOperatingSystemType = unsafe extern "stdcall" fn(IsPortable: PBOOLEAN) -> NTSTATUS;
-pub type RtlSetPortableOperatingSystemType = unsafe extern "stdcall" fn(IsPortable: BOOLEAN) -> NTSTATUS;
-pub type RtlSetProxiedProcessIdType = unsafe extern "stdcall" fn(ProxiedProcessId: ULONG) -> ULONG;
-pub type RtlFindClosestEncodableLengthType = unsafe extern "stdcall" fn(SourceLength: ULONGLONG, TargetLength: PULONGLONG) -> NTSTATUS;
-pub type RtlRegisterSecureMemoryCacheCallbackType = unsafe extern "stdcall" fn(Callback: PRTL_SECURE_MEMORY_CACHE_CALLBACK) -> NTSTATUS;
-pub type RtlDeregisterSecureMemoryCacheCallbackType = unsafe extern "stdcall" fn(Callback: PRTL_SECURE_MEMORY_CACHE_CALLBACK) -> NTSTATUS;
-pub type RtlFlushSecureMemoryCacheType = unsafe extern "stdcall" fn(MemoryCache: PVOID, MemoryLength: SIZE_T) -> BOOLEAN;
-pub type RtlNotifyFeatureUsageType = unsafe extern "stdcall" fn(FeatureUsageReport: PRTL_FEATURE_USAGE_REPORT) -> NTSTATUS;
-pub type RtlQueryFeatureConfigurationType = unsafe extern "stdcall" fn(FeatureId: RTL_FEATURE_ID, ConfigurationType: RTL_FEATURE_CONFIGURATION_TYPE, ChangeStamp: PRTL_FEATURE_CHANGE_STAMP, FeatureConfiguration: PRTL_FEATURE_CONFIGURATION) -> NTSTATUS;
-pub type RtlSetFeatureConfigurationsType = unsafe extern "stdcall" fn(PreviousChangeStamp: PRTL_FEATURE_CHANGE_STAMP, ConfigurationType: RTL_FEATURE_CONFIGURATION_TYPE, ConfigurationUpdates: PRTL_FEATURE_CONFIGURATION_UPDATE, ConfigurationUpdateCount: SIZE_T) -> NTSTATUS;
-pub type RtlQueryAllFeatureConfigurationsType = unsafe extern "stdcall" fn(ConfigurationType: RTL_FEATURE_CONFIGURATION_TYPE, ChangeStamp: PRTL_FEATURE_CHANGE_STAMP, Configurations: PRTL_FEATURE_CONFIGURATION, ConfigurationCount: PSIZE_T) -> NTSTATUS;
-pub type RtlQueryFeatureConfigurationChangeStampType = unsafe extern "stdcall" fn() -> RTL_FEATURE_CHANGE_STAMP;
-pub type RtlQueryFeatureUsageNotificationSubscriptionsType = unsafe extern "stdcall" fn(Subscriptions: PRTL_FEATURE_USAGE_SUBSCRIPTION_DETAILS, SubscriptionCount: PSIZE_T) -> NTSTATUS;
-pub type RtlRegisterFeatureConfigurationChangeNotificationType = unsafe extern "stdcall" fn(Callback: PRTL_FEATURE_CONFIGURATION_CHANGE_CALLBACK, Context: PVOID, ObservedChangeStamp: PRTL_FEATURE_CHANGE_STAMP, RegistrationHandle: PRTL_FEATURE_CONFIGURATION_CHANGE_REGISTRATION) -> NTSTATUS;
-pub type RtlUnregisterFeatureConfigurationChangeNotificationType = unsafe extern "stdcall" fn(RegistrationHandle: RTL_FEATURE_CONFIGURATION_CHANGE_REGISTRATION) -> NTSTATUS;
-pub type RtlSubscribeForFeatureUsageNotificationType = unsafe extern "stdcall" fn(SubscriptionDetails: PRTL_FEATURE_USAGE_SUBSCRIPTION_DETAILS, SubscriptionCount: SIZE_T) -> NTSTATUS;
-pub type RtlUnsubscribeFromFeatureUsageNotificationsType = unsafe extern "stdcall" fn(SubscriptionDetails: PRTL_FEATURE_USAGE_SUBSCRIPTION_DETAILS, SubscriptionCount: SIZE_T) -> NTSTATUS;
-pub type RtlOverwriteFeatureConfigurationBufferType = unsafe extern "stdcall" fn(PreviousChangeStamp: PRTL_FEATURE_CHANGE_STAMP, ConfigurationType: RTL_FEATURE_CONFIGURATION_TYPE, ConfigurationBuffer: PVOID, ConfigurationBufferSize: ULONG) -> NTSTATUS;
-pub type RtlRunOnceExecuteOnceType = unsafe extern "stdcall" fn(RunOnce: PRTL_RUN_ONCE, InitFn: PRTL_RUN_ONCE_INIT_FN, Parameter: PVOID, Context: *mut PVOID) -> NTSTATUS;
-pub type RtlRunOnceBeginInitializeType = unsafe extern "stdcall" fn(RunOnce: PRTL_RUN_ONCE, Flags: ULONG, Context: *mut PVOID) -> NTSTATUS;
-pub type RtlRunOnceCompleteType = unsafe extern "stdcall" fn(RunOnce: PRTL_RUN_ONCE, Flags: ULONG, Context: PVOID) -> NTSTATUS;
-pub type RtlEqualWnfChangeStampsType = unsafe extern "stdcall" fn(ChangeStamp1: WNF_CHANGE_STAMP, ChangeStamp2: WNF_CHANGE_STAMP) -> BOOLEAN;
-pub type RtlQueryWnfStateDataType = unsafe extern "stdcall" fn(ChangeStamp: PWNF_CHANGE_STAMP, StateName: WNF_STATE_NAME, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PWNF_TYPE_ID) -> NTSTATUS;
-pub type RtlPublishWnfStateDataType = unsafe extern "stdcall" fn(StateName: WNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, Buffer: *const c_void, Length: ULONG, ExplicitScope: *const c_void) -> NTSTATUS;
-pub type RtlSubscribeWnfStateChangeNotificationType = unsafe extern "stdcall" fn(SubscriptionHandle: *mut PVOID, StateName: WNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PCWNF_TYPE_ID, SerializationGroup: ULONG, Flags: ULONG) -> NTSTATUS;
-pub type RtlUnsubscribeWnfStateChangeNotificationType = unsafe extern "stdcall" fn(Callback: PWNF_USER_CALLBACK) -> NTSTATUS;
-pub type RtlWnfDllUnloadCallbackType = unsafe extern "stdcall" fn(DllBase: PVOID) -> NTSTATUS;
-pub type NtCopyFileChunkType = unsafe extern "stdcall" fn(SourceHandle: HANDLE, DestinationHandle: HANDLE, EventHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Length: ULONG, SourceOffset: PLARGE_INTEGER, DestOffset: PLARGE_INTEGER, SourceKey: PULONG, DestKey: PULONG, Flags: ULONG) -> NTSTATUS;
-pub type RtlQueryPropertyStoreType = unsafe extern "stdcall" fn(Key: ULONG_PTR, Context: PULONG_PTR) -> NTSTATUS;
-pub type RtlRemovePropertyStoreType = unsafe extern "stdcall" fn(Key: ULONG_PTR, Context: PULONG_PTR) -> NTSTATUS;
-pub type RtlCompareExchangePropertyStoreType = unsafe extern "stdcall" fn(Key: ULONG_PTR, Comperand: PULONG_PTR, Exchange: PULONG_PTR, Context: PULONG_PTR) -> NTSTATUS;
-pub type RtlWow64ChangeThreadStateType = unsafe extern "stdcall" fn(ThreadStateChangeHandle: HANDLE, ThreadHandle: HANDLE, StateChangeType: THREAD_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
-pub type NtCreateTokenType = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
-pub type NtCreateLowBoxTokenType = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, PackageSid: PSID, CapabilityCount: ULONG, Capabilities: PSID_AND_ATTRIBUTES, HandleCount: ULONG, Handles: *mut HANDLE) -> NTSTATUS;
-pub type NtCreateTokenExType = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, UserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroups: PTOKEN_GROUPS, MandatoryPolicy: PTOKEN_MANDATORY_POLICY, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
-pub type NtOpenProcessTokenType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, TokenHandle: PHANDLE) -> NTSTATUS;
-pub type NtOpenProcessTokenExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
-pub type NtOpenThreadTokenType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, TokenHandle: PHANDLE) -> NTSTATUS;
-pub type NtOpenThreadTokenExType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
-pub type NtDuplicateTokenType = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EffectiveOnly: BOOLEAN, Type: TOKEN_TYPE, NewTokenHandle: PHANDLE) -> NTSTATUS;
-pub type NtQueryInformationTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, TokenInformationClass: ULONG, TokenInformation: PVOID, TokenInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, TokenInformationClass: ULONG, TokenInformation: PVOID, TokenInformationLength: ULONG) -> NTSTATUS;
-pub type NtAdjustPrivilegesTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, DisableAllPrivileges: BOOLEAN, NewState: PTOKEN_PRIVILEGES, BufferLength: ULONG, PreviousState: PTOKEN_PRIVILEGES, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtAdjustGroupsTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, ResetToDefault: BOOLEAN, NewState: PTOKEN_GROUPS, BufferLength: ULONG, PreviousState: PTOKEN_GROUPS, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtAdjustTokenClaimsAndDeviceGroupsType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, UserResetToDefault: BOOLEAN, DeviceResetToDefault: BOOLEAN, DeviceGroupsResetToDefault: BOOLEAN, NewUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceGroupsState: PTOKEN_GROUPS, UserBufferLength: ULONG, PreviousUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceBufferLength: ULONG, PreviousDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroupsBufferLength: ULONG, PreviousDeviceGroups: PTOKEN_GROUPS, UserReturnLength: PULONG, DeviceReturnLength: PULONG, DeviceGroupsReturnBufferLength: PULONG) -> NTSTATUS;
-pub type NtFilterTokenType = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, Flags: ULONG, SidsToDisable: PTOKEN_GROUPS, PrivilegesToDelete: PTOKEN_PRIVILEGES, RestrictedSids: PTOKEN_GROUPS, NewTokenHandle: PHANDLE) -> NTSTATUS;
-pub type NtFilterTokenExType = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, Flags: ULONG, SidsToDisable: PTOKEN_GROUPS, PrivilegesToDelete: PTOKEN_PRIVILEGES, RestrictedSids: PTOKEN_GROUPS, DisableUserClaimsCount: ULONG, UserClaimsToDisable: PUNICODE_STRING, DisableDeviceClaimsCount: ULONG, DeviceClaimsToDisable: PUNICODE_STRING, DeviceGroupsToDisable: PTOKEN_GROUPS, RestrictedUserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, RestrictedDeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, RestrictedDeviceGroups: PTOKEN_GROUPS, NewTokenHandle: PHANDLE) -> NTSTATUS;
-pub type NtCompareTokensType = unsafe extern "stdcall" fn(FirstTokenHandle: HANDLE, SecondTokenHandle: HANDLE, Equal: PBOOLEAN) -> NTSTATUS;
-pub type NtPrivilegeCheckType = unsafe extern "stdcall" fn(ClientToken: HANDLE, RequiredPrivileges: PPRIVILEGE_SET, Result: PBOOLEAN) -> NTSTATUS;
-pub type NtImpersonateAnonymousTokenType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> NTSTATUS;
-pub type NtQuerySecurityAttributesTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, Attributes: PUNICODE_STRING, NumberOfAttributes: ULONG, Buffer: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtAccessCheckType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
-pub type NtAccessCheckByTypeType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
-pub type NtAccessCheckByTypeResultListType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
-pub type NtSetCachedSigningLevelType = unsafe extern "stdcall" fn(Flags: ULONG, InputSigningLevel: SE_SIGNING_LEVEL, SourceFiles: PHANDLE, SourceFileCount: ULONG, TargetFile: HANDLE) -> NTSTATUS;
-pub type NtGetCachedSigningLevelType = unsafe extern "stdcall" fn(File: HANDLE, Flags: PULONG, SigningLevel: PSE_SIGNING_LEVEL, Thumbprint: PUCHAR, ThumbprintSize: PULONG, ThumbprintAlgorithm: PULONG) -> NTSTATUS;
-pub type NtSetCachedSigningLevel2Type = unsafe extern "stdcall" fn(Flags: ULONG, InputSigningLevel: SE_SIGNING_LEVEL, SourceFiles: PHANDLE, SourceFileCount: ULONG, TargetFile: HANDLE, CacheInformation: *mut SE_SET_FILE_CACHE_INFORMATION) -> NTSTATUS;
-pub type NtCompareSigningLevelsType = unsafe extern "stdcall" fn(FirstSigningLevel: SE_SIGNING_LEVEL, SecondSigningLevel: SE_SIGNING_LEVEL) -> NTSTATUS;
-pub type NtAccessCheckAndAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type NtAccessCheckByTypeAndAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type NtAccessCheckByTypeResultListAndAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type NtAccessCheckByTypeResultListAndAuditAlarmByHandleType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ClientToken: HANDLE, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type NtOpenObjectAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GrantedAccess: ACCESS_MASK, Privileges: PPRIVILEGE_SET, ObjectCreation: BOOLEAN, AccessGranted: BOOLEAN, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type NtPrivilegeObjectAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, Privileges: PPRIVILEGE_SET, AccessGranted: BOOLEAN) -> NTSTATUS;
-pub type NtCloseObjectAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
-pub type NtDeleteObjectAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
-pub type NtPrivilegedServiceAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, ServiceName: PUNICODE_STRING, ClientToken: HANDLE, Privileges: PPRIVILEGE_SET, AccessGranted: BOOLEAN) -> NTSTATUS;
-pub type NtCreateTransactionManagerType = unsafe extern "stdcall" fn(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, CreateOptions: ULONG, CommitStrength: ULONG) -> NTSTATUS;
-pub type NtOpenTransactionManagerType = unsafe extern "stdcall" fn(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, TmIdentity: LPGUID, OpenOptions: ULONG) -> NTSTATUS;
-pub type NtRenameTransactionManagerType = unsafe extern "stdcall" fn(LogFileName: PUNICODE_STRING, ExistingTransactionManagerGuid: LPGUID) -> NTSTATUS;
-pub type NtRollforwardTransactionManagerType = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtRecoverTransactionManagerType = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE) -> NTSTATUS;
-pub type NtQueryInformationTransactionManagerType = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE, TransactionManagerInformationClass: TRANSACTIONMANAGER_INFORMATION_CLASS, TransactionManagerInformation: PVOID, TransactionManagerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationTransactionManagerType = unsafe extern "stdcall" fn(TmHandle: HANDLE, TransactionManagerInformationClass: TRANSACTIONMANAGER_INFORMATION_CLASS, TransactionManagerInformation: PVOID, TransactionManagerInformationLength: ULONG) -> NTSTATUS;
-pub type NtEnumerateTransactionObjectType = unsafe extern "stdcall" fn(RootObjectHandle: HANDLE, QueryType: KTMOBJECT_TYPE, ObjectCursor: PKTMOBJECT_CURSOR, ObjectCursorLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtCreateTransactionType = unsafe extern "stdcall" fn(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE, CreateOptions: ULONG, IsolationLevel: ULONG, IsolationFlags: ULONG, Timeout: PLARGE_INTEGER, Description: PUNICODE_STRING) -> NTSTATUS;
-pub type NtOpenTransactionType = unsafe extern "stdcall" fn(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE) -> NTSTATUS;
-pub type NtQueryInformationTransactionType = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, TransactionInformationClass: TRANSACTION_INFORMATION_CLASS, TransactionInformation: PVOID, TransactionInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationTransactionType = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, TransactionInformationClass: TRANSACTION_INFORMATION_CLASS, TransactionInformation: PVOID, TransactionInformationLength: ULONG) -> NTSTATUS;
-pub type NtCommitTransactionType = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, Wait: BOOLEAN) -> NTSTATUS;
-pub type NtRollbackTransactionType = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, Wait: BOOLEAN) -> NTSTATUS;
-pub type NtCreateEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, TransactionHandle: HANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, NotificationMask: NOTIFICATION_MASK, EnlistmentKey: PVOID) -> NTSTATUS;
-pub type NtOpenEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, EnlistmentGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtQueryInformationEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentInformationClass: ENLISTMENT_INFORMATION_CLASS, EnlistmentInformation: PVOID, EnlistmentInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentInformationClass: ENLISTMENT_INFORMATION_CLASS, EnlistmentInformation: PVOID, EnlistmentInformationLength: ULONG) -> NTSTATUS;
-pub type NtRecoverEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentKey: PVOID) -> NTSTATUS;
-pub type NtPrePrepareEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtPrepareEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtCommitEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtRollbackEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtPrePrepareCompleteType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtPrepareCompleteType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtCommitCompleteType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtReadOnlyEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtRollbackCompleteType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtSinglePhaseRejectType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtCreateResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, RmGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, Description: PUNICODE_STRING) -> NTSTATUS;
-pub type NtOpenResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, ResourceManagerGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type NtRecoverResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE) -> NTSTATUS;
-pub type NtGetNotificationResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, TransactionNotification: PTRANSACTION_NOTIFICATION, NotificationLength: ULONG, Timeout: PLARGE_INTEGER, ReturnLength: PULONG, Asynchronous: ULONG, AsynchronousContext: ULONG_PTR) -> NTSTATUS;
-pub type NtQueryInformationResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, ResourceManagerInformationClass: RESOURCEMANAGER_INFORMATION_CLASS, ResourceManagerInformation: PVOID, ResourceManagerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtSetInformationResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, ResourceManagerInformationClass: RESOURCEMANAGER_INFORMATION_CLASS, ResourceManagerInformation: PVOID, ResourceManagerInformationLength: ULONG) -> NTSTATUS;
-pub type NtRegisterProtocolAddressInformationType = unsafe extern "stdcall" fn(ResourceManager: HANDLE, ProtocolId: PCRM_PROTOCOL_ID, ProtocolInformationSize: ULONG, ProtocolInformation: PVOID, CreateOptions: ULONG) -> NTSTATUS;
-pub type NtPropagationCompleteType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, RequestCookie: ULONG, BufferLength: ULONG, Buffer: PVOID) -> NTSTATUS;
-pub type NtPropagationFailedType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, RequestCookie: ULONG, PropStatus: NTSTATUS) -> NTSTATUS;
-pub type NtFreezeTransactionsType = unsafe extern "stdcall" fn(FreezeTimeout: PLARGE_INTEGER, ThawTimeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type NtThawTransactionsType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type TpAllocPoolType = unsafe extern "stdcall" fn(PoolReturn: *mut PTP_POOL, Reserved: PVOID) -> NTSTATUS;
-pub type TpSetPoolMinThreadsType = unsafe extern "stdcall" fn(Pool: PTP_POOL, MinThreads: ULONG) -> NTSTATUS;
-pub type TpQueryPoolStackInformationType = unsafe extern "stdcall" fn(Pool: PTP_POOL, PoolStackInformation: PTP_POOL_STACK_INFORMATION) -> NTSTATUS;
-pub type TpSetPoolStackInformationType = unsafe extern "stdcall" fn(Pool: PTP_POOL, PoolStackInformation: PTP_POOL_STACK_INFORMATION) -> NTSTATUS;
-pub type TpSetPoolThreadBasePriorityType = unsafe extern "stdcall" fn(Pool: PTP_POOL, BasePriority: ULONG) -> NTSTATUS;
-pub type TpAllocCleanupGroupType = unsafe extern "stdcall" fn(CleanupGroupReturn: *mut PTP_CLEANUP_GROUP) -> NTSTATUS;
-pub type TpCallbackMayRunLongType = unsafe extern "stdcall" fn(Instance: PTP_CALLBACK_INSTANCE) -> NTSTATUS;
-pub type TpSimpleTryPostType = unsafe extern "stdcall" fn(Callback: PTP_SIMPLE_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
-pub type TpAllocWorkType = unsafe extern "stdcall" fn(WorkReturn: *mut PTP_WORK, Callback: PTP_WORK_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
-pub type TpAllocTimerType = unsafe extern "stdcall" fn(Timer: *mut PTP_TIMER, Callback: PTP_TIMER_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
-pub type TpSetTimerExType = unsafe extern "stdcall" fn(Timer: PTP_TIMER, DueTime: PLARGE_INTEGER, Period: ULONG, WindowLength: ULONG) -> NTSTATUS;
-pub type TpIsTimerSetType = unsafe extern "stdcall" fn(Timer: PTP_TIMER) -> LOGICAL;
-pub type TpAllocWaitType = unsafe extern "stdcall" fn(WaitReturn: *mut PTP_WAIT, Callback: PTP_WAIT_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
-pub type TpSetWaitExType = unsafe extern "stdcall" fn(Wait: PTP_WAIT, Handle: HANDLE, Timeout: PLARGE_INTEGER, Reserved: PVOID) -> NTSTATUS;
-pub type TpAllocIoCompletionType = unsafe extern "stdcall" fn(IoReturn: *mut PTP_IO, File: HANDLE, Callback: PTP_IO_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
-pub type TpAllocAlpcCompletionType = unsafe extern "stdcall" fn(AlpcReturn: *mut PTP_ALPC, AlpcPort: HANDLE, Callback: PTP_ALPC_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
-pub type TpAllocAlpcCompletionExType = unsafe extern "stdcall" fn(AlpcReturn: *mut PTP_ALPC, AlpcPort: HANDLE, Callback: PTP_ALPC_CALLBACK_EX, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
-pub type RtlDispatchExceptionType = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT) -> BOOLEAN;
-pub type RtlRaiseStatusType = unsafe extern "stdcall" fn(Status: NTSTATUS) -> !;
-pub type RtlRaiseNoncontinuableExceptionType = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT) -> !;
-pub type NtContinueType = unsafe extern "stdcall" fn(ContextRecord: PCONTEXT, TestAlert: BOOLEAN) -> NTSTATUS;
-pub type NtContinueExType = unsafe extern "stdcall" fn(ContextRecord: PCONTEXT, ContinueArgument: PVOID) -> NTSTATUS;
-pub type NtRaiseExceptionType = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT, FirstChance: BOOLEAN) -> NTSTATUS;
-pub type RtlAssertType = unsafe extern "stdcall" fn(VoidFailedAssertion: PVOID, VoidFileName: PVOID, LineNumber: ULONG, MutableMessage: PSTR) -> !;
-pub type SamFreeMemoryType = unsafe extern "stdcall" fn(Buffer: PVOID) -> NTSTATUS;
-pub type SamCloseHandleType = unsafe extern "stdcall" fn(SamHandle: SAM_HANDLE) -> NTSTATUS;
-pub type SamSetSecurityObjectType = unsafe extern "stdcall" fn(ObjectHandle: SAM_HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type SamQuerySecurityObjectType = unsafe extern "stdcall" fn(ObjectHandle: SAM_HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type SamRidToSidType = unsafe extern "stdcall" fn(ObjectHandle: SAM_HANDLE, Rid: ULONG, Sid: *mut PSID) -> NTSTATUS;
-pub type SamConnectType = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, ServerHandle: PSAM_HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type SamConnectWithCredsType = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, ServerHandle: PSAM_HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Creds: PRPC_AUTH_IDENTITY_HANDLE, Spn: PWCHAR, pfDstIsW2K: *mut BOOL) -> NTSTATUS;
-pub type SamShutdownSamServerType = unsafe extern "stdcall" fn(ServerHandle: SAM_HANDLE) -> NTSTATUS;
-pub type SamLookupDomainInSamServerType = unsafe extern "stdcall" fn(ServerHandle: SAM_HANDLE, Name: PUNICODE_STRING, DomainId: *mut PSID) -> NTSTATUS;
-pub type SamEnumerateDomainsInSamServerType = unsafe extern "stdcall" fn(ServerHandle: SAM_HANDLE, EnumerationContext: PSAM_ENUMERATE_HANDLE, Buffer: *mut PVOID, PreferedMaximumLength: ULONG, CountReturned: PULONG) -> NTSTATUS;
-pub type SamOpenDomainType = unsafe extern "stdcall" fn(ServerHandle: SAM_HANDLE, DesiredAccess: ACCESS_MASK, DomainId: PSID, DomainHandle: PSAM_HANDLE) -> NTSTATUS;
-pub type SamQueryInformationDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DomainInformationClass: DOMAIN_INFORMATION_CLASS, Buffer: *mut PVOID) -> NTSTATUS;
-pub type SamSetInformationDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DomainInformationClass: DOMAIN_INFORMATION_CLASS, DomainInformation: PVOID) -> NTSTATUS;
-pub type SamLookupNamesInDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, Count: ULONG, Names: PUNICODE_STRING, RelativeIds: *mut PULONG, Use: *mut PSID_NAME_USE) -> NTSTATUS;
-pub type SamLookupNamesInDomain2Type = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, Count: ULONG, Names: PUNICODE_STRING, Sids: *mut PSID, Use: *mut PSID_NAME_USE) -> NTSTATUS;
-pub type SamLookupIdsInDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, Count: ULONG, RelativeIds: PULONG, Names: *mut PUNICODE_STRING, Use: *mut PSID_NAME_USE) -> NTSTATUS;
-pub type SamRemoveMemberFromForeignDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, MemberId: PSID) -> NTSTATUS;
-pub type SamQueryLocalizableAccountsInDomainType = unsafe extern "stdcall" fn(Domain: SAM_HANDLE, Flags: ULONG, LanguageId: ULONG, Class: DOMAIN_LOCALIZABLE_ACCOUNTS_INFORMATION, Buffer: *mut PVOID) -> NTSTATUS;
-pub type SamEnumerateGroupsInDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, EnumerationContext: PSAM_ENUMERATE_HANDLE, Buffer: *mut PVOID, PreferedMaximumLength: ULONG, CountReturned: PULONG) -> NTSTATUS;
-pub type SamCreateGroupInDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, AccountName: PUNICODE_STRING, DesiredAccess: ACCESS_MASK, GroupHandle: PSAM_HANDLE, RelativeId: PULONG) -> NTSTATUS;
-pub type SamOpenGroupType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DesiredAccess: ACCESS_MASK, GroupId: ULONG, GroupHandle: PSAM_HANDLE) -> NTSTATUS;
-pub type SamDeleteGroupType = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE) -> NTSTATUS;
-pub type SamQueryInformationGroupType = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, GroupInformationClass: GROUP_INFORMATION_CLASS, Buffer: *mut PVOID) -> NTSTATUS;
-pub type SamSetInformationGroupType = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, GroupInformationClass: GROUP_INFORMATION_CLASS, Buffer: PVOID) -> NTSTATUS;
-pub type SamAddMemberToGroupType = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, MemberId: ULONG, Attributes: ULONG) -> NTSTATUS;
-pub type SamRemoveMemberFromGroupType = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, MemberId: ULONG) -> NTSTATUS;
-pub type SamGetMembersInGroupType = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, MemberIds: *mut PULONG, Attributes: *mut PULONG, MemberCount: PULONG) -> NTSTATUS;
-pub type SamSetMemberAttributesOfGroupType = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, MemberId: ULONG, Attributes: ULONG) -> NTSTATUS;
-pub type SamEnumerateAliasesInDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, EnumerationContext: PSAM_ENUMERATE_HANDLE, Buffer: *mut PVOID, PreferedMaximumLength: ULONG, CountReturned: PULONG) -> NTSTATUS;
-pub type SamCreateAliasInDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, AccountName: PUNICODE_STRING, DesiredAccess: ACCESS_MASK, AliasHandle: PSAM_HANDLE, RelativeId: PULONG) -> NTSTATUS;
-pub type SamOpenAliasType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DesiredAccess: ACCESS_MASK, AliasId: ULONG, AliasHandle: PSAM_HANDLE) -> NTSTATUS;
-pub type SamDeleteAliasType = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE) -> NTSTATUS;
-pub type SamQueryInformationAliasType = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, AliasInformationClass: ALIAS_INFORMATION_CLASS, Buffer: *mut PVOID) -> NTSTATUS;
-pub type SamSetInformationAliasType = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, AliasInformationClass: ALIAS_INFORMATION_CLASS, Buffer: PVOID) -> NTSTATUS;
-pub type SamAddMemberToAliasType = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberId: PSID) -> NTSTATUS;
-pub type SamAddMultipleMembersToAliasType = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberIds: *mut PSID, MemberCount: ULONG) -> NTSTATUS;
-pub type SamRemoveMemberFromAliasType = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberId: PSID) -> NTSTATUS;
-pub type SamRemoveMultipleMembersFromAliasType = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberIds: *mut PSID, MemberCount: ULONG) -> NTSTATUS;
-pub type SamGetMembersInAliasType = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberIds: *mut *mut PSID, MemberCount: PULONG) -> NTSTATUS;
-pub type SamGetAliasMembershipType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, PassedCount: ULONG, Sids: *mut PSID, MembershipCount: PULONG, Aliases: *mut PULONG) -> NTSTATUS;
-pub type SamEnumerateUsersInDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, EnumerationContext: PSAM_ENUMERATE_HANDLE, UserAccountControl: ULONG, Buffer: *mut PVOID, PreferedMaximumLength: ULONG, CountReturned: PULONG) -> NTSTATUS;
-pub type SamCreateUserInDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, AccountName: PUNICODE_STRING, DesiredAccess: ACCESS_MASK, UserHandle: PSAM_HANDLE, RelativeId: PULONG) -> NTSTATUS;
-pub type SamCreateUser2InDomainType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, AccountName: PUNICODE_STRING, AccountType: ULONG, DesiredAccess: ACCESS_MASK, UserHandle: PSAM_HANDLE, GrantedAccess: PULONG, RelativeId: PULONG) -> NTSTATUS;
-pub type SamOpenUserType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DesiredAccess: ACCESS_MASK, UserId: ULONG, UserHandle: PSAM_HANDLE) -> NTSTATUS;
-pub type SamDeleteUserType = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE) -> NTSTATUS;
-pub type SamQueryInformationUserType = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE, UserInformationClass: USER_INFORMATION_CLASS, Buffer: *mut PVOID) -> NTSTATUS;
-pub type SamSetInformationUserType = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE, UserInformationClass: USER_INFORMATION_CLASS, Buffer: PVOID) -> NTSTATUS;
-pub type SamGetGroupsForUserType = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE, Groups: *mut PGROUP_MEMBERSHIP, MembershipCount: PULONG) -> NTSTATUS;
-pub type SamChangePasswordUserType = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE, OldPassword: PUNICODE_STRING, NewPassword: PUNICODE_STRING) -> NTSTATUS;
-pub type SamChangePasswordUser2Type = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, UserName: PUNICODE_STRING, OldPassword: PUNICODE_STRING, NewPassword: PUNICODE_STRING) -> NTSTATUS;
-pub type SamChangePasswordUser3Type = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, UserName: PUNICODE_STRING, OldPassword: PUNICODE_STRING, NewPassword: PUNICODE_STRING, EffectivePasswordPolicy: *mut PDOMAIN_PASSWORD_INFORMATION, PasswordChangeFailureInfo: *mut PUSER_PWD_CHANGE_FAILURE_INFORMATION) -> NTSTATUS;
-pub type SamQueryDisplayInformationType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DisplayInformation: DOMAIN_DISPLAY_INFORMATION, Index: ULONG, EntryCount: ULONG, PreferredMaximumLength: ULONG, TotalAvailable: PULONG, TotalReturned: PULONG, ReturnedEntryCount: PULONG, SortedBuffer: *mut PVOID) -> NTSTATUS;
-pub type SamGetDisplayEnumerationIndexType = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DisplayInformation: DOMAIN_DISPLAY_INFORMATION, Prefix: PUNICODE_STRING, Index: PULONG) -> NTSTATUS;
-pub type SamRegisterObjectChangeNotificationType = unsafe extern "stdcall" fn(ObjectType: SECURITY_DB_OBJECT_TYPE, NotificationEventHandle: HANDLE) -> NTSTATUS;
-pub type SamUnregisterObjectChangeNotificationType = unsafe extern "stdcall" fn(ObjectType: SECURITY_DB_OBJECT_TYPE, NotificationEventHandle: HANDLE) -> NTSTATUS;
-pub type SamGetCompatibilityModeType = unsafe extern "stdcall" fn(ObjectHandle: SAM_HANDLE, Mode: *mut ULONG) -> NTSTATUS;
-pub type SamValidatePasswordType = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, ValidationType: PASSWORD_POLICY_VALIDATION_TYPE, InputArg: PSAM_VALIDATE_INPUT_ARG, OutputArg: *mut PSAM_VALIDATE_OUTPUT_ARG) -> NTSTATUS;
-pub type SamPerformGenericOperationType = unsafe extern "stdcall" fn(ServerName: PWSTR, OperationType: SAM_GENERIC_OPERATION_TYPE, OperationIn: PSAM_GENERIC_OPERATION_INPUT, OperationOut: *mut PSAM_GENERIC_OPERATION_OUTPUT) -> NTSTATUS;
-pub type NtVdmControlType = unsafe extern "stdcall" fn(Service: VDMSERVICECLASS, ServiceData: PVOID) -> NTSTATUS;
-pub type EtwSetMarkType = unsafe extern "stdcall" fn(TraceHandle: TRACEHANDLE, MarkInfo: PETW_SET_MARK_INFORMATION, Size: ULONG) -> ULONG;
-pub type EtwEventWriteFullType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, EventProperty: USHORT, ActivityId: LPCGUID, RelatedActivityId: LPCGUID, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
-pub type EtwEventUnregisterType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE) -> ULONG;
-pub type EtwEventSetInformationType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, InformationClass: EVENT_INFO_CLASS, EventInformation: PVOID, InformationLength: ULONG) -> ULONG;
-pub type EtwRegisterSecurityProviderType = unsafe extern "stdcall" fn() -> ULONG;
-pub type EtwEventProviderEnabledType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, Level: UCHAR, Keyword: ULONGLONG) -> BOOLEAN;
-pub type EtwEventEnabledType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR) -> BOOLEAN;
-pub type EtwEventWriteType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
-pub type EtwEventWriteTransferType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, ActivityId: LPCGUID, RelatedActivityId: LPCGUID, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
-pub type EtwEventWriteStringType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, Level: UCHAR, Keyword: ULONGLONG, String: PCWSTR) -> ULONG;
-pub type EtwEventWriteExType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, Filter: ULONG64, Flags: ULONG, ActivityId: LPCGUID, RelatedActivityId: LPCGUID, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
-pub type EtwEventWriteStartScenarioType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
-pub type EtwEventWriteEndScenarioType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
-pub type EtwWriteUMSecurityEventType = unsafe extern "stdcall" fn(EventDescriptor: PCEVENT_DESCRIPTOR, EventProperty: USHORT, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
-pub type EtwEventWriteNoRegistrationType = unsafe extern "stdcall" fn(ProviderId: LPCGUID, EventDescriptor: PCEVENT_DESCRIPTOR, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
-pub type EtwEventActivityIdControlType = unsafe extern "stdcall" fn(ControlCode: ULONG, ActivityId: LPGUID) -> ULONG;
-pub type EtwNotificationRegisterType = unsafe extern "stdcall" fn(Guid: LPCGUID, Type: ULONG, Callback: PETW_NOTIFICATION_CALLBACK, Context: PVOID, RegHandle: PREGHANDLE) -> ULONG;
-pub type EtwNotificationUnregisterType = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, Context: *mut PVOID) -> ULONG;
-pub type EtwSendNotificationType = unsafe extern "stdcall" fn(DataBlock: PETW_NOTIFICATION_HEADER, ReceiveDataBlockSize: ULONG, ReceiveDataBlock: PVOID, ReplyReceived: PULONG, ReplySizeNeeded: PULONG) -> ULONG;
-pub type EtwReplyNotificationType = unsafe extern "stdcall" fn(Notification: PETW_NOTIFICATION_HEADER) -> ULONG;
-pub type EtwEnumerateProcessRegGuidsType = unsafe extern "stdcall" fn(OutBuffer: PVOID, OutBufferSize: ULONG, ReturnLength: PULONG) -> ULONG;
-pub type EtwQueryRealtimeConsumerType = unsafe extern "stdcall" fn(TraceHandle: TRACEHANDLE, EventsLostCount: PULONG, BuffersLostCount: PULONG) -> ULONG;
-pub type NtTraceControlType = unsafe extern "stdcall" fn(FunctionCode: ETWTRACECONTROLCODE, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtTraceEventType = unsafe extern "stdcall" fn(TraceHandle: HANDLE, Flags: ULONG, FieldSize: ULONG, Fields: PVOID) -> NTSTATUS;
-pub type EtwCheckCoverageType = unsafe extern "stdcall" fn(CoveragePoint: PTELEMETRY_COVERAGE_POINT) -> BOOLEAN;
-pub type ZwAcceptConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, AcceptConnection: BOOLEAN, ServerView: PPORT_VIEW, ClientView: PREMOTE_PORT_VIEW) -> NTSTATUS;
-pub type ZwAccessCheckType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
-pub type ZwAccessCheckAndAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type ZwAccessCheckByTypeType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
-pub type ZwAccessCheckByTypeAndAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type ZwAccessCheckByTypeResultListType = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
-pub type ZwAccessCheckByTypeResultListAndAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type ZwAccessCheckByTypeResultListAndAuditAlarmByHandleType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ClientToken: HANDLE, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type ZwAcquireCMFViewOwnershipType = unsafe extern "stdcall" fn(TimeStamp: PULONGLONG, tokenTaken: PBOOLEAN, replaceExisting: BOOLEAN) -> NTSTATUS;
-pub type ZwAddAtomType = unsafe extern "stdcall" fn(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
-pub type ZwAddAtomExType = unsafe extern "stdcall" fn(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM, Flags: ULONG) -> NTSTATUS;
-pub type ZwAddBootEntryType = unsafe extern "stdcall" fn(BootEntry: PBOOT_ENTRY, Id: PULONG) -> NTSTATUS;
-pub type ZwAddDriverEntryType = unsafe extern "stdcall" fn(DriverEntry: PEFI_DRIVER_ENTRY, Id: PULONG) -> NTSTATUS;
-pub type ZwAdjustGroupsTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, ResetToDefault: BOOLEAN, NewState: PTOKEN_GROUPS, BufferLength: ULONG, PreviousState: PTOKEN_GROUPS, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwAdjustPrivilegesTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, DisableAllPrivileges: BOOLEAN, NewState: PTOKEN_PRIVILEGES, BufferLength: ULONG, PreviousState: PTOKEN_PRIVILEGES, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwAdjustTokenClaimsAndDeviceGroupsType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, UserResetToDefault: BOOLEAN, DeviceResetToDefault: BOOLEAN, DeviceGroupsResetToDefault: BOOLEAN, NewUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceGroupsState: PTOKEN_GROUPS, UserBufferLength: ULONG, PreviousUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceBufferLength: ULONG, PreviousDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroupsBufferLength: ULONG, PreviousDeviceGroups: PTOKEN_GROUPS, UserReturnLength: PULONG, DeviceReturnLength: PULONG, DeviceGroupsReturnBufferLength: PULONG) -> NTSTATUS;
-pub type ZwAlertResumeThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
-pub type ZwAlertThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> NTSTATUS;
-pub type ZwAlertThreadByThreadIdType = unsafe extern "stdcall" fn(ThreadId: HANDLE) -> NTSTATUS;
-pub type ZwAllocateLocallyUniqueIdType = unsafe extern "stdcall" fn(Luid: PLUID) -> NTSTATUS;
-pub type ZwAllocateReserveObjectType = unsafe extern "stdcall" fn(MemoryReserveHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, Type: MEMORY_RESERVE_TYPE) -> NTSTATUS;
-pub type ZwAllocateUserPhysicalPagesType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-pub type ZwAllocateUserPhysicalPagesExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
-pub type ZwAllocateUuidsType = unsafe extern "stdcall" fn(Time: PULARGE_INTEGER, Range: PULONG, Sequence: PULONG, Seed: PCHAR) -> NTSTATUS;
-pub type ZwAllocateVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, RegionSize: PSIZE_T, AllocationType: ULONG, Protect: ULONG) -> NTSTATUS;
-pub type ZwAllocateVirtualMemoryExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
-pub type ZwAlpcAcceptConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ConnectionPortHandle: HANDLE, Flags: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, ConnectionMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, AcceptConnection: BOOLEAN) -> NTSTATUS;
-pub type ZwAlpcCancelMessageType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, MessageContext: PALPC_CONTEXT_ATTR) -> NTSTATUS;
-pub type ZwAlpcConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, RequiredServerSid: PSID, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwAlpcConnectPortExType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ConnectionPortObjectAttributes: POBJECT_ATTRIBUTES, ClientPortObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, ServerSecurityRequirements: PSECURITY_DESCRIPTOR, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwAlpcCreatePortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwAlpcCreatePortSectionType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SectionHandle: HANDLE, SectionSize: SIZE_T, AlpcSectionHandle: PALPC_HANDLE, ActualSectionSize: PSIZE_T) -> NTSTATUS;
-pub type ZwAlpcCreateResourceReserveType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, MessageSize: SIZE_T, ResourceId: PALPC_HANDLE) -> NTSTATUS;
-pub type ZwAlpcCreateSectionViewType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ViewAttributes: PALPC_DATA_VIEW_ATTR) -> NTSTATUS;
-pub type ZwAlpcCreateSecurityContextType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SecurityAttribute: PALPC_SECURITY_ATTR) -> NTSTATUS;
-pub type ZwAlpcDeletePortSectionType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SectionHandle: ALPC_HANDLE) -> NTSTATUS;
-pub type ZwAlpcDeleteResourceReserveType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ResourceId: ALPC_HANDLE) -> NTSTATUS;
-pub type ZwAlpcDeleteSectionViewType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ViewBase: PVOID) -> NTSTATUS;
-pub type ZwAlpcDeleteSecurityContextType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ContextHandle: ALPC_HANDLE) -> NTSTATUS;
-pub type ZwAlpcDisconnectPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
-pub type ZwAlpcImpersonateClientContainerOfPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: ULONG) -> NTSTATUS;
-pub type ZwAlpcImpersonateClientOfPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: PVOID) -> NTSTATUS;
-pub type ZwAlpcOpenSenderProcessType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, Flags: ULONG, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwAlpcOpenSenderThreadType = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, Flags: ULONG, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwAlpcQueryInformationType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwAlpcQueryInformationMessageType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, MessageInformationClass: ALPC_MESSAGE_INFORMATION_CLASS, MessageInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwAlpcRevokeSecurityContextType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ContextHandle: ALPC_HANDLE) -> NTSTATUS;
-pub type ZwAlpcSendWaitReceivePortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SendMessageA: PPORT_MESSAGE, SendMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, ReceiveMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, ReceiveMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwAlpcSetInformationType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG) -> NTSTATUS;
-pub type ZwAreMappedFilesTheSameType = unsafe extern "stdcall" fn(File1MappedAsAnImage: PVOID, File2MappedAsFile: PVOID) -> NTSTATUS;
-pub type ZwAssignProcessToJobObjectType = unsafe extern "stdcall" fn(JobHandle: HANDLE, ProcessHandle: HANDLE) -> NTSTATUS;
-pub type ZwAssociateWaitCompletionPacketType = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: HANDLE, IoCompletionHandle: HANDLE, TargetObjectHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR, AlreadySignaled: PBOOLEAN) -> NTSTATUS;
-pub type ZwCallbackReturnType = unsafe extern "stdcall" fn(OutputBuffer: PVOID, OutputLength: ULONG, Status: NTSTATUS) -> NTSTATUS;
-pub type ZwCallEnclaveType = unsafe extern "stdcall" fn(Routine: PENCLAVE_ROUTINE, Reserved: PVOID, Flags: ULONG, RoutineParamReturn: *mut PVOID) -> NTSTATUS;
-pub type ZwCancelIoFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type ZwCancelIoFileExType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoRequestToCancel: PIO_STATUS_BLOCK, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type ZwCancelSynchronousIoFileType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, IoRequestToCancel: PIO_STATUS_BLOCK, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type ZwCancelTimerType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, CurrentState: PBOOLEAN) -> NTSTATUS;
-pub type ZwCancelTimer2Type = unsafe extern "stdcall" fn(TimerHandle: HANDLE, Parameters: PT2_CANCEL_PARAMETERS) -> NTSTATUS;
-pub type ZwCancelWaitCompletionPacketType = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: HANDLE, RemoveSignaledPacket: BOOLEAN) -> NTSTATUS;
-pub type ZwChangeProcessStateType = unsafe extern "stdcall" fn(ProcessStateChangeHandle: HANDLE, ProcessHandle: HANDLE, StateChangeType: PROCESS_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
-pub type ZwChangeThreadStateType = unsafe extern "stdcall" fn(ThreadStateChangeHandle: HANDLE, ThreadHandle: HANDLE, StateChangeType: THREAD_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
-pub type ZwClearEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> NTSTATUS;
-pub type ZwCloseType = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
-pub type ZwCloseObjectAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
-pub type ZwCommitCompleteType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwCommitEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwCommitTransactionType = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, Wait: BOOLEAN) -> NTSTATUS;
-pub type ZwCompactKeysType = unsafe extern "stdcall" fn(Count: ULONG, KeyArray: *mut HANDLE) -> NTSTATUS;
-pub type ZwCompareObjectsType = unsafe extern "stdcall" fn(FirstObjectHandle: HANDLE, SecondObjectHandle: HANDLE) -> NTSTATUS;
-pub type ZwCompareSigningLevelsType = unsafe extern "stdcall" fn(FirstSigningLevel: SE_SIGNING_LEVEL, SecondSigningLevel: SE_SIGNING_LEVEL) -> NTSTATUS;
-pub type ZwCompareTokensType = unsafe extern "stdcall" fn(FirstTokenHandle: HANDLE, SecondTokenHandle: HANDLE, Equal: PBOOLEAN) -> NTSTATUS;
-pub type ZwCompleteConnectPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
-pub type ZwCompressKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
-pub type ZwConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, SecurityQos: PSECURITY_QUALITY_OF_SERVICE, ClientView: PPORT_VIEW, ServerView: PREMOTE_PORT_VIEW, MaxMessageLength: PULONG, ConnectionInformation: PVOID, ConnectionInformationLength: PULONG) -> NTSTATUS;
-pub type ZwContinueType = unsafe extern "stdcall" fn(ContextRecord: PCONTEXT, TestAlert: BOOLEAN) -> NTSTATUS;
-pub type ZwContinueExType = unsafe extern "stdcall" fn(ContextRecord: PCONTEXT, ContinueArgument: PVOID) -> NTSTATUS;
-pub type ZwConvertBetweenAuxiliaryCounterAndPerformanceCounterType = unsafe extern "stdcall" fn(ConvertAuxiliaryToPerformanceCounter: BOOLEAN, PerformanceOrAuxiliaryCounterValue: PLARGE_INTEGER, ConvertedValue: PLARGE_INTEGER, ConversionError: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwCopyFileChunkType = unsafe extern "stdcall" fn(SourceHandle: HANDLE, DestinationHandle: HANDLE, EventHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Length: ULONG, SourceOffset: PLARGE_INTEGER, DestOffset: PLARGE_INTEGER, SourceKey: PULONG, DestKey: PULONG, Flags: ULONG) -> NTSTATUS;
-pub type ZwCreateDebugObjectType = unsafe extern "stdcall" fn(DebugObjectHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
-pub type ZwCreateDirectoryObjectType = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwCreateDirectoryObjectExType = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ShadowDirectoryHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
-pub type ZwCreateEnclaveType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, Size: SIZE_T, InitialCommitment: SIZE_T, EnclaveType: ULONG, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
-pub type ZwCreateEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, TransactionHandle: HANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, NotificationMask: NOTIFICATION_MASK, EnlistmentKey: PVOID) -> NTSTATUS;
-pub type ZwCreateEventType = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EventType: EVENT_TYPE, InitialState: BOOLEAN) -> NTSTATUS;
-pub type ZwCreateEventPairType = unsafe extern "stdcall" fn(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwCreateFileType = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, AllocationSize: PLARGE_INTEGER, FileAttributes: ULONG, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, EaBuffer: PVOID, EaLength: ULONG) -> NTSTATUS;
-pub type ZwCreateIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Count: ULONG) -> NTSTATUS;
-pub type ZwCreateIoRingType = unsafe extern "stdcall" fn(IoRingHandle: PHANDLE, CreateParametersLength: ULONG, CreateParameters: PVOID, OutputParametersLength: ULONG, OutputParameters: PVOID) -> NTSTATUS;
-pub type ZwCreateIRTimerType = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, Reserved: PVOID, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
-pub type ZwCreateJobObjectType = unsafe extern "stdcall" fn(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwCreateJobSetType = unsafe extern "stdcall" fn(NumJob: ULONG, UserJobSet: PJOB_SET_ARRAY, Flags: ULONG) -> NTSTATUS;
-pub type ZwCreateKeyType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, Disposition: PULONG) -> NTSTATUS;
-pub type ZwCreateKeyedEventType = unsafe extern "stdcall" fn(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
-pub type ZwCreateKeyTransactedType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, TransactionHandle: HANDLE, Disposition: PULONG) -> NTSTATUS;
-pub type ZwCreateLowBoxTokenType = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, PackageSid: PSID, CapabilityCount: ULONG, Capabilities: PSID_AND_ATTRIBUTES, HandleCount: ULONG, Handles: *mut HANDLE) -> NTSTATUS;
-pub type ZwCreateMailslotFileType = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, CreateOptions: ULONG, MailslotQuota: ULONG, MaximumMessageSize: ULONG, ReadTimeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwCreateMutantType = unsafe extern "stdcall" fn(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, InitialOwner: BOOLEAN) -> NTSTATUS;
-pub type ZwCreateNamedPipeFileType = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, NamedPipeType: ULONG, ReadMode: ULONG, CompletionMode: ULONG, MaximumInstances: ULONG, InboundQuota: ULONG, OutboundQuota: ULONG, DefaultTimeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwCreatePagingFileType = unsafe extern "stdcall" fn(PageFileName: PUNICODE_STRING, MinimumSize: PLARGE_INTEGER, MaximumSize: PLARGE_INTEGER, Priority: ULONG) -> NTSTATUS;
-pub type ZwCreatePartitionType = unsafe extern "stdcall" fn(ParentPartitionHandle: HANDLE, PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, PreferredNode: ULONG) -> NTSTATUS;
-pub type ZwCreatePortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
-pub type ZwCreatePrivateNamespaceType = unsafe extern "stdcall" fn(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
-pub type ZwCreateProcessType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ParentProcess: HANDLE, InheritObjectTable: BOOLEAN, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE) -> NTSTATUS;
-pub type ZwCreateProcessExType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ParentProcess: HANDLE, Flags: ULONG, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE, Reserved: ULONG) -> NTSTATUS;
-pub type ZwCreateProcessStateChangeType = unsafe extern "stdcall" fn(ProcessStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ProcessHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
-pub type ZwCreateProfileType = unsafe extern "stdcall" fn(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, Affinity: KAFFINITY) -> NTSTATUS;
-pub type ZwCreateProfileExType = unsafe extern "stdcall" fn(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, GroupCount: USHORT, GroupAffinity: PGROUP_AFFINITY) -> NTSTATUS;
-pub type ZwCreateResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, RmGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, Description: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwCreateSectionType = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE) -> NTSTATUS;
-pub type ZwCreateSectionExType = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
-pub type ZwCreateSemaphoreType = unsafe extern "stdcall" fn(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, InitialCount: LONG, MaximumCount: LONG) -> NTSTATUS;
-pub type ZwCreateSymbolicLinkObjectType = unsafe extern "stdcall" fn(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LinkTarget: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwCreateThreadType = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ProcessHandle: HANDLE, ClientId: PCLIENT_ID, ThreadContext: PCONTEXT, InitialTeb: PINITIAL_TEB, CreateSuspended: BOOLEAN) -> NTSTATUS;
-pub type ZwCreateThreadExType = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ProcessHandle: HANDLE, StartRoutine: PUSER_THREAD_START_ROUTINE, Argument: PVOID, CreateFlags: ULONG, ZeroBits: SIZE_T, StackSize: SIZE_T, MaximumStackSize: SIZE_T, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
-pub type ZwCreateThreadStateChangeType = unsafe extern "stdcall" fn(ThreadStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ThreadHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
-pub type ZwCreateTimerType = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TimerType: TIMER_TYPE) -> NTSTATUS;
-pub type ZwCreateTimer2Type = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, Reserved1: PVOID, ObjectAttributes: POBJECT_ATTRIBUTES, Attributes: ULONG, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
-pub type ZwCreateTokenType = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
-pub type ZwCreateTokenExType = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, UserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroups: PTOKEN_GROUPS, MandatoryPolicy: PTOKEN_MANDATORY_POLICY, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
-pub type ZwCreateTransactionType = unsafe extern "stdcall" fn(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE, CreateOptions: ULONG, IsolationLevel: ULONG, IsolationFlags: ULONG, Timeout: PLARGE_INTEGER, Description: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwCreateTransactionManagerType = unsafe extern "stdcall" fn(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, CreateOptions: ULONG, CommitStrength: ULONG) -> NTSTATUS;
-pub type ZwCreateUserProcessType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, ThreadHandle: PHANDLE, ProcessDesiredAccess: ACCESS_MASK, ThreadDesiredAccess: ACCESS_MASK, ProcessObjectAttributes: POBJECT_ATTRIBUTES, ThreadObjectAttributes: POBJECT_ATTRIBUTES, ProcessFlags: ULONG, ThreadFlags: ULONG, ProcessParameters: PVOID, CreateInfo: PPS_CREATE_INFO, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
-pub type ZwCreateWaitablePortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
-pub type ZwCreateWaitCompletionPacketType = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwCreateWnfStateNameType = unsafe extern "stdcall" fn(StateName: PWNF_STATE_NAME, NameLifetime: WNF_STATE_NAME_LIFETIME, DataScope: WNF_DATA_SCOPE, PersistData: BOOLEAN, TypeId: PCWNF_TYPE_ID, MaximumStateSize: ULONG, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type ZwCreateWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandleReturn: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CompletionPortHandle: HANDLE, WorkerProcessHandle: HANDLE, StartRoutine: PVOID, StartParameter: PVOID, MaxThreadCount: ULONG, StackReserve: SIZE_T, StackCommit: SIZE_T) -> NTSTATUS;
-pub type ZwDebugActiveProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DebugObjectHandle: HANDLE) -> NTSTATUS;
-pub type ZwDebugContinueType = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, ClientId: PCLIENT_ID, ContinueStatus: NTSTATUS) -> NTSTATUS;
-pub type ZwDelayExecutionType = unsafe extern "stdcall" fn(Alertable: BOOLEAN, DelayInterval: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwDeleteAtomType = unsafe extern "stdcall" fn(Atom: RTL_ATOM) -> NTSTATUS;
-pub type ZwDeleteBootEntryType = unsafe extern "stdcall" fn(Id: ULONG) -> NTSTATUS;
-pub type ZwDeleteDriverEntryType = unsafe extern "stdcall" fn(Id: ULONG) -> NTSTATUS;
-pub type ZwDeleteFileType = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwDeleteKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
-pub type ZwDeleteObjectAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
-pub type ZwDeletePrivateNamespaceType = unsafe extern "stdcall" fn(NamespaceHandle: HANDLE) -> NTSTATUS;
-pub type ZwDeleteValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwDeleteWnfStateDataType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, ExplicitScope: *const c_void) -> NTSTATUS;
-pub type ZwDeleteWnfStateNameType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-pub type ZwDeviceIoControlFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, IoControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
-pub type ZwDisableLastKnownGoodType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwDisplayStringType = unsafe extern "stdcall" fn(String: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwDrawTextType = unsafe extern "stdcall" fn(Text: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwDuplicateObjectType = unsafe extern "stdcall" fn(SourceProcessHandle: HANDLE, SourceHandle: HANDLE, TargetProcessHandle: HANDLE, TargetHandle: PHANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Options: ULONG) -> NTSTATUS;
-pub type ZwDuplicateTokenType = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EffectiveOnly: BOOLEAN, Type: TOKEN_TYPE, NewTokenHandle: PHANDLE) -> NTSTATUS;
-pub type ZwEnableLastKnownGoodType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwEnumerateBootEntriesType = unsafe extern "stdcall" fn(Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
-pub type ZwEnumerateDriverEntriesType = unsafe extern "stdcall" fn(Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
-pub type ZwEnumerateKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Index: ULONG, KeyInformationClass: KEY_INFORMATION_CLASS, KeyInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
-pub type ZwEnumerateSystemEnvironmentValuesExType = unsafe extern "stdcall" fn(InformationClass: ULONG, Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
-pub type ZwEnumerateTransactionObjectType = unsafe extern "stdcall" fn(RootObjectHandle: HANDLE, QueryType: KTMOBJECT_TYPE, ObjectCursor: PKTMOBJECT_CURSOR, ObjectCursorLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwEnumerateValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Index: ULONG, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
-pub type ZwExtendSectionType = unsafe extern "stdcall" fn(SectionHandle: HANDLE, NewSectionSize: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwFilterBootOptionType = unsafe extern "stdcall" fn(FilterOperation: FILTER_BOOT_OPTION_OPERATION, ObjectType: ULONG, ElementType: ULONG, Data: PVOID, DataSize: ULONG) -> NTSTATUS;
-pub type ZwFilterTokenType = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, Flags: ULONG, SidsToDisable: PTOKEN_GROUPS, PrivilegesToDelete: PTOKEN_PRIVILEGES, RestrictedSids: PTOKEN_GROUPS, NewTokenHandle: PHANDLE) -> NTSTATUS;
-pub type ZwFilterTokenExType = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, Flags: ULONG, SidsToDisable: PTOKEN_GROUPS, PrivilegesToDelete: PTOKEN_PRIVILEGES, RestrictedSids: PTOKEN_GROUPS, DisableUserClaimsCount: ULONG, UserClaimsToDisable: PUNICODE_STRING, DisableDeviceClaimsCount: ULONG, DeviceClaimsToDisable: PUNICODE_STRING, DeviceGroupsToDisable: PTOKEN_GROUPS, RestrictedUserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, RestrictedDeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, RestrictedDeviceGroups: PTOKEN_GROUPS, NewTokenHandle: PHANDLE) -> NTSTATUS;
-pub type ZwFindAtomType = unsafe extern "stdcall" fn(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
-pub type ZwFlushBuffersFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type ZwFlushBuffersFileExType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Flags: ULONG, Parameters: PVOID, ParametersSize: ULONG, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type ZwFlushInstallUILanguageType = unsafe extern "stdcall" fn(InstallUILanguage: LANGID, SetComittedFlag: ULONG) -> NTSTATUS;
-pub type ZwFlushInstructionCacheType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Length: SIZE_T) -> NTSTATUS;
-pub type ZwFlushKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
-pub type ZwFlushProcessWriteBuffersType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwFlushVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, IoStatus: PIO_STATUS_BLOCK) -> NTSTATUS;
-pub type ZwFlushWriteBufferType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwFreeUserPhysicalPagesType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-pub type ZwFreeVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, FreeType: ULONG) -> NTSTATUS;
-pub type ZwFreezeRegistryType = unsafe extern "stdcall" fn(TimeOutInSeconds: ULONG) -> NTSTATUS;
-pub type ZwFreezeTransactionsType = unsafe extern "stdcall" fn(FreezeTimeout: PLARGE_INTEGER, ThawTimeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwFsControlFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FsControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
-pub type ZwGetCachedSigningLevelType = unsafe extern "stdcall" fn(File: HANDLE, Flags: PULONG, SigningLevel: PSE_SIGNING_LEVEL, Thumbprint: PUCHAR, ThumbprintSize: PULONG, ThumbprintAlgorithm: PULONG) -> NTSTATUS;
-pub type ZwGetCompleteWnfStateSubscriptionType = unsafe extern "stdcall" fn(OldDescriptorStateName: PWNF_STATE_NAME, OldSubscriptionId: *mut ULONG64, OldDescriptorEventMask: ULONG, OldDescriptorStatus: ULONG, NewDeliveryDescriptor: PWNF_DELIVERY_DESCRIPTOR, DescriptorSize: ULONG) -> NTSTATUS;
-pub type ZwGetContextThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
-pub type ZwGetCurrentProcessorNumberType = unsafe extern "stdcall" fn() -> ULONG;
-pub type ZwGetCurrentProcessorNumberExType = unsafe extern "stdcall" fn(ProcessorNumber: PPROCESSOR_NUMBER) -> ULONG;
-pub type ZwGetDevicePowerStateType = unsafe extern "stdcall" fn(Device: HANDLE, State: PDEVICE_POWER_STATE) -> NTSTATUS;
-pub type ZwGetMUIRegistryInfoType = unsafe extern "stdcall" fn(Flags: ULONG, DataSize: PULONG, Data: PVOID) -> NTSTATUS;
-pub type ZwGetNextProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewProcessHandle: PHANDLE) -> NTSTATUS;
-pub type ZwGetNextThreadType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewThreadHandle: PHANDLE) -> NTSTATUS;
-pub type ZwGetNlsSectionPtrType = unsafe extern "stdcall" fn(SectionType: ULONG, SectionData: ULONG, ContextData: PVOID, SectionPointer: *mut PVOID, SectionSize: PULONG) -> NTSTATUS;
-pub type ZwGetNotificationResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, TransactionNotification: PTRANSACTION_NOTIFICATION, NotificationLength: ULONG, Timeout: PLARGE_INTEGER, ReturnLength: PULONG, Asynchronous: ULONG, AsynchronousContext: ULONG_PTR) -> NTSTATUS;
-pub type ZwGetPlugPlayEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE, Context: PVOID, EventBlock: PPLUGPLAY_EVENT_BLOCK, EventBufferSize: ULONG) -> NTSTATUS;
-pub type ZwGetWriteWatchType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Flags: ULONG, BaseAddress: PVOID, RegionSize: SIZE_T, UserAddressArray: *mut PVOID, EntriesInUserAddressArray: PULONG_PTR, Granularity: PULONG) -> NTSTATUS;
-pub type ZwImpersonateAnonymousTokenType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> NTSTATUS;
-pub type ZwImpersonateClientOfPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE) -> NTSTATUS;
-pub type ZwImpersonateThreadType = unsafe extern "stdcall" fn(ServerThreadHandle: HANDLE, ClientThreadHandle: HANDLE, SecurityQos: PSECURITY_QUALITY_OF_SERVICE) -> NTSTATUS;
-pub type ZwInitializeEnclaveType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
-pub type ZwInitializeNlsFilesType = unsafe extern "stdcall" fn(BaseAddress: *mut PVOID, DefaultLocaleId: PLCID, DefaultCasingTableSize: PLARGE_INTEGER, CurrentNLSVersion: PULONG) -> NTSTATUS;
-pub type ZwInitializeRegistryType = unsafe extern "stdcall" fn(BootCondition: USHORT) -> NTSTATUS;
-pub type ZwInitiatePowerActionType = unsafe extern "stdcall" fn(SystemAction: POWER_ACTION, LightestSystemState: SYSTEM_POWER_STATE, Flags: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
-pub type ZwIsProcessInJobType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, JobHandle: HANDLE) -> NTSTATUS;
-pub type ZwIsSystemResumeAutomaticType = unsafe extern "stdcall" fn() -> BOOLEAN;
-pub type ZwIsUILanguageComittedType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwListenPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, ConnectionRequest: PPORT_MESSAGE) -> NTSTATUS;
-pub type ZwLoadDriverType = unsafe extern "stdcall" fn(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwLoadEnclaveDataType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, Protect: ULONG, PageInformation: PVOID, PageInformationLength: ULONG, NumberOfBytesWritten: PSIZE_T, EnclaveError: PULONG) -> NTSTATUS;
-pub type ZwLoadKeyType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwLoadKey2Type = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
-pub type ZwLoadKey3Type = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG, ExtendedParameters: PCM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG, DesiredAccess: ACCESS_MASK, RootHandle: PHANDLE, Reserved: PVOID) -> NTSTATUS;
-pub type ZwLoadKeyExType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG, TrustClassKey: HANDLE, Event: HANDLE, DesiredAccess: ACCESS_MASK, RootHandle: PHANDLE, Reserved: PVOID) -> NTSTATUS;
-pub type ZwLockFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, ByteOffset: PLARGE_INTEGER, Length: PLARGE_INTEGER, Key: ULONG, FailImmediately: BOOLEAN, ExclusiveLock: BOOLEAN) -> NTSTATUS;
-pub type ZwLockProductActivationKeysType = unsafe extern "stdcall" fn(pPrivateVer: *mut ULONG, pSafeMode: *mut ULONG) -> NTSTATUS;
-pub type ZwLockRegistryKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
-pub type ZwLockVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
-pub type ZwMakePermanentObjectType = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
-pub type ZwMakeTemporaryObjectType = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
-pub type ZwManagePartitionType = unsafe extern "stdcall" fn(TargetHandle: HANDLE, SourceHandle: HANDLE, PartitionInformationClass: PARTITION_INFORMATION_CLASS, PartitionInformation: PVOID, PartitionInformationLength: ULONG) -> NTSTATUS;
-pub type ZwMapCMFModuleType = unsafe extern "stdcall" fn(What: ULONG, Index: ULONG, CacheIndexOut: PULONG, CacheFlagsOut: PULONG, ViewSizeOut: PULONG, BaseAddress: *mut PVOID) -> NTSTATUS;
-pub type ZwMapUserPhysicalPagesType = unsafe extern "stdcall" fn(VirtualAddress: PVOID, NumberOfPages: ULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-pub type ZwMapUserPhysicalPagesScatterType = unsafe extern "stdcall" fn(VirtualAddresses: *mut PVOID, NumberOfPages: ULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
-pub type ZwMapViewOfSectionType = unsafe extern "stdcall" fn(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, CommitSize: SIZE_T, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, InheritDisposition: SECTION_INHERIT, AllocationType: ULONG, Win32Protect: ULONG) -> NTSTATUS;
-pub type ZwMapViewOfSectionExType = unsafe extern "stdcall" fn(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
-pub type ZwModifyBootEntryType = unsafe extern "stdcall" fn(BootEntry: PBOOT_ENTRY) -> NTSTATUS;
-pub type ZwModifyDriverEntryType = unsafe extern "stdcall" fn(DriverEntry: PEFI_DRIVER_ENTRY) -> NTSTATUS;
-pub type ZwNotifyChangeDirectoryFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN) -> NTSTATUS;
-pub type ZwNotifyChangeDirectoryFileExType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN, DirectoryNotifyInformationClass: DIRECTORY_NOTIFY_INFORMATION_CLASS) -> NTSTATUS;
-pub type ZwNotifyChangeKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
-pub type ZwNotifyChangeMultipleKeysType = unsafe extern "stdcall" fn(MasterKeyHandle: HANDLE, Count: ULONG, SubordinateObjects: *mut OBJECT_ATTRIBUTES, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
-pub type ZwNotifyChangeSessionType = unsafe extern "stdcall" fn(SessionHandle: HANDLE, ChangeSequenceNumber: ULONG, ChangeTimeStamp: PLARGE_INTEGER, Event: IO_SESSION_EVENT, NewState: IO_SESSION_STATE, PreviousState: IO_SESSION_STATE, Payload: PVOID, PayloadSize: ULONG) -> NTSTATUS;
-pub type ZwOpenDirectoryObjectType = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, EnlistmentGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenEventType = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenEventPairType = unsafe extern "stdcall" fn(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenFileType = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, OpenOptions: ULONG) -> NTSTATUS;
-pub type ZwOpenIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenJobObjectType = unsafe extern "stdcall" fn(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenKeyType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenKeyedEventType = unsafe extern "stdcall" fn(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenKeyExType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG) -> NTSTATUS;
-pub type ZwOpenKeyTransactedType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TransactionHandle: HANDLE) -> NTSTATUS;
-pub type ZwOpenKeyTransactedExType = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG, TransactionHandle: HANDLE) -> NTSTATUS;
-pub type ZwOpenMutantType = unsafe extern "stdcall" fn(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenObjectAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GrantedAccess: ACCESS_MASK, Privileges: PPRIVILEGE_SET, ObjectCreation: BOOLEAN, AccessGranted: BOOLEAN, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
-pub type ZwOpenPartitionType = unsafe extern "stdcall" fn(PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenPrivateNamespaceType = unsafe extern "stdcall" fn(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
-pub type ZwOpenProcessType = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
-pub type ZwOpenProcessTokenType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, TokenHandle: PHANDLE) -> NTSTATUS;
-pub type ZwOpenProcessTokenExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
-pub type ZwOpenResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, ResourceManagerGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenSectionType = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenSemaphoreType = unsafe extern "stdcall" fn(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenSessionType = unsafe extern "stdcall" fn(SessionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenSymbolicLinkObjectType = unsafe extern "stdcall" fn(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenThreadType = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
-pub type ZwOpenThreadTokenType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, TokenHandle: PHANDLE) -> NTSTATUS;
-pub type ZwOpenThreadTokenExType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
-pub type ZwOpenTimerType = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwOpenTransactionType = unsafe extern "stdcall" fn(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE) -> NTSTATUS;
-pub type ZwOpenTransactionManagerType = unsafe extern "stdcall" fn(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, TmIdentity: LPGUID, OpenOptions: ULONG) -> NTSTATUS;
-pub type ZwPlugPlayControlType = unsafe extern "stdcall" fn(PnPControlClass: PLUGPLAY_CONTROL_CLASS, PnPControlData: PVOID, PnPControlDataLength: ULONG) -> NTSTATUS;
-pub type ZwPowerInformationType = unsafe extern "stdcall" fn(InformationLevel: POWER_INFORMATION_LEVEL, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
-pub type ZwPrepareCompleteType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwPrepareEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwPrePrepareCompleteType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwPrePrepareEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwPrivilegeCheckType = unsafe extern "stdcall" fn(ClientToken: HANDLE, RequiredPrivileges: PPRIVILEGE_SET, Result: PBOOLEAN) -> NTSTATUS;
-pub type ZwPrivilegedServiceAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, ServiceName: PUNICODE_STRING, ClientToken: HANDLE, Privileges: PPRIVILEGE_SET, AccessGranted: BOOLEAN) -> NTSTATUS;
-pub type ZwPrivilegeObjectAuditAlarmType = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, Privileges: PPRIVILEGE_SET, AccessGranted: BOOLEAN) -> NTSTATUS;
-pub type ZwPropagationCompleteType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, RequestCookie: ULONG, BufferLength: ULONG, Buffer: PVOID) -> NTSTATUS;
-pub type ZwPropagationFailedType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, RequestCookie: ULONG, PropStatus: NTSTATUS) -> NTSTATUS;
-pub type ZwProtectVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, NewProtect: ULONG, OldProtect: PULONG) -> NTSTATUS;
-pub type ZwPssCaptureVaSpaceBulkType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, BulkInformation: PNTPSS_MEMORY_BULK_INFORMATION, BulkInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type ZwPulseEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
-pub type ZwQueryAttributesFileType = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_BASIC_INFORMATION) -> NTSTATUS;
-pub type ZwQueryAuxiliaryCounterFrequencyType = unsafe extern "stdcall" fn(AuxiliaryCounterFrequency: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwQueryBootEntryOrderType = unsafe extern "stdcall" fn(Ids: PULONG, Count: PULONG) -> NTSTATUS;
-pub type ZwQueryBootOptionsType = unsafe extern "stdcall" fn(BootOptions: PBOOT_OPTIONS, BootOptionsLength: PULONG) -> NTSTATUS;
-pub type ZwQueryDebugFilterStateType = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG) -> NTSTATUS;
-pub type ZwQueryDefaultLocaleType = unsafe extern "stdcall" fn(UserProfile: BOOLEAN, DefaultLocaleId: PLCID) -> NTSTATUS;
-pub type ZwQueryDefaultUILanguageType = unsafe extern "stdcall" fn(DefaultUILanguageId: *mut LANGID) -> NTSTATUS;
-pub type ZwQueryDirectoryFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS, ReturnSingleEntry: BOOLEAN, FileName: PUNICODE_STRING, RestartScan: BOOLEAN) -> NTSTATUS;
-pub type ZwQueryDirectoryFileExType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS, QueryFlags: ULONG, FileName: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwQueryDirectoryObjectType = unsafe extern "stdcall" fn(DirectoryHandle: HANDLE, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, RestartScan: BOOLEAN, Context: PULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryDriverEntryOrderType = unsafe extern "stdcall" fn(Ids: PULONG, Count: PULONG) -> NTSTATUS;
-pub type ZwQueryEaFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, EaList: PVOID, EaListLength: ULONG, EaIndex: PULONG, RestartScan: BOOLEAN) -> NTSTATUS;
-pub type ZwQueryEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE, EventInformationClass: EVENT_INFORMATION_CLASS, EventInformation: PVOID, EventInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryFullAttributesFileType = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_NETWORK_OPEN_INFORMATION) -> NTSTATUS;
-pub type ZwQueryInformationAtomType = unsafe extern "stdcall" fn(Atom: RTL_ATOM, AtomInformationClass: ATOM_INFORMATION_CLASS, AtomInformation: PVOID, AtomInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationByNameType = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
-pub type ZwQueryInformationEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentInformationClass: ENLISTMENT_INFORMATION_CLASS, EnlistmentInformation: PVOID, EnlistmentInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
-pub type ZwQueryInformationJobObjectType = unsafe extern "stdcall" fn(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, ResourceManagerInformationClass: RESOURCEMANAGER_INFORMATION_CLASS, ResourceManagerInformation: PVOID, ResourceManagerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, TokenInformationClass: ULONG, TokenInformation: PVOID, TokenInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationTransactionType = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, TransactionInformationClass: TRANSACTION_INFORMATION_CLASS, TransactionInformation: PVOID, TransactionInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationTransactionManagerType = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE, TransactionManagerInformationClass: TRANSACTIONMANAGER_INFORMATION_CLASS, TransactionManagerInformation: PVOID, TransactionManagerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInformationWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, WorkerFactoryInformationClass: WORKERFACTORYINFOCLASS, WorkerFactoryInformation: PVOID, WorkerFactoryInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryInstallUILanguageType = unsafe extern "stdcall" fn(InstallUILanguageId: *mut LANGID) -> NTSTATUS;
-pub type ZwQueryIntervalProfileType = unsafe extern "stdcall" fn(ProfileSource: KPROFILE_SOURCE, Interval: PULONG) -> NTSTATUS;
-pub type ZwQueryIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionInformationClass: IO_COMPLETION_INFORMATION_CLASS, IoCompletionInformation: PVOID, IoCompletionInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryIoRingCapabilitiesType = unsafe extern "stdcall" fn(IoRingCapabilitiesLength: SIZE_T, IoRingCapabilities: PVOID) -> NTSTATUS;
-pub type ZwQueryKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, KeyInformationClass: KEY_INFORMATION_CLASS, KeyInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
-pub type ZwQueryLicenseValueType = unsafe extern "stdcall" fn(ValueName: PUNICODE_STRING, Type: PULONG, Data: PVOID, DataSize: ULONG, ResultDataSize: PULONG) -> NTSTATUS;
-pub type ZwQueryMultipleValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueEntries: PKEY_VALUE_ENTRY, EntryCount: ULONG, ValueBuffer: PVOID, BufferLength: PULONG, RequiredBufferLength: PULONG) -> NTSTATUS;
-pub type ZwQueryMutantType = unsafe extern "stdcall" fn(MutantHandle: HANDLE, MutantInformationClass: MUTANT_INFORMATION_CLASS, MutantInformation: PVOID, MutantInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, ObjectInformationClass: OBJECT_INFORMATION_CLASS, ObjectInformation: PVOID, ObjectInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryOpenSubKeysType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, HandleCount: PULONG) -> NTSTATUS;
-pub type ZwQueryOpenSubKeysExType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, BufferLength: ULONG, Buffer: PVOID, RequiredSize: PULONG) -> NTSTATUS;
-pub type ZwQueryPerformanceCounterType = unsafe extern "stdcall" fn(PerformanceCounter: PLARGE_INTEGER, PerformanceFrequency: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwQueryPortInformationProcessType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwQueryQuotaInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, SidList: PVOID, SidListLength: ULONG, StartSid: PSID, RestartScan: BOOLEAN) -> NTSTATUS;
-pub type ZwQuerySectionType = unsafe extern "stdcall" fn(SectionHandle: HANDLE, SectionInformationClass: SECTION_INFORMATION_CLASS, SectionInformation: PVOID, SectionInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type ZwQuerySecurityAttributesTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, Attributes: PUNICODE_STRING, NumberOfAttributes: ULONG, Buffer: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQuerySecurityObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR, Length: ULONG, LengthNeeded: PULONG) -> NTSTATUS;
-pub type ZwQuerySemaphoreType = unsafe extern "stdcall" fn(SemaphoreHandle: HANDLE, SemaphoreInformationClass: SEMAPHORE_INFORMATION_CLASS, SemaphoreInformation: PVOID, SemaphoreInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQuerySymbolicLinkObjectType = unsafe extern "stdcall" fn(LinkHandle: HANDLE, LinkTarget: PUNICODE_STRING, ReturnedLength: PULONG) -> NTSTATUS;
-pub type ZwQuerySystemEnvironmentValueType = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VariableValue: PWSTR, ValueLength: USHORT, ReturnLength: PUSHORT) -> NTSTATUS;
-pub type ZwQuerySystemEnvironmentValueExType = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Value: PVOID, ValueLength: PULONG, Attributes: PULONG) -> NTSTATUS;
-pub type ZwQuerySystemInformationType = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQuerySystemInformationExType = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, InputBuffer: PVOID, InputBufferLength: ULONG, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQuerySystemTimeType = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwQueryTimerType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, TimerInformationClass: TIMER_INFORMATION_CLASS, TimerInformation: PVOID, TimerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwQueryTimerResolutionType = unsafe extern "stdcall" fn(MaximumTime: PULONG, MinimumTime: PULONG, CurrentTime: PULONG) -> NTSTATUS;
-pub type ZwQueryValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
-pub type ZwQueryVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
-pub type ZwQueryVolumeInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
-pub type ZwQueryWnfStateDataType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-pub type ZwQueryWnfStateNameInformationType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
-pub type ZwQueueApcThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
-pub type ZwQueueApcThreadExType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
-pub type ZwQueueApcThreadEx2Type = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcFlags: ULONG, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
-pub type ZwRaiseExceptionType = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT, FirstChance: BOOLEAN) -> NTSTATUS;
-pub type ZwRaiseHardErrorType = unsafe extern "stdcall" fn(ErrorStatus: NTSTATUS, NumberOfParameters: ULONG, UnicodeStringParameterMask: ULONG, Parameters: PULONG_PTR, ValidResponseOptions: ULONG, Response: PULONG) -> NTSTATUS;
-pub type ZwReadFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
-pub type ZwReadFileScatterType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, SegmentArray: PFILE_SEGMENT_ELEMENT, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
-pub type ZwReadOnlyEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwReadRequestDataType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, DataEntryIndex: ULONG, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
-pub type ZwReadVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
-pub type ZwReadVirtualMemoryExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T, Flags: ULONG) -> NTSTATUS;
-pub type ZwRecoverEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentKey: PVOID) -> NTSTATUS;
-pub type ZwRecoverResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE) -> NTSTATUS;
-pub type ZwRecoverTransactionManagerType = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE) -> NTSTATUS;
-pub type ZwRegisterProtocolAddressInformationType = unsafe extern "stdcall" fn(ResourceManager: HANDLE, ProtocolId: PCRM_PROTOCOL_ID, ProtocolInformationSize: ULONG, ProtocolInformation: PVOID, CreateOptions: ULONG) -> NTSTATUS;
-pub type ZwRegisterThreadTerminatePortType = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
-pub type ZwReleaseCMFViewOwnershipType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwReleaseKeyedEventType = unsafe extern "stdcall" fn(KeyedEventHandle: HANDLE, KeyValue: PVOID, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwReleaseMutantType = unsafe extern "stdcall" fn(MutantHandle: HANDLE, PreviousCount: PLONG) -> NTSTATUS;
-pub type ZwReleaseSemaphoreType = unsafe extern "stdcall" fn(SemaphoreHandle: HANDLE, ReleaseCount: LONG, PreviousCount: PLONG) -> NTSTATUS;
-pub type ZwReleaseWorkerFactoryWorkerType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
-pub type ZwRemoveIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, KeyContext: *mut PVOID, ApcContext: *mut PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwRemoveIoCompletionExType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionInformation: PFILE_IO_COMPLETION_INFORMATION, Count: ULONG, NumEntriesRemoved: PULONG, Timeout: PLARGE_INTEGER, Alertable: BOOLEAN) -> NTSTATUS;
-pub type ZwRemoveProcessDebugType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DebugObjectHandle: HANDLE) -> NTSTATUS;
-pub type ZwRenameKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, NewName: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwRenameTransactionManagerType = unsafe extern "stdcall" fn(LogFileName: PUNICODE_STRING, ExistingTransactionManagerGuid: LPGUID) -> NTSTATUS;
-pub type ZwReplaceKeyType = unsafe extern "stdcall" fn(NewFile: POBJECT_ATTRIBUTES, TargetHandle: HANDLE, OldFile: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwReplacePartitionUnitType = unsafe extern "stdcall" fn(TargetInstancePath: PUNICODE_STRING, SpareInstancePath: PUNICODE_STRING, Flags: ULONG) -> NTSTATUS;
-pub type ZwReplyPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type ZwReplyWaitReceivePortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortContext: *mut PVOID, ReplyMessage: PPORT_MESSAGE, ReceiveMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type ZwReplyWaitReceivePortExType = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortContext: *mut PVOID, ReplyMessage: PPORT_MESSAGE, ReceiveMessage: PPORT_MESSAGE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwReplyWaitReplyPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type ZwRequestPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, RequestMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type ZwRequestWaitReplyPortType = unsafe extern "stdcall" fn(PortHandle: HANDLE, RequestMessage: PPORT_MESSAGE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
-pub type ZwRequestWakeupLatencyType = unsafe extern "stdcall" fn(latency: LATENCY_TIME) -> NTSTATUS;
-pub type ZwResetEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
-pub type ZwResetWriteWatchType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, RegionSize: SIZE_T) -> NTSTATUS;
-pub type ZwRestoreKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
-pub type ZwResumeProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> NTSTATUS;
-pub type ZwResumeThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
-pub type ZwRevertContainerImpersonationType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwRollbackCompleteType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwRollbackEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwRollbackTransactionType = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, Wait: BOOLEAN) -> NTSTATUS;
-pub type ZwRollforwardTransactionManagerType = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwSaveKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE) -> NTSTATUS;
-pub type ZwSaveKeyExType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE, Format: ULONG) -> NTSTATUS;
-pub type ZwSaveMergedKeysType = unsafe extern "stdcall" fn(HighPrecedenceKeyHandle: HANDLE, LowPrecedenceKeyHandle: HANDLE, FileHandle: HANDLE) -> NTSTATUS;
-pub type ZwSecureConnectPortType = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, SecurityQos: PSECURITY_QUALITY_OF_SERVICE, ClientView: PPORT_VIEW, RequiredServerSid: PSID, ServerView: PREMOTE_PORT_VIEW, MaxMessageLength: PULONG, ConnectionInformation: PVOID, ConnectionInformationLength: PULONG) -> NTSTATUS;
-pub type ZwSerializeBootType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwSetBootEntryOrderType = unsafe extern "stdcall" fn(Ids: PULONG, Count: ULONG) -> NTSTATUS;
-pub type ZwSetBootOptionsType = unsafe extern "stdcall" fn(BootOptions: PBOOT_OPTIONS, FieldsToChange: ULONG) -> NTSTATUS;
-pub type ZwSetCachedSigningLevelType = unsafe extern "stdcall" fn(Flags: ULONG, InputSigningLevel: SE_SIGNING_LEVEL, SourceFiles: PHANDLE, SourceFileCount: ULONG, TargetFile: HANDLE) -> NTSTATUS;
-pub type ZwSetCachedSigningLevel2Type = unsafe extern "stdcall" fn(Flags: ULONG, InputSigningLevel: SE_SIGNING_LEVEL, SourceFiles: PHANDLE, SourceFileCount: ULONG, TargetFile: HANDLE, CacheInformation: *mut SE_SET_FILE_CACHE_INFORMATION) -> NTSTATUS;
-pub type ZwSetContextThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
-pub type ZwSetDebugFilterStateType = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG, State: BOOLEAN) -> NTSTATUS;
-pub type ZwSetDefaultHardErrorPortType = unsafe extern "stdcall" fn(DefaultHardErrorPort: HANDLE) -> NTSTATUS;
-pub type ZwSetDefaultLocaleType = unsafe extern "stdcall" fn(UserProfile: BOOLEAN, DefaultLocaleId: LCID) -> NTSTATUS;
-pub type ZwSetDefaultUILanguageType = unsafe extern "stdcall" fn(DefaultUILanguageId: LANGID) -> NTSTATUS;
-pub type ZwSetDriverEntryOrderType = unsafe extern "stdcall" fn(Ids: PULONG, Count: ULONG) -> NTSTATUS;
-pub type ZwSetEaFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
-pub type ZwSetEventType = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
-pub type ZwSetEventBoostPriorityType = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> NTSTATUS;
-pub type ZwSetHighEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type ZwSetHighWaitLowEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type ZwSetInformationDebugObjectType = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, DebugObjectInformationClass: DEBUGOBJECTINFOCLASS, DebugInformation: PVOID, DebugInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwSetInformationEnlistmentType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentInformationClass: ENLISTMENT_INFORMATION_CLASS, EnlistmentInformation: PVOID, EnlistmentInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
-pub type ZwSetInformationIoRingType = unsafe extern "stdcall" fn(IoRingHandle: HANDLE, IoRingInformationClass: ULONG, IoRingInformationLength: ULONG, IoRingInformation: PVOID) -> NTSTATUS;
-pub type ZwSetInformationJobObjectType = unsafe extern "stdcall" fn(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, KeySetInformationClass: KEY_SET_INFORMATION_CLASS, KeySetInformation: PVOID, KeySetInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, ObjectInformationClass: OBJECT_INFORMATION_CLASS, ObjectInformation: PVOID, ObjectInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationResourceManagerType = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, ResourceManagerInformationClass: RESOURCEMANAGER_INFORMATION_CLASS, ResourceManagerInformation: PVOID, ResourceManagerInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationSymbolicLinkType = unsafe extern "stdcall" fn(LinkHandle: HANDLE, SymbolicLinkInformationClass: SYMBOLIC_LINK_INFO_CLASS, SymbolicLinkInformation: PVOID, SymbolicLinkInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationTokenType = unsafe extern "stdcall" fn(TokenHandle: HANDLE, TokenInformationClass: ULONG, TokenInformation: PVOID, TokenInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationTransactionType = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, TransactionInformationClass: TRANSACTION_INFORMATION_CLASS, TransactionInformation: PVOID, TransactionInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationTransactionManagerType = unsafe extern "stdcall" fn(TmHandle: HANDLE, TransactionManagerInformationClass: TRANSACTIONMANAGER_INFORMATION_CLASS, TransactionManagerInformation: PVOID, TransactionManagerInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, VmInformationClass: VIRTUAL_MEMORY_INFORMATION_CLASS, NumberOfEntries: ULONG_PTR, VirtualAddresses: PMEMORY_RANGE_ENTRY, VmInformation: PVOID, VmInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetInformationWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, WorkerFactoryInformationClass: WORKERFACTORYINFOCLASS, WorkerFactoryInformation: PVOID, WorkerFactoryInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetIntervalProfileType = unsafe extern "stdcall" fn(Interval: ULONG, Source: KPROFILE_SOURCE) -> NTSTATUS;
-pub type ZwSetIoCompletionType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR) -> NTSTATUS;
-pub type ZwSetIoCompletionExType = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionPacketHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR) -> NTSTATUS;
-pub type ZwSetIRTimerType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwSetLdtEntriesType = unsafe extern "stdcall" fn(Selector0: ULONG, Entry0Low: ULONG, Entry0Hi: ULONG, Selector1: ULONG, Entry1Low: ULONG, Entry1Hi: ULONG) -> NTSTATUS;
-pub type ZwSetLowEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type ZwSetLowWaitHighEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type ZwSetQuotaInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
-pub type ZwSetSecurityObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
-pub type ZwSetSystemEnvironmentValueType = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VariableValue: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwSetSystemEnvironmentValueExType = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Value: PVOID, ValueLength: ULONG, Attributes: ULONG) -> NTSTATUS;
-pub type ZwSetSystemInformationType = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetSystemPowerStateType = unsafe extern "stdcall" fn(SystemAction: POWER_ACTION, LightestSystemState: SYSTEM_POWER_STATE, Flags: ULONG) -> NTSTATUS;
-pub type ZwSetSystemTimeType = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER, PreviousTime: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwSetThreadExecutionStateType = unsafe extern "stdcall" fn(NewFlags: EXECUTION_STATE, PreviousFlags: *mut EXECUTION_STATE) -> NTSTATUS;
-pub type ZwSetTimerType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER, TimerApcRoutine: PTIMER_APC_ROUTINE, TimerContext: PVOID, ResumeTimer: BOOLEAN, Period: LONG, PreviousState: PBOOLEAN) -> NTSTATUS;
-pub type ZwSetTimer2Type = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER, Period: PLARGE_INTEGER, Parameters: PT2_SET_PARAMETERS) -> NTSTATUS;
-pub type ZwSetTimerExType = unsafe extern "stdcall" fn(TimerHandle: HANDLE, TimerSetInformationClass: TIMER_SET_INFORMATION_CLASS, TimerSetInformation: PVOID, TimerSetInformationLength: ULONG) -> NTSTATUS;
-pub type ZwSetTimerResolutionType = unsafe extern "stdcall" fn(DesiredTime: ULONG, SetResolution: BOOLEAN, ActualTime: PULONG) -> NTSTATUS;
-pub type ZwSetUuidSeedType = unsafe extern "stdcall" fn(Seed: PCHAR) -> NTSTATUS;
-pub type ZwSetValueKeyType = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, TitleIndex: ULONG, Type: ULONG, Data: PVOID, DataSize: ULONG) -> NTSTATUS;
-pub type ZwSetVolumeInformationFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
-pub type ZwSetWnfProcessNotificationEventType = unsafe extern "stdcall" fn(NotificationEvent: HANDLE) -> NTSTATUS;
-pub type ZwShutdownSystemType = unsafe extern "stdcall" fn(Action: SHUTDOWN_ACTION) -> NTSTATUS;
-pub type ZwShutdownWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, PendingWorkerCount: *mut LONG) -> NTSTATUS;
-pub type ZwSignalAndWaitForSingleObjectType = unsafe extern "stdcall" fn(SignalHandle: HANDLE, WaitHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwSinglePhaseRejectType = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwStartProfileType = unsafe extern "stdcall" fn(ProfileHandle: HANDLE) -> NTSTATUS;
-pub type ZwStopProfileType = unsafe extern "stdcall" fn(ProfileHandle: HANDLE) -> NTSTATUS;
-pub type ZwSubmitIoRingType = unsafe extern "stdcall" fn(IoRingHandle: HANDLE, Flags: ULONG, WaitOperations: ULONG, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwSubscribeWnfStateChangeType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, EventMask: ULONG, SubscriptionId: PULONG64) -> NTSTATUS;
-pub type ZwSuspendProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> NTSTATUS;
-pub type ZwSuspendThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
-pub type ZwSystemDebugControlType = unsafe extern "stdcall" fn(Command: SYSDBG_COMMAND, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwTerminateEnclaveType = unsafe extern "stdcall" fn(BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
-pub type ZwTerminateJobObjectType = unsafe extern "stdcall" fn(JobHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
-pub type ZwTerminateProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
-pub type ZwTerminateThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
-pub type ZwTestAlertType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwThawRegistryType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwThawTransactionsType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type ZwTraceControlType = unsafe extern "stdcall" fn(FunctionCode: ETWTRACECONTROLCODE, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type ZwTraceEventType = unsafe extern "stdcall" fn(TraceHandle: HANDLE, Flags: ULONG, FieldSize: ULONG, Fields: PVOID) -> NTSTATUS;
-pub type ZwTranslateFilePathType = unsafe extern "stdcall" fn(InputFilePath: PFILE_PATH, OutputType: ULONG, OutputFilePath: PFILE_PATH, OutputFilePathLength: PULONG) -> NTSTATUS;
-pub type ZwUmsThreadYieldType = unsafe extern "stdcall" fn(SchedulerParam: PVOID) -> NTSTATUS;
-pub type ZwUnloadDriverType = unsafe extern "stdcall" fn(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwUnloadKeyType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES) -> NTSTATUS;
-pub type ZwUnloadKey2Type = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
-pub type ZwUnloadKeyExType = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, Event: HANDLE) -> NTSTATUS;
-pub type ZwUnlockFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, ByteOffset: PLARGE_INTEGER, Length: PLARGE_INTEGER, Key: ULONG) -> NTSTATUS;
-pub type ZwUnlockVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
-pub type ZwUnmapViewOfSectionType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID) -> NTSTATUS;
-pub type ZwUnmapViewOfSectionExType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
-pub type ZwUnsubscribeWnfStateChangeType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-pub type ZwUpdateWnfStateDataType = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, Buffer: *const c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
-pub type ZwVdmControlType = unsafe extern "stdcall" fn(Service: VDMSERVICECLASS, ServiceData: PVOID) -> NTSTATUS;
-pub type ZwWaitForAlertByThreadIdType = unsafe extern "stdcall" fn(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwWaitForDebugEventType = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER, WaitStateChange: PDBGUI_WAIT_STATE_CHANGE) -> NTSTATUS;
-pub type ZwWaitForKeyedEventType = unsafe extern "stdcall" fn(KeyedEventHandle: HANDLE, KeyValue: PVOID, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwWaitForMultipleObjectsType = unsafe extern "stdcall" fn(Count: ULONG, Handles: *mut HANDLE, WaitType: WAIT_TYPE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwWaitForMultipleObjects32Type = unsafe extern "stdcall" fn(Count: ULONG, Handles: *mut LONG, WaitType: WAIT_TYPE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwWaitForSingleObjectType = unsafe extern "stdcall" fn(Handle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
-pub type ZwWaitForWorkViaWorkerFactoryType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, MiniPackets: PFILE_IO_COMPLETION_INFORMATION, Count: ULONG, PacketsReturned: PULONG, DeferredWork: PWORKER_FACTORY_DEFERRED_WORK) -> NTSTATUS;
-pub type ZwWaitHighEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type ZwWaitLowEventPairType = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
-pub type ZwWorkerFactoryWorkerReadyType = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
-pub type ZwWriteFileType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
-pub type ZwWriteFileGatherType = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, SegmentArray: PFILE_SEGMENT_ELEMENT, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
-pub type ZwWriteRequestDataType = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, DataEntryIndex: ULONG, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
-pub type ZwWriteVirtualMemoryType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
-pub type ZwYieldExecutionType = unsafe extern "stdcall" fn() -> NTSTATUS;
-pub type NtUserQueryWindowType = unsafe extern "stdcall" fn(WindowHandle: HWND, WindowInfo: WINDOWINFOCLASS) -> ULONG_PTR;
-pub type NtUserTestForInteractiveUserType = unsafe extern "stdcall" fn(AuthenticationId: PLUID) -> NTSTATUS;
-pub type NtUserCheckAccessForIntegrityLevelType = unsafe extern "stdcall" fn(ProcessIdFirst: ULONG, ProcessIdSecond: ULONG, GrantedAccess: PBOOLEAN) -> NTSTATUS;
-pub type NtUserCheckProcessForClipboardAccessType = unsafe extern "stdcall" fn(ProcessId: ULONG, GrantedAccess: PULONG) -> NTSTATUS;
-pub type NtUserInternalGetWindowTextType = unsafe extern "stdcall" fn(WindowHandle: HWND, pString: LPWSTR, cchMaxCount: ULONG) -> ULONG;
-pub type NtUserInternalGetWindowIconType = unsafe extern "stdcall" fn(WindowHandle: HWND, IconType: ULONG) -> HICON;
-pub type NtUserGetClassNameType = unsafe extern "stdcall" fn(WindowHandle: HWND, Real: LONGLONG, ClassName: PUNICODE_STRING) -> ULONG;
-pub type NtUserConsoleControlType = unsafe extern "stdcall" fn(Command: CONSOLECONTROL, ConsoleInformation: PVOID, ConsoleInformationLength: ULONG) -> NTSTATUS;
-pub type ConsoleControlType = unsafe extern "stdcall" fn(Command: CONSOLECONTROL, ConsoleInformation: PVOID, ConsoleInformationLength: ULONG) -> NTSTATUS;
-pub type NtUserOpenWindowStationType = unsafe extern "stdcall" fn(ObjectAttributes: OBJECT_ATTRIBUTES, DesiredAccess: ACCESS_MASK) -> HWINSTA;
-pub type NtUserCreateWindowStationType = unsafe extern "stdcall" fn(ObjectAttributes: OBJECT_ATTRIBUTES, DesiredAccess: ACCESS_MASK, KeyboardLayoutHandle: HANDLE, KeyboardLayoutOffset: PVOID, NlsTableOffset: PVOID, KeyboardDescriptor: PVOID, LanguageIdString: UNICODE_STRING, KeyboardLocale: ULONG) -> HWINSTA;
-pub type NtUserBuildHwndListType = unsafe extern "stdcall" fn(DesktopHandle: HANDLE, StartWindowHandle: HWND, IncludeChildren: LOGICAL, ExcludeImmersive: LOGICAL, ThreadId: ULONG, HwndListInformationLength: ULONG, HwndListInformation: PVOID, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtUserBuildNameListType = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA, NameListInformationLength: ULONG, NameListInformation: PVOID, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtUserBuildPropListType = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA, PropListInformationLength: ULONG, PropListInformation: PVOID, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtUserGetProcessWindowStationType = unsafe extern "stdcall" fn() -> HWND;
-pub type NtUserCloseWindowStationType = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA) -> LOGICAL;
-pub type NtUserSetProcessWindowStationType = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA) -> LOGICAL;
-pub type SetWindowStationUserType = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA, UserLogonId: PLUID, UserSid: PSID, UserSidLength: ULONG) -> LOGICAL;
-pub type NtUserSetWindowStationUserType = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA, UserLogonId: PLUID, UserSid: PSID, UserSidLength: ULONG) -> LOGICAL;
-pub type NtUserOpenDesktopType = unsafe extern "stdcall" fn(ObjectAttributes: PCOBJECT_ATTRIBUTES, Flags: ULONG, DesiredAccess: ACCESS_MASK) -> HANDLE;
-pub type NtUserSetThreadDesktopType = unsafe extern "stdcall" fn(DesktopHandle: HDESK) -> LOGICAL;
-pub type NtUserSwitchDesktopType = unsafe extern "stdcall" fn(DesktopHandle: HDESK, Flags: ULONG, FadeTime: ULONG) -> LOGICAL;
-pub type NtUserGetIconInfoType = unsafe extern "stdcall" fn(IconOrCursorHandle: HICON, Iconinfo: PICONINFO, Name: PUNICODE_STRING, ResourceId: PUNICODE_STRING, ColorBits: PULONG, IsCursorHandle: LOGICAL) -> LOGICAL;
-pub type NtUserGetIconSizeType = unsafe extern "stdcall" fn(IconOrCursorHandle: HGDIOBJ, IsCursorHandle: LOGICAL, XX: PULONG, YY: PULONG) -> LOGICAL;
-pub type NtUserGetForegroundWindowType = unsafe extern "stdcall" fn() -> HWND;
-pub type NtUserSetActiveWindowType = unsafe extern "stdcall" fn(WindowHandle: HWND) -> HWND;
-pub type NtUserSetFocusType = unsafe extern "stdcall" fn(WindowHandle: HWND) -> HWND;
-pub type NtUserGetThreadStateType = unsafe extern "stdcall" fn(UserThreadState: ULONG) -> ULONG_PTR;
-pub type NtUserSetWindowPlacementType = unsafe extern "stdcall" fn(WindowHandle: HWND, lpwndpl: *const WINDOWPLACEMENT) -> BOOL;
-pub type NtUserAttachThreadInputType = unsafe extern "stdcall" fn(IdAttach: ULONG, IdAttachTo: ULONG, Attach: BOOL) -> BOOL;
-pub type NtUserBeginPaintType = unsafe extern "stdcall" fn(WindowHandle: HWND, lpPaint: LPPAINTSTRUCT) -> HDC;
-pub type NtUserBlockInputType = unsafe extern "stdcall" fn(BlockInput: BOOL) -> BOOL;
-pub type tUserCalculatePopupWindowPositionType = unsafe extern "stdcall" fn(anchorPoint: *const POINT, windowSize: *const SIZE, flags: ULONG, excludeRect: *mut RECT, popupWindowPosition: *mut RECT) -> BOOL;
-pub type NtUserChangeWindowMessageFilterExType = unsafe extern "stdcall" fn(WindowHandle: HWND, message: ULONG, action: ULONG, pChangeFilterStruct: PCHANGEFILTERSTRUCT) -> BOOL;
-pub type NtUserChildWindowFromPointExType = unsafe extern "stdcall" fn(WindowHandle: HWND, pt: POINT, flags: ULONG) -> HWND;
-pub type NtUserClipCursorType = unsafe extern "stdcall" fn(lpRect: *const RECT) -> BOOL;
-pub type NtUserCloseDesktopType = unsafe extern "stdcall" fn(hDesktop: HDESK) -> BOOL;
-pub type NtUserCopyAcceleratorTableType = unsafe extern "stdcall" fn(hAccelSrc: HACCEL, lpAccelDst: LPACCEL, cAccelEntries: LONG) -> LONG;
-pub type NtUserCreateAcceleratorTableType = unsafe extern "stdcall" fn(paccel: LPACCEL, cAccel: LONG) -> HACCEL;
-pub type NtUserDeleteMenuType = unsafe extern "stdcall" fn(hMenu: HMENU, uPosition: ULONG, uFlags: ULONG) -> BOOL;
-pub type NtUserDestroyMenuType = unsafe extern "stdcall" fn(hMenu: HMENU) -> BOOL;
-pub type NtUserDestroyWindowType = unsafe extern "stdcall" fn(WindowHandle: HWND) -> BOOL;
-pub type NtUserDragDetectType = unsafe extern "stdcall" fn(WindowHandle: HWND, pt: POINT) -> BOOL;
-pub type NtUserDragObjectType = unsafe extern "stdcall" fn(WindowHandleParent: HWND, WindowHandleFrom: HWND, fmt: ULONG, data: ULONG_PTR, hcur: HCURSOR) -> ULONG;
-pub type NtUserDrawAnimatedRectsType = unsafe extern "stdcall" fn(WindowHandle: HWND, idAni: c_int, lprcFrom: *const RECT, lprcTo: *const RECT) -> BOOL;
-pub type NtUserEndMenuType = unsafe extern "stdcall" fn() -> BOOL;
-pub type NtUserEndPaintType = unsafe extern "stdcall" fn(WindowHandle: HWND, lpPaint: *const PAINTSTRUCT) -> BOOL;
-pub type NtUserEnumDisplayMonitorsType = unsafe extern "stdcall" fn(hdc: HDC, lprcClip: LPCRECT, lpfnEnum: MONITORENUMPROC, dwData: LPARAM) -> BOOL;
-pub type NtUserExcludeUpdateRgnType = unsafe extern "stdcall" fn(hDC: HDC, WindowHandle: HWND) -> HRGN;
-pub type NtUserFlashWindowExType = unsafe extern "stdcall" fn(pfwi: PFLASHWINFO) -> BOOL;
-pub type NtUserGetAncestorType = unsafe extern "stdcall" fn(WindowHandle: HWND, gaFlags: ULONG) -> HWND;
-pub type NtUserGetCaretBlinkTimeType = unsafe extern "stdcall" fn() -> ULONG;
-pub type NtUserGetCaretPosType = unsafe extern "stdcall" fn(lpPoint: LPPOINT) -> BOOL;
-pub type NtUserGetClipCursorType = unsafe extern "stdcall" fn(lpRect: LPRECT) -> BOOL;
-pub type NtUserGetComboBoxInfoType = unsafe extern "stdcall" fn(WindowHandleCombo: HWND, pcbi: PCOMBOBOXINFO) -> BOOL;
-pub type NtUserGetCurrentInputMessageSourceType = unsafe extern "stdcall" fn(InputMessageSource: *mut INPUT_MESSAGE_SOURCE) -> BOOL;
-pub type NtUserGetCursorType = unsafe extern "stdcall" fn() -> HCURSOR;
-pub type NtUserGetCursorInfoType = unsafe extern "stdcall" fn(pci: PCURSORINFO) -> BOOL;
-pub type NtUserGetDCExType = unsafe extern "stdcall" fn(WindowHandle: HWND, hrgnClip: HRGN, flags: ULONG) -> HDC;
-pub type NtUserGetDisplayAutoRotationPreferencesType = unsafe extern "stdcall" fn(pOrientation: *mut ORIENTATION_PREFERENCE) -> BOOL;
-pub type NtUserGetDoubleClickTimeType = unsafe extern "stdcall" fn() -> ULONG;
-pub type NtUserGetGUIThreadInfoType = unsafe extern "stdcall" fn(idThread: ULONG, pgui: PGUITHREADINFO) -> BOOL;
-pub type NtUserGetGuiResourcesType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, uiFlags: ULONG) -> ULONG;
-pub type NtUserGetLayeredWindowAttributesType = unsafe extern "stdcall" fn(WindowHandle: HWND, pcrKey: *mut COLORREF, pbAlpha: *mut BYTE, pdwFlags: ULONG) -> BOOL;
-pub type NtUserGetListBoxInfoType = unsafe extern "stdcall" fn(WindowHandle: HWND) -> ULONG;
-pub type NtUserGetMenuBarInfoType = unsafe extern "stdcall" fn(WindowHandle: HWND, idObject: LONG, idItem: LONG, pmbi: PMENUBARINFO) -> BOOL;
-pub type NtUserGetMenuItemRectType = unsafe extern "stdcall" fn(WindowHandle: HWND, hMenu: HMENU, uItem: ULONG, lprcItem: LPRECT) -> BOOL;
-pub type NtUserGetMouseMovePointsExType = unsafe extern "stdcall" fn(cbSize: ULONG, lppt: LPMOUSEMOVEPOINT, lpptBuf: LPMOUSEMOVEPOINT, nBufPoints: LONG, resolution: ULONG) -> LONG;
-pub type NtUserGetRawInputDataType = unsafe extern "stdcall" fn(hRawInput: HRAWINPUT, uiCommand: ULONG, pData: LPVOID, pcbSize: PULONG, cbSizeHeader: ULONG) -> ULONG;
-pub type NtUserGetRawInputDeviceListType = unsafe extern "stdcall" fn(pRawInputDeviceList: PRAWINPUTDEVICELIST, puiNumDevices: PULONG, cbSize: ULONG) -> ULONG;
-pub type NtUserGetRegisteredRawInputDevicesType = unsafe extern "stdcall" fn(pRawInputDevices: PRAWINPUTDEVICE, puiNumDevices: PULONG, cbSize: ULONG) -> ULONG;
-pub type NtUserGetSystemMenuType = unsafe extern "stdcall" fn(WindowHandle: HWND, bRevert: BOOL) -> HMENU;
-pub type NtUserGetThreadDesktopType = unsafe extern "stdcall" fn(ThreadId: ULONG) -> HDESK;
-pub type NtUserGetTitleBarInfoType = unsafe extern "stdcall" fn(WindowHandle: HWND, pti: PTITLEBARINFO) -> BOOL;
-pub type NtUserGetObjectInformationType = unsafe extern "stdcall" fn(hObj: HANDLE, Index: LONG, vInfo: PVOID, Length: ULONG, LengthNeeded: PULONG) -> BOOL;
-pub type NtUserGetWindowDCType = unsafe extern "stdcall" fn(WindowHandle: HWND) -> HDC;
-pub type NtUserGetWindowPlacementType = unsafe extern "stdcall" fn(WindowHandle: HWND, lpwndpl: *mut WINDOWPLACEMENT) -> BOOL;
-pub type NtUserHiliteMenuItemType = unsafe extern "stdcall" fn(WindowHandle: HWND, Menu: HMENU, IDHiliteItem: ULONG, Hilite: ULONG) -> BOOL;
-pub type NtUserInvalidateRectType = unsafe extern "stdcall" fn(WindowHandle: HWND, Rect: *const RECT, Erase: BOOL) -> BOOL;
-pub type NtUserInvalidateRgnType = unsafe extern "stdcall" fn(WindowHandle: HWND, hRgn: HRGN, Erase: BOOL) -> BOOL;
-pub type NtUserIsTouchWindowType = unsafe extern "stdcall" fn(WindowHandle: HWND, Flags: PULONG) -> BOOL;
-pub type NtUserKillTimerType = unsafe extern "stdcall" fn(WindowHandle: HWND, IDEvent: ULONG_PTR) -> BOOL;
-pub type NtUserLockWorkStationType = unsafe extern "stdcall" fn() -> BOOL;
-pub type NtUserLogicalToPhysicalPointType = unsafe extern "stdcall" fn(WindowHandle: HWND, lpPoint: LPPOINT) -> BOOL;
-pub type NtUserMenuItemFromPointType = unsafe extern "stdcall" fn(WindowHandle: HWND, hMenu: HMENU, ptScreen: POINT) -> LONG;
-pub type NtUserMoveWindowType = unsafe extern "stdcall" fn(WindowHandle: HWND, X: LONG, Y: LONG, nWidth: LONG, nHeight: LONG, bRepaint: BOOL) -> BOOL;
-pub type NtUserOpenInputDesktopType = unsafe extern "stdcall" fn(Flags: ULONG, Inherit: BOOL, DesiredAccess: ACCESS_MASK) -> HDESK;
-pub type NtUserPhysicalToLogicalPointType = unsafe extern "stdcall" fn(WindowHandle: HWND, lpPoint: LPPOINT) -> BOOL;
-pub type NtUserPrintWindowType = unsafe extern "stdcall" fn(WindowHandle: HWND, hdcBlt: HDC, nFlags: ULONG) -> BOOL;
-pub type NtUserQueryInformationThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: USERTHREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
-pub type NtUserSetInformationThreadType = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: USERTHREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG) -> NTSTATUS;
-pub type QuerySendMessageType = unsafe extern "stdcall" fn(pMsg: *mut MSG) -> BOOL;
-pub type NtUserRedrawWindowType = unsafe extern "stdcall" fn(WindowHandle: HWND, lprcUpdate: PRECT, hrgnUpdate: HRGN, flags: ULONG) -> BOOL;
-pub type NtUserRealChildWindowFromPointType = unsafe extern "stdcall" fn(WindowHandleParent: HWND, ptParentClientCoords: POINT) -> HWND;
-pub type NtUserRegisterHotKeyType = unsafe extern "stdcall" fn(WindowHandle: HWND, id: LONG, fsModifiers: ULONG, vk: ULONG) -> BOOL;
-pub type NtUserRemoveMenuType = unsafe extern "stdcall" fn(hMenu: HMENU, uPosition: ULONG, uFlags: ULONG) -> BOOL;
-pub type NtUserSendInputType = unsafe extern "stdcall" fn(cInputs: ULONG, pInputs: LPINPUT, cbSize: LONG) -> ULONG;
-pub type NtUserSetCaptureType = unsafe extern "stdcall" fn(WindowHandle: HWND) -> HWND;
-pub type NtUserSetTimerType = unsafe extern "stdcall" fn(WindowHandle: HWND, nIDEvent: ULONG_PTR, uElapse: ULONG, lpTimerFunc: TIMERPROC, uToleranceDelay: ULONG) -> ULONG_PTR;
-pub type NtUserSetClassWordType = unsafe extern "stdcall" fn(WindowHandle: HWND, nIndex: LONG, wNewWord: WORD) -> WORD;
-pub type NtUserSetCursorPosType = unsafe extern "stdcall" fn(X: LONG, Y: LONG) -> BOOL;
-pub type NtUserSetLayeredWindowAttributesType = unsafe extern "stdcall" fn(WindowHandle: HWND, crKey: COLORREF, bAlpha: BYTE, dwFlags: DWORD) -> BOOL;
-pub type NtUserSetProcessRestrictionExemptionType = unsafe extern "stdcall" fn(EnableExemption: BOOL) -> BOOL;
-pub type NtUserSetWindowPosType = unsafe extern "stdcall" fn(WindowHandle: HWND, WindowHandleInsertAfter: HWND, X: LONG, Y: LONG, cx: LONG, cy: LONG, uFlags: ULONG) -> BOOL;
-pub type NtUserSetWindowWordType = unsafe extern "stdcall" fn(WindowHandle: HWND, nIndex: LONG, wNewWord: WORD) -> WORD;
-pub type NtUserShellForegroundBoostProcessType = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, WindowHandle: HWND) -> HWND;
-pub type NtUserSetAdditionalForegroundBoostProcessesType = unsafe extern "stdcall" fn(WindowHandle: HWND) -> ULONG;
-pub type NtUserSetAdditionalPowerThrottlingProcessType = unsafe extern "stdcall" fn(WindowHandle: HWND) -> ULONG;
-pub type NtUserShowCursorType = unsafe extern "stdcall" fn(bShow: BOOL) -> LONG;
-pub type NtUserShowWindowType = unsafe extern "stdcall" fn(WindowHandle: HWND, nCmdShow: LONG) -> BOOL;
-pub type NtUserShowWindowAsyncType = unsafe extern "stdcall" fn(WindowHandle: HWND, nCmdShow: LONG) -> BOOL;
-pub type NtUserShutdownBlockReasonQueryType = unsafe extern "stdcall" fn(WindowHandle: HWND, pwszBuff: LPWSTR, pcchBuff: PULONG) -> BOOL;
-pub type NtUserShutdownReasonDestroyType = unsafe extern "stdcall" fn(WindowHandle: HWND) -> BOOL;
-pub type NtUserTrackMouseEventType = unsafe extern "stdcall" fn(lpEventTrack: LPTRACKMOUSEEVENT) -> BOOL;
-pub type NtUserTrackPopupMenuExType = unsafe extern "stdcall" fn(hMenu: HMENU, uFlags: ULONG, x: LONG, y: LONG, WindowHandle: HWND, lptpm: LPTPMPARAMS) -> BOOL;
-pub type NtUserUnhookWinEventType = unsafe extern "stdcall" fn(hWinEventHook: HWINEVENTHOOK) -> BOOL;
-pub type NtUserUnregisterHotKeyType = unsafe extern "stdcall" fn(WindowHandle: HWND, id: LONG) -> BOOL;
-pub type NtUserUserHandleGrantAccessType = unsafe extern "stdcall" fn(UserHandle: HANDLE, Job: HANDLE, Grant: BOOL) -> BOOL;
-pub type NtUserValidateRectType = unsafe extern "stdcall" fn(WindowHandle: HWND, Rect: *const RECT) -> BOOL;
-pub type NtUserWindowFromDCType = unsafe extern "stdcall" fn(hDC: HDC) -> HWND;
-pub type NtUserWindowFromPhysicalPointType = unsafe extern "stdcall" fn(Point: POINT) -> HWND;
-pub type NtUserWindowFromPointType = unsafe extern "stdcall" fn(Point: POINT) -> HWND;
+
+#[cfg(feature="fn_types")]
+mod fn_types {
+    pub type NtGetTickCount64Fn = unsafe extern "C" fn() -> ULONGLONG;
+    pub type NtGetTickCountFn = unsafe extern "C" fn() -> ULONG;
+    pub type DbgPrintFn = unsafe extern "C" fn(Format: PCCH, ...) -> ULONG;
+    pub type DbgPrintExFn = unsafe extern "C" fn(ComponentId: ULONG, Level: ULONG, Format: PCCH, ...) -> ULONG;
+    pub type DbgPrintReturnControlCFn = unsafe extern "C" fn(Format: PCCH, ...) -> ULONG;
+    pub type NtCreateRegistryTransactionFn = unsafe extern "C" fn(RegistryTransactionHandle: *mut HANDLE, DesiredAccess: ACCESS_MASK, ObjAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG) -> NTSTATUS;
+    pub type NtOpenRegistryTransactionFn = unsafe extern "C" fn(RegistryTransactionHandle: *mut HANDLE, DesiredAccess: ACCESS_MASK, ObjAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtCommitRegistryTransactionFn = unsafe extern "C" fn(RegistryTransactionHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
+    pub type NtRollbackRegistryTransactionFn = unsafe extern "C" fn(RegistryTransactionHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
+    pub type IsListEmptyFn = unsafe extern "C" fn(ListHead: PLIST_ENTRY) -> BOOLEAN;
+    pub type RemoveEntryListFn = unsafe extern "C" fn(Entry: PLIST_ENTRY) -> BOOLEAN;
+    pub type RemoveHeadListFn = unsafe extern "C" fn(ListHead: PLIST_ENTRY) -> PLIST_ENTRY;
+    pub type RemoveTailListFn = unsafe extern "C" fn(ListHead: PLIST_ENTRY) -> PLIST_ENTRY;
+    pub type PopEntryListFn = unsafe extern "C" fn(ListHead: PSINGLE_LIST_ENTRY) -> PSINGLE_LIST_ENTRY;
+    pub type RtlTotalBucketsHashTableFn = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
+    pub type RtlNonEmptyBucketsHashTableFn = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
+    pub type RtlEmptyBucketsHashTableFn = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
+    pub type RtlTotalEntriesHashTableFn = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
+    pub type RtlActiveEnumeratorsHashTableFn = unsafe extern "C" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> ULONG;
+    pub type RtlIsNullOrEmptyUnicodeStringFn = unsafe extern "C" fn(String: PUNICODE_STRING) -> BOOLEAN;
+    pub type RtlInitUnicodeStringExFn = unsafe extern "C" fn(DestinationString: PUNICODE_STRING, SourceString: PCWSTR) -> NTSTATUS;
+    pub type RtlSetProcessIsCriticalFn = unsafe extern "C" fn(NewValue: BOOLEAN, OldValue: PBOOLEAN, CheckFlag: BOOLEAN) -> NTSTATUS;
+    pub type RtlSetThreadIsCriticalFn = unsafe extern "C" fn(NewValue: BOOLEAN, OldValue: PBOOLEAN, CheckFlag: BOOLEAN) -> NTSTATUS;
+    pub type RtlIsEqualLuidFn = unsafe extern "C" fn(L1: PLUID, L2: PLUID) -> BOOLEAN;
+    pub type RtlIsZeroLuidFn = unsafe extern "C" fn(L1: PLUID) -> BOOLEAN;
+    pub type RtlCheckBitFn = unsafe extern "C" fn(BitMapHeader: PRTL_BITMAP, BitPosition: ULONG) -> BOOLEAN;
+    pub type RtlInitializeSidExFn = unsafe extern "C" fn(Sid: PSID, IdentifierAuthority: PSID_IDENTIFIER_AUTHORITY, SubAuthorityCount: UCHAR, ...) -> NTSTATUS;
+    pub type PerfIsGroupOnInGroupMaskFn = unsafe extern "C" fn(Group: ULONG, GroupMask: PPERFINFO_GROUPMASK) -> BOOLEAN;
+    pub type NtCallbackReturnFn = unsafe extern "stdcall" fn(OutputBuffer: PVOID, OutputLength: ULONG, Status: NTSTATUS) -> NTSTATUS;
+    pub type NtFlushProcessWriteBuffersFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtQueryDebugFilterStateFn = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG) -> NTSTATUS;
+    pub type NtSetDebugFilterStateFn = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG, State: BOOLEAN) -> NTSTATUS;
+    pub type NtYieldExecutionFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type LdrLoadDllFn = unsafe extern "stdcall" fn(DllPath: PCWSTR, DllCharacteristics: PULONG, DllName: PUNICODE_STRING, DllHandle: *mut PVOID) -> NTSTATUS;
+    pub type LdrUnloadDllFn = unsafe extern "stdcall" fn(DllHandle: PVOID) -> NTSTATUS;
+    pub type LdrGetDllHandleFn = unsafe extern "stdcall" fn(DllPath: PCWSTR, DllCharacteristics: PULONG, DllName: PUNICODE_STRING, DllHandle: *mut PVOID) -> NTSTATUS;
+    pub type LdrGetDllHandleExFn = unsafe extern "stdcall" fn(Flags: ULONG, DllPath: PCWSTR, DllCharacteristics: PULONG, DllName: PUNICODE_STRING, DllHandle: *mut PVOID) -> NTSTATUS;
+    pub type LdrGetDllHandleByMappingFn = unsafe extern "stdcall" fn(BaseAddress: PVOID, DllHandle: *mut PVOID) -> NTSTATUS;
+    pub type LdrGetDllHandleByNameFn = unsafe extern "stdcall" fn(BaseDllName: PUNICODE_STRING, FullDllName: PUNICODE_STRING, DllHandle: *mut PVOID) -> NTSTATUS;
+    pub type LdrGetDllFullNameFn = unsafe extern "stdcall" fn(DllHandle: PVOID, FullDllName: PUNICODE_STRING) -> NTSTATUS;
+    pub type LdrGetDllPathFn = unsafe extern "stdcall" fn(DllName: PCWSTR, Flags: ULONG, DllPath: *mut PWSTR, SearchPaths: *mut PWSTR) -> NTSTATUS;
+    pub type LdrGetDllDirectoryFn = unsafe extern "stdcall" fn(DllDirectory: PUNICODE_STRING) -> NTSTATUS;
+    pub type LdrSetDllDirectoryFn = unsafe extern "stdcall" fn(DllDirectory: PUNICODE_STRING) -> NTSTATUS;
+    pub type LdrAddRefDllFn = unsafe extern "stdcall" fn(Flags: ULONG, DllHandle: PVOID) -> NTSTATUS;
+    pub type LdrGetProcedureAddressFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ProcedureName: PANSI_STRING, ProcedureNumber: ULONG, ProcedureAddress: *mut PVOID) -> NTSTATUS;
+    pub type LdrGetProcedureAddressExFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ProcedureName: PANSI_STRING, ProcedureNumber: ULONG, ProcedureAddress: *mut PVOID, Flags: ULONG) -> NTSTATUS;
+    pub type LdrGetKnownDllSectionHandleFn = unsafe extern "stdcall" fn(DllName: PCWSTR, KnownDlls32: BOOLEAN, Section: PHANDLE) -> NTSTATUS;
+    pub type LdrGetProcedureAddressForCallerFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ProcedureName: PANSI_STRING, ProcedureNumber: ULONG, ProcedureAddress: *mut PVOID, Flags: ULONG, Callback: *mut PVOID) -> NTSTATUS;
+    pub type LdrLockLoaderLockFn = unsafe extern "stdcall" fn(Flags: ULONG, Disposition: *mut ULONG, Cookie: *mut PVOID) -> NTSTATUS;
+    pub type LdrUnlockLoaderLockFn = unsafe extern "stdcall" fn(Flags: ULONG, Cookie: PVOID) -> NTSTATUS;
+    pub type LdrRelocateImageFn = unsafe extern "stdcall" fn(NewBase: PVOID, LoaderName: PSTR, Success: NTSTATUS, Conflict: NTSTATUS, Invalid: NTSTATUS) -> NTSTATUS;
+    pub type LdrRelocateImageWithBiasFn = unsafe extern "stdcall" fn(NewBase: PVOID, Bias: LONGLONG, LoaderName: PSTR, Success: NTSTATUS, Conflict: NTSTATUS, Invalid: NTSTATUS) -> NTSTATUS;
+    pub type LdrProcessRelocationBlockFn = unsafe extern "stdcall" fn(VA: ULONG_PTR, SizeOfBlock: ULONG, NextOffset: PUSHORT, Diff: LONG_PTR) -> PIMAGE_BASE_RELOCATION;
+    pub type LdrProcessRelocationBlockExFn = unsafe extern "stdcall" fn(Machine: ULONG, VA: ULONG_PTR, SizeOfBlock: ULONG, NextOffset: PUSHORT, Diff: LONG_PTR) -> PIMAGE_BASE_RELOCATION;
+    pub type LdrVerifyMappedImageMatchesChecksumFn = unsafe extern "stdcall" fn(BaseAddress: PVOID, NumberOfBytes: SIZE_T, FileLength: ULONG) -> BOOLEAN;
+    pub type LdrVerifyImageMatchesChecksumFn = unsafe extern "stdcall" fn(ImageFileHandle: HANDLE, ImportCallbackRoutine: PLDR_IMPORT_MODULE_CALLBACK, ImportCallbackParameter: PVOID, ImageCharacteristics: PUSHORT) -> NTSTATUS;
+    pub type LdrVerifyImageMatchesChecksumExFn = unsafe extern "stdcall" fn(ImageFileHandle: HANDLE, VerifyInfo: PLDR_VERIFY_IMAGE_INFO) -> NTSTATUS;
+    pub type LdrQueryModuleServiceTagsFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ServiceTagBuffer: PULONG, BufferSize: PULONG) -> NTSTATUS;
+    pub type LdrRegisterDllNotificationFn = unsafe extern "stdcall" fn(Flags: ULONG, NotificationFunction: PLDR_DLL_NOTIFICATION_FUNCTION, Context: PVOID, Cookie: *mut PVOID) -> NTSTATUS;
+    pub type LdrUnregisterDllNotificationFn = unsafe extern "stdcall" fn(Cookie: PVOID) -> NTSTATUS;
+    pub type LdrStandardizeSystemPathFn = unsafe extern "stdcall" fn(SystemPath: PUNICODE_STRING) -> PUNICODE_STRING;
+    pub type LdrGetFailureDataFn = unsafe extern "stdcall" fn() -> PLDR_FAILURE_DATA;
+    pub type LdrAddLoadAsDataTableFn = unsafe extern "stdcall" fn(Module: PVOID, FilePath: PCWSTR, Size: SIZE_T, Handle: HANDLE, ActCtx: PACTIVATION_CONTEXT) -> NTSTATUS;
+    pub type LdrRemoveLoadAsDataTableFn = unsafe extern "stdcall" fn(InitModule: PVOID, BaseModule: *mut PVOID, Size: PSIZE_T, Flags: ULONG) -> NTSTATUS;
+    pub type LdrGetFileNameFromLoadAsDataTableFn = unsafe extern "stdcall" fn(Module: PVOID, pFileNamePrt: *mut PVOID) -> NTSTATUS;
+    pub type LdrDisableThreadCalloutsForDllFn = unsafe extern "stdcall" fn(DllImageBase: PVOID) -> NTSTATUS;
+    pub type LdrAccessResourceFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceDataEntry: PIMAGE_RESOURCE_DATA_ENTRY, ResourceBuffer: *mut PVOID, ResourceLength: *mut ULONG) -> NTSTATUS;
+    pub type LdrFindResource_UFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, ResourceDataEntry: *mut PIMAGE_RESOURCE_DATA_ENTRY) -> NTSTATUS;
+    pub type LdrFindResourceEx_UFn = unsafe extern "stdcall" fn(Flags: ULONG, DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, ResourceDataEntry: *mut PIMAGE_RESOURCE_DATA_ENTRY) -> NTSTATUS;
+    pub type LdrFindResourceDirectory_UFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, ResourceDirectory: *mut PIMAGE_RESOURCE_DIRECTORY) -> NTSTATUS;
+    pub type LdrResFindResourceFn = unsafe extern "stdcall" fn(DllHandle: PVOID, Type: ULONG_PTR, Name: ULONG_PTR, Language: ULONG_PTR, ResourceBuffer: *mut PVOID, ResourceLength: PULONG, CultureName: PVOID, CultureNameLength: PULONG, Flags: ULONG) -> NTSTATUS;
+    pub type LdrResFindResourceDirectoryFn = unsafe extern "stdcall" fn(DllHandle: PVOID, Type: ULONG_PTR, Name: ULONG_PTR, ResourceDirectory: *mut PIMAGE_RESOURCE_DIRECTORY, CultureName: PVOID, CultureNameLength: PULONG, Flags: ULONG) -> NTSTATUS;
+    pub type LdrpResGetResourceDirectoryFn = unsafe extern "stdcall" fn(DllHandle: PVOID, Size: SIZE_T, Flags: ULONG, ResourceDirectory: *mut PIMAGE_RESOURCE_DIRECTORY, OutHeaders: *mut PIMAGE_NT_HEADERS) -> NTSTATUS;
+    pub type LdrResSearchResourceFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, Flags: ULONG, ResourceBuffer: *mut PVOID, ResourceLength: PSIZE_T, CultureName: PVOID, CultureNameLength: PULONG) -> NTSTATUS;
+    pub type LdrResGetRCConfigFn = unsafe extern "stdcall" fn(DllHandle: PVOID, Length: SIZE_T, Config: PVOID, Flags: ULONG, AlternateResource: BOOLEAN) -> NTSTATUS;
+    pub type LdrResReleaseFn = unsafe extern "stdcall" fn(DllHandle: PVOID, CultureNameOrId: ULONG_PTR, Flags: ULONG) -> NTSTATUS;
+    pub type LdrEnumResourcesFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceInfo: PLDR_RESOURCE_INFO, Level: ULONG, ResourceCount: *mut ULONG, Resources: PLDR_ENUM_RESOURCE_ENTRY) -> NTSTATUS;
+    pub type LdrFindEntryForAddressFn = unsafe extern "stdcall" fn(DllHandle: PVOID, Entry: *mut PLDR_DATA_TABLE_ENTRY) -> NTSTATUS;
+    pub type LdrLoadAlternateResourceModuleFn = unsafe extern "stdcall" fn(DllHandle: PVOID, ResourceDllBase: *mut PVOID, ResourceOffset: *mut ULONG_PTR, Flags: ULONG) -> NTSTATUS;
+    pub type LdrLoadAlternateResourceModuleExFn = unsafe extern "stdcall" fn(DllHandle: PVOID, LanguageId: LANGID, ResourceDllBase: *mut PVOID, ResourceOffset: *mut ULONG_PTR, Flags: ULONG) -> NTSTATUS;
+    pub type LdrUnloadAlternateResourceModuleFn = unsafe extern "stdcall" fn(DllHandle: PVOID) -> BOOLEAN;
+    pub type LdrUnloadAlternateResourceModuleExFn = unsafe extern "stdcall" fn(DllHandle: PVOID, Flags: ULONG) -> BOOLEAN;
+    pub type LdrQueryProcessModuleInformationFn = unsafe extern "stdcall" fn(ModuleInformation: PRTL_PROCESS_MODULES, Size: ULONG, ReturnedSize: PULONG) -> NTSTATUS;
+    pub type LdrEnumerateLoadedModulesFn = unsafe extern "stdcall" fn(ReservedFlag: BOOLEAN, EnumProc: PLDR_ENUM_CALLBACK, Context: PVOID) -> NTSTATUS;
+    pub type LdrOpenImageFileOptionsKeyFn = unsafe extern "stdcall" fn(SubKey: PUNICODE_STRING, Wow64: BOOLEAN, NewKeyHandle: PHANDLE) -> NTSTATUS;
+    pub type LdrQueryImageFileKeyOptionFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PCWSTR, Type: ULONG, Buffer: PVOID, BufferSize: ULONG, ReturnedLength: PULONG) -> NTSTATUS;
+    pub type LdrQueryImageFileExecutionOptionsFn = unsafe extern "stdcall" fn(SubKey: PUNICODE_STRING, ValueName: PCWSTR, ValueSize: ULONG, Buffer: PVOID, BufferSize: ULONG, ReturnedLength: PULONG) -> NTSTATUS;
+    pub type LdrQueryImageFileExecutionOptionsExFn = unsafe extern "stdcall" fn(SubKey: PUNICODE_STRING, ValueName: PCWSTR, Type: ULONG, Buffer: PVOID, BufferSize: ULONG, ReturnedLength: PULONG, Wow64: BOOLEAN) -> NTSTATUS;
+    pub type LdrQueryOptionalDelayLoadedAPIFn = unsafe extern "stdcall" fn(ParentModuleBase: PVOID, DllName: PCSTR, ProcedureName: PCSTR, Flags: ULONG) -> NTSTATUS;
+    pub type LdrResolveDelayLoadedAPIFn = unsafe extern "stdcall" fn(ParentModuleBase: PVOID, DelayloadDescriptor: PCIMAGE_DELAYLOAD_DESCRIPTOR, FailureDllHook: PDELAYLOAD_FAILURE_DLL_CALLBACK, FailureSystemHook: PDELAYLOAD_FAILURE_SYSTEM_ROUTINE, ThunkAddress: PIMAGE_THUNK_DATA, Flags: ULONG) -> PVOID;
+    pub type LdrResolveDelayLoadsFromDllFn = unsafe extern "stdcall" fn(ParentModuleBase: PVOID, TargetDllName: PCSTR, Flags: ULONG) -> NTSTATUS;
+    pub type LdrSetDefaultDllDirectoriesFn = unsafe extern "stdcall" fn(DirectoryFlags: ULONG) -> NTSTATUS;
+    pub type LdrAddDllDirectoryFn = unsafe extern "stdcall" fn(NewDirectory: PUNICODE_STRING, Cookie: PDLL_DIRECTORY_COOKIE) -> NTSTATUS;
+    pub type LdrRemoveDllDirectoryFn = unsafe extern "stdcall" fn(Cookie: DLL_DIRECTORY_COOKIE) -> NTSTATUS;
+    pub type LdrShutdownProcessFn = unsafe extern "stdcall" fn() -> !;
+    pub type LdrShutdownThreadFn = unsafe extern "stdcall" fn() -> !;
+    pub type LdrSetImplicitPathOptionsFn = unsafe extern "stdcall" fn(ImplicitPathOptions: ULONG) -> NTSTATUS;
+    pub type LdrControlFlowGuardEnforcedFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type LdrControlFlowGuardEnforcedWithExportSuppressionFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type LdrIsModuleSxsRedirectedFn = unsafe extern "stdcall" fn(DllHandle: PVOID) -> BOOLEAN;
+    pub type LdrUpdatePackageSearchPathFn = unsafe extern "stdcall" fn(SearchPathW: PCWSTR) -> NTSTATUS;
+    pub type LdrCreateEnclaveFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, Reserved: ULONG, Size: SIZE_T, InitialCommitment: SIZE_T, EnclaveType: ULONG, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
+    pub type LdrInitializeEnclaveFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
+    pub type LdrDeleteEnclaveFn = unsafe extern "stdcall" fn(BaseAddress: PVOID) -> NTSTATUS;
+    pub type LdrCallEnclaveFn = unsafe extern "stdcall" fn(Routine: PENCLAVE_ROUTINE, Flags: ULONG, RoutineParamReturn: *mut PVOID) -> NTSTATUS;
+    pub type LdrLoadEnclaveModuleFn = unsafe extern "stdcall" fn(BaseAddress: PVOID, DllPath: PCWSTR, DllName: PUNICODE_STRING) -> NTSTATUS;
+    pub type LdrFlushAlternateResourceModulesFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type LdrDllRedirectionCallbackFn = unsafe extern "stdcall" fn(Flags: ULONG, DllName: PCWSTR, DllPath: PCWSTR, DllCharacteristics: PULONG, CallbackData: PVOID, EffectiveDllPath: *mut PCWSTR) -> NTSTATUS;
+    pub type NtDelayExecutionFn = unsafe extern "stdcall" fn(Alertable: BOOLEAN, DelayInterval: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtQuerySystemEnvironmentValueFn = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VariableValue: PWSTR, ValueLength: USHORT, ReturnLength: PUSHORT) -> NTSTATUS;
+    pub type NtQuerySystemEnvironmentValueExFn = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Buffer: PVOID, BufferLength: PULONG, Attributes: PULONG) -> NTSTATUS;
+    pub type NtSetSystemEnvironmentValueFn = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VariableValue: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtSetSystemEnvironmentValueExFn = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Buffer: PVOID, BufferLength: ULONG, Attributes: ULONG) -> NTSTATUS;
+    pub type NtEnumerateSystemEnvironmentValuesExFn = unsafe extern "stdcall" fn(InformationClass: ULONG, Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
+    pub type NtAddBootEntryFn = unsafe extern "stdcall" fn(BootEntry: PBOOT_ENTRY, Id: PULONG) -> NTSTATUS;
+    pub type NtDeleteBootEntryFn = unsafe extern "stdcall" fn(Id: ULONG) -> NTSTATUS;
+    pub type NtModifyBootEntryFn = unsafe extern "stdcall" fn(BootEntry: PBOOT_ENTRY) -> NTSTATUS;
+    pub type NtEnumerateBootEntriesFn = unsafe extern "stdcall" fn(Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
+    pub type NtQueryBootEntryOrderFn = unsafe extern "stdcall" fn(Ids: PULONG, Count: PULONG) -> NTSTATUS;
+    pub type NtSetBootEntryOrderFn = unsafe extern "stdcall" fn(Ids: PULONG, Count: ULONG) -> NTSTATUS;
+    pub type NtQueryBootOptionsFn = unsafe extern "stdcall" fn(BootOptions: PBOOT_OPTIONS, BootOptionsLength: PULONG) -> NTSTATUS;
+    pub type NtSetBootOptionsFn = unsafe extern "stdcall" fn(BootOptions: PBOOT_OPTIONS, FieldsToChange: ULONG) -> NTSTATUS;
+    pub type NtTranslateFilePathFn = unsafe extern "stdcall" fn(InputFilePath: PFILE_PATH, OutputType: ULONG, OutputFilePath: PFILE_PATH, OutputFilePathLength: PULONG) -> NTSTATUS;
+    pub type NtAddDriverEntryFn = unsafe extern "stdcall" fn(DriverEntry: PEFI_DRIVER_ENTRY, Id: PULONG) -> NTSTATUS;
+    pub type NtDeleteDriverEntryFn = unsafe extern "stdcall" fn(Id: ULONG) -> NTSTATUS;
+    pub type NtModifyDriverEntryFn = unsafe extern "stdcall" fn(DriverEntry: PEFI_DRIVER_ENTRY) -> NTSTATUS;
+    pub type NtEnumerateDriverEntriesFn = unsafe extern "stdcall" fn(Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
+    pub type NtQueryDriverEntryOrderFn = unsafe extern "stdcall" fn(Ids: PULONG, Count: PULONG) -> NTSTATUS;
+    pub type NtSetDriverEntryOrderFn = unsafe extern "stdcall" fn(Ids: PULONG, Count: ULONG) -> NTSTATUS;
+    pub type NtFilterBootOptionFn = unsafe extern "stdcall" fn(FilterOperation: FILTER_BOOT_OPTION_OPERATION, ObjectType: ULONG, ElementType: ULONG, Data: PVOID, DataSize: ULONG) -> NTSTATUS;
+    pub type NtCreateEventFn = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EventType: EVENT_TYPE, InitialState: BOOLEAN) -> NTSTATUS;
+    pub type NtOpenEventFn = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtSetEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+    pub type NtSetEventExFn = unsafe extern "stdcall" fn(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
+    pub type NtSetEventBoostPriorityFn = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> NTSTATUS;
+    pub type NtClearEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> NTSTATUS;
+    pub type NtResetEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+    pub type NtPulseEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+    pub type NtQueryEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE, EventInformationClass: EVENT_INFORMATION_CLASS, EventInformation: PVOID, EventInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtCreateEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtOpenEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtSetLowEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type NtSetHighEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type NtWaitLowEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type NtWaitHighEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type NtSetLowWaitHighEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type NtSetHighWaitLowEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type NtCreateMutantFn = unsafe extern "stdcall" fn(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, InitialOwner: BOOLEAN) -> NTSTATUS;
+    pub type NtOpenMutantFn = unsafe extern "stdcall" fn(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtReleaseMutantFn = unsafe extern "stdcall" fn(MutantHandle: HANDLE, PreviousCount: PLONG) -> NTSTATUS;
+    pub type NtQueryMutantFn = unsafe extern "stdcall" fn(MutantHandle: HANDLE, MutantInformationClass: MUTANT_INFORMATION_CLASS, MutantInformation: PVOID, MutantInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtCreateSemaphoreFn = unsafe extern "stdcall" fn(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, InitialCount: LONG, MaximumCount: LONG) -> NTSTATUS;
+    pub type NtOpenSemaphoreFn = unsafe extern "stdcall" fn(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtReleaseSemaphoreFn = unsafe extern "stdcall" fn(SemaphoreHandle: HANDLE, ReleaseCount: LONG, PreviousCount: PLONG) -> NTSTATUS;
+    pub type NtQuerySemaphoreFn = unsafe extern "stdcall" fn(SemaphoreHandle: HANDLE, SemaphoreInformationClass: SEMAPHORE_INFORMATION_CLASS, SemaphoreInformation: PVOID, SemaphoreInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtCreateTimerFn = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, TimerType: TIMER_TYPE) -> NTSTATUS;
+    pub type NtOpenTimerFn = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtSetTimerFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER, TimerApcRoutine: PTIMER_APC_ROUTINE, TimerContext: PVOID, ResumeTimer: BOOLEAN, Period: LONG, PreviousState: PBOOLEAN) -> NTSTATUS;
+    pub type NtSetTimerExFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, TimerSetInformationClass: TIMER_SET_INFORMATION_CLASS, TimerSetInformation: PVOID, TimerSetInformationLength: ULONG) -> NTSTATUS;
+    pub type NtCancelTimerFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, CurrentState: PBOOLEAN) -> NTSTATUS;
+    pub type NtQueryTimerFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, TimerInformationClass: TIMER_INFORMATION_CLASS, TimerInformation: PVOID, TimerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtCreateIRTimerFn = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, Reserved: PVOID, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
+    pub type NtSetIRTimerFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtCreateTimer2Fn = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, Reserved1: PVOID, ObjectAttributes: PCOBJECT_ATTRIBUTES, Attributes: ULONG, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
+    pub type NtSetTimer2Fn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER, Period: PLARGE_INTEGER, Parameters: PT2_SET_PARAMETERS) -> NTSTATUS;
+    pub type NtCancelTimer2Fn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, Parameters: PT2_CANCEL_PARAMETERS) -> NTSTATUS;
+    pub type NtCreateProfileFn = unsafe extern "stdcall" fn(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, Affinity: KAFFINITY) -> NTSTATUS;
+    pub type NtCreateProfileExFn = unsafe extern "stdcall" fn(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, GroupCount: USHORT, GroupAffinity: PGROUP_AFFINITY) -> NTSTATUS;
+    pub type NtStartProfileFn = unsafe extern "stdcall" fn(ProfileHandle: HANDLE) -> NTSTATUS;
+    pub type NtStopProfileFn = unsafe extern "stdcall" fn(ProfileHandle: HANDLE) -> NTSTATUS;
+    pub type NtQueryIntervalProfileFn = unsafe extern "stdcall" fn(ProfileSource: KPROFILE_SOURCE, Interval: PULONG) -> NTSTATUS;
+    pub type NtSetIntervalProfileFn = unsafe extern "stdcall" fn(Interval: ULONG, Source: KPROFILE_SOURCE) -> NTSTATUS;
+    pub type NtCreateKeyedEventFn = unsafe extern "stdcall" fn(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
+    pub type NtOpenKeyedEventFn = unsafe extern "stdcall" fn(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtReleaseKeyedEventFn = unsafe extern "stdcall" fn(KeyedEventHandle: HANDLE, KeyValue: PVOID, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtWaitForKeyedEventFn = unsafe extern "stdcall" fn(KeyedEventHandle: HANDLE, KeyValue: PVOID, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtUmsThreadYieldFn = unsafe extern "stdcall" fn(SchedulerParam: PVOID) -> NTSTATUS;
+    pub type NtCreateWnfStateNameFn = unsafe extern "stdcall" fn(StateName: PWNF_STATE_NAME, NameLifetime: WNF_STATE_NAME_LIFETIME, DataScope: WNF_DATA_SCOPE, PersistData: BOOLEAN, TypeId: PCWNF_TYPE_ID, MaximumStateSize: ULONG, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type NtDeleteWnfStateNameFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
+    pub type NtUpdateWnfStateDataFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, Buffer: *const ::core::ffi::c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const ::core::ffi::c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
+    pub type NtDeleteWnfStateDataFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, ExplicitScope: *const ::core::ffi::c_void) -> NTSTATUS;
+    pub type NtQueryWnfStateDataFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const ::core::ffi::c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+    pub type NtQueryWnfStateNameInformationFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const ::core::ffi::c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
+    pub type NtSubscribeWnfStateChangeFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, EventMask: ULONG, SubscriptionId: PULONG64) -> NTSTATUS;
+    pub type NtUnsubscribeWnfStateChangeFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
+    pub type NtGetCompleteWnfStateSubscriptionFn = unsafe extern "stdcall" fn(OldDescriptorStateName: PWNF_STATE_NAME, OldSubscriptionId: *mut ULONG64, OldDescriptorEventMask: ULONG, OldDescriptorStatus: ULONG, NewDeliveryDescriptor: PWNF_DELIVERY_DESCRIPTOR, DescriptorSize: ULONG) -> NTSTATUS;
+    pub type NtSetWnfProcessNotificationEventFn = unsafe extern "stdcall" fn(NotificationEvent: HANDLE) -> NTSTATUS;
+    pub type NtCreateWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandleReturn: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, CompletionPortHandle: HANDLE, WorkerProcessHandle: HANDLE, StartRoutine: PVOID, StartParameter: PVOID, MaxThreadCount: ULONG, StackReserve: SIZE_T, StackCommit: SIZE_T) -> NTSTATUS;
+    pub type NtQueryInformationWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, WorkerFactoryInformationClass: WORKERFACTORYINFOCLASS, WorkerFactoryInformation: PVOID, WorkerFactoryInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, WorkerFactoryInformationClass: WORKERFACTORYINFOCLASS, WorkerFactoryInformation: PVOID, WorkerFactoryInformationLength: ULONG) -> NTSTATUS;
+    pub type NtShutdownWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, PendingWorkerCount: *mut LONG) -> NTSTATUS;
+    pub type NtReleaseWorkerFactoryWorkerFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
+    pub type NtWorkerFactoryWorkerReadyFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
+    pub type NtWaitForWorkViaWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, MiniPackets: PFILE_IO_COMPLETION_INFORMATION, Count: ULONG, PacketsReturned: PULONG, DeferredWork: PWORKER_FACTORY_DEFERRED_WORK) -> NTSTATUS;
+    pub type NtQuerySystemTimeFn = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtSetSystemTimeFn = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER, PreviousTime: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtQueryTimerResolutionFn = unsafe extern "stdcall" fn(MaximumTime: PULONG, MinimumTime: PULONG, CurrentTime: PULONG) -> NTSTATUS;
+    pub type NtSetTimerResolutionFn = unsafe extern "stdcall" fn(DesiredTime: ULONG, SetResolution: BOOLEAN, ActualTime: PULONG) -> NTSTATUS;
+    pub type NtQueryPerformanceCounterFn = unsafe extern "stdcall" fn(PerformanceCounter: PLARGE_INTEGER, PerformanceFrequency: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtQueryAuxiliaryCounterFrequencyFn = unsafe extern "stdcall" fn(AuxiliaryCounterFrequency: PULONG64) -> NTSTATUS;
+    pub type NtConvertBetweenAuxiliaryCounterAndPerformanceCounterFn = unsafe extern "stdcall" fn(ConvertAuxiliaryToPerformanceCounter: BOOLEAN, PerformanceOrAuxiliaryCounterValue: PULONG64, ConvertedValue: PULONG64, ConversionError: PULONG64) -> NTSTATUS;
+    pub type NtAllocateLocallyUniqueIdFn = unsafe extern "stdcall" fn(Luid: PLUID) -> NTSTATUS;
+    pub type NtSetUuidSeedFn = unsafe extern "stdcall" fn(Seed: PCHAR) -> NTSTATUS;
+    pub type NtAllocateUuidsFn = unsafe extern "stdcall" fn(Time: PULARGE_INTEGER, Range: PULONG, Sequence: PULONG, Seed: PCHAR) -> NTSTATUS;
+    pub type NtQuerySystemInformationFn = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtQuerySystemInformationExFn = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, InputBuffer: PVOID, InputBufferLength: ULONG, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetSystemInformationFn = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG) -> NTSTATUS;
+    pub type NtSystemDebugControlFn = unsafe extern "stdcall" fn(Command: SYSDBG_COMMAND, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtRaiseHardErrorFn = unsafe extern "stdcall" fn(ErrorStatus: NTSTATUS, NumberOfParameters: ULONG, UnicodeStringParameterMask: ULONG, Parameters: PULONG_PTR, ValidResponseOptions: ULONG, Response: PULONG) -> NTSTATUS;
+    pub type NtQueryDefaultLocaleFn = unsafe extern "stdcall" fn(UserProfile: BOOLEAN, DefaultLocaleId: PLCID) -> NTSTATUS;
+    pub type NtSetDefaultLocaleFn = unsafe extern "stdcall" fn(UserProfile: BOOLEAN, DefaultLocaleId: LCID) -> NTSTATUS;
+    pub type NtQueryInstallUILanguageFn = unsafe extern "stdcall" fn(InstallUILanguageId: *mut LANGID) -> NTSTATUS;
+    pub type NtFlushInstallUILanguageFn = unsafe extern "stdcall" fn(InstallUILanguage: LANGID, SetComittedFlag: ULONG) -> NTSTATUS;
+    pub type NtQueryDefaultUILanguageFn = unsafe extern "stdcall" fn(DefaultUILanguageId: *mut LANGID) -> NTSTATUS;
+    pub type NtSetDefaultUILanguageFn = unsafe extern "stdcall" fn(DefaultUILanguageId: LANGID) -> NTSTATUS;
+    pub type NtIsUILanguageComittedFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtInitializeNlsFilesFn = unsafe extern "stdcall" fn(BaseAddress: *mut PVOID, DefaultLocaleId: PLCID, DefaultCasingTableSize: PLARGE_INTEGER, CurrentNLSVersion: PULONG) -> NTSTATUS;
+    pub type NtGetNlsSectionPtrFn = unsafe extern "stdcall" fn(SectionType: ULONG, SectionData: ULONG, ContextData: PVOID, SectionPointer: *mut PVOID, SectionSize: PULONG) -> NTSTATUS;
+    pub type NtMapCMFModuleFn = unsafe extern "stdcall" fn(What: ULONG, Index: ULONG, CacheIndexOut: PULONG, CacheFlagsOut: PULONG, ViewSizeOut: PULONG, BaseAddress: *mut PVOID) -> NTSTATUS;
+    pub type NtGetMUIRegistryInfoFn = unsafe extern "stdcall" fn(Flags: ULONG, DataSize: PULONG, Data: PVOID) -> NTSTATUS;
+    pub type NtAddAtomFn = unsafe extern "stdcall" fn(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
+    pub type NtAddAtomExFn = unsafe extern "stdcall" fn(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM, Flags: ULONG) -> NTSTATUS;
+    pub type NtFindAtomFn = unsafe extern "stdcall" fn(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
+    pub type NtDeleteAtomFn = unsafe extern "stdcall" fn(Atom: RTL_ATOM) -> NTSTATUS;
+    pub type NtQueryInformationAtomFn = unsafe extern "stdcall" fn(Atom: RTL_ATOM, AtomInformationClass: ATOM_INFORMATION_CLASS, AtomInformation: PVOID, AtomInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtQueryLicenseValueFn = unsafe extern "stdcall" fn(ValueName: PUNICODE_STRING, Type: PULONG, Data: PVOID, DataSize: ULONG, ResultDataSize: PULONG) -> NTSTATUS;
+    pub type NtSetDefaultHardErrorPortFn = unsafe extern "stdcall" fn(DefaultHardErrorPort: HANDLE) -> NTSTATUS;
+    pub type NtShutdownSystemFn = unsafe extern "stdcall" fn(Action: SHUTDOWN_ACTION) -> NTSTATUS;
+    pub type NtDisplayStringFn = unsafe extern "stdcall" fn(String: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtDrawTextFn = unsafe extern "stdcall" fn(Text: PUNICODE_STRING) -> NTSTATUS;
+    pub type BcdSetLoggingFn = unsafe extern "stdcall" fn(BcdLoggingLevel: BCD_MESSAGE_TYPE, BcdMessageCallbackRoutine: BCD_MESSAGE_CALLBACK) -> NTSTATUS;
+    pub type BcdGetSystemStorePathFn = unsafe extern "stdcall" fn(BcdSystemStorePath: *mut PWSTR) -> NTSTATUS;
+    pub type BcdSetSystemStoreDeviceFn = unsafe extern "stdcall" fn(SystemPartition: PCUNICODE_STRING) -> NTSTATUS;
+    pub type BcdOpenSystemStoreFn = unsafe extern "stdcall" fn(BcdStoreHandle: PHANDLE) -> NTSTATUS;
+    pub type BcdOpenStoreFromFileFn = unsafe extern "stdcall" fn(BcdFilePath: PCUNICODE_STRING, BcdStoreHandle: PHANDLE) -> NTSTATUS;
+    pub type BcdCreateStoreFn = unsafe extern "stdcall" fn(BcdFilePath: PCUNICODE_STRING, BcdStoreHandle: PHANDLE) -> NTSTATUS;
+    pub type BcdExportStoreFn = unsafe extern "stdcall" fn(BcdFilePath: PCUNICODE_STRING) -> NTSTATUS;
+    pub type BcdExportStoreExFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Flags: ULONG, BcdFilePath: PCUNICODE_STRING) -> NTSTATUS;
+    pub type BcdImportStoreFn = unsafe extern "stdcall" fn(BcdFilePath: PCUNICODE_STRING) -> NTSTATUS;
+    pub type BcdImportStoreWithFlagsFn = unsafe extern "stdcall" fn(BcdFilePath: PCUNICODE_STRING, BcdImportFlags: BCD_IMPORT_FLAGS) -> NTSTATUS;
+    pub type BcdDeleteObjectReferencesFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Identifier: PGUID) -> NTSTATUS;
+    pub type BcdDeleteSystemStoreFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type BcdOpenStoreFn = unsafe extern "stdcall" fn(BcdFilePath: PCUNICODE_STRING, BcdOpenFlags: BCD_OPEN_FLAGS, BcdStoreHandle: PHANDLE) -> NTSTATUS;
+    pub type BcdCloseStoreFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE) -> NTSTATUS;
+    pub type BcdFlushStoreFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE) -> NTSTATUS;
+    pub type BcdForciblyUnloadStoreFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE) -> NTSTATUS;
+    pub type BcdMarkAsSystemStoreFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE) -> NTSTATUS;
+    pub type BcdEnumerateObjectsFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, BcdEnumDescriptor: PBCD_OBJECT_DESCRIPTION, Buffer: PVOID, BufferSize: PULONG, ObjectCount: PULONG) -> NTSTATUS;
+    pub type BcdOpenObjectFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Identifier: *const GUID, BcdObjectHandle: PHANDLE) -> NTSTATUS;
+    pub type BcdCreateObjectFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Identifier: PGUID, Description: PBCD_OBJECT_DESCRIPTION, BcdObjectHandle: PHANDLE) -> NTSTATUS;
+    pub type BcdDeleteObjectFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE) -> NTSTATUS;
+    pub type BcdCloseObjectFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE) -> NTSTATUS;
+    pub type BcdCopyObjectFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, BcdObjectHandle: HANDLE, BcdCopyFlags: BCD_COPY_FLAGS, TargetStoreHandle: HANDLE, TargetObjectHandle: PHANDLE) -> NTSTATUS;
+    pub type BcdCopyObjectExFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, BcdObjectHandle: HANDLE, BcdCopyFlags: BCD_COPY_FLAGS, TargetStoreHandle: HANDLE, TargetObjectId: PGUID, TargetObjectHandle: PHANDLE) -> NTSTATUS;
+    pub type BcdCopyObjectsFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, Characteristics: BCD_OBJECT_DESCRIPTION, BcdCopyFlags: BCD_COPY_FLAGS, TargetStoreHandle: HANDLE) -> NTSTATUS;
+    pub type BcdMigrateObjectElementValuesFn = unsafe extern "stdcall" fn(TemplateObjectHandle: HANDLE, SourceObjectHandle: HANDLE, TargetObjectHandle: HANDLE) -> NTSTATUS;
+    pub type BcdQueryObjectFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdVersion: ULONG, Description: BCD_OBJECT_DESCRIPTION, Identifier: PGUID) -> NTSTATUS;
+    pub type BcdEnumerateElementTypesFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, Buffer: PVOID, BufferSize: PULONG, ElementCount: PULONG) -> NTSTATUS;
+    pub type BcdEnumerateElementsFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, Buffer: PVOID, BufferSize: PULONG, ElementCount: PULONG) -> NTSTATUS;
+    pub type BcdEnumerateElementsWithFlagsFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdFlags: BCD_FLAGS, Buffer: PVOID, BufferSize: PULONG, ElementCount: PULONG) -> NTSTATUS;
+    pub type BcdEnumerateAndUnpackElementsFn = unsafe extern "stdcall" fn(BcdStoreHandle: HANDLE, BcdObjectHandle: HANDLE, BcdFlags: BCD_FLAGS, Buffer: PVOID, BufferSize: PULONG, ElementCount: PULONG) -> NTSTATUS;
+    pub type BcdGetElementDataFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+    pub type BcdGetElementDataWithFlagsFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG, BcdFlags: BCD_FLAGS, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+    pub type BcdSetElementDataFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG, Buffer: PVOID, BufferSize: ULONG) -> NTSTATUS;
+    pub type BcdSetElementDataWithFlagsFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG, BcdFlags: BCD_FLAGS, Buffer: PVOID, BufferSize: ULONG) -> NTSTATUS;
+    pub type BcdDeleteElementFn = unsafe extern "stdcall" fn(BcdObjectHandle: HANDLE, BcdElement: ULONG) -> NTSTATUS;
+    pub type NtAllocateVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, RegionSize: PSIZE_T, AllocationType: ULONG, Protect: ULONG) -> NTSTATUS;
+    pub type NtAllocateVirtualMemoryExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
+    pub type NtFreeVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, FreeType: ULONG) -> NTSTATUS;
+    pub type NtReadVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, NumberOfBytesToRead: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
+    pub type NtWow64ReadVirtualMemory64Fn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: ULONGLONG, Buffer: PVOID, NumberOfBytesToRead: ULONGLONG, NumberOfBytesRead: PULONGLONG) -> NTSTATUS;
+    pub type NtReadVirtualMemoryExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, NumberOfBytesToRead: SIZE_T, NumberOfBytesRead: PSIZE_T, Flags: ULONG) -> NTSTATUS;
+    pub type NtWriteVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, NumberOfBytesToWrite: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
+    pub type NtWow64WriteVirtualMemory64Fn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: ULONGLONG, Buffer: PVOID, NumberOfBytesToWrite: ULONGLONG, NumberOfBytesWritten: PULONGLONG) -> NTSTATUS;
+    pub type NtProtectVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, NewProtect: ULONG, OldProtect: PULONG) -> NTSTATUS;
+    pub type NtQueryVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type NtWow64QueryVirtualMemory64Fn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: ULONGLONG, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: ULONGLONG, ReturnLength: PULONGLONG) -> NTSTATUS;
+    pub type NtFlushVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, IoStatus: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type NtSetInformationVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, VmInformationClass: VIRTUAL_MEMORY_INFORMATION_CLASS, NumberOfEntries: SIZE_T, VirtualAddresses: PMEMORY_RANGE_ENTRY, VmInformation: PVOID, VmInformationLength: ULONG) -> NTSTATUS;
+    pub type NtLockVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
+    pub type NtUnlockVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
+    pub type NtCreateSectionFn = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE) -> NTSTATUS;
+    pub type NtCreateSectionExFn = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
+    pub type NtOpenSectionFn = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtMapViewOfSectionFn = unsafe extern "stdcall" fn(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, CommitSize: SIZE_T, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, InheritDisposition: SECTION_INHERIT, AllocationType: ULONG, Win32Protect: ULONG) -> NTSTATUS;
+    pub type NtMapViewOfSectionExFn = unsafe extern "stdcall" fn(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
+    pub type NtUnmapViewOfSectionFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID) -> NTSTATUS;
+    pub type NtUnmapViewOfSectionExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
+    pub type NtExtendSectionFn = unsafe extern "stdcall" fn(SectionHandle: HANDLE, NewSectionSize: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtQuerySectionFn = unsafe extern "stdcall" fn(SectionHandle: HANDLE, SectionInformationClass: SECTION_INFORMATION_CLASS, SectionInformation: PVOID, SectionInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type NtAreMappedFilesTheSameFn = unsafe extern "stdcall" fn(File1MappedAsAnImage: PVOID, File2MappedAsFile: PVOID) -> NTSTATUS;
+    pub type NtCreatePartitionFn = unsafe extern "stdcall" fn(ParentPartitionHandle: HANDLE, PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, PreferredNode: ULONG) -> NTSTATUS;
+    pub type NtOpenPartitionFn = unsafe extern "stdcall" fn(PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtManagePartitionFn = unsafe extern "stdcall" fn(TargetHandle: HANDLE, SourceHandle: HANDLE, PartitionInformationClass: PARTITION_INFORMATION_CLASS, PartitionInformation: PVOID, PartitionInformationLength: ULONG) -> NTSTATUS;
+    pub type NtMapUserPhysicalPagesFn = unsafe extern "stdcall" fn(VirtualAddress: PVOID, NumberOfPages: SIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+    pub type NtMapUserPhysicalPagesScatterFn = unsafe extern "stdcall" fn(VirtualAddresses: *mut PVOID, NumberOfPages: SIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+    pub type NtAllocateUserPhysicalPagesFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PSIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+    pub type NtAllocateUserPhysicalPagesExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
+    pub type NtFreeUserPhysicalPagesFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+    pub type NtGetWriteWatchFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Flags: ULONG, BaseAddress: PVOID, RegionSize: SIZE_T, UserAddressArray: *mut PVOID, EntriesInUserAddressArray: PULONG_PTR, Granularity: PULONG) -> NTSTATUS;
+    pub type NtResetWriteWatchFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, RegionSize: SIZE_T) -> NTSTATUS;
+    pub type NtCreatePagingFileFn = unsafe extern "stdcall" fn(PageFileName: PUNICODE_STRING, MinimumSize: PLARGE_INTEGER, MaximumSize: PLARGE_INTEGER, Priority: ULONG) -> NTSTATUS;
+    pub type NtFlushInstructionCacheFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Length: SIZE_T) -> NTSTATUS;
+    pub type NtFlushWriteBufferFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtCreateEnclaveFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, Size: SIZE_T, InitialCommitment: SIZE_T, EnclaveType: ULONG, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
+    pub type NtLoadEnclaveDataFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, Protect: ULONG, PageInformation: PVOID, PageInformationLength: ULONG, NumberOfBytesWritten: PSIZE_T, EnclaveError: PULONG) -> NTSTATUS;
+    pub type NtInitializeEnclaveFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
+    pub type NtTerminateEnclaveFn = unsafe extern "stdcall" fn(BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
+    pub type NtCallEnclaveFn = unsafe extern "stdcall" fn(Routine: PENCLAVE_ROUTINE, Reserved: PVOID, Flags: ULONG, RoutineParamReturn: *mut PVOID) -> NTSTATUS;
+    pub type NtQueryObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, ObjectInformationClass: OBJECT_INFORMATION_CLASS, ObjectInformation: PVOID, ObjectInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, ObjectInformationClass: OBJECT_INFORMATION_CLASS, ObjectInformation: PVOID, ObjectInformationLength: ULONG) -> NTSTATUS;
+    pub type NtDuplicateObjectFn = unsafe extern "stdcall" fn(SourceProcessHandle: HANDLE, SourceHandle: HANDLE, TargetProcessHandle: HANDLE, TargetHandle: PHANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Options: ULONG) -> NTSTATUS;
+    pub type NtMakeTemporaryObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
+    pub type NtMakePermanentObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
+    pub type NtSignalAndWaitForSingleObjectFn = unsafe extern "stdcall" fn(SignalHandle: HANDLE, WaitHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtWaitForSingleObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtWaitForMultipleObjectsFn = unsafe extern "stdcall" fn(Count: ULONG, Handles: *mut HANDLE, WaitType: WAIT_TYPE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtWaitForMultipleObjects32Fn = unsafe extern "stdcall" fn(Count: ULONG, Handles: *mut LONG, WaitType: WAIT_TYPE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtSetSecurityObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type NtQuerySecurityObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR, Length: ULONG, LengthNeeded: PULONG) -> NTSTATUS;
+    pub type NtCloseFn = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
+    pub type NtCompareObjectsFn = unsafe extern "stdcall" fn(FirstObjectHandle: HANDLE, SecondObjectHandle: HANDLE) -> NTSTATUS;
+    pub type NtCreateDirectoryObjectFn = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtCreateDirectoryObjectExFn = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ShadowDirectoryHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
+    pub type NtOpenDirectoryObjectFn = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtQueryDirectoryObjectFn = unsafe extern "stdcall" fn(DirectoryHandle: HANDLE, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, RestartScan: BOOLEAN, Context: PULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtCreatePrivateNamespaceFn = unsafe extern "stdcall" fn(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
+    pub type NtOpenPrivateNamespaceFn = unsafe extern "stdcall" fn(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
+    pub type NtDeletePrivateNamespaceFn = unsafe extern "stdcall" fn(NamespaceHandle: HANDLE) -> NTSTATUS;
+    pub type NtCreateSymbolicLinkObjectFn = unsafe extern "stdcall" fn(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LinkTarget: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtOpenSymbolicLinkObjectFn = unsafe extern "stdcall" fn(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtQuerySymbolicLinkObjectFn = unsafe extern "stdcall" fn(LinkHandle: HANDLE, LinkTarget: PUNICODE_STRING, ReturnedLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationSymbolicLinkFn = unsafe extern "stdcall" fn(LinkHandle: HANDLE, SymbolicLinkInformationClass: SYMBOLIC_LINK_INFO_CLASS, SymbolicLinkInformation: PVOID, SymbolicLinkInformationLength: ULONG) -> NTSTATUS;
+    pub type NtQueryPortInformationProcessFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtCreateProcessFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, InheritObjectTable: BOOLEAN, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE) -> NTSTATUS;
+    pub type NtCreateProcessExFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, Flags: ULONG, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE, Reserved: ULONG) -> NTSTATUS;
+    pub type NtOpenProcessFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
+    pub type NtTerminateProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+    pub type NtSuspendProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> NTSTATUS;
+    pub type NtResumeProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> NTSTATUS;
+    pub type NtQueryInformationProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtWow64QueryInformationProcess64Fn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtGetNextProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewProcessHandle: PHANDLE) -> NTSTATUS;
+    pub type NtGetNextThreadFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewThreadHandle: PHANDLE) -> NTSTATUS;
+    pub type NtSetInformationProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG) -> NTSTATUS;
+    pub type NtCreateProcessStateChangeFn = unsafe extern "stdcall" fn(ProcessStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
+    pub type NtChangeProcessStateFn = unsafe extern "stdcall" fn(ProcessStateChangeHandle: HANDLE, ProcessHandle: HANDLE, StateChangeType: PROCESS_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
+    pub type NtCreateThreadStateChangeFn = unsafe extern "stdcall" fn(ThreadStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
+    pub type NtChangeThreadStateFn = unsafe extern "stdcall" fn(ThreadStateChangeHandle: HANDLE, ThreadHandle: HANDLE, StateChangeType: THREAD_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
+    pub type NtCreateThreadFn = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, ClientId: PCLIENT_ID, ThreadContext: PCONTEXT, InitialTeb: PINITIAL_TEB, CreateSuspended: BOOLEAN) -> NTSTATUS;
+    pub type NtOpenThreadFn = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
+    pub type NtTerminateThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+    pub type NtSuspendThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
+    pub type NtResumeThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
+    pub type NtGetCurrentProcessorNumberFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type NtGetCurrentProcessorNumberExFn = unsafe extern "stdcall" fn(ProcessorNumber: PPROCESSOR_NUMBER) -> ULONG;
+    pub type NtGetContextThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
+    pub type NtSetContextThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
+    pub type NtQueryInformationThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG) -> NTSTATUS;
+    pub type NtAlertThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> NTSTATUS;
+    pub type NtAlertResumeThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
+    pub type NtTestAlertFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtAlertThreadByThreadIdFn = unsafe extern "stdcall" fn(ThreadId: HANDLE) -> NTSTATUS;
+    pub type NtAlertThreadByThreadIdExFn = unsafe extern "stdcall" fn(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
+    pub type NtAlertMultipleThreadByThreadIdFn = unsafe extern "stdcall" fn(MultipleThreadId: PHANDLE, Count: ULONG, Boost: PVOID, BoostCount: ULONG) -> NTSTATUS;
+    pub type NtWaitForAlertByThreadIdFn = unsafe extern "stdcall" fn(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtImpersonateThreadFn = unsafe extern "stdcall" fn(ServerThreadHandle: HANDLE, ClientThreadHandle: HANDLE, SecurityQos: PSECURITY_QUALITY_OF_SERVICE) -> NTSTATUS;
+    pub type NtRegisterThreadTerminatePortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
+    pub type NtSetLdtEntriesFn = unsafe extern "stdcall" fn(Selector0: ULONG, Entry0Low: ULONG, Entry0Hi: ULONG, Selector1: ULONG, Entry1Low: ULONG, Entry1Hi: ULONG) -> NTSTATUS;
+    pub type NtQueueApcThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
+    pub type NtQueueApcThreadExFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
+    pub type NtQueueApcThreadEx2Fn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcFlags: ULONG, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
+    pub type NtCreateUserProcessFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, ThreadHandle: PHANDLE, ProcessDesiredAccess: ACCESS_MASK, ThreadDesiredAccess: ACCESS_MASK, ProcessObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessFlags: ULONG, ThreadFlags: ULONG, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, CreateInfo: PPS_CREATE_INFO, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
+    pub type NtCreateThreadExFn = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, StartRoutine: PUSER_THREAD_START_ROUTINE, Argument: PVOID, CreateFlags: ULONG, ZeroBits: SIZE_T, StackSize: SIZE_T, MaximumStackSize: SIZE_T, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
+    pub type NtCreateJobObjectFn = unsafe extern "stdcall" fn(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtOpenJobObjectFn = unsafe extern "stdcall" fn(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtAssignProcessToJobObjectFn = unsafe extern "stdcall" fn(JobHandle: HANDLE, ProcessHandle: HANDLE) -> NTSTATUS;
+    pub type NtTerminateJobObjectFn = unsafe extern "stdcall" fn(JobHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+    pub type NtIsProcessInJobFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, JobHandle: HANDLE) -> NTSTATUS;
+    pub type NtQueryInformationJobObjectFn = unsafe extern "stdcall" fn(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationJobObjectFn = unsafe extern "stdcall" fn(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG) -> NTSTATUS;
+    pub type NtCreateJobSetFn = unsafe extern "stdcall" fn(NumJob: ULONG, UserJobSet: PJOB_SET_ARRAY, Flags: ULONG) -> NTSTATUS;
+    pub type NtRevertContainerImpersonationFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtAllocateReserveObjectFn = unsafe extern "stdcall" fn(MemoryReserveHandle: PHANDLE, ObjectAttributes: PCOBJECT_ATTRIBUTES, Type: MEMORY_RESERVE_TYPE) -> NTSTATUS;
+    pub type PssNtCaptureSnapshotFn = unsafe extern "stdcall" fn(SnapshotHandle: PHANDLE, ProcessHandle: HANDLE, CaptureFlags: PSSNT_CAPTURE_FLAGS, ThreadContextFlags: ULONG) -> NTSTATUS;
+    pub type PssNtDuplicateSnapshotFn = unsafe extern "stdcall" fn(SourceProcessHandle: HANDLE, SnapshotHandle: HANDLE, TargetProcessHandle: HANDLE, TargetSnapshotHandle: PHANDLE, Flags: PSSNT_DUPLICATE_FLAGS) -> NTSTATUS;
+    pub type PssNtFreeSnapshotFn = unsafe extern "stdcall" fn(SnapshotHandle: HANDLE) -> NTSTATUS;
+    pub type PssNtFreeRemoteSnapshotFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, SnapshotHandle: HANDLE) -> NTSTATUS;
+    pub type PssNtQuerySnapshotFn = unsafe extern "stdcall" fn(SnapshotHandle: HANDLE, InformationClass: PSSNT_QUERY_INFORMATION_CLASS, Buffer: PVOID, BufferLength: ULONG) -> NTSTATUS;
+    pub type NtPssCaptureVaSpaceBulkFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, BulkInformation: PNTPSS_MEMORY_BULK_INFORMATION, BulkInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type vDbgPrintExFn = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG, Format: PCCH, arglist: va_list) -> ULONG;
+    pub type vDbgPrintExWithPrefixFn = unsafe extern "stdcall" fn(Prefix: PCCH, ComponentId: ULONG, Level: ULONG, Format: PCCH, arglist: va_list) -> ULONG;
+    pub type DbgQueryDebugFilterStateFn = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG) -> NTSTATUS;
+    pub type DbgSetDebugFilterStateFn = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG, State: BOOLEAN) -> NTSTATUS;
+    pub type DbgPromptFn = unsafe extern "stdcall" fn(Prompt: PCCH, Response: PCH, Length: ULONG) -> ULONG;
+    pub type NtCreateDebugObjectFn = unsafe extern "stdcall" fn(DebugObjectHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
+    pub type NtDebugActiveProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DebugObjectHandle: HANDLE) -> NTSTATUS;
+    pub type NtDebugContinueFn = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, ClientId: PCLIENT_ID, ContinueStatus: NTSTATUS) -> NTSTATUS;
+    pub type NtRemoveProcessDebugFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DebugObjectHandle: HANDLE) -> NTSTATUS;
+    pub type NtSetInformationDebugObjectFn = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, DebugObjectInformationClass: DEBUGOBJECTINFOCLASS, DebugInformation: PVOID, DebugInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtWaitForDebugEventFn = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER, WaitStateChange: PDBGUI_WAIT_STATE_CHANGE) -> NTSTATUS;
+    pub type DbgUiConnectToDbgFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type DbgUiGetThreadDebugObjectFn = unsafe extern "stdcall" fn() -> HANDLE;
+    pub type DbgUiWaitStateChangeFn = unsafe extern "stdcall" fn(StateChange: PDBGUI_WAIT_STATE_CHANGE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type DbgUiContinueFn = unsafe extern "stdcall" fn(AppClientId: PCLIENT_ID, ContinueStatus: NTSTATUS) -> NTSTATUS;
+    pub type DbgUiStopDebuggingFn = unsafe extern "stdcall" fn(Process: HANDLE) -> NTSTATUS;
+    pub type DbgUiDebugActiveProcessFn = unsafe extern "stdcall" fn(Process: HANDLE) -> NTSTATUS;
+    pub type DbgUiIssueRemoteBreakinFn = unsafe extern "stdcall" fn(Process: HANDLE) -> NTSTATUS;
+    pub type DbgUiConvertStateChangeStructureFn = unsafe extern "stdcall" fn(StateChange: PDBGUI_WAIT_STATE_CHANGE, DebugEvent: LPDEBUG_EVENT) -> NTSTATUS;
+    pub type DbgUiConvertStateChangeStructureExFn = unsafe extern "stdcall" fn(StateChange: PDBGUI_WAIT_STATE_CHANGE, DebugEvent: LPDEBUG_EVENT) -> NTSTATUS;
+    pub type EtwEventRegisterFn = unsafe extern "stdcall" fn(ProviderId: LPCGUID, EnableCallback: PENABLECALLBACK, CallbackContext: PVOID, RegHandle: PREGHANDLE) -> NTSTATUS;
+    pub type NtCreateFileFn = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, AllocationSize: PLARGE_INTEGER, FileAttributes: ULONG, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, EaBuffer: PVOID, EaLength: ULONG) -> NTSTATUS;
+    pub type NtCreateNamedPipeFileFn = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, NamedPipeType: ULONG, ReadMode: ULONG, CompletionMode: ULONG, MaximumInstances: ULONG, InboundQuota: ULONG, OutboundQuota: ULONG, DefaultTimeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtCreateMailslotFileFn = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, CreateOptions: ULONG, MailslotQuota: ULONG, MaximumMessageSize: ULONG, ReadTimeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtOpenFileFn = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, OpenOptions: ULONG) -> NTSTATUS;
+    pub type NtDeleteFileFn = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtFlushBuffersFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type NtFlushBuffersFileExFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Flags: ULONG, Parameters: PVOID, ParametersSize: ULONG, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type NtQueryInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
+    pub type NtQueryInformationByNameFn = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
+    pub type NtSetInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
+    pub type NtQueryDirectoryFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS, ReturnSingleEntry: BOOLEAN, FileName: PUNICODE_STRING, RestartScan: BOOLEAN) -> NTSTATUS;
+    pub type NtQueryDirectoryFileExFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS, QueryFlags: ULONG, FileName: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtQueryEaFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, EaList: PVOID, EaListLength: ULONG, EaIndex: PULONG, RestartScan: BOOLEAN) -> NTSTATUS;
+    pub type NtSetEaFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
+    pub type NtQueryQuotaInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, SidList: PVOID, SidListLength: ULONG, StartSid: PSID, RestartScan: BOOLEAN) -> NTSTATUS;
+    pub type NtSetQuotaInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
+    pub type NtQueryVolumeInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
+    pub type NtSetVolumeInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
+    pub type NtCancelIoFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type NtCancelIoFileExFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoRequestToCancel: PIO_STATUS_BLOCK, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type NtCancelSynchronousIoFileFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, IoRequestToCancel: PIO_STATUS_BLOCK, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type NtDeviceIoControlFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, IoControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
+    pub type NtFsControlFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FsControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
+    pub type NtReadFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
+    pub type NtWriteFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
+    pub type NtReadFileScatterFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, SegmentArray: PFILE_SEGMENT_ELEMENT, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
+    pub type NtWriteFileGatherFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, SegmentArray: PFILE_SEGMENT_ELEMENT, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
+    pub type NtLockFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, ByteOffset: PLARGE_INTEGER, Length: PLARGE_INTEGER, Key: ULONG, FailImmediately: BOOLEAN, ExclusiveLock: BOOLEAN) -> NTSTATUS;
+    pub type NtUnlockFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, ByteOffset: PLARGE_INTEGER, Length: PLARGE_INTEGER, Key: ULONG) -> NTSTATUS;
+    pub type NtQueryAttributesFileFn = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_BASIC_INFORMATION) -> NTSTATUS;
+    pub type NtQueryFullAttributesFileFn = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_NETWORK_OPEN_INFORMATION) -> NTSTATUS;
+    pub type NtNotifyChangeDirectoryFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN) -> NTSTATUS;
+    pub type NtNotifyChangeDirectoryFileExFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN, DirectoryNotifyInformationClass: DIRECTORY_NOTIFY_INFORMATION_CLASS) -> NTSTATUS;
+    pub type NtLoadDriverFn = unsafe extern "stdcall" fn(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtUnloadDriverFn = unsafe extern "stdcall" fn(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtCreateIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Count: ULONG) -> NTSTATUS;
+    pub type NtOpenIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtQueryIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionInformationClass: IO_COMPLETION_INFORMATION_CLASS, IoCompletionInformation: PVOID, IoCompletionInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR) -> NTSTATUS;
+    pub type NtSetIoCompletionExFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionPacketHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR) -> NTSTATUS;
+    pub type NtRemoveIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, KeyContext: *mut PVOID, ApcContext: *mut PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtRemoveIoCompletionExFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionInformation: PFILE_IO_COMPLETION_INFORMATION, Count: ULONG, NumEntriesRemoved: PULONG, Timeout: PLARGE_INTEGER, Alertable: BOOLEAN) -> NTSTATUS;
+    pub type NtCreateWaitCompletionPacketFn = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtAssociateWaitCompletionPacketFn = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: HANDLE, IoCompletionHandle: HANDLE, TargetObjectHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR, AlreadySignaled: PBOOLEAN) -> NTSTATUS;
+    pub type NtCancelWaitCompletionPacketFn = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: HANDLE, RemoveSignaledPacket: BOOLEAN) -> NTSTATUS;
+    pub type NtOpenSessionFn = unsafe extern "stdcall" fn(SessionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtNotifyChangeSessionFn = unsafe extern "stdcall" fn(SessionHandle: HANDLE, ChangeSequenceNumber: ULONG, ChangeTimeStamp: PLARGE_INTEGER, Event: IO_SESSION_EVENT, NewState: IO_SESSION_STATE, PreviousState: IO_SESSION_STATE, Payload: PVOID, PayloadSize: ULONG) -> NTSTATUS;
+    pub type NtCreateIoRingFn = unsafe extern "stdcall" fn(IoRingHandle: PHANDLE, CreateParametersLength: ULONG, CreateParameters: PVOID, OutputParametersLength: ULONG, OutputParameters: PVOID) -> NTSTATUS;
+    pub type NtSubmitIoRingFn = unsafe extern "stdcall" fn(IoRingHandle: HANDLE, Flags: ULONG, WaitOperations: ULONG, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtQueryIoRingCapabilitiesFn = unsafe extern "stdcall" fn(IoRingCapabilitiesLength: SIZE_T, IoRingCapabilities: PVOID) -> NTSTATUS;
+    pub type NtSetInformationIoRingFn = unsafe extern "stdcall" fn(IoRingHandle: HANDLE, IoRingInformationClass: ULONG, IoRingInformationLength: ULONG, IoRingInformation: PVOID) -> NTSTATUS;
+    pub type NtCreatePortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
+    pub type NtCreateWaitablePortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
+    pub type NtConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, SecurityQos: PSECURITY_QUALITY_OF_SERVICE, ClientView: PPORT_VIEW, ServerView: PREMOTE_PORT_VIEW, MaxMessageLength: PULONG, ConnectionInformation: PVOID, ConnectionInformationLength: PULONG) -> NTSTATUS;
+    pub type NtSecureConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, SecurityQos: PSECURITY_QUALITY_OF_SERVICE, ClientView: PPORT_VIEW, RequiredServerSid: PSID, ServerView: PREMOTE_PORT_VIEW, MaxMessageLength: PULONG, ConnectionInformation: PVOID, ConnectionInformationLength: PULONG) -> NTSTATUS;
+    pub type NtListenPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, ConnectionRequest: PPORT_MESSAGE) -> NTSTATUS;
+    pub type NtAcceptConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, AcceptConnection: BOOLEAN, ServerView: PPORT_VIEW, ClientView: PREMOTE_PORT_VIEW) -> NTSTATUS;
+    pub type NtCompleteConnectPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
+    pub type NtRequestPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, RequestMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type NtRequestWaitReplyPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, RequestMessage: PPORT_MESSAGE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type NtReplyPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type NtReplyWaitReplyPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type NtReplyWaitReceivePortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortContext: *mut PVOID, ReplyMessage: PPORT_MESSAGE, ReceiveMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type NtReplyWaitReceivePortExFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortContext: *mut PVOID, ReplyMessage: PPORT_MESSAGE, ReceiveMessage: PPORT_MESSAGE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtImpersonateClientOfPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE) -> NTSTATUS;
+    pub type NtReadRequestDataFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, DataEntryIndex: ULONG, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
+    pub type NtWriteRequestDataFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, DataEntryIndex: ULONG, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
+    pub type NtQueryInformationPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtAlpcCreatePortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtAlpcDisconnectPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
+    pub type NtAlpcQueryInformationFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtAlpcSetInformationFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG) -> NTSTATUS;
+    pub type NtAlpcCreatePortSectionFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SectionHandle: HANDLE, SectionSize: SIZE_T, AlpcSectionHandle: PALPC_HANDLE, ActualSectionSize: PSIZE_T) -> NTSTATUS;
+    pub type NtAlpcDeletePortSectionFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SectionHandle: ALPC_HANDLE) -> NTSTATUS;
+    pub type NtAlpcCreateResourceReserveFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, MessageSize: SIZE_T, ResourceId: PALPC_HANDLE) -> NTSTATUS;
+    pub type NtAlpcDeleteResourceReserveFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ResourceId: ALPC_HANDLE) -> NTSTATUS;
+    pub type NtAlpcCreateSectionViewFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ViewAttributes: PALPC_DATA_VIEW_ATTR) -> NTSTATUS;
+    pub type NtAlpcDeleteSectionViewFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ViewBase: PVOID) -> NTSTATUS;
+    pub type NtAlpcCreateSecurityContextFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SecurityAttribute: PALPC_SECURITY_ATTR) -> NTSTATUS;
+    pub type NtAlpcDeleteSecurityContextFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ContextHandle: ALPC_HANDLE) -> NTSTATUS;
+    pub type NtAlpcRevokeSecurityContextFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ContextHandle: ALPC_HANDLE) -> NTSTATUS;
+    pub type NtAlpcQueryInformationMessageFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, MessageInformationClass: ALPC_MESSAGE_INFORMATION_CLASS, MessageInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtAlpcConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, RequiredServerSid: PSID, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtAlpcConnectPortExFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ConnectionPortObjectAttributes: POBJECT_ATTRIBUTES, ClientPortObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, ServerSecurityRequirements: PSECURITY_DESCRIPTOR, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtAlpcAcceptConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ConnectionPortHandle: HANDLE, Flags: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, ConnectionMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, AcceptConnection: BOOLEAN) -> NTSTATUS;
+    pub type NtAlpcSendWaitReceivePortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SendMessageW: PPORT_MESSAGE, SendMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, ReceiveMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, ReceiveMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtAlpcCancelMessageFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, MessageContext: PALPC_CONTEXT_ATTR) -> NTSTATUS;
+    pub type NtAlpcImpersonateClientOfPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: PVOID) -> NTSTATUS;
+    pub type NtAlpcImpersonateClientContainerOfPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: ULONG) -> NTSTATUS;
+    pub type NtAlpcOpenSenderProcessFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, Flags: ULONG, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtAlpcOpenSenderThreadFn = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, Flags: ULONG, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type AlpcMaxAllowedMessageLengthFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type AlpcGetHeaderSizeFn = unsafe extern "stdcall" fn(Flags: ULONG) -> ULONG;
+    pub type AlpcInitializeMessageAttributeFn = unsafe extern "stdcall" fn(AttributeFlags: ULONG, Buffer: PALPC_MESSAGE_ATTRIBUTES, BufferSize: SIZE_T, RequiredBufferSize: PSIZE_T) -> NTSTATUS;
+    pub type AlpcGetMessageAttributeFn = unsafe extern "stdcall" fn(Buffer: PALPC_MESSAGE_ATTRIBUTES, AttributeFlag: ULONG) -> PVOID;
+    pub type AlpcRegisterCompletionListFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Buffer: PALPC_COMPLETION_LIST_HEADER, Size: ULONG, ConcurrencyCount: ULONG, AttributeFlags: ULONG) -> NTSTATUS;
+    pub type AlpcUnregisterCompletionListFn = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
+    pub type AlpcRundownCompletionListFn = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
+    pub type AlpcAdjustCompletionListConcurrencyCountFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, ConcurrencyCount: ULONG) -> NTSTATUS;
+    pub type AlpcRegisterCompletionListWorkerThreadFn = unsafe extern "stdcall" fn(CompletionList: PVOID) -> BOOLEAN;
+    pub type AlpcUnregisterCompletionListWorkerThreadFn = unsafe extern "stdcall" fn(CompletionList: PVOID) -> BOOLEAN;
+    pub type AlpcGetOutstandingCompletionListMessageCountFn = unsafe extern "stdcall" fn(CompletionList: PVOID) -> ULONG;
+    pub type AlpcGetMessageFromCompletionListFn = unsafe extern "stdcall" fn(CompletionList: PVOID, MessageAttributes: *mut PALPC_MESSAGE_ATTRIBUTES) -> PPORT_MESSAGE;
+    pub type AlpcGetCompletionListMessageAttributesFn = unsafe extern "stdcall" fn(CompletionList: PVOID, Message: PPORT_MESSAGE) -> PALPC_MESSAGE_ATTRIBUTES;
+    pub type NtPlugPlayControlFn = unsafe extern "stdcall" fn(PnPControlClass: PLUGPLAY_CONTROL_CLASS, PnPControlData: PVOID, PnPControlDataLength: ULONG) -> NTSTATUS;
+    pub type NtSerializeBootFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtEnableLastKnownGoodFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtDisableLastKnownGoodFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtReplacePartitionUnitFn = unsafe extern "stdcall" fn(TargetInstancePath: PUNICODE_STRING, SpareInstancePath: PUNICODE_STRING, Flags: ULONG) -> NTSTATUS;
+    pub type NtPowerInformationFn = unsafe extern "stdcall" fn(InformationLevel: POWER_INFORMATION_LEVEL, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
+    pub type NtSetThreadExecutionStateFn = unsafe extern "stdcall" fn(NewFlags: EXECUTION_STATE, PreviousFlags: *mut EXECUTION_STATE) -> NTSTATUS;
+    pub type NtInitiatePowerActionFn = unsafe extern "stdcall" fn(SystemAction: POWER_ACTION, LightestSystemState: SYSTEM_POWER_STATE, Flags: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
+    pub type NtSetSystemPowerStateFn = unsafe extern "stdcall" fn(SystemAction: POWER_ACTION, LightestSystemState: SYSTEM_POWER_STATE, Flags: ULONG) -> NTSTATUS;
+    pub type NtGetDevicePowerStateFn = unsafe extern "stdcall" fn(Device: HANDLE, State: PDEVICE_POWER_STATE) -> NTSTATUS;
+    pub type NtIsSystemResumeAutomaticFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type NtCreateKeyFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, Disposition: PULONG) -> NTSTATUS;
+    pub type NtCreateKeyTransactedFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, TransactionHandle: HANDLE, Disposition: PULONG) -> NTSTATUS;
+    pub type NtOpenKeyFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtOpenKeyTransactedFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TransactionHandle: HANDLE) -> NTSTATUS;
+    pub type NtOpenKeyExFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG) -> NTSTATUS;
+    pub type NtOpenKeyTransactedExFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG, TransactionHandle: HANDLE) -> NTSTATUS;
+    pub type NtDeleteKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
+    pub type NtRenameKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, NewName: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtDeleteValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtQueryKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, KeyInformationClass: KEY_INFORMATION_CLASS, KeyInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, KeySetInformationClass: KEY_SET_INFORMATION_CLASS, KeySetInformation: PVOID, KeySetInformationLength: ULONG) -> NTSTATUS;
+    pub type NtQueryValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
+    pub type NtSetValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, TitleIndex: ULONG, Type: ULONG, Data: PVOID, DataSize: ULONG) -> NTSTATUS;
+    pub type NtQueryMultipleValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueEntries: PKEY_VALUE_ENTRY, EntryCount: ULONG, ValueBuffer: PVOID, BufferLength: PULONG, RequiredBufferLength: PULONG) -> NTSTATUS;
+    pub type NtEnumerateKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Index: ULONG, KeyInformationClass: KEY_INFORMATION_CLASS, KeyInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
+    pub type NtEnumerateValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Index: ULONG, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
+    pub type NtFlushKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
+    pub type NtCompactKeysFn = unsafe extern "stdcall" fn(Count: ULONG, KeyArray: *mut HANDLE) -> NTSTATUS;
+    pub type NtCompressKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
+    pub type NtLoadKeyFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtLoadKey2Fn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
+    pub type NtLoadKeyExFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG, TrustClassKey: HANDLE, Event: HANDLE, DesiredAccess: ACCESS_MASK, RootHandle: PHANDLE, Reserved: PVOID) -> NTSTATUS;
+    pub type NtLoadKey3Fn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG, ExtendedParameters: PCM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG, DesiredAccess: ACCESS_MASK, RootHandle: PHANDLE, Reserved: PVOID) -> NTSTATUS;
+    pub type NtReplaceKeyFn = unsafe extern "stdcall" fn(NewFile: POBJECT_ATTRIBUTES, TargetHandle: HANDLE, OldFile: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtSaveKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE) -> NTSTATUS;
+    pub type NtSaveKeyExFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE, Format: ULONG) -> NTSTATUS;
+    pub type NtSaveMergedKeysFn = unsafe extern "stdcall" fn(HighPrecedenceKeyHandle: HANDLE, LowPrecedenceKeyHandle: HANDLE, FileHandle: HANDLE) -> NTSTATUS;
+    pub type NtRestoreKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
+    pub type NtUnloadKeyFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtUnloadKey2Fn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
+    pub type NtUnloadKeyExFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, Event: HANDLE) -> NTSTATUS;
+    pub type NtNotifyChangeKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
+    pub type NtNotifyChangeMultipleKeysFn = unsafe extern "stdcall" fn(MasterKeyHandle: HANDLE, Count: ULONG, SubordinateObjects: *mut OBJECT_ATTRIBUTES, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
+    pub type NtQueryOpenSubKeysFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, HandleCount: PULONG) -> NTSTATUS;
+    pub type NtQueryOpenSubKeysExFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, BufferLength: ULONG, Buffer: PVOID, RequiredSize: PULONG) -> NTSTATUS;
+    pub type NtInitializeRegistryFn = unsafe extern "stdcall" fn(BootCondition: USHORT) -> NTSTATUS;
+    pub type NtLockRegistryKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
+    pub type NtLockProductActivationKeysFn = unsafe extern "stdcall" fn(pPrivateVer: *mut ULONG, pSafeMode: *mut ULONG) -> NTSTATUS;
+    pub type NtFreezeRegistryFn = unsafe extern "stdcall" fn(TimeOutInSeconds: ULONG) -> NTSTATUS;
+    pub type NtThawRegistryFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlInsertElementGenericTableAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID, BufferSize: CLONG, NewElement: PBOOLEAN) -> PVOID;
+    pub type RtlInsertElementGenericTableFullAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID, BufferSize: CLONG, NewElement: PBOOLEAN, NodeOrParent: PVOID, SearchResult: TABLE_SEARCH_RESULT) -> PVOID;
+    pub type RtlDeleteElementGenericTableAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID) -> BOOLEAN;
+    pub type RtlLookupElementGenericTableAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID) -> PVOID;
+    pub type RtlLookupElementGenericTableFullAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID, NodeOrParent: *mut PVOID, SearchResult: *mut TABLE_SEARCH_RESULT) -> PVOID;
+    pub type RtlEnumerateGenericTableAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Restart: BOOLEAN) -> PVOID;
+    pub type RtlEnumerateGenericTableWithoutSplayingAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, RestartKey: *mut PVOID) -> PVOID;
+    pub type RtlLookupFirstMatchingElementGenericTableAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, Buffer: PVOID, RestartKey: *mut PVOID) -> PVOID;
+    pub type RtlEnumerateGenericTableLikeADirectoryFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, MatchFunction: PRTL_AVL_MATCH_FUNCTION, MatchData: PVOID, NextFlag: ULONG, RestartKey: *mut PVOID, DeleteCount: PULONG, Buffer: PVOID) -> PVOID;
+    pub type RtlGetElementGenericTableAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE, I: ULONG) -> PVOID;
+    pub type RtlNumberGenericTableElementsAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE) -> ULONG;
+    pub type RtlIsGenericTableEmptyAvlFn = unsafe extern "stdcall" fn(Table: PRTL_AVL_TABLE) -> BOOLEAN;
+    pub type RtlSplayFn = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
+    pub type RtlDeleteFn = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
+    pub type RtlSubtreeSuccessorFn = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
+    pub type RtlSubtreePredecessorFn = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
+    pub type RtlRealSuccessorFn = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
+    pub type RtlRealPredecessorFn = unsafe extern "stdcall" fn(Links: PRTL_SPLAY_LINKS) -> PRTL_SPLAY_LINKS;
+    pub type RtlInsertElementGenericTableFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID, BufferSize: CLONG, NewElement: PBOOLEAN) -> PVOID;
+    pub type RtlInsertElementGenericTableFullFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID, BufferSize: CLONG, NewElement: PBOOLEAN, NodeOrParent: PVOID, SearchResult: TABLE_SEARCH_RESULT) -> PVOID;
+    pub type RtlDeleteElementGenericTableFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID) -> BOOLEAN;
+    pub type RtlLookupElementGenericTableFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID) -> PVOID;
+    pub type RtlLookupElementGenericTableFullFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Buffer: PVOID, NodeOrParent: *mut PVOID, SearchResult: *mut TABLE_SEARCH_RESULT) -> PVOID;
+    pub type RtlEnumerateGenericTableFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, Restart: BOOLEAN) -> PVOID;
+    pub type RtlEnumerateGenericTableWithoutSplayingFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, RestartKey: *mut PVOID) -> PVOID;
+    pub type RtlGetElementGenericTableFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE, I: ULONG) -> PVOID;
+    pub type RtlNumberGenericTableElementsFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE) -> ULONG;
+    pub type RtlIsGenericTableEmptyFn = unsafe extern "stdcall" fn(Table: PRTL_GENERIC_TABLE) -> BOOLEAN;
+    pub type RtlRbInsertNodeExFn = unsafe extern "stdcall" fn(Tree: PRTL_RB_TREE, Parent: PRTL_BALANCED_NODE, Right: BOOLEAN, Node: PRTL_BALANCED_NODE) -> BOOLEAN;
+    pub type RtlRbRemoveNodeFn = unsafe extern "stdcall" fn(Tree: PRTL_RB_TREE, Node: PRTL_BALANCED_NODE) -> BOOLEAN;
+    pub type RtlCompareExchangePointerMappingFn = unsafe extern "stdcall" fn(Node1: PRTL_BALANCED_NODE, Node2: PRTL_BALANCED_NODE, Node3: *mut PRTL_BALANCED_NODE, Node4: *mut PRTL_BALANCED_NODE) -> NTSTATUS;
+    pub type RtlQueryPointerMappingFn = unsafe extern "stdcall" fn(Tree: PRTL_RB_TREE, Children: PRTL_BALANCED_NODE) -> NTSTATUS;
+    pub type RtlRemovePointerMappingFn = unsafe extern "stdcall" fn(Tree: PRTL_RB_TREE, Children: PRTL_BALANCED_NODE) -> NTSTATUS;
+    pub type RtlCreateHashTableFn = unsafe extern "stdcall" fn(HashTable: *mut PRTL_DYNAMIC_HASH_TABLE, Shift: ULONG, Flags: ULONG) -> BOOLEAN;
+    pub type RtlCreateHashTableExFn = unsafe extern "stdcall" fn(HashTable: *mut PRTL_DYNAMIC_HASH_TABLE, InitialSize: ULONG, Shift: ULONG, Flags: ULONG) -> BOOLEAN;
+    pub type RtlDeleteHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> LOGICAL;
+    pub type RtlInsertEntryHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Entry: PRTL_DYNAMIC_HASH_TABLE_ENTRY, Signature: ULONG_PTR, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> BOOLEAN;
+    pub type RtlRemoveEntryHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Entry: PRTL_DYNAMIC_HASH_TABLE_ENTRY, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> BOOLEAN;
+    pub type RtlLookupEntryHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Signature: ULONG_PTR, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
+    pub type RtlGetNextEntryHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Context: PRTL_DYNAMIC_HASH_TABLE_CONTEXT) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
+    pub type RtlInitEnumerationHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> BOOLEAN;
+    pub type RtlEnumerateEntryHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
+    pub type RtlInitWeakEnumerationHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> BOOLEAN;
+    pub type RtlWeaklyEnumerateEntryHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
+    pub type RtlExpandHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> BOOLEAN;
+    pub type RtlContractHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE) -> BOOLEAN;
+    pub type RtlInitStrongEnumerationHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> BOOLEAN;
+    pub type RtlStronglyEnumerateEntryHashTableFn = unsafe extern "stdcall" fn(HashTable: PRTL_DYNAMIC_HASH_TABLE, Enumerator: PRTL_DYNAMIC_HASH_TABLE_ENUMERATOR) -> PRTL_DYNAMIC_HASH_TABLE_ENTRY;
+    pub type RtlInitializeCriticalSectionFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> NTSTATUS;
+    pub type RtlInitializeCriticalSectionAndSpinCountFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION, SpinCount: ULONG) -> NTSTATUS;
+    pub type RtlInitializeCriticalSectionExFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION, SpinCount: ULONG, Flags: ULONG) -> NTSTATUS;
+    pub type RtlDeleteCriticalSectionFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> NTSTATUS;
+    pub type RtlEnterCriticalSectionFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> NTSTATUS;
+    pub type RtlLeaveCriticalSectionFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> NTSTATUS;
+    pub type RtlTryEnterCriticalSectionFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> LOGICAL;
+    pub type RtlIsCriticalSectionLockedFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> LOGICAL;
+    pub type RtlIsCriticalSectionLockedByThreadFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> LOGICAL;
+    pub type RtlGetCriticalSectionRecursionCountFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION) -> ULONG;
+    pub type RtlSetCriticalSectionSpinCountFn = unsafe extern "stdcall" fn(CriticalSection: PRTL_CRITICAL_SECTION, SpinCount: ULONG) -> ULONG;
+    pub type RtlQueryCriticalSectionOwnerFn = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> HANDLE;
+    pub type RtlEnableEarlyCriticalSectionEventCreationFn = unsafe extern "stdcall" fn() -> PPEB;
+    pub type RtlAcquireResourceSharedFn = unsafe extern "stdcall" fn(Resource: PRTL_RESOURCE, Wait: BOOLEAN) -> BOOLEAN;
+    pub type RtlAcquireResourceExclusiveFn = unsafe extern "stdcall" fn(Resource: PRTL_RESOURCE, Wait: BOOLEAN) -> BOOLEAN;
+    pub type RtlDumpResourceFn = unsafe extern "stdcall" fn(Resource: PRTL_RESOURCE) -> ULONG;
+    pub type RtlTryAcquireSRWLockExclusiveFn = unsafe extern "stdcall" fn(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
+    pub type RtlTryAcquireSRWLockSharedFn = unsafe extern "stdcall" fn(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
+    pub type RtlConvertSRWLockExclusiveToSharedFn = unsafe extern "stdcall" fn(SRWLock: PRTL_SRWLOCK) -> BOOLEAN;
+    pub type RtlRcuAllocateFn = unsafe extern "stdcall" fn(Size: SIZE_T) -> PVOID;
+    pub type RtlRcuFreeFn = unsafe extern "stdcall" fn(Rcu: PULONG) -> LOGICAL;
+    pub type RtlRcuSynchronizeFn = unsafe extern "stdcall" fn(SRWLock: PRTL_SRWLOCK) -> LONG;
+    pub type RtlSleepConditionVariableCSFn = unsafe extern "stdcall" fn(ConditionVariable: PRTL_CONDITION_VARIABLE, CriticalSection: PRTL_CRITICAL_SECTION, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type RtlSleepConditionVariableSRWFn = unsafe extern "stdcall" fn(ConditionVariable: PRTL_CONDITION_VARIABLE, SRWLock: PRTL_SRWLOCK, Timeout: PLARGE_INTEGER, Flags: ULONG) -> NTSTATUS;
+    pub type RtlInitBarrierFn = unsafe extern "stdcall" fn(Barrier: PRTL_BARRIER, TotalThreads: ULONG, SpinCount: ULONG) -> NTSTATUS;
+    pub type RtlDeleteBarrierFn = unsafe extern "stdcall" fn(Barrier: PRTL_BARRIER) -> NTSTATUS;
+    pub type RtlBarrierFn = unsafe extern "stdcall" fn(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
+    pub type RtlBarrierForDeleteFn = unsafe extern "stdcall" fn(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
+    pub type RtlWaitOnAddressFn = unsafe extern "stdcall" fn(Address: *mut ::core::ffi::c_void, CompareAddress: PVOID, AddressSize: SIZE_T, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type RtlInitStringExFn = unsafe extern "stdcall" fn(DestinationString: PSTRING, SourceString: PCSZ) -> NTSTATUS;
+    pub type RtlInitAnsiStringExFn = unsafe extern "stdcall" fn(DestinationString: PANSI_STRING, SourceString: PCSZ) -> NTSTATUS;
+    pub type RtlInitUTF8StringExFn = unsafe extern "stdcall" fn(DestinationString: PUTF8_STRING, SourceString: PCSZ) -> NTSTATUS;
+    pub type RtlUpperCharFn = unsafe extern "stdcall" fn(Character: CHAR) -> CHAR;
+    pub type RtlCompareStringFn = unsafe extern "stdcall" fn(String1: PSTRING, String2: PSTRING, CaseInSensitive: BOOLEAN) -> LONG;
+    pub type RtlEqualStringFn = unsafe extern "stdcall" fn(String1: PSTRING, String2: PSTRING, CaseInSensitive: BOOLEAN) -> BOOLEAN;
+    pub type RtlPrefixStringFn = unsafe extern "stdcall" fn(String1: PSTRING, String2: PSTRING, CaseInSensitive: BOOLEAN) -> BOOLEAN;
+    pub type RtlAppendStringToStringFn = unsafe extern "stdcall" fn(Destination: PSTRING, Source: PSTRING) -> NTSTATUS;
+    pub type RtlAppendAsciizToStringFn = unsafe extern "stdcall" fn(Destination: PSTRING, Source: PCSTR) -> NTSTATUS;
+    pub type RtlCreateUnicodeStringFn = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PCWSTR) -> BOOLEAN;
+    pub type RtlCreateUnicodeStringFromAsciizFn = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PCSTR) -> BOOLEAN;
+    pub type RtlDuplicateUnicodeStringFn = unsafe extern "stdcall" fn(Flags: ULONG, StringIn: PUNICODE_STRING, StringOut: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlUpcaseUnicodeCharFn = unsafe extern "stdcall" fn(SourceCharacter: WCHAR) -> WCHAR;
+    pub type RtlDowncaseUnicodeCharFn = unsafe extern "stdcall" fn(SourceCharacter: WCHAR) -> WCHAR;
+    pub type RtlCompareUnicodeStringFn = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING, CaseInSensitive: BOOLEAN) -> LONG;
+    pub type RtlCompareUnicodeStringsFn = unsafe extern "stdcall" fn(String1: PCWCH, String1Length: SIZE_T, String2: PCWCH, String2Length: SIZE_T, CaseInSensitive: BOOLEAN) -> LONG;
+    pub type RtlEqualUnicodeStringFn = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING, CaseInSensitive: BOOLEAN) -> BOOLEAN;
+    pub type RtlHashUnicodeStringFn = unsafe extern "stdcall" fn(String: PUNICODE_STRING, CaseInSensitive: BOOLEAN, HashAlgorithm: ULONG, HashValue: PULONG) -> NTSTATUS;
+    pub type RtlValidateUnicodeStringFn = unsafe extern "stdcall" fn(Flags: ULONG, String: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlPrefixUnicodeStringFn = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING, CaseInSensitive: BOOLEAN) -> BOOLEAN;
+    pub type RtlFindUnicodeSubstringFn = unsafe extern "stdcall" fn(FullString: PUNICODE_STRING, SearchString: PUNICODE_STRING, CaseInSensitive: BOOLEAN) -> PWCHAR;
+    pub type RtlFindCharInUnicodeStringFn = unsafe extern "stdcall" fn(Flags: ULONG, StringToSearch: PUNICODE_STRING, CharSet: PUNICODE_STRING, NonInclusivePrefixLength: PUSHORT) -> NTSTATUS;
+    pub type RtlAppendUnicodeStringToStringFn = unsafe extern "stdcall" fn(Destination: PUNICODE_STRING, Source: PCUNICODE_STRING) -> NTSTATUS;
+    pub type RtlAppendUnicodeToStringFn = unsafe extern "stdcall" fn(Destination: PUNICODE_STRING, Source: PCWSTR) -> NTSTATUS;
+    pub type RtlUpcaseUnicodeStringFn = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlDowncaseUnicodeStringFn = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlAnsiStringToUnicodeStringFn = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PCANSI_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlxAnsiStringToUnicodeSizeFn = unsafe extern "stdcall" fn(AnsiString: PCANSI_STRING) -> ULONG;
+    pub type RtlUnicodeStringToAnsiStringFn = unsafe extern "stdcall" fn(DestinationString: PANSI_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlUnicodeStringToAnsiSizeFn = unsafe extern "stdcall" fn(SourceString: PUNICODE_STRING) -> ULONG;
+    pub type RtlUnicodeStringToUTF8StringFn = unsafe extern "stdcall" fn(DestinationString: PUTF8_STRING, SourceString: PCUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlUTF8StringToUnicodeStringFn = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PUTF8_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlAnsiCharToUnicodeCharFn = unsafe extern "stdcall" fn(SourceCharacter: *mut PUCHAR) -> WCHAR;
+    pub type RtlUpcaseUnicodeStringToAnsiStringFn = unsafe extern "stdcall" fn(DestinationString: PANSI_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlOemStringToUnicodeStringFn = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: POEM_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlUnicodeStringToOemStringFn = unsafe extern "stdcall" fn(DestinationString: POEM_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlUpcaseUnicodeStringToOemStringFn = unsafe extern "stdcall" fn(DestinationString: POEM_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlOemStringToCountedUnicodeStringFn = unsafe extern "stdcall" fn(DestinationString: PUNICODE_STRING, SourceString: PCOEM_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlUnicodeStringToCountedOemStringFn = unsafe extern "stdcall" fn(DestinationString: POEM_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlUpcaseUnicodeStringToCountedOemStringFn = unsafe extern "stdcall" fn(DestinationString: POEM_STRING, SourceString: PUNICODE_STRING, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlMultiByteToUnicodeNFn = unsafe extern "stdcall" fn(UnicodeString: PWCH, MaxBytesInUnicodeString: ULONG, BytesInUnicodeString: PULONG, MultiByteString: PCSTR, BytesInMultiByteString: ULONG) -> NTSTATUS;
+    pub type RtlMultiByteToUnicodeSizeFn = unsafe extern "stdcall" fn(BytesInUnicodeString: PULONG, MultiByteString: PCSTR, BytesInMultiByteString: ULONG) -> NTSTATUS;
+    pub type RtlUnicodeToMultiByteNFn = unsafe extern "stdcall" fn(MultiByteString: PCHAR, MaxBytesInMultiByteString: ULONG, BytesInMultiByteString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
+    pub type RtlUnicodeToMultiByteSizeFn = unsafe extern "stdcall" fn(BytesInMultiByteString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
+    pub type RtlUpcaseUnicodeToMultiByteNFn = unsafe extern "stdcall" fn(MultiByteString: PCHAR, MaxBytesInMultiByteString: ULONG, BytesInMultiByteString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
+    pub type RtlOemToUnicodeNFn = unsafe extern "stdcall" fn(UnicodeString: PWSTR, MaxBytesInUnicodeString: ULONG, BytesInUnicodeString: PULONG, OemString: PCCH, BytesInOemString: ULONG) -> NTSTATUS;
+    pub type RtlUnicodeToOemNFn = unsafe extern "stdcall" fn(OemString: PCHAR, MaxBytesInOemString: ULONG, BytesInOemString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
+    pub type RtlUpcaseUnicodeToOemNFn = unsafe extern "stdcall" fn(OemString: PCHAR, MaxBytesInOemString: ULONG, BytesInOemString: PULONG, UnicodeString: PCWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
+    pub type RtlConsoleMultiByteToUnicodeNFn = unsafe extern "stdcall" fn(UnicodeString: PWCH, MaxBytesInUnicodeString: ULONG, BytesInUnicodeString: PULONG, MultiByteString: PCCH, BytesInMultiByteString: ULONG, pdwSpecialChar: PULONG) -> NTSTATUS;
+    pub type RtlUTF8ToUnicodeNFn = unsafe extern "stdcall" fn(UnicodeStringDestination: PWSTR, UnicodeStringMaxByteCount: ULONG, UnicodeStringActualByteCount: PULONG, UTF8StringSource: PCCH, UTF8StringByteCount: ULONG) -> NTSTATUS;
+    pub type RtlUnicodeToUTF8NFn = unsafe extern "stdcall" fn(UTF8StringDestination: PCHAR, UTF8StringMaxByteCount: ULONG, UTF8StringActualByteCount: PULONG, UnicodeStringSource: PCWCH, UnicodeStringByteCount: ULONG) -> NTSTATUS;
+    pub type RtlCustomCPToUnicodeNFn = unsafe extern "stdcall" fn(CustomCP: PCPTABLEINFO, UnicodeString: PWCH, MaxBytesInUnicodeString: ULONG, BytesInUnicodeString: PULONG, CustomCPString: PCH, BytesInCustomCPString: ULONG) -> NTSTATUS;
+    pub type RtlUnicodeToCustomCPNFn = unsafe extern "stdcall" fn(CustomCP: PCPTABLEINFO, CustomCPString: PCH, MaxBytesInCustomCPString: ULONG, BytesInCustomCPString: PULONG, UnicodeString: PWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
+    pub type RtlUpcaseUnicodeToCustomCPNFn = unsafe extern "stdcall" fn(CustomCP: PCPTABLEINFO, CustomCPString: PCH, MaxBytesInCustomCPString: ULONG, BytesInCustomCPString: PULONG, UnicodeString: PWCH, BytesInUnicodeString: ULONG) -> NTSTATUS;
+    pub type RtlIsTextUnicodeFn = unsafe extern "stdcall" fn(Buffer: PVOID, Size: ULONG, Result: PULONG) -> BOOLEAN;
+    pub type RtlNormalizeStringFn = unsafe extern "stdcall" fn(NormForm: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, DestinationString: PWSTR, DestinationStringLength: PLONG) -> NTSTATUS;
+    pub type RtlIsNormalizedStringFn = unsafe extern "stdcall" fn(NormForm: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, Normalized: PBOOLEAN) -> NTSTATUS;
+    pub type RtlIsNameInExpressionFn = unsafe extern "stdcall" fn(Expression: PUNICODE_STRING, Name: PUNICODE_STRING, IgnoreCase: BOOLEAN, UpcaseTable: PWCH) -> BOOLEAN;
+    pub type RtlIsNameInUnUpcasedExpressionFn = unsafe extern "stdcall" fn(Expression: PUNICODE_STRING, Name: PUNICODE_STRING, IgnoreCase: BOOLEAN, UpcaseTable: PWCH) -> BOOLEAN;
+    pub type RtlDoesNameContainWildCardsFn = unsafe extern "stdcall" fn(Expression: PUNICODE_STRING) -> BOOLEAN;
+    pub type RtlEqualDomainNameFn = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING) -> BOOLEAN;
+    pub type RtlEqualComputerNameFn = unsafe extern "stdcall" fn(String1: PUNICODE_STRING, String2: PUNICODE_STRING) -> BOOLEAN;
+    pub type RtlDnsHostNameToComputerNameFn = unsafe extern "stdcall" fn(ComputerNameString: PUNICODE_STRING, DnsHostNameString: PUNICODE_STRING, AllocateComputerNameString: BOOLEAN) -> NTSTATUS;
+    pub type RtlStringFromGUIDFn = unsafe extern "stdcall" fn(Guid: PGUID, GuidString: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlStringFromGUIDExFn = unsafe extern "stdcall" fn(Guid: PGUID, GuidString: PUNICODE_STRING, AllocateGuidString: BOOLEAN) -> NTSTATUS;
+    pub type RtlGUIDFromStringFn = unsafe extern "stdcall" fn(GuidString: PUNICODE_STRING, Guid: PGUID) -> NTSTATUS;
+    pub type RtlCompareAltitudesFn = unsafe extern "stdcall" fn(Altitude1: PUNICODE_STRING, Altitude2: PUNICODE_STRING) -> LONG;
+    pub type RtlIdnToAsciiFn = unsafe extern "stdcall" fn(Flags: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, DestinationString: PWSTR, DestinationStringLength: PLONG) -> NTSTATUS;
+    pub type RtlIdnToUnicodeFn = unsafe extern "stdcall" fn(Flags: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, DestinationString: PWSTR, DestinationStringLength: PLONG) -> NTSTATUS;
+    pub type RtlIdnToNameprepUnicodeFn = unsafe extern "stdcall" fn(Flags: ULONG, SourceString: PCWSTR, SourceStringLength: LONG, DestinationString: PWSTR, DestinationStringLength: PLONG) -> NTSTATUS;
+    pub type PfxInsertPrefixFn = unsafe extern "stdcall" fn(PrefixTable: PPREFIX_TABLE, Prefix: PSTRING, PrefixTableEntry: PPREFIX_TABLE_ENTRY) -> BOOLEAN;
+    pub type PfxFindPrefixFn = unsafe extern "stdcall" fn(PrefixTable: PPREFIX_TABLE, FullName: PSTRING) -> PPREFIX_TABLE_ENTRY;
+    pub type RtlInsertUnicodePrefixFn = unsafe extern "stdcall" fn(PrefixTable: PUNICODE_PREFIX_TABLE, Prefix: PUNICODE_STRING, PrefixTableEntry: PUNICODE_PREFIX_TABLE_ENTRY) -> BOOLEAN;
+    pub type RtlFindUnicodePrefixFn = unsafe extern "stdcall" fn(PrefixTable: PUNICODE_PREFIX_TABLE, FullName: PUNICODE_STRING, CaseInsensitiveIndex: ULONG) -> PUNICODE_PREFIX_TABLE_ENTRY;
+    pub type RtlNextUnicodePrefixFn = unsafe extern "stdcall" fn(PrefixTable: PUNICODE_PREFIX_TABLE, Restart: BOOLEAN) -> PUNICODE_PREFIX_TABLE_ENTRY;
+    pub type RtlGetCompressionWorkSpaceSizeFn = unsafe extern "stdcall" fn(CompressionFormatAndEngine: USHORT, CompressBufferWorkSpaceSize: PULONG, CompressFragmentWorkSpaceSize: PULONG) -> NTSTATUS;
+    pub type RtlCompressBufferFn = unsafe extern "stdcall" fn(CompressionFormatAndEngine: USHORT, UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, UncompressedChunkSize: ULONG, FinalCompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
+    pub type RtlDecompressBufferFn = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, FinalUncompressedSize: PULONG) -> NTSTATUS;
+    pub type RtlDecompressBufferExFn = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, FinalUncompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
+    pub type RtlDecompressBufferEx2Fn = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, UncompressedChunkSize: ULONG, FinalUncompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
+    pub type RtlDecompressFragmentFn = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedFragment: PUCHAR, UncompressedFragmentSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, FragmentOffset: ULONG, FinalUncompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
+    pub type RtlDecompressFragmentExFn = unsafe extern "stdcall" fn(CompressionFormat: USHORT, UncompressedFragment: PUCHAR, UncompressedFragmentSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, FragmentOffset: ULONG, UncompressedChunkSize: ULONG, FinalUncompressedSize: PULONG, WorkSpace: PVOID) -> NTSTATUS;
+    pub type RtlDescribeChunkFn = unsafe extern "stdcall" fn(CompressionFormat: USHORT, CompressedBuffer: *mut PUCHAR, EndOfCompressedBufferPlus1: PUCHAR, ChunkBuffer: *mut PUCHAR, ChunkSize: PULONG) -> NTSTATUS;
+    pub type RtlReserveChunkFn = unsafe extern "stdcall" fn(CompressionFormat: USHORT, CompressedBuffer: *mut PUCHAR, EndOfCompressedBufferPlus1: PUCHAR, ChunkBuffer: *mut PUCHAR, ChunkSize: ULONG) -> NTSTATUS;
+    pub type RtlDecompressChunksFn = unsafe extern "stdcall" fn(UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, CompressedTail: PUCHAR, CompressedTailSize: ULONG, CompressedDataInfo: PCOMPRESSED_DATA_INFO) -> NTSTATUS;
+    pub type RtlCompressChunksFn = unsafe extern "stdcall" fn(UncompressedBuffer: PUCHAR, UncompressedBufferSize: ULONG, CompressedBuffer: PUCHAR, CompressedBufferSize: ULONG, CompressedDataInfo: PCOMPRESSED_DATA_INFO, CompressedDataInfoLength: ULONG, WorkSpace: PVOID) -> NTSTATUS;
+    pub type RtlConvertLCIDToStringFn = unsafe extern "stdcall" fn(LcidValue: LCID, Base: ULONG, Padding: ULONG, pResultBuf: PWSTR, Size: ULONG) -> NTSTATUS;
+    pub type RtlIsValidLocaleNameFn = unsafe extern "stdcall" fn(LocaleName: PCWSTR, Flags: ULONG) -> BOOLEAN;
+    pub type RtlGetParentLocaleNameFn = unsafe extern "stdcall" fn(LocaleName: PCWSTR, ParentLocaleName: PUNICODE_STRING, Flags: ULONG, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlLcidToLocaleNameFn = unsafe extern "stdcall" fn(lcid: LCID, LocaleName: PUNICODE_STRING, Flags: ULONG, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlLocaleNameToLcidFn = unsafe extern "stdcall" fn(LocaleName: PCWSTR, lcid: PLCID, Flags: ULONG) -> NTSTATUS;
+    pub type RtlLCIDToCultureNameFn = unsafe extern "stdcall" fn(Lcid: LCID, String: PUNICODE_STRING) -> BOOLEAN;
+    pub type RtlCultureNameToLCIDFn = unsafe extern "stdcall" fn(String: PUNICODE_STRING, Lcid: PLCID) -> BOOLEAN;
+    pub type RtlGetThreadPreferredUILanguagesFn = unsafe extern "stdcall" fn(Flags: ULONG, NumberOfLanguages: PULONG, Languages: PZZWSTR, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlGetProcessPreferredUILanguagesFn = unsafe extern "stdcall" fn(Flags: ULONG, NumberOfLanguages: PULONG, Languages: PZZWSTR, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlGetSystemPreferredUILanguagesFn = unsafe extern "stdcall" fn(Flags: ULONG, LocaleName: PCWSTR, NumberOfLanguages: PULONG, Languages: PZZWSTR, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlpGetSystemDefaultUILanguageFn = unsafe extern "stdcall" fn(DefaultUILanguageId: LANGID, Lcid: PLCID) -> NTSTATUS;
+    pub type RtlGetUserPreferredUILanguagesFn = unsafe extern "stdcall" fn(Flags: ULONG, LocaleName: PCWSTR, NumberOfLanguages: PULONG, Languages: PZZWSTR, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlGetUILanguageInfoFn = unsafe extern "stdcall" fn(Flags: ULONG, Languages: PCZZWSTR, FallbackLanguages: PZZWSTR, NumberOfFallbackLanguages: PULONG, Attributes: PULONG) -> NTSTATUS;
+    pub type RtlGetLocaleFileMappingAddressFn = unsafe extern "stdcall" fn(BaseAddress: *mut PVOID, DefaultLocaleId: PLCID, DefaultCasingTableSize: PLARGE_INTEGER, CurrentNLSVersion: PULONG) -> NTSTATUS;
+    pub type RtlGetCurrentPebFn = unsafe extern "stdcall" fn() -> PPEB;
+    pub type RtlAcquirePebLockFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlReleasePebLockFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlTryAcquirePebLockFn = unsafe extern "stdcall" fn() -> LOGICAL;
+    pub type RtlCreateProcessParametersFn = unsafe extern "stdcall" fn(pProcessParameters: *mut PRTL_USER_PROCESS_PARAMETERS, ImagePathName: PUNICODE_STRING, DllPath: PUNICODE_STRING, CurrentDirectory: PUNICODE_STRING, CommandLine: PUNICODE_STRING, Environment: PVOID, WindowTitle: PUNICODE_STRING, DesktopInfo: PUNICODE_STRING, ShellInfo: PUNICODE_STRING, RuntimeData: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlCreateProcessParametersExFn = unsafe extern "stdcall" fn(pProcessParameters: *mut PRTL_USER_PROCESS_PARAMETERS, ImagePathName: PUNICODE_STRING, DllPath: PUNICODE_STRING, CurrentDirectory: PUNICODE_STRING, CommandLine: PUNICODE_STRING, Environment: PVOID, WindowTitle: PUNICODE_STRING, DesktopInfo: PUNICODE_STRING, ShellInfo: PUNICODE_STRING, RuntimeData: PUNICODE_STRING, Flags: ULONG) -> NTSTATUS;
+    pub type RtlCreateProcessParametersWithTemplateFn = unsafe extern "stdcall" fn(pProcessParameters: *mut PRTL_USER_PROCESS_PARAMETERS, ImagePathName: PUNICODE_STRING, DllPath: PUNICODE_STRING, CurrentDirectory: PUNICODE_STRING, CommandLine: PUNICODE_STRING, Environment: PVOID, WindowTitle: PUNICODE_STRING, DesktopInfo: PUNICODE_STRING, ShellInfo: PUNICODE_STRING, RuntimeData: PUNICODE_STRING, RedirectionDllName: PUNICODE_STRING, Flags: ULONG) -> NTSTATUS;
+    pub type RtlDestroyProcessParametersFn = unsafe extern "stdcall" fn(ProcessParameters: PRTL_USER_PROCESS_PARAMETERS) -> NTSTATUS;
+    pub type RtlNormalizeProcessParamsFn = unsafe extern "stdcall" fn(ProcessParameters: PRTL_USER_PROCESS_PARAMETERS) -> PRTL_USER_PROCESS_PARAMETERS;
+    pub type RtlDeNormalizeProcessParamsFn = unsafe extern "stdcall" fn(ProcessParameters: PRTL_USER_PROCESS_PARAMETERS) -> PRTL_USER_PROCESS_PARAMETERS;
+    pub type RtlCreateUserProcessFn = unsafe extern "stdcall" fn(NtImagePathName: PUNICODE_STRING, ExtendedParameters: ULONG, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, ProcessSecurityDescriptor: PSECURITY_DESCRIPTOR, ThreadSecurityDescriptor: PSECURITY_DESCRIPTOR, ParentProcess: HANDLE, InheritHandles: BOOLEAN, DebugPort: HANDLE, TokenHandle: HANDLE, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
+    pub type RtlCreateUserProcessExFn = unsafe extern "stdcall" fn(NtImagePathName: PUNICODE_STRING, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, InheritHandles: BOOLEAN, ProcessExtendedParameters: PRTL_USER_PROCESS_EXTENDED_PARAMETERS, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
+    pub type RtlExitUserProcessFn = unsafe extern "stdcall" fn(ExitStatus: NTSTATUS) -> !;
+    pub type RtlCloneUserProcessFn = unsafe extern "stdcall" fn(ProcessFlags: ULONG, ProcessSecurityDescriptor: PSECURITY_DESCRIPTOR, ThreadSecurityDescriptor: PSECURITY_DESCRIPTOR, DebugPort: HANDLE, ProcessInformation: PRTL_USER_PROCESS_INFORMATION) -> NTSTATUS;
+    pub type RtlPrepareForProcessCloningFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlCompleteProcessCloningFn = unsafe extern "stdcall" fn(Completed: LOGICAL) -> NTSTATUS;
+    pub type RtlCreateProcessReflectionFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Flags: ULONG, StartRoutine: PVOID, StartContext: PVOID, EventHandle: HANDLE, ReflectionInformation: PRTLP_PROCESS_REFLECTION_REFLECTION_INFORMATION) -> NTSTATUS;
+    pub type RtlSetThreadSubProcessTagFn = unsafe extern "stdcall" fn(SubProcessTag: PVOID) -> PVOID;
+    pub type RtlValidProcessProtectionFn = unsafe extern "stdcall" fn(ProcessProtection: PS_PROTECTION) -> BOOLEAN;
+    pub type RtlTestProtectedAccessFn = unsafe extern "stdcall" fn(Source: PS_PROTECTION, Target: PS_PROTECTION) -> BOOLEAN;
+    pub type RtlIsCurrentProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> BOOLEAN;
+    pub type RtlIsCurrentThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> BOOLEAN;
+    pub type RtlCreateUserThreadFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ThreadSecurityDescriptor: PSECURITY_DESCRIPTOR, CreateSuspended: BOOLEAN, ZeroBits: ULONG, MaximumStackSize: SIZE_T, CommittedStackSize: SIZE_T, StartAddress: PUSER_THREAD_START_ROUTINE, Parameter: PVOID, ThreadHandle: PHANDLE, ClientId: PCLIENT_ID) -> NTSTATUS;
+    pub type RtlExitUserThreadFn = unsafe extern "stdcall" fn(ExitStatus: NTSTATUS) -> !;
+    pub type RtlIsCurrentThreadAttachExemptFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type RtlCreateUserStackFn = unsafe extern "stdcall" fn(CommittedStackSize: SIZE_T, MaximumStackSize: SIZE_T, ZeroBits: ULONG_PTR, PageSize: SIZE_T, ReserveAlignment: ULONG_PTR, InitialTeb: PINITIAL_TEB) -> NTSTATUS;
+    pub type RtlFreeUserStackFn = unsafe extern "stdcall" fn(AllocationBase: PVOID) -> NTSTATUS;
+    pub type RtlInitializeContextFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Context: PCONTEXT, Parameter: PVOID, InitialPc: PVOID, InitialSp: PVOID) -> NTSTATUS;
+    pub type RtlInitializeExtendedContextFn = unsafe extern "stdcall" fn(Context: PCONTEXT, ContextFlags: ULONG, ContextEx: *mut PCONTEXT_EX) -> NTSTATUS;
+    pub type RtlInitializeExtendedContext2Fn = unsafe extern "stdcall" fn(Context: PCONTEXT, ContextFlags: ULONG, ContextEx: *mut PCONTEXT_EX, EnabledExtendedFeatures: ULONG64) -> NTSTATUS;
+    pub type RtlCopyContextFn = unsafe extern "stdcall" fn(Context: PCONTEXT, ContextFlags: ULONG, Source: PCONTEXT) -> NTSTATUS;
+    pub type RtlCopyExtendedContextFn = unsafe extern "stdcall" fn(Destination: PCONTEXT_EX, ContextFlags: ULONG, Source: PCONTEXT_EX) -> NTSTATUS;
+    pub type RtlGetExtendedContextLengthFn = unsafe extern "stdcall" fn(ContextFlags: ULONG, ContextLength: PULONG) -> NTSTATUS;
+    pub type RtlGetExtendedContextLength2Fn = unsafe extern "stdcall" fn(ContextFlags: ULONG, ContextLength: PULONG, EnabledExtendedFeatures: ULONG64) -> NTSTATUS;
+    pub type RtlGetExtendedFeaturesMaskFn = unsafe extern "stdcall" fn(ContextEx: PCONTEXT_EX) -> ULONG64;
+    pub type RtlLocateExtendedFeatureFn = unsafe extern "stdcall" fn(ContextEx: PCONTEXT_EX, FeatureId: ULONG, Length: PULONG) -> PVOID;
+    pub type RtlLocateLegacyContextFn = unsafe extern "stdcall" fn(ContextEx: PCONTEXT_EX, Length: PULONG) -> PCONTEXT;
+    pub type RtlRemoteCallFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ThreadHandle: HANDLE, CallSite: PVOID, ArgumentCount: ULONG, Arguments: PULONG_PTR, PassContext: BOOLEAN, AlreadySuspended: BOOLEAN) -> NTSTATUS;
+    pub type RtlAddVectoredExceptionHandlerFn = unsafe extern "stdcall" fn(First: ULONG, Handler: PVECTORED_EXCEPTION_HANDLER) -> PVOID;
+    pub type RtlRemoveVectoredExceptionHandlerFn = unsafe extern "stdcall" fn(Handle: PVOID) -> ULONG;
+    pub type RtlAddVectoredContinueHandlerFn = unsafe extern "stdcall" fn(First: ULONG, Handler: PVECTORED_EXCEPTION_HANDLER) -> PVOID;
+    pub type RtlRemoveVectoredContinueHandlerFn = unsafe extern "stdcall" fn(Handle: PVOID) -> ULONG;
+    pub type RtlUnhandledExceptionFilterFn = unsafe extern "stdcall" fn(ExceptionPointers: PEXCEPTION_POINTERS) -> LONG;
+    pub type RtlUnhandledExceptionFilter2Fn = unsafe extern "stdcall" fn(ExceptionPointers: PEXCEPTION_POINTERS, Flags: ULONG) -> LONG;
+    pub type RtlKnownExceptionFilterFn = unsafe extern "stdcall" fn(ExceptionPointers: PEXCEPTION_POINTERS) -> LONG;
+    pub type RtlFirstEntrySListFn = unsafe extern "stdcall" fn(ListHead: *const SLIST_HEADER) -> PSLIST_ENTRY;
+    pub type RtlInterlockedPopEntrySListFn = unsafe extern "stdcall" fn(ListHead: PSLIST_HEADER) -> PSLIST_ENTRY;
+    pub type RtlInterlockedPushEntrySListFn = unsafe extern "stdcall" fn(ListHead: PSLIST_HEADER, ListEntry: PSLIST_ENTRY) -> PSLIST_ENTRY;
+    pub type RtlInterlockedPushListSListExFn = unsafe extern "stdcall" fn(ListHead: PSLIST_HEADER, List: PSLIST_ENTRY, ListEnd: PSLIST_ENTRY, Count: DWORD) -> PSLIST_ENTRY;
+    pub type RtlInterlockedFlushSListFn = unsafe extern "stdcall" fn(ListHead: PSLIST_HEADER) -> PSLIST_ENTRY;
+    pub type RtlQueryDepthSListFn = unsafe extern "stdcall" fn(ListHead: PSLIST_HEADER) -> WORD;
+    pub type RtlGetActiveActivationContextFn = unsafe extern "stdcall" fn(ActivationContext: PACTIVATION_CONTEXT) -> NTSTATUS;
+    pub type RtlZombifyActivationContextFn = unsafe extern "stdcall" fn(ActivationContext: PACTIVATION_CONTEXT) -> NTSTATUS;
+    pub type RtlIsActivationContextActiveFn = unsafe extern "stdcall" fn(ActivationContext: PACTIVATION_CONTEXT) -> BOOLEAN;
+    pub type RtlActivateActivationContextFn = unsafe extern "stdcall" fn(Flags: ULONG, ActivationContext: PACTIVATION_CONTEXT, Cookie: PULONG_PTR) -> NTSTATUS;
+    pub type RtlActivateActivationContextExFn = unsafe extern "stdcall" fn(Flags: ULONG, Teb: PTEB, ActivationContext: PACTIVATION_CONTEXT, Cookie: PULONG_PTR) -> NTSTATUS;
+    pub type RtlCreateActivationContextFn = unsafe extern "stdcall" fn(Flags: ULONG, ActivationContextData: PACTIVATION_CONTEXT_DATA, ExtraBytes: ULONG, NotificationRoutine: PACTIVATION_CONTEXT_NOTIFY_ROUTINE, NotificationContext: PVOID, ActivationContext: *mut PACTIVATION_CONTEXT) -> NTSTATUS;
+    pub type RtlFindActivationContextSectionStringFn = unsafe extern "stdcall" fn(Flags: ULONG, ExtensionGuid: PGUID, SectionId: ULONG, StringToFind: PUNICODE_STRING, ReturnedData: PACTCTX_SECTION_KEYED_DATA) -> NTSTATUS;
+    pub type RtlFindActivationContextSectionGuidFn = unsafe extern "stdcall" fn(Flags: ULONG, ExtensionGuid: PGUID, SectionId: ULONG, GuidToFind: PGUID, ReturnedData: PACTCTX_SECTION_KEYED_DATA) -> NTSTATUS;
+    pub type RtlQueryActivationContextApplicationSettingsFn = unsafe extern "stdcall" fn(Flags: ULONG, ActivationContext: PACTIVATION_CONTEXT, SettingsNameSpace: PCWSTR, SettingName: PCWSTR, Buffer: PWSTR, BufferLength: SIZE_T, RequiredLength: PSIZE_T) -> NTSTATUS;
+    pub type RtlQueryInformationActivationContextFn = unsafe extern "stdcall" fn(Flags: ULONG, ActivationContext: PACTIVATION_CONTEXT, SubInstanceIndex: PACTIVATION_CONTEXT_QUERY_INDEX, ActivationContextInformationClass: ACTIVATION_CONTEXT_INFO_CLASS, ActivationContextInformation: PVOID, ActivationContextInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type RtlQueryInformationActiveActivationContextFn = unsafe extern "stdcall" fn(ActivationContextInformationClass: ACTIVATION_CONTEXT_INFO_CLASS, ActivationContextInformation: PVOID, ActivationContextInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type RtlImageNtHeaderFn = unsafe extern "stdcall" fn(BaseOfImage: PVOID) -> PIMAGE_NT_HEADERS;
+    pub type RtlImageNtHeaderExFn = unsafe extern "stdcall" fn(Flags: ULONG, BaseOfImage: PVOID, Size: ULONG64, OutHeaders: *mut PIMAGE_NT_HEADERS) -> NTSTATUS;
+    pub type RtlAddressInSectionTableFn = unsafe extern "stdcall" fn(NtHeaders: PIMAGE_NT_HEADERS, BaseOfImage: PVOID, VirtualAddress: ULONG) -> PVOID;
+    pub type RtlSectionTableFromVirtualAddressFn = unsafe extern "stdcall" fn(NtHeaders: PIMAGE_NT_HEADERS, BaseOfImage: PVOID, VirtualAddress: ULONG) -> PIMAGE_SECTION_HEADER;
+    pub type RtlImageDirectoryEntryToDataFn = unsafe extern "stdcall" fn(BaseOfImage: PVOID, MappedAsImage: BOOLEAN, DirectoryEntry: USHORT, Size: PULONG) -> PVOID;
+    pub type RtlImageRvaToSectionFn = unsafe extern "stdcall" fn(NtHeaders: PIMAGE_NT_HEADERS, BaseOfImage: PVOID, Rva: ULONG) -> PIMAGE_SECTION_HEADER;
+    pub type RtlImageRvaToVaFn = unsafe extern "stdcall" fn(NtHeaders: PIMAGE_NT_HEADERS, BaseOfImage: PVOID, Rva: ULONG, LastRvaSection: *mut PIMAGE_SECTION_HEADER) -> PVOID;
+    pub type RtlFindExportedRoutineByNameFn = unsafe extern "stdcall" fn(BaseOfImage: PVOID, RoutineName: PCSTR) -> PVOID;
+    pub type RtlGuardCheckLongJumpTargetFn = unsafe extern "stdcall" fn(PcValue: PVOID, IsFastFail: BOOL, IsLongJumpTarget: PBOOL) -> NTSTATUS;
+    pub type RtlCompareMemoryFn = unsafe extern "stdcall" fn(Source1: *const ::core::ffi::c_void, Source2: *const ::core::ffi::c_void, Length: SIZE_T) -> SIZE_T;
+    pub type RtlCompareMemoryUlongFn = unsafe extern "stdcall" fn(Source: PVOID, Length: SIZE_T, Pattern: ULONG) -> SIZE_T;
+    pub type RtlIsZeroMemoryFn = unsafe extern "stdcall" fn(Buffer: PVOID, Length: SIZE_T) -> BOOLEAN;
+    pub type RtlCrc32Fn = unsafe extern "stdcall" fn(Buffer: *const ::core::ffi::c_void, Size: usize, InitialCrc: DWORD) -> DWORD;
+    pub type RtlCrc64Fn = unsafe extern "stdcall" fn(Buffer: *const ::core::ffi::c_void, Size: usize, InitialCrc: ULONGLONG) -> ULONGLONG;
+    pub type RtlGetSystemGlobalDataFn = unsafe extern "stdcall" fn(DataId: RTL_SYSTEM_GLOBAL_DATA_ID, Buffer: PVOID, Size: DWORD) -> DWORD;
+    pub type RtlSetSystemGlobalDataFn = unsafe extern "stdcall" fn(DataId: RTL_SYSTEM_GLOBAL_DATA_ID, Buffer: PVOID, Size: DWORD) -> DWORD;
+    pub type RtlCreateEnvironmentFn = unsafe extern "stdcall" fn(CloneCurrentEnvironment: BOOLEAN, Environment: *mut PVOID) -> NTSTATUS;
+    pub type RtlCreateEnvironmentExFn = unsafe extern "stdcall" fn(SourceEnvironment: PVOID, Environment: *mut PVOID, Flags: ULONG) -> NTSTATUS;
+    pub type RtlDestroyEnvironmentFn = unsafe extern "stdcall" fn(Environment: PVOID) -> NTSTATUS;
+    pub type RtlSetCurrentEnvironmentFn = unsafe extern "stdcall" fn(Environment: PVOID, PreviousEnvironment: *mut PVOID) -> NTSTATUS;
+    pub type RtlSetEnvironmentVarFn = unsafe extern "stdcall" fn(Environment: *mut PVOID, Name: PCWSTR, NameLength: SIZE_T, Value: PCWSTR, ValueLength: SIZE_T) -> NTSTATUS;
+    pub type RtlSetEnvironmentVariableFn = unsafe extern "stdcall" fn(Environment: *mut PVOID, Name: PUNICODE_STRING, Value: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlQueryEnvironmentVariableFn = unsafe extern "stdcall" fn(Environment: PVOID, Name: PCWSTR, NameLength: SIZE_T, Value: PWSTR, ValueLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type RtlQueryEnvironmentVariable_UFn = unsafe extern "stdcall" fn(Environment: PVOID, Name: PUNICODE_STRING, Value: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlExpandEnvironmentStringsFn = unsafe extern "stdcall" fn(Environment: PVOID, Source: PCWSTR, SourceLength: SIZE_T, Destination: PWSTR, DestinationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type RtlExpandEnvironmentStrings_UFn = unsafe extern "stdcall" fn(Environment: PVOID, Source: PUNICODE_STRING, Destination: PUNICODE_STRING, ReturnedLength: PULONG) -> NTSTATUS;
+    pub type RtlSetEnvironmentStringsFn = unsafe extern "stdcall" fn(NewEnvironment: PCWSTR, NewEnvironmentSize: SIZE_T) -> NTSTATUS;
+    pub type RtlDetermineDosPathNameType_UFn = unsafe extern "stdcall" fn(DosFileName: PCWSTR) -> RTL_PATH_TYPE;
+    pub type RtlIsDosDeviceName_UFn = unsafe extern "stdcall" fn(DosFileName: PCWSTR) -> ULONG;
+    pub type RtlGetFullPathName_UFn = unsafe extern "stdcall" fn(FileName: PCWSTR, BufferLength: ULONG, Buffer: PWSTR, FilePart: *mut PWSTR) -> ULONG;
+    pub type RtlGetFullPathName_UExFn = unsafe extern "stdcall" fn(FileName: PCWSTR, BufferLength: ULONG, Buffer: PWSTR, FilePart: *mut PWSTR, BytesRequired: *mut ULONG) -> NTSTATUS;
+    pub type RtlGetFullPathName_UstrExFn = unsafe extern "stdcall" fn(FileName: PUNICODE_STRING, StaticString: PUNICODE_STRING, DynamicString: PUNICODE_STRING, StringUsed: *mut PUNICODE_STRING, FilePartPrefixCch: *mut SIZE_T, NameInvalid: PBOOLEAN, InputPathType: *mut RTL_PATH_TYPE, BytesRequired: *mut SIZE_T) -> NTSTATUS;
+    pub type RtlGetCurrentDirectory_UFn = unsafe extern "stdcall" fn(BufferLength: ULONG, Buffer: PWSTR) -> ULONG;
+    pub type RtlSetCurrentDirectory_UFn = unsafe extern "stdcall" fn(PathName: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlGetLongestNtPathLengthFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type RtlNtPathNameToDosPathNameFn = unsafe extern "stdcall" fn(Flags: ULONG, Path: PRTL_UNICODE_STRING_BUFFER, Disposition: PULONG, FilePart: *mut PWSTR) -> NTSTATUS;
+    pub type RtlDosPathNameToNtPathName_UFn = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> BOOLEAN;
+    pub type RtlDosPathNameToNtPathName_U_WithStatusFn = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> NTSTATUS;
+    pub type RtlDosLongPathNameToNtPathName_U_WithStatusFn = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> NTSTATUS;
+    pub type RtlDosPathNameToRelativeNtPathName_UFn = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> BOOLEAN;
+    pub type RtlDosPathNameToRelativeNtPathName_U_WithStatusFn = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> NTSTATUS;
+    pub type RtlDosLongPathNameToRelativeNtPathName_U_WithStatusFn = unsafe extern "stdcall" fn(DosFileName: PCWSTR, NtFileName: PUNICODE_STRING, FilePart: *mut PWSTR, RelativeName: PRTL_RELATIVE_NAME_U) -> NTSTATUS;
+    pub type RtlDosSearchPath_UFn = unsafe extern "stdcall" fn(Path: PCWSTR, FileName: PCWSTR, Extension: PCWSTR, BufferLength: ULONG, Buffer: PWSTR, FilePart: *mut PWSTR) -> ULONG;
+    pub type RtlDosSearchPath_UstrFn = unsafe extern "stdcall" fn(Flags: ULONG, Path: PUNICODE_STRING, FileName: PUNICODE_STRING, DefaultExtension: PUNICODE_STRING, StaticString: PUNICODE_STRING, DynamicString: PUNICODE_STRING, FullFileNameOut: *mut PCUNICODE_STRING, FilePartPrefixCch: *mut SIZE_T, BytesRequired: *mut SIZE_T) -> NTSTATUS;
+    pub type RtlDoesFileExists_UFn = unsafe extern "stdcall" fn(FileName: PCWSTR) -> BOOLEAN;
+    pub type RtlDosApplyFileIsolationRedirection_UstrFn = unsafe extern "stdcall" fn(Flags: ULONG, OriginalName: PUNICODE_STRING, Extension: PUNICODE_STRING, StaticString: PUNICODE_STRING, DynamicString: PUNICODE_STRING, NewName: *mut PUNICODE_STRING, NewFlags: PULONG, FileNameSize: PSIZE_T, RequiredLength: PSIZE_T) -> NTSTATUS;
+    pub type RtlGetLengthWithoutLastFullDosOrNtPathElementFn = unsafe extern "stdcall" fn(Flags: ULONG, PathString: PUNICODE_STRING, Length: PULONG) -> NTSTATUS;
+    pub type RtlGetLengthWithoutTrailingPathSeperatorsFn = unsafe extern "stdcall" fn(Flags: ULONG, PathString: PUNICODE_STRING, Length: PULONG) -> NTSTATUS;
+    pub type RtlGenerate8dot3NameFn = unsafe extern "stdcall" fn(Name: PUNICODE_STRING, AllowExtendedCharacters: BOOLEAN, Context: PGENERATE_NAME_CONTEXT, Name8dot3: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlComputePrivatizedDllName_UFn = unsafe extern "stdcall" fn(DllName: PUNICODE_STRING, RealName: PUNICODE_STRING, LocalName: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlGetSearchPathFn = unsafe extern "stdcall" fn(SearchPathW: *mut PWSTR) -> NTSTATUS;
+    pub type RtlSetSearchPathModeFn = unsafe extern "stdcall" fn(Flags: ULONG) -> NTSTATUS;
+    pub type RtlGetExePathFn = unsafe extern "stdcall" fn(DosPathName: PCWSTR, SearchPathW: *mut PWSTR) -> NTSTATUS;
+    pub type RtlReplaceSystemDirectoryInPathFn = unsafe extern "stdcall" fn(Destination: PUNICODE_STRING, Machine: USHORT, TargetMachine: USHORT, IncludePathSeperator: BOOLEAN) -> ULONG;
+    pub type RtlWow64GetCurrentMachineFn = unsafe extern "stdcall" fn() -> USHORT;
+    pub type RtlWow64IsWowGuestMachineSupportedFn = unsafe extern "stdcall" fn(NativeMachine: USHORT, IsWowGuestMachineSupported: PBOOLEAN) -> NTSTATUS;
+    pub type RtlWow64GetProcessMachinesFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessMachine: PUSHORT, NativeMachine: PUSHORT) -> NTSTATUS;
+    pub type RtlGetImageFileMachinesFn = unsafe extern "stdcall" fn(FileName: PCWSTR, FileMachines: PUSHORT) -> NTSTATUS;
+    pub type RtlGetNtSystemRootFn = unsafe extern "stdcall" fn() -> PWSTR;
+    pub type RtlAreLongPathsEnabledFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type RtlIsThreadWithinLoaderCalloutFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type RtlDllShutdownInProgressFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type RtlCreateHeapFn = unsafe extern "stdcall" fn(Flags: ULONG, HeapBase: PVOID, ReserveSize: SIZE_T, CommitSize: SIZE_T, Lock: PVOID, Parameters: PVOID) -> PVOID;
+    pub type RtlDestroyHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID) -> PVOID;
+    pub type RtlAllocateHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Size: SIZE_T) -> PVOID;
+    pub type RtlFreeHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID) -> LOGICAL;
+    pub type RtlSizeHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID) -> SIZE_T;
+    pub type RtlZeroHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG) -> NTSTATUS;
+    pub type RtlLockHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID) -> BOOLEAN;
+    pub type RtlUnlockHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID) -> BOOLEAN;
+    pub type RtlReAllocateHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID, Size: SIZE_T) -> PVOID;
+    pub type RtlGetUserInfoHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID, UserValue: *mut PVOID, UserFlags: PULONG) -> BOOLEAN;
+    pub type RtlSetUserValueHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID, UserValue: PVOID) -> BOOLEAN;
+    pub type RtlSetUserFlagsHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID, UserFlagsReset: ULONG, UserFlagsSet: ULONG) -> BOOLEAN;
+    pub type RtlCreateTagHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, TagPrefix: PCWSTR, TagNames: PCWSTR) -> ULONG;
+    pub type RtlQueryTagHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, TagIndex: USHORT, ResetCounters: BOOLEAN, TagInfo: PRTL_HEAP_TAG_INFO) -> PWSTR;
+    pub type RtlExtendHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Base: PVOID, Size: SIZE_T) -> NTSTATUS;
+    pub type RtlCompactHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG) -> SIZE_T;
+    pub type RtlValidateHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, BaseAddress: PVOID) -> BOOLEAN;
+    pub type RtlValidateProcessHeapsFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type RtlGetProcessHeapsFn = unsafe extern "stdcall" fn(NumberOfHeaps: ULONG, ProcessHeaps: *mut PVOID) -> ULONG;
+    pub type RtlEnumProcessHeapsFn = unsafe extern "stdcall" fn(EnumRoutine: PRTL_ENUM_HEAPS_ROUTINE, Parameter: PVOID) -> NTSTATUS;
+    pub type RtlUsageHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Usage: PRTL_HEAP_USAGE) -> NTSTATUS;
+    pub type RtlWalkHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Entry: PRTL_HEAP_WALK_ENTRY) -> NTSTATUS;
+    pub type RtlQueryHeapInformationFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, HeapInformationClass: HEAP_INFORMATION_CLASS, HeapInformation: PVOID, HeapInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type RtlSetHeapInformationFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, HeapInformationClass: HEAP_INFORMATION_CLASS, HeapInformation: PVOID, HeapInformationLength: SIZE_T) -> NTSTATUS;
+    pub type RtlMultipleAllocateHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Size: SIZE_T, Count: ULONG, Array: *mut PVOID) -> ULONG;
+    pub type RtlMultipleFreeHeapFn = unsafe extern "stdcall" fn(HeapHandle: PVOID, Flags: ULONG, Count: ULONG, Array: *mut PVOID) -> ULONG;
+    pub type RtlCreateMemoryZoneFn = unsafe extern "stdcall" fn(MemoryZone: *mut PVOID, InitialSize: SIZE_T, Flags: ULONG) -> NTSTATUS;
+    pub type RtlDestroyMemoryZoneFn = unsafe extern "stdcall" fn(MemoryZone: PVOID) -> NTSTATUS;
+    pub type RtlAllocateMemoryZoneFn = unsafe extern "stdcall" fn(MemoryZone: PVOID, BlockSize: SIZE_T, Block: *mut PVOID) -> NTSTATUS;
+    pub type RtlResetMemoryZoneFn = unsafe extern "stdcall" fn(MemoryZone: PVOID) -> NTSTATUS;
+    pub type RtlLockMemoryZoneFn = unsafe extern "stdcall" fn(MemoryZone: PVOID) -> NTSTATUS;
+    pub type RtlUnlockMemoryZoneFn = unsafe extern "stdcall" fn(MemoryZone: PVOID) -> NTSTATUS;
+    pub type RtlCreateMemoryBlockLookasideFn = unsafe extern "stdcall" fn(MemoryBlockLookaside: *mut PVOID, Flags: ULONG, InitialSize: ULONG, MinimumBlockSize: ULONG, MaximumBlockSize: ULONG) -> NTSTATUS;
+    pub type RtlDestroyMemoryBlockLookasideFn = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID) -> NTSTATUS;
+    pub type RtlAllocateMemoryBlockLookasideFn = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID, BlockSize: ULONG, Block: *mut PVOID) -> NTSTATUS;
+    pub type RtlFreeMemoryBlockLookasideFn = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID, Block: PVOID) -> NTSTATUS;
+    pub type RtlExtendMemoryBlockLookasideFn = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID, Increment: ULONG) -> NTSTATUS;
+    pub type RtlResetMemoryBlockLookasideFn = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID) -> NTSTATUS;
+    pub type RtlLockMemoryBlockLookasideFn = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID) -> NTSTATUS;
+    pub type RtlUnlockMemoryBlockLookasideFn = unsafe extern "stdcall" fn(MemoryBlockLookaside: PVOID) -> NTSTATUS;
+    pub type RtlGetCurrentTransactionFn = unsafe extern "stdcall" fn(ExistingFileName: PCWSTR, NewFileName: PCWSTR) -> HANDLE;
+    pub type RtlSetCurrentTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: HANDLE) -> LOGICAL;
+    pub type RtlConvertLongToLuidFn = unsafe extern "stdcall" fn(Long: LONG) -> LUID;
+    pub type RtlConvertUlongToLuidFn = unsafe extern "stdcall" fn(Ulong: ULONG) -> LUID;
+    pub type RtlConvertLuidToLonglongFn = unsafe extern "stdcall" fn(Luid: LUID) -> LONGLONG;
+    pub type RtlConvertLuidToUlonglongFn = unsafe extern "stdcall" fn(Luid: LUID) -> ULONGLONG;
+    pub type RtlConvertUlongToLargeIntegerFn = unsafe extern "stdcall" fn(UnsignedInteger: ULONG) -> LARGE_INTEGER;
+    pub type RtlConvertLongToLargeIntegerFn = unsafe extern "stdcall" fn(SignedInteger: LONG) -> LARGE_INTEGER;
+    pub type RtlEnlargedIntegerMultiplyFn = unsafe extern "stdcall" fn(Multiplicand: LONG, Multiplier: LONG) -> LARGE_INTEGER;
+    pub type RtlEnlargedUnsignedMultiplyFn = unsafe extern "stdcall" fn(Multiplicand: ULONG, Multiplier: ULONG) -> LARGE_INTEGER;
+    pub type RtlCreateQueryDebugBufferFn = unsafe extern "stdcall" fn(MaximumCommit: ULONG, UseEventPair: BOOLEAN) -> PRTL_DEBUG_INFORMATION;
+    pub type RtlDestroyQueryDebugBufferFn = unsafe extern "stdcall" fn(Buffer: PRTL_DEBUG_INFORMATION) -> NTSTATUS;
+    pub type RtlCommitDebugInfoFn = unsafe extern "stdcall" fn(Buffer: PRTL_DEBUG_INFORMATION, Size: SIZE_T) -> PVOID;
+    pub type RtlQueryProcessDebugInformationFn = unsafe extern "stdcall" fn(UniqueProcessId: HANDLE, Flags: ULONG, Buffer: PRTL_DEBUG_INFORMATION) -> NTSTATUS;
+    pub type RtlSetProcessDebugInformationFn = unsafe extern "stdcall" fn(UniqueProcessId: HANDLE, Flags: ULONG, Buffer: PRTL_DEBUG_INFORMATION) -> NTSTATUS;
+    pub type RtlIsAnyDebuggerPresentFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type RtlDebugPrintTimesFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlFindMessageFn = unsafe extern "stdcall" fn(DllHandle: PVOID, MessageTableId: ULONG, MessageLanguageId: ULONG, MessageId: ULONG, MessageEntry: *mut PMESSAGE_RESOURCE_ENTRY) -> NTSTATUS;
+    pub type RtlFormatMessageFn = unsafe extern "stdcall" fn(MessageFormat: PCWSTR, MaximumWidth: ULONG, IgnoreInserts: BOOLEAN, ArgumentsAreAnsi: BOOLEAN, ArgumentsAreAnArray: BOOLEAN, Arguments: *mut va_list, Buffer: PWSTR, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlFormatMessageExFn = unsafe extern "stdcall" fn(MessageFormat: PCWSTR, MaximumWidth: ULONG, IgnoreInserts: BOOLEAN, ArgumentsAreAnsi: BOOLEAN, ArgumentsAreAnArray: BOOLEAN, Arguments: *mut va_list, Buffer: PWSTR, Length: ULONG, ReturnLength: PULONG, ParseContext: PPARSE_MESSAGE_CONTEXT) -> NTSTATUS;
+    pub type RtlGetFileMUIPathFn = unsafe extern "stdcall" fn(Flags: ULONG, FilePath: PCWSTR, Language: PCWSTR, LanguageLength: PULONG, FileMUIPath: PWSTR, FileMUIPathLength: PULONG, Enumerator: PULONGLONG) -> NTSTATUS;
+    pub type RtlLoadStringFn = unsafe extern "stdcall" fn(DllHandle: PVOID, StringId: ULONG, StringLanguage: PCWSTR, Flags: ULONG, ReturnString: *mut PCWSTR, ReturnStringLen: PUSHORT, ReturnLanguageName: PWSTR, ReturnLanguageLen: PULONG) -> NTSTATUS;
+    pub type RtlNtStatusToDosErrorFn = unsafe extern "stdcall" fn(Status: NTSTATUS) -> ULONG;
+    pub type RtlNtStatusToDosErrorNoTebFn = unsafe extern "stdcall" fn(Status: NTSTATUS) -> ULONG;
+    pub type RtlGetLastNtStatusFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlGetLastWin32ErrorFn = unsafe extern "stdcall" fn() -> LONG;
+    pub type RtlGetThreadErrorModeFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type RtlSetThreadErrorModeFn = unsafe extern "stdcall" fn(NewMode: ULONG, OldMode: PULONG) -> NTSTATUS;
+    pub type RtlReportExceptionFn = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT, Flags: ULONG) -> NTSTATUS;
+    pub type RtlReportExceptionExFn = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT, Flags: ULONG, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type RtlWerpReportExceptionFn = unsafe extern "stdcall" fn(ProcessId: ULONG, CrashReportSharedMem: HANDLE, Flags: ULONG, CrashVerticalProcessHandle: PHANDLE) -> NTSTATUS;
+    pub type RtlReportSilentProcessExitFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+    pub type RtlUniformFn = unsafe extern "stdcall" fn(Seed: PULONG) -> ULONG;
+    pub type RtlRandomFn = unsafe extern "stdcall" fn(Seed: PULONG) -> ULONG;
+    pub type RtlRandomExFn = unsafe extern "stdcall" fn(Seed: PULONG) -> ULONG;
+    pub type RtlComputeImportTableHashFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Hash: PCHAR, ImportTableHashRevision: ULONG) -> NTSTATUS;
+    pub type RtlIntegerToCharFn = unsafe extern "stdcall" fn(Value: ULONG, Base: ULONG, OutputLength: LONG, String: PSTR) -> NTSTATUS;
+    pub type RtlCharToIntegerFn = unsafe extern "stdcall" fn(String: PCSTR, Base: ULONG, Value: PULONG) -> NTSTATUS;
+    pub type RtlLargeIntegerToCharFn = unsafe extern "stdcall" fn(Value: PLARGE_INTEGER, Base: ULONG, OutputLength: LONG, String: PSTR) -> NTSTATUS;
+    pub type RtlIntegerToUnicodeStringFn = unsafe extern "stdcall" fn(Value: ULONG, Base: ULONG, String: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlInt64ToUnicodeStringFn = unsafe extern "stdcall" fn(Value: ULONGLONG, Base: ULONG, String: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlUnicodeStringToIntegerFn = unsafe extern "stdcall" fn(String: PUNICODE_STRING, Base: ULONG, Value: PULONG) -> NTSTATUS;
+    pub type RtlIpv4AddressToStringWFn = unsafe extern "stdcall" fn(Address: PCIN_ADDR, AddressString: PWSTR) -> PWSTR;
+    pub type RtlIpv4AddressToStringExWFn = unsafe extern "stdcall" fn(Address: PCIN_ADDR, Port: USHORT, AddressString: PWSTR, AddressStringLength: PULONG) -> NTSTATUS;
+    pub type RtlIpv6AddressToStringWFn = unsafe extern "stdcall" fn(Address: PCIN6_ADDR, AddressString: PWSTR) -> PWSTR;
+    pub type RtlIpv6AddressToStringExWFn = unsafe extern "stdcall" fn(Address: PCIN6_ADDR, ScopeId: ULONG, Port: USHORT, AddressString: PWSTR, AddressStringLength: PULONG) -> NTSTATUS;
+    pub type RtlIpv4StringToAddressWFn = unsafe extern "stdcall" fn(AddressString: PCWSTR, Strict: BOOLEAN, Terminator: *mut LPCWSTR, Address: PIN_ADDR) -> NTSTATUS;
+    pub type RtlIpv4StringToAddressExWFn = unsafe extern "stdcall" fn(AddressString: PCWSTR, Strict: BOOLEAN, Address: PIN_ADDR, Port: PUSHORT) -> NTSTATUS;
+    pub type RtlIpv6StringToAddressWFn = unsafe extern "stdcall" fn(AddressString: PCWSTR, Terminator: *mut PCWSTR, Address: PIN6_ADDR) -> NTSTATUS;
+    pub type RtlIpv6StringToAddressExWFn = unsafe extern "stdcall" fn(AddressString: PCWSTR, Address: PIN6_ADDR, ScopeId: PULONG, Port: PUSHORT) -> NTSTATUS;
+    pub type RtlCutoverTimeToSystemTimeFn = unsafe extern "stdcall" fn(CutoverTime: PTIME_FIELDS, SystemTime: PLARGE_INTEGER, CurrentSystemTime: PLARGE_INTEGER, ThisYear: BOOLEAN) -> BOOLEAN;
+    pub type RtlSystemTimeToLocalTimeFn = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER, LocalTime: PLARGE_INTEGER) -> NTSTATUS;
+    pub type RtlLocalTimeToSystemTimeFn = unsafe extern "stdcall" fn(LocalTime: PLARGE_INTEGER, SystemTime: PLARGE_INTEGER) -> NTSTATUS;
+    pub type RtlTimeFieldsToTimeFn = unsafe extern "stdcall" fn(TimeFields: PTIME_FIELDS, Time: PLARGE_INTEGER) -> BOOLEAN;
+    pub type RtlTimeToSecondsSince1980Fn = unsafe extern "stdcall" fn(Time: PLARGE_INTEGER, ElapsedSeconds: PULONG) -> BOOLEAN;
+    pub type RtlTimeToSecondsSince1970Fn = unsafe extern "stdcall" fn(Time: PLARGE_INTEGER, ElapsedSeconds: PULONG) -> BOOLEAN;
+    pub type RtlGetSystemTimePreciseFn = unsafe extern "stdcall" fn() -> ULONGLONG;
+    pub type RtlGetSystemTimeAndBiasFn = unsafe extern "stdcall" fn(TimeZoneBias: KSYSTEM_TIME, TimeZoneBiasEffectiveStart: PLARGE_INTEGER, TimeZoneBiasEffectiveEnd: PLARGE_INTEGER) -> KSYSTEM_TIME;
+    pub type RtlGetInterruptTimePreciseFn = unsafe extern "stdcall" fn(PerformanceCounter: PLARGE_INTEGER) -> ULONGLONG;
+    pub type RtlQueryUnbiasedInterruptTimeFn = unsafe extern "stdcall" fn(InterruptTime: PLARGE_INTEGER) -> BOOLEAN;
+    pub type RtlBeginReadTickLockFn = unsafe extern "stdcall" fn(TimeUpdateLock: PULONGLONG) -> ULONGLONG;
+    pub type RtlQueryTimeZoneInformationFn = unsafe extern "stdcall" fn(TimeZoneInformation: PRTL_TIME_ZONE_INFORMATION) -> NTSTATUS;
+    pub type RtlSetTimeZoneInformationFn = unsafe extern "stdcall" fn(TimeZoneInformation: PRTL_TIME_ZONE_INFORMATION) -> NTSTATUS;
+    pub type RtlTestBitFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, BitNumber: ULONG) -> BOOLEAN;
+    pub type RtlFindClearBitsFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, NumberToFind: ULONG, HintIndex: ULONG) -> ULONG;
+    pub type RtlFindSetBitsFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, NumberToFind: ULONG, HintIndex: ULONG) -> ULONG;
+    pub type RtlFindClearBitsAndSetFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, NumberToFind: ULONG, HintIndex: ULONG) -> ULONG;
+    pub type RtlFindSetBitsAndClearFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, NumberToFind: ULONG, HintIndex: ULONG) -> ULONG;
+    pub type RtlFindMostSignificantBitFn = unsafe extern "stdcall" fn(Set: ULONGLONG) -> CCHAR;
+    pub type RtlFindLeastSignificantBitFn = unsafe extern "stdcall" fn(Set: ULONGLONG) -> CCHAR;
+    pub type RtlFindClearRunsFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, RunArray: PRTL_BITMAP_RUN, SizeOfRunArray: ULONG, LocateLongestRuns: BOOLEAN) -> ULONG;
+    pub type RtlFindLongestRunClearFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: PULONG) -> ULONG;
+    pub type RtlFindFirstRunClearFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: PULONG) -> ULONG;
+    pub type RtlNumberOfClearBitsFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP) -> ULONG;
+    pub type RtlNumberOfSetBitsFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP) -> ULONG;
+    pub type RtlAreBitsClearFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: ULONG, Length: ULONG) -> BOOLEAN;
+    pub type RtlAreBitsSetFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: ULONG, Length: ULONG) -> BOOLEAN;
+    pub type RtlFindNextForwardRunClearFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, FromIndex: ULONG, StartingRunIndex: PULONG) -> ULONG;
+    pub type RtlFindLastBackwardRunClearFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, FromIndex: ULONG, StartingRunIndex: PULONG) -> ULONG;
+    pub type RtlNumberOfSetBitsUlongPtrFn = unsafe extern "stdcall" fn(Target: ULONG_PTR) -> ULONG;
+    pub type RtlNumberOfClearBitsInRangeFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: ULONG, Length: ULONG) -> ULONG;
+    pub type RtlNumberOfSetBitsInRangeFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP, StartingIndex: ULONG, Length: ULONG) -> ULONG;
+    pub type RtlTestBitExFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP_EX, BitNumber: ULONG64) -> BOOLEAN;
+    pub type RtlFindSetBitsExFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP_EX, NumberToFind: ULONG64, HintIndex: ULONG64) -> ULONG64;
+    pub type RtlFindSetBitsAndClearExFn = unsafe extern "stdcall" fn(BitMapHeader: PRTL_BITMAP_EX, NumberToFind: ULONG64, HintIndex: ULONG64) -> ULONG64;
+    pub type RtlDestroyHandleTableFn = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE) -> NTSTATUS;
+    pub type RtlAllocateHandleFn = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE, HandleIndex: PULONG) -> PRTL_HANDLE_TABLE_ENTRY;
+    pub type RtlFreeHandleFn = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE, Handle: PRTL_HANDLE_TABLE_ENTRY) -> BOOLEAN;
+    pub type RtlIsValidHandleFn = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE, Handle: PRTL_HANDLE_TABLE_ENTRY) -> BOOLEAN;
+    pub type RtlIsValidIndexHandleFn = unsafe extern "stdcall" fn(HandleTable: PRTL_HANDLE_TABLE, HandleIndex: ULONG, Handle: *mut PRTL_HANDLE_TABLE_ENTRY) -> BOOLEAN;
+    pub type RtlCreateAtomTableFn = unsafe extern "stdcall" fn(NumberOfBuckets: ULONG, AtomTableHandle: *mut PVOID) -> NTSTATUS;
+    pub type RtlDestroyAtomTableFn = unsafe extern "stdcall" fn(AtomTableHandle: PVOID) -> NTSTATUS;
+    pub type RtlEmptyAtomTableFn = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, IncludePinnedAtoms: BOOLEAN) -> NTSTATUS;
+    pub type RtlAddAtomToAtomTableFn = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, AtomName: PCWSTR, Atom: PRTL_ATOM) -> NTSTATUS;
+    pub type RtlLookupAtomInAtomTableFn = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, AtomName: PCWSTR, Atom: PRTL_ATOM) -> NTSTATUS;
+    pub type RtlDeleteAtomFromAtomTableFn = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, Atom: RTL_ATOM) -> NTSTATUS;
+    pub type RtlPinAtomInAtomTableFn = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, Atom: RTL_ATOM) -> NTSTATUS;
+    pub type RtlQueryAtomInAtomTableFn = unsafe extern "stdcall" fn(AtomTableHandle: PVOID, Atom: RTL_ATOM, AtomUsage: PULONG, AtomFlags: PULONG, AtomName: PWSTR, AtomNameLength: PULONG) -> NTSTATUS;
+    pub type RtlGetIntegerAtomFn = unsafe extern "stdcall" fn(AtomName: PCWSTR, IntegerAtom: PUSHORT) -> BOOLEAN;
+    pub type RtlValidSidFn = unsafe extern "stdcall" fn(Sid: PSID) -> BOOLEAN;
+    pub type RtlEqualSidFn = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID) -> BOOLEAN;
+    pub type RtlEqualPrefixSidFn = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID) -> BOOLEAN;
+    pub type RtlLengthRequiredSidFn = unsafe extern "stdcall" fn(SubAuthorityCount: ULONG) -> ULONG;
+    pub type RtlFreeSidFn = unsafe extern "stdcall" fn(Sid: PSID) -> PVOID;
+    pub type RtlAllocateAndInitializeSidFn = unsafe extern "stdcall" fn(IdentifierAuthority: PSID_IDENTIFIER_AUTHORITY, SubAuthorityCount: UCHAR, SubAuthority0: ULONG, SubAuthority1: ULONG, SubAuthority2: ULONG, SubAuthority3: ULONG, SubAuthority4: ULONG, SubAuthority5: ULONG, SubAuthority6: ULONG, SubAuthority7: ULONG, Sid: *mut PSID) -> NTSTATUS;
+    pub type RtlAllocateAndInitializeSidExFn = unsafe extern "stdcall" fn(IdentifierAuthority: PSID_IDENTIFIER_AUTHORITY, SubAuthorityCount: UCHAR, SubAuthorities: PULONG, Sid: *mut PSID) -> NTSTATUS;
+    pub type RtlInitializeSidFn = unsafe extern "stdcall" fn(Sid: PSID, IdentifierAuthority: PSID_IDENTIFIER_AUTHORITY, SubAuthorityCount: UCHAR) -> NTSTATUS;
+    pub type RtlIdentifierAuthoritySidFn = unsafe extern "stdcall" fn(Sid: PSID) -> PSID_IDENTIFIER_AUTHORITY;
+    pub type RtlSubAuthoritySidFn = unsafe extern "stdcall" fn(Sid: PSID, SubAuthority: ULONG) -> PULONG;
+    pub type RtlSubAuthorityCountSidFn = unsafe extern "stdcall" fn(Sid: PSID) -> PUCHAR;
+    pub type RtlLengthSidFn = unsafe extern "stdcall" fn(Sid: PSID) -> ULONG;
+    pub type RtlCopySidFn = unsafe extern "stdcall" fn(DestinationSidLength: ULONG, DestinationSid: PSID, SourceSid: PSID) -> NTSTATUS;
+    pub type RtlCopySidAndAttributesArrayFn = unsafe extern "stdcall" fn(Count: ULONG, Src: PSID_AND_ATTRIBUTES, SidAreaSize: ULONG, Dest: PSID_AND_ATTRIBUTES, SidArea: PSID, RemainingSidArea: *mut PSID, RemainingSidAreaSize: PULONG) -> NTSTATUS;
+    pub type RtlCreateServiceSidFn = unsafe extern "stdcall" fn(ServiceName: PUNICODE_STRING, ServiceSid: PSID, ServiceSidLength: PULONG) -> NTSTATUS;
+    pub type RtlSidDominatesFn = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID, Dominates: PBOOLEAN) -> NTSTATUS;
+    pub type RtlSidDominatesForTrustFn = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID, DominatesTrust: PBOOLEAN) -> NTSTATUS;
+    pub type RtlSidEqualLevelFn = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID, EqualLevel: PBOOLEAN) -> NTSTATUS;
+    pub type RtlSidIsHigherLevelFn = unsafe extern "stdcall" fn(Sid1: PSID, Sid2: PSID, HigherLevel: PBOOLEAN) -> NTSTATUS;
+    pub type RtlCreateVirtualAccountSidFn = unsafe extern "stdcall" fn(Name: PUNICODE_STRING, BaseSubAuthority: ULONG, Sid: PSID, SidLength: PULONG) -> NTSTATUS;
+    pub type RtlReplaceSidInSdFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, OldSid: PSID, NewSid: PSID, NumChanges: *mut ULONG) -> NTSTATUS;
+    pub type RtlLengthSidAsUnicodeStringFn = unsafe extern "stdcall" fn(Sid: PSID, StringLength: PULONG) -> NTSTATUS;
+    pub type RtlConvertSidToUnicodeStringFn = unsafe extern "stdcall" fn(UnicodeString: PUNICODE_STRING, Sid: PSID, AllocateDestinationString: BOOLEAN) -> NTSTATUS;
+    pub type RtlSidHashInitializeFn = unsafe extern "stdcall" fn(SidAttr: PSID_AND_ATTRIBUTES, SidCount: ULONG, SidAttrHash: PSID_AND_ATTRIBUTES_HASH) -> NTSTATUS;
+    pub type RtlSidHashLookupFn = unsafe extern "stdcall" fn(SidAttrHash: PSID_AND_ATTRIBUTES_HASH, Sid: PSID) -> PSID_AND_ATTRIBUTES;
+    pub type RtlIsElevatedRidFn = unsafe extern "stdcall" fn(SidAttr: PSID_AND_ATTRIBUTES) -> BOOLEAN;
+    pub type RtlDeriveCapabilitySidsFromNameFn = unsafe extern "stdcall" fn(UnicodeString: PUNICODE_STRING, CapabilityGroupSid: PSID, CapabilitySid: PSID) -> NTSTATUS;
+    pub type RtlCreateSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Revision: ULONG) -> NTSTATUS;
+    pub type RtlValidSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR) -> BOOLEAN;
+    pub type RtlLengthSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR) -> ULONG;
+    pub type RtlValidRelativeSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptorInput: PSECURITY_DESCRIPTOR, SecurityDescriptorLength: ULONG, RequiredInformation: SECURITY_INFORMATION) -> BOOLEAN;
+    pub type RtlGetControlSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Control: PSECURITY_DESCRIPTOR_CONTROL, Revision: PULONG) -> NTSTATUS;
+    pub type RtlSetControlSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, ControlBitsOfInterest: SECURITY_DESCRIPTOR_CONTROL, ControlBitsToSet: SECURITY_DESCRIPTOR_CONTROL) -> NTSTATUS;
+    pub type RtlSetAttributesSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Control: SECURITY_DESCRIPTOR_CONTROL, Revision: PULONG) -> NTSTATUS;
+    pub type RtlGetSecurityDescriptorRMControlFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, RMControl: PUCHAR) -> BOOLEAN;
+    pub type RtlSetDaclSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, DaclPresent: BOOLEAN, Dacl: PACL, DaclDefaulted: BOOLEAN) -> NTSTATUS;
+    pub type RtlGetDaclSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, DaclPresent: PBOOLEAN, Dacl: *mut PACL, DaclDefaulted: PBOOLEAN) -> NTSTATUS;
+    pub type RtlSetSaclSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, SaclPresent: BOOLEAN, Sacl: PACL, SaclDefaulted: BOOLEAN) -> NTSTATUS;
+    pub type RtlGetSaclSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, SaclPresent: PBOOLEAN, Sacl: *mut PACL, SaclDefaulted: PBOOLEAN) -> NTSTATUS;
+    pub type RtlSetOwnerSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Owner: PSID, OwnerDefaulted: BOOLEAN) -> NTSTATUS;
+    pub type RtlGetOwnerSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Owner: *mut PSID, OwnerDefaulted: PBOOLEAN) -> NTSTATUS;
+    pub type RtlSetGroupSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Group: PSID, GroupDefaulted: BOOLEAN) -> NTSTATUS;
+    pub type RtlGetGroupSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, Group: *mut PSID, GroupDefaulted: PBOOLEAN) -> NTSTATUS;
+    pub type RtlMakeSelfRelativeSDFn = unsafe extern "stdcall" fn(AbsoluteSecurityDescriptor: PSECURITY_DESCRIPTOR, SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, BufferLength: PULONG) -> NTSTATUS;
+    pub type RtlAbsoluteToSelfRelativeSDFn = unsafe extern "stdcall" fn(AbsoluteSecurityDescriptor: PSECURITY_DESCRIPTOR, SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, BufferLength: PULONG) -> NTSTATUS;
+    pub type RtlSelfRelativeToAbsoluteSDFn = unsafe extern "stdcall" fn(SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, AbsoluteSecurityDescriptor: PSECURITY_DESCRIPTOR, AbsoluteSecurityDescriptorSize: PULONG, Dacl: PACL, DaclSize: PULONG, Sacl: PACL, SaclSize: PULONG, Owner: PSID, OwnerSize: PULONG, PrimaryGroup: PSID, PrimaryGroupSize: PULONG) -> NTSTATUS;
+    pub type RtlSelfRelativeToAbsoluteSD2Fn = unsafe extern "stdcall" fn(SelfRelativeSecurityDescriptor: PSECURITY_DESCRIPTOR, BufferSize: PULONG) -> NTSTATUS;
+    pub type RtlNormalizeSecurityDescriptorFn = unsafe extern "stdcall" fn(SecurityDescriptor: *mut PSECURITY_DESCRIPTOR, SecurityDescriptorLength: DWORD, NewSecurityDescriptor: *mut PSECURITY_DESCRIPTOR, NewSecurityDescriptorLength: PDWORD, CheckOnly: BOOLEAN) -> BOOLEAN;
+    pub type RtlAreAllAccessesGrantedFn = unsafe extern "stdcall" fn(GrantedAccess: ACCESS_MASK, DesiredAccess: ACCESS_MASK) -> BOOLEAN;
+    pub type RtlAreAnyAccessesGrantedFn = unsafe extern "stdcall" fn(GrantedAccess: ACCESS_MASK, DesiredAccess: ACCESS_MASK) -> BOOLEAN;
+    pub type RtlCreateAclFn = unsafe extern "stdcall" fn(Acl: PACL, AclLength: ULONG, AclRevision: ULONG) -> NTSTATUS;
+    pub type RtlValidAclFn = unsafe extern "stdcall" fn(Acl: PACL) -> BOOLEAN;
+    pub type RtlQueryInformationAclFn = unsafe extern "stdcall" fn(Acl: PACL, AclInformation: PVOID, AclInformationLength: ULONG, AclInformationClass: ACL_INFORMATION_CLASS) -> NTSTATUS;
+    pub type RtlSetInformationAclFn = unsafe extern "stdcall" fn(Acl: PACL, AclInformation: PVOID, AclInformationLength: ULONG, AclInformationClass: ACL_INFORMATION_CLASS) -> NTSTATUS;
+    pub type RtlAddAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, StartingAceIndex: ULONG, AceList: PVOID, AceListLength: ULONG) -> NTSTATUS;
+    pub type RtlDeleteAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceIndex: ULONG) -> NTSTATUS;
+    pub type RtlGetAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceIndex: ULONG, Ace: *mut PVOID) -> NTSTATUS;
+    pub type RtlGetAcesBufferSizeFn = unsafe extern "stdcall" fn(Acl: PACL, AcesBufferSize: PULONG) -> NTSTATUS;
+    pub type RtlFirstFreeAceFn = unsafe extern "stdcall" fn(Acl: PACL, FirstFree: *mut PVOID) -> BOOLEAN;
+    pub type RtlFindAceByTypeFn = unsafe extern "stdcall" fn(Acl: PACL, AceType: UCHAR, Index: PULONG) -> PVOID;
+    pub type RtlOwnerAcesPresentFn = unsafe extern "stdcall" fn(pAcl: PACL) -> BOOLEAN;
+    pub type RtlAddAccessAllowedAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AccessMask: ACCESS_MASK, Sid: PSID) -> NTSTATUS;
+    pub type RtlAddAccessAllowedAceExFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, Sid: PSID) -> NTSTATUS;
+    pub type RtlAddAccessDeniedAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AccessMask: ACCESS_MASK, Sid: PSID) -> NTSTATUS;
+    pub type RtlAddAccessDeniedAceExFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, Sid: PSID) -> NTSTATUS;
+    pub type RtlAddAuditAccessAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AccessMask: ACCESS_MASK, Sid: PSID, AuditSuccess: BOOLEAN, AuditFailure: BOOLEAN) -> NTSTATUS;
+    pub type RtlAddAuditAccessAceExFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, Sid: PSID, AuditSuccess: BOOLEAN, AuditFailure: BOOLEAN) -> NTSTATUS;
+    pub type RtlAddAccessAllowedObjectAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, ObjectTypeGuid: PGUID, InheritedObjectTypeGuid: PGUID, Sid: PSID) -> NTSTATUS;
+    pub type RtlAddAccessDeniedObjectAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, ObjectTypeGuid: PGUID, InheritedObjectTypeGuid: PGUID, Sid: PSID) -> NTSTATUS;
+    pub type RtlAddAuditAccessObjectAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ACCESS_MASK, ObjectTypeGuid: PGUID, InheritedObjectTypeGuid: PGUID, Sid: PSID, AuditSuccess: BOOLEAN, AuditFailure: BOOLEAN) -> NTSTATUS;
+    pub type RtlAddCompoundAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceType: UCHAR, AccessMask: ACCESS_MASK, ServerSid: PSID, ClientSid: PSID) -> NTSTATUS;
+    pub type RtlAddMandatoryAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, Sid: PSID, AceType: UCHAR, AccessMask: ACCESS_MASK) -> NTSTATUS;
+    pub type RtlAddResourceAttributeAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ULONG, Sid: PSID, AttributeInfo: PCLAIM_SECURITY_ATTRIBUTES_INFORMATION, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlAddScopedPolicyIDAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, AccessMask: ULONG, Sid: PSID) -> NTSTATUS;
+    pub type RtlAddProcessTrustLabelAceFn = unsafe extern "stdcall" fn(Acl: PACL, AceRevision: ULONG, AceFlags: ULONG, ProcessTrustLabelSid: PSID, AceType: UCHAR, AccessMask: ACCESS_MASK) -> NTSTATUS;
+    pub type RtlDefaultNpAclFn = unsafe extern "stdcall" fn(Acl: *mut PACL) -> NTSTATUS;
+    pub type RtlNewSecurityObjectFn = unsafe extern "stdcall" fn(ParentDescriptor: PSECURITY_DESCRIPTOR, CreatorDescriptor: PSECURITY_DESCRIPTOR, NewDescriptor: *mut PSECURITY_DESCRIPTOR, IsDirectoryObject: BOOLEAN, Token: HANDLE, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
+    pub type RtlNewSecurityObjectExFn = unsafe extern "stdcall" fn(ParentDescriptor: PSECURITY_DESCRIPTOR, CreatorDescriptor: PSECURITY_DESCRIPTOR, NewDescriptor: *mut PSECURITY_DESCRIPTOR, ObjectType: *mut GUID, IsDirectoryObject: BOOLEAN, AutoInheritFlags: ULONG, Token: HANDLE, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
+    pub type RtlNewSecurityObjectWithMultipleInheritanceFn = unsafe extern "stdcall" fn(ParentDescriptor: PSECURITY_DESCRIPTOR, CreatorDescriptor: PSECURITY_DESCRIPTOR, NewDescriptor: *mut PSECURITY_DESCRIPTOR, ObjectType: *mut *mut GUID, GuidCount: ULONG, IsDirectoryObject: BOOLEAN, AutoInheritFlags: ULONG, Token: HANDLE, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
+    pub type RtlDeleteSecurityObjectFn = unsafe extern "stdcall" fn(ObjectDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type RtlQuerySecurityObjectFn = unsafe extern "stdcall" fn(ObjectDescriptor: PSECURITY_DESCRIPTOR, SecurityInformation: SECURITY_INFORMATION, ResultantDescriptor: PSECURITY_DESCRIPTOR, DescriptorLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlSetSecurityObjectFn = unsafe extern "stdcall" fn(SecurityInformation: SECURITY_INFORMATION, ModificationDescriptor: PSECURITY_DESCRIPTOR, ObjectsSecurityDescriptor: *mut PSECURITY_DESCRIPTOR, GenericMapping: PGENERIC_MAPPING, TokenHandle: HANDLE) -> NTSTATUS;
+    pub type RtlSetSecurityObjectExFn = unsafe extern "stdcall" fn(SecurityInformation: SECURITY_INFORMATION, ModificationDescriptor: PSECURITY_DESCRIPTOR, ObjectsSecurityDescriptor: *mut PSECURITY_DESCRIPTOR, AutoInheritFlags: ULONG, GenericMapping: PGENERIC_MAPPING, TokenHandle: HANDLE) -> NTSTATUS;
+    pub type RtlConvertToAutoInheritSecurityObjectFn = unsafe extern "stdcall" fn(ParentDescriptor: PSECURITY_DESCRIPTOR, CurrentSecurityDescriptor: PSECURITY_DESCRIPTOR, NewSecurityDescriptor: *mut PSECURITY_DESCRIPTOR, ObjectType: *mut GUID, IsDirectoryObject: BOOLEAN, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
+    pub type RtlNewInstanceSecurityObjectFn = unsafe extern "stdcall" fn(ParentDescriptorChanged: BOOLEAN, CreatorDescriptorChanged: BOOLEAN, OldClientTokenModifiedId: PLUID, NewClientTokenModifiedId: PLUID, ParentDescriptor: PSECURITY_DESCRIPTOR, CreatorDescriptor: PSECURITY_DESCRIPTOR, NewDescriptor: *mut PSECURITY_DESCRIPTOR, IsDirectoryObject: BOOLEAN, TokenHandle: HANDLE, GenericMapping: PGENERIC_MAPPING) -> NTSTATUS;
+    pub type RtlCopySecurityDescriptorFn = unsafe extern "stdcall" fn(InputSecurityDescriptor: PSECURITY_DESCRIPTOR, OutputSecurityDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type RtlCreateUserSecurityObjectFn = unsafe extern "stdcall" fn(AceData: PRTL_ACE_DATA, AceCount: ULONG, OwnerSid: PSID, GroupSid: PSID, IsDirectoryObject: BOOLEAN, GenericMapping: PGENERIC_MAPPING, NewSecurityDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type RtlCreateAndSetSDFn = unsafe extern "stdcall" fn(AceData: PRTL_ACE_DATA, AceCount: ULONG, OwnerSid: PSID, GroupSid: PSID, NewSecurityDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type RtlImpersonateSelfFn = unsafe extern "stdcall" fn(ImpersonationLevel: SECURITY_IMPERSONATION_LEVEL) -> NTSTATUS;
+    pub type RtlImpersonateSelfExFn = unsafe extern "stdcall" fn(ImpersonationLevel: SECURITY_IMPERSONATION_LEVEL, AdditionalAccess: ACCESS_MASK, ThreadToken: PHANDLE) -> NTSTATUS;
+    pub type RtlAdjustPrivilegeFn = unsafe extern "stdcall" fn(Privilege: ULONG, Enable: BOOLEAN, Client: BOOLEAN, WasEnabled: PBOOLEAN) -> NTSTATUS;
+    pub type RtlAcquirePrivilegeFn = unsafe extern "stdcall" fn(Privilege: PULONG, NumPriv: ULONG, Flags: ULONG, ReturnedState: *mut PVOID) -> NTSTATUS;
+    pub type RtlRemovePrivilegesFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, PrivilegesToKeep: PULONG, PrivilegeCount: ULONG) -> NTSTATUS;
+    pub type RtlIsUntrustedObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, Object: PVOID, IsUntrustedObject: PBOOLEAN) -> NTSTATUS;
+    pub type RtlQueryValidationRunlevelFn = unsafe extern "stdcall" fn(ComponentName: PUNICODE_STRING) -> ULONG;
+    pub type RtlCreateBoundaryDescriptorFn = unsafe extern "stdcall" fn(Name: PUNICODE_STRING, Flags: ULONG) -> POBJECT_BOUNDARY_DESCRIPTOR;
+    pub type RtlAddSIDToBoundaryDescriptorFn = unsafe extern "stdcall" fn(BoundaryDescriptor: *mut POBJECT_BOUNDARY_DESCRIPTOR, RequiredSid: PSID) -> NTSTATUS;
+    pub type RtlAddIntegrityLabelToBoundaryDescriptorFn = unsafe extern "stdcall" fn(BoundaryDescriptor: *mut POBJECT_BOUNDARY_DESCRIPTOR, IntegrityLabel: PSID) -> NTSTATUS;
+    pub type RtlGetVersionFn = unsafe extern "stdcall" fn(VersionInformation: PRTL_OSVERSIONINFOEXW) -> NTSTATUS;
+    pub type RtlVerifyVersionInfoFn = unsafe extern "stdcall" fn(VersionInformation: PRTL_OSVERSIONINFOEXW, TypeMask: ULONG, ConditionMask: ULONGLONG) -> NTSTATUS;
+    pub type RtlGetNtGlobalFlagsFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type RtlGetNtProductTypeFn = unsafe extern "stdcall" fn(NtProductType: PNT_PRODUCT_TYPE) -> BOOLEAN;
+    pub type RtlGetSuiteMaskFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type RtlRegisterWaitFn = unsafe extern "stdcall" fn(WaitHandle: PHANDLE, Handle: HANDLE, Function: WAITORTIMERCALLBACKFUNC, Context: PVOID, Milliseconds: ULONG, Flags: ULONG) -> NTSTATUS;
+    pub type RtlDeregisterWaitFn = unsafe extern "stdcall" fn(WaitHandle: HANDLE) -> NTSTATUS;
+    pub type RtlDeregisterWaitExFn = unsafe extern "stdcall" fn(WaitHandle: HANDLE, CompletionEvent: HANDLE) -> NTSTATUS;
+    pub type RtlQueueWorkItemFn = unsafe extern "stdcall" fn(Function: WORKERCALLBACKFUNC, Context: PVOID, Flags: ULONG) -> NTSTATUS;
+    pub type RtlSetIoCompletionCallbackFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, CompletionProc: APC_CALLBACK_FUNCTION, Flags: ULONG) -> NTSTATUS;
+    pub type RtlSetThreadPoolStartFuncFn = unsafe extern "stdcall" fn(StartPoolThread: PRTL_START_POOL_THREAD, ExitPoolThread: PRTL_EXIT_POOL_THREAD) -> NTSTATUS;
+    pub type RtlDelayExecutionFn = unsafe extern "stdcall" fn(Alertable: BOOLEAN, DelayInterval: PLARGE_INTEGER) -> NTSTATUS;
+    pub type RtlCreateTimerQueueFn = unsafe extern "stdcall" fn(TimerQueueHandle: PHANDLE) -> NTSTATUS;
+    pub type RtlCreateTimerFn = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, Handle: PHANDLE, Function: WAITORTIMERCALLBACKFUNC, Context: PVOID, DueTime: ULONG, Period: ULONG, Flags: ULONG) -> NTSTATUS;
+    pub type RtlSetTimerFn = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, Handle: PHANDLE, Function: WAITORTIMERCALLBACKFUNC, Context: PVOID, DueTime: ULONG, Period: ULONG, Flags: ULONG) -> NTSTATUS;
+    pub type RtlUpdateTimerFn = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, TimerHandle: HANDLE, DueTime: ULONG, Period: ULONG) -> NTSTATUS;
+    pub type RtlDeleteTimerFn = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, TimerToCancel: HANDLE, Event: HANDLE) -> NTSTATUS;
+    pub type RtlDeleteTimerQueueFn = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE) -> NTSTATUS;
+    pub type RtlDeleteTimerQueueExFn = unsafe extern "stdcall" fn(TimerQueueHandle: HANDLE, Event: HANDLE) -> NTSTATUS;
+    pub type RtlFormatCurrentUserKeyPathFn = unsafe extern "stdcall" fn(CurrentUserKeyPath: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlOpenCurrentUserFn = unsafe extern "stdcall" fn(DesiredAccess: ACCESS_MASK, CurrentUserKey: PHANDLE) -> NTSTATUS;
+    pub type RtlCreateRegistryKeyFn = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR) -> NTSTATUS;
+    pub type RtlCheckRegistryKeyFn = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR) -> NTSTATUS;
+    pub type RtlQueryRegistryValuesFn = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR, QueryTable: PRTL_QUERY_REGISTRY_TABLE, Context: PVOID, Environment: PVOID) -> NTSTATUS;
+    pub type RtlQueryRegistryValuesExFn = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR, QueryTable: PRTL_QUERY_REGISTRY_TABLE, Context: PVOID, Environment: PVOID) -> NTSTATUS;
+    pub type RtlQueryRegistryValueWithFallbackFn = unsafe extern "stdcall" fn(PrimaryHandle: HANDLE, FallbackHandle: HANDLE, ValueName: PUNICODE_STRING, ValueLength: ULONG, ValueType: PULONG, ValueData: PVOID, ResultLength: PULONG) -> NTSTATUS;
+    pub type RtlWriteRegistryValueFn = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR, ValueName: PCWSTR, ValueType: ULONG, ValueData: PVOID, ValueLength: ULONG) -> NTSTATUS;
+    pub type RtlDeleteRegistryValueFn = unsafe extern "stdcall" fn(RelativeTo: ULONG, Path: PCWSTR, ValueName: PCWSTR) -> NTSTATUS;
+    pub type RtlEnableThreadProfilingFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, Flags: ULONG, HardwareCounters: ULONG64, PerformanceDataHandle: *mut PVOID) -> NTSTATUS;
+    pub type RtlDisableThreadProfilingFn = unsafe extern "stdcall" fn(PerformanceDataHandle: PVOID) -> NTSTATUS;
+    pub type RtlQueryThreadProfilingFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, Enabled: PBOOLEAN) -> NTSTATUS;
+    pub type RtlReadThreadProfilingDataFn = unsafe extern "stdcall" fn(PerformanceDataHandle: HANDLE, Flags: ULONG, PerformanceData: PPERFORMANCE_DATA) -> NTSTATUS;
+    pub type RtlGetNativeSystemInformationFn = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, NativeSystemInformation: PVOID, InformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtWow64GetNativeSystemInformationFn = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, NativeSystemInformation: PVOID, InformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlQueueApcWow64ThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
+    pub type RtlWow64EnableFsRedirectionFn = unsafe extern "stdcall" fn(Wow64FsEnableRedirection: BOOLEAN) -> NTSTATUS;
+    pub type RtlWow64EnableFsRedirectionExFn = unsafe extern "stdcall" fn(Wow64FsEnableRedirection: PVOID, OldFsRedirectionLevel: *mut PVOID) -> NTSTATUS;
+    pub type RtlComputeCrc32Fn = unsafe extern "stdcall" fn(PartialCrc: ULONG32, Buffer: PVOID, Length: ULONG) -> ULONG32;
+    pub type RtlEncodePointerFn = unsafe extern "stdcall" fn(Ptr: PVOID) -> PVOID;
+    pub type RtlDecodePointerFn = unsafe extern "stdcall" fn(Ptr: PVOID) -> PVOID;
+    pub type RtlEncodeSystemPointerFn = unsafe extern "stdcall" fn(Ptr: PVOID) -> PVOID;
+    pub type RtlDecodeSystemPointerFn = unsafe extern "stdcall" fn(Ptr: PVOID) -> PVOID;
+    pub type RtlEncodeRemotePointerFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Pointer: PVOID, EncodedPointer: *mut PVOID) -> NTSTATUS;
+    pub type RtlDecodeRemotePointerFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Pointer: PVOID, DecodedPointer: *mut PVOID) -> NTSTATUS;
+    pub type RtlIsProcessorFeaturePresentFn = unsafe extern "stdcall" fn(ProcessorFeature: ULONG) -> BOOLEAN;
+    pub type RtlGetCurrentProcessorNumberFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type RtlGetFrameFn = unsafe extern "stdcall" fn() -> PTEB_ACTIVE_FRAME;
+    pub type RtlWalkFrameChainFn = unsafe extern "stdcall" fn(Callers: *mut PVOID, Count: ULONG, Flags: ULONG) -> ULONG;
+    pub type RtlGetEnabledExtendedFeaturesFn = unsafe extern "stdcall" fn(FeatureMask: ULONG64) -> ULONG64;
+    pub type RtlGetEnabledExtendedAndSupervisorFeaturesFn = unsafe extern "stdcall" fn(FeatureMask: ULONG64) -> ULONG64;
+    pub type RtlLocateSupervisorFeatureFn = unsafe extern "stdcall" fn(XStateHeader: PXSAVE_AREA_HEADER, FeatureId: ULONG, Length: PULONG) -> PVOID;
+    pub type RtlQueryElevationFlagsFn = unsafe extern "stdcall" fn(Flags: PRTL_ELEVATION_FLAGS) -> NTSTATUS;
+    pub type RtlRegisterThreadWithCsrssFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlLockCurrentThreadFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlUnlockCurrentThreadFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlLockModuleSectionFn = unsafe extern "stdcall" fn(Address: PVOID) -> NTSTATUS;
+    pub type RtlUnlockModuleSectionFn = unsafe extern "stdcall" fn(Address: PVOID) -> NTSTATUS;
+    pub type RtlGetUnloadEventTraceFn = unsafe extern "stdcall" fn() -> PRTL_UNLOAD_EVENT_TRACE;
+    pub type RtlGetUnloadEventTraceExFn = unsafe extern "stdcall" fn(ElementSize: *mut PULONG, ElementCount: *mut PULONG, EventTrace: *mut PVOID) -> PRTL_UNLOAD_EVENT_TRACE;
+    pub type RtlCaptureStackBackTraceFn = unsafe extern "stdcall" fn(FramesToSkip: DWORD, FramesToCapture: DWORD, BackTrace: *mut PVOID, BackTraceHash: PDWORD) -> WORD;
+    pub type RtlPcToFileHeaderFn = unsafe extern "stdcall" fn(PcValue: PVOID, BaseOfImage: *mut PVOID) -> PVOID;
+    pub type RtlQueryPerformanceCounterFn = unsafe extern "stdcall" fn(PerformanceCounter: PLARGE_INTEGER) -> LOGICAL;
+    pub type RtlQueryPerformanceFrequencyFn = unsafe extern "stdcall" fn(PerformanceFrequency: PLARGE_INTEGER) -> LOGICAL;
+    pub type RtlQueryImageMitigationPolicyFn = unsafe extern "stdcall" fn(ImagePath: PCWSTR, Policy: IMAGE_MITIGATION_POLICY, Flags: ULONG, Buffer: PVOID, BufferSize: ULONG) -> NTSTATUS;
+    pub type RtlSetImageMitigationPolicyFn = unsafe extern "stdcall" fn(ImagePath: PCWSTR, Policy: IMAGE_MITIGATION_POLICY, Flags: ULONG, Buffer: PVOID, BufferSize: ULONG) -> NTSTATUS;
+    pub type RtlGetCurrentServiceSessionIdFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type RtlGetActiveConsoleIdFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type RtlGetConsoleSessionForegroundProcessIdFn = unsafe extern "stdcall" fn() -> LONGLONG;
+    pub type RtlGetTokenNamedObjectPathFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, Sid: PSID, ObjectPath: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlGetAppContainerNamedObjectPathFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, AppContainerSid: PSID, RelativePath: BOOLEAN, ObjectPath: PUNICODE_STRING) -> NTSTATUS;
+    pub type RtlGetAppContainerParentFn = unsafe extern "stdcall" fn(AppContainerSid: PSID, AppContainerSidParent: *mut PSID) -> NTSTATUS;
+    pub type RtlCheckSandboxedTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, IsSandboxed: PBOOLEAN) -> NTSTATUS;
+    pub type RtlCheckTokenCapabilityFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, CapabilitySidToCheck: PSID, HasCapability: PBOOLEAN) -> NTSTATUS;
+    pub type RtlCapabilityCheckFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, CapabilityName: PUNICODE_STRING, HasCapability: PBOOLEAN) -> NTSTATUS;
+    pub type RtlCheckTokenMembershipFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, SidToCheck: PSID, IsMember: PBOOLEAN) -> NTSTATUS;
+    pub type RtlCheckTokenMembershipExFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, SidToCheck: PSID, Flags: ULONG, IsMember: PBOOLEAN) -> NTSTATUS;
+    pub type RtlQueryTokenHostIdAsUlong64Fn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, HostId: PULONG64) -> NTSTATUS;
+    pub type RtlIsParentOfChildAppContainerFn = unsafe extern "stdcall" fn(ParentAppContainerSid: PSID, ChildAppContainerSid: PSID) -> BOOLEAN;
+    pub type RtlIsApiSetImplementedFn = unsafe extern "stdcall" fn(ApiSetName: PCSTR) -> NTSTATUS;
+    pub type RtlIsCapabilitySidFn = unsafe extern "stdcall" fn(Sid: PSID) -> BOOLEAN;
+    pub type RtlIsPackageSidFn = unsafe extern "stdcall" fn(Sid: PSID) -> BOOLEAN;
+    pub type RtlIsValidProcessTrustLabelSidFn = unsafe extern "stdcall" fn(Sid: PSID) -> BOOLEAN;
+    pub type RtlGetAppContainerSidTypeFn = unsafe extern "stdcall" fn(AppContainerSid: PSID, AppContainerSidType: PAPPCONTAINER_SID_TYPE) -> NTSTATUS;
+    pub type RtlFlsAllocFn = unsafe extern "stdcall" fn(Callback: PFLS_CALLBACK_FUNCTION, FlsIndex: PULONG) -> NTSTATUS;
+    pub type RtlFlsAllocExFn = unsafe extern "stdcall" fn(Callback: PFLS_CALLBACK_FUNCTION, arg1: PULONG, FlsIndex: PULONG) -> NTSTATUS;
+    pub type RtlFlsFreeFn = unsafe extern "stdcall" fn(FlsIndex: ULONG) -> NTSTATUS;
+    pub type RtlFlsGetValueFn = unsafe extern "stdcall" fn(FlsIndex: ULONG, FlsData: *mut PVOID) -> NTSTATUS;
+    pub type RtlFlsGetValue2Fn = unsafe extern "stdcall" fn(FlsIndex: ULONG) -> PVOID;
+    pub type RtlFlsSetValueFn = unsafe extern "stdcall" fn(FlsIndex: ULONG, FlsData: PVOID) -> NTSTATUS;
+    pub type RtlProcessFlsDataFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, FlsData: PPVOID) -> NTSTATUS;
+    pub type RtlTlsAllocFn = unsafe extern "stdcall" fn(TlsIndex: PULONG) -> NTSTATUS;
+    pub type RtlTlsFreeFn = unsafe extern "stdcall" fn(TlsIndex: ULONG) -> NTSTATUS;
+    pub type RtlTlsSetValueFn = unsafe extern "stdcall" fn(TlsIndex: ULONG, TlsData: PVOID) -> NTSTATUS;
+    pub type RtlIsStateSeparationEnabledFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type RtlGetPersistedStateLocationFn = unsafe extern "stdcall" fn(SourceID: PCWSTR, CustomValue: PCWSTR, DefaultPath: PCWSTR, StateLocationType: STATE_LOCATION_TYPE, TargetPath: PWCHAR, BufferLengthIn: ULONG, BufferLengthOut: PULONG) -> NTSTATUS;
+    pub type RtlIsCloudFilesPlaceholderFn = unsafe extern "stdcall" fn(FileAttributes: ULONG, ReparseTag: ULONG) -> BOOLEAN;
+    pub type RtlIsPartialPlaceholderFn = unsafe extern "stdcall" fn(FileAttributes: ULONG, ReparseTag: ULONG) -> BOOLEAN;
+    pub type RtlIsPartialPlaceholderFileHandleFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IsPartialPlaceholder: PBOOLEAN) -> NTSTATUS;
+    pub type RtlIsPartialPlaceholderFileInfoFn = unsafe extern "stdcall" fn(InfoBuffer: PVOID, InfoClass: FILE_INFORMATION_CLASS, IsPartialPlaceholder: PBOOLEAN) -> NTSTATUS;
+    pub type RtlQueryThreadPlaceholderCompatibilityModeFn = unsafe extern "stdcall" fn() -> CHAR;
+    pub type RtlSetThreadPlaceholderCompatibilityModeFn = unsafe extern "stdcall" fn(Mode: CHAR) -> CHAR;
+    pub type RtlQueryProcessPlaceholderCompatibilityModeFn = unsafe extern "stdcall" fn() -> CHAR;
+    pub type RtlSetProcessPlaceholderCompatibilityModeFn = unsafe extern "stdcall" fn(Mode: CHAR) -> CHAR;
+    pub type RtlIsNonEmptyDirectoryReparsePointAllowedFn = unsafe extern "stdcall" fn(ReparseTag: ULONG) -> BOOLEAN;
+    pub type RtlAppxIsFileOwnedByTrustedInstallerFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IsFileOwnedByTrustedInstaller: PBOOLEAN) -> NTSTATUS;
+    pub type RtlQueryPackageClaimsFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, PackageFullName: PWSTR, PackageSize: PSIZE_T, AppId: PWSTR, AppIdSize: PSIZE_T, DynamicId: PGUID, PkgClaim: PPS_PKG_CLAIM, AttributesPresent: PULONG64) -> NTSTATUS;
+    pub type RtlQueryPackageIdentityFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, PackageFullName: PWSTR, PackageSize: PSIZE_T, AppId: PWSTR, AppIdSize: PSIZE_T, Packaged: PBOOLEAN) -> NTSTATUS;
+    pub type RtlQueryPackageIdentityExFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, PackageFullName: PWSTR, PackageSize: PSIZE_T, AppId: PWSTR, AppIdSize: PSIZE_T, DynamicId: PGUID, Flags: PULONG64) -> NTSTATUS;
+    pub type RtlQueryProtectedPolicyFn = unsafe extern "stdcall" fn(PolicyGuid: PGUID, PolicyValue: PULONG_PTR) -> NTSTATUS;
+    pub type RtlSetProtectedPolicyFn = unsafe extern "stdcall" fn(PolicyGuid: PGUID, PolicyValue: ULONG_PTR, OldPolicyValue: PULONG_PTR) -> NTSTATUS;
+    pub type RtlIsEnclaveFeaturePresentFn = unsafe extern "stdcall" fn(FeatureMask: ULONG) -> BOOLEAN;
+    pub type RtlIsMultiSessionSkuFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type RtlIsMultiUsersInSessionSkuFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type RtlGetSessionPropertiesFn = unsafe extern "stdcall" fn(SessionId: ULONG, SharedUserSessionId: PULONG) -> NTSTATUS;
+    pub type RtlCreateBootStatusDataFileFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlLockBootStatusDataFn = unsafe extern "stdcall" fn(FileHandle: PHANDLE) -> NTSTATUS;
+    pub type RtlUnlockBootStatusDataFn = unsafe extern "stdcall" fn(FileHandle: HANDLE) -> NTSTATUS;
+    pub type RtlGetSetBootStatusDataFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Read: BOOLEAN, DataClass: RTL_BSD_ITEM_TYPE, Buffer: PVOID, BufferSize: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlCheckBootStatusIntegrityFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Verified: PBOOLEAN) -> NTSTATUS;
+    pub type RtlRestoreBootStatusDefaultsFn = unsafe extern "stdcall" fn(FileHandle: HANDLE) -> NTSTATUS;
+    pub type RtlRestoreSystemBootStatusDefaultsFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type RtlGetSystemBootStatusFn = unsafe extern "stdcall" fn(BootStatusInformationClass: RTL_BSD_ITEM_TYPE, DataBuffer: PVOID, DataLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlSetSystemBootStatusFn = unsafe extern "stdcall" fn(BootStatusInformationClass: RTL_BSD_ITEM_TYPE, DataBuffer: PVOID, DataLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type RtlCheckPortableOperatingSystemFn = unsafe extern "stdcall" fn(IsPortable: PBOOLEAN) -> NTSTATUS;
+    pub type RtlSetPortableOperatingSystemFn = unsafe extern "stdcall" fn(IsPortable: BOOLEAN) -> NTSTATUS;
+    pub type RtlSetProxiedProcessIdFn = unsafe extern "stdcall" fn(ProxiedProcessId: ULONG) -> ULONG;
+    pub type RtlFindClosestEncodableLengthFn = unsafe extern "stdcall" fn(SourceLength: ULONGLONG, TargetLength: PULONGLONG) -> NTSTATUS;
+    pub type RtlRegisterSecureMemoryCacheCallbackFn = unsafe extern "stdcall" fn(Callback: PRTL_SECURE_MEMORY_CACHE_CALLBACK) -> NTSTATUS;
+    pub type RtlDeregisterSecureMemoryCacheCallbackFn = unsafe extern "stdcall" fn(Callback: PRTL_SECURE_MEMORY_CACHE_CALLBACK) -> NTSTATUS;
+    pub type RtlFlushSecureMemoryCacheFn = unsafe extern "stdcall" fn(MemoryCache: PVOID, MemoryLength: SIZE_T) -> BOOLEAN;
+    pub type RtlNotifyFeatureUsageFn = unsafe extern "stdcall" fn(FeatureUsageReport: PRTL_FEATURE_USAGE_REPORT) -> NTSTATUS;
+    pub type RtlQueryFeatureConfigurationFn = unsafe extern "stdcall" fn(FeatureId: RTL_FEATURE_ID, ConfigurationType: RTL_FEATURE_CONFIGURATION_TYPE, ChangeStamp: PRTL_FEATURE_CHANGE_STAMP, FeatureConfiguration: PRTL_FEATURE_CONFIGURATION) -> NTSTATUS;
+    pub type RtlSetFeatureConfigurationsFn = unsafe extern "stdcall" fn(PreviousChangeStamp: PRTL_FEATURE_CHANGE_STAMP, ConfigurationType: RTL_FEATURE_CONFIGURATION_TYPE, ConfigurationUpdates: PRTL_FEATURE_CONFIGURATION_UPDATE, ConfigurationUpdateCount: SIZE_T) -> NTSTATUS;
+    pub type RtlQueryAllFeatureConfigurationsFn = unsafe extern "stdcall" fn(ConfigurationType: RTL_FEATURE_CONFIGURATION_TYPE, ChangeStamp: PRTL_FEATURE_CHANGE_STAMP, Configurations: PRTL_FEATURE_CONFIGURATION, ConfigurationCount: PSIZE_T) -> NTSTATUS;
+    pub type RtlQueryFeatureConfigurationChangeStampFn = unsafe extern "stdcall" fn() -> RTL_FEATURE_CHANGE_STAMP;
+    pub type RtlQueryFeatureUsageNotificationSubscriptionsFn = unsafe extern "stdcall" fn(Subscriptions: PRTL_FEATURE_USAGE_SUBSCRIPTION_DETAILS, SubscriptionCount: PSIZE_T) -> NTSTATUS;
+    pub type RtlRegisterFeatureConfigurationChangeNotificationFn = unsafe extern "stdcall" fn(Callback: PRTL_FEATURE_CONFIGURATION_CHANGE_CALLBACK, Context: PVOID, ObservedChangeStamp: PRTL_FEATURE_CHANGE_STAMP, RegistrationHandle: PRTL_FEATURE_CONFIGURATION_CHANGE_REGISTRATION) -> NTSTATUS;
+    pub type RtlUnregisterFeatureConfigurationChangeNotificationFn = unsafe extern "stdcall" fn(RegistrationHandle: RTL_FEATURE_CONFIGURATION_CHANGE_REGISTRATION) -> NTSTATUS;
+    pub type RtlSubscribeForFeatureUsageNotificationFn = unsafe extern "stdcall" fn(SubscriptionDetails: PRTL_FEATURE_USAGE_SUBSCRIPTION_DETAILS, SubscriptionCount: SIZE_T) -> NTSTATUS;
+    pub type RtlUnsubscribeFromFeatureUsageNotificationsFn = unsafe extern "stdcall" fn(SubscriptionDetails: PRTL_FEATURE_USAGE_SUBSCRIPTION_DETAILS, SubscriptionCount: SIZE_T) -> NTSTATUS;
+    pub type RtlOverwriteFeatureConfigurationBufferFn = unsafe extern "stdcall" fn(PreviousChangeStamp: PRTL_FEATURE_CHANGE_STAMP, ConfigurationType: RTL_FEATURE_CONFIGURATION_TYPE, ConfigurationBuffer: PVOID, ConfigurationBufferSize: ULONG) -> NTSTATUS;
+    pub type RtlNotifyFeatureToggleUsageFn = unsafe extern "stdcall" fn(FeatureUsageReport: PRTL_FEATURE_USAGE_REPORT, FeatureId: RTL_FEATURE_ID, Flags: ULONG) -> NTSTATUS;
+    pub type RtlRunOnceExecuteOnceFn = unsafe extern "stdcall" fn(RunOnce: PRTL_RUN_ONCE, InitFn: PRTL_RUN_ONCE_INIT_FN, Parameter: PVOID, Context: *mut PVOID) -> NTSTATUS;
+    pub type RtlRunOnceBeginInitializeFn = unsafe extern "stdcall" fn(RunOnce: PRTL_RUN_ONCE, Flags: ULONG, Context: *mut PVOID) -> NTSTATUS;
+    pub type RtlRunOnceCompleteFn = unsafe extern "stdcall" fn(RunOnce: PRTL_RUN_ONCE, Flags: ULONG, Context: PVOID) -> NTSTATUS;
+    pub type RtlEqualWnfChangeStampsFn = unsafe extern "stdcall" fn(ChangeStamp1: WNF_CHANGE_STAMP, ChangeStamp2: WNF_CHANGE_STAMP) -> BOOLEAN;
+    pub type RtlQueryWnfStateDataFn = unsafe extern "stdcall" fn(ChangeStamp: PWNF_CHANGE_STAMP, StateName: WNF_STATE_NAME, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PWNF_TYPE_ID) -> NTSTATUS;
+    pub type RtlPublishWnfStateDataFn = unsafe extern "stdcall" fn(StateName: WNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, Buffer: *const ::core::ffi::c_void, Length: ULONG, ExplicitScope: *const ::core::ffi::c_void) -> NTSTATUS;
+    pub type RtlSubscribeWnfStateChangeNotificationFn = unsafe extern "stdcall" fn(SubscriptionHandle: *mut PVOID, StateName: WNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PCWNF_TYPE_ID, SerializationGroup: ULONG, Flags: ULONG) -> NTSTATUS;
+    pub type RtlUnsubscribeWnfStateChangeNotificationFn = unsafe extern "stdcall" fn(Callback: PWNF_USER_CALLBACK) -> NTSTATUS;
+    pub type RtlWnfDllUnloadCallbackFn = unsafe extern "stdcall" fn(DllBase: PVOID) -> NTSTATUS;
+    pub type NtCopyFileChunkFn = unsafe extern "stdcall" fn(SourceHandle: HANDLE, DestinationHandle: HANDLE, EventHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Length: ULONG, SourceOffset: PLARGE_INTEGER, DestOffset: PLARGE_INTEGER, SourceKey: PULONG, DestKey: PULONG, Flags: ULONG) -> NTSTATUS;
+    pub type RtlQueryPropertyStoreFn = unsafe extern "stdcall" fn(Key: ULONG_PTR, Context: PULONG_PTR) -> NTSTATUS;
+    pub type RtlRemovePropertyStoreFn = unsafe extern "stdcall" fn(Key: ULONG_PTR, Context: PULONG_PTR) -> NTSTATUS;
+    pub type RtlCompareExchangePropertyStoreFn = unsafe extern "stdcall" fn(Key: ULONG_PTR, Comperand: PULONG_PTR, Exchange: PULONG_PTR, Context: PULONG_PTR) -> NTSTATUS;
+    pub type RtlWow64ChangeThreadStateFn = unsafe extern "stdcall" fn(ThreadStateChangeHandle: HANDLE, ThreadHandle: HANDLE, StateChangeType: THREAD_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
+    pub type RtlGetCurrentThreadPrimaryGroupFn = unsafe extern "stdcall" fn() -> USHORT;
+    pub type NtCreateTokenFn = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
+    pub type NtCreateLowBoxTokenFn = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, PackageSid: PSID, CapabilityCount: ULONG, Capabilities: PSID_AND_ATTRIBUTES, HandleCount: ULONG, Handles: *mut HANDLE) -> NTSTATUS;
+    pub type NtCreateTokenExFn = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, UserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroups: PTOKEN_GROUPS, MandatoryPolicy: PTOKEN_MANDATORY_POLICY, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
+    pub type NtOpenProcessTokenFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, TokenHandle: PHANDLE) -> NTSTATUS;
+    pub type NtOpenProcessTokenExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
+    pub type NtOpenThreadTokenFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, TokenHandle: PHANDLE) -> NTSTATUS;
+    pub type NtOpenThreadTokenExFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
+    pub type NtDuplicateTokenFn = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EffectiveOnly: BOOLEAN, Type: TOKEN_TYPE, NewTokenHandle: PHANDLE) -> NTSTATUS;
+    pub type NtQueryInformationTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, TokenInformationClass: ULONG, TokenInformation: PVOID, TokenInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, TokenInformationClass: ULONG, TokenInformation: PVOID, TokenInformationLength: ULONG) -> NTSTATUS;
+    pub type NtAdjustPrivilegesTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, DisableAllPrivileges: BOOLEAN, NewState: PTOKEN_PRIVILEGES, BufferLength: ULONG, PreviousState: PTOKEN_PRIVILEGES, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtAdjustGroupsTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, ResetToDefault: BOOLEAN, NewState: PTOKEN_GROUPS, BufferLength: ULONG, PreviousState: PTOKEN_GROUPS, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtAdjustTokenClaimsAndDeviceGroupsFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, UserResetToDefault: BOOLEAN, DeviceResetToDefault: BOOLEAN, DeviceGroupsResetToDefault: BOOLEAN, NewUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceGroupsState: PTOKEN_GROUPS, UserBufferLength: ULONG, PreviousUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceBufferLength: ULONG, PreviousDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroupsBufferLength: ULONG, PreviousDeviceGroups: PTOKEN_GROUPS, UserReturnLength: PULONG, DeviceReturnLength: PULONG, DeviceGroupsReturnBufferLength: PULONG) -> NTSTATUS;
+    pub type NtFilterTokenFn = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, Flags: ULONG, SidsToDisable: PTOKEN_GROUPS, PrivilegesToDelete: PTOKEN_PRIVILEGES, RestrictedSids: PTOKEN_GROUPS, NewTokenHandle: PHANDLE) -> NTSTATUS;
+    pub type NtFilterTokenExFn = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, Flags: ULONG, SidsToDisable: PTOKEN_GROUPS, PrivilegesToDelete: PTOKEN_PRIVILEGES, RestrictedSids: PTOKEN_GROUPS, DisableUserClaimsCount: ULONG, UserClaimsToDisable: PUNICODE_STRING, DisableDeviceClaimsCount: ULONG, DeviceClaimsToDisable: PUNICODE_STRING, DeviceGroupsToDisable: PTOKEN_GROUPS, RestrictedUserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, RestrictedDeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, RestrictedDeviceGroups: PTOKEN_GROUPS, NewTokenHandle: PHANDLE) -> NTSTATUS;
+    pub type NtCompareTokensFn = unsafe extern "stdcall" fn(FirstTokenHandle: HANDLE, SecondTokenHandle: HANDLE, Equal: PBOOLEAN) -> NTSTATUS;
+    pub type NtPrivilegeCheckFn = unsafe extern "stdcall" fn(ClientToken: HANDLE, RequiredPrivileges: PPRIVILEGE_SET, Result: PBOOLEAN) -> NTSTATUS;
+    pub type NtImpersonateAnonymousTokenFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> NTSTATUS;
+    pub type NtQuerySecurityAttributesTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, Attributes: PUNICODE_STRING, NumberOfAttributes: ULONG, Buffer: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtAccessCheckFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
+    pub type NtAccessCheckByTypeFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
+    pub type NtAccessCheckByTypeResultListFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
+    pub type NtSetCachedSigningLevelFn = unsafe extern "stdcall" fn(Flags: ULONG, InputSigningLevel: SE_SIGNING_LEVEL, SourceFiles: PHANDLE, SourceFileCount: ULONG, TargetFile: HANDLE) -> NTSTATUS;
+    pub type NtGetCachedSigningLevelFn = unsafe extern "stdcall" fn(File: HANDLE, Flags: PULONG, SigningLevel: PSE_SIGNING_LEVEL, Thumbprint: PUCHAR, ThumbprintSize: PULONG, ThumbprintAlgorithm: PULONG) -> NTSTATUS;
+    pub type NtSetCachedSigningLevel2Fn = unsafe extern "stdcall" fn(Flags: ULONG, InputSigningLevel: SE_SIGNING_LEVEL, SourceFiles: PHANDLE, SourceFileCount: ULONG, TargetFile: HANDLE, CacheInformation: *mut SE_SET_FILE_CACHE_INFORMATION) -> NTSTATUS;
+    pub type NtCompareSigningLevelsFn = unsafe extern "stdcall" fn(FirstSigningLevel: SE_SIGNING_LEVEL, SecondSigningLevel: SE_SIGNING_LEVEL) -> NTSTATUS;
+    pub type NtAccessCheckAndAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type NtAccessCheckByTypeAndAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type NtAccessCheckByTypeResultListAndAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type NtAccessCheckByTypeResultListAndAuditAlarmByHandleFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ClientToken: HANDLE, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type NtOpenObjectAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GrantedAccess: ACCESS_MASK, Privileges: PPRIVILEGE_SET, ObjectCreation: BOOLEAN, AccessGranted: BOOLEAN, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type NtPrivilegeObjectAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, Privileges: PPRIVILEGE_SET, AccessGranted: BOOLEAN) -> NTSTATUS;
+    pub type NtCloseObjectAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
+    pub type NtDeleteObjectAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
+    pub type NtPrivilegedServiceAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, ServiceName: PUNICODE_STRING, ClientToken: HANDLE, Privileges: PPRIVILEGE_SET, AccessGranted: BOOLEAN) -> NTSTATUS;
+    pub type NtCreateTransactionManagerFn = unsafe extern "stdcall" fn(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, CreateOptions: ULONG, CommitStrength: ULONG) -> NTSTATUS;
+    pub type NtOpenTransactionManagerFn = unsafe extern "stdcall" fn(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, TmIdentity: LPGUID, OpenOptions: ULONG) -> NTSTATUS;
+    pub type NtRenameTransactionManagerFn = unsafe extern "stdcall" fn(LogFileName: PUNICODE_STRING, ExistingTransactionManagerGuid: LPGUID) -> NTSTATUS;
+    pub type NtRollforwardTransactionManagerFn = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtRecoverTransactionManagerFn = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE) -> NTSTATUS;
+    pub type NtQueryInformationTransactionManagerFn = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE, TransactionManagerInformationClass: TRANSACTIONMANAGER_INFORMATION_CLASS, TransactionManagerInformation: PVOID, TransactionManagerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationTransactionManagerFn = unsafe extern "stdcall" fn(TmHandle: HANDLE, TransactionManagerInformationClass: TRANSACTIONMANAGER_INFORMATION_CLASS, TransactionManagerInformation: PVOID, TransactionManagerInformationLength: ULONG) -> NTSTATUS;
+    pub type NtEnumerateTransactionObjectFn = unsafe extern "stdcall" fn(RootObjectHandle: HANDLE, QueryType: KTMOBJECT_TYPE, ObjectCursor: PKTMOBJECT_CURSOR, ObjectCursorLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtCreateTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE, CreateOptions: ULONG, IsolationLevel: ULONG, IsolationFlags: ULONG, Timeout: PLARGE_INTEGER, Description: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtOpenTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE) -> NTSTATUS;
+    pub type NtQueryInformationTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, TransactionInformationClass: TRANSACTION_INFORMATION_CLASS, TransactionInformation: PVOID, TransactionInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, TransactionInformationClass: TRANSACTION_INFORMATION_CLASS, TransactionInformation: PVOID, TransactionInformationLength: ULONG) -> NTSTATUS;
+    pub type NtCommitTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, Wait: BOOLEAN) -> NTSTATUS;
+    pub type NtRollbackTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, Wait: BOOLEAN) -> NTSTATUS;
+    pub type NtCreateEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, TransactionHandle: HANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, NotificationMask: NOTIFICATION_MASK, EnlistmentKey: PVOID) -> NTSTATUS;
+    pub type NtOpenEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, EnlistmentGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtQueryInformationEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentInformationClass: ENLISTMENT_INFORMATION_CLASS, EnlistmentInformation: PVOID, EnlistmentInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentInformationClass: ENLISTMENT_INFORMATION_CLASS, EnlistmentInformation: PVOID, EnlistmentInformationLength: ULONG) -> NTSTATUS;
+    pub type NtRecoverEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentKey: PVOID) -> NTSTATUS;
+    pub type NtPrePrepareEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtPrepareEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtCommitEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtRollbackEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtPrePrepareCompleteFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtPrepareCompleteFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtCommitCompleteFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtReadOnlyEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtRollbackCompleteFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtSinglePhaseRejectFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtCreateResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, RmGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, Description: PUNICODE_STRING) -> NTSTATUS;
+    pub type NtOpenResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, ResourceManagerGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtRecoverResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE) -> NTSTATUS;
+    pub type NtGetNotificationResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, TransactionNotification: PTRANSACTION_NOTIFICATION, NotificationLength: ULONG, Timeout: PLARGE_INTEGER, ReturnLength: PULONG, Asynchronous: ULONG, AsynchronousContext: ULONG_PTR) -> NTSTATUS;
+    pub type NtQueryInformationResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, ResourceManagerInformationClass: RESOURCEMANAGER_INFORMATION_CLASS, ResourceManagerInformation: PVOID, ResourceManagerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtSetInformationResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, ResourceManagerInformationClass: RESOURCEMANAGER_INFORMATION_CLASS, ResourceManagerInformation: PVOID, ResourceManagerInformationLength: ULONG) -> NTSTATUS;
+    pub type NtRegisterProtocolAddressInformationFn = unsafe extern "stdcall" fn(ResourceManager: HANDLE, ProtocolId: PCRM_PROTOCOL_ID, ProtocolInformationSize: ULONG, ProtocolInformation: PVOID, CreateOptions: ULONG) -> NTSTATUS;
+    pub type NtPropagationCompleteFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, RequestCookie: ULONG, BufferLength: ULONG, Buffer: PVOID) -> NTSTATUS;
+    pub type NtPropagationFailedFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, RequestCookie: ULONG, PropStatus: NTSTATUS) -> NTSTATUS;
+    pub type NtFreezeTransactionsFn = unsafe extern "stdcall" fn(FreezeTimeout: PLARGE_INTEGER, ThawTimeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtThawTransactionsFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type TpAllocPoolFn = unsafe extern "stdcall" fn(PoolReturn: *mut PTP_POOL, Reserved: PVOID) -> NTSTATUS;
+    pub type TpSetPoolMinThreadsFn = unsafe extern "stdcall" fn(Pool: PTP_POOL, MinThreads: ULONG) -> NTSTATUS;
+    pub type TpQueryPoolStackInformationFn = unsafe extern "stdcall" fn(Pool: PTP_POOL, PoolStackInformation: PTP_POOL_STACK_INFORMATION) -> NTSTATUS;
+    pub type TpSetPoolStackInformationFn = unsafe extern "stdcall" fn(Pool: PTP_POOL, PoolStackInformation: PTP_POOL_STACK_INFORMATION) -> NTSTATUS;
+    pub type TpSetPoolThreadBasePriorityFn = unsafe extern "stdcall" fn(Pool: PTP_POOL, BasePriority: ULONG) -> NTSTATUS;
+    pub type TpAllocCleanupGroupFn = unsafe extern "stdcall" fn(CleanupGroupReturn: *mut PTP_CLEANUP_GROUP) -> NTSTATUS;
+    pub type TpCallbackMayRunLongFn = unsafe extern "stdcall" fn(Instance: PTP_CALLBACK_INSTANCE) -> NTSTATUS;
+    pub type TpSimpleTryPostFn = unsafe extern "stdcall" fn(Callback: PTP_SIMPLE_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
+    pub type TpAllocWorkFn = unsafe extern "stdcall" fn(WorkReturn: *mut PTP_WORK, Callback: PTP_WORK_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
+    pub type TpAllocTimerFn = unsafe extern "stdcall" fn(Timer: *mut PTP_TIMER, Callback: PTP_TIMER_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
+    pub type TpSetTimerExFn = unsafe extern "stdcall" fn(Timer: PTP_TIMER, DueTime: PLARGE_INTEGER, Period: ULONG, WindowLength: ULONG) -> NTSTATUS;
+    pub type TpIsTimerSetFn = unsafe extern "stdcall" fn(Timer: PTP_TIMER) -> LOGICAL;
+    pub type TpAllocWaitFn = unsafe extern "stdcall" fn(WaitReturn: *mut PTP_WAIT, Callback: PTP_WAIT_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
+    pub type TpSetWaitExFn = unsafe extern "stdcall" fn(Wait: PTP_WAIT, Handle: HANDLE, Timeout: PLARGE_INTEGER, Reserved: PVOID) -> NTSTATUS;
+    pub type TpAllocIoCompletionFn = unsafe extern "stdcall" fn(IoReturn: *mut PTP_IO, File: HANDLE, Callback: PTP_IO_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
+    pub type TpAllocAlpcCompletionFn = unsafe extern "stdcall" fn(AlpcReturn: *mut PTP_ALPC, AlpcPort: HANDLE, Callback: PTP_ALPC_CALLBACK, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
+    pub type TpAllocAlpcCompletionExFn = unsafe extern "stdcall" fn(AlpcReturn: *mut PTP_ALPC, AlpcPort: HANDLE, Callback: PTP_ALPC_CALLBACK_EX, Context: PVOID, CallbackEnviron: PTP_CALLBACK_ENVIRON) -> NTSTATUS;
+    pub type RtlDispatchExceptionFn = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT) -> BOOLEAN;
+    pub type RtlRaiseStatusFn = unsafe extern "stdcall" fn(Status: NTSTATUS) -> !;
+    pub type RtlRaiseNoncontinuableExceptionFn = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT) -> !;
+    pub type NtContinueFn = unsafe extern "stdcall" fn(ContextRecord: PCONTEXT, TestAlert: BOOLEAN) -> NTSTATUS;
+    pub type NtContinueExFn = unsafe extern "stdcall" fn(ContextRecord: PCONTEXT, ContinueArgument: PVOID) -> NTSTATUS;
+    pub type NtRaiseExceptionFn = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT, FirstChance: BOOLEAN) -> NTSTATUS;
+    pub type RtlAssertFn = unsafe extern "stdcall" fn(VoidFailedAssertion: PVOID, VoidFileName: PVOID, LineNumber: ULONG, MutableMessage: PSTR) -> !;
+    pub type SamFreeMemoryFn = unsafe extern "stdcall" fn(Buffer: PVOID) -> NTSTATUS;
+    pub type SamCloseHandleFn = unsafe extern "stdcall" fn(SamHandle: SAM_HANDLE) -> NTSTATUS;
+    pub type SamSetSecurityObjectFn = unsafe extern "stdcall" fn(ObjectHandle: SAM_HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type SamQuerySecurityObjectFn = unsafe extern "stdcall" fn(ObjectHandle: SAM_HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: *mut PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type SamRidToSidFn = unsafe extern "stdcall" fn(ObjectHandle: SAM_HANDLE, Rid: ULONG, Sid: *mut PSID) -> NTSTATUS;
+    pub type SamConnectFn = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, ServerHandle: PSAM_HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type SamConnectWithCredsFn = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, ServerHandle: PSAM_HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Creds: PRPC_AUTH_IDENTITY_HANDLE, Spn: PWCHAR, pfDstIsW2K: *mut BOOL) -> NTSTATUS;
+    pub type SamShutdownSamServerFn = unsafe extern "stdcall" fn(ServerHandle: SAM_HANDLE) -> NTSTATUS;
+    pub type SamLookupDomainInSamServerFn = unsafe extern "stdcall" fn(ServerHandle: SAM_HANDLE, Name: PUNICODE_STRING, DomainId: *mut PSID) -> NTSTATUS;
+    pub type SamEnumerateDomainsInSamServerFn = unsafe extern "stdcall" fn(ServerHandle: SAM_HANDLE, EnumerationContext: PSAM_ENUMERATE_HANDLE, Buffer: *mut PVOID, PreferedMaximumLength: ULONG, CountReturned: PULONG) -> NTSTATUS;
+    pub type SamOpenDomainFn = unsafe extern "stdcall" fn(ServerHandle: SAM_HANDLE, DesiredAccess: ACCESS_MASK, DomainId: PSID, DomainHandle: PSAM_HANDLE) -> NTSTATUS;
+    pub type SamQueryInformationDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DomainInformationClass: DOMAIN_INFORMATION_CLASS, Buffer: *mut PVOID) -> NTSTATUS;
+    pub type SamSetInformationDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DomainInformationClass: DOMAIN_INFORMATION_CLASS, DomainInformation: PVOID) -> NTSTATUS;
+    pub type SamLookupNamesInDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, Count: ULONG, Names: PUNICODE_STRING, RelativeIds: *mut PULONG, Use: *mut PSID_NAME_USE) -> NTSTATUS;
+    pub type SamLookupNamesInDomain2Fn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, Count: ULONG, Names: PUNICODE_STRING, Sids: *mut PSID, Use: *mut PSID_NAME_USE) -> NTSTATUS;
+    pub type SamLookupIdsInDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, Count: ULONG, RelativeIds: PULONG, Names: *mut PUNICODE_STRING, Use: *mut PSID_NAME_USE) -> NTSTATUS;
+    pub type SamRemoveMemberFromForeignDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, MemberId: PSID) -> NTSTATUS;
+    pub type SamQueryLocalizableAccountsInDomainFn = unsafe extern "stdcall" fn(Domain: SAM_HANDLE, Flags: ULONG, LanguageId: ULONG, Class: DOMAIN_LOCALIZABLE_ACCOUNTS_INFORMATION, Buffer: *mut PVOID) -> NTSTATUS;
+    pub type SamEnumerateGroupsInDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, EnumerationContext: PSAM_ENUMERATE_HANDLE, Buffer: *mut PVOID, PreferedMaximumLength: ULONG, CountReturned: PULONG) -> NTSTATUS;
+    pub type SamCreateGroupInDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, AccountName: PUNICODE_STRING, DesiredAccess: ACCESS_MASK, GroupHandle: PSAM_HANDLE, RelativeId: PULONG) -> NTSTATUS;
+    pub type SamOpenGroupFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DesiredAccess: ACCESS_MASK, GroupId: ULONG, GroupHandle: PSAM_HANDLE) -> NTSTATUS;
+    pub type SamDeleteGroupFn = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE) -> NTSTATUS;
+    pub type SamQueryInformationGroupFn = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, GroupInformationClass: GROUP_INFORMATION_CLASS, Buffer: *mut PVOID) -> NTSTATUS;
+    pub type SamSetInformationGroupFn = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, GroupInformationClass: GROUP_INFORMATION_CLASS, Buffer: PVOID) -> NTSTATUS;
+    pub type SamAddMemberToGroupFn = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, MemberId: ULONG, Attributes: ULONG) -> NTSTATUS;
+    pub type SamRemoveMemberFromGroupFn = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, MemberId: ULONG) -> NTSTATUS;
+    pub type SamGetMembersInGroupFn = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, MemberIds: *mut PULONG, Attributes: *mut PULONG, MemberCount: PULONG) -> NTSTATUS;
+    pub type SamSetMemberAttributesOfGroupFn = unsafe extern "stdcall" fn(GroupHandle: SAM_HANDLE, MemberId: ULONG, Attributes: ULONG) -> NTSTATUS;
+    pub type SamEnumerateAliasesInDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, EnumerationContext: PSAM_ENUMERATE_HANDLE, Buffer: *mut PVOID, PreferedMaximumLength: ULONG, CountReturned: PULONG) -> NTSTATUS;
+    pub type SamCreateAliasInDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, AccountName: PUNICODE_STRING, DesiredAccess: ACCESS_MASK, AliasHandle: PSAM_HANDLE, RelativeId: PULONG) -> NTSTATUS;
+    pub type SamOpenAliasFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DesiredAccess: ACCESS_MASK, AliasId: ULONG, AliasHandle: PSAM_HANDLE) -> NTSTATUS;
+    pub type SamDeleteAliasFn = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE) -> NTSTATUS;
+    pub type SamQueryInformationAliasFn = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, AliasInformationClass: ALIAS_INFORMATION_CLASS, Buffer: *mut PVOID) -> NTSTATUS;
+    pub type SamSetInformationAliasFn = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, AliasInformationClass: ALIAS_INFORMATION_CLASS, Buffer: PVOID) -> NTSTATUS;
+    pub type SamAddMemberToAliasFn = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberId: PSID) -> NTSTATUS;
+    pub type SamAddMultipleMembersToAliasFn = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberIds: *mut PSID, MemberCount: ULONG) -> NTSTATUS;
+    pub type SamRemoveMemberFromAliasFn = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberId: PSID) -> NTSTATUS;
+    pub type SamRemoveMultipleMembersFromAliasFn = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberIds: *mut PSID, MemberCount: ULONG) -> NTSTATUS;
+    pub type SamGetMembersInAliasFn = unsafe extern "stdcall" fn(AliasHandle: SAM_HANDLE, MemberIds: *mut *mut PSID, MemberCount: PULONG) -> NTSTATUS;
+    pub type SamGetAliasMembershipFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, PassedCount: ULONG, Sids: *mut PSID, MembershipCount: PULONG, Aliases: *mut PULONG) -> NTSTATUS;
+    pub type SamEnumerateUsersInDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, EnumerationContext: PSAM_ENUMERATE_HANDLE, UserAccountControl: ULONG, Buffer: *mut PVOID, PreferedMaximumLength: ULONG, CountReturned: PULONG) -> NTSTATUS;
+    pub type SamCreateUserInDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, AccountName: PUNICODE_STRING, DesiredAccess: ACCESS_MASK, UserHandle: PSAM_HANDLE, RelativeId: PULONG) -> NTSTATUS;
+    pub type SamCreateUser2InDomainFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, AccountName: PUNICODE_STRING, AccountType: ULONG, DesiredAccess: ACCESS_MASK, UserHandle: PSAM_HANDLE, GrantedAccess: PULONG, RelativeId: PULONG) -> NTSTATUS;
+    pub type SamOpenUserFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DesiredAccess: ACCESS_MASK, UserId: ULONG, UserHandle: PSAM_HANDLE) -> NTSTATUS;
+    pub type SamDeleteUserFn = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE) -> NTSTATUS;
+    pub type SamQueryInformationUserFn = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE, UserInformationClass: USER_INFORMATION_CLASS, Buffer: *mut PVOID) -> NTSTATUS;
+    pub type SamSetInformationUserFn = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE, UserInformationClass: USER_INFORMATION_CLASS, Buffer: PVOID) -> NTSTATUS;
+    pub type SamGetGroupsForUserFn = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE, Groups: *mut PGROUP_MEMBERSHIP, MembershipCount: PULONG) -> NTSTATUS;
+    pub type SamChangePasswordUserFn = unsafe extern "stdcall" fn(UserHandle: SAM_HANDLE, OldPassword: PUNICODE_STRING, NewPassword: PUNICODE_STRING) -> NTSTATUS;
+    pub type SamChangePasswordUser2Fn = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, UserName: PUNICODE_STRING, OldPassword: PUNICODE_STRING, NewPassword: PUNICODE_STRING) -> NTSTATUS;
+    pub type SamChangePasswordUser3Fn = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, UserName: PUNICODE_STRING, OldPassword: PUNICODE_STRING, NewPassword: PUNICODE_STRING, EffectivePasswordPolicy: *mut PDOMAIN_PASSWORD_INFORMATION, PasswordChangeFailureInfo: *mut PUSER_PWD_CHANGE_FAILURE_INFORMATION) -> NTSTATUS;
+    pub type SamQueryDisplayInformationFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DisplayInformation: DOMAIN_DISPLAY_INFORMATION, Index: ULONG, EntryCount: ULONG, PreferredMaximumLength: ULONG, TotalAvailable: PULONG, TotalReturned: PULONG, ReturnedEntryCount: PULONG, SortedBuffer: *mut PVOID) -> NTSTATUS;
+    pub type SamGetDisplayEnumerationIndexFn = unsafe extern "stdcall" fn(DomainHandle: SAM_HANDLE, DisplayInformation: DOMAIN_DISPLAY_INFORMATION, Prefix: PUNICODE_STRING, Index: PULONG) -> NTSTATUS;
+    pub type SamRegisterObjectChangeNotificationFn = unsafe extern "stdcall" fn(ObjectType: SECURITY_DB_OBJECT_TYPE, NotificationEventHandle: HANDLE) -> NTSTATUS;
+    pub type SamUnregisterObjectChangeNotificationFn = unsafe extern "stdcall" fn(ObjectType: SECURITY_DB_OBJECT_TYPE, NotificationEventHandle: HANDLE) -> NTSTATUS;
+    pub type SamGetCompatibilityModeFn = unsafe extern "stdcall" fn(ObjectHandle: SAM_HANDLE, Mode: *mut ULONG) -> NTSTATUS;
+    pub type SamValidatePasswordFn = unsafe extern "stdcall" fn(ServerName: PUNICODE_STRING, ValidationType: PASSWORD_POLICY_VALIDATION_TYPE, InputArg: PSAM_VALIDATE_INPUT_ARG, OutputArg: *mut PSAM_VALIDATE_OUTPUT_ARG) -> NTSTATUS;
+    pub type SamPerformGenericOperationFn = unsafe extern "stdcall" fn(ServerName: PWSTR, OperationType: SAM_GENERIC_OPERATION_TYPE, OperationIn: PSAM_GENERIC_OPERATION_INPUT, OperationOut: *mut PSAM_GENERIC_OPERATION_OUTPUT) -> NTSTATUS;
+    pub type NtVdmControlFn = unsafe extern "stdcall" fn(Service: VDMSERVICECLASS, ServiceData: PVOID) -> NTSTATUS;
+    pub type ApiSetQueryApiSetPresenceFn = unsafe extern "stdcall" fn(Namespace: PCUNICODE_STRING, Present: PBOOLEAN) -> BOOL;
+    pub type ApiSetQueryApiSetPresenceExFn = unsafe extern "stdcall" fn(Namespace: PCUNICODE_STRING, IsInSchema: PBOOLEAN, Present: PBOOLEAN) -> BOOL;
+    pub type NtQuerySecurityPolicyFn = unsafe extern "stdcall" fn(Policy: PCUNICODE_STRING, KeyName: PCUNICODE_STRING, ValueName: PCUNICODE_STRING, ValueType: SECURE_SETTING_VALUE_TYPE, Value: PVOID, ValueSize: PULONG) -> NTSTATUS;
+    pub type NtCreateCrossVmEventFn = unsafe extern "stdcall" fn(CrossVmEvent: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CrossVmEventFlags: ULONG, VMID: LPCGUID, ServiceID: LPCGUID) -> NTSTATUS;
+    pub type NtCreateCrossVmMutantFn = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CrossVmEventFlags: ULONG, VMID: LPCGUID, ServiceID: LPCGUID) -> NTSTATUS;
+    pub type NtAcquireCrossVmMutantFn = unsafe extern "stdcall" fn(CrossVmMutant: HANDLE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type NtDirectGraphicsCallFn = unsafe extern "stdcall" fn(InputBufferLength: ULONG, InputBuffer: PVOID, OutputBufferLength: ULONG, OutputBuffer: PVOID, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtOpenCpuPartitionFn = unsafe extern "stdcall" fn(CpuPartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtCreateCpuPartitionFn = unsafe extern "stdcall" fn(CpuPartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type NtSetInformationCpuPartitionFn = unsafe extern "stdcall" fn(CpuPartitionHandle: HANDLE, CpuPartitionInformationClass: ULONG, CpuPartitionInformation: PVOID, CpuPartitionInformationLength: ULONG, arg1: PVOID, arg2: ULONG, arg3: ULONG) -> NTSTATUS;
+    pub type NtAcquireProcessActivityReferenceFn = unsafe extern "stdcall" fn(ActivityReferenceHandle: PHANDLE, ParentProcessHandle: HANDLE, Reserved: PROCESS_ACTIVITY_TYPE) -> NTSTATUS;
+    pub type EtwSetMarkFn = unsafe extern "stdcall" fn(TraceHandle: TRACEHANDLE, MarkInfo: PETW_SET_MARK_INFORMATION, Size: ULONG) -> ULONG;
+    pub type EtwEventWriteFullFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, EventProperty: USHORT, ActivityId: LPCGUID, RelatedActivityId: LPCGUID, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
+    pub type EtwEventUnregisterFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE) -> ULONG;
+    pub type EtwEventSetInformationFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, InformationClass: EVENT_INFO_CLASS, EventInformation: PVOID, InformationLength: ULONG) -> ULONG;
+    pub type EtwRegisterSecurityProviderFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type EtwEventProviderEnabledFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, Level: UCHAR, Keyword: ULONGLONG) -> BOOLEAN;
+    pub type EtwEventEnabledFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR) -> BOOLEAN;
+    pub type EtwEventWriteFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
+    pub type EtwEventWriteTransferFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, ActivityId: LPCGUID, RelatedActivityId: LPCGUID, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
+    pub type EtwEventWriteStringFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, Level: UCHAR, Keyword: ULONGLONG, String: PCWSTR) -> ULONG;
+    pub type EtwEventWriteExFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, Filter: ULONG64, Flags: ULONG, ActivityId: LPCGUID, RelatedActivityId: LPCGUID, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
+    pub type EtwEventWriteStartScenarioFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
+    pub type EtwEventWriteEndScenarioFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, EventDescriptor: PCEVENT_DESCRIPTOR, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
+    pub type EtwWriteUMSecurityEventFn = unsafe extern "stdcall" fn(EventDescriptor: PCEVENT_DESCRIPTOR, EventProperty: USHORT, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
+    pub type EtwEventWriteNoRegistrationFn = unsafe extern "stdcall" fn(ProviderId: LPCGUID, EventDescriptor: PCEVENT_DESCRIPTOR, UserDataCount: ULONG, UserData: PEVENT_DATA_DESCRIPTOR) -> ULONG;
+    pub type EtwEventActivityIdControlFn = unsafe extern "stdcall" fn(ControlCode: ULONG, ActivityId: LPGUID) -> ULONG;
+    pub type EtwNotificationRegisterFn = unsafe extern "stdcall" fn(Guid: LPCGUID, Type: ULONG, Callback: PETW_NOTIFICATION_CALLBACK, Context: PVOID, RegHandle: PREGHANDLE) -> ULONG;
+    pub type EtwNotificationUnregisterFn = unsafe extern "stdcall" fn(RegHandle: REGHANDLE, Context: *mut PVOID) -> ULONG;
+    pub type EtwSendNotificationFn = unsafe extern "stdcall" fn(DataBlock: PETW_NOTIFICATION_HEADER, ReceiveDataBlockSize: ULONG, ReceiveDataBlock: PVOID, ReplyReceived: PULONG, ReplySizeNeeded: PULONG) -> ULONG;
+    pub type EtwReplyNotificationFn = unsafe extern "stdcall" fn(Notification: PETW_NOTIFICATION_HEADER) -> ULONG;
+    pub type EtwEnumerateProcessRegGuidsFn = unsafe extern "stdcall" fn(OutBuffer: PVOID, OutBufferSize: ULONG, ReturnLength: PULONG) -> ULONG;
+    pub type EtwQueryRealtimeConsumerFn = unsafe extern "stdcall" fn(TraceHandle: TRACEHANDLE, EventsLostCount: PULONG, BuffersLostCount: PULONG) -> ULONG;
+    pub type NtTraceControlFn = unsafe extern "stdcall" fn(FunctionCode: ETWTRACECONTROLCODE, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtTraceEventFn = unsafe extern "stdcall" fn(TraceHandle: HANDLE, Flags: ULONG, FieldSize: ULONG, Fields: PVOID) -> NTSTATUS;
+    pub type EtwCheckCoverageFn = unsafe extern "stdcall" fn(CoveragePoint: PTELEMETRY_COVERAGE_POINT) -> BOOLEAN;
+    pub type WmiOpenBlockFn = unsafe extern "stdcall" fn(Guid: LPCGUID, DesiredAccess: ACCESS_MASK, DataBlockHandle: PHANDLE) -> ULONG;
+    pub type WmiCloseBlockFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE) -> ULONG;
+    pub type WmiQueryAllDataAFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, BufferLength: PULONG, Buffer: PVOID) -> ULONG;
+    pub type WmiQueryAllDataWFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, BufferLength: PULONG, Buffer: PVOID) -> ULONG;
+    pub type WmiQueryAllDataMultipleAFn = unsafe extern "stdcall" fn(HandleList: PHANDLE, HandleCount: ULONG, InOutBufferSize: PULONG, OutBuffer: PVOID) -> ULONG;
+    pub type WmiQueryAllDataMultipleWFn = unsafe extern "stdcall" fn(HandleList: PHANDLE, HandleCount: ULONG, InOutBufferSize: PULONG, OutBuffer: PVOID) -> ULONG;
+    pub type WmiQuerySingleInstanceAFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, InstanceName: PCSTR, BufferSize: PULONG, Buffer: PVOID) -> ULONG;
+    pub type WmiQuerySingleInstanceWFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, InstanceName: PCWSTR, BufferSize: PULONG, Buffer: PVOID) -> ULONG;
+    pub type WmiQuerySingleInstanceMultipleWFn = unsafe extern "stdcall" fn(HandleList: PHANDLE, InstanceNames: *mut PCWSTR, HandleCount: ULONG, InOutBufferSize: PULONG, OutBuffer: PVOID) -> ULONG;
+    pub type WmiQuerySingleInstanceMultipleAFn = unsafe extern "stdcall" fn(HandleList: PHANDLE, InstanceNames: *mut PCSTR, HandleCount: ULONG, InOutBufferSize: PULONG, OutBuffer: PVOID) -> ULONG;
+    pub type WmiSetSingleInstanceAFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, InstanceName: PCSTR, Reserved: ULONG, ValueBufferSize: ULONG, ValueBuffer: PVOID) -> ULONG;
+    pub type WmiSetSingleInstanceWFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, InstanceName: PCWSTR, Reserved: ULONG, ValueBufferSize: ULONG, ValueBuffer: PVOID) -> ULONG;
+    pub type WmiSetSingleItemAFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, InstanceName: PCSTR, DataItemId: ULONG, Reserved: ULONG, ValueBufferSize: ULONG, ValueBuffer: PVOID) -> ULONG;
+    pub type WmiSetSingleItemWFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, InstanceName: PCWSTR, DataItemId: ULONG, Reserved: ULONG, ValueBufferSize: ULONG, ValueBuffer: PVOID) -> ULONG;
+    pub type WmiExecuteMethodAFn = unsafe extern "stdcall" fn(MethodDataBlockHandle: HANDLE, MethodInstanceName: PCSTR, MethodId: ULONG, InputBufferSize: ULONG, InputBuffer: PVOID, OutputBufferSize: PULONG, OutputBuffer: PVOID) -> ULONG;
+    pub type WmiExecuteMethodWFn = unsafe extern "stdcall" fn(MethodDataBlockHandle: HANDLE, MethodInstanceName: PCWSTR, MethodId: ULONG, InputBufferSize: ULONG, InputBuffer: PVOID, OutputBufferSize: PULONG, OutputBuffer: PVOID) -> ULONG;
+    pub type WmiNotificationRegistrationAFn = unsafe extern "stdcall" fn(Guid: PCGUID, Enable: BOOLEAN, DeliveryInfo: PVOID, DeliveryContext: ULONG_PTR, Flags: ULONG) -> ULONG;
+    pub type WmiNotificationRegistrationWFn = unsafe extern "stdcall" fn(Guid: PCGUID, Enable: BOOLEAN, DeliveryInfo: PVOID, DeliveryContext: ULONG_PTR, Flags: ULONG) -> ULONG;
+    pub type WmiEnumerateGuidsFn = unsafe extern "stdcall" fn(GuidList: PGUID, GuidCount: PULONG) -> ULONG;
+    pub type WmiMofEnumerateResourcesWFn = unsafe extern "stdcall" fn(MofResourceHandle: HANDLE, MofResourceCount: PULONG, MofResourceInfo: *mut PMOFRESOURCEINFOW) -> ULONG;
+    pub type WmiMofEnumerateResourcesAFn = unsafe extern "stdcall" fn(MofResourceHandle: HANDLE, MofResourceCount: PULONG, MofResourceInfo: *mut PMOFRESOURCEINFOA) -> ULONG;
+    pub type WmiFileHandleToInstanceNameAFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, FileHandle: HANDLE, NumberCharacters: PULONG, InstanceNames: *mut CHAR) -> ULONG;
+    pub type WmiFileHandleToInstanceNameWFn = unsafe extern "stdcall" fn(DataBlockHandle: HANDLE, FileHandle: HANDLE, NumberCharacters: PULONG, InstanceNames: *mut WCHAR) -> ULONG;
+    pub type WmiDevInstToInstanceNameAFn = unsafe extern "stdcall" fn(InstanceName: PSTR, InstanceNameLength: ULONG, DevInst: PCSTR, InstanceIndex: ULONG) -> ULONG;
+    pub type WmiDevInstToInstanceNameWFn = unsafe extern "stdcall" fn(InstanceName: PWSTR, InstanceNameLength: ULONG, DevInst: PCWSTR, InstanceIndex: ULONG) -> ULONG;
+    pub type WmiQueryGuidInformationFn = unsafe extern "stdcall" fn(GuidHandle: HANDLE, GuidInfo: PWMIGUIDINFORMATION) -> ULONG;
+    pub type WmiReceiveNotificationsWFn = unsafe extern "stdcall" fn(HandleCount: ULONG, HandleList: PHANDLE, Callback: ::core::option::Option<unsafe extern "stdcall" fn(arg1: PWNODE_HEADER, arg2: ULONG_PTR)>, DeliveryContext: ULONG_PTR) -> ULONG;
+    pub type WmiReceiveNotificationsAFn = unsafe extern "stdcall" fn(HandleCount: ULONG, HandleList: PHANDLE, Callback: ::core::option::Option<unsafe extern "stdcall" fn(arg1: PWNODE_HEADER, arg2: ULONG_PTR)>, DeliveryContext: ULONG_PTR) -> ULONG;
+    pub type ZwAcceptConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, AcceptConnection: BOOLEAN, ServerView: PPORT_VIEW, ClientView: PREMOTE_PORT_VIEW) -> NTSTATUS;
+    pub type ZwAccessCheckFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
+    pub type ZwAccessCheckAndAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, DesiredAccess: ACCESS_MASK, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type ZwAccessCheckByTypeFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
+    pub type ZwAccessCheckByTypeAndAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type ZwAccessCheckByTypeResultListFn = unsafe extern "stdcall" fn(SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, PrivilegeSet: PPRIVILEGE_SET, PrivilegeSetLength: PULONG, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS) -> NTSTATUS;
+    pub type ZwAccessCheckByTypeResultListAndAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type ZwAccessCheckByTypeResultListAndAuditAlarmByHandleFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ClientToken: HANDLE, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, PrincipalSelfSid: PSID, DesiredAccess: ACCESS_MASK, AuditType: AUDIT_EVENT_TYPE, Flags: ULONG, ObjectTypeList: POBJECT_TYPE_LIST, ObjectTypeListLength: ULONG, GenericMapping: PGENERIC_MAPPING, ObjectCreation: BOOLEAN, GrantedAccess: PACCESS_MASK, AccessStatus: PNTSTATUS, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type ZwAcquireCMFViewOwnershipFn = unsafe extern "stdcall" fn(TimeStamp: PULONGLONG, tokenTaken: PBOOLEAN, replaceExisting: BOOLEAN) -> NTSTATUS;
+    pub type ZwAcquireCrossVmMutantFn = unsafe extern "stdcall" fn(CrossVmMutant: HANDLE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwAcquireProcessActivityReferenceFn = unsafe extern "stdcall" fn(ActivityReferenceHandle: PHANDLE, ParentProcessHandle: HANDLE, Reserved: PROCESS_ACTIVITY_TYPE) -> NTSTATUS;
+    pub type ZwAddAtomFn = unsafe extern "stdcall" fn(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
+    pub type ZwAddAtomExFn = unsafe extern "stdcall" fn(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM, Flags: ULONG) -> NTSTATUS;
+    pub type ZwAddBootEntryFn = unsafe extern "stdcall" fn(BootEntry: PBOOT_ENTRY, Id: PULONG) -> NTSTATUS;
+    pub type ZwAddDriverEntryFn = unsafe extern "stdcall" fn(DriverEntry: PEFI_DRIVER_ENTRY, Id: PULONG) -> NTSTATUS;
+    pub type ZwAdjustGroupsTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, ResetToDefault: BOOLEAN, NewState: PTOKEN_GROUPS, BufferLength: ULONG, PreviousState: PTOKEN_GROUPS, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwAdjustPrivilegesTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, DisableAllPrivileges: BOOLEAN, NewState: PTOKEN_PRIVILEGES, BufferLength: ULONG, PreviousState: PTOKEN_PRIVILEGES, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwAdjustTokenClaimsAndDeviceGroupsFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, UserResetToDefault: BOOLEAN, DeviceResetToDefault: BOOLEAN, DeviceGroupsResetToDefault: BOOLEAN, NewUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, NewDeviceGroupsState: PTOKEN_GROUPS, UserBufferLength: ULONG, PreviousUserState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceBufferLength: ULONG, PreviousDeviceState: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroupsBufferLength: ULONG, PreviousDeviceGroups: PTOKEN_GROUPS, UserReturnLength: PULONG, DeviceReturnLength: PULONG, DeviceGroupsReturnBufferLength: PULONG) -> NTSTATUS;
+    pub type ZwAlertMultipleThreadByThreadIdFn = unsafe extern "stdcall" fn(MultipleThreadId: PHANDLE, Count: ULONG, Boost: PVOID, BoostCount: ULONG) -> NTSTATUS;
+    pub type ZwAlertResumeThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
+    pub type ZwAlertThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> NTSTATUS;
+    pub type ZwAlertThreadByThreadIdFn = unsafe extern "stdcall" fn(ThreadId: HANDLE) -> NTSTATUS;
+    pub type ZwAlertThreadByThreadIdExFn = unsafe extern "stdcall" fn(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
+    pub type ZwAllocateLocallyUniqueIdFn = unsafe extern "stdcall" fn(Luid: PLUID) -> NTSTATUS;
+    pub type ZwAllocateReserveObjectFn = unsafe extern "stdcall" fn(MemoryReserveHandle: PHANDLE, ObjectAttributes: PCOBJECT_ATTRIBUTES, Type: MEMORY_RESERVE_TYPE) -> NTSTATUS;
+    pub type ZwAllocateUserPhysicalPagesFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PSIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+    pub type ZwAllocateUserPhysicalPagesExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
+    pub type ZwAllocateUuidsFn = unsafe extern "stdcall" fn(Time: PULARGE_INTEGER, Range: PULONG, Sequence: PULONG, Seed: PCHAR) -> NTSTATUS;
+    pub type ZwAllocateVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, RegionSize: PSIZE_T, AllocationType: ULONG, Protect: ULONG) -> NTSTATUS;
+    pub type ZwAllocateVirtualMemoryExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
+    pub type ZwAlpcAcceptConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ConnectionPortHandle: HANDLE, Flags: ULONG, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, PortContext: PVOID, ConnectionRequest: PPORT_MESSAGE, ConnectionMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, AcceptConnection: BOOLEAN) -> NTSTATUS;
+    pub type ZwAlpcCancelMessageFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, MessageContext: PALPC_CONTEXT_ATTR) -> NTSTATUS;
+    pub type ZwAlpcConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, RequiredServerSid: PSID, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwAlpcConnectPortExFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ConnectionPortObjectAttributes: POBJECT_ATTRIBUTES, ClientPortObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES, Flags: ULONG, ServerSecurityRequirements: PSECURITY_DESCRIPTOR, ConnectionMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, OutMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, InMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwAlpcCreatePortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, PortAttributes: PALPC_PORT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwAlpcCreatePortSectionFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SectionHandle: HANDLE, SectionSize: SIZE_T, AlpcSectionHandle: PALPC_HANDLE, ActualSectionSize: PSIZE_T) -> NTSTATUS;
+    pub type ZwAlpcCreateResourceReserveFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, MessageSize: SIZE_T, ResourceId: PALPC_HANDLE) -> NTSTATUS;
+    pub type ZwAlpcCreateSectionViewFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ViewAttributes: PALPC_DATA_VIEW_ATTR) -> NTSTATUS;
+    pub type ZwAlpcCreateSecurityContextFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SecurityAttribute: PALPC_SECURITY_ATTR) -> NTSTATUS;
+    pub type ZwAlpcDeletePortSectionFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SectionHandle: ALPC_HANDLE) -> NTSTATUS;
+    pub type ZwAlpcDeleteResourceReserveFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ResourceId: ALPC_HANDLE) -> NTSTATUS;
+    pub type ZwAlpcDeleteSectionViewFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ViewBase: PVOID) -> NTSTATUS;
+    pub type ZwAlpcDeleteSecurityContextFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ContextHandle: ALPC_HANDLE) -> NTSTATUS;
+    pub type ZwAlpcDisconnectPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
+    pub type ZwAlpcImpersonateClientContainerOfPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: ULONG) -> NTSTATUS;
+    pub type ZwAlpcImpersonateClientOfPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, Flags: PVOID) -> NTSTATUS;
+    pub type ZwAlpcOpenSenderProcessFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, Flags: ULONG, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwAlpcOpenSenderThreadFn = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, Flags: ULONG, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwAlpcQueryInformationFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwAlpcQueryInformationMessageFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortMessage: PPORT_MESSAGE, MessageInformationClass: ALPC_MESSAGE_INFORMATION_CLASS, MessageInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwAlpcRevokeSecurityContextFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, ContextHandle: ALPC_HANDLE) -> NTSTATUS;
+    pub type ZwAlpcSendWaitReceivePortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Flags: ULONG, SendMessageW: PPORT_MESSAGE, SendMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, ReceiveMessage: PPORT_MESSAGE, BufferLength: PSIZE_T, ReceiveMessageAttributes: PALPC_MESSAGE_ATTRIBUTES, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwAlpcSetInformationFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: ALPC_PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG) -> NTSTATUS;
+    pub type ZwAreMappedFilesTheSameFn = unsafe extern "stdcall" fn(File1MappedAsAnImage: PVOID, File2MappedAsFile: PVOID) -> NTSTATUS;
+    pub type ZwAssignProcessToJobObjectFn = unsafe extern "stdcall" fn(JobHandle: HANDLE, ProcessHandle: HANDLE) -> NTSTATUS;
+    pub type ZwAssociateWaitCompletionPacketFn = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: HANDLE, IoCompletionHandle: HANDLE, TargetObjectHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR, AlreadySignaled: PBOOLEAN) -> NTSTATUS;
+    pub type ZwCallbackReturnFn = unsafe extern "stdcall" fn(OutputBuffer: PVOID, OutputLength: ULONG, Status: NTSTATUS) -> NTSTATUS;
+    pub type ZwCallEnclaveFn = unsafe extern "stdcall" fn(Routine: PENCLAVE_ROUTINE, Reserved: PVOID, Flags: ULONG, RoutineParamReturn: *mut PVOID) -> NTSTATUS;
+    pub type ZwCancelIoFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type ZwCancelIoFileExFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoRequestToCancel: PIO_STATUS_BLOCK, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type ZwCancelSynchronousIoFileFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, IoRequestToCancel: PIO_STATUS_BLOCK, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type ZwCancelTimerFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, CurrentState: PBOOLEAN) -> NTSTATUS;
+    pub type ZwCancelTimer2Fn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, Parameters: PT2_CANCEL_PARAMETERS) -> NTSTATUS;
+    pub type ZwCancelWaitCompletionPacketFn = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: HANDLE, RemoveSignaledPacket: BOOLEAN) -> NTSTATUS;
+    pub type ZwChangeProcessStateFn = unsafe extern "stdcall" fn(ProcessStateChangeHandle: HANDLE, ProcessHandle: HANDLE, StateChangeType: PROCESS_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
+    pub type ZwChangeThreadStateFn = unsafe extern "stdcall" fn(ThreadStateChangeHandle: HANDLE, ThreadHandle: HANDLE, StateChangeType: THREAD_STATE_CHANGE_TYPE, ExtendedInformation: PVOID, ExtendedInformationLength: SIZE_T, Reserved: ULONG64) -> NTSTATUS;
+    pub type ZwClearEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> NTSTATUS;
+    pub type ZwCloseFn = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
+    pub type ZwCloseObjectAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
+    pub type ZwCommitCompleteFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwCommitEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwCommitTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, Wait: BOOLEAN) -> NTSTATUS;
+    pub type ZwCompactKeysFn = unsafe extern "stdcall" fn(Count: ULONG, KeyArray: *mut HANDLE) -> NTSTATUS;
+    pub type ZwCompareObjectsFn = unsafe extern "stdcall" fn(FirstObjectHandle: HANDLE, SecondObjectHandle: HANDLE) -> NTSTATUS;
+    pub type ZwCompareSigningLevelsFn = unsafe extern "stdcall" fn(FirstSigningLevel: SE_SIGNING_LEVEL, SecondSigningLevel: SE_SIGNING_LEVEL) -> NTSTATUS;
+    pub type ZwCompareTokensFn = unsafe extern "stdcall" fn(FirstTokenHandle: HANDLE, SecondTokenHandle: HANDLE, Equal: PBOOLEAN) -> NTSTATUS;
+    pub type ZwCompleteConnectPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
+    pub type ZwCompressKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
+    pub type ZwConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, SecurityQos: PSECURITY_QUALITY_OF_SERVICE, ClientView: PPORT_VIEW, ServerView: PREMOTE_PORT_VIEW, MaxMessageLength: PULONG, ConnectionInformation: PVOID, ConnectionInformationLength: PULONG) -> NTSTATUS;
+    pub type ZwContinueFn = unsafe extern "stdcall" fn(ContextRecord: PCONTEXT, TestAlert: BOOLEAN) -> NTSTATUS;
+    pub type ZwContinueExFn = unsafe extern "stdcall" fn(ContextRecord: PCONTEXT, ContinueArgument: PVOID) -> NTSTATUS;
+    pub type ZwConvertBetweenAuxiliaryCounterAndPerformanceCounterFn = unsafe extern "stdcall" fn(ConvertAuxiliaryToPerformanceCounter: BOOLEAN, PerformanceOrAuxiliaryCounterValue: PULONG64, ConvertedValue: PULONG64, ConversionError: PULONG64) -> NTSTATUS;
+    pub type ZwCopyFileChunkFn = unsafe extern "stdcall" fn(SourceHandle: HANDLE, DestinationHandle: HANDLE, EventHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Length: ULONG, SourceOffset: PLARGE_INTEGER, DestOffset: PLARGE_INTEGER, SourceKey: PULONG, DestKey: PULONG, Flags: ULONG) -> NTSTATUS;
+    pub type ZwCreateCpuPartitionFn = unsafe extern "stdcall" fn(CpuPartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwCreateCrossVmEventFn = unsafe extern "stdcall" fn(CrossVmEvent: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CrossVmEventFlags: ULONG, VMID: LPCGUID, ServiceID: LPCGUID) -> NTSTATUS;
+    pub type ZwCreateCrossVmMutantFn = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, CrossVmEventFlags: ULONG, VMID: LPCGUID, ServiceID: LPCGUID) -> NTSTATUS;
+    pub type ZwCreateDebugObjectFn = unsafe extern "stdcall" fn(DebugObjectHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
+    pub type ZwCreateDirectoryObjectFn = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwCreateDirectoryObjectExFn = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, ShadowDirectoryHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
+    pub type ZwCreateEnclaveFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, Size: SIZE_T, InitialCommitment: SIZE_T, EnclaveType: ULONG, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
+    pub type ZwCreateEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, TransactionHandle: HANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, NotificationMask: NOTIFICATION_MASK, EnlistmentKey: PVOID) -> NTSTATUS;
+    pub type ZwCreateEventFn = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EventType: EVENT_TYPE, InitialState: BOOLEAN) -> NTSTATUS;
+    pub type ZwCreateEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwCreateFileFn = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, AllocationSize: PLARGE_INTEGER, FileAttributes: ULONG, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, EaBuffer: PVOID, EaLength: ULONG) -> NTSTATUS;
+    pub type ZwCreateIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Count: ULONG) -> NTSTATUS;
+    pub type ZwCreateIoRingFn = unsafe extern "stdcall" fn(IoRingHandle: PHANDLE, CreateParametersLength: ULONG, CreateParameters: PVOID, OutputParametersLength: ULONG, OutputParameters: PVOID) -> NTSTATUS;
+    pub type ZwCreateIRTimerFn = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, Reserved: PVOID, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
+    pub type ZwCreateJobObjectFn = unsafe extern "stdcall" fn(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwCreateJobSetFn = unsafe extern "stdcall" fn(NumJob: ULONG, UserJobSet: PJOB_SET_ARRAY, Flags: ULONG) -> NTSTATUS;
+    pub type ZwCreateKeyFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, Disposition: PULONG) -> NTSTATUS;
+    pub type ZwCreateKeyedEventFn = unsafe extern "stdcall" fn(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
+    pub type ZwCreateKeyTransactedFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TitleIndex: ULONG, Class: PUNICODE_STRING, CreateOptions: ULONG, TransactionHandle: HANDLE, Disposition: PULONG) -> NTSTATUS;
+    pub type ZwCreateLowBoxTokenFn = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, PackageSid: PSID, CapabilityCount: ULONG, Capabilities: PSID_AND_ATTRIBUTES, HandleCount: ULONG, Handles: *mut HANDLE) -> NTSTATUS;
+    pub type ZwCreateMailslotFileFn = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, CreateOptions: ULONG, MailslotQuota: ULONG, MaximumMessageSize: ULONG, ReadTimeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwCreateMutantFn = unsafe extern "stdcall" fn(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, InitialOwner: BOOLEAN) -> NTSTATUS;
+    pub type ZwCreateNamedPipeFileFn = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, CreateDisposition: ULONG, CreateOptions: ULONG, NamedPipeType: ULONG, ReadMode: ULONG, CompletionMode: ULONG, MaximumInstances: ULONG, InboundQuota: ULONG, OutboundQuota: ULONG, DefaultTimeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwCreatePagingFileFn = unsafe extern "stdcall" fn(PageFileName: PUNICODE_STRING, MinimumSize: PLARGE_INTEGER, MaximumSize: PLARGE_INTEGER, Priority: ULONG) -> NTSTATUS;
+    pub type ZwCreatePartitionFn = unsafe extern "stdcall" fn(ParentPartitionHandle: HANDLE, PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, PreferredNode: ULONG) -> NTSTATUS;
+    pub type ZwCreatePortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
+    pub type ZwCreatePrivateNamespaceFn = unsafe extern "stdcall" fn(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
+    pub type ZwCreateProcessFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, InheritObjectTable: BOOLEAN, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE) -> NTSTATUS;
+    pub type ZwCreateProcessExFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ParentProcess: HANDLE, Flags: ULONG, SectionHandle: HANDLE, DebugPort: HANDLE, TokenHandle: HANDLE, Reserved: ULONG) -> NTSTATUS;
+    pub type ZwCreateProcessStateChangeFn = unsafe extern "stdcall" fn(ProcessStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
+    pub type ZwCreateProfileFn = unsafe extern "stdcall" fn(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, Affinity: KAFFINITY) -> NTSTATUS;
+    pub type ZwCreateProfileExFn = unsafe extern "stdcall" fn(ProfileHandle: PHANDLE, Process: HANDLE, ProfileBase: PVOID, ProfileSize: SIZE_T, BucketSize: ULONG, Buffer: PULONG, BufferSize: ULONG, ProfileSource: KPROFILE_SOURCE, GroupCount: USHORT, GroupAffinity: PGROUP_AFFINITY) -> NTSTATUS;
+    pub type ZwCreateResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, RmGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES, CreateOptions: ULONG, Description: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwCreateSectionFn = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE) -> NTSTATUS;
+    pub type ZwCreateSectionExFn = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, MaximumSize: PLARGE_INTEGER, SectionPageProtection: ULONG, AllocationAttributes: ULONG, FileHandle: HANDLE, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
+    pub type ZwCreateSemaphoreFn = unsafe extern "stdcall" fn(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, InitialCount: LONG, MaximumCount: LONG) -> NTSTATUS;
+    pub type ZwCreateSymbolicLinkObjectFn = unsafe extern "stdcall" fn(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LinkTarget: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwCreateThreadFn = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, ClientId: PCLIENT_ID, ThreadContext: PCONTEXT, InitialTeb: PINITIAL_TEB, CreateSuspended: BOOLEAN) -> NTSTATUS;
+    pub type ZwCreateThreadExFn = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessHandle: HANDLE, StartRoutine: PUSER_THREAD_START_ROUTINE, Argument: PVOID, CreateFlags: ULONG, ZeroBits: SIZE_T, StackSize: SIZE_T, MaximumStackSize: SIZE_T, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
+    pub type ZwCreateThreadStateChangeFn = unsafe extern "stdcall" fn(ThreadStateChangeHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadHandle: HANDLE, Reserved: ULONG64) -> NTSTATUS;
+    pub type ZwCreateTimerFn = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, TimerType: TIMER_TYPE) -> NTSTATUS;
+    pub type ZwCreateTimer2Fn = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, Reserved1: PVOID, ObjectAttributes: PCOBJECT_ATTRIBUTES, Attributes: ULONG, DesiredAccess: ACCESS_MASK) -> NTSTATUS;
+    pub type ZwCreateTokenFn = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
+    pub type ZwCreateTokenExFn = unsafe extern "stdcall" fn(TokenHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Type: TOKEN_TYPE, AuthenticationId: PLUID, ExpirationTime: PLARGE_INTEGER, User: PTOKEN_USER, Groups: PTOKEN_GROUPS, Privileges: PTOKEN_PRIVILEGES, UserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, DeviceGroups: PTOKEN_GROUPS, MandatoryPolicy: PTOKEN_MANDATORY_POLICY, Owner: PTOKEN_OWNER, PrimaryGroup: PTOKEN_PRIMARY_GROUP, DefaultDacl: PTOKEN_DEFAULT_DACL, Source: PTOKEN_SOURCE) -> NTSTATUS;
+    pub type ZwCreateTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE, CreateOptions: ULONG, IsolationLevel: ULONG, IsolationFlags: ULONG, Timeout: PLARGE_INTEGER, Description: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwCreateTransactionManagerFn = unsafe extern "stdcall" fn(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, CreateOptions: ULONG, CommitStrength: ULONG) -> NTSTATUS;
+    pub type ZwCreateUserProcessFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, ThreadHandle: PHANDLE, ProcessDesiredAccess: ACCESS_MASK, ThreadDesiredAccess: ACCESS_MASK, ProcessObjectAttributes: PCOBJECT_ATTRIBUTES, ThreadObjectAttributes: PCOBJECT_ATTRIBUTES, ProcessFlags: ULONG, ThreadFlags: ULONG, ProcessParameters: PRTL_USER_PROCESS_PARAMETERS, CreateInfo: PPS_CREATE_INFO, AttributeList: PPS_ATTRIBUTE_LIST) -> NTSTATUS;
+    pub type ZwCreateWaitablePortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, ObjectAttributes: POBJECT_ATTRIBUTES, MaxConnectionInfoLength: ULONG, MaxMessageLength: ULONG, MaxPoolUsage: ULONG) -> NTSTATUS;
+    pub type ZwCreateWaitCompletionPacketFn = unsafe extern "stdcall" fn(WaitCompletionPacketHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwCreateWnfStateNameFn = unsafe extern "stdcall" fn(StateName: PWNF_STATE_NAME, NameLifetime: WNF_STATE_NAME_LIFETIME, DataScope: WNF_DATA_SCOPE, PersistData: BOOLEAN, TypeId: PCWNF_TYPE_ID, MaximumStateSize: ULONG, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type ZwCreateWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandleReturn: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, CompletionPortHandle: HANDLE, WorkerProcessHandle: HANDLE, StartRoutine: PVOID, StartParameter: PVOID, MaxThreadCount: ULONG, StackReserve: SIZE_T, StackCommit: SIZE_T) -> NTSTATUS;
+    pub type ZwDebugActiveProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DebugObjectHandle: HANDLE) -> NTSTATUS;
+    pub type ZwDebugContinueFn = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, ClientId: PCLIENT_ID, ContinueStatus: NTSTATUS) -> NTSTATUS;
+    pub type ZwDelayExecutionFn = unsafe extern "stdcall" fn(Alertable: BOOLEAN, DelayInterval: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwDeleteAtomFn = unsafe extern "stdcall" fn(Atom: RTL_ATOM) -> NTSTATUS;
+    pub type ZwDeleteBootEntryFn = unsafe extern "stdcall" fn(Id: ULONG) -> NTSTATUS;
+    pub type ZwDeleteDriverEntryFn = unsafe extern "stdcall" fn(Id: ULONG) -> NTSTATUS;
+    pub type ZwDeleteFileFn = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwDeleteKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
+    pub type ZwDeleteObjectAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
+    pub type ZwDeletePrivateNamespaceFn = unsafe extern "stdcall" fn(NamespaceHandle: HANDLE) -> NTSTATUS;
+    pub type ZwDeleteValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwDeleteWnfStateDataFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, ExplicitScope: *const ::core::ffi::c_void) -> NTSTATUS;
+    pub type ZwDeleteWnfStateNameFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
+    pub type ZwDeviceIoControlFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, IoControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
+    pub type ZwDirectGraphicsCallFn = unsafe extern "stdcall" fn(InputBufferLength: ULONG, InputBuffer: PVOID, OutputBufferLength: ULONG, OutputBuffer: PVOID, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwDisableLastKnownGoodFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwDisplayStringFn = unsafe extern "stdcall" fn(String: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwDrawTextFn = unsafe extern "stdcall" fn(Text: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwDuplicateObjectFn = unsafe extern "stdcall" fn(SourceProcessHandle: HANDLE, SourceHandle: HANDLE, TargetProcessHandle: HANDLE, TargetHandle: PHANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Options: ULONG) -> NTSTATUS;
+    pub type ZwDuplicateTokenFn = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, EffectiveOnly: BOOLEAN, Type: TOKEN_TYPE, NewTokenHandle: PHANDLE) -> NTSTATUS;
+    pub type ZwEnableLastKnownGoodFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwEnumerateBootEntriesFn = unsafe extern "stdcall" fn(Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
+    pub type ZwEnumerateDriverEntriesFn = unsafe extern "stdcall" fn(Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
+    pub type ZwEnumerateKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Index: ULONG, KeyInformationClass: KEY_INFORMATION_CLASS, KeyInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
+    pub type ZwEnumerateSystemEnvironmentValuesExFn = unsafe extern "stdcall" fn(InformationClass: ULONG, Buffer: PVOID, BufferLength: PULONG) -> NTSTATUS;
+    pub type ZwEnumerateTransactionObjectFn = unsafe extern "stdcall" fn(RootObjectHandle: HANDLE, QueryType: KTMOBJECT_TYPE, ObjectCursor: PKTMOBJECT_CURSOR, ObjectCursorLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwEnumerateValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Index: ULONG, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
+    pub type ZwExtendSectionFn = unsafe extern "stdcall" fn(SectionHandle: HANDLE, NewSectionSize: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwFilterBootOptionFn = unsafe extern "stdcall" fn(FilterOperation: FILTER_BOOT_OPTION_OPERATION, ObjectType: ULONG, ElementType: ULONG, Data: PVOID, DataSize: ULONG) -> NTSTATUS;
+    pub type ZwFilterTokenFn = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, Flags: ULONG, SidsToDisable: PTOKEN_GROUPS, PrivilegesToDelete: PTOKEN_PRIVILEGES, RestrictedSids: PTOKEN_GROUPS, NewTokenHandle: PHANDLE) -> NTSTATUS;
+    pub type ZwFilterTokenExFn = unsafe extern "stdcall" fn(ExistingTokenHandle: HANDLE, Flags: ULONG, SidsToDisable: PTOKEN_GROUPS, PrivilegesToDelete: PTOKEN_PRIVILEGES, RestrictedSids: PTOKEN_GROUPS, DisableUserClaimsCount: ULONG, UserClaimsToDisable: PUNICODE_STRING, DisableDeviceClaimsCount: ULONG, DeviceClaimsToDisable: PUNICODE_STRING, DeviceGroupsToDisable: PTOKEN_GROUPS, RestrictedUserAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, RestrictedDeviceAttributes: PTOKEN_SECURITY_ATTRIBUTES_INFORMATION, RestrictedDeviceGroups: PTOKEN_GROUPS, NewTokenHandle: PHANDLE) -> NTSTATUS;
+    pub type ZwFindAtomFn = unsafe extern "stdcall" fn(AtomName: PCWSTR, Length: ULONG, Atom: PRTL_ATOM) -> NTSTATUS;
+    pub type ZwFlushBuffersFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type ZwFlushBuffersFileExFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Flags: ULONG, Parameters: PVOID, ParametersSize: ULONG, IoStatusBlock: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type ZwFlushInstallUILanguageFn = unsafe extern "stdcall" fn(InstallUILanguage: LANGID, SetComittedFlag: ULONG) -> NTSTATUS;
+    pub type ZwFlushInstructionCacheFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Length: SIZE_T) -> NTSTATUS;
+    pub type ZwFlushKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
+    pub type ZwFlushProcessWriteBuffersFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwFlushVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, IoStatus: PIO_STATUS_BLOCK) -> NTSTATUS;
+    pub type ZwFlushWriteBufferFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwFreeUserPhysicalPagesFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, NumberOfPages: PULONG_PTR, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+    pub type ZwFreeVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, FreeType: ULONG) -> NTSTATUS;
+    pub type ZwFreezeRegistryFn = unsafe extern "stdcall" fn(TimeOutInSeconds: ULONG) -> NTSTATUS;
+    pub type ZwFreezeTransactionsFn = unsafe extern "stdcall" fn(FreezeTimeout: PLARGE_INTEGER, ThawTimeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwFsControlFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FsControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
+    pub type ZwGetCachedSigningLevelFn = unsafe extern "stdcall" fn(File: HANDLE, Flags: PULONG, SigningLevel: PSE_SIGNING_LEVEL, Thumbprint: PUCHAR, ThumbprintSize: PULONG, ThumbprintAlgorithm: PULONG) -> NTSTATUS;
+    pub type ZwGetCompleteWnfStateSubscriptionFn = unsafe extern "stdcall" fn(OldDescriptorStateName: PWNF_STATE_NAME, OldSubscriptionId: *mut ULONG64, OldDescriptorEventMask: ULONG, OldDescriptorStatus: ULONG, NewDeliveryDescriptor: PWNF_DELIVERY_DESCRIPTOR, DescriptorSize: ULONG) -> NTSTATUS;
+    pub type ZwGetContextThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
+    pub type ZwGetCurrentProcessorNumberFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type ZwGetCurrentProcessorNumberExFn = unsafe extern "stdcall" fn(ProcessorNumber: PPROCESSOR_NUMBER) -> ULONG;
+    pub type ZwGetDevicePowerStateFn = unsafe extern "stdcall" fn(Device: HANDLE, State: PDEVICE_POWER_STATE) -> NTSTATUS;
+    pub type ZwGetMUIRegistryInfoFn = unsafe extern "stdcall" fn(Flags: ULONG, DataSize: PULONG, Data: PVOID) -> NTSTATUS;
+    pub type ZwGetNextProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewProcessHandle: PHANDLE) -> NTSTATUS;
+    pub type ZwGetNextThreadFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, Flags: ULONG, NewThreadHandle: PHANDLE) -> NTSTATUS;
+    pub type ZwGetNlsSectionPtrFn = unsafe extern "stdcall" fn(SectionType: ULONG, SectionData: ULONG, ContextData: PVOID, SectionPointer: *mut PVOID, SectionSize: PULONG) -> NTSTATUS;
+    pub type ZwGetNotificationResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, TransactionNotification: PTRANSACTION_NOTIFICATION, NotificationLength: ULONG, Timeout: PLARGE_INTEGER, ReturnLength: PULONG, Asynchronous: ULONG, AsynchronousContext: ULONG_PTR) -> NTSTATUS;
+    pub type ZwGetPlugPlayEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE, Context: PVOID, EventBlock: PPLUGPLAY_EVENT_BLOCK, EventBufferSize: ULONG) -> NTSTATUS;
+    pub type ZwGetWriteWatchFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, Flags: ULONG, BaseAddress: PVOID, RegionSize: SIZE_T, UserAddressArray: *mut PVOID, EntriesInUserAddressArray: PULONG_PTR, Granularity: PULONG) -> NTSTATUS;
+    pub type ZwImpersonateAnonymousTokenFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE) -> NTSTATUS;
+    pub type ZwImpersonateClientOfPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE) -> NTSTATUS;
+    pub type ZwImpersonateThreadFn = unsafe extern "stdcall" fn(ServerThreadHandle: HANDLE, ClientThreadHandle: HANDLE, SecurityQos: PSECURITY_QUALITY_OF_SERVICE) -> NTSTATUS;
+    pub type ZwInitializeEnclaveFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, EnclaveInformation: PVOID, EnclaveInformationLength: ULONG, EnclaveError: PULONG) -> NTSTATUS;
+    pub type ZwInitializeNlsFilesFn = unsafe extern "stdcall" fn(BaseAddress: *mut PVOID, DefaultLocaleId: PLCID, DefaultCasingTableSize: PLARGE_INTEGER, CurrentNLSVersion: PULONG) -> NTSTATUS;
+    pub type ZwInitializeRegistryFn = unsafe extern "stdcall" fn(BootCondition: USHORT) -> NTSTATUS;
+    pub type ZwInitiatePowerActionFn = unsafe extern "stdcall" fn(SystemAction: POWER_ACTION, LightestSystemState: SYSTEM_POWER_STATE, Flags: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
+    pub type ZwIsProcessInJobFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, JobHandle: HANDLE) -> NTSTATUS;
+    pub type ZwIsSystemResumeAutomaticFn = unsafe extern "stdcall" fn() -> BOOLEAN;
+    pub type ZwIsUILanguageComittedFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwListenPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, ConnectionRequest: PPORT_MESSAGE) -> NTSTATUS;
+    pub type ZwLoadDriverFn = unsafe extern "stdcall" fn(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwLoadEnclaveDataFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, Protect: ULONG, PageInformation: PVOID, PageInformationLength: ULONG, NumberOfBytesWritten: PSIZE_T, EnclaveError: PULONG) -> NTSTATUS;
+    pub type ZwLoadKeyFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwLoadKey2Fn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
+    pub type ZwLoadKey3Fn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG, ExtendedParameters: PCM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG, DesiredAccess: ACCESS_MASK, RootHandle: PHANDLE, Reserved: PVOID) -> NTSTATUS;
+    pub type ZwLoadKeyExFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, SourceFile: POBJECT_ATTRIBUTES, Flags: ULONG, TrustClassKey: HANDLE, Event: HANDLE, DesiredAccess: ACCESS_MASK, RootHandle: PHANDLE, Reserved: PVOID) -> NTSTATUS;
+    pub type ZwLockFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, ByteOffset: PLARGE_INTEGER, Length: PLARGE_INTEGER, Key: ULONG, FailImmediately: BOOLEAN, ExclusiveLock: BOOLEAN) -> NTSTATUS;
+    pub type ZwLockProductActivationKeysFn = unsafe extern "stdcall" fn(pPrivateVer: *mut ULONG, pSafeMode: *mut ULONG) -> NTSTATUS;
+    pub type ZwLockRegistryKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE) -> NTSTATUS;
+    pub type ZwLockVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
+    pub type ZwMakePermanentObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
+    pub type ZwMakeTemporaryObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE) -> NTSTATUS;
+    pub type ZwManagePartitionFn = unsafe extern "stdcall" fn(TargetHandle: HANDLE, SourceHandle: HANDLE, PartitionInformationClass: PARTITION_INFORMATION_CLASS, PartitionInformation: PVOID, PartitionInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwMapCMFModuleFn = unsafe extern "stdcall" fn(What: ULONG, Index: ULONG, CacheIndexOut: PULONG, CacheFlagsOut: PULONG, ViewSizeOut: PULONG, BaseAddress: *mut PVOID) -> NTSTATUS;
+    pub type ZwMapUserPhysicalPagesFn = unsafe extern "stdcall" fn(VirtualAddress: PVOID, NumberOfPages: SIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+    pub type ZwMapUserPhysicalPagesScatterFn = unsafe extern "stdcall" fn(VirtualAddresses: *mut PVOID, NumberOfPages: SIZE_T, UserPfnArray: PULONG_PTR) -> NTSTATUS;
+    pub type ZwMapViewOfSectionFn = unsafe extern "stdcall" fn(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, ZeroBits: ULONG_PTR, CommitSize: SIZE_T, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, InheritDisposition: SECTION_INHERIT, AllocationType: ULONG, Win32Protect: ULONG) -> NTSTATUS;
+    pub type ZwMapViewOfSectionExFn = unsafe extern "stdcall" fn(SectionHandle: HANDLE, ProcessHandle: HANDLE, BaseAddress: *mut PVOID, SectionOffset: PLARGE_INTEGER, ViewSize: PSIZE_T, AllocationType: ULONG, PageProtection: ULONG, ExtendedParameters: PMEM_EXTENDED_PARAMETER, ExtendedParameterCount: ULONG) -> NTSTATUS;
+    pub type ZwModifyBootEntryFn = unsafe extern "stdcall" fn(BootEntry: PBOOT_ENTRY) -> NTSTATUS;
+    pub type ZwModifyDriverEntryFn = unsafe extern "stdcall" fn(DriverEntry: PEFI_DRIVER_ENTRY) -> NTSTATUS;
+    pub type ZwNotifyChangeDirectoryFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN) -> NTSTATUS;
+    pub type ZwNotifyChangeDirectoryFileExFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, CompletionFilter: ULONG, WatchTree: BOOLEAN, DirectoryNotifyInformationClass: DIRECTORY_NOTIFY_INFORMATION_CLASS) -> NTSTATUS;
+    pub type ZwNotifyChangeKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
+    pub type ZwNotifyChangeMultipleKeysFn = unsafe extern "stdcall" fn(MasterKeyHandle: HANDLE, Count: ULONG, SubordinateObjects: *mut OBJECT_ATTRIBUTES, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, CompletionFilter: ULONG, WatchTree: BOOLEAN, Buffer: PVOID, BufferSize: ULONG, Asynchronous: BOOLEAN) -> NTSTATUS;
+    pub type ZwNotifyChangeSessionFn = unsafe extern "stdcall" fn(SessionHandle: HANDLE, ChangeSequenceNumber: ULONG, ChangeTimeStamp: PLARGE_INTEGER, Event: IO_SESSION_EVENT, NewState: IO_SESSION_STATE, PreviousState: IO_SESSION_STATE, Payload: PVOID, PayloadSize: ULONG) -> NTSTATUS;
+    pub type ZwOpenCpuPartitionFn = unsafe extern "stdcall" fn(CpuPartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenDirectoryObjectFn = unsafe extern "stdcall" fn(DirectoryHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ResourceManagerHandle: HANDLE, EnlistmentGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenEventFn = unsafe extern "stdcall" fn(EventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenFileFn = unsafe extern "stdcall" fn(FileHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, ShareAccess: ULONG, OpenOptions: ULONG) -> NTSTATUS;
+    pub type ZwOpenIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenJobObjectFn = unsafe extern "stdcall" fn(JobHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenKeyFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenKeyedEventFn = unsafe extern "stdcall" fn(KeyedEventHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenKeyExFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG) -> NTSTATUS;
+    pub type ZwOpenKeyTransactedFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, TransactionHandle: HANDLE) -> NTSTATUS;
+    pub type ZwOpenKeyTransactedExFn = unsafe extern "stdcall" fn(KeyHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, OpenOptions: ULONG, TransactionHandle: HANDLE) -> NTSTATUS;
+    pub type ZwOpenMutantFn = unsafe extern "stdcall" fn(MutantHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenObjectAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ObjectTypeName: PUNICODE_STRING, ObjectName: PUNICODE_STRING, SecurityDescriptor: PSECURITY_DESCRIPTOR, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, GrantedAccess: ACCESS_MASK, Privileges: PPRIVILEGE_SET, ObjectCreation: BOOLEAN, AccessGranted: BOOLEAN, GenerateOnClose: PBOOLEAN) -> NTSTATUS;
+    pub type ZwOpenPartitionFn = unsafe extern "stdcall" fn(PartitionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenPrivateNamespaceFn = unsafe extern "stdcall" fn(NamespaceHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, BoundaryDescriptor: POBJECT_BOUNDARY_DESCRIPTOR) -> NTSTATUS;
+    pub type ZwOpenProcessFn = unsafe extern "stdcall" fn(ProcessHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
+    pub type ZwOpenProcessTokenFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, TokenHandle: PHANDLE) -> NTSTATUS;
+    pub type ZwOpenProcessTokenExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DesiredAccess: ACCESS_MASK, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
+    pub type ZwOpenResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, TmHandle: HANDLE, ResourceManagerGuid: LPGUID, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenSectionFn = unsafe extern "stdcall" fn(SectionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenSemaphoreFn = unsafe extern "stdcall" fn(SemaphoreHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenSessionFn = unsafe extern "stdcall" fn(SessionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenSymbolicLinkObjectFn = unsafe extern "stdcall" fn(LinkHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenThreadFn = unsafe extern "stdcall" fn(ThreadHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES, ClientId: PCLIENT_ID) -> NTSTATUS;
+    pub type ZwOpenThreadTokenFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, TokenHandle: PHANDLE) -> NTSTATUS;
+    pub type ZwOpenThreadTokenExFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, DesiredAccess: ACCESS_MASK, OpenAsSelf: BOOLEAN, HandleAttributes: ULONG, TokenHandle: PHANDLE) -> NTSTATUS;
+    pub type ZwOpenTimerFn = unsafe extern "stdcall" fn(TimerHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: PCOBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwOpenTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, Uow: LPGUID, TmHandle: HANDLE) -> NTSTATUS;
+    pub type ZwOpenTransactionManagerFn = unsafe extern "stdcall" fn(TmHandle: PHANDLE, DesiredAccess: ACCESS_MASK, ObjectAttributes: POBJECT_ATTRIBUTES, LogFileName: PUNICODE_STRING, TmIdentity: LPGUID, OpenOptions: ULONG) -> NTSTATUS;
+    pub type ZwPlugPlayControlFn = unsafe extern "stdcall" fn(PnPControlClass: PLUGPLAY_CONTROL_CLASS, PnPControlData: PVOID, PnPControlDataLength: ULONG) -> NTSTATUS;
+    pub type ZwPowerInformationFn = unsafe extern "stdcall" fn(InformationLevel: POWER_INFORMATION_LEVEL, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
+    pub type ZwPrepareCompleteFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwPrepareEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwPrePrepareCompleteFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwPrePrepareEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwPrivilegeCheckFn = unsafe extern "stdcall" fn(ClientToken: HANDLE, RequiredPrivileges: PPRIVILEGE_SET, Result: PBOOLEAN) -> NTSTATUS;
+    pub type ZwPrivilegedServiceAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, ServiceName: PUNICODE_STRING, ClientToken: HANDLE, Privileges: PPRIVILEGE_SET, AccessGranted: BOOLEAN) -> NTSTATUS;
+    pub type ZwPrivilegeObjectAuditAlarmFn = unsafe extern "stdcall" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, ClientToken: HANDLE, DesiredAccess: ACCESS_MASK, Privileges: PPRIVILEGE_SET, AccessGranted: BOOLEAN) -> NTSTATUS;
+    pub type ZwPropagationCompleteFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, RequestCookie: ULONG, BufferLength: ULONG, Buffer: PVOID) -> NTSTATUS;
+    pub type ZwPropagationFailedFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, RequestCookie: ULONG, PropStatus: NTSTATUS) -> NTSTATUS;
+    pub type ZwProtectVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, NewProtect: ULONG, OldProtect: PULONG) -> NTSTATUS;
+    pub type ZwPssCaptureVaSpaceBulkFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, BulkInformation: PNTPSS_MEMORY_BULK_INFORMATION, BulkInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type ZwPulseEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+    pub type ZwQueryAttributesFileFn = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_BASIC_INFORMATION) -> NTSTATUS;
+    pub type ZwQueryAuxiliaryCounterFrequencyFn = unsafe extern "stdcall" fn(AuxiliaryCounterFrequency: PULONG64) -> NTSTATUS;
+    pub type ZwQueryBootEntryOrderFn = unsafe extern "stdcall" fn(Ids: PULONG, Count: PULONG) -> NTSTATUS;
+    pub type ZwQueryBootOptionsFn = unsafe extern "stdcall" fn(BootOptions: PBOOT_OPTIONS, BootOptionsLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryDebugFilterStateFn = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG) -> NTSTATUS;
+    pub type ZwQueryDefaultLocaleFn = unsafe extern "stdcall" fn(UserProfile: BOOLEAN, DefaultLocaleId: PLCID) -> NTSTATUS;
+    pub type ZwQueryDefaultUILanguageFn = unsafe extern "stdcall" fn(DefaultUILanguageId: *mut LANGID) -> NTSTATUS;
+    pub type ZwQueryDirectoryFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS, ReturnSingleEntry: BOOLEAN, FileName: PUNICODE_STRING, RestartScan: BOOLEAN) -> NTSTATUS;
+    pub type ZwQueryDirectoryFileExFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS, QueryFlags: ULONG, FileName: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwQueryDirectoryObjectFn = unsafe extern "stdcall" fn(DirectoryHandle: HANDLE, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, RestartScan: BOOLEAN, Context: PULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryDriverEntryOrderFn = unsafe extern "stdcall" fn(Ids: PULONG, Count: PULONG) -> NTSTATUS;
+    pub type ZwQueryEaFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, EaList: PVOID, EaListLength: ULONG, EaIndex: PULONG, RestartScan: BOOLEAN) -> NTSTATUS;
+    pub type ZwQueryEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE, EventInformationClass: EVENT_INFORMATION_CLASS, EventInformation: PVOID, EventInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryFullAttributesFileFn = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, FileInformation: PFILE_NETWORK_OPEN_INFORMATION) -> NTSTATUS;
+    pub type ZwQueryInformationAtomFn = unsafe extern "stdcall" fn(Atom: RTL_ATOM, AtomInformationClass: ATOM_INFORMATION_CLASS, AtomInformation: PVOID, AtomInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationByNameFn = unsafe extern "stdcall" fn(ObjectAttributes: POBJECT_ATTRIBUTES, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
+    pub type ZwQueryInformationEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentInformationClass: ENLISTMENT_INFORMATION_CLASS, EnlistmentInformation: PVOID, EnlistmentInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
+    pub type ZwQueryInformationJobObjectFn = unsafe extern "stdcall" fn(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortInformationClass: PORT_INFORMATION_CLASS, PortInformation: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, ResourceManagerInformationClass: RESOURCEMANAGER_INFORMATION_CLASS, ResourceManagerInformation: PVOID, ResourceManagerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, TokenInformationClass: ULONG, TokenInformation: PVOID, TokenInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, TransactionInformationClass: TRANSACTION_INFORMATION_CLASS, TransactionInformation: PVOID, TransactionInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationTransactionManagerFn = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE, TransactionManagerInformationClass: TRANSACTIONMANAGER_INFORMATION_CLASS, TransactionManagerInformation: PVOID, TransactionManagerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInformationWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, WorkerFactoryInformationClass: WORKERFACTORYINFOCLASS, WorkerFactoryInformation: PVOID, WorkerFactoryInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryInstallUILanguageFn = unsafe extern "stdcall" fn(InstallUILanguageId: *mut LANGID) -> NTSTATUS;
+    pub type ZwQueryIntervalProfileFn = unsafe extern "stdcall" fn(ProfileSource: KPROFILE_SOURCE, Interval: PULONG) -> NTSTATUS;
+    pub type ZwQueryIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionInformationClass: IO_COMPLETION_INFORMATION_CLASS, IoCompletionInformation: PVOID, IoCompletionInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryIoRingCapabilitiesFn = unsafe extern "stdcall" fn(IoRingCapabilitiesLength: SIZE_T, IoRingCapabilities: PVOID) -> NTSTATUS;
+    pub type ZwQueryKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, KeyInformationClass: KEY_INFORMATION_CLASS, KeyInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryLicenseValueFn = unsafe extern "stdcall" fn(ValueName: PUNICODE_STRING, Type: PULONG, Data: PVOID, DataSize: ULONG, ResultDataSize: PULONG) -> NTSTATUS;
+    pub type ZwQueryMultipleValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueEntries: PKEY_VALUE_ENTRY, EntryCount: ULONG, ValueBuffer: PVOID, BufferLength: PULONG, RequiredBufferLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryMutantFn = unsafe extern "stdcall" fn(MutantHandle: HANDLE, MutantInformationClass: MUTANT_INFORMATION_CLASS, MutantInformation: PVOID, MutantInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, ObjectInformationClass: OBJECT_INFORMATION_CLASS, ObjectInformation: PVOID, ObjectInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryOpenSubKeysFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, HandleCount: PULONG) -> NTSTATUS;
+    pub type ZwQueryOpenSubKeysExFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, BufferLength: ULONG, Buffer: PVOID, RequiredSize: PULONG) -> NTSTATUS;
+    pub type ZwQueryPerformanceCounterFn = unsafe extern "stdcall" fn(PerformanceCounter: PLARGE_INTEGER, PerformanceFrequency: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwQueryPortInformationProcessFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwQueryQuotaInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ReturnSingleEntry: BOOLEAN, SidList: PVOID, SidListLength: ULONG, StartSid: PSID, RestartScan: BOOLEAN) -> NTSTATUS;
+    pub type ZwQuerySectionFn = unsafe extern "stdcall" fn(SectionHandle: HANDLE, SectionInformationClass: SECTION_INFORMATION_CLASS, SectionInformation: PVOID, SectionInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type ZwQuerySecurityAttributesTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, Attributes: PUNICODE_STRING, NumberOfAttributes: ULONG, Buffer: PVOID, Length: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQuerySecurityObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR, Length: ULONG, LengthNeeded: PULONG) -> NTSTATUS;
+    pub type ZwQuerySecurityPolicyFn = unsafe extern "stdcall" fn(Policy: PCUNICODE_STRING, KeyName: PCUNICODE_STRING, ValueName: PCUNICODE_STRING, ValueType: SECURE_SETTING_VALUE_TYPE, Value: PVOID, ValueSize: PULONG) -> NTSTATUS;
+    pub type ZwQuerySemaphoreFn = unsafe extern "stdcall" fn(SemaphoreHandle: HANDLE, SemaphoreInformationClass: SEMAPHORE_INFORMATION_CLASS, SemaphoreInformation: PVOID, SemaphoreInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQuerySymbolicLinkObjectFn = unsafe extern "stdcall" fn(LinkHandle: HANDLE, LinkTarget: PUNICODE_STRING, ReturnedLength: PULONG) -> NTSTATUS;
+    pub type ZwQuerySystemEnvironmentValueFn = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VariableValue: PWSTR, ValueLength: USHORT, ReturnLength: PUSHORT) -> NTSTATUS;
+    pub type ZwQuerySystemEnvironmentValueExFn = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Buffer: PVOID, BufferLength: PULONG, Attributes: PULONG) -> NTSTATUS;
+    pub type ZwQuerySystemInformationFn = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQuerySystemInformationExFn = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, InputBuffer: PVOID, InputBufferLength: ULONG, SystemInformation: PVOID, SystemInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQuerySystemTimeFn = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwQueryTimerFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, TimerInformationClass: TIMER_INFORMATION_CLASS, TimerInformation: PVOID, TimerInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryTimerResolutionFn = unsafe extern "stdcall" fn(MaximumTime: PULONG, MinimumTime: PULONG, CurrentTime: PULONG) -> NTSTATUS;
+    pub type ZwQueryValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
+    pub type ZwQueryVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
+    pub type ZwQueryVolumeInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
+    pub type ZwQueryWnfStateDataFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const ::core::ffi::c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+    pub type ZwQueryWnfStateNameInformationFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const ::core::ffi::c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
+    pub type ZwQueueApcThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
+    pub type ZwQueueApcThreadExFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
+    pub type ZwQueueApcThreadEx2Fn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcFlags: ULONG, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
+    pub type ZwRaiseExceptionFn = unsafe extern "stdcall" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT, FirstChance: BOOLEAN) -> NTSTATUS;
+    pub type ZwRaiseHardErrorFn = unsafe extern "stdcall" fn(ErrorStatus: NTSTATUS, NumberOfParameters: ULONG, UnicodeStringParameterMask: ULONG, Parameters: PULONG_PTR, ValidResponseOptions: ULONG, Response: PULONG) -> NTSTATUS;
+    pub type ZwReadFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
+    pub type ZwReadFileScatterFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, SegmentArray: PFILE_SEGMENT_ELEMENT, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
+    pub type ZwReadOnlyEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwReadRequestDataFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, DataEntryIndex: ULONG, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
+    pub type ZwReadVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T) -> NTSTATUS;
+    pub type ZwReadVirtualMemoryExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesRead: PSIZE_T, Flags: ULONG) -> NTSTATUS;
+    pub type ZwRecoverEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentKey: PVOID) -> NTSTATUS;
+    pub type ZwRecoverResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE) -> NTSTATUS;
+    pub type ZwRecoverTransactionManagerFn = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE) -> NTSTATUS;
+    pub type ZwRegisterProtocolAddressInformationFn = unsafe extern "stdcall" fn(ResourceManager: HANDLE, ProtocolId: PCRM_PROTOCOL_ID, ProtocolInformationSize: ULONG, ProtocolInformation: PVOID, CreateOptions: ULONG) -> NTSTATUS;
+    pub type ZwRegisterThreadTerminatePortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE) -> NTSTATUS;
+    pub type ZwReleaseCMFViewOwnershipFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwReleaseKeyedEventFn = unsafe extern "stdcall" fn(KeyedEventHandle: HANDLE, KeyValue: PVOID, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwReleaseMutantFn = unsafe extern "stdcall" fn(MutantHandle: HANDLE, PreviousCount: PLONG) -> NTSTATUS;
+    pub type ZwReleaseSemaphoreFn = unsafe extern "stdcall" fn(SemaphoreHandle: HANDLE, ReleaseCount: LONG, PreviousCount: PLONG) -> NTSTATUS;
+    pub type ZwReleaseWorkerFactoryWorkerFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
+    pub type ZwRemoveIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, KeyContext: *mut PVOID, ApcContext: *mut PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwRemoveIoCompletionExFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionInformation: PFILE_IO_COMPLETION_INFORMATION, Count: ULONG, NumEntriesRemoved: PULONG, Timeout: PLARGE_INTEGER, Alertable: BOOLEAN) -> NTSTATUS;
+    pub type ZwRemoveProcessDebugFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, DebugObjectHandle: HANDLE) -> NTSTATUS;
+    pub type ZwRenameKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, NewName: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwRenameTransactionManagerFn = unsafe extern "stdcall" fn(LogFileName: PUNICODE_STRING, ExistingTransactionManagerGuid: LPGUID) -> NTSTATUS;
+    pub type ZwReplaceKeyFn = unsafe extern "stdcall" fn(NewFile: POBJECT_ATTRIBUTES, TargetHandle: HANDLE, OldFile: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwReplacePartitionUnitFn = unsafe extern "stdcall" fn(TargetInstancePath: PUNICODE_STRING, SpareInstancePath: PUNICODE_STRING, Flags: ULONG) -> NTSTATUS;
+    pub type ZwReplyPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type ZwReplyWaitReceivePortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortContext: *mut PVOID, ReplyMessage: PPORT_MESSAGE, ReceiveMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type ZwReplyWaitReceivePortExFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, PortContext: *mut PVOID, ReplyMessage: PPORT_MESSAGE, ReceiveMessage: PPORT_MESSAGE, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwReplyWaitReplyPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type ZwRequestPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, RequestMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type ZwRequestWaitReplyPortFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, RequestMessage: PPORT_MESSAGE, ReplyMessage: PPORT_MESSAGE) -> NTSTATUS;
+    pub type ZwRequestWakeupLatencyFn = unsafe extern "stdcall" fn(latency: LATENCY_TIME) -> NTSTATUS;
+    pub type ZwResetEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+    pub type ZwResetWriteWatchFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, RegionSize: SIZE_T) -> NTSTATUS;
+    pub type ZwRestoreKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE, Flags: ULONG) -> NTSTATUS;
+    pub type ZwResumeProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> NTSTATUS;
+    pub type ZwResumeThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
+    pub type ZwRevertContainerImpersonationFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwRollbackCompleteFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwRollbackEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwRollbackTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, Wait: BOOLEAN) -> NTSTATUS;
+    pub type ZwRollforwardTransactionManagerFn = unsafe extern "stdcall" fn(TransactionManagerHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwSaveKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE) -> NTSTATUS;
+    pub type ZwSaveKeyExFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, FileHandle: HANDLE, Format: ULONG) -> NTSTATUS;
+    pub type ZwSaveMergedKeysFn = unsafe extern "stdcall" fn(HighPrecedenceKeyHandle: HANDLE, LowPrecedenceKeyHandle: HANDLE, FileHandle: HANDLE) -> NTSTATUS;
+    pub type ZwSecureConnectPortFn = unsafe extern "stdcall" fn(PortHandle: PHANDLE, PortName: PUNICODE_STRING, SecurityQos: PSECURITY_QUALITY_OF_SERVICE, ClientView: PPORT_VIEW, RequiredServerSid: PSID, ServerView: PREMOTE_PORT_VIEW, MaxMessageLength: PULONG, ConnectionInformation: PVOID, ConnectionInformationLength: PULONG) -> NTSTATUS;
+    pub type ZwSerializeBootFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwSetBootEntryOrderFn = unsafe extern "stdcall" fn(Ids: PULONG, Count: ULONG) -> NTSTATUS;
+    pub type ZwSetBootOptionsFn = unsafe extern "stdcall" fn(BootOptions: PBOOT_OPTIONS, FieldsToChange: ULONG) -> NTSTATUS;
+    pub type ZwSetCachedSigningLevelFn = unsafe extern "stdcall" fn(Flags: ULONG, InputSigningLevel: SE_SIGNING_LEVEL, SourceFiles: PHANDLE, SourceFileCount: ULONG, TargetFile: HANDLE) -> NTSTATUS;
+    pub type ZwSetCachedSigningLevel2Fn = unsafe extern "stdcall" fn(Flags: ULONG, InputSigningLevel: SE_SIGNING_LEVEL, SourceFiles: PHANDLE, SourceFileCount: ULONG, TargetFile: HANDLE, CacheInformation: *mut SE_SET_FILE_CACHE_INFORMATION) -> NTSTATUS;
+    pub type ZwSetContextThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadContext: PCONTEXT) -> NTSTATUS;
+    pub type ZwSetDebugFilterStateFn = unsafe extern "stdcall" fn(ComponentId: ULONG, Level: ULONG, State: BOOLEAN) -> NTSTATUS;
+    pub type ZwSetDefaultHardErrorPortFn = unsafe extern "stdcall" fn(DefaultHardErrorPort: HANDLE) -> NTSTATUS;
+    pub type ZwSetDefaultLocaleFn = unsafe extern "stdcall" fn(UserProfile: BOOLEAN, DefaultLocaleId: LCID) -> NTSTATUS;
+    pub type ZwSetDefaultUILanguageFn = unsafe extern "stdcall" fn(DefaultUILanguageId: LANGID) -> NTSTATUS;
+    pub type ZwSetDriverEntryOrderFn = unsafe extern "stdcall" fn(Ids: PULONG, Count: ULONG) -> NTSTATUS;
+    pub type ZwSetEaFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
+    pub type ZwSetEventFn = unsafe extern "stdcall" fn(EventHandle: HANDLE, PreviousState: PLONG) -> NTSTATUS;
+    pub type ZwSetEventBoostPriorityFn = unsafe extern "stdcall" fn(EventHandle: HANDLE) -> NTSTATUS;
+    pub type ZwSetEventExFn = unsafe extern "stdcall" fn(ThreadId: HANDLE, Lock: PRTL_SRWLOCK) -> NTSTATUS;
+    pub type ZwSetHighEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type ZwSetHighWaitLowEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type ZwSetInformationCpuPartitionFn = unsafe extern "stdcall" fn(CpuPartitionHandle: HANDLE, CpuPartitionInformationClass: ULONG, CpuPartitionInformation: PVOID, CpuPartitionInformationLength: ULONG, arg1: PVOID, arg2: ULONG, arg3: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationDebugObjectFn = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, DebugObjectInformationClass: DEBUGOBJECTINFOCLASS, DebugInformation: PVOID, DebugInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwSetInformationEnlistmentFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, EnlistmentInformationClass: ENLISTMENT_INFORMATION_CLASS, EnlistmentInformation: PVOID, EnlistmentInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FileInformation: PVOID, Length: ULONG, FileInformationClass: FILE_INFORMATION_CLASS) -> NTSTATUS;
+    pub type ZwSetInformationIoRingFn = unsafe extern "stdcall" fn(IoRingHandle: HANDLE, IoRingInformationClass: ULONG, IoRingInformationLength: ULONG, IoRingInformation: PVOID) -> NTSTATUS;
+    pub type ZwSetInformationJobObjectFn = unsafe extern "stdcall" fn(JobHandle: HANDLE, JobObjectInformationClass: JOBOBJECTINFOCLASS, JobObjectInformation: PVOID, JobObjectInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, KeySetInformationClass: KEY_SET_INFORMATION_CLASS, KeySetInformation: PVOID, KeySetInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, ObjectInformationClass: OBJECT_INFORMATION_CLASS, ObjectInformation: PVOID, ObjectInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationResourceManagerFn = unsafe extern "stdcall" fn(ResourceManagerHandle: HANDLE, ResourceManagerInformationClass: RESOURCEMANAGER_INFORMATION_CLASS, ResourceManagerInformation: PVOID, ResourceManagerInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationSymbolicLinkFn = unsafe extern "stdcall" fn(LinkHandle: HANDLE, SymbolicLinkInformationClass: SYMBOLIC_LINK_INFO_CLASS, SymbolicLinkInformation: PVOID, SymbolicLinkInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: THREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationTokenFn = unsafe extern "stdcall" fn(TokenHandle: HANDLE, TokenInformationClass: ULONG, TokenInformation: PVOID, TokenInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationTransactionFn = unsafe extern "stdcall" fn(TransactionHandle: HANDLE, TransactionInformationClass: TRANSACTION_INFORMATION_CLASS, TransactionInformation: PVOID, TransactionInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationTransactionManagerFn = unsafe extern "stdcall" fn(TmHandle: HANDLE, TransactionManagerInformationClass: TRANSACTIONMANAGER_INFORMATION_CLASS, TransactionManagerInformation: PVOID, TransactionManagerInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, VmInformationClass: VIRTUAL_MEMORY_INFORMATION_CLASS, NumberOfEntries: SIZE_T, VirtualAddresses: PMEMORY_RANGE_ENTRY, VmInformation: PVOID, VmInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetInformationWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, WorkerFactoryInformationClass: WORKERFACTORYINFOCLASS, WorkerFactoryInformation: PVOID, WorkerFactoryInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetIntervalProfileFn = unsafe extern "stdcall" fn(Interval: ULONG, Source: KPROFILE_SOURCE) -> NTSTATUS;
+    pub type ZwSetIoCompletionFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR) -> NTSTATUS;
+    pub type ZwSetIoCompletionExFn = unsafe extern "stdcall" fn(IoCompletionHandle: HANDLE, IoCompletionPacketHandle: HANDLE, KeyContext: PVOID, ApcContext: PVOID, IoStatus: NTSTATUS, IoStatusInformation: ULONG_PTR) -> NTSTATUS;
+    pub type ZwSetIRTimerFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwSetLdtEntriesFn = unsafe extern "stdcall" fn(Selector0: ULONG, Entry0Low: ULONG, Entry0Hi: ULONG, Selector1: ULONG, Entry1Low: ULONG, Entry1Hi: ULONG) -> NTSTATUS;
+    pub type ZwSetLowEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type ZwSetLowWaitHighEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type ZwSetQuotaInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG) -> NTSTATUS;
+    pub type ZwSetSecurityObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
+    pub type ZwSetSystemEnvironmentValueFn = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VariableValue: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwSetSystemEnvironmentValueExFn = unsafe extern "stdcall" fn(VariableName: PUNICODE_STRING, VendorGuid: PCGUID, Buffer: PVOID, BufferLength: ULONG, Attributes: ULONG) -> NTSTATUS;
+    pub type ZwSetSystemInformationFn = unsafe extern "stdcall" fn(SystemInformationClass: SYSTEM_INFORMATION_CLASS, SystemInformation: PVOID, SystemInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetSystemPowerStateFn = unsafe extern "stdcall" fn(SystemAction: POWER_ACTION, LightestSystemState: SYSTEM_POWER_STATE, Flags: ULONG) -> NTSTATUS;
+    pub type ZwSetSystemTimeFn = unsafe extern "stdcall" fn(SystemTime: PLARGE_INTEGER, PreviousTime: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwSetThreadExecutionStateFn = unsafe extern "stdcall" fn(NewFlags: EXECUTION_STATE, PreviousFlags: *mut EXECUTION_STATE) -> NTSTATUS;
+    pub type ZwSetTimerFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER, TimerApcRoutine: PTIMER_APC_ROUTINE, TimerContext: PVOID, ResumeTimer: BOOLEAN, Period: LONG, PreviousState: PBOOLEAN) -> NTSTATUS;
+    pub type ZwSetTimer2Fn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, DueTime: PLARGE_INTEGER, Period: PLARGE_INTEGER, Parameters: PT2_SET_PARAMETERS) -> NTSTATUS;
+    pub type ZwSetTimerExFn = unsafe extern "stdcall" fn(TimerHandle: HANDLE, TimerSetInformationClass: TIMER_SET_INFORMATION_CLASS, TimerSetInformation: PVOID, TimerSetInformationLength: ULONG) -> NTSTATUS;
+    pub type ZwSetTimerResolutionFn = unsafe extern "stdcall" fn(DesiredTime: ULONG, SetResolution: BOOLEAN, ActualTime: PULONG) -> NTSTATUS;
+    pub type ZwSetUuidSeedFn = unsafe extern "stdcall" fn(Seed: PCHAR) -> NTSTATUS;
+    pub type ZwSetValueKeyFn = unsafe extern "stdcall" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, TitleIndex: ULONG, Type: ULONG, Data: PVOID, DataSize: ULONG) -> NTSTATUS;
+    pub type ZwSetVolumeInformationFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
+    pub type ZwSetWnfProcessNotificationEventFn = unsafe extern "stdcall" fn(NotificationEvent: HANDLE) -> NTSTATUS;
+    pub type ZwShutdownSystemFn = unsafe extern "stdcall" fn(Action: SHUTDOWN_ACTION) -> NTSTATUS;
+    pub type ZwShutdownWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, PendingWorkerCount: *mut LONG) -> NTSTATUS;
+    pub type ZwSignalAndWaitForSingleObjectFn = unsafe extern "stdcall" fn(SignalHandle: HANDLE, WaitHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwSinglePhaseRejectFn = unsafe extern "stdcall" fn(EnlistmentHandle: HANDLE, TmVirtualClock: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwStartProfileFn = unsafe extern "stdcall" fn(ProfileHandle: HANDLE) -> NTSTATUS;
+    pub type ZwStopProfileFn = unsafe extern "stdcall" fn(ProfileHandle: HANDLE) -> NTSTATUS;
+    pub type ZwSubmitIoRingFn = unsafe extern "stdcall" fn(IoRingHandle: HANDLE, Flags: ULONG, WaitOperations: ULONG, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwSubscribeWnfStateChangeFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, EventMask: ULONG, SubscriptionId: PULONG64) -> NTSTATUS;
+    pub type ZwSuspendProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE) -> NTSTATUS;
+    pub type ZwSuspendThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, PreviousSuspendCount: PULONG) -> NTSTATUS;
+    pub type ZwSystemDebugControlFn = unsafe extern "stdcall" fn(Command: SYSDBG_COMMAND, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwTerminateEnclaveFn = unsafe extern "stdcall" fn(BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
+    pub type ZwTerminateJobObjectFn = unsafe extern "stdcall" fn(JobHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+    pub type ZwTerminateProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+    pub type ZwTerminateThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ExitStatus: NTSTATUS) -> NTSTATUS;
+    pub type ZwTestAlertFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwThawRegistryFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwThawTransactionsFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type ZwTraceControlFn = unsafe extern "stdcall" fn(FunctionCode: ETWTRACECONTROLCODE, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwTraceEventFn = unsafe extern "stdcall" fn(TraceHandle: HANDLE, Flags: ULONG, FieldSize: ULONG, Fields: PVOID) -> NTSTATUS;
+    pub type ZwTranslateFilePathFn = unsafe extern "stdcall" fn(InputFilePath: PFILE_PATH, OutputType: ULONG, OutputFilePath: PFILE_PATH, OutputFilePathLength: PULONG) -> NTSTATUS;
+    pub type ZwUmsThreadYieldFn = unsafe extern "stdcall" fn(SchedulerParam: PVOID) -> NTSTATUS;
+    pub type ZwUnloadDriverFn = unsafe extern "stdcall" fn(DriverServiceName: PUNICODE_STRING) -> NTSTATUS;
+    pub type ZwUnloadKeyFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES) -> NTSTATUS;
+    pub type ZwUnloadKey2Fn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, Flags: ULONG) -> NTSTATUS;
+    pub type ZwUnloadKeyExFn = unsafe extern "stdcall" fn(TargetKey: POBJECT_ATTRIBUTES, Event: HANDLE) -> NTSTATUS;
+    pub type ZwUnlockFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, ByteOffset: PLARGE_INTEGER, Length: PLARGE_INTEGER, Key: ULONG) -> NTSTATUS;
+    pub type ZwUnlockVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: *mut PVOID, RegionSize: PSIZE_T, MapType: ULONG) -> NTSTATUS;
+    pub type ZwUnmapViewOfSectionFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID) -> NTSTATUS;
+    pub type ZwUnmapViewOfSectionExFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
+    pub type ZwUnsubscribeWnfStateChangeFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
+    pub type ZwUpdateWnfStateDataFn = unsafe extern "stdcall" fn(StateName: PCWNF_STATE_NAME, Buffer: *const ::core::ffi::c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const ::core::ffi::c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
+    pub type ZwVdmControlFn = unsafe extern "stdcall" fn(Service: VDMSERVICECLASS, ServiceData: PVOID) -> NTSTATUS;
+    pub type ZwWaitForAlertByThreadIdFn = unsafe extern "stdcall" fn(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwWaitForDebugEventFn = unsafe extern "stdcall" fn(DebugObjectHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER, WaitStateChange: PDBGUI_WAIT_STATE_CHANGE) -> NTSTATUS;
+    pub type ZwWaitForKeyedEventFn = unsafe extern "stdcall" fn(KeyedEventHandle: HANDLE, KeyValue: PVOID, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwWaitForMultipleObjectsFn = unsafe extern "stdcall" fn(Count: ULONG, Handles: *mut HANDLE, WaitType: WAIT_TYPE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwWaitForMultipleObjects32Fn = unsafe extern "stdcall" fn(Count: ULONG, Handles: *mut LONG, WaitType: WAIT_TYPE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwWaitForSingleObjectFn = unsafe extern "stdcall" fn(Handle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+    pub type ZwWaitForWorkViaWorkerFactoryFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE, MiniPackets: PFILE_IO_COMPLETION_INFORMATION, Count: ULONG, PacketsReturned: PULONG, DeferredWork: PWORKER_FACTORY_DEFERRED_WORK) -> NTSTATUS;
+    pub type ZwWaitHighEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type ZwWaitLowEventPairFn = unsafe extern "stdcall" fn(EventPairHandle: HANDLE) -> NTSTATUS;
+    pub type ZwWorkerFactoryWorkerReadyFn = unsafe extern "stdcall" fn(WorkerFactoryHandle: HANDLE) -> NTSTATUS;
+    pub type ZwWow64QueryInformationProcess64Fn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, ProcessInformationClass: PROCESSINFOCLASS, ProcessInformation: PVOID, ProcessInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type ZwWow64QueryVirtualMemory64Fn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: ULONGLONG, ReturnLength: PULONGLONG) -> NTSTATUS;
+    pub type ZwWow64ReadVirtualMemory64Fn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: ULONGLONG, NumberOfBytesRead: PULONGLONG, Flags: ULONG) -> NTSTATUS;
+    pub type ZwWow64WriteVirtualMemory64Fn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: ULONGLONG, NumberOfBytesWritten: PULONGLONG) -> NTSTATUS;
+    pub type ZwWriteFileFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, Buffer: PVOID, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
+    pub type ZwWriteFileGatherFn = unsafe extern "stdcall" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, SegmentArray: PFILE_SEGMENT_ELEMENT, Length: ULONG, ByteOffset: PLARGE_INTEGER, Key: PULONG) -> NTSTATUS;
+    pub type ZwWriteRequestDataFn = unsafe extern "stdcall" fn(PortHandle: HANDLE, Message: PPORT_MESSAGE, DataEntryIndex: ULONG, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
+    pub type ZwWriteVirtualMemoryFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Buffer: PVOID, BufferSize: SIZE_T, NumberOfBytesWritten: PSIZE_T) -> NTSTATUS;
+    pub type ZwYieldExecutionFn = unsafe extern "stdcall" fn() -> NTSTATUS;
+    pub type NtUserQueryWindowFn = unsafe extern "stdcall" fn(WindowHandle: HWND, WindowInfo: WINDOWINFOCLASS) -> ULONG_PTR;
+    pub type NtUserTestForInteractiveUserFn = unsafe extern "stdcall" fn(AuthenticationId: PLUID) -> NTSTATUS;
+    pub type NtUserCheckAccessForIntegrityLevelFn = unsafe extern "stdcall" fn(ProcessIdFirst: ULONG, ProcessIdSecond: ULONG, GrantedAccess: PBOOLEAN) -> NTSTATUS;
+    pub type NtUserCheckProcessForClipboardAccessFn = unsafe extern "stdcall" fn(ProcessId: ULONG, GrantedAccess: PULONG) -> NTSTATUS;
+    pub type NtUserInternalGetWindowTextFn = unsafe extern "stdcall" fn(WindowHandle: HWND, pString: LPWSTR, cchMaxCount: ULONG) -> ULONG;
+    pub type NtUserInternalGetWindowIconFn = unsafe extern "stdcall" fn(WindowHandle: HWND, IconType: ULONG) -> HICON;
+    pub type NtUserGetClassNameFn = unsafe extern "stdcall" fn(WindowHandle: HWND, Real: LONGLONG, ClassName: PUNICODE_STRING) -> ULONG;
+    pub type NtUserConsoleControlFn = unsafe extern "stdcall" fn(Command: CONSOLECONTROL, ConsoleInformation: PVOID, ConsoleInformationLength: ULONG) -> NTSTATUS;
+    pub type ConsoleControlFn = unsafe extern "stdcall" fn(Command: CONSOLECONTROL, ConsoleInformation: PVOID, ConsoleInformationLength: ULONG) -> NTSTATUS;
+    pub type NtUserOpenWindowStationFn = unsafe extern "stdcall" fn(ObjectAttributes: OBJECT_ATTRIBUTES, DesiredAccess: ACCESS_MASK) -> HWINSTA;
+    pub type NtUserCreateWindowStationFn = unsafe extern "stdcall" fn(ObjectAttributes: OBJECT_ATTRIBUTES, DesiredAccess: ACCESS_MASK, KeyboardLayoutHandle: HANDLE, KeyboardLayoutOffset: PVOID, NlsTableOffset: PVOID, KeyboardDescriptor: PVOID, LanguageIdString: UNICODE_STRING, KeyboardLocale: ULONG) -> HWINSTA;
+    pub type NtUserBuildHwndListFn = unsafe extern "stdcall" fn(DesktopHandle: HANDLE, StartWindowHandle: HWND, IncludeChildren: LOGICAL, ExcludeImmersive: LOGICAL, ThreadId: ULONG, HwndListInformationLength: ULONG, HwndListInformation: PVOID, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtUserBuildNameListFn = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA, NameListInformationLength: ULONG, NameListInformation: PVOID, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtUserBuildPropListFn = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA, PropListInformationLength: ULONG, PropListInformation: PVOID, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtUserGetProcessWindowStationFn = unsafe extern "stdcall" fn() -> HWND;
+    pub type NtUserCloseWindowStationFn = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA) -> LOGICAL;
+    pub type NtUserSetProcessWindowStationFn = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA) -> LOGICAL;
+    pub type SetWindowStationUserFn = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA, UserLogonId: PLUID, UserSid: PSID, UserSidLength: ULONG) -> LOGICAL;
+    pub type NtUserSetWindowStationUserFn = unsafe extern "stdcall" fn(WindowStationHandle: HWINSTA, UserLogonId: PLUID, UserSid: PSID, UserSidLength: ULONG) -> LOGICAL;
+    pub type NtUserOpenDesktopFn = unsafe extern "stdcall" fn(ObjectAttributes: PCOBJECT_ATTRIBUTES, Flags: ULONG, DesiredAccess: ACCESS_MASK) -> HANDLE;
+    pub type NtUserSetThreadDesktopFn = unsafe extern "stdcall" fn(DesktopHandle: HDESK) -> LOGICAL;
+    pub type NtUserSwitchDesktopFn = unsafe extern "stdcall" fn(DesktopHandle: HDESK, Flags: ULONG, FadeTime: ULONG) -> LOGICAL;
+    pub type NtUserGetIconInfoFn = unsafe extern "stdcall" fn(IconOrCursorHandle: HICON, Iconinfo: PICONINFO, Name: PUNICODE_STRING, ResourceId: PUNICODE_STRING, ColorBits: PULONG, IsCursorHandle: LOGICAL) -> LOGICAL;
+    pub type NtUserGetIconSizeFn = unsafe extern "stdcall" fn(IconOrCursorHandle: HGDIOBJ, IsCursorHandle: LOGICAL, XX: PULONG, YY: PULONG) -> LOGICAL;
+    pub type NtUserGetForegroundWindowFn = unsafe extern "stdcall" fn() -> HWND;
+    pub type NtUserSetActiveWindowFn = unsafe extern "stdcall" fn(WindowHandle: HWND) -> HWND;
+    pub type NtUserSetFocusFn = unsafe extern "stdcall" fn(WindowHandle: HWND) -> HWND;
+    pub type NtUserGetThreadStateFn = unsafe extern "stdcall" fn(UserThreadState: ULONG) -> ULONG_PTR;
+    pub type NtUserSetWindowPlacementFn = unsafe extern "stdcall" fn(WindowHandle: HWND, lpwndpl: *const WINDOWPLACEMENT) -> BOOL;
+    pub type NtUserAttachThreadInputFn = unsafe extern "stdcall" fn(IdAttach: ULONG, IdAttachTo: ULONG, Attach: BOOL) -> BOOL;
+    pub type NtUserBeginPaintFn = unsafe extern "stdcall" fn(WindowHandle: HWND, lpPaint: LPPAINTSTRUCT) -> HDC;
+    pub type NtUserBlockInputFn = unsafe extern "stdcall" fn(BlockInput: BOOL) -> BOOL;
+    pub type tUserCalculatePopupWindowPositionFn = unsafe extern "stdcall" fn(anchorPoint: *const POINT, windowSize: *const SIZE, flags: ULONG, excludeRect: *mut RECT, popupWindowPosition: *mut RECT) -> BOOL;
+    pub type NtUserChangeWindowMessageFilterExFn = unsafe extern "stdcall" fn(WindowHandle: HWND, message: ULONG, action: ULONG, pChangeFilterStruct: PCHANGEFILTERSTRUCT) -> BOOL;
+    pub type NtUserChildWindowFromPointExFn = unsafe extern "stdcall" fn(WindowHandle: HWND, pt: POINT, flags: ULONG) -> HWND;
+    pub type NtUserClipCursorFn = unsafe extern "stdcall" fn(lpRect: *const RECT) -> BOOL;
+    pub type NtUserCloseDesktopFn = unsafe extern "stdcall" fn(hDesktop: HDESK) -> BOOL;
+    pub type NtUserCopyAcceleratorTableFn = unsafe extern "stdcall" fn(hAccelSrc: HACCEL, lpAccelDst: LPACCEL, cAccelEntries: LONG) -> LONG;
+    pub type NtUserCreateAcceleratorTableFn = unsafe extern "stdcall" fn(paccel: LPACCEL, cAccel: LONG) -> HACCEL;
+    pub type NtUserDeleteMenuFn = unsafe extern "stdcall" fn(hMenu: HMENU, uPosition: ULONG, uFlags: ULONG) -> BOOL;
+    pub type NtUserDestroyMenuFn = unsafe extern "stdcall" fn(hMenu: HMENU) -> BOOL;
+    pub type NtUserDestroyWindowFn = unsafe extern "stdcall" fn(WindowHandle: HWND) -> BOOL;
+    pub type NtUserDragDetectFn = unsafe extern "stdcall" fn(WindowHandle: HWND, pt: POINT) -> BOOL;
+    pub type NtUserDragObjectFn = unsafe extern "stdcall" fn(WindowHandleParent: HWND, WindowHandleFrom: HWND, fmt: ULONG, data: ULONG_PTR, hcur: HCURSOR) -> ULONG;
+    pub type NtUserDrawAnimatedRectsFn = unsafe extern "stdcall" fn(WindowHandle: HWND, idAni: ::core::ffi::c_int, lprcFrom: *const RECT, lprcTo: *const RECT) -> BOOL;
+    pub type NtUserEndMenuFn = unsafe extern "stdcall" fn() -> BOOL;
+    pub type NtUserEndPaintFn = unsafe extern "stdcall" fn(WindowHandle: HWND, lpPaint: *const PAINTSTRUCT) -> BOOL;
+    pub type NtUserEnumDisplayMonitorsFn = unsafe extern "stdcall" fn(hdc: HDC, lprcClip: LPCRECT, lpfnEnum: MONITORENUMPROC, dwData: LPARAM) -> BOOL;
+    pub type NtUserExcludeUpdateRgnFn = unsafe extern "stdcall" fn(hDC: HDC, WindowHandle: HWND) -> HRGN;
+    pub type NtUserFlashWindowExFn = unsafe extern "stdcall" fn(pfwi: PFLASHWINFO) -> BOOL;
+    pub type NtUserGetAncestorFn = unsafe extern "stdcall" fn(WindowHandle: HWND, gaFlags: ULONG) -> HWND;
+    pub type NtUserGetCaretBlinkTimeFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type NtUserGetCaretPosFn = unsafe extern "stdcall" fn(lpPoint: LPPOINT) -> BOOL;
+    pub type NtUserGetClipCursorFn = unsafe extern "stdcall" fn(lpRect: LPRECT) -> BOOL;
+    pub type NtUserGetComboBoxInfoFn = unsafe extern "stdcall" fn(WindowHandleCombo: HWND, pcbi: PCOMBOBOXINFO) -> BOOL;
+    pub type NtUserGetCurrentInputMessageSourceFn = unsafe extern "stdcall" fn(InputMessageSource: *mut INPUT_MESSAGE_SOURCE) -> BOOL;
+    pub type NtUserGetCursorFn = unsafe extern "stdcall" fn() -> HCURSOR;
+    pub type NtUserGetCursorInfoFn = unsafe extern "stdcall" fn(pci: PCURSORINFO) -> BOOL;
+    pub type NtUserGetDCExFn = unsafe extern "stdcall" fn(WindowHandle: HWND, hrgnClip: HRGN, flags: ULONG) -> HDC;
+    pub type NtUserGetDisplayAutoRotationPreferencesFn = unsafe extern "stdcall" fn(pOrientation: *mut ORIENTATION_PREFERENCE) -> BOOL;
+    pub type NtUserGetDoubleClickTimeFn = unsafe extern "stdcall" fn() -> ULONG;
+    pub type NtUserGetGUIThreadInfoFn = unsafe extern "stdcall" fn(idThread: ULONG, pgui: PGUITHREADINFO) -> BOOL;
+    pub type NtUserGetGuiResourcesFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, uiFlags: ULONG) -> ULONG;
+    pub type NtUserGetLayeredWindowAttributesFn = unsafe extern "stdcall" fn(WindowHandle: HWND, pcrKey: *mut COLORREF, pbAlpha: *mut BYTE, pdwFlags: ULONG) -> BOOL;
+    pub type NtUserGetListBoxInfoFn = unsafe extern "stdcall" fn(WindowHandle: HWND) -> ULONG;
+    pub type NtUserGetMenuBarInfoFn = unsafe extern "stdcall" fn(WindowHandle: HWND, idObject: LONG, idItem: LONG, pmbi: PMENUBARINFO) -> BOOL;
+    pub type NtUserGetMenuItemRectFn = unsafe extern "stdcall" fn(WindowHandle: HWND, hMenu: HMENU, uItem: ULONG, lprcItem: LPRECT) -> BOOL;
+    pub type NtUserGetMouseMovePointsExFn = unsafe extern "stdcall" fn(cbSize: ULONG, lppt: LPMOUSEMOVEPOINT, lpptBuf: LPMOUSEMOVEPOINT, nBufPoints: LONG, resolution: ULONG) -> LONG;
+    pub type NtUserGetRawInputDataFn = unsafe extern "stdcall" fn(hRawInput: HRAWINPUT, uiCommand: ULONG, pData: LPVOID, pcbSize: PULONG, cbSizeHeader: ULONG) -> ULONG;
+    pub type NtUserGetRawInputDeviceListFn = unsafe extern "stdcall" fn(pRawInputDeviceList: PRAWINPUTDEVICELIST, puiNumDevices: PULONG, cbSize: ULONG) -> ULONG;
+    pub type NtUserGetRegisteredRawInputDevicesFn = unsafe extern "stdcall" fn(pRawInputDevices: PRAWINPUTDEVICE, puiNumDevices: PULONG, cbSize: ULONG) -> ULONG;
+    pub type NtUserGetSystemMenuFn = unsafe extern "stdcall" fn(WindowHandle: HWND, bRevert: BOOL) -> HMENU;
+    pub type NtUserGetThreadDesktopFn = unsafe extern "stdcall" fn(ThreadId: ULONG) -> HDESK;
+    pub type NtUserGetTitleBarInfoFn = unsafe extern "stdcall" fn(WindowHandle: HWND, pti: PTITLEBARINFO) -> BOOL;
+    pub type NtUserGetObjectInformationFn = unsafe extern "stdcall" fn(hObj: HANDLE, Index: LONG, vInfo: PVOID, Length: ULONG, LengthNeeded: PULONG) -> BOOL;
+    pub type NtUserGetWindowDCFn = unsafe extern "stdcall" fn(WindowHandle: HWND) -> HDC;
+    pub type NtUserGetWindowPlacementFn = unsafe extern "stdcall" fn(WindowHandle: HWND, lpwndpl: *mut WINDOWPLACEMENT) -> BOOL;
+    pub type NtUserHiliteMenuItemFn = unsafe extern "stdcall" fn(WindowHandle: HWND, Menu: HMENU, IDHiliteItem: ULONG, Hilite: ULONG) -> BOOL;
+    pub type NtUserInvalidateRectFn = unsafe extern "stdcall" fn(WindowHandle: HWND, Rect: *const RECT, Erase: BOOL) -> BOOL;
+    pub type NtUserInvalidateRgnFn = unsafe extern "stdcall" fn(WindowHandle: HWND, hRgn: HRGN, Erase: BOOL) -> BOOL;
+    pub type NtUserIsTouchWindowFn = unsafe extern "stdcall" fn(WindowHandle: HWND, Flags: PULONG) -> BOOL;
+    pub type NtUserKillTimerFn = unsafe extern "stdcall" fn(WindowHandle: HWND, IDEvent: ULONG_PTR) -> BOOL;
+    pub type NtUserLockWorkStationFn = unsafe extern "stdcall" fn() -> BOOL;
+    pub type NtUserLogicalToPhysicalPointFn = unsafe extern "stdcall" fn(WindowHandle: HWND, lpPoint: LPPOINT) -> BOOL;
+    pub type NtUserMenuItemFromPointFn = unsafe extern "stdcall" fn(WindowHandle: HWND, hMenu: HMENU, ptScreen: POINT) -> LONG;
+    pub type NtUserMoveWindowFn = unsafe extern "stdcall" fn(WindowHandle: HWND, X: LONG, Y: LONG, nWidth: LONG, nHeight: LONG, bRepaint: BOOL) -> BOOL;
+    pub type NtUserOpenInputDesktopFn = unsafe extern "stdcall" fn(Flags: ULONG, Inherit: BOOL, DesiredAccess: ACCESS_MASK) -> HDESK;
+    pub type NtUserPhysicalToLogicalPointFn = unsafe extern "stdcall" fn(WindowHandle: HWND, lpPoint: LPPOINT) -> BOOL;
+    pub type NtUserPrintWindowFn = unsafe extern "stdcall" fn(WindowHandle: HWND, hdcBlt: HDC, nFlags: ULONG) -> BOOL;
+    pub type NtUserQueryInformationThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: USERTHREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG, ReturnLength: PULONG) -> NTSTATUS;
+    pub type NtUserSetInformationThreadFn = unsafe extern "stdcall" fn(ThreadHandle: HANDLE, ThreadInformationClass: USERTHREADINFOCLASS, ThreadInformation: PVOID, ThreadInformationLength: ULONG) -> NTSTATUS;
+    pub type QuerySendMessageFn = unsafe extern "stdcall" fn(pMsg: *mut MSG) -> BOOL;
+    pub type NtUserRedrawWindowFn = unsafe extern "stdcall" fn(WindowHandle: HWND, lprcUpdate: PRECT, hrgnUpdate: HRGN, flags: ULONG) -> BOOL;
+    pub type NtUserRealChildWindowFromPointFn = unsafe extern "stdcall" fn(WindowHandleParent: HWND, ptParentClientCoords: POINT) -> HWND;
+    pub type NtUserRegisterHotKeyFn = unsafe extern "stdcall" fn(WindowHandle: HWND, id: LONG, fsModifiers: ULONG, vk: ULONG) -> BOOL;
+    pub type NtUserRemoveMenuFn = unsafe extern "stdcall" fn(hMenu: HMENU, uPosition: ULONG, uFlags: ULONG) -> BOOL;
+    pub type NtUserSendInputFn = unsafe extern "stdcall" fn(cInputs: ULONG, pInputs: LPINPUT, cbSize: LONG) -> ULONG;
+    pub type NtUserSetCaptureFn = unsafe extern "stdcall" fn(WindowHandle: HWND) -> HWND;
+    pub type NtUserSetTimerFn = unsafe extern "stdcall" fn(WindowHandle: HWND, nIDEvent: ULONG_PTR, uElapse: ULONG, lpTimerFunc: TIMERPROC, uToleranceDelay: ULONG) -> ULONG_PTR;
+    pub type NtUserSetClassWordFn = unsafe extern "stdcall" fn(WindowHandle: HWND, nIndex: LONG, wNewWord: WORD) -> WORD;
+    pub type NtUserSetCursorPosFn = unsafe extern "stdcall" fn(X: LONG, Y: LONG) -> BOOL;
+    pub type NtUserSetLayeredWindowAttributesFn = unsafe extern "stdcall" fn(WindowHandle: HWND, crKey: COLORREF, bAlpha: BYTE, dwFlags: DWORD) -> BOOL;
+    pub type NtUserSetProcessRestrictionExemptionFn = unsafe extern "stdcall" fn(EnableExemption: BOOL) -> BOOL;
+    pub type NtUserSetWindowPosFn = unsafe extern "stdcall" fn(WindowHandle: HWND, WindowHandleInsertAfter: HWND, X: LONG, Y: LONG, cx: LONG, cy: LONG, uFlags: ULONG) -> BOOL;
+    pub type NtUserSetWindowWordFn = unsafe extern "stdcall" fn(WindowHandle: HWND, nIndex: LONG, wNewWord: WORD) -> WORD;
+    pub type NtUserShellForegroundBoostProcessFn = unsafe extern "stdcall" fn(ProcessHandle: HANDLE, WindowHandle: HWND) -> HWND;
+    pub type NtUserSetAdditionalForegroundBoostProcessesFn = unsafe extern "stdcall" fn(WindowHandle: HWND) -> ULONG;
+    pub type NtUserSetAdditionalPowerThrottlingProcessFn = unsafe extern "stdcall" fn(WindowHandle: HWND) -> ULONG;
+    pub type NtUserShowCursorFn = unsafe extern "stdcall" fn(bShow: BOOL) -> LONG;
+    pub type NtUserShowWindowFn = unsafe extern "stdcall" fn(WindowHandle: HWND, nCmdShow: LONG) -> BOOL;
+    pub type NtUserShowWindowAsyncFn = unsafe extern "stdcall" fn(WindowHandle: HWND, nCmdShow: LONG) -> BOOL;
+    pub type NtUserShutdownBlockReasonQueryFn = unsafe extern "stdcall" fn(WindowHandle: HWND, pwszBuff: LPWSTR, pcchBuff: PULONG) -> BOOL;
+    pub type NtUserShutdownReasonDestroyFn = unsafe extern "stdcall" fn(WindowHandle: HWND) -> BOOL;
+    pub type NtUserTrackMouseEventFn = unsafe extern "stdcall" fn(lpEventTrack: LPTRACKMOUSEEVENT) -> BOOL;
+    pub type NtUserTrackPopupMenuExFn = unsafe extern "stdcall" fn(hMenu: HMENU, uFlags: ULONG, x: LONG, y: LONG, WindowHandle: HWND, lptpm: LPTPMPARAMS) -> BOOL;
+    pub type NtUserUnhookWinEventFn = unsafe extern "stdcall" fn(hWinEventHook: HWINEVENTHOOK) -> BOOL;
+    pub type NtUserUnregisterHotKeyFn = unsafe extern "stdcall" fn(WindowHandle: HWND, id: LONG) -> BOOL;
+    pub type NtUserUserHandleGrantAccessFn = unsafe extern "stdcall" fn(UserHandle: HANDLE, Job: HANDLE, Grant: BOOL) -> BOOL;
+    pub type NtUserValidateRectFn = unsafe extern "stdcall" fn(WindowHandle: HWND, Rect: *const RECT) -> BOOL;
+    pub type NtUserWindowFromDCFn = unsafe extern "stdcall" fn(hDC: HDC) -> HWND;
+    pub type NtUserWindowFromPhysicalPointFn = unsafe extern "stdcall" fn(Point: POINT) -> HWND;
+    pub type NtUserWindowFromPointFn = unsafe extern "stdcall" fn(Point: POINT) -> HWND;
+}
