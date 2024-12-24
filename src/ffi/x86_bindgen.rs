@@ -1,4 +1,4 @@
-// Generated at 2024-12-24 03:23:06.537602200 +00:00
+// Generated at 2024-12-24 04:09:21.810392700 +00:00
 
 
 #[repr(C)]
@@ -52788,7 +52788,7 @@ pub type PKERNEL_CALLBACK_TABLE = *mut _KERNEL_CALLBACK_TABLE;
 pub struct _DYNAMIC_FUNCTION_TABLE {
    pub _address: u8,
 }
-#[cfg(feature="native_fn")]
+#[cfg(feature="externs")]
 extern "C" {
    pub static GUID_NULL: GUID;
    pub static mut NlsAnsiCodePage: USHORT;
@@ -52942,7 +52942,7 @@ extern "C" {
    pub static GUID_MOF_RESOURCE_ADDED_NOTIFICATION: GUID;
    pub static GUID_MOF_RESOURCE_REMOVED_NOTIFICATION: GUID;
 }
-#[cfg(feature="native_fn")]
+#[cfg(feature="externs")]
 extern "stdcall" {
    pub fn NtCallbackReturn(OutputBuffer: PVOID, OutputLength: ULONG, Status: NTSTATUS) -> NTSTATUS;
    pub fn NtFlushProcessWriteBuffers() -> NTSTATUS;

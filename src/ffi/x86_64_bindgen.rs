@@ -1,4 +1,4 @@
-// Generated at 2024-12-24 03:23:05.636394900 +00:00
+// Generated at 2024-12-24 04:09:17.077756600 +00:00
 
 
 #[repr(C)]
@@ -53110,7 +53110,7 @@ pub struct _KERNEL_CALLBACK_TABLE {
 }
 pub type KERNEL_CALLBACK_TABLE = _KERNEL_CALLBACK_TABLE;
 pub type PKERNEL_CALLBACK_TABLE = *mut _KERNEL_CALLBACK_TABLE;
-#[cfg(feature="native_fn")]
+#[cfg(feature="externs")]
 extern "C" {
    pub static GUID_NULL: GUID;
    pub static mut NlsAnsiCodePage: USHORT;
