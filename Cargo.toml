@@ -11,6 +11,8 @@ description = "Rust bindings to the System Informer's (formerly known as Process
 
 [features]
 regenerate = ["dep:regex", "dep:bindgen", "dep:chrono"]
+native_fn = []
+fn_types = []
 
 [package.metadata.docs.rs]
 default-target = "x86_64-pc-windows-msvc"
@@ -26,6 +28,3 @@ chrono = { version = "0.4.37", optional = true }
 [dev-dependencies.windows-sys]
 version = "0.59.0"
 features = ["Win32_System_Threading"]
-
-[dependencies]
-cty = "0.2.2"

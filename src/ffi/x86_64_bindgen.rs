@@ -1,9 +1,4 @@
 // Generated at 2024-11-15 20:58:55.845887400 -08:00
-#[cfg(not(target_arch = "x86_64"))]
-compile_error!("These bindings can only be used on `x86_64` architectures. To generate bindings for your target architecture, consider using the `regenerate` feature.");
-
-use cty;
-
 
 #[repr(C)]
 #[derive(Copy, Clone, Debug, Default, Eq, Hash, Ord, PartialEq, PartialOrd)]
@@ -2866,8 +2861,8 @@ pub const EVENT_TRACE_USE_SEQUENCE: u32 = 4;
 pub const ETW_KERNEL_EVENT_VERSION: u32 = 60;
 pub const ETW_SET_MARK_WITH_FLUSH: u32 = 1;
 pub const ETW_MAX_DATA_BLOCK_BUFFER_SIZE: u32 = 65536;
-pub type va_list = *mut cty::c_char;
-pub type wchar_t = cty::c_ushort;
+pub type va_list = *mut c_char;
+pub type wchar_t = c_ushort;
 #[repr(i32)]
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -2878,38 +2873,38 @@ pub enum _EXCEPTION_DISPOSITION {
    ExceptionCollidedUnwind = 3,
 }
 pub use self::_EXCEPTION_DISPOSITION as EXCEPTION_DISPOSITION;
-pub type ULONG = cty::c_ulong;
+pub type ULONG = c_ulong;
 pub type PULONG = *mut ULONG;
-pub type USHORT = cty::c_ushort;
+pub type USHORT = c_ushort;
 pub type PUSHORT = *mut USHORT;
-pub type UCHAR = cty::c_uchar;
+pub type UCHAR = c_uchar;
 pub type PUCHAR = *mut UCHAR;
-pub type DWORD = cty::c_ulong;
-pub type BOOL = cty::c_int;
-pub type BYTE = cty::c_uchar;
-pub type WORD = cty::c_ushort;
+pub type DWORD = c_ulong;
+pub type BOOL = c_int;
+pub type BYTE = c_uchar;
+pub type WORD = c_ushort;
 pub type PBOOL = *mut BOOL;
 pub type PDWORD = *mut DWORD;
-pub type LPVOID = *mut cty::c_void;
-pub type UINT = cty::c_uint;
-pub type ULONG32 = cty::c_uint;
-pub type UINT_PTR = cty::c_ulonglong;
-pub type LONG_PTR = cty::c_longlong;
-pub type ULONG_PTR = cty::c_ulonglong;
-pub type PULONG_PTR = *mut cty::c_ulonglong;
+pub type LPVOID = *mut c_void;
+pub type UINT = c_uint;
+pub type ULONG32 = c_uint;
+pub type UINT_PTR = c_ulonglong;
+pub type LONG_PTR = c_longlong;
+pub type ULONG_PTR = c_ulonglong;
+pub type PULONG_PTR = *mut c_ulonglong;
 pub type SIZE_T = ULONG_PTR;
 pub type PSIZE_T = *mut ULONG_PTR;
-pub type LONG64 = cty::c_longlong;
-pub type PLONG64 = *mut cty::c_longlong;
-pub type ULONG64 = cty::c_ulonglong;
-pub type PULONG64 = *mut cty::c_ulonglong;
-pub type DWORD64 = cty::c_ulonglong;
-pub type PDWORD64 = *mut cty::c_ulonglong;
+pub type LONG64 = c_longlong;
+pub type PLONG64 = *mut c_longlong;
+pub type ULONG64 = c_ulonglong;
+pub type PULONG64 = *mut c_ulonglong;
+pub type DWORD64 = c_ulonglong;
+pub type PDWORD64 = *mut c_ulonglong;
 pub type KAFFINITY = ULONG_PTR;
-pub type PVOID = *mut cty::c_void;
-pub type CHAR = cty::c_char;
-pub type SHORT = cty::c_short;
-pub type LONG = cty::c_long;
+pub type PVOID = *mut c_void;
+pub type CHAR = c_char;
+pub type SHORT = c_short;
+pub type LONG = c_long;
 pub type WCHAR = wchar_t;
 pub type PWCHAR = *mut WCHAR;
 pub type PWCH = *mut WCHAR;
@@ -2946,14 +2941,14 @@ pub struct _GROUP_AFFINITY {
 }
 pub type GROUP_AFFINITY = _GROUP_AFFINITY;
 pub type PGROUP_AFFINITY = *mut _GROUP_AFFINITY;
-pub type HANDLE = *mut cty::c_void;
+pub type HANDLE = *mut c_void;
 pub type PHANDLE = *mut HANDLE;
-pub type CCHAR = cty::c_char;
+pub type CCHAR = c_char;
 pub type LCID = DWORD;
 pub type PLCID = PDWORD;
 pub type LANGID = WORD;
-pub type LONGLONG = cty::c_longlong;
-pub type ULONGLONG = cty::c_ulonglong;
+pub type LONGLONG = c_longlong;
+pub type ULONGLONG = c_ulonglong;
 pub type PULONGLONG = *mut ULONGLONG;
 #[repr(C)]
 #[derive(Copy, Clone)]
@@ -3068,16 +3063,16 @@ pub type PLIST_ENTRY32 = *mut LIST_ENTRY32;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _GUID {
-   pub Data1: cty::c_ulong,
-   pub Data2: cty::c_ushort,
-   pub Data3: cty::c_ushort,
-   pub Data4: [cty::c_uchar; 8usize],
+   pub Data1: c_ulong,
+   pub Data2: c_ushort,
+   pub Data3: c_ushort,
+   pub Data4: [c_uchar; 8usize],
 }
 pub type GUID = _GUID;
 pub type LPGUID = *mut GUID;
 pub type LPCGUID = *const GUID;
 pub type PEXCEPTION_ROUTINE = ::core::option::Option<unsafe extern "C" fn(arg1: *mut _EXCEPTION_RECORD, arg2: PVOID, arg3: *mut _CONTEXT, arg4: PVOID) -> EXCEPTION_DISPOSITION>;
-pub type __C_ASSERT__ = [cty::c_char; 1usize];
+pub type __C_ASSERT__ = [c_char; 1usize];
 #[repr(C)]
 #[repr(align(16))]
 #[derive(Debug, Default, Copy, Clone)]
@@ -6382,7 +6377,7 @@ pub type FILE_ID_128 = _FILE_ID_128;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union _FILE_SEGMENT_ELEMENT {
-   pub Buffer: *mut cty::c_void,
+   pub Buffer: *mut c_void,
    pub Alignment: ULONGLONG,
 }
 impl Default for _FILE_SEGMENT_ELEMENT {
@@ -7566,68 +7561,68 @@ pub type LPARAM = LONG_PTR;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HRGN__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HRGN = *mut HRGN__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HWINSTA__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HWINSTA = *mut HWINSTA__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HWND__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HWND = *mut HWND__;
-pub type HGDIOBJ = *mut cty::c_void;
+pub type HGDIOBJ = *mut c_void;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HACCEL__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HACCEL = *mut HACCEL__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HBITMAP__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HBITMAP = *mut HBITMAP__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HDC__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HDC = *mut HDC__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HDESK__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HDESK = *mut HDESK__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HICON__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HICON = *mut HICON__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HMENU__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HMENU = *mut HMENU__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HWINEVENTHOOK__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HWINEVENTHOOK = *mut HWINEVENTHOOK__;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HMONITOR__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HMONITOR = *mut HMONITOR__;
 pub type HCURSOR = HICON;
@@ -7882,8 +7877,8 @@ pub type TIMERPROC = ::core::option::Option<unsafe extern "C" fn(arg1: HWND, arg
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct tagMOUSEMOVEPOINT {
-   pub x: cty::c_int,
-   pub y: cty::c_int,
+   pub x: c_int,
+   pub y: c_int,
    pub time: DWORD,
    pub dwExtraInfo: ULONG_PTR,
 }
@@ -8221,7 +8216,7 @@ pub type PCOMBOBOXINFO = *mut tagCOMBOBOXINFO;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct HRAWINPUT__ {
-   pub unused: cty::c_int,
+   pub unused: c_int,
 }
 pub type HRAWINPUT = *mut HRAWINPUT__;
 #[repr(C)]
@@ -8550,7 +8545,7 @@ pub struct _QUAD {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union _QUAD__bindgen_ty_1 {
-   pub UseThisFieldToCopy: cty::c_longlong,
+   pub UseThisFieldToCopy: c_longlong,
    pub DoNotUseThisField: f64,
 }
 impl Default for _QUAD__bindgen_ty_1 {
@@ -8584,7 +8579,7 @@ pub type QUAD_PTR = _QUAD_PTR;
 pub type PQUAD_PTR = *mut _QUAD_PTR;
 pub type LOGICAL = ULONG;
 pub type PLOGICAL = *mut ULONG;
-pub type CSHORT = cty::c_short;
+pub type CSHORT = c_short;
 pub type CLONG = ULONG;
 pub type PCCHAR = *mut CCHAR;
 pub type PCSHORT = *mut CSHORT;
@@ -41254,7 +41249,7 @@ pub struct _SYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE {
 pub type SYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE = _SYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE;
 pub type PSYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE = *mut _SYSTEM_FEATURE_USAGE_SUBSCRIPTION_UPDATE;
 pub type PRTL_RUN_ONCE_INIT_FN = ::core::option::Option<unsafe extern "C" fn(arg1: PRTL_RUN_ONCE, arg2: PVOID, arg3: *mut PVOID) -> LOGICAL>;
-pub type PWNF_USER_CALLBACK = ::core::option::Option<unsafe extern "C" fn(arg1: WNF_STATE_NAME, arg2: WNF_CHANGE_STAMP, arg3: PWNF_TYPE_ID, arg4: PVOID, arg5: *const cty::c_void, arg6: ULONG) -> NTSTATUS>;
+pub type PWNF_USER_CALLBACK = ::core::option::Option<unsafe extern "C" fn(arg1: WNF_STATE_NAME, arg2: WNF_CHANGE_STAMP, arg3: PWNF_TYPE_ID, arg4: PVOID, arg5: *const c_void, arg6: ULONG) -> NTSTATUS>;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _IMAGE_DEBUG_POGO_ENTRY {
@@ -46581,7 +46576,7 @@ pub struct _WMI_THREAD_INFORMATION {
 }
 pub type WMI_THREAD_INFORMATION = _WMI_THREAD_INFORMATION;
 pub type PWMI_THREAD_INFORMATION = *mut _WMI_THREAD_INFORMATION;
-pub type SCHAR = cty::c_schar;
+pub type SCHAR = c_schar;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct _WMI_EXTENDED_THREAD_INFORMATION {
@@ -50833,7 +50828,7 @@ pub type PPERFINFO_SYSCALL_EXIT_DATA = *mut _PERFINFO_SYSCALL_EXIT_DATA;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct _PERFINFO_MARK_INFORMATION {
-   pub Name: [cty::c_char; 1usize],
+   pub Name: [c_char; 1usize],
 }
 pub type PERFINFO_MARK_INFORMATION = _PERFINFO_MARK_INFORMATION;
 pub type PPERFINFO_MARK_INFORMATION = *mut _PERFINFO_MARK_INFORMATION;
@@ -52334,10 +52329,10 @@ extern "C" {
    pub fn NtUmsThreadYield(SchedulerParam: PVOID) -> NTSTATUS;
    pub fn NtCreateWnfStateName(StateName: PWNF_STATE_NAME, NameLifetime: WNF_STATE_NAME_LIFETIME, DataScope: WNF_DATA_SCOPE, PersistData: BOOLEAN, TypeId: PCWNF_TYPE_ID, MaximumStateSize: ULONG, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
    pub fn NtDeleteWnfStateName(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-   pub fn NtUpdateWnfStateData(StateName: PCWNF_STATE_NAME, Buffer: *const cty::c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const cty::c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
-   pub fn NtDeleteWnfStateData(StateName: PCWNF_STATE_NAME, ExplicitScope: *const cty::c_void) -> NTSTATUS;
-   pub fn NtQueryWnfStateData(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const cty::c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-   pub fn NtQueryWnfStateNameInformation(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const cty::c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
+   pub fn NtUpdateWnfStateData(StateName: PCWNF_STATE_NAME, Buffer: *const c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
+   pub fn NtDeleteWnfStateData(StateName: PCWNF_STATE_NAME, ExplicitScope: *const c_void) -> NTSTATUS;
+   pub fn NtQueryWnfStateData(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+   pub fn NtQueryWnfStateNameInformation(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
    pub fn NtSubscribeWnfStateChange(StateName: PCWNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, EventMask: ULONG, SubscriptionId: PULONG64) -> NTSTATUS;
    pub fn NtUnsubscribeWnfStateChange(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
    pub fn NtGetCompleteWnfStateSubscription(OldDescriptorStateName: PWNF_STATE_NAME, OldSubscriptionId: *mut ULONG64, OldDescriptorEventMask: ULONG, OldDescriptorStatus: ULONG, NewDeliveryDescriptor: PWNF_DELIVERY_DESCRIPTOR, DescriptorSize: ULONG) -> NTSTATUS;
@@ -52955,7 +52950,7 @@ extern "C" {
    pub fn RtlDeleteBarrier(Barrier: PRTL_BARRIER) -> NTSTATUS;
    pub fn RtlBarrier(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
    pub fn RtlBarrierForDelete(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
-   pub fn RtlWaitOnAddress(Address: *mut cty::c_void, CompareAddress: PVOID, AddressSize: SIZE_T, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+   pub fn RtlWaitOnAddress(Address: *mut c_void, CompareAddress: PVOID, AddressSize: SIZE_T, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn RtlWakeAddressAll(Address: PVOID);
    pub fn RtlWakeAddressAllNoFence(Address: PVOID);
    pub fn RtlWakeAddressSingle(Address: PVOID);
@@ -53632,7 +53627,7 @@ extern "C" {
    pub fn RtlRunOnceComplete(RunOnce: PRTL_RUN_ONCE, Flags: ULONG, Context: PVOID) -> NTSTATUS;
    pub fn RtlEqualWnfChangeStamps(ChangeStamp1: WNF_CHANGE_STAMP, ChangeStamp2: WNF_CHANGE_STAMP) -> BOOLEAN;
    pub fn RtlQueryWnfStateData(ChangeStamp: PWNF_CHANGE_STAMP, StateName: WNF_STATE_NAME, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PWNF_TYPE_ID) -> NTSTATUS;
-   pub fn RtlPublishWnfStateData(StateName: WNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, Buffer: *const cty::c_void, Length: ULONG, ExplicitScope: *const cty::c_void) -> NTSTATUS;
+   pub fn RtlPublishWnfStateData(StateName: WNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, Buffer: *const c_void, Length: ULONG, ExplicitScope: *const c_void) -> NTSTATUS;
    pub fn RtlSubscribeWnfStateChangeNotification(SubscriptionHandle: *mut PVOID, StateName: WNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PCWNF_TYPE_ID, SerializationGroup: ULONG, Flags: ULONG) -> NTSTATUS;
    pub fn RtlUnsubscribeWnfStateChangeNotification(Callback: PWNF_USER_CALLBACK) -> NTSTATUS;
    pub fn RtlWnfDllUnloadCallback(DllBase: PVOID) -> NTSTATUS;
@@ -53772,7 +53767,7 @@ extern "C" {
    pub fn UStr32ToUStr(Destination: PUNICODE_STRING, Source: PUNICODE_STRING32);
    pub fn UStrToUStr32(Destination: PUNICODE_STRING32, Source: PUNICODE_STRING);
    pub fn Wow64CurrentGuestTeb() -> *mut TEB32;
-   pub fn Wow64CurrentNativeTeb() -> *mut cty::c_void;
+   pub fn Wow64CurrentNativeTeb() -> *mut c_void;
    pub fn SamFreeMemory(Buffer: PVOID) -> NTSTATUS;
    pub fn SamCloseHandle(SamHandle: SAM_HANDLE) -> NTSTATUS;
    pub fn SamSetSecurityObject(ObjectHandle: SAM_HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
@@ -54042,7 +54037,7 @@ extern "C" {
    pub fn ZwDeleteObjectAuditAlarm(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
    pub fn ZwDeletePrivateNamespace(NamespaceHandle: HANDLE) -> NTSTATUS;
    pub fn ZwDeleteValueKey(KeyHandle: HANDLE, ValueName: PUNICODE_STRING) -> NTSTATUS;
-   pub fn ZwDeleteWnfStateData(StateName: PCWNF_STATE_NAME, ExplicitScope: *const cty::c_void) -> NTSTATUS;
+   pub fn ZwDeleteWnfStateData(StateName: PCWNF_STATE_NAME, ExplicitScope: *const c_void) -> NTSTATUS;
    pub fn ZwDeleteWnfStateName(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
    pub fn ZwDeviceIoControlFile(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, IoControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
    pub fn ZwDisableLastKnownGood() -> NTSTATUS;
@@ -54224,8 +54219,8 @@ extern "C" {
    pub fn ZwQueryValueKey(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
    pub fn ZwQueryVirtualMemory(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
    pub fn ZwQueryVolumeInformationFile(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
-   pub fn ZwQueryWnfStateData(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const cty::c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-   pub fn ZwQueryWnfStateNameInformation(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const cty::c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
+   pub fn ZwQueryWnfStateData(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+   pub fn ZwQueryWnfStateNameInformation(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
    pub fn ZwQueueApcThread(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
    pub fn ZwQueueApcThreadEx(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
    pub fn ZwQueueApcThreadEx2(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcFlags: ULONG, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
@@ -54361,7 +54356,7 @@ extern "C" {
    pub fn ZwUnmapViewOfSection(ProcessHandle: HANDLE, BaseAddress: PVOID) -> NTSTATUS;
    pub fn ZwUnmapViewOfSectionEx(ProcessHandle: HANDLE, BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
    pub fn ZwUnsubscribeWnfStateChange(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-   pub fn ZwUpdateWnfStateData(StateName: PCWNF_STATE_NAME, Buffer: *const cty::c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const cty::c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
+   pub fn ZwUpdateWnfStateData(StateName: PCWNF_STATE_NAME, Buffer: *const c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
    pub fn ZwVdmControl(Service: VDMSERVICECLASS, ServiceData: PVOID) -> NTSTATUS;
    pub fn ZwWaitForAlertByThreadId(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
    pub fn ZwWaitForDebugEvent(DebugObjectHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER, WaitStateChange: PDBGUI_WAIT_STATE_CHANGE) -> NTSTATUS;
@@ -54425,7 +54420,7 @@ extern "C" {
    pub fn NtUserDestroyWindow(WindowHandle: HWND) -> BOOL;
    pub fn NtUserDragDetect(WindowHandle: HWND, pt: POINT) -> BOOL;
    pub fn NtUserDragObject(WindowHandleParent: HWND, WindowHandleFrom: HWND, fmt: ULONG, data: ULONG_PTR, hcur: HCURSOR) -> ULONG;
-   pub fn NtUserDrawAnimatedRects(WindowHandle: HWND, idAni: cty::c_int, lprcFrom: *const RECT, lprcTo: *const RECT) -> BOOL;
+   pub fn NtUserDrawAnimatedRects(WindowHandle: HWND, idAni: c_int, lprcFrom: *const RECT, lprcTo: *const RECT) -> BOOL;
    pub fn NtUserEndMenu() -> BOOL;
    pub fn NtUserEndPaint(WindowHandle: HWND, lpPaint: *const PAINTSTRUCT) -> BOOL;
    pub fn NtUserEnumDisplayMonitors(hdc: HDC, lprcClip: LPCRECT, lpfnEnum: MONITORENUMPROC, dwData: LPARAM) -> BOOL;
@@ -54654,10 +54649,10 @@ pub type NtWaitForKeyedEventType = unsafe extern "C" fn(KeyedEventHandle: HANDLE
 pub type NtUmsThreadYieldType = unsafe extern "C" fn(SchedulerParam: PVOID) -> NTSTATUS;
 pub type NtCreateWnfStateNameType = unsafe extern "C" fn(StateName: PWNF_STATE_NAME, NameLifetime: WNF_STATE_NAME_LIFETIME, DataScope: WNF_DATA_SCOPE, PersistData: BOOLEAN, TypeId: PCWNF_TYPE_ID, MaximumStateSize: ULONG, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
 pub type NtDeleteWnfStateNameType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-pub type NtUpdateWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, Buffer: *const cty::c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const cty::c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
-pub type NtDeleteWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, ExplicitScope: *const cty::c_void) -> NTSTATUS;
-pub type NtQueryWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const cty::c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-pub type NtQueryWnfStateNameInformationType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const cty::c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
+pub type NtUpdateWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, Buffer: *const c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
+pub type NtDeleteWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, ExplicitScope: *const c_void) -> NTSTATUS;
+pub type NtQueryWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+pub type NtQueryWnfStateNameInformationType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
 pub type NtSubscribeWnfStateChangeType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, EventMask: ULONG, SubscriptionId: PULONG64) -> NTSTATUS;
 pub type NtUnsubscribeWnfStateChangeType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
 pub type NtGetCompleteWnfStateSubscriptionType = unsafe extern "C" fn(OldDescriptorStateName: PWNF_STATE_NAME, OldSubscriptionId: *mut ULONG64, OldDescriptorEventMask: ULONG, OldDescriptorStatus: ULONG, NewDeliveryDescriptor: PWNF_DELIVERY_DESCRIPTOR, DescriptorSize: ULONG) -> NTSTATUS;
@@ -55122,7 +55117,7 @@ pub type RtlInitBarrierType = unsafe extern "C" fn(Barrier: PRTL_BARRIER, TotalT
 pub type RtlDeleteBarrierType = unsafe extern "C" fn(Barrier: PRTL_BARRIER) -> NTSTATUS;
 pub type RtlBarrierType = unsafe extern "C" fn(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
 pub type RtlBarrierForDeleteType = unsafe extern "C" fn(Barrier: PRTL_BARRIER, Flags: ULONG) -> BOOLEAN;
-pub type RtlWaitOnAddressType = unsafe extern "C" fn(Address: *mut cty::c_void, CompareAddress: PVOID, AddressSize: SIZE_T, Timeout: PLARGE_INTEGER) -> NTSTATUS;
+pub type RtlWaitOnAddressType = unsafe extern "C" fn(Address: *mut c_void, CompareAddress: PVOID, AddressSize: SIZE_T, Timeout: PLARGE_INTEGER) -> NTSTATUS;
 pub type RtlInitStringExType = unsafe extern "C" fn(DestinationString: PSTRING, SourceString: PCSZ) -> NTSTATUS;
 pub type RtlInitAnsiStringExType = unsafe extern "C" fn(DestinationString: PANSI_STRING, SourceString: PCSZ) -> NTSTATUS;
 pub type RtlInitUTF8StringExType = unsafe extern "C" fn(DestinationString: PUTF8_STRING, SourceString: PCSZ) -> NTSTATUS;
@@ -55714,7 +55709,7 @@ pub type RtlRunOnceBeginInitializeType = unsafe extern "C" fn(RunOnce: PRTL_RUN_
 pub type RtlRunOnceCompleteType = unsafe extern "C" fn(RunOnce: PRTL_RUN_ONCE, Flags: ULONG, Context: PVOID) -> NTSTATUS;
 pub type RtlEqualWnfChangeStampsType = unsafe extern "C" fn(ChangeStamp1: WNF_CHANGE_STAMP, ChangeStamp2: WNF_CHANGE_STAMP) -> BOOLEAN;
 pub type RtlQueryWnfStateDataType = unsafe extern "C" fn(ChangeStamp: PWNF_CHANGE_STAMP, StateName: WNF_STATE_NAME, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PWNF_TYPE_ID) -> NTSTATUS;
-pub type RtlPublishWnfStateDataType = unsafe extern "C" fn(StateName: WNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, Buffer: *const cty::c_void, Length: ULONG, ExplicitScope: *const cty::c_void) -> NTSTATUS;
+pub type RtlPublishWnfStateDataType = unsafe extern "C" fn(StateName: WNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, Buffer: *const c_void, Length: ULONG, ExplicitScope: *const c_void) -> NTSTATUS;
 pub type RtlSubscribeWnfStateChangeNotificationType = unsafe extern "C" fn(SubscriptionHandle: *mut PVOID, StateName: WNF_STATE_NAME, ChangeStamp: WNF_CHANGE_STAMP, Callback: PWNF_USER_CALLBACK, CallbackContext: PVOID, TypeId: PCWNF_TYPE_ID, SerializationGroup: ULONG, Flags: ULONG) -> NTSTATUS;
 pub type RtlUnsubscribeWnfStateChangeNotificationType = unsafe extern "C" fn(Callback: PWNF_USER_CALLBACK) -> NTSTATUS;
 pub type RtlWnfDllUnloadCallbackType = unsafe extern "C" fn(DllBase: PVOID) -> NTSTATUS;
@@ -55823,7 +55818,7 @@ pub type NtContinueExType = unsafe extern "C" fn(ContextRecord: PCONTEXT, Contin
 pub type NtRaiseExceptionType = unsafe extern "C" fn(ExceptionRecord: PEXCEPTION_RECORD, ContextRecord: PCONTEXT, FirstChance: BOOLEAN) -> NTSTATUS;
 pub type RtlAssertType = unsafe extern "C" fn(VoidFailedAssertion: PVOID, VoidFileName: PVOID, LineNumber: ULONG, MutableMessage: PSTR) -> !;
 pub type Wow64CurrentGuestTebType = unsafe extern "C" fn() -> *mut TEB32;
-pub type Wow64CurrentNativeTebType = unsafe extern "C" fn() -> *mut cty::c_void;
+pub type Wow64CurrentNativeTebType = unsafe extern "C" fn() -> *mut c_void;
 pub type SamFreeMemoryType = unsafe extern "C" fn(Buffer: PVOID) -> NTSTATUS;
 pub type SamCloseHandleType = unsafe extern "C" fn(SamHandle: SAM_HANDLE) -> NTSTATUS;
 pub type SamSetSecurityObjectType = unsafe extern "C" fn(ObjectHandle: SAM_HANDLE, SecurityInformation: SECURITY_INFORMATION, SecurityDescriptor: PSECURITY_DESCRIPTOR) -> NTSTATUS;
@@ -56047,7 +56042,7 @@ pub type ZwDeleteKeyType = unsafe extern "C" fn(KeyHandle: HANDLE) -> NTSTATUS;
 pub type ZwDeleteObjectAuditAlarmType = unsafe extern "C" fn(SubsystemName: PUNICODE_STRING, HandleId: PVOID, GenerateOnClose: BOOLEAN) -> NTSTATUS;
 pub type ZwDeletePrivateNamespaceType = unsafe extern "C" fn(NamespaceHandle: HANDLE) -> NTSTATUS;
 pub type ZwDeleteValueKeyType = unsafe extern "C" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING) -> NTSTATUS;
-pub type ZwDeleteWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, ExplicitScope: *const cty::c_void) -> NTSTATUS;
+pub type ZwDeleteWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, ExplicitScope: *const c_void) -> NTSTATUS;
 pub type ZwDeleteWnfStateNameType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
 pub type ZwDeviceIoControlFileType = unsafe extern "C" fn(FileHandle: HANDLE, Event: HANDLE, ApcRoutine: PIO_APC_ROUTINE, ApcContext: PVOID, IoStatusBlock: PIO_STATUS_BLOCK, IoControlCode: ULONG, InputBuffer: PVOID, InputBufferLength: ULONG, OutputBuffer: PVOID, OutputBufferLength: ULONG) -> NTSTATUS;
 pub type ZwDisableLastKnownGoodType = unsafe extern "C" fn() -> NTSTATUS;
@@ -56229,8 +56224,8 @@ pub type ZwQueryTimerResolutionType = unsafe extern "C" fn(MaximumTime: PULONG, 
 pub type ZwQueryValueKeyType = unsafe extern "C" fn(KeyHandle: HANDLE, ValueName: PUNICODE_STRING, KeyValueInformationClass: KEY_VALUE_INFORMATION_CLASS, KeyValueInformation: PVOID, Length: ULONG, ResultLength: PULONG) -> NTSTATUS;
 pub type ZwQueryVirtualMemoryType = unsafe extern "C" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, MemoryInformationClass: MEMORY_INFORMATION_CLASS, MemoryInformation: PVOID, MemoryInformationLength: SIZE_T, ReturnLength: PSIZE_T) -> NTSTATUS;
 pub type ZwQueryVolumeInformationFileType = unsafe extern "C" fn(FileHandle: HANDLE, IoStatusBlock: PIO_STATUS_BLOCK, FsInformation: PVOID, Length: ULONG, FsInformationClass: FSINFOCLASS) -> NTSTATUS;
-pub type ZwQueryWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const cty::c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
-pub type ZwQueryWnfStateNameInformationType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const cty::c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
+pub type ZwQueryWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, ChangeStamp: PWNF_CHANGE_STAMP, Buffer: PVOID, BufferSize: PULONG) -> NTSTATUS;
+pub type ZwQueryWnfStateNameInformationType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, NameInfoClass: WNF_STATE_NAME_INFORMATION, ExplicitScope: *const c_void, InfoBuffer: PVOID, InfoBufferSize: ULONG) -> NTSTATUS;
 pub type ZwQueueApcThreadType = unsafe extern "C" fn(ThreadHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
 pub type ZwQueueApcThreadExType = unsafe extern "C" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
 pub type ZwQueueApcThreadEx2Type = unsafe extern "C" fn(ThreadHandle: HANDLE, ReserveHandle: HANDLE, ApcFlags: ULONG, ApcRoutine: PPS_APC_ROUTINE, ApcArgument1: PVOID, ApcArgument2: PVOID, ApcArgument3: PVOID) -> NTSTATUS;
@@ -56366,7 +56361,7 @@ pub type ZwUnlockVirtualMemoryType = unsafe extern "C" fn(ProcessHandle: HANDLE,
 pub type ZwUnmapViewOfSectionType = unsafe extern "C" fn(ProcessHandle: HANDLE, BaseAddress: PVOID) -> NTSTATUS;
 pub type ZwUnmapViewOfSectionExType = unsafe extern "C" fn(ProcessHandle: HANDLE, BaseAddress: PVOID, Flags: ULONG) -> NTSTATUS;
 pub type ZwUnsubscribeWnfStateChangeType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME) -> NTSTATUS;
-pub type ZwUpdateWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, Buffer: *const cty::c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const cty::c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
+pub type ZwUpdateWnfStateDataType = unsafe extern "C" fn(StateName: PCWNF_STATE_NAME, Buffer: *const c_void, Length: ULONG, TypeId: PCWNF_TYPE_ID, ExplicitScope: *const c_void, MatchingChangeStamp: WNF_CHANGE_STAMP, CheckStamp: LOGICAL) -> NTSTATUS;
 pub type ZwVdmControlType = unsafe extern "C" fn(Service: VDMSERVICECLASS, ServiceData: PVOID) -> NTSTATUS;
 pub type ZwWaitForAlertByThreadIdType = unsafe extern "C" fn(Address: PVOID, Timeout: PLARGE_INTEGER) -> NTSTATUS;
 pub type ZwWaitForDebugEventType = unsafe extern "C" fn(DebugObjectHandle: HANDLE, Alertable: BOOLEAN, Timeout: PLARGE_INTEGER, WaitStateChange: PDBGUI_WAIT_STATE_CHANGE) -> NTSTATUS;
@@ -56427,7 +56422,7 @@ pub type NtUserDestroyMenuType = unsafe extern "C" fn(hMenu: HMENU) -> BOOL;
 pub type NtUserDestroyWindowType = unsafe extern "C" fn(WindowHandle: HWND) -> BOOL;
 pub type NtUserDragDetectType = unsafe extern "C" fn(WindowHandle: HWND, pt: POINT) -> BOOL;
 pub type NtUserDragObjectType = unsafe extern "C" fn(WindowHandleParent: HWND, WindowHandleFrom: HWND, fmt: ULONG, data: ULONG_PTR, hcur: HCURSOR) -> ULONG;
-pub type NtUserDrawAnimatedRectsType = unsafe extern "C" fn(WindowHandle: HWND, idAni: cty::c_int, lprcFrom: *const RECT, lprcTo: *const RECT) -> BOOL;
+pub type NtUserDrawAnimatedRectsType = unsafe extern "C" fn(WindowHandle: HWND, idAni: c_int, lprcFrom: *const RECT, lprcTo: *const RECT) -> BOOL;
 pub type NtUserEndMenuType = unsafe extern "C" fn() -> BOOL;
 pub type NtUserEndPaintType = unsafe extern "C" fn(WindowHandle: HWND, lpPaint: *const PAINTSTRUCT) -> BOOL;
 pub type NtUserEnumDisplayMonitorsType = unsafe extern "C" fn(hdc: HDC, lprcClip: LPCRECT, lpfnEnum: MONITORENUMPROC, dwData: LPARAM) -> BOOL;
