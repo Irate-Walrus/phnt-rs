@@ -1,4 +1,4 @@
-// Generated at 2024-12-26 05:05:24.179954 +00:00
+// Generated at 2024-12-26 05:13:25.154422500 +00:00
 
 
 #[repr(C)]
@@ -57755,4 +57755,4 @@ use super::*;
     pub type NtUserWindowFromPointFn = unsafe extern "C" fn(Point: POINT) -> HWND;
 }
 #[cfg(feature="fn_types")]
-use fn_types::*;
+pub use fn_types::*;
