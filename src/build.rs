@@ -170,7 +170,7 @@ mod regen {
          for fn_type in fn_types {
             src += &format!("    {}\n", fn_type);
          }
-         src += "}\n#[cfg(feature=\"fn_types\")]\nuse fn_types::*;\n";
+         src += "}\n#[cfg(feature=\"fn_types\")]\npub use fn_types::*;\n";
       }
 
       src
