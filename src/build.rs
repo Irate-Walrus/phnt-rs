@@ -166,11 +166,11 @@ mod regen {
 
       // Wrap function types in a block annotated with #[cfg(feature = "fn_types")]
       if !fn_types.is_empty() {
-         src += "\n#[cfg(feature=\"fn_types\")]\nmod fn_types {\n";
+         src += "\n#[cfg(feature=\"fn_types\")]\nmod fn_types {\nuse super::*;\n";
          for fn_type in fn_types {
             src += &format!("    {}\n", fn_type);
          }
-         src += "}\n";
+         src += "}\n#[cfg(feature=\"fn_types\")]\nuse fn_types::*;\n";
       }
 
       src
