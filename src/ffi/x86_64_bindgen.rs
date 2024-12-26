@@ -1,4 +1,4 @@
-// Generated at 2024-12-24 04:09:17.077756600 +00:00
+// Generated at 2024-12-26 05:05:24.179954 +00:00
 
 
 #[repr(C)]
@@ -55651,6 +55651,7 @@ extern "C" {
 
 #[cfg(feature="fn_types")]
 mod fn_types {
+use super::*;
     pub type NtCallbackReturnFn = unsafe extern "C" fn(OutputBuffer: PVOID, OutputLength: ULONG, Status: NTSTATUS) -> NTSTATUS;
     pub type NtFlushProcessWriteBuffersFn = unsafe extern "C" fn() -> NTSTATUS;
     pub type NtQueryDebugFilterStateFn = unsafe extern "C" fn(ComponentId: ULONG, Level: ULONG) -> NTSTATUS;
@@ -57753,3 +57754,5 @@ mod fn_types {
     pub type NtUserWindowFromPhysicalPointFn = unsafe extern "C" fn(Point: POINT) -> HWND;
     pub type NtUserWindowFromPointFn = unsafe extern "C" fn(Point: POINT) -> HWND;
 }
+#[cfg(feature="fn_types")]
+use fn_types::*;

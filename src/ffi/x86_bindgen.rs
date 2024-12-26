@@ -1,4 +1,4 @@
-// Generated at 2024-12-24 04:09:21.810392700 +00:00
+// Generated at 2024-12-26 05:05:24.451886600 +00:00
 
 
 #[repr(C)]
@@ -55328,6 +55328,7 @@ extern "stdcall" {
 
 #[cfg(feature="fn_types")]
 mod fn_types {
+use super::*;
     pub type NtGetTickCount64Fn = unsafe extern "C" fn() -> ULONGLONG;
     pub type NtGetTickCountFn = unsafe extern "C" fn() -> ULONG;
     pub type DbgPrintFn = unsafe extern "C" fn(Format: PCCH, ...) -> ULONG;
@@ -57425,3 +57426,5 @@ mod fn_types {
     pub type NtUserWindowFromPhysicalPointFn = unsafe extern "stdcall" fn(Point: POINT) -> HWND;
     pub type NtUserWindowFromPointFn = unsafe extern "stdcall" fn(Point: POINT) -> HWND;
 }
+#[cfg(feature="fn_types")]
+use fn_types::*;
