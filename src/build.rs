@@ -124,6 +124,10 @@ mod regen {
             .prepend_enum_name(false)
             .block_extern_crate(false)
             .fit_macro_constants(false)
+            // with x86 override the stdcall ABI with system
+            // system will default to stdcall on win32 but will allow the
+            // x86 bindings to build on different os
+            .override_abi(bindgen::Abi::Stdcall, "system")
             .layout_tests(false)
             .use_core()
             .emit_builtins()
