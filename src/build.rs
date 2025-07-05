@@ -172,8 +172,9 @@ mod regen {
          src += "}\n#[cfg(feature=\"fn_types\")]\npub use fn_types::*;\n";
       }
 
-      // this is a hack
-      src.replace("extern \"stdcall\"", "extern \"system\"")
+      // this is a hack and will break stuff
+      src = src.replace("extern \"stdcall\"", "extern \"system\"")
+      src = src.replace("extern \"fastcall\"", "extern \"system\"")
    }
 
    pub fn main() {
