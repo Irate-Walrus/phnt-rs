@@ -173,7 +173,7 @@ mod regen {
       }
 
       // this is a hack and will break stuff
-      src = src.replace("extern \"stdcall\"", "extern \"system\"")
+      src = src.replace("extern \"stdcall\"", "extern \"system\"");
       src.replace("extern \"fastcall\"", "extern \"system\"")
    }
 
