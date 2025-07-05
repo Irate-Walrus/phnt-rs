@@ -173,7 +173,7 @@ mod regen {
       }
 
       // this is a hack
-      src.replace("extern \"stdcall\"", "extern \"system\"");
+      src.replace("extern \"stdcall\"", "extern \"system\"")
    }
 
    pub fn main() {
