@@ -1,4 +1,4 @@
-// Generated at 2025-07-05 02:27:54.595812 +00:00
+// Generated at 2025-07-05 03:18:30.466115400 +00:00
 
 
 #[repr(C)]
@@ -41613,7 +41613,7 @@ pub struct PROCESSOR_IDLE_TIMES {
    pub Reserved: [ULONG; 4usize],
 }
 pub type PPROCESSOR_IDLE_TIMES = *mut PROCESSOR_IDLE_TIMES;
-pub type PPROCESSOR_IDLE_HANDLER = ::core::option::Option<unsafe extern "fastcall" fn(arg1: ULONG_PTR, arg2: PPROCESSOR_IDLE_TIMES) -> NTSTATUS>;
+pub type PPROCESSOR_IDLE_HANDLER = ::core::option::Option<unsafe extern "system" fn(arg1: ULONG_PTR, arg2: PPROCESSOR_IDLE_TIMES) -> NTSTATUS>;
 #[repr(C)]
 #[derive(Default, Copy, Clone)]
 pub struct _PROCESSOR_IDLE_STATE {
