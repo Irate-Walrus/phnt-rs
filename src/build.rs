@@ -124,10 +124,6 @@ mod regen {
             .prepend_enum_name(false)
             .block_extern_crate(false)
             .fit_macro_constants(false)
-            // with x86 override the stdcall ABI with system
-            // system will default to stdcall on win32 but will allow the
-            // x86 bindings to build on different os
-            .override_abi(bindgen::Abi::System, "stdcall")
             .layout_tests(false)
             .use_core()
             .emit_builtins()
@@ -143,7 +139,6 @@ mod regen {
 
       let mut replacements = Vec::new();
       let mut src = bindings.to_owned();
-
       for block_match in ext_re.captures_iter(bindings) {
          let extern_type = &block_match[1];
          let inner_src = &block_match[2];
@@ -177,7 +172,8 @@ mod regen {
          src += "}\n#[cfg(feature=\"fn_types\")]\npub use fn_types::*;\n";
       }
 
-      src
+      // this is a hack
+      src.replace("extern \"stdcall\"", "extern \"system\"");
    }
 
    pub fn main() {
